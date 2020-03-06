@@ -8,13 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COCOA
+namespace COCOA.Maestras
 {
-    public partial class Form1 : Form
+    public partial class frmClientes : Form
     {
-        public Form1()
+        public frmClientes()
         {
             InitializeComponent();
-        }
+        }        
     }
 }
