@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COCOA.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,10 +20,66 @@ namespace COCOA.Maestras
 
         private void proveedoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            if (!ValidarCampos()) return;
             this.Validate();
             this.proveedoresBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
             DeshabilitarCampos();
+
+        }
+
+        private bool ValidarCampos()
+        {
+            if (nitTextBox.Text == "") 
+            {
+                errorProvider1.SetError(nitTextBox, "El campo nit es obligatorio");
+                nitTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            if (nombreProveedorTextBox.Text == "")
+            {
+                errorProvider1.SetError(nombreProveedorTextBox, "El campo nombre de proveedor es obligatorio");
+                nombreProveedorTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            if (direccionTextBox.Text == "")
+            {
+                errorProvider1.SetError(direccionTextBox, "El campo dirección es oblitorio");
+                direccionTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            if (emailTextBox.Text == "")
+            {
+                errorProvider1.SetError(emailTextBox, "El campo Email es obligatorio");
+                nitTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            RegexUtilities regexUtilities = new RegexUtilities();
+            if (!regexUtilities.IsValidEmail(emailTextBox.Text))
+            {
+                errorProvider1.SetError(emailTextBox, "El formato de Correo no es válido");
+                emailTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            if (telefono1TextBox.Text == "")
+            {
+                errorProvider1.SetError(telefono1TextBox, "Debe ingresar mínimo un numero teléfonico");
+                nitTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();            
+
+            return true;            
 
         }
 
@@ -55,12 +112,11 @@ namespace COCOA.Maestras
 
         private void frmProveedores_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSCOCOA.Proveedores' table. You can move, or remove it, as needed.
             this.proveedoresTableAdapter.Fill(this.dSCOCOA.Proveedores);
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void bindingNavigatorEdit_Click(object sender, EventArgs e) 
         {
             HabilitarCampos();
         }
@@ -101,6 +157,36 @@ namespace COCOA.Maestras
         {
             this.proveedoresBindingSource.CancelEdit();
             DeshabilitarCampos();
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            HabilitarCampos();
+            proveedoresBindingSource.AddNew();
+            nitTextBox.Focus();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            DialogResult rta = MessageBox.Show("¿Eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+            if (rta == DialogResult.No) return;
+            //if (DAL.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
+            //{
+            //    MessageBox.Show("No es posible borrar Proveedor, ya tiene movimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            proveedoresBindingSource.RemoveAt(proveedoresBindingSource.Position);
+            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
+        }
+
+        private void bindingNavigatorSearch_Click(object sender, EventArgs e)
+        {
+            frmBusquedaProveedor miBusqueda = new frmBusquedaProveedor();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDProveedor == 0) return;
+            int posicion = proveedoresBindingSource.Find("IDProveedor", miBusqueda.IDProveedor);
+            proveedoresBindingSource.Position = posicion;
         }
     }
 }

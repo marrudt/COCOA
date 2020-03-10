@@ -46,6 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busqueda\frmBusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBusquedaCliente.Designer.cs">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmBusquedaProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBusquedaProducto.Designer.cs">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="DSCOCOA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -57,17 +70,77 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Busqueda\frmBusquedaProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBusquedaProveedor.Designer.cs">
+      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmCilindraje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmCilindraje.Designer.cs">
+      <DependentUpon>frmCilindraje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmClase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmClase.Designer.cs">
+      <DependentUpon>frmClase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestras\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maestras\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestras\frmImpoconsumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmImpoconsumo.Designer.cs">
+      <DependentUpon>frmImpoconsumo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmIntervaloPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmIntervaloPrecio.Designer.cs">
+      <DependentUpon>frmIntervaloPrecio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmIVA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmIVA.Designer.cs">
+      <DependentUpon>frmIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmNumeroPasajeros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmNumeroPasajeros.Designer.cs">
+      <DependentUpon>frmNumeroPasajeros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmPesoBrutoVehicular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmPesoBrutoVehicular.Designer.cs">
+      <DependentUpon>frmPesoBrutoVehicular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestras\frmProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maestras\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmTipoProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmTipoProducto.Designer.cs">
+      <DependentUpon>frmTipoProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\frmLogin.cs">
       <SubType>Form</SubType>
@@ -77,14 +150,50 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Busqueda\frmBusquedaCliente.resx">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBusquedaProducto.resx">
+      <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmBusquedaProveedor.resx">
+      <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmCilindraje.resx">
+      <DependentUpon>frmCilindraje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmClase.resx">
+      <DependentUpon>frmClase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmImpoconsumo.resx">
+      <DependentUpon>frmImpoconsumo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmIntervaloPrecio.resx">
+      <DependentUpon>frmIntervaloPrecio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmIVA.resx">
+      <DependentUpon>frmIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmNumeroPasajeros.resx">
+      <DependentUpon>frmNumeroPasajeros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmPesoBrutoVehicular.resx">
+      <DependentUpon>frmPesoBrutoVehicular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmTipoProducto.resx">
+      <DependentUpon>frmTipoProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -123,8 +232,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Busqueda\" />
-    <Folder Include="Clases\" />
     <Folder Include="Listados\" />
     <Folder Include="Reportes\" />
     <Folder Include="Transacciones\" />
