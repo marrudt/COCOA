@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoProducto));
             System.Windows.Forms.Label descripcionTipoProductoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoProducto));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tipoProductoTableAdapter = new COCOA.DSCOCOATableAdapters.TipoProductoTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.tipoProductoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.tipoProductoDataGridView = new System.Windows.Forms.DataGridView();
-            this.descripcionTipoProductoTextBox = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.descripcionTipoProductoTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             descripcionTipoProductoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
@@ -64,6 +64,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descripcionTipoProductoLabel
+            // 
+            descripcionTipoProductoLabel.AutoSize = true;
+            descripcionTipoProductoLabel.Location = new System.Drawing.Point(8, 49);
+            descripcionTipoProductoLabel.Name = "descripcionTipoProductoLabel";
+            descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionTipoProductoLabel.TabIndex = 2;
+            descripcionTipoProductoLabel.Text = "Descripción:";
             // 
             // dSCOCOA
             // 
@@ -106,6 +115,7 @@
             // tipoProductoBindingNavigator
             // 
             this.tipoProductoBindingNavigator.AddNewItem = null;
+            this.tipoProductoBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.tipoProductoBindingNavigator.BindingSource = this.tipoProductoBindingSource;
             this.tipoProductoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.tipoProductoBindingNavigator.DeleteItem = null;
@@ -137,13 +147,20 @@
             this.tipoProductoBindingNavigator.TabIndex = 0;
             this.tipoProductoBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 32);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -152,13 +169,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 32);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 35);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -170,17 +187,10 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 32);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 35);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -188,7 +198,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 32);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -197,13 +207,24 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 32);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 35);
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorEdit
+            // 
+            this.bindingNavigatorEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorEdit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEdit.Image")));
+            this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
+            this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorEdit.Text = "toolStripButton1";
+            this.bindingNavigatorEdit.ToolTipText = "Editar";
+            this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -221,7 +242,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 32);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
@@ -230,10 +251,32 @@
             this.bindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorSaveItem.Enabled = false;
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
-            this.bindingNavigatorSaveItem.Name = "tipoProductoBindingNavigatorSaveItem";
-            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 32);
+            this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
+            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorSaveItem.Text = "Save Data";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.tipoProductoBindingNavigatorSaveItem_Click);
+            // 
+            // bindingNavigatorCancel
+            // 
+            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorCancel.Enabled = false;
+            this.bindingNavigatorCancel.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancel.Image")));
+            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
+            this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorCancel.Text = "toolStripButton1";
+            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
+            // 
+            // bindingNavigatorExit
+            // 
+            this.bindingNavigatorExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
+            this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorExit.Name = "bindingNavigatorExit";
+            this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorExit.Text = "toolStripButton4";
+            this.bindingNavigatorExit.ToolTipText = "Salir";
+            this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
             // tipoProductoDataGridView
             // 
@@ -256,29 +299,6 @@
             this.tipoProductoDataGridView.Size = new System.Drawing.Size(394, 215);
             this.tipoProductoDataGridView.TabIndex = 1;
             // 
-            // descripcionTipoProductoLabel
-            // 
-            descripcionTipoProductoLabel.AutoSize = true;
-            descripcionTipoProductoLabel.Location = new System.Drawing.Point(8, 49);
-            descripcionTipoProductoLabel.Name = "descripcionTipoProductoLabel";
-            descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionTipoProductoLabel.TabIndex = 2;
-            descripcionTipoProductoLabel.Text = "Descripción:";
-            // 
-            // descripcionTipoProductoTextBox
-            // 
-            this.descripcionTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "DescripcionTipoProducto", true));
-            this.descripcionTipoProductoTextBox.Location = new System.Drawing.Point(80, 46);
-            this.descripcionTipoProductoTextBox.Name = "descripcionTipoProductoTextBox";
-            this.descripcionTipoProductoTextBox.ReadOnly = true;
-            this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(247, 20);
-            this.descripcionTipoProductoTextBox.TabIndex = 3;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdTipoProducto";
@@ -296,38 +316,20 @@
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Width = 88;
             // 
-            // bindingNavigatorCancel
+            // descripcionTipoProductoTextBox
             // 
-            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorCancel.Enabled = false;
-            this.bindingNavigatorCancel.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancel.Image")));
-            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
-            this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 32);
-            this.bindingNavigatorCancel.Text = "toolStripButton1";
-            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
+            this.descripcionTipoProductoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "DescripcionTipoProducto", true));
+            this.descripcionTipoProductoTextBox.Location = new System.Drawing.Point(80, 46);
+            this.descripcionTipoProductoTextBox.Name = "descripcionTipoProductoTextBox";
+            this.descripcionTipoProductoTextBox.ReadOnly = true;
+            this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(272, 20);
+            this.descripcionTipoProductoTextBox.TabIndex = 3;
             // 
-            // bindingNavigatorEdit
+            // errorProvider1
             // 
-            this.bindingNavigatorEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorEdit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEdit.Image")));
-            this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
-            this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 32);
-            this.bindingNavigatorEdit.Text = "toolStripButton1";
-            this.bindingNavigatorEdit.ToolTipText = "Editar";
-            this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
-            // 
-            // bindingNavigatorExit
-            // 
-            this.bindingNavigatorExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
-            this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorExit.Name = "bindingNavigatorExit";
-            this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorExit.Text = "toolStripButton4";
-            this.bindingNavigatorExit.ToolTipText = "Salir";
-            this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // frmTipoProducto
             // 

@@ -128,6 +128,7 @@
             // pesoBrutoVhBindingNavigator
             // 
             this.pesoBrutoVhBindingNavigator.AddNewItem = null;
+            this.pesoBrutoVhBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.pesoBrutoVhBindingNavigator.BindingSource = this.pesoBrutoVhBindingSource;
             this.pesoBrutoVhBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.pesoBrutoVhBindingNavigator.DeleteItem = null;
@@ -340,11 +341,12 @@
             // 
             // descripcionPesoBrutoVhTextBox
             // 
+            this.descripcionPesoBrutoVhTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionPesoBrutoVhTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pesoBrutoVhBindingSource, "DescripcionPesoBrutoVh", true));
             this.descripcionPesoBrutoVhTextBox.Location = new System.Drawing.Point(78, 42);
             this.descripcionPesoBrutoVhTextBox.Name = "descripcionPesoBrutoVhTextBox";
             this.descripcionPesoBrutoVhTextBox.ReadOnly = true;
-            this.descripcionPesoBrutoVhTextBox.Size = new System.Drawing.Size(255, 20);
+            this.descripcionPesoBrutoVhTextBox.Size = new System.Drawing.Size(277, 20);
             this.descripcionPesoBrutoVhTextBox.TabIndex = 3;
             // 
             // activoCheckBox

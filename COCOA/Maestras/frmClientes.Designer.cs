@@ -195,6 +195,7 @@
             // clientesBindingNavigator
             // 
             this.clientesBindingNavigator.AddNewItem = null;
+            this.clientesBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.clientesBindingNavigator.BindingSource = this.clientesBindingSource;
             this.clientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.clientesBindingNavigator.DeleteItem = null;
@@ -548,6 +549,7 @@
             this.celularTextBox.ReadOnly = true;
             this.celularTextBox.Size = new System.Drawing.Size(100, 20);
             this.celularTextBox.TabIndex = 36;
+            this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celularTextBox_KeyPress);
             // 
             // telefono2TextBox
             // 
@@ -557,6 +559,7 @@
             this.telefono2TextBox.ReadOnly = true;
             this.telefono2TextBox.Size = new System.Drawing.Size(100, 20);
             this.telefono2TextBox.TabIndex = 34;
+            this.telefono2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono2TextBox_KeyPress);
             // 
             // telefono1TextBox
             // 
@@ -566,6 +569,7 @@
             this.telefono1TextBox.ReadOnly = true;
             this.telefono1TextBox.Size = new System.Drawing.Size(100, 20);
             this.telefono1TextBox.TabIndex = 32;
+            this.telefono1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono1TextBox_KeyPress);
             // 
             // direccionTextBox
             // 
@@ -603,8 +607,9 @@
             this.nitTextBox.Location = new System.Drawing.Point(108, 41);
             this.nitTextBox.Name = "nitTextBox";
             this.nitTextBox.ReadOnly = true;
-            this.nitTextBox.Size = new System.Drawing.Size(105, 20);
+            this.nitTextBox.Size = new System.Drawing.Size(136, 20);
             this.nitTextBox.TabIndex = 22;
+            this.nitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitTextBox_KeyPress);
             // 
             // errorProvider1
             // 

@@ -1,18 +1,19 @@
 ﻿using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA
 {
     public partial class frmLogin : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmLogin()
         {
             InitializeComponent();
@@ -25,9 +26,9 @@ namespace COCOA
 
         private void AceptarButton_Click(object sender, EventArgs e)
         {
-            if(usuarioTextBox.Text == "")
+            if (usuarioTextBox.Text == "")
             {
-                errorProvider1.SetError(usuarioTextBox,"Ingrese Usuario");
+                errorProvider1.SetError(usuarioTextBox, "Ingrese Usuario");
                 usuarioTextBox.Focus();
                 return;
             }
@@ -51,6 +52,7 @@ namespace COCOA
             }
 
             frmPrincipal miForm = new frmPrincipal();
+            miForm.UsuarioLogueado = DALUsuario.GetUsuario(usuarioTextBox.Text);
             miForm.Show();
             this.Hide();
         }

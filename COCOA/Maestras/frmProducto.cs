@@ -1,18 +1,21 @@
 ﻿using COCOA.Busqueda;
+using COCOA.Clases;
+using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
 {
     public partial class frmProducto : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmProducto()
         {
             InitializeComponent();
@@ -145,7 +148,7 @@ namespace COCOA.Maestras
             bindingNavigatorCountItem.Enabled = false;
             bindingNavigatorExit.Enabled = false;
         }
-        
+
 
         private void codigoTextBox_TextChanged(object sender, EventArgs e)
         {
@@ -217,6 +220,16 @@ namespace COCOA.Maestras
         private void bindingNavigatorExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void precioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void modeloAnoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }
     }
 }

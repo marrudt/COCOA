@@ -76,7 +76,7 @@
             // descripcionImpoconsumoLabel
             // 
             descripcionImpoconsumoLabel.AutoSize = true;
-            descripcionImpoconsumoLabel.Location = new System.Drawing.Point(8, 40);
+            descripcionImpoconsumoLabel.Location = new System.Drawing.Point(8, 45);
             descripcionImpoconsumoLabel.Name = "descripcionImpoconsumoLabel";
             descripcionImpoconsumoLabel.Size = new System.Drawing.Size(66, 13);
             descripcionImpoconsumoLabel.TabIndex = 2;
@@ -85,7 +85,7 @@
             // tarifaLabel
             // 
             tarifaLabel.AutoSize = true;
-            tarifaLabel.Location = new System.Drawing.Point(37, 66);
+            tarifaLabel.Location = new System.Drawing.Point(37, 71);
             tarifaLabel.Name = "tarifaLabel";
             tarifaLabel.Size = new System.Drawing.Size(37, 13);
             tarifaLabel.TabIndex = 4;
@@ -94,7 +94,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(194, 66);
+            activoLabel.Location = new System.Drawing.Point(194, 71);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 6;
@@ -141,6 +141,7 @@
             // impoconsumoBindingNavigator
             // 
             this.impoconsumoBindingNavigator.AddNewItem = null;
+            this.impoconsumoBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.impoconsumoBindingNavigator.BindingSource = this.impoconsumoBindingSource;
             this.impoconsumoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.impoconsumoBindingNavigator.DeleteItem = null;
@@ -320,10 +321,10 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewCheckBoxColumn1});
             this.impoconsumoDataGridView.DataSource = this.impoconsumoBindingSource;
-            this.impoconsumoDataGridView.Location = new System.Drawing.Point(1, 94);
+            this.impoconsumoDataGridView.Location = new System.Drawing.Point(1, 100);
             this.impoconsumoDataGridView.Name = "impoconsumoDataGridView";
             this.impoconsumoDataGridView.ReadOnly = true;
-            this.impoconsumoDataGridView.Size = new System.Drawing.Size(393, 195);
+            this.impoconsumoDataGridView.Size = new System.Drawing.Size(393, 189);
             this.impoconsumoDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -363,8 +364,9 @@
             // 
             // descripcionImpoconsumoTextBox
             // 
+            this.descripcionImpoconsumoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionImpoconsumoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impoconsumoBindingSource, "DescripcionImpoconsumo", true));
-            this.descripcionImpoconsumoTextBox.Location = new System.Drawing.Point(80, 37);
+            this.descripcionImpoconsumoTextBox.Location = new System.Drawing.Point(80, 42);
             this.descripcionImpoconsumoTextBox.Name = "descripcionImpoconsumoTextBox";
             this.descripcionImpoconsumoTextBox.ReadOnly = true;
             this.descripcionImpoconsumoTextBox.Size = new System.Drawing.Size(251, 20);
@@ -373,7 +375,7 @@
             // tarifaTextBox
             // 
             this.tarifaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impoconsumoBindingSource, "Tarifa", true));
-            this.tarifaTextBox.Location = new System.Drawing.Point(80, 63);
+            this.tarifaTextBox.Location = new System.Drawing.Point(80, 68);
             this.tarifaTextBox.Name = "tarifaTextBox";
             this.tarifaTextBox.ReadOnly = true;
             this.tarifaTextBox.Size = new System.Drawing.Size(100, 20);
@@ -385,9 +387,9 @@
             this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.impoconsumoBindingSource, "Activo", true));
             this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(240, 61);
+            this.activoCheckBox.Location = new System.Drawing.Point(240, 66);
             this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.activoCheckBox.Size = new System.Drawing.Size(29, 24);
             this.activoCheckBox.TabIndex = 7;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 

@@ -128,6 +128,7 @@
             // intervaloPreciosBindingNavigator
             // 
             this.intervaloPreciosBindingNavigator.AddNewItem = null;
+            this.intervaloPreciosBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.intervaloPreciosBindingNavigator.BindingSource = this.intervaloPreciosBindingSource;
             this.intervaloPreciosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.intervaloPreciosBindingNavigator.DeleteItem = null;
@@ -162,7 +163,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -187,7 +188,7 @@
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -202,7 +203,7 @@
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -210,7 +211,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -219,13 +220,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorEdit
             // 
@@ -233,7 +234,7 @@
             this.bindingNavigatorEdit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEdit.Image")));
             this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
-            this.bindingNavigatorEdit.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorEdit.Text = "toolStripButton1";
             this.bindingNavigatorEdit.ToolTipText = "Editar";
             this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
@@ -244,7 +245,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
@@ -254,7 +255,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
@@ -264,7 +265,7 @@
             this.bindingNavigatorSaveItem.Enabled = false;
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
             this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
-            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorSaveItem.Text = "Save Data";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.intervaloPreciosBindingNavigatorSaveItem_Click);
             // 
@@ -275,7 +276,7 @@
             this.bindingNavigatorCancel.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancel.Image")));
             this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
-            this.bindingNavigatorCancel.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorCancel.Text = "toolStripButton1";
             this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
             // 
@@ -285,7 +286,7 @@
             this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
             this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorExit.Name = "bindingNavigatorExit";
-            this.bindingNavigatorExit.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorExit.Text = "toolStripButton4";
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
@@ -340,11 +341,12 @@
             // 
             // descripcionIntervaloPrecioTextBox
             // 
+            this.descripcionIntervaloPrecioTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionIntervaloPrecioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.intervaloPreciosBindingSource, "DescripcionIntervaloPrecio", true));
             this.descripcionIntervaloPrecioTextBox.Location = new System.Drawing.Point(80, 39);
             this.descripcionIntervaloPrecioTextBox.Name = "descripcionIntervaloPrecioTextBox";
             this.descripcionIntervaloPrecioTextBox.ReadOnly = true;
-            this.descripcionIntervaloPrecioTextBox.Size = new System.Drawing.Size(254, 20);
+            this.descripcionIntervaloPrecioTextBox.Size = new System.Drawing.Size(268, 20);
             this.descripcionIntervaloPrecioTextBox.TabIndex = 3;
             // 
             // activoCheckBox

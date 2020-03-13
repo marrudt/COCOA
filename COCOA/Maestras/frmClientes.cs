@@ -1,19 +1,21 @@
 ﻿using COCOA.Busqueda;
 using COCOA.Clases;
+using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
 {
     public partial class frmClientes : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmClientes()
         {
             InitializeComponent();
@@ -24,7 +26,18 @@ namespace COCOA.Maestras
             if (!ValidarCampos()) return;
             this.Validate();
             this.clientesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
+
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.dSCOCOA);
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(nitTextBox, "El Nit ya existe");
+                nitTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
             DeshabilitarCampos();
         }
 
@@ -37,6 +50,8 @@ namespace COCOA.Maestras
                 return false;
             }
             errorProvider1.Clear();
+
+
 
             if (nombreClienteTextBox.Text == "")
             {
@@ -176,7 +191,7 @@ namespace COCOA.Maestras
 
         private void bindingNavigatorExit_Click(object sender, EventArgs e)
         {
-            this.Close(); 
+            this.Close();
         }
 
         private void bindingNavigatorSearch_Click(object sender, EventArgs e)
@@ -186,6 +201,26 @@ namespace COCOA.Maestras
             if (miBusqueda.IDCliente == 0) return;
             int posicion = clientesBindingSource.Find("IDCliente", miBusqueda.IDCliente);
             clientesBindingSource.Position = posicion;
+        }
+
+        private void nitTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void telefono1TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void telefono2TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }
     }
 }

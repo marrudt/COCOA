@@ -233,6 +233,7 @@
             // proveedoresBindingNavigator
             // 
             this.proveedoresBindingNavigator.AddNewItem = null;
+            this.proveedoresBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.proveedoresBindingNavigator.BindingSource = this.proveedoresBindingSource;
             this.proveedoresBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.proveedoresBindingNavigator.DeleteItem = null;
@@ -548,7 +549,7 @@
             this.activoCheckBox.Enabled = false;
             this.activoCheckBox.Location = new System.Drawing.Point(612, 141);
             this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(100, 24);
+            this.activoCheckBox.Size = new System.Drawing.Size(37, 24);
             this.activoCheckBox.TabIndex = 18;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -581,6 +582,7 @@
             this.celularTextBox.ReadOnly = true;
             this.celularTextBox.Size = new System.Drawing.Size(100, 20);
             this.celularTextBox.TabIndex = 16;
+            this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celularTextBox_KeyPress);
             // 
             // telefono2TextBox
             // 
@@ -590,6 +592,7 @@
             this.telefono2TextBox.ReadOnly = true;
             this.telefono2TextBox.Size = new System.Drawing.Size(100, 20);
             this.telefono2TextBox.TabIndex = 14;
+            this.telefono2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono2TextBox_KeyPress);
             // 
             // telefono1TextBox
             // 
@@ -599,6 +602,7 @@
             this.telefono1TextBox.ReadOnly = true;
             this.telefono1TextBox.Size = new System.Drawing.Size(100, 20);
             this.telefono1TextBox.TabIndex = 12;
+            this.telefono1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono1TextBox_KeyPress);
             // 
             // direccionTextBox
             // 
@@ -636,8 +640,9 @@
             this.nitTextBox.Location = new System.Drawing.Point(117, 39);
             this.nitTextBox.Name = "nitTextBox";
             this.nitTextBox.ReadOnly = true;
-            this.nitTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nitTextBox.Size = new System.Drawing.Size(125, 20);
             this.nitTextBox.TabIndex = 2;
+            this.nitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitTextBox_KeyPress);
             // 
             // errorProvider1
             // 

@@ -72,7 +72,7 @@
             // numeroPasajerosLabel
             // 
             numeroPasajerosLabel.AutoSize = true;
-            numeroPasajerosLabel.Location = new System.Drawing.Point(10, 41);
+            numeroPasajerosLabel.Location = new System.Drawing.Point(10, 44);
             numeroPasajerosLabel.Name = "numeroPasajerosLabel";
             numeroPasajerosLabel.Size = new System.Drawing.Size(111, 13);
             numeroPasajerosLabel.TabIndex = 2;
@@ -128,6 +128,7 @@
             // numeroPasajerosBindingNavigator
             // 
             this.numeroPasajerosBindingNavigator.AddNewItem = null;
+            this.numeroPasajerosBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.numeroPasajerosBindingNavigator.BindingSource = this.numeroPasajerosBindingSource;
             this.numeroPasajerosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.numeroPasajerosBindingNavigator.DeleteItem = null;
@@ -294,6 +295,9 @@
             this.numeroPasajerosDataGridView.AllowUserToAddRows = false;
             this.numeroPasajerosDataGridView.AllowUserToDeleteRows = false;
             this.numeroPasajerosDataGridView.AllowUserToOrderColumns = true;
+            this.numeroPasajerosDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.numeroPasajerosDataGridView.AutoGenerateColumns = false;
             this.numeroPasajerosDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.numeroPasajerosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -305,7 +309,7 @@
             this.numeroPasajerosDataGridView.Location = new System.Drawing.Point(0, 94);
             this.numeroPasajerosDataGridView.Name = "numeroPasajerosDataGridView";
             this.numeroPasajerosDataGridView.ReadOnly = true;
-            this.numeroPasajerosDataGridView.Size = new System.Drawing.Size(359, 196);
+            this.numeroPasajerosDataGridView.Size = new System.Drawing.Size(394, 196);
             this.numeroPasajerosDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -336,9 +340,11 @@
             // 
             // numeroPasajerosTextBox
             // 
+            this.numeroPasajerosTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.numeroPasajerosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.numeroPasajerosBindingSource, "NumeroPasajeros", true));
-            this.numeroPasajerosTextBox.Location = new System.Drawing.Point(127, 38);
+            this.numeroPasajerosTextBox.Location = new System.Drawing.Point(127, 41);
             this.numeroPasajerosTextBox.Name = "numeroPasajerosTextBox";
+            this.numeroPasajerosTextBox.ReadOnly = true;
             this.numeroPasajerosTextBox.Size = new System.Drawing.Size(211, 20);
             this.numeroPasajerosTextBox.TabIndex = 3;
             // 

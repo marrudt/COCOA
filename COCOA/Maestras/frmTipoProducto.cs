@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAL;
+using System;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
 {
     public partial class frmTipoProducto : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmTipoProducto()
         {
             InitializeComponent();
@@ -80,7 +82,7 @@ namespace COCOA.Maestras
 
         private void HabilitarCampos()
         {
-            descripcionTipoProductoTextBox.ReadOnly = false;            
+            descripcionTipoProductoTextBox.ReadOnly = false;
 
             bindingNavigatorMoveFirstItem.Enabled = false;
             bindingNavigatorMovePreviousItem.Enabled = false;

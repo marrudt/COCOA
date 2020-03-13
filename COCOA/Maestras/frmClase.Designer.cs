@@ -128,6 +128,7 @@
             // claseBindingNavigator
             // 
             this.claseBindingNavigator.AddNewItem = null;
+            this.claseBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.claseBindingNavigator.BindingSource = this.claseBindingSource;
             this.claseBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.claseBindingNavigator.DeleteItem = null;
@@ -341,14 +342,18 @@
             // 
             // descripcionClaseTextBox
             // 
+            this.descripcionClaseTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionClaseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.claseBindingSource, "DescripcionClase", true));
             this.descripcionClaseTextBox.Location = new System.Drawing.Point(77, 41);
             this.descripcionClaseTextBox.Name = "descripcionClaseTextBox";
+            this.descripcionClaseTextBox.ReadOnly = true;
             this.descripcionClaseTextBox.Size = new System.Drawing.Size(250, 20);
             this.descripcionClaseTextBox.TabIndex = 3;
             // 
             // activoCheckBox
             // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.claseBindingSource, "Activo", true));
             this.activoCheckBox.Location = new System.Drawing.Point(77, 67);
             this.activoCheckBox.Name = "activoCheckBox";

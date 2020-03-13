@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALPermisoRol.cs" />
     <Compile Include="DALUsuario.cs" />
+    <Compile Include="DSCOCOA.cs">
+      <DependentUpon>DSCOCOA.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSCOCOA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

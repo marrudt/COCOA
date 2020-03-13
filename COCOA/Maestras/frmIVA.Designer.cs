@@ -76,7 +76,7 @@
             // descripcionIVALabel
             // 
             descripcionIVALabel.AutoSize = true;
-            descripcionIVALabel.Location = new System.Drawing.Point(7, 40);
+            descripcionIVALabel.Location = new System.Drawing.Point(7, 43);
             descripcionIVALabel.Name = "descripcionIVALabel";
             descripcionIVALabel.Size = new System.Drawing.Size(66, 13);
             descripcionIVALabel.TabIndex = 2;
@@ -85,7 +85,7 @@
             // tarifaLabel
             // 
             tarifaLabel.AutoSize = true;
-            tarifaLabel.Location = new System.Drawing.Point(36, 66);
+            tarifaLabel.Location = new System.Drawing.Point(36, 69);
             tarifaLabel.Name = "tarifaLabel";
             tarifaLabel.Size = new System.Drawing.Size(37, 13);
             tarifaLabel.TabIndex = 4;
@@ -94,7 +94,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(189, 66);
+            activoLabel.Location = new System.Drawing.Point(189, 69);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 6;
@@ -141,6 +141,7 @@
             // iVABindingNavigator
             // 
             this.iVABindingNavigator.AddNewItem = null;
+            this.iVABindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.iVABindingNavigator.BindingSource = this.iVABindingSource;
             this.iVABindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.iVABindingNavigator.DeleteItem = null;
@@ -363,8 +364,9 @@
             // 
             // descripcionIVATextBox
             // 
+            this.descripcionIVATextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionIVATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iVABindingSource, "DescripcionIVA", true));
-            this.descripcionIVATextBox.Location = new System.Drawing.Point(79, 37);
+            this.descripcionIVATextBox.Location = new System.Drawing.Point(79, 40);
             this.descripcionIVATextBox.Name = "descripcionIVATextBox";
             this.descripcionIVATextBox.ReadOnly = true;
             this.descripcionIVATextBox.Size = new System.Drawing.Size(260, 20);
@@ -373,7 +375,7 @@
             // tarifaTextBox
             // 
             this.tarifaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iVABindingSource, "Tarifa", true));
-            this.tarifaTextBox.Location = new System.Drawing.Point(79, 63);
+            this.tarifaTextBox.Location = new System.Drawing.Point(79, 66);
             this.tarifaTextBox.Name = "tarifaTextBox";
             this.tarifaTextBox.ReadOnly = true;
             this.tarifaTextBox.Size = new System.Drawing.Size(100, 20);
@@ -385,9 +387,9 @@
             this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.iVABindingSource, "Activo", true));
             this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(235, 61);
+            this.activoCheckBox.Location = new System.Drawing.Point(235, 64);
             this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.activoCheckBox.Size = new System.Drawing.Size(34, 24);
             this.activoCheckBox.TabIndex = 7;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 

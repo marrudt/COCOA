@@ -109,6 +109,7 @@
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
@@ -128,6 +129,7 @@
             // cilindrajesBindingNavigator
             // 
             this.cilindrajesBindingNavigator.AddNewItem = null;
+            this.cilindrajesBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
             this.cilindrajesBindingNavigator.BindingSource = this.cilindrajesBindingSource;
             this.cilindrajesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.cilindrajesBindingNavigator.DeleteItem = null;
@@ -340,6 +342,7 @@
             // 
             // descripcionCilindrajeTextBox
             // 
+            this.descripcionCilindrajeTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionCilindrajeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cilindrajesBindingSource, "DescripcionCilindraje", true));
             this.descripcionCilindrajeTextBox.Location = new System.Drawing.Point(80, 38);
             this.descripcionCilindrajeTextBox.Name = "descripcionCilindrajeTextBox";

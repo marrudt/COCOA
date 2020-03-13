@@ -1,18 +1,20 @@
 ﻿using COCOA.Clases;
+using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
 {
     public partial class frmProveedores : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmProveedores()
         {
             InitializeComponent();
@@ -23,14 +25,25 @@ namespace COCOA.Maestras
             if (!ValidarCampos()) return;
             this.Validate();
             this.proveedoresBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
-            DeshabilitarCampos();
 
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.dSCOCOA);
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(nitTextBox, "El Nit ya existe");
+                nitTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+            DeshabilitarCampos();
+            VerificaPermisos();
         }
 
         private bool ValidarCampos()
         {
-            if (nitTextBox.Text == "") 
+            if (nitTextBox.Text == "")
             {
                 errorProvider1.SetError(nitTextBox, "El campo nit es obligatorio");
                 nitTextBox.Focus();
@@ -77,9 +90,9 @@ namespace COCOA.Maestras
                 nitTextBox.Focus();
                 return false;
             }
-            errorProvider1.Clear();            
+            errorProvider1.Clear();
 
-            return true;            
+            return true;
 
         }
 
@@ -113,10 +126,34 @@ namespace COCOA.Maestras
         private void frmProveedores_Load(object sender, EventArgs e)
         {
             this.proveedoresTableAdapter.Fill(this.dSCOCOA.Proveedores);
+            VerificaPermisos();
 
         }
 
-        private void bindingNavigatorEdit_Click(object sender, EventArgs e) 
+        private void VerificaPermisos()
+        {
+            if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 1)) 
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+                bindingNavigatorEdit.Enabled = true;
+            }
+            else
+            {
+                bindingNavigatorAddNewItem.Enabled = false;
+                bindingNavigatorEdit.Enabled = false;
+            }
+
+            if (DALPermisoRol.PuedeEliminar(usuarioLogueado.IdRol, 1))
+            {
+                bindingNavigatorDeleteItem.Enabled = true;                
+            }
+            else
+            {
+                bindingNavigatorDeleteItem.Enabled = false;
+            }
+        }
+
+        private void bindingNavigatorEdit_Click(object sender, EventArgs e)
         {
             HabilitarCampos();
         }
@@ -157,6 +194,7 @@ namespace COCOA.Maestras
         {
             this.proveedoresBindingSource.CancelEdit();
             DeshabilitarCampos();
+            VerificaPermisos();
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -187,6 +225,26 @@ namespace COCOA.Maestras
             if (miBusqueda.IDProveedor == 0) return;
             int posicion = proveedoresBindingSource.Find("IDProveedor", miBusqueda.IDProveedor);
             proveedoresBindingSource.Position = posicion;
+        }
+
+        private void nitTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void telefono1TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void telefono2TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }
     }
 }

@@ -59,6 +59,7 @@
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\RegexUtilities.cs" />
+    <Compile Include="Clases\ValidarTextBox.cs" />
     <Compile Include="DSCOCOA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,6 +94,12 @@
     </Compile>
     <Compile Include="Maestras\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmFormulario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmFormulario.Designer.cs">
+      <DependentUpon>frmFormulario.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestras\frmImpoconsumo.cs">
       <SubType>Form</SubType>
@@ -136,11 +143,29 @@
     <Compile Include="Maestras\frmProveedores.Designer.cs">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestras\frmSegmento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmSegmento.Designer.cs">
+      <DependentUpon>frmSegmento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestras\frmTipoProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Maestras\frmTipoProducto.Designer.cs">
       <DependentUpon>frmTipoProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frmCambioClave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frmCambioClave.Designer.cs">
+      <DependentUpon>frmCambioClave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frmCambioUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frmCambioUsuario.Designer.cs">
+      <DependentUpon>frmCambioUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\frmLogin.cs">
       <SubType>Form</SubType>
@@ -150,6 +175,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad\frmPermisoRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frmPermisoRol.Designer.cs">
+      <DependentUpon>frmPermisoRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frmRol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frmRol.Designer.cs">
+      <DependentUpon>frmRol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Busqueda\frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmFormulario.resx">
+      <DependentUpon>frmFormulario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmImpoconsumo.resx">
       <DependentUpon>frmImpoconsumo.cs</DependentUpon>
@@ -192,8 +238,17 @@
     <EmbeddedResource Include="Maestras\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmSegmento.resx">
+      <DependentUpon>frmSegmento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmTipoProducto.resx">
       <DependentUpon>frmTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\frmCambioClave.resx">
+      <DependentUpon>frmCambioClave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\frmCambioUsuario.resx">
+      <DependentUpon>frmCambioUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -207,6 +262,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Seguridad\frmPermisoRol.resx">
+      <DependentUpon>frmPermisoRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\frmRol.resx">
+      <DependentUpon>frmRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DSCOCOA.xsc">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>
     </None>

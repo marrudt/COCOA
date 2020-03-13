@@ -1,10 +1,19 @@
-﻿using System;
+﻿using DAL;
+using System;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
 {
     public partial class frmIntervaloPrecio : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmIntervaloPrecio()
         {
             InitializeComponent();
