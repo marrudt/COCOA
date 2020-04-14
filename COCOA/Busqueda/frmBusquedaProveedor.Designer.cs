@@ -248,7 +248,7 @@
             // 
             this.nombreProveedorToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nombreProveedorToolStripTextBox.Name = "nombreProveedorToolStripTextBox";
-            this.nombreProveedorToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.nombreProveedorToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 
             // nombreContactoToolStripLabel
             // 
@@ -260,7 +260,7 @@
             // 
             this.nombreContactoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nombreContactoToolStripTextBox.Name = "nombreContactoToolStripTextBox";
-            this.nombreContactoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.nombreContactoToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 
             // emailToolStripLabel
             // 
@@ -272,7 +272,7 @@
             // 
             this.emailToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.emailToolStripTextBox.Name = "emailToolStripTextBox";
-            this.emailToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.emailToolStripTextBox.Size = new System.Drawing.Size(150, 25);
             // 
             // buscarToolStripButton
             // 

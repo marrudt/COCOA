@@ -209,11 +209,11 @@ namespace COCOA.Maestras
             DialogResult rta = MessageBox.Show("¿Eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
             if (rta == DialogResult.No) return;
-            //if (DAL.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
-            //{
-            //    MessageBox.Show("No es posible borrar Proveedor, ya tiene movimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (DALOrdenCompra.ProveedorTieneOrdenCompra(Convert.ToInt32(idProveedorTextBox.Text)))
+            {
+                MessageBox.Show("El Proveedor tiene transacciones", "No es posible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             proveedoresBindingSource.RemoveAt(proveedoresBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
         }

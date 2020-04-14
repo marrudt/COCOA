@@ -40,7 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALImpoconsumo.cs" />
+    <Compile Include="DALIVA.cs" />
+    <Compile Include="DALOrdenCompra.cs" />
+    <Compile Include="DALOrdenCompraDetalle.cs" />
     <Compile Include="DALPermisoRol.cs" />
+    <Compile Include="DALProducto.cs" />
     <Compile Include="DALUsuario.cs" />
     <Compile Include="DSCOCOA.cs">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>

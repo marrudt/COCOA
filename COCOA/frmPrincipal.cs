@@ -1,5 +1,6 @@
 ﻿using COCOA.Maestras;
 using COCOA.Seguridad;
+using COCOA.Transacciones;
 using DAL;
 using System;
 using System.Windows.Forms;
@@ -61,6 +62,21 @@ namespace COCOA
 
         private void VerificarPermisos()
         {
+            if (DALPermisoRol.PuedeVer(1, 1))
+            {
+                clientesToolStripMenuItem.Visible = true;
+            }
+            
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 2))
+            {
+                clientesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                clientesToolStripMenuItem.Visible = false;
+            }
+
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 1))
             {
                 proveedoresToolStripMenuItem.Visible = true;
@@ -68,6 +84,196 @@ namespace COCOA
             else
             {
                 proveedoresToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 7))
+            {
+                cilindrajeToolStripMenuItem1.Visible = true;
+                
+            }
+            else
+            {
+                cilindrajeToolStripMenuItem1.Visible = false;
+                
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 8))
+            {
+                claseToolStripMenuItem1.Visible = true;
+                
+            }
+            else
+            {
+                claseToolStripMenuItem1.Visible = false;
+                
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 9))
+            {
+                intervaloDePreciosToolStripMenuItem1.Visible = true;
+                
+            }
+            else
+            {
+                intervaloDePreciosToolStripMenuItem1.Visible = false;
+                
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 10))
+            {
+                númeroDePasajerosToolStripMenuItem1.Visible = true;
+                
+            }
+            else
+            {
+                númeroDePasajerosToolStripMenuItem1.Visible = false;
+                
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 11))
+            {
+                pesoBrutoVehicularToolStripMenuItem1.Visible = true;
+                
+            }
+            else
+            {
+                pesoBrutoVehicularToolStripMenuItem1.Visible = false;
+                
+            }            
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 3))
+            {
+               
+                productosToolStripMenuItem1.Visible = true;
+            }
+            else
+            {
+                
+                productosToolStripMenuItem1.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 12))
+            {
+                segmentoToolStripMenuItem1.Visible = true;
+                
+            }
+            else
+            {
+                segmentoToolStripMenuItem1.Visible = false;
+                
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 13))
+            {
+                tipoProductoToolStripMenuItem1.Visible = true;
+                
+            }
+            else
+            {
+                tipoProductoToolStripMenuItem1.Visible = false;
+                
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 14))
+            {
+                impoconsumoToolStripMenuItem.Visible = true;
+                impuestosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                impoconsumoToolStripMenuItem.Visible = false;
+                impuestosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 15))
+            {
+                iVAToolStripMenuItem1.Visible = true;
+                impuestosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                iVAToolStripMenuItem1.Visible = false;
+                impuestosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 16))
+            {
+                formulariosToolStripMenuItem1.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                formulariosToolStripMenuItem1.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 6))
+            {
+                permisosRolToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                permisosRolToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 5))
+            {
+                rolToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                rolToolStripMenuItem.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 4))
+            {
+                usuariosToolStripMenuItem1.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                usuariosToolStripMenuItem1.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 19))
+            {
+                cambioDeClaveToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                cambioDeClaveToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 20))
+            {
+                cambioDeUsuarioToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                cambioDeUsuarioToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 22))
+            {
+                cotizacionesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                cotizacionesToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 21))
+            {
+                ordenesDeCompraToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                ordenesDeCompraToolStripMenuItem.Visible = false;
             }
         }
 
@@ -169,7 +375,7 @@ namespace COCOA
 
         private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmProducto miForm = new frmProducto();
+            frmProductos miForm = new frmProductos();
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -177,6 +383,20 @@ namespace COCOA
         private void formulariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmFormulario miForm = new frmFormulario();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCotizaciones miForm = new frmCotizaciones();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrdenCompras miForm = new frmOrdenCompras();
             miForm.MdiParent = this;
             miForm.Show();
         }

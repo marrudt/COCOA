@@ -210,7 +210,7 @@
             this.permisoRolBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.permisoRolBindingNavigator.Name = "permisoRolBindingNavigator";
             this.permisoRolBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.permisoRolBindingNavigator.Size = new System.Drawing.Size(551, 31);
+            this.permisoRolBindingNavigator.Size = new System.Drawing.Size(624, 31);
             this.permisoRolBindingNavigator.TabIndex = 0;
             this.permisoRolBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -354,7 +354,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.permisoRolDataGridView.AutoGenerateColumns = false;
-            this.permisoRolDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.permisoRolDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.permisoRolDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.permisoRolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -368,7 +367,7 @@
             this.permisoRolDataGridView.Location = new System.Drawing.Point(0, 131);
             this.permisoRolDataGridView.Name = "permisoRolDataGridView";
             this.permisoRolDataGridView.ReadOnly = true;
-            this.permisoRolDataGridView.Size = new System.Drawing.Size(551, 390);
+            this.permisoRolDataGridView.Size = new System.Drawing.Size(624, 409);
             this.permisoRolDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -390,6 +389,7 @@
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IdRol";
+            this.dataGridViewTextBoxColumn2.Width = 161;
             // 
             // rolBindingSource
             // 
@@ -407,6 +407,7 @@
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "IdFormulario";
+            this.dataGridViewTextBoxColumn3.Width = 160;
             // 
             // formularioBindingSource
             // 
@@ -506,8 +507,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(551, 522);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(624, 541);
             this.Controls.Add(puedeEliminarLabel);
             this.Controls.Add(this.puedeEliminarCheckBox);
             this.Controls.Add(puedeEditarLabel);
@@ -520,8 +520,8 @@
             this.Controls.Add(this.idRolComboBox);
             this.Controls.Add(this.permisoRolDataGridView);
             this.Controls.Add(this.permisoRolBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(670, 1000);
             this.Name = "frmPermisoRol";
             this.Text = "Permisos por Rol";
             this.Load += new System.EventHandler(this.frmPermisoRol_Load);

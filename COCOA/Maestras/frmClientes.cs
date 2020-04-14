@@ -221,6 +221,6 @@ namespace COCOA.Maestras
         private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }
+        }                
     }
 }

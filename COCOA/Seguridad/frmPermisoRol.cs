@@ -24,7 +24,17 @@ namespace COCOA.Seguridad
             if (!ValidarCampos()) return;
             this.Validate();
             this.permisoRolBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
+            try
+            {
+                this.tableAdapterManager.UpdateAll(this.dSCOCOA);
+            }
+            catch (Exception)
+            {
+                errorProvider1.SetError(idRolComboBox,"Permiso ya creado") ;
+                idRolComboBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
             DeshabilitarCampos();
         }
 

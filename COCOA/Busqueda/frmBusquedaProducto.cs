@@ -26,60 +26,23 @@ namespace COCOA.Busqueda
 
         private void frmBusquedaProducto_Load(object sender, EventArgs e)
         {
+            this.intervaloPreciosTableAdapter.Fill(this.dSCOCOA.IntervaloPrecios);
+            this.pesoBrutoVhTableAdapter.Fill(this.dSCOCOA.PesoBrutoVh);
+            this.numeroPasajerosTableAdapter.Fill(this.dSCOCOA.NumeroPasajeros);
+            this.cilindrajesTableAdapter.Fill(this.dSCOCOA.Cilindrajes);
+            this.segmentosTableAdapter.Fill(this.dSCOCOA.Segmentos);
             this.impoconsumoTableAdapter.Fill(this.dSCOCOA.Impoconsumo);
             this.iVATableAdapter.Fill(this.dSCOCOA.IVA);
             this.claseTableAdapter.Fill(this.dSCOCOA.Clase);
             this.tipoProductoTableAdapter.Fill(this.dSCOCOA.TipoProducto);
             this.productosTableAdapter.Fill(this.dSCOCOA.Productos);
-
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            string codigo, descripcionProducto;
-
-            if (contengaRadioButton.Checked == true)
-            {
-                codigo = "%" + codigoToolStripTextBox.Text + "%";
-                descripcionProducto = "%" + descripcionProductoToolStripTextBox.Text + "%";                
-            }
-
-            else if (empiezaRadioButton.Checked == true)
-            {
-                codigo = codigoToolStripTextBox.Text + "%";
-                descripcionProducto = descripcionProductoToolStripTextBox.Text + "%";
-            }
-
-            else if (terminaRadioButton.Checked == true)
-            {
-                codigo = "%" + codigoToolStripTextBox.Text;
-                descripcionProducto = "%" + descripcionProductoToolStripTextBox.Text;
-            }
-
-            else
-            {
-                codigo = codigoToolStripTextBox.Text;
-                descripcionProducto = descripcionProductoToolStripTextBox.Text;
-            }
-
-            try
-            {
-                this.productosTableAdapter.FillBy(this.dSCOCOA.Productos, 
-                    codigo, 
-                    descripcionProducto);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
+        }        
 
         private void borrarFiltrosbutton_Click(object sender, EventArgs e)
         {
-            codigoToolStripTextBox.Text = "";
+            codigoProductoToolStripTextBox.Text = "";
             descripcionProductoToolStripTextBox.Text = "";
-            fillByToolStripButton_Click(sender, e);
+            fillBy2ToolStripButton_Click(sender, e);
         }
 
         private void volverButton_Click(object sender, EventArgs e)
@@ -103,6 +66,47 @@ namespace COCOA.Busqueda
         {
             IdProducto = 0;
             this.Close();
+        }
+
+        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
+        {
+            string codigoProducto, descripcionProducto;
+
+            if (contengaRadioButton.Checked == true)
+            {
+                codigoProducto = "%" + codigoProductoToolStripTextBox.Text + "%";
+                descripcionProducto = "%" + descripcionProductoToolStripTextBox.Text + "%";
+            }
+
+            else if (empiezaRadioButton.Checked == true)
+            {
+                codigoProducto = codigoProductoToolStripTextBox.Text + "%";
+                descripcionProducto = descripcionProductoToolStripTextBox.Text + "%";
+            }
+
+            else if (terminaRadioButton.Checked == true)
+            {
+                codigoProducto = "%" + codigoProductoToolStripTextBox.Text;
+                descripcionProducto = "%" + descripcionProductoToolStripTextBox.Text;
+            }
+
+            else
+            {
+                codigoProducto = codigoProductoToolStripTextBox.Text;
+                descripcionProducto = descripcionProductoToolStripTextBox.Text;
+            }
+
+            try
+            {
+                this.productosTableAdapter.FillBy2(this.dSCOCOA.Productos,
+                    codigoProducto,
+                    descripcionProducto);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

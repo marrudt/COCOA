@@ -628,6 +628,7 @@
             this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;

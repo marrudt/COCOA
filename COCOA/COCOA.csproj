@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -58,8 +59,13 @@
     <Compile Include="Busqueda\frmBusquedaProducto.Designer.cs">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Clases\DetalleOrdenCompra.cs" />
+    <Compile Include="Clases\DetalleCotizacion.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="Clases\ValidarTextBox.cs" />
+    <Compile Include="DSCOCOA.cs">
+      <DependentUpon>DSCOCOA.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DSCOCOA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -131,11 +137,11 @@
     <Compile Include="Maestras\frmPesoBrutoVehicular.Designer.cs">
       <DependentUpon>frmPesoBrutoVehicular.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maestras\frmProducto.cs">
+    <Compile Include="Maestras\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maestras\frmProducto.Designer.cs">
-      <DependentUpon>frmProducto.cs</DependentUpon>
+    <Compile Include="Maestras\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestras\frmProveedores.cs">
       <SubType>Form</SubType>
@@ -193,6 +199,18 @@
     <Compile Include="Seguridad\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transacciones\frmCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\frmCotizaciones.Designer.cs">
+      <DependentUpon>frmCotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\frmOrdenCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\frmOrdenCompras.Designer.cs">
+      <DependentUpon>frmOrdenCompras.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Busqueda\frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,8 +250,8 @@
     <EmbeddedResource Include="Maestras\frmPesoBrutoVehicular.resx">
       <DependentUpon>frmPesoBrutoVehicular.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maestras\frmProducto.resx">
-      <DependentUpon>frmProducto.cs</DependentUpon>
+    <EmbeddedResource Include="Maestras\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmProveedores.resx">
       <DependentUpon>frmProveedores.cs</DependentUpon>
@@ -271,6 +289,12 @@
     <EmbeddedResource Include="Seguridad\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\frmCotizaciones.resx">
+      <DependentUpon>frmCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\frmOrdenCompras.resx">
+      <DependentUpon>frmOrdenCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DSCOCOA.xsc">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>
     </None>
@@ -298,7 +322,6 @@
   <ItemGroup>
     <Folder Include="Listados\" />
     <Folder Include="Reportes\" />
-    <Folder Include="Transacciones\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
