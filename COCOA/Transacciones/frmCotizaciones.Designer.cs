@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.salirButton = new System.Windows.Forms.Button();
             this.borrarTodoButton = new System.Windows.Forms.Button();
             this.borrarLineaButton = new System.Windows.Forms.Button();
@@ -53,10 +53,10 @@
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.contactoTextBox = new System.Windows.Forms.TextBox();
+            this.sitioEntregaTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.plazoEntregatextBox = new System.Windows.Forms.TextBox();
+            this.plazoEntregaTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.formaPagoTextBox = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.totalEstampillasTextBox = new System.Windows.Forms.TextBox();
             this.detalleItemTextBox = new System.Windows.Forms.TextBox();
             this.intervaloPrecioComboBox = new System.Windows.Forms.ComboBox();
             this.intervaloPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -100,7 +101,6 @@
             this.numeroPasajerosTableAdapter = new COCOA.DSCOCOATableAdapters.NumeroPasajerosTableAdapter();
             this.pesoBrutoVhTableAdapter = new COCOA.DSCOCOATableAdapters.PesoBrutoVhTableAdapter();
             this.intervaloPreciosTableAdapter = new COCOA.DSCOCOATableAdapters.IntervaloPreciosTableAdapter();
-            this.totalEstampillasTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCotizacionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
@@ -122,12 +122,13 @@
             this.salirButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.salirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salirButton.ForeColor = System.Drawing.Color.Maroon;
+            this.salirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salirButton.Image = ((System.Drawing.Image)(resources.GetObject("salirButton.Image")));
-            this.salirButton.Location = new System.Drawing.Point(1414, 50);
+            this.salirButton.Location = new System.Drawing.Point(1416, 32);
             this.salirButton.Name = "salirButton";
-            this.salirButton.Size = new System.Drawing.Size(82, 59);
+            this.salirButton.Size = new System.Drawing.Size(82, 77);
             this.salirButton.TabIndex = 8;
+            this.salirButton.Text = "Salir";
             this.salirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.salirButton.UseVisualStyleBackColor = false;
             this.salirButton.Click += new System.EventHandler(this.salirButton_Click);
@@ -140,14 +141,16 @@
             this.borrarTodoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.borrarTodoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrarTodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrarTodoButton.ForeColor = System.Drawing.Color.Maroon;
+            this.borrarTodoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarTodoButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarTodoButton.Image")));
-            this.borrarTodoButton.Location = new System.Drawing.Point(1326, 50);
+            this.borrarTodoButton.Location = new System.Drawing.Point(1328, 32);
             this.borrarTodoButton.Name = "borrarTodoButton";
-            this.borrarTodoButton.Size = new System.Drawing.Size(82, 59);
+            this.borrarTodoButton.Size = new System.Drawing.Size(82, 77);
             this.borrarTodoButton.TabIndex = 7;
+            this.borrarTodoButton.Text = "Borra Todo";
             this.borrarTodoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.borrarTodoButton.UseVisualStyleBackColor = false;
+            this.borrarTodoButton.Click += new System.EventHandler(this.borrarTodoButton_Click);
             // 
             // borrarLineaButton
             // 
@@ -158,14 +161,16 @@
             this.borrarLineaButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.borrarLineaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrarLineaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrarLineaButton.ForeColor = System.Drawing.Color.Maroon;
+            this.borrarLineaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarLineaButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarLineaButton.Image")));
-            this.borrarLineaButton.Location = new System.Drawing.Point(1238, 51);
+            this.borrarLineaButton.Location = new System.Drawing.Point(1231, 32);
             this.borrarLineaButton.Name = "borrarLineaButton";
-            this.borrarLineaButton.Size = new System.Drawing.Size(82, 59);
+            this.borrarLineaButton.Size = new System.Drawing.Size(91, 78);
             this.borrarLineaButton.TabIndex = 6;
+            this.borrarLineaButton.Text = "Borra Línea";
             this.borrarLineaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.borrarLineaButton.UseVisualStyleBackColor = false;
+            this.borrarLineaButton.Click += new System.EventHandler(this.borrarLineaButton_Click);
             // 
             // cancelarButton
             // 
@@ -175,14 +180,16 @@
             this.cancelarButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelarButton.ForeColor = System.Drawing.Color.Maroon;
+            this.cancelarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
-            this.cancelarButton.Location = new System.Drawing.Point(1150, 51);
+            this.cancelarButton.Location = new System.Drawing.Point(1143, 32);
             this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(82, 59);
+            this.cancelarButton.Size = new System.Drawing.Size(82, 78);
             this.cancelarButton.TabIndex = 5;
+            this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cancelarButton.UseVisualStyleBackColor = false;
+            this.cancelarButton.Click += new System.EventHandler(this.cancelarButton_Click);
             // 
             // guardarButton
             // 
@@ -192,15 +199,16 @@
             this.guardarButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.guardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.guardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guardarButton.ForeColor = System.Drawing.Color.Maroon;
+            this.guardarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guardarButton.Image = ((System.Drawing.Image)(resources.GetObject("guardarButton.Image")));
-            this.guardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.guardarButton.Location = new System.Drawing.Point(1062, 51);
+            this.guardarButton.Location = new System.Drawing.Point(1055, 32);
             this.guardarButton.Name = "guardarButton";
-            this.guardarButton.Size = new System.Drawing.Size(82, 59);
+            this.guardarButton.Size = new System.Drawing.Size(82, 78);
             this.guardarButton.TabIndex = 4;
+            this.guardarButton.Text = "Guardar";
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.guardarButton.UseVisualStyleBackColor = false;
+            this.guardarButton.Click += new System.EventHandler(this.guardarButton_Click);
             // 
             // label11
             // 
@@ -303,34 +311,34 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleCotizacionDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.detalleCotizacionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.detalleCotizacionDataGridView.Location = new System.Drawing.Point(0, 236);
             this.detalleCotizacionDataGridView.Name = "detalleCotizacionDataGridView";
             this.detalleCotizacionDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.detalleCotizacionDataGridView.Size = new System.Drawing.Size(1513, 273);
             this.detalleCotizacionDataGridView.TabIndex = 17;
             // 
@@ -342,12 +350,14 @@
             this.agregarButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.agregarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.agregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarButton.ForeColor = System.Drawing.Color.Maroon;
+            this.agregarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarButton.Image")));
-            this.agregarButton.Location = new System.Drawing.Point(973, 51);
+            this.agregarButton.Location = new System.Drawing.Point(967, 32);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Size = new System.Drawing.Size(82, 59);
+            this.agregarButton.Size = new System.Drawing.Size(82, 78);
             this.agregarButton.TabIndex = 3;
+            this.agregarButton.Text = "Agregar";
+            this.agregarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.agregarButton.UseVisualStyleBackColor = false;
             this.agregarButton.Click += new System.EventHandler(this.agregarButton_Click);
             // 
@@ -373,10 +383,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.contactoTextBox);
+            this.groupBox1.Controls.Add(this.sitioEntregaTextBox);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.plazoEntregatextBox);
+            this.groupBox1.Controls.Add(this.plazoEntregaTextBox);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.formaPagoTextBox);
             this.groupBox1.Controls.Add(this.label12);
@@ -389,26 +399,26 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(949, 98);
+            this.groupBox1.Size = new System.Drawing.Size(949, 110);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
             // 
-            // textBox1
+            // contactoTextBox
             // 
-            this.textBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox1.Location = new System.Drawing.Point(66, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(353, 20);
-            this.textBox1.TabIndex = 6;
+            this.contactoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.contactoTextBox.Location = new System.Drawing.Point(66, 70);
+            this.contactoTextBox.Name = "contactoTextBox";
+            this.contactoTextBox.Size = new System.Drawing.Size(353, 20);
+            this.contactoTextBox.TabIndex = 6;
             // 
-            // textBox2
+            // sitioEntregaTextBox
             // 
-            this.textBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox2.Location = new System.Drawing.Point(618, 69);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(301, 20);
-            this.textBox2.TabIndex = 12;
+            this.sitioEntregaTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.sitioEntregaTextBox.Location = new System.Drawing.Point(618, 69);
+            this.sitioEntregaTextBox.Name = "sitioEntregaTextBox";
+            this.sitioEntregaTextBox.Size = new System.Drawing.Size(301, 20);
+            this.sitioEntregaTextBox.TabIndex = 12;
             // 
             // label14
             // 
@@ -419,13 +429,13 @@
             this.label14.TabIndex = 11;
             this.label14.Text = "Sitio Entrega:";
             // 
-            // plazoEntregatextBox
+            // plazoEntregaTextBox
             // 
-            this.plazoEntregatextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.plazoEntregatextBox.Location = new System.Drawing.Point(618, 43);
-            this.plazoEntregatextBox.Name = "plazoEntregatextBox";
-            this.plazoEntregatextBox.Size = new System.Drawing.Size(301, 20);
-            this.plazoEntregatextBox.TabIndex = 10;
+            this.plazoEntregaTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.plazoEntregaTextBox.Location = new System.Drawing.Point(618, 43);
+            this.plazoEntregaTextBox.Name = "plazoEntregaTextBox";
+            this.plazoEntregaTextBox.Size = new System.Drawing.Size(301, 20);
+            this.plazoEntregaTextBox.TabIndex = 10;
             // 
             // label13
             // 
@@ -473,10 +483,11 @@
             this.busquedaClienteButton.TabIndex = 4;
             this.busquedaClienteButton.Text = "Buscar";
             this.busquedaClienteButton.UseVisualStyleBackColor = false;
-            this.busquedaClienteButton.Click += new System.EventHandler(this.busquedaProveedorButton_Click_1);
+            this.busquedaClienteButton.Click += new System.EventHandler(this.busquedaClienteButton_Click);
             // 
             // clienteComboBox
             // 
+            this.clienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clientesBindingSource, "IdCliente", true));
             this.clienteComboBox.DataSource = this.clientesBindingSource;
             this.clienteComboBox.DisplayMember = "NombreCliente";
             this.clienteComboBox.FormattingEnabled = true;
@@ -484,7 +495,7 @@
             this.clienteComboBox.Name = "clienteComboBox";
             this.clienteComboBox.Size = new System.Drawing.Size(353, 21);
             this.clienteComboBox.TabIndex = 3;
-            this.clienteComboBox.ValueMember = "IdProveedor";
+            this.clienteComboBox.ValueMember = "IdCliente";
             // 
             // label3
             // 
@@ -546,6 +557,21 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
+            // 
+            // totalEstampillasTextBox
+            // 
+            this.totalEstampillasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.totalEstampillasTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.totalEstampillasTextBox.Cursor = System.Windows.Forms.Cursors.No;
+            this.totalEstampillasTextBox.Enabled = false;
+            this.totalEstampillasTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalEstampillasTextBox.Location = new System.Drawing.Point(732, 23);
+            this.totalEstampillasTextBox.Name = "totalEstampillasTextBox";
+            this.totalEstampillasTextBox.ReadOnly = true;
+            this.totalEstampillasTextBox.Size = new System.Drawing.Size(125, 20);
+            this.totalEstampillasTextBox.TabIndex = 17;
+            this.totalEstampillasTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.totalEstampillasTextBox.Visible = false;
             // 
             // detalleItemTextBox
             // 
@@ -691,6 +717,7 @@
             this.estampillasTextBox.Name = "estampillasTextBox";
             this.estampillasTextBox.Size = new System.Drawing.Size(67, 20);
             this.estampillasTextBox.TabIndex = 10;
+            this.estampillasTextBox.Text = "0.00";
             // 
             // label15
             // 
@@ -718,6 +745,7 @@
             // 
             this.productoTextBox.Location = new System.Drawing.Point(66, 48);
             this.productoTextBox.Name = "productoTextBox";
+            this.productoTextBox.ReadOnly = true;
             this.productoTextBox.Size = new System.Drawing.Size(41, 20);
             this.productoTextBox.TabIndex = 4;
             this.productoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.productoTextBox_KeyPress_1);
@@ -819,22 +847,9 @@
             // 
             this.intervaloPreciosTableAdapter.ClearBeforeFill = true;
             // 
-            // totalEstampillasTextBox
-            // 
-            this.totalEstampillasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.totalEstampillasTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.totalEstampillasTextBox.Cursor = System.Windows.Forms.Cursors.No;
-            this.totalEstampillasTextBox.Enabled = false;
-            this.totalEstampillasTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalEstampillasTextBox.Location = new System.Drawing.Point(732, 23);
-            this.totalEstampillasTextBox.Name = "totalEstampillasTextBox";
-            this.totalEstampillasTextBox.ReadOnly = true;
-            this.totalEstampillasTextBox.Size = new System.Drawing.Size(125, 20);
-            this.totalEstampillasTextBox.TabIndex = 17;
-            this.totalEstampillasTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // frmCotizaciones
             // 
+            this.AcceptButton = this.agregarButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -916,10 +931,10 @@
         private System.Windows.Forms.TextBox numeroItemTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox contactoTextBox;
+        private System.Windows.Forms.TextBox sitioEntregaTextBox;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox plazoEntregatextBox;
+        private System.Windows.Forms.TextBox plazoEntregaTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox formaPagoTextBox;
         private System.Windows.Forms.Label label12;

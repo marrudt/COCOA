@@ -644,7 +644,7 @@
         private DSCOCOATableAdapters.IVATableAdapter iVATableAdapter;
         private System.Windows.Forms.BindingSource impoconsumoBindingSource;
         private DSCOCOATableAdapters.ImpoconsumoTableAdapter impoconsumoTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
+        //private System.Windows.Forms.DataGridViewTextBoxColumn codigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button borrarFiltrosbutton;
         private System.Windows.Forms.RadioButton igualRadioButton;

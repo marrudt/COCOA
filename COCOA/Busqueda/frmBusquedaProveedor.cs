@@ -111,8 +111,6 @@ namespace COCOA.Maestras
                 IdProveedor = (int)busquedaDataGridView.Rows[0].Cells[0].Value;
             }
             this.Close();
-        }
-
-        
+        }        
     }
 }

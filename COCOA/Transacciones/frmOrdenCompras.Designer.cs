@@ -225,12 +225,14 @@
             this.agregarButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.agregarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.agregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.agregarButton.ForeColor = System.Drawing.Color.Maroon;
+            this.agregarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarButton.Image")));
-            this.agregarButton.Location = new System.Drawing.Point(66, 87);
+            this.agregarButton.Location = new System.Drawing.Point(66, 84);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Size = new System.Drawing.Size(82, 59);
+            this.agregarButton.Size = new System.Drawing.Size(82, 81);
             this.agregarButton.TabIndex = 13;
+            this.agregarButton.Text = "Agregar";
+            this.agregarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.agregarButton.UseVisualStyleBackColor = false;
             this.agregarButton.Click += new System.EventHandler(this.agregarButton_Click_1);
             // 
@@ -244,10 +246,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleOrdenCompraDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.detalleOrdenCompraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 156);
+            this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 170);
             this.detalleOrdenCompraDataGridView.Name = "detalleOrdenCompraDataGridView";
             this.detalleOrdenCompraDataGridView.ReadOnly = true;
-            this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1513, 353);
+            this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1513, 339);
             this.detalleOrdenCompraDataGridView.TabIndex = 29;
             // 
             // precioTextBox
@@ -423,13 +425,13 @@
             this.guardarButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.guardarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.guardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guardarButton.ForeColor = System.Drawing.Color.Maroon;
+            this.guardarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guardarButton.Image = ((System.Drawing.Image)(resources.GetObject("guardarButton.Image")));
-            this.guardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.guardarButton.Location = new System.Drawing.Point(155, 87);
+            this.guardarButton.Location = new System.Drawing.Point(155, 84);
             this.guardarButton.Name = "guardarButton";
-            this.guardarButton.Size = new System.Drawing.Size(82, 59);
+            this.guardarButton.Size = new System.Drawing.Size(82, 81);
             this.guardarButton.TabIndex = 14;
+            this.guardarButton.Text = "Guardar";
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.guardarButton.UseVisualStyleBackColor = false;
             this.guardarButton.Click += new System.EventHandler(this.guardarButton_Click);
@@ -442,12 +444,13 @@
             this.cancelarButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.cancelarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelarButton.ForeColor = System.Drawing.Color.Maroon;
+            this.cancelarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
-            this.cancelarButton.Location = new System.Drawing.Point(243, 87);
+            this.cancelarButton.Location = new System.Drawing.Point(243, 84);
             this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(82, 59);
+            this.cancelarButton.Size = new System.Drawing.Size(82, 81);
             this.cancelarButton.TabIndex = 15;
+            this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.cancelarButton.UseVisualStyleBackColor = false;
             this.cancelarButton.Click += new System.EventHandler(this.cancelarButton_Click);
@@ -460,12 +463,13 @@
             this.borrarTodoButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.borrarTodoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrarTodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrarTodoButton.ForeColor = System.Drawing.Color.Maroon;
+            this.borrarTodoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarTodoButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarTodoButton.Image")));
-            this.borrarTodoButton.Location = new System.Drawing.Point(419, 86);
+            this.borrarTodoButton.Location = new System.Drawing.Point(427, 83);
             this.borrarTodoButton.Name = "borrarTodoButton";
-            this.borrarTodoButton.Size = new System.Drawing.Size(82, 59);
+            this.borrarTodoButton.Size = new System.Drawing.Size(87, 81);
             this.borrarTodoButton.TabIndex = 17;
+            this.borrarTodoButton.Text = "Borrar Todo";
             this.borrarTodoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.borrarTodoButton.UseVisualStyleBackColor = false;
             this.borrarTodoButton.Click += new System.EventHandler(this.borrarTodoButton_Click);
@@ -479,12 +483,13 @@
             this.borrarLineaButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.borrarLineaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.borrarLineaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.borrarLineaButton.ForeColor = System.Drawing.Color.Maroon;
+            this.borrarLineaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarLineaButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarLineaButton.Image")));
-            this.borrarLineaButton.Location = new System.Drawing.Point(331, 87);
+            this.borrarLineaButton.Location = new System.Drawing.Point(331, 84);
             this.borrarLineaButton.Name = "borrarLineaButton";
-            this.borrarLineaButton.Size = new System.Drawing.Size(82, 59);
+            this.borrarLineaButton.Size = new System.Drawing.Size(90, 81);
             this.borrarLineaButton.TabIndex = 16;
+            this.borrarLineaButton.Text = "Borrar Línea";
             this.borrarLineaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.borrarLineaButton.UseVisualStyleBackColor = false;
             this.borrarLineaButton.Click += new System.EventHandler(this.borrarLineaButton_Click);
@@ -497,12 +502,13 @@
             this.salirButton.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.salirButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.salirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salirButton.ForeColor = System.Drawing.Color.Maroon;
+            this.salirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salirButton.Image = ((System.Drawing.Image)(resources.GetObject("salirButton.Image")));
-            this.salirButton.Location = new System.Drawing.Point(507, 86);
+            this.salirButton.Location = new System.Drawing.Point(520, 83);
             this.salirButton.Name = "salirButton";
-            this.salirButton.Size = new System.Drawing.Size(82, 59);
+            this.salirButton.Size = new System.Drawing.Size(82, 81);
             this.salirButton.TabIndex = 18;
+            this.salirButton.Text = "Salir";
             this.salirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.salirButton.UseVisualStyleBackColor = false;
             this.salirButton.Click += new System.EventHandler(this.salirButton_Click);
@@ -544,6 +550,7 @@
             // 
             // frmOrdenCompras
             // 
+            this.AcceptButton = this.agregarButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;

@@ -328,6 +328,19 @@ namespace COCOA.Transacciones
                 misDetalles.RemoveAt(misDetalles.Count - 1);
                 RefrescaGrid();
             }
+            else
+            {
+                int IdProducto = (int)detalleOrdenCompraDataGridView.SelectedRows[0].Cells[0].Value;
+                for (int i = 0; i < misDetalles.Count; i++)
+                {
+                    if (misDetalles[i].IdProducto == IdProducto)
+                    {
+                        misDetalles.RemoveAt(i);
+                        break;
+                    }
+                }                
+            }
+            RefrescaGrid();
         }
 
         private void frmOrdenCompras_FormClosing(object sender, FormClosingEventArgs e)

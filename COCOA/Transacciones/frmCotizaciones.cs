@@ -19,7 +19,7 @@ namespace COCOA.Transacciones
         private DALUsuario usuarioLogueado;
         DALProducto ultimoProducto = null;
 
-        private decimal totalEstampillas = 0;
+        //private decimal totalEstampillas = 0;
         private decimal totalSubtotal = 0;
         private decimal totalIVA = 0;
         private decimal totalImpoconsumo = 0;
@@ -43,7 +43,7 @@ namespace COCOA.Transacciones
             this.numeroPasajerosTableAdapter.Fill(this.dSCOCOA.NumeroPasajeros);
             this.cilindrajesTableAdapter.Fill(this.dSCOCOA.Cilindrajes);
             this.segmentosTableAdapter.Fill(this.dSCOCOA.Segmentos);
-            this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes);
 
             clienteComboBox.SelectedIndex = -1;
             segmentoComboBox.SelectedIndex = -1;
@@ -121,14 +121,14 @@ namespace COCOA.Transacciones
             }
             errorProvider1.Clear();
 
-            if (estampillas <= 0)
-            {
-                errorProvider1.SetError(estampillasTextBox, "el valor de las Estampillas debe ser mayor a cero");
-                return;
-            }
-            errorProvider1.Clear();
+            //if (estampillas <= 0)
+            //{
+            //    errorProvider1.SetError(estampillasTextBox, "el valor de las Estampillas debe ser mayor a cero");
+            //    return;
+            //}
+            //errorProvider1.Clear();
 
-            string detalleNumeroItem = detalleItemTextBox.Text;            
+            string detalleNumeroItem = detalleItemTextBox.Text;
 
             if (detalleItemTextBox.Text == string.Empty)
             {
@@ -153,11 +153,11 @@ namespace COCOA.Transacciones
             miDetalle.PorcentajeIVA = (float)miIVA.Tarifa;
             miDetalle.PorcentajeImpoconsumo = (float)miImpoconsumo.Tarifa;
             miDetalle.Estampillas = estampillas;
-            miDetalle.IdSegmento = ultimoProducto.IdSegmento;
-            miDetalle.IdCilindraje = ultimoProducto.IdCilindraje;
-            miDetalle.IdNumeroPasajeros = ultimoProducto.IdNumeroPasajeros;
-            miDetalle.IdPesoBrutoVh = ultimoProducto.IdPesoBrutoVh;
-            miDetalle.IdIntervaloPrecio = ultimoProducto.IdIntervaloPrecio;
+            //miDetalle.IdSegmento = ultimoProducto.IdSegmento;
+            //miDetalle.IdCilindraje = ultimoProducto.IdCilindraje;
+            //miDetalle.IdNumeroPasajeros = ultimoProducto.IdNumeroPasajeros;
+            //miDetalle.IdPesoBrutoVh = ultimoProducto.IdPesoBrutoVh;
+            //miDetalle.IdIntervaloPrecio = ultimoProducto.IdIntervaloPrecio;
 
             misDetalles.Add(miDetalle);
             RefrescaGrid();
@@ -168,6 +168,8 @@ namespace COCOA.Transacciones
             productoLabel.Text = string.Empty;
             cantidadTextBox.Text = string.Empty;
             precioTextBox.Text = string.Empty;
+            estampillasTextBox.Text = "0.00";
+            totalEstampillasTextBox.Text = string.Empty;
             productoTextBox.Focus();
 
         }
@@ -177,7 +179,7 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.DataSource = null;
             detalleCotizacionDataGridView.DataSource = misDetalles;
 
-            totalEstampillas = 0;
+            //totalEstampillas = 0;
             totalSubtotal = 0;
             totalIVA = 0;
             totalImpoconsumo = 0;
@@ -185,14 +187,14 @@ namespace COCOA.Transacciones
 
             foreach (DetalleCotizacion miDetalle in misDetalles)
             {
-                totalEstampillas += miDetalle.ValorEstampillas;
+                //totalEstampillas += miDetalle.ValorEstampillas;
                 totalSubtotal += miDetalle.Subtotal;
                 totalIVA += miDetalle.ValorIVA;
                 totalImpoconsumo += miDetalle.ValorImpoconsumo;
                 totalNeto += miDetalle.ValorNeto;
             }
 
-            totalEstampillasTextBox.Text = string.Format("{0:C2}", totalEstampillas);
+            //totalEstampillasTextBox.Text = string.Format("{0:C2}", totalEstampillas);
             totalSubtotalTextBox.Text = string.Format("{0:C2}", totalSubtotal);
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
             totalImpoconsumoTextBox.Text = string.Format("{0:C2}", totalImpoconsumo);
@@ -203,6 +205,14 @@ namespace COCOA.Transacciones
 
         private void PersonalizarGrid()
         {
+            detalleCotizacionDataGridView.Columns["DetalleNumeroItem"].Visible = false;
+            detalleCotizacionDataGridView.Columns["DescripcionItem"].Visible = false;
+            //detalleCotizacionDataGridView.Columns["IdSegmento"].Visible = false;
+            //detalleCotizacionDataGridView.Columns["IdCilindraje"].Visible = false;
+            //detalleCotizacionDataGridView.Columns["IdNumeroPasajeros"].Visible = false;
+            //detalleCotizacionDataGridView.Columns["IdPesoBrutoVh"].Visible = false;
+            //detalleCotizacionDataGridView.Columns["IdIntervaloPrecio"].Visible = false;
+
             detalleCotizacionDataGridView.Columns["NumeroItem"].HeaderText = "No.";
             detalleCotizacionDataGridView.Columns["NumeroItem"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["NumeroItem"].Width = 40;
@@ -213,7 +223,7 @@ namespace COCOA.Transacciones
 
             detalleCotizacionDataGridView.Columns["DescripcionProducto"].HeaderText = "Descripción";
             detalleCotizacionDataGridView.Columns["DescripcionProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            detalleCotizacionDataGridView.Columns["DescripcionProducto"].Width = 500;
+            detalleCotizacionDataGridView.Columns["DescripcionProducto"].Width = 420;
 
             detalleCotizacionDataGridView.Columns["Precio"].HeaderText = "Precio Unitario";
             detalleCotizacionDataGridView.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -239,32 +249,38 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.Columns["Estampillas"].HeaderText = "Estampillas";
             detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Estampillas"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["Estampillas"].Width = 150;
+            detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Format = "N2";
+            detalleCotizacionDataGridView.Columns["Estampillas"].Width = 70;
+
+            detalleCotizacionDataGridView.Columns["ValorEstampillas"].HeaderText = "Valor Estampillas";
+            detalleCotizacionDataGridView.Columns["ValorEstampillas"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            detalleCotizacionDataGridView.Columns["ValorEstampillas"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            detalleCotizacionDataGridView.Columns["ValorEstampillas"].DefaultCellStyle.Format = "C2";
+            detalleCotizacionDataGridView.Columns["ValorEstampillas"].Width = 115;
 
             detalleCotizacionDataGridView.Columns["Subtotal"].HeaderText = "Subtotal";
             detalleCotizacionDataGridView.Columns["Subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Subtotal"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Subtotal"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["Subtotal"].Width = 150;
+            detalleCotizacionDataGridView.Columns["Subtotal"].Width = 115;
 
             detalleCotizacionDataGridView.Columns["ValorIVA"].HeaderText = "Valor IVA";
             detalleCotizacionDataGridView.Columns["ValorIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorIVA"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorIVA"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["ValorIVA"].Width = 150;
+            detalleCotizacionDataGridView.Columns["ValorIVA"].Width = 115;
 
             detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].HeaderText = "Valor Impoconsumo";
             detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].Width = 150;
+            detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].Width = 115;
 
             detalleCotizacionDataGridView.Columns["ValorNeto"].HeaderText = "Valor Neto";
             detalleCotizacionDataGridView.Columns["ValorNeto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorNeto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorNeto"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["ValorNeto"].Width = 150;
+            detalleCotizacionDataGridView.Columns["ValorNeto"].Width = 115;
         }
 
         private void productoTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -289,15 +305,7 @@ namespace COCOA.Transacciones
             if (miBusqueda.IDProducto == 0) return;
             productoTextBox.Text = miBusqueda.IDProducto.ToString();
             productoTextBox_Validating_1(sender, new CancelEventArgs());
-        }
-
-        private void busquedaProveedorButton_Click_1(object sender, EventArgs e)
-        {
-            frmBusquedaCliente miBusqueda = new frmBusquedaCliente();
-            miBusqueda.ShowDialog();
-            if (miBusqueda.IDCliente == 0) return;
-            clienteComboBox.SelectedValue = miBusqueda.IDCliente;
-        }
+        }        
 
         private void productoTextBox_Validating_1(object sender, CancelEventArgs e)
         {
@@ -365,6 +373,138 @@ namespace COCOA.Transacciones
         {
             this.Close();
         }
+
+        private void guardarButton_Click(object sender, EventArgs e)
+        {
+            if (formaPagoTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(formaPagoTextBox, "El campo Forma de Pago es obligatorio");
+                formaPagoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (plazoEntregaTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(plazoEntregaTextBox, "El campo Plazo Entrega es obligatorio");
+                plazoEntregaTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (sitioEntregaTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(sitioEntregaTextBox, "El campo Sitio Entrega es obligatorio");
+                sitioEntregaTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (clienteComboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(clienteComboBox, "Seleccione un Cliente");
+                clienteComboBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (misDetalles.Count == 0)
+            {
+                errorProvider1.SetError(productoTextBox, "Ingrese un producto");
+                productoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            DialogResult rta = MessageBox.Show("¿Seguro?", "Grabar registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            if (rta == DialogResult.No) return;
+
+            int IdCliente = (int)clienteComboBox.SelectedValue;
+            DateTime fecha = fechaDateTimePicker.Value;
+            string plazoEntrega = plazoEntregaTextBox.Text;
+            string contacto = contactoTextBox.Text;
+            string formaPago = formaPagoTextBox.Text;
+            string sitioEntrega = sitioEntregaTextBox.Text;
+
+            //Guarda encabezado            
+            int IdCotizacion = DALCotizacion.InsertVenta(fecha, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega);
+
+            //Guarda detalle           
+            foreach (DetalleCotizacion miDetalle in misDetalles)
+            {
+                DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.DescripcionItem,
+                    miDetalle.IdProducto, miDetalle.DescripcionProducto, miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo,
+                    miDetalle.Estampillas);                
+            }
+
+            MessageBox.Show(string.Format("Cotización {0} guardada exitosamente", IdCotizacion), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            totalSubtotal = 0;
+            totalIVA = 0;
+            totalImpoconsumo = 0;
+            totalNeto = 0;
+
+            clienteComboBox.SelectedIndex = -1;
+            misDetalles.Clear();
+            plazoEntregaTextBox.Text = string.Empty;
+            contactoTextBox.Text = string.Empty;
+            formaPagoTextBox.Text = string.Empty;
+            sitioEntregaTextBox.Text = string.Empty;
+            numeroItemTextBox.Text = string.Empty;
+            detalleItemTextBox.Text = string.Empty;
+            RefrescaGrid();
+            clienteComboBox.Focus();
+        }
+
+        private void cancelarButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void borrarLineaButton_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            if (misDetalles.Count == 0) return;
+            if (detalleCotizacionDataGridView.SelectedRows.Count == 0)
+            {
+                misDetalles.RemoveAt(misDetalles.Count - 1);
+                RefrescaGrid();
+            }
+            else
+            {
+                int IDProducto = (int)detalleCotizacionDataGridView.SelectedRows[0].Cells[0].Value;
+                for (int i = 0; i < misDetalles.Count; i++)
+                {
+                    if (misDetalles[i].IdProducto == IDProducto)
+                    {
+                        misDetalles.RemoveAt(i);
+                        break;
+                    }
+                }                
+            }
+            RefrescaGrid();
+        }
+
+        private void borrarTodoButton_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            if (misDetalles.Count == 0) return;
+            DialogResult rta = MessageBox.Show("¿Eliminar todo?", "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+            if (rta == DialogResult.No) return;
+            misDetalles.Clear();
+            RefrescaGrid();
+        }
+
+        private void busquedaClienteButton_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCliente miBusqueda = new frmBusquedaCliente();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDCliente == 0) return;
+            clienteComboBox.SelectedValue = miBusqueda.IDCliente;
+        }                
     }
 
 }

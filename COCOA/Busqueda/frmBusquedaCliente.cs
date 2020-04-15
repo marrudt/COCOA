@@ -26,7 +26,6 @@ namespace COCOA.Busqueda
 
         private void frmBusquedaCliente_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSCOCOA.Clientes' table. You can move, or remove it, as needed.
             this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
 
         }

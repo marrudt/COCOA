@@ -7662,7 +7662,7 @@ namespace COCOA {
                 this.columnIdCotizacionDetalle.Unique = true;
                 this.columnIdCotizacion.AllowDBNull = false;
                 this.columnDetalleNumeroItem.MaxLength = 2147483647;
-                this.columnDescripcionItem.MaxLength = 50;
+                this.columnDescripcionItem.MaxLength = 2147483647;
                 this.columnIdProducto.AllowDBNull = false;
                 this.columnDescripcionProducto.MaxLength = 50;
             }
@@ -11698,7 +11698,7 @@ SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Telefono1, Tele
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Telefono1, Telef" +
@@ -11718,6 +11718,12 @@ and Email LIKE @Email";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreCliente", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "NombreCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NombreContacto", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "NombreContacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Telefono1, \r\nTel" +
+                "efono2, Celular, Email, Notas, Activo \r\nFROM dbo.Clientes\r\nORDER BY NombreClient" +
+                "e";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11774,6 +11780,19 @@ and Email LIKE @Email";
             else {
                 this.Adapter.SelectCommand.Parameters[3].Value = ((string)(Email));
             }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy1(DSCOCOA.ClientesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -19098,14 +19117,12 @@ AND DescripcionProducto LIKE @DescripcionProducto";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[CotizacionDetalle] WHERE (([IdCotizacionDetalle] = @Original_IdCotizacionDetalle) AND ([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_NumeroItem = 1 AND [NumeroItem] IS NULL) OR ([NumeroItem] = @Original_NumeroItem)) AND ((@IsNull_DescripcionItem = 1 AND [DescripcionItem] IS NULL) OR ([DescripcionItem] = @Original_DescripcionItem)) AND ([IdProducto] = @Original_IdProducto) AND ((@IsNull_DescripcionProducto = 1 AND [DescripcionProducto] IS NULL) OR ([DescripcionProducto] = @Original_DescripcionProducto)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_PorcentajeIVA = 1 AND [PorcentajeIVA] IS NULL) OR ([PorcentajeIVA] = @Original_PorcentajeIVA)) AND ((@IsNull_PorcentajeImpoconsumo = 1 AND [PorcentajeImpoconsumo] IS NULL) OR ([PorcentajeImpoconsumo] = @Original_PorcentajeImpoconsumo)) AND ((@IsNull_Estampillas = 1 AND [Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[CotizacionDetalle] WHERE (([IdCotizacionDetalle] = @Original_IdCotizacionDetalle) AND ([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_NumeroItem = 1 AND [NumeroItem] IS NULL) OR ([NumeroItem] = @Original_NumeroItem)) AND ([IdProducto] = @Original_IdProducto) AND ((@IsNull_DescripcionProducto = 1 AND [DescripcionProducto] IS NULL) OR ([DescripcionProducto] = @Original_DescripcionProducto)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_PorcentajeIVA = 1 AND [PorcentajeIVA] IS NULL) OR ([PorcentajeIVA] = @Original_PorcentajeIVA)) AND ((@IsNull_PorcentajeImpoconsumo = 1 AND [PorcentajeImpoconsumo] IS NULL) OR ([PorcentajeImpoconsumo] = @Original_PorcentajeImpoconsumo)) AND ((@IsNull_Estampillas = 1 AND [Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCotizacionDetalle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacionDetalle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescripcionItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionItem", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionItem", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionItem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdProducto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescripcionProducto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionProducto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionProducto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionProducto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -19144,21 +19161,19 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                 "ajeIVA, [PorcentajeImpoconsumo] = @PorcentajeImpoconsumo, [Estampillas] = @Estam" +
                 "pillas WHERE (([IdCotizacionDetalle] = @Original_IdCotizacionDetalle) AND ([IdCo" +
                 "tizacion] = @Original_IdCotizacion) AND ((@IsNull_NumeroItem = 1 AND [NumeroItem" +
-                "] IS NULL) OR ([NumeroItem] = @Original_NumeroItem)) AND ((@IsNull_DescripcionIt" +
-                "em = 1 AND [DescripcionItem] IS NULL) OR ([DescripcionItem] = @Original_Descripc" +
-                "ionItem)) AND ([IdProducto] = @Original_IdProducto) AND ((@IsNull_DescripcionPro" +
-                "ducto = 1 AND [DescripcionProducto] IS NULL) OR ([DescripcionProducto] = @Origin" +
-                "al_DescripcionProducto)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Pre" +
-                "cio] = @Original_Precio)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR " +
-                "([Cantidad] = @Original_Cantidad)) AND ((@IsNull_PorcentajeIVA = 1 AND [Porcenta" +
-                "jeIVA] IS NULL) OR ([PorcentajeIVA] = @Original_PorcentajeIVA)) AND ((@IsNull_Po" +
-                "rcentajeImpoconsumo = 1 AND [PorcentajeImpoconsumo] IS NULL) OR ([PorcentajeImpo" +
-                "consumo] = @Original_PorcentajeImpoconsumo)) AND ((@IsNull_Estampillas = 1 AND [" +
-                "Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)));\r\nSELECT IdCo" +
-                "tizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, I" +
-                "dProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoc" +
-                "onsumo, Estampillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = @IdCotiz" +
-                "acionDetalle)";
+                "] IS NULL) OR ([NumeroItem] = @Original_NumeroItem)) AND ([IdProducto] = @Origin" +
+                "al_IdProducto) AND ((@IsNull_DescripcionProducto = 1 AND [DescripcionProducto] I" +
+                "S NULL) OR ([DescripcionProducto] = @Original_DescripcionProducto)) AND ((@IsNul" +
+                "l_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNu" +
+                "ll_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AN" +
+                "D ((@IsNull_PorcentajeIVA = 1 AND [PorcentajeIVA] IS NULL) OR ([PorcentajeIVA] =" +
+                " @Original_PorcentajeIVA)) AND ((@IsNull_PorcentajeImpoconsumo = 1 AND [Porcenta" +
+                "jeImpoconsumo] IS NULL) OR ([PorcentajeImpoconsumo] = @Original_PorcentajeImpoco" +
+                "nsumo)) AND ((@IsNull_Estampillas = 1 AND [Estampillas] IS NULL) OR ([Estampilla" +
+                "s] = @Original_Estampillas)));\r\nSELECT IdCotizacionDetalle, IdCotizacion, Numero" +
+                "Item, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Preci" +
+                "o, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDe" +
+                "talle WHERE (IdCotizacionDetalle = @IdCotizacionDetalle)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19175,8 +19190,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescripcionItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionItem", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionItem", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionItem", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdProducto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_DescripcionProducto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionProducto", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_DescripcionProducto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionProducto", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -19269,7 +19282,7 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdCotizacionDetalle, int Original_IdCotizacion, global::System.Nullable<int> Original_NumeroItem, string Original_DescripcionItem, int Original_IdProducto, string Original_DescripcionProducto, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<double> Original_Cantidad, global::System.Nullable<double> Original_PorcentajeIVA, global::System.Nullable<double> Original_PorcentajeImpoconsumo, global::System.Nullable<decimal> Original_Estampillas) {
+        public virtual int Delete(int Original_IdCotizacionDetalle, int Original_IdCotizacion, global::System.Nullable<int> Original_NumeroItem, int Original_IdProducto, string Original_DescripcionProducto, global::System.Nullable<decimal> Original_Precio, global::System.Nullable<double> Original_Cantidad, global::System.Nullable<double> Original_PorcentajeIVA, global::System.Nullable<double> Original_PorcentajeImpoconsumo, global::System.Nullable<decimal> Original_Estampillas) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdCotizacionDetalle));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_IdCotizacion));
             if ((Original_NumeroItem.HasValue == true)) {
@@ -19280,62 +19293,54 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Original_DescripcionItem == null)) {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_IdProducto));
+            if ((Original_DescripcionProducto == null)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_DescripcionItem));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_DescripcionProducto));
             }
-            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_IdProducto));
-            if ((Original_DescripcionProducto == null)) {
+            if ((Original_Precio.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((decimal)(Original_Precio.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_DescripcionProducto));
-            }
-            if ((Original_Precio.HasValue == true)) {
+            if ((Original_Cantidad.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((decimal)(Original_Precio.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((double)(Original_Cantidad.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Cantidad.HasValue == true)) {
+            if ((Original_PorcentajeIVA.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((double)(Original_Cantidad.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((double)(Original_PorcentajeIVA.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_PorcentajeIVA.HasValue == true)) {
+            if ((Original_PorcentajeImpoconsumo.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((double)(Original_PorcentajeIVA.Value));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((double)(Original_PorcentajeImpoconsumo.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_PorcentajeImpoconsumo.HasValue == true)) {
+            if ((Original_Estampillas.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((double)(Original_PorcentajeImpoconsumo.Value));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((decimal)(Original_Estampillas.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Estampillas.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((decimal)(Original_Estampillas.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19449,7 +19454,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                     int Original_IdCotizacionDetalle, 
                     int Original_IdCotizacion, 
                     global::System.Nullable<int> Original_NumeroItem, 
-                    string Original_DescripcionItem, 
                     int Original_IdProducto, 
                     string Original_DescripcionProducto, 
                     global::System.Nullable<decimal> Original_Precio, 
@@ -19524,64 +19528,56 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_DescripcionItem == null)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_IdProducto));
+            if ((Original_DescripcionProducto == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_DescripcionItem));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_DescripcionProducto));
             }
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_IdProducto));
-            if ((Original_DescripcionProducto == null)) {
+            if ((Original_Precio.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_Precio.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_DescripcionProducto));
-            }
-            if ((Original_Precio.HasValue == true)) {
+            if ((Original_Cantidad.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((decimal)(Original_Precio.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Original_Cantidad.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((Original_Cantidad.HasValue == true)) {
+            if ((Original_PorcentajeIVA.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(Original_Cantidad.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(Original_PorcentajeIVA.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            if ((Original_PorcentajeIVA.HasValue == true)) {
+            if ((Original_PorcentajeImpoconsumo.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Original_PorcentajeIVA.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Original_PorcentajeImpoconsumo.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((Original_PorcentajeImpoconsumo.HasValue == true)) {
+            if ((Original_Estampillas.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((double)(Original_PorcentajeImpoconsumo.Value));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_Estampillas.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
-            if ((Original_Estampillas.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(Original_Estampillas.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[30].Value = ((int)(IdCotizacionDetalle));
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(IdCotizacionDetalle));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19617,7 +19613,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                     int Original_IdCotizacionDetalle, 
                     int Original_IdCotizacion, 
                     global::System.Nullable<int> Original_NumeroItem, 
-                    string Original_DescripcionItem, 
                     int Original_IdProducto, 
                     string Original_DescripcionProducto, 
                     global::System.Nullable<decimal> Original_Precio, 
@@ -19625,7 +19620,7 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                     global::System.Nullable<double> Original_PorcentajeIVA, 
                     global::System.Nullable<double> Original_PorcentajeImpoconsumo, 
                     global::System.Nullable<decimal> Original_Estampillas) {
-            return this.Update(IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas, Original_IdCotizacionDetalle, Original_IdCotizacion, Original_NumeroItem, Original_DescripcionItem, Original_IdProducto, Original_DescripcionProducto, Original_Precio, Original_Cantidad, Original_PorcentajeIVA, Original_PorcentajeImpoconsumo, Original_Estampillas, Original_IdCotizacionDetalle);
+            return this.Update(IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas, Original_IdCotizacionDetalle, Original_IdCotizacion, Original_NumeroItem, Original_IdProducto, Original_DescripcionProducto, Original_Precio, Original_Cantidad, Original_PorcentajeIVA, Original_PorcentajeImpoconsumo, Original_Estampillas, Original_IdCotizacionDetalle);
         }
     }
     

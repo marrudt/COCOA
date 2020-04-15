@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALCotizacion.cs" />
+    <Compile Include="DALCotizacionDetalle.cs" />
     <Compile Include="DALImpoconsumo.cs" />
     <Compile Include="DALIVA.cs" />
     <Compile Include="DALOrdenCompra.cs" />

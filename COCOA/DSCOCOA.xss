@@ -7,7 +7,7 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="601" ViewPortY="71" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Cilindrajes" ZOrder="36" X="637" Y="52" Height="134" Width="205" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
-    <Shape ID="DesignTable:Clientes" ZOrder="30" X="2053" Y="439" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:Clientes" ZOrder="30" X="2053" Y="439" Height="324" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:Impoconsumo" ZOrder="17" X="1849" Y="28" Height="153" Width="228" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:IntervaloPrecios" ZOrder="32" X="2632" Y="36" Height="134" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:IVA" ZOrder="19" X="1489" Y="360" Height="153" Width="165" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
