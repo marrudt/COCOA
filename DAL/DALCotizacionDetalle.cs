@@ -11,11 +11,11 @@ namespace DAL
     {
         private static CotizacionDetalleTableAdapter adaptador = new CotizacionDetalleTableAdapter();
 
-        public static void InsertCotizacionDetalle(int IdCotizacion, int NumeroItem, string DetalleNumeroItem, string DescripcionItem, int IdProducto, 
+        public static void InsertCotizacionDetalle(int IdCotizacion, int NumeroItem, string DetalleNumeroItem, int IdProducto, 
             string DescripcionProducto, decimal Precio, float Cantidad, float PorcentajeIVA, float PorcentajeImpoconsumo, float Estampillas)
         {
-            adaptador.InsertCotizacionDetalle(IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, 
-                Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, (decimal)Estampillas);
+            adaptador.InsertCotizacionDetalle(IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, 
+                PorcentajeIVA, PorcentajeImpoconsumo, (decimal)Estampillas);
         }
     }
 }

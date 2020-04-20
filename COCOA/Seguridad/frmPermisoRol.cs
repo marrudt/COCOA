@@ -82,8 +82,8 @@ namespace COCOA.Seguridad
 
         private void frmPermisoRol_Load(object sender, EventArgs e)
         {
-            this.formularioTableAdapter.Fill(this.dSCOCOA.Formulario);
-            this.rolTableAdapter.Fill(this.dSCOCOA.Rol);
+            this.formularioTableAdapter.FillBy(this.dSCOCOA.Formulario);
+            this.rolTableAdapter.FillBy(this.dSCOCOA.Rol);
             this.permisoRolTableAdapter.Fill(this.dSCOCOA.PermisoRol);
 
         }

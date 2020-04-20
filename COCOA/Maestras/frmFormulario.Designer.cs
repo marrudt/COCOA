@@ -29,36 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormulario));
             System.Windows.Forms.Label descripcionFormularioLabel;
             System.Windows.Forms.Label activoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormulario));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.formularioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formularioTableAdapter = new COCOA.DSCOCOATableAdapters.FormularioTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.formularioBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.formularioDataGridView = new System.Windows.Forms.DataGridView();
-            this.descripcionFormularioTextBox = new System.Windows.Forms.TextBox();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.descripcionFormularioTextBox = new System.Windows.Forms.TextBox();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             descripcionFormularioLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
@@ -68,6 +68,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.formularioDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // descripcionFormularioLabel
+            // 
+            descripcionFormularioLabel.AutoSize = true;
+            descripcionFormularioLabel.Location = new System.Drawing.Point(12, 44);
+            descripcionFormularioLabel.Name = "descripcionFormularioLabel";
+            descripcionFormularioLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionFormularioLabel.TabIndex = 2;
+            descripcionFormularioLabel.Text = "Descripción:";
+            // 
+            // activoLabel
+            // 
+            activoLabel.AutoSize = true;
+            activoLabel.Location = new System.Drawing.Point(38, 72);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(40, 13);
+            activoLabel.TabIndex = 4;
+            activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
             // 
@@ -143,6 +161,13 @@
             this.formularioBindingNavigator.TabIndex = 0;
             this.formularioBindingNavigator.Text = "bindingNavigator1";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -176,16 +201,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
@@ -208,8 +226,19 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorEdit
+            // 
+            this.bindingNavigatorEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorEdit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEdit.Image")));
+            this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
+            this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorEdit.Text = "toolStripButton1";
+            this.bindingNavigatorEdit.ToolTipText = "Editar";
+            this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -219,6 +248,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Agregar";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
@@ -229,6 +259,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.ToolTipText = "Eliminar";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorSaveItem
@@ -236,10 +267,34 @@
             this.bindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorSaveItem.Enabled = false;
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
-            this.bindingNavigatorSaveItem.Name = "formularioBindingNavigatorSaveItem";
+            this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
             this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorSaveItem.Text = "Save Data";
+            this.bindingNavigatorSaveItem.ToolTipText = "Guardar";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.formularioBindingNavigatorSaveItem_Click);
+            // 
+            // bindingNavigatorCancel
+            // 
+            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorCancel.Enabled = false;
+            this.bindingNavigatorCancel.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancel.Image")));
+            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
+            this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorCancel.Text = "toolStripButton1";
+            this.bindingNavigatorCancel.ToolTipText = "Cancelar";
+            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
+            // 
+            // bindingNavigatorExit
+            // 
+            this.bindingNavigatorExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
+            this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorExit.Name = "bindingNavigatorExit";
+            this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorExit.Text = "toolStripButton4";
+            this.bindingNavigatorExit.ToolTipText = "Salir";
+            this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
             // formularioDataGridView
             // 
@@ -262,50 +317,6 @@
             this.formularioDataGridView.ReadOnly = true;
             this.formularioDataGridView.Size = new System.Drawing.Size(394, 191);
             this.formularioDataGridView.TabIndex = 1;
-            // 
-            // descripcionFormularioLabel
-            // 
-            descripcionFormularioLabel.AutoSize = true;
-            descripcionFormularioLabel.Location = new System.Drawing.Point(12, 44);
-            descripcionFormularioLabel.Name = "descripcionFormularioLabel";
-            descripcionFormularioLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionFormularioLabel.TabIndex = 2;
-            descripcionFormularioLabel.Text = "Descripción:";
-            // 
-            // descripcionFormularioTextBox
-            // 
-            this.descripcionFormularioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formularioBindingSource, "DescripcionFormulario", true));
-            this.descripcionFormularioTextBox.Location = new System.Drawing.Point(84, 41);
-            this.descripcionFormularioTextBox.Name = "descripcionFormularioTextBox";
-            this.descripcionFormularioTextBox.ReadOnly = true;
-            this.descripcionFormularioTextBox.Size = new System.Drawing.Size(278, 20);
-            this.descripcionFormularioTextBox.TabIndex = 3;
-            // 
-            // activoLabel
-            // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(38, 72);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
-            activoLabel.Text = "Activo:";
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.formularioBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(84, 67);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(24, 24);
-            this.activoCheckBox.TabIndex = 5;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -333,38 +344,31 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
-            // bindingNavigatorEdit
+            // descripcionFormularioTextBox
             // 
-            this.bindingNavigatorEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorEdit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEdit.Image")));
-            this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
-            this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorEdit.Text = "toolStripButton1";
-            this.bindingNavigatorEdit.ToolTipText = "Editar";
-            this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
+            this.descripcionFormularioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formularioBindingSource, "DescripcionFormulario", true));
+            this.descripcionFormularioTextBox.Location = new System.Drawing.Point(84, 41);
+            this.descripcionFormularioTextBox.Name = "descripcionFormularioTextBox";
+            this.descripcionFormularioTextBox.ReadOnly = true;
+            this.descripcionFormularioTextBox.Size = new System.Drawing.Size(278, 20);
+            this.descripcionFormularioTextBox.TabIndex = 3;
             // 
-            // bindingNavigatorCancel
+            // activoCheckBox
             // 
-            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorCancel.Enabled = false;
-            this.bindingNavigatorCancel.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancel.Image")));
-            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
-            this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorCancel.Text = "toolStripButton1";
-            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.formularioBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(84, 67);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(24, 24);
+            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
-            // bindingNavigatorExit
+            // errorProvider1
             // 
-            this.bindingNavigatorExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
-            this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorExit.Name = "bindingNavigatorExit";
-            this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorExit.Text = "toolStripButton4";
-            this.bindingNavigatorExit.ToolTipText = "Salir";
-            this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // frmFormulario
             // 

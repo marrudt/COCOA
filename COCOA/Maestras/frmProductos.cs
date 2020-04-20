@@ -1,4 +1,5 @@
 ﻿using COCOA.Busqueda;
+using COCOA.Listados;
 using DAL;
 using System;
 using System.Windows.Forms;
@@ -193,7 +194,7 @@ namespace COCOA.Maestras
             this.iVATableAdapter.Fill(this.dSCOCOA.IVA);
             this.claseTableAdapter.Fill(this.dSCOCOA.Clase);
             this.tipoProductoTableAdapter.Fill(this.dSCOCOA.TipoProducto);
-            this.productosTableAdapter.FillBy(this.dSCOCOA.Productos);           
+            this.productosTableAdapter.FillBy(this.dSCOCOA.Productos);
 
         }
 
@@ -291,6 +292,12 @@ namespace COCOA.Maestras
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void bindingNavigatorPrint_Click(object sender, EventArgs e)
+        {
+            frmListadoProductos miForm = new frmListadoProductos();
+            miForm.ShowDialog();            
         }
     }
 }

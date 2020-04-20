@@ -178,6 +178,28 @@ ORDER BY NombreCliente</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.Clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy2" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, 
+Telefono1, Telefono2, Celular, Email, Notas, Activo 
+FROM dbo.Clientes
+ORDER BY NombreCliente</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.Clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy3" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy3" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="FillBy3">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Telefono1, 
+Telefono2, Celular, Email, Notas, Activo 
+FROM dbo.Clientes
+ORDER BY NombreCliente</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ImpoconsumoTableAdapter" GeneratorDataComponentClassName="ImpoconsumoTableAdapter" Name="Impoconsumo" UserDataComponentName="ImpoconsumoTableAdapter">
@@ -634,7 +656,18 @@ SELECT IdRol, DescripcionRol, Activo FROM Rol WHERE (IdRol = @IdRol)</CommandTex
               <Mapping SourceColumn="DescripcionRol" DataSetColumn="DescripcionRol" />
               <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.Rol" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdRol, DescripcionRol, Activo 
+FROM dbo.Rol
+ORDER BY DescripcionRol</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SegmentosTableAdapter" GeneratorDataComponentClassName="SegmentosTableAdapter" Name="Segmentos" UserDataComponentName="SegmentosTableAdapter">
             <MainSource>
@@ -984,7 +1017,28 @@ SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar F
               <Mapping SourceColumn="PuedeEditar" DataSetColumn="PuedeEditar" />
               <Mapping SourceColumn="PuedeEliminar" DataSetColumn="PuedeEliminar" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.PermisoRol" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar 
+FROM dbo.PermisoRol
+ORDER BY IdRol</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.PermisoRol" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar 
+FROM dbo.PermisoRol
+ORDER BY IdFormulario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FormularioTableAdapter" GeneratorDataComponentClassName="FormularioTableAdapter" Name="Formulario" UserDataComponentName="FormularioTableAdapter">
             <MainSource>
@@ -1038,7 +1092,18 @@ SELECT IdFormulario, DescripcionFormulario, Activo FROM Formulario WHERE (IdForm
               <Mapping SourceColumn="DescripcionFormulario" DataSetColumn="DescripcionFormulario" />
               <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.Formulario" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdFormulario, DescripcionFormulario, Activo 
+FROM dbo.Formulario
+ORDER BY DescripcionFormulario</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenCompraDetalleTableAdapter" GeneratorDataComponentClassName="OrdenCompraDetalleTableAdapter" Name="OrdenCompraDetalle" UserDataComponentName="OrdenCompraDetalleTableAdapter">
             <MainSource>
@@ -1379,13 +1444,12 @@ AND DescripcionProducto LIKE @DescripcionProducto</CommandText>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[CotizacionDetalle] ([IdCotizacion], [NumeroItem], [DetalleNumeroItem], [DescripcionItem], [IdProducto], [DescripcionProducto], [Precio], [Cantidad], [PorcentajeIVA], [PorcentajeImpoconsumo], [Estampillas]) VALUES (@IdCotizacion, @NumeroItem, @DetalleNumeroItem, @DescripcionItem, @IdProducto, @DescripcionProducto, @Precio, @Cantidad, @PorcentajeIVA, @PorcentajeImpoconsumo, @Estampillas);
-SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [dbo].[CotizacionDetalle] ([IdCotizacion], [NumeroItem], [DetalleNumeroItem], [IdProducto], [DescripcionProducto], [Precio], [Cantidad], [PorcentajeIVA], [PorcentajeImpoconsumo], [Estampillas]) VALUES (@IdCotizacion, @NumeroItem, @DetalleNumeroItem, @IdProducto, @DescripcionProducto, @Precio, @Cantidad, @PorcentajeIVA, @PorcentajeImpoconsumo, @Estampillas);
+SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCotizacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NumeroItem" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumeroItem" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DetalleNumeroItem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DetalleNumeroItem" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DescripcionItem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DescripcionItem" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DescripcionProducto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescripcionProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Precio" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1398,19 +1462,18 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM dbo.CotizacionDetalle</CommandText>
+                    <CommandText>SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM dbo.CotizacionDetalle</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[CotizacionDetalle] SET [IdCotizacion] = @IdCotizacion, [NumeroItem] = @NumeroItem, [DetalleNumeroItem] = @DetalleNumeroItem, [DescripcionItem] = @DescripcionItem, [IdProducto] = @IdProducto, [DescripcionProducto] = @DescripcionProducto, [Precio] = @Precio, [Cantidad] = @Cantidad, [PorcentajeIVA] = @PorcentajeIVA, [PorcentajeImpoconsumo] = @PorcentajeImpoconsumo, [Estampillas] = @Estampillas WHERE (([IdCotizacionDetalle] = @Original_IdCotizacionDetalle) AND ([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_NumeroItem = 1 AND [NumeroItem] IS NULL) OR ([NumeroItem] = @Original_NumeroItem)) AND ([IdProducto] = @Original_IdProducto) AND ((@IsNull_DescripcionProducto = 1 AND [DescripcionProducto] IS NULL) OR ([DescripcionProducto] = @Original_DescripcionProducto)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_PorcentajeIVA = 1 AND [PorcentajeIVA] IS NULL) OR ([PorcentajeIVA] = @Original_PorcentajeIVA)) AND ((@IsNull_PorcentajeImpoconsumo = 1 AND [PorcentajeImpoconsumo] IS NULL) OR ([PorcentajeImpoconsumo] = @Original_PorcentajeImpoconsumo)) AND ((@IsNull_Estampillas = 1 AND [Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)));
-SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = @IdCotizacionDetalle)</CommandText>
+                    <CommandText>UPDATE [dbo].[CotizacionDetalle] SET [IdCotizacion] = @IdCotizacion, [NumeroItem] = @NumeroItem, [DetalleNumeroItem] = @DetalleNumeroItem, [IdProducto] = @IdProducto, [DescripcionProducto] = @DescripcionProducto, [Precio] = @Precio, [Cantidad] = @Cantidad, [PorcentajeIVA] = @PorcentajeIVA, [PorcentajeImpoconsumo] = @PorcentajeImpoconsumo, [Estampillas] = @Estampillas WHERE (([IdCotizacionDetalle] = @Original_IdCotizacionDetalle) AND ([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_NumeroItem = 1 AND [NumeroItem] IS NULL) OR ([NumeroItem] = @Original_NumeroItem)) AND ([IdProducto] = @Original_IdProducto) AND ((@IsNull_DescripcionProducto = 1 AND [DescripcionProducto] IS NULL) OR ([DescripcionProducto] = @Original_DescripcionProducto)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_PorcentajeIVA = 1 AND [PorcentajeIVA] IS NULL) OR ([PorcentajeIVA] = @Original_PorcentajeIVA)) AND ((@IsNull_PorcentajeImpoconsumo = 1 AND [PorcentajeImpoconsumo] IS NULL) OR ([PorcentajeImpoconsumo] = @Original_PorcentajeImpoconsumo)) AND ((@IsNull_Estampillas = 1 AND [Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)));
+SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = @IdCotizacionDetalle)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCotizacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NumeroItem" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumeroItem" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DetalleNumeroItem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DetalleNumeroItem" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@DescripcionItem" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="DescripcionItem" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DescripcionProducto" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DescripcionProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Precio" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="Precio" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1446,7 +1509,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
               <Mapping SourceColumn="IdCotizacion" DataSetColumn="IdCotizacion" />
               <Mapping SourceColumn="NumeroItem" DataSetColumn="NumeroItem" />
               <Mapping SourceColumn="DetalleNumeroItem" DataSetColumn="DetalleNumeroItem" />
-              <Mapping SourceColumn="DescripcionItem" DataSetColumn="DescripcionItem" />
               <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
               <Mapping SourceColumn="DescripcionProducto" DataSetColumn="DescripcionProducto" />
               <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
@@ -1456,6 +1518,252 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
               <Mapping SourceColumn="Estampillas" DataSetColumn="Estampillas" />
             </Mappings>
             <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListadoProductosTableAdapter" GeneratorDataComponentClassName="ListadoProductosTableAdapter" Name="ListadoProductos" UserDataComponentName="ListadoProductosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select IdProducto,tp.DescripcionTipoProducto as TipoProducto,CodigoProducto,DescripcionProducto,c.DescripcionClase as Clase,ModeloAno as ModeloAño,Precio,i.DescripcionIVA as IVA,
+im.DescripcionImpoconsumo as Impoconsumo,s.DescripcionSegmento as Segmento, cil.DescripcionCilindraje as Cilindraje, np.NumeroPasajeros, pbv.DescripcionPesoBrutoVh as PesoBrutoVh,
+ipre.DescripcionIntervaloPrecio as IntervaloPrecio,
+case when p.Activo = 1 then 'SI' else 'NO' end as Activo
+from Productos p
+inner join TipoProducto tp on tp.IdTipoProducto = p.IdTipoProducto
+inner join Clase c on c.IdClase = p.IdClase
+inner join IVA i on i.IdIVA = p.IdIVA
+inner join Impoconsumo im on im.IdImpoconsumo = p.IdImpoconsumo
+inner join Segmentos s on s.IdSegmento = p.IdSegmento
+inner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje
+inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
+inner join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh
+inner join IntervaloPrecios ipre on ipre.IdIntervaloPrecio = p.IdIntervaloPrecio</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="TipoProducto" DataSetColumn="TipoProducto" />
+              <Mapping SourceColumn="CodigoProducto" DataSetColumn="CodigoProducto" />
+              <Mapping SourceColumn="DescripcionProducto" DataSetColumn="DescripcionProducto" />
+              <Mapping SourceColumn="Clase" DataSetColumn="Clase" />
+              <Mapping SourceColumn="ModeloAño" DataSetColumn="ModeloAño" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="IVA" DataSetColumn="IVA" />
+              <Mapping SourceColumn="Impoconsumo" DataSetColumn="Impoconsumo" />
+              <Mapping SourceColumn="Segmento" DataSetColumn="Segmento" />
+              <Mapping SourceColumn="Cilindraje" DataSetColumn="Cilindraje" />
+              <Mapping SourceColumn="NumeroPasajeros" DataSetColumn="NumeroPasajeros" />
+              <Mapping SourceColumn="PesoBrutoVh" DataSetColumn="PesoBrutoVh" />
+              <Mapping SourceColumn="IntervaloPrecio" DataSetColumn="IntervaloPrecio" />
+              <Mapping SourceColumn="Activo" DataSetColumn="Activo" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select IdProducto,tp.DescripcionTipoProducto as TipoProducto,CodigoProducto,DescripcionProducto,c.DescripcionClase as Clase,ModeloAno as ModeloAño,Precio,i.DescripcionIVA as IVA,
+im.DescripcionImpoconsumo as Impoconsumo,s.DescripcionSegmento as Segmento, cil.DescripcionCilindraje as Cilindraje, np.NumeroPasajeros, pbv.DescripcionPesoBrutoVh as PesoBrutoVh,
+ipre.DescripcionIntervaloPrecio as IntervaloPrecio,
+case when p.Activo = 1 then 'SI' else 'NO' end as Activo
+from Productos p
+inner join TipoProducto tp on tp.IdTipoProducto = p.IdTipoProducto
+inner join Clase c on c.IdClase = p.IdClase
+inner join IVA i on i.IdIVA = p.IdIVA
+inner join Impoconsumo im on im.IdImpoconsumo = p.IdImpoconsumo
+inner join Segmentos s on s.IdSegmento = p.IdSegmento
+inner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje
+inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
+inner join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh
+inner join IntervaloPrecios ipre on ipre.IdIntervaloPrecio = p.IdIntervaloPrecio
+WHERE p.IdTipoProducto = @IdTipoProducto</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdTipoProducto" ColumnName="IdTipoProducto" DataSourceName="COCOA.dbo.Productos" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdTipoProducto" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdTipoProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReporteCotizacionTableAdapter" GeneratorDataComponentClassName="ReporteCotizacionTableAdapter" Name="ReporteCotizacion" UserDataComponentName="ReporteCotizacionTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago, c.PlazoEntrega,c.SitioEntrega, cd.Precio * Estampillas / 100 AS ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select *,Subtotal * PorcentajeIVA / 100 as IVA,Subtotal * PorcentajeImpoconsumo / 100 as Impoconsumo
+from
+(
+select c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto,
+p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago,
+c.PlazoEntrega,c.SitioEntrega,
+cd.Precio * Estampillas / 100 as ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,
+(cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) as Subtotal 
+from 
+Cotizacion c
+inner join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
+inner join Clientes cli on cli.IdCliente = c.IdCliente
+inner join Productos p on p.IdProducto = cd.IdProducto
+inner join TipoProducto tp on tp.IdTipoProducto = p.IdTipoProducto
+inner join Segmentos s on s.IdSegmento = p.IdSegmento
+inner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje 
+inner join IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio
+inner join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh
+inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
+)a</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdCotizacion" DataSetColumn="IdCotizacion" />
+              <Mapping SourceColumn="NombreCliente" DataSetColumn="NombreCliente" />
+              <Mapping SourceColumn="Contacto" DataSetColumn="Contacto" />
+              <Mapping SourceColumn="NumeroItem" DataSetColumn="NumeroItem" />
+              <Mapping SourceColumn="DetalleNumeroItem" DataSetColumn="DetalleNumeroItem" />
+              <Mapping SourceColumn="DescripcionTipoProducto" DataSetColumn="DescripcionTipoProducto" />
+              <Mapping SourceColumn="DescripcionProducto" DataSetColumn="DescripcionProducto" />
+              <Mapping SourceColumn="DetalleProducto" DataSetColumn="DetalleProducto" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Estampillas" DataSetColumn="Estampillas" />
+              <Mapping SourceColumn="DescripcionSegmento" DataSetColumn="DescripcionSegmento" />
+              <Mapping SourceColumn="DescripcionCilindraje" DataSetColumn="DescripcionCilindraje" />
+              <Mapping SourceColumn="DescripcionIntervaloPrecio" DataSetColumn="DescripcionIntervaloPrecio" />
+              <Mapping SourceColumn="DescripcionPesoBrutoVh" DataSetColumn="DescripcionPesoBrutoVh" />
+              <Mapping SourceColumn="NumeroPasajeros" DataSetColumn="NumeroPasajeros" />
+              <Mapping SourceColumn="FormaPago" DataSetColumn="FormaPago" />
+              <Mapping SourceColumn="PlazoEntrega" DataSetColumn="PlazoEntrega" />
+              <Mapping SourceColumn="SitioEntrega" DataSetColumn="SitioEntrega" />
+              <Mapping SourceColumn="ValorEstampillas" DataSetColumn="ValorEstampillas" />
+              <Mapping SourceColumn="PorcentajeIVA" DataSetColumn="PorcentajeIVA" />
+              <Mapping SourceColumn="PorcentajeImpoconsumo" DataSetColumn="PorcentajeImpoconsumo" />
+              <Mapping SourceColumn="Subtotal" DataSetColumn="Subtotal" />
+              <Mapping SourceColumn="IVA" DataSetColumn="IVA" />
+              <Mapping SourceColumn="Impoconsumo" DataSetColumn="Impoconsumo" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="IdCliente" DataSetColumn="IdCliente" />
+              <Mapping SourceColumn="IdCotizacionDetalle" DataSetColumn="IdCotizacionDetalle" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="IdTipoProducto" DataSetColumn="IdTipoProducto" />
+              <Mapping SourceColumn="IdSegmento" DataSetColumn="IdSegmento" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago, c.PlazoEntrega,c.SitioEntrega, cd.Precio * Estampillas / 100 AS ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdCliente" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCliente" GeneratorSourceName="FillByIdCliente" GetMethodModifier="Public" GetMethodName="GetDataByIdCliente" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCliente" UserSourceName="FillByIdCliente">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select *,Subtotal * PorcentajeIVA / 100 as IVA,Subtotal * PorcentajeImpoconsumo / 100 as Impoconsumo
+from
+(
+select c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto,
+p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago,
+c.PlazoEntrega,c.SitioEntrega,
+cd.Precio * Estampillas / 100 as ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,
+(cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) as Subtotal 
+from 
+Cotizacion c
+inner join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
+inner join Clientes cli on cli.IdCliente = c.IdCliente
+inner join Productos p on p.IdProducto = cd.IdProducto
+inner join TipoProducto tp on tp.IdTipoProducto = p.IdTipoProducto
+inner join Segmentos s on s.IdSegmento = p.IdSegmento
+inner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje 
+inner join IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio
+inner join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh
+inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
+)a
+where IdCliente = @IdCliente</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCliente" ColumnName="IdCliente" DataSourceName="SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago, c.PlazoEntrega,c.SitioEntrega, cd.Precio * Estampillas / 100 AS ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" Scale="0" Size="4" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago, c.PlazoEntrega,c.SitioEntrega, cd.Precio * Estampillas / 100 AS ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdCotizacion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCotizacion" GeneratorSourceName="FillByIdCotizacion" GetMethodModifier="Public" GetMethodName="GetDataByIdCotizacion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCotizacion" UserSourceName="FillByIdCotizacion">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select *,Subtotal * PorcentajeIVA / 100 as IVA,Subtotal * PorcentajeImpoconsumo / 100 as Impoconsumo
+from
+(
+select c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto,
+p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago,
+c.PlazoEntrega,c.SitioEntrega,
+cd.Precio * Estampillas / 100 as ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,
+(cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) as Subtotal 
+from 
+Cotizacion c
+inner join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
+inner join Clientes cli on cli.IdCliente = c.IdCliente
+inner join Productos p on p.IdProducto = cd.IdProducto
+inner join TipoProducto tp on tp.IdTipoProducto = p.IdTipoProducto
+inner join Segmentos s on s.IdSegmento = p.IdSegmento
+inner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje 
+inner join IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio
+inner join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh
+inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
+)a
+where IdCotizacion = @IdCotizacion</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCotizacion" ColumnName="IdCotizacion" DataSourceName="SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.DescripcionTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Estampillas,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,c.FormaPago, c.PlazoEntrega,c.SitioEntrega, cd.Precio * Estampillas / 100 AS ValorEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) / (1 + (PorcentajeIVA / 100 + PorcentajeImpoconsumo / 100)) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCotizacion" Precision="0" Scale="0" Size="4" SourceColumn="IdCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ListadoCotizacionesTableAdapter" GeneratorDataComponentClassName="ListadoCotizacionesTableAdapter" Name="ListadoCotizaciones" UserDataComponentName="ListadoCotizacionesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select Fecha,c.IdCotizacion as Numero,c.IdCliente,cli.Nit as NitCliente,cli.NombreCliente,Contacto,FormaPago,PlazoEntrega,SitioEntrega,IdCotizacionDetalle,cd.IdProducto,p.CodigoProducto, cd.DescripcionProducto,cd.Precio,Cantidad,(cd.Precio*Estampillas)/100 as ValorEstapillas
+from 
+cotizacion c
+left join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
+left join Clientes cli on cli.IdCliente = c.IdCliente
+left join Productos p on p.IdProducto = cd.IdProducto</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="Numero" DataSetColumn="Numero" />
+              <Mapping SourceColumn="IdCliente" DataSetColumn="IdCliente" />
+              <Mapping SourceColumn="NitCliente" DataSetColumn="NitCliente" />
+              <Mapping SourceColumn="NombreCliente" DataSetColumn="NombreCliente" />
+              <Mapping SourceColumn="Contacto" DataSetColumn="Contacto" />
+              <Mapping SourceColumn="FormaPago" DataSetColumn="FormaPago" />
+              <Mapping SourceColumn="PlazoEntrega" DataSetColumn="PlazoEntrega" />
+              <Mapping SourceColumn="SitioEntrega" DataSetColumn="SitioEntrega" />
+              <Mapping SourceColumn="IdCotizacionDetalle" DataSetColumn="IdCotizacionDetalle" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="CodigoProducto" DataSetColumn="CodigoProducto" />
+              <Mapping SourceColumn="DescripcionProducto" DataSetColumn="DescripcionProducto" />
+              <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
+              <Mapping SourceColumn="Cantidad" DataSetColumn="Cantidad" />
+              <Mapping SourceColumn="ValorEstapillas" DataSetColumn="ValorEstapillas" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select Fecha,c.IdCotizacion as Numero,c.IdCliente,cli.Nit as NitCliente,cli.NombreCliente,Contacto,FormaPago,PlazoEntrega,SitioEntrega,IdCotizacionDetalle,cd.IdProducto,p.CodigoProducto, cd.DescripcionProducto,cd.Precio,Cantidad,(cd.Precio*Estampillas)/100 as ValorEstapillas
+from 
+cotizacion c
+left join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
+left join Clientes cli on cli.IdCliente = c.IdCliente
+left join Productos p on p.IdProducto = cd.IdProducto
+WHERE c.IdCliente = @IdCliente</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="IdCliente" ColumnName="IdCliente" DataSourceName="COCOA.dbo.Cotizacion" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
         </Tables>
         <Sources />
@@ -1947,20 +2255,13 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CotizacionDetalle" msprop:Generator_TableClassName="CotizacionDetalleDataTable" msprop:Generator_TableVarName="tableCotizacionDetalle" msprop:Generator_TablePropName="CotizacionDetalle" msprop:Generator_RowDeletingName="CotizacionDetalleRowDeleting" msprop:Generator_RowChangingName="CotizacionDetalleRowChanging" msprop:Generator_RowEvHandlerName="CotizacionDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="CotizacionDetalleRowDeleted" msprop:Generator_UserTableName="CotizacionDetalle" msprop:Generator_RowChangedName="CotizacionDetalleRowChanged" msprop:Generator_RowEvArgName="CotizacionDetalleRowChangeEvent" msprop:Generator_RowClassName="CotizacionDetalleRow">
+        <xs:element name="CotizacionDetalle" msprop:Generator_TableClassName="CotizacionDetalleDataTable" msprop:Generator_TableVarName="tableCotizacionDetalle" msprop:Generator_RowChangedName="CotizacionDetalleRowChanged" msprop:Generator_TablePropName="CotizacionDetalle" msprop:Generator_RowDeletingName="CotizacionDetalleRowDeleting" msprop:Generator_RowChangingName="CotizacionDetalleRowChanging" msprop:Generator_RowEvHandlerName="CotizacionDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="CotizacionDetalleRowDeleted" msprop:Generator_RowClassName="CotizacionDetalleRow" msprop:Generator_UserTableName="CotizacionDetalle" msprop:Generator_RowEvArgName="CotizacionDetalleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdCotizacionDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCotizacionDetalle" msprop:Generator_ColumnPropNameInRow="IdCotizacionDetalle" msprop:Generator_ColumnPropNameInTable="IdCotizacionDetalleColumn" msprop:Generator_UserColumnName="IdCotizacionDetalle" type="xs:int" />
               <xs:element name="IdCotizacion" msprop:Generator_ColumnVarNameInTable="columnIdCotizacion" msprop:Generator_ColumnPropNameInRow="IdCotizacion" msprop:Generator_ColumnPropNameInTable="IdCotizacionColumn" msprop:Generator_UserColumnName="IdCotizacion" type="xs:int" />
               <xs:element name="NumeroItem" msprop:Generator_ColumnVarNameInTable="columnNumeroItem" msprop:Generator_ColumnPropNameInRow="NumeroItem" msprop:Generator_ColumnPropNameInTable="NumeroItemColumn" msprop:Generator_UserColumnName="NumeroItem" type="xs:int" minOccurs="0" />
               <xs:element name="DetalleNumeroItem" msprop:Generator_ColumnVarNameInTable="columnDetalleNumeroItem" msprop:Generator_ColumnPropNameInRow="DetalleNumeroItem" msprop:Generator_ColumnPropNameInTable="DetalleNumeroItemColumn" msprop:Generator_UserColumnName="DetalleNumeroItem" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="DescripcionItem" msprop:Generator_ColumnVarNameInTable="columnDescripcionItem" msprop:Generator_ColumnPropNameInRow="DescripcionItem" msprop:Generator_ColumnPropNameInTable="DescripcionItemColumn" msprop:Generator_UserColumnName="DescripcionItem" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
@@ -1980,6 +2281,295 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
               <xs:element name="PorcentajeIVA" msprop:Generator_ColumnVarNameInTable="columnPorcentajeIVA" msprop:Generator_ColumnPropNameInRow="PorcentajeIVA" msprop:Generator_ColumnPropNameInTable="PorcentajeIVAColumn" msprop:Generator_UserColumnName="PorcentajeIVA" type="xs:double" minOccurs="0" />
               <xs:element name="PorcentajeImpoconsumo" msprop:Generator_ColumnVarNameInTable="columnPorcentajeImpoconsumo" msprop:Generator_ColumnPropNameInRow="PorcentajeImpoconsumo" msprop:Generator_ColumnPropNameInTable="PorcentajeImpoconsumoColumn" msprop:Generator_UserColumnName="PorcentajeImpoconsumo" type="xs:double" minOccurs="0" />
               <xs:element name="Estampillas" msprop:Generator_ColumnVarNameInTable="columnEstampillas" msprop:Generator_ColumnPropNameInRow="Estampillas" msprop:Generator_ColumnPropNameInTable="EstampillasColumn" msprop:Generator_UserColumnName="Estampillas" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListadoProductos" msprop:Generator_TableClassName="ListadoProductosDataTable" msprop:Generator_TableVarName="tableListadoProductos" msprop:Generator_RowChangedName="ListadoProductosRowChanged" msprop:Generator_TablePropName="ListadoProductos" msprop:Generator_RowDeletingName="ListadoProductosRowDeleting" msprop:Generator_RowChangingName="ListadoProductosRowChanging" msprop:Generator_RowEvHandlerName="ListadoProductosRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoProductosRowDeleted" msprop:Generator_RowClassName="ListadoProductosRow" msprop:Generator_UserTableName="ListadoProductos" msprop:Generator_RowEvArgName="ListadoProductosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
+              <xs:element name="TipoProducto" msprop:Generator_ColumnVarNameInTable="columnTipoProducto" msprop:Generator_ColumnPropNameInRow="TipoProducto" msprop:Generator_ColumnPropNameInTable="TipoProductoColumn" msprop:Generator_UserColumnName="TipoProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CodigoProducto" msprop:Generator_ColumnVarNameInTable="columnCodigoProducto" msprop:Generator_ColumnPropNameInRow="CodigoProducto" msprop:Generator_ColumnPropNameInTable="CodigoProductoColumn" msprop:Generator_UserColumnName="CodigoProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionProducto" msprop:Generator_ColumnVarNameInTable="columnDescripcionProducto" msprop:Generator_ColumnPropNameInRow="DescripcionProducto" msprop:Generator_ColumnPropNameInTable="DescripcionProductoColumn" msprop:Generator_UserColumnName="DescripcionProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Clase" msprop:Generator_ColumnVarNameInTable="columnClase" msprop:Generator_ColumnPropNameInRow="Clase" msprop:Generator_ColumnPropNameInTable="ClaseColumn" msprop:Generator_UserColumnName="Clase">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ModeloAño" msprop:Generator_ColumnVarNameInTable="columnModeloAño" msprop:Generator_ColumnPropNameInRow="ModeloAño" msprop:Generator_ColumnPropNameInTable="ModeloAñoColumn" msprop:Generator_UserColumnName="ModeloAño">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
+              <xs:element name="IVA" msprop:Generator_ColumnVarNameInTable="columnIVA" msprop:Generator_ColumnPropNameInRow="IVA" msprop:Generator_ColumnPropNameInTable="IVAColumn" msprop:Generator_UserColumnName="IVA">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Impoconsumo" msprop:Generator_ColumnVarNameInTable="columnImpoconsumo" msprop:Generator_ColumnPropNameInRow="Impoconsumo" msprop:Generator_ColumnPropNameInTable="ImpoconsumoColumn" msprop:Generator_UserColumnName="Impoconsumo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Segmento" msprop:Generator_ColumnVarNameInTable="columnSegmento" msprop:Generator_ColumnPropNameInRow="Segmento" msprop:Generator_ColumnPropNameInTable="SegmentoColumn" msprop:Generator_UserColumnName="Segmento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Cilindraje" msprop:Generator_ColumnVarNameInTable="columnCilindraje" msprop:Generator_ColumnPropNameInRow="Cilindraje" msprop:Generator_ColumnPropNameInTable="CilindrajeColumn" msprop:Generator_UserColumnName="Cilindraje">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroPasajeros" msprop:Generator_ColumnVarNameInTable="columnNumeroPasajeros" msprop:Generator_ColumnPropNameInRow="NumeroPasajeros" msprop:Generator_ColumnPropNameInTable="NumeroPasajerosColumn" msprop:Generator_UserColumnName="NumeroPasajeros">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PesoBrutoVh" msprop:Generator_ColumnVarNameInTable="columnPesoBrutoVh" msprop:Generator_ColumnPropNameInRow="PesoBrutoVh" msprop:Generator_ColumnPropNameInTable="PesoBrutoVhColumn" msprop:Generator_UserColumnName="PesoBrutoVh">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IntervaloPrecio" msprop:Generator_ColumnVarNameInTable="columnIntervaloPrecio" msprop:Generator_ColumnPropNameInRow="IntervaloPrecio" msprop:Generator_ColumnPropNameInTable="IntervaloPrecioColumn" msprop:Generator_UserColumnName="IntervaloPrecio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Activo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnActivo" msprop:Generator_ColumnPropNameInRow="Activo" msprop:Generator_ColumnPropNameInTable="ActivoColumn" msprop:Generator_UserColumnName="Activo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReporteCotizacion" msprop:Generator_TableClassName="ReporteCotizacionDataTable" msprop:Generator_TableVarName="tableReporteCotizacion" msprop:Generator_RowChangedName="ReporteCotizacionRowChanged" msprop:Generator_TablePropName="ReporteCotizacion" msprop:Generator_RowDeletingName="ReporteCotizacionRowDeleting" msprop:Generator_RowChangingName="ReporteCotizacionRowChanging" msprop:Generator_RowEvHandlerName="ReporteCotizacionRowChangeEventHandler" msprop:Generator_RowDeletedName="ReporteCotizacionRowDeleted" msprop:Generator_RowClassName="ReporteCotizacionRow" msprop:Generator_UserTableName="ReporteCotizacion" msprop:Generator_RowEvArgName="ReporteCotizacionRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdCotizacion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCotizacion" msprop:Generator_ColumnPropNameInRow="IdCotizacion" msprop:Generator_ColumnPropNameInTable="IdCotizacionColumn" msprop:Generator_UserColumnName="IdCotizacion" type="xs:int" />
+              <xs:element name="NombreCliente" msprop:Generator_ColumnVarNameInTable="columnNombreCliente" msprop:Generator_ColumnPropNameInRow="NombreCliente" msprop:Generator_ColumnPropNameInTable="NombreClienteColumn" msprop:Generator_UserColumnName="NombreCliente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contacto" msprop:Generator_ColumnVarNameInTable="columnContacto" msprop:Generator_ColumnPropNameInRow="Contacto" msprop:Generator_ColumnPropNameInTable="ContactoColumn" msprop:Generator_UserColumnName="Contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroItem" msprop:Generator_ColumnVarNameInTable="columnNumeroItem" msprop:Generator_ColumnPropNameInRow="NumeroItem" msprop:Generator_ColumnPropNameInTable="NumeroItemColumn" msprop:Generator_UserColumnName="NumeroItem" type="xs:int" minOccurs="0" />
+              <xs:element name="DetalleNumeroItem" msprop:Generator_ColumnVarNameInTable="columnDetalleNumeroItem" msprop:Generator_ColumnPropNameInRow="DetalleNumeroItem" msprop:Generator_ColumnPropNameInTable="DetalleNumeroItemColumn" msprop:Generator_UserColumnName="DetalleNumeroItem" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionTipoProducto" msprop:Generator_ColumnVarNameInTable="columnDescripcionTipoProducto" msprop:Generator_ColumnPropNameInRow="DescripcionTipoProducto" msprop:Generator_ColumnPropNameInTable="DescripcionTipoProductoColumn" msprop:Generator_UserColumnName="DescripcionTipoProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionProducto" msprop:Generator_ColumnVarNameInTable="columnDescripcionProducto" msprop:Generator_ColumnPropNameInRow="DescripcionProducto" msprop:Generator_ColumnPropNameInTable="DescripcionProductoColumn" msprop:Generator_UserColumnName="DescripcionProducto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DetalleProducto" msprop:Generator_ColumnVarNameInTable="columnDetalleProducto" msprop:Generator_ColumnPropNameInRow="DetalleProducto" msprop:Generator_ColumnPropNameInTable="DetalleProductoColumn" msprop:Generator_UserColumnName="DetalleProducto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
+              <xs:element name="Estampillas" msprop:Generator_ColumnVarNameInTable="columnEstampillas" msprop:Generator_ColumnPropNameInRow="Estampillas" msprop:Generator_ColumnPropNameInTable="EstampillasColumn" msprop:Generator_UserColumnName="Estampillas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DescripcionSegmento" msprop:Generator_ColumnVarNameInTable="columnDescripcionSegmento" msprop:Generator_ColumnPropNameInRow="DescripcionSegmento" msprop:Generator_ColumnPropNameInTable="DescripcionSegmentoColumn" msprop:Generator_UserColumnName="DescripcionSegmento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionCilindraje" msprop:Generator_ColumnVarNameInTable="columnDescripcionCilindraje" msprop:Generator_ColumnPropNameInRow="DescripcionCilindraje" msprop:Generator_ColumnPropNameInTable="DescripcionCilindrajeColumn" msprop:Generator_UserColumnName="DescripcionCilindraje">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionIntervaloPrecio" msprop:Generator_ColumnVarNameInTable="columnDescripcionIntervaloPrecio" msprop:Generator_ColumnPropNameInRow="DescripcionIntervaloPrecio" msprop:Generator_ColumnPropNameInTable="DescripcionIntervaloPrecioColumn" msprop:Generator_UserColumnName="DescripcionIntervaloPrecio">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionPesoBrutoVh" msprop:Generator_ColumnVarNameInTable="columnDescripcionPesoBrutoVh" msprop:Generator_ColumnPropNameInRow="DescripcionPesoBrutoVh" msprop:Generator_ColumnPropNameInTable="DescripcionPesoBrutoVhColumn" msprop:Generator_UserColumnName="DescripcionPesoBrutoVh">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NumeroPasajeros" msprop:Generator_ColumnVarNameInTable="columnNumeroPasajeros" msprop:Generator_ColumnPropNameInRow="NumeroPasajeros" msprop:Generator_ColumnPropNameInTable="NumeroPasajerosColumn" msprop:Generator_UserColumnName="NumeroPasajeros">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormaPago" msprop:Generator_ColumnVarNameInTable="columnFormaPago" msprop:Generator_ColumnPropNameInRow="FormaPago" msprop:Generator_ColumnPropNameInTable="FormaPagoColumn" msprop:Generator_UserColumnName="FormaPago" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlazoEntrega" msprop:Generator_ColumnVarNameInTable="columnPlazoEntrega" msprop:Generator_ColumnPropNameInRow="PlazoEntrega" msprop:Generator_ColumnPropNameInTable="PlazoEntregaColumn" msprop:Generator_UserColumnName="PlazoEntrega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SitioEntrega" msprop:Generator_ColumnVarNameInTable="columnSitioEntrega" msprop:Generator_ColumnPropNameInRow="SitioEntrega" msprop:Generator_ColumnPropNameInTable="SitioEntregaColumn" msprop:Generator_UserColumnName="SitioEntrega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ValorEstampillas" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorEstampillas" msprop:Generator_ColumnPropNameInRow="ValorEstampillas" msprop:Generator_ColumnPropNameInTable="ValorEstampillasColumn" msprop:Generator_UserColumnName="ValorEstampillas" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PorcentajeIVA" msprop:Generator_ColumnVarNameInTable="columnPorcentajeIVA" msprop:Generator_ColumnPropNameInRow="PorcentajeIVA" msprop:Generator_ColumnPropNameInTable="PorcentajeIVAColumn" msprop:Generator_UserColumnName="PorcentajeIVA" type="xs:double" minOccurs="0" />
+              <xs:element name="PorcentajeImpoconsumo" msprop:Generator_ColumnVarNameInTable="columnPorcentajeImpoconsumo" msprop:Generator_ColumnPropNameInRow="PorcentajeImpoconsumo" msprop:Generator_ColumnPropNameInTable="PorcentajeImpoconsumoColumn" msprop:Generator_UserColumnName="PorcentajeImpoconsumo" type="xs:double" minOccurs="0" />
+              <xs:element name="Subtotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSubtotal" msprop:Generator_ColumnPropNameInRow="Subtotal" msprop:Generator_ColumnPropNameInTable="SubtotalColumn" msprop:Generator_UserColumnName="Subtotal" type="xs:double" minOccurs="0" />
+              <xs:element name="IVA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnIVA" msprop:Generator_ColumnPropNameInRow="IVA" msprop:Generator_ColumnPropNameInTable="IVAColumn" msprop:Generator_UserColumnName="IVA" type="xs:double" minOccurs="0" />
+              <xs:element name="Impoconsumo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImpoconsumo" msprop:Generator_ColumnPropNameInRow="Impoconsumo" msprop:Generator_ColumnPropNameInTable="ImpoconsumoColumn" msprop:Generator_UserColumnName="Impoconsumo" type="xs:double" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IdCliente" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCliente" msprop:Generator_ColumnPropNameInRow="IdCliente" msprop:Generator_ColumnPropNameInTable="IdClienteColumn" msprop:Generator_UserColumnName="IdCliente" type="xs:int" />
+              <xs:element name="IdCotizacionDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCotizacionDetalle" msprop:Generator_ColumnPropNameInRow="IdCotizacionDetalle" msprop:Generator_ColumnPropNameInTable="IdCotizacionDetalleColumn" msprop:Generator_UserColumnName="IdCotizacionDetalle" type="xs:int" />
+              <xs:element name="IdProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
+              <xs:element name="IdTipoProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdTipoProducto" msprop:Generator_ColumnPropNameInRow="IdTipoProducto" msprop:Generator_ColumnPropNameInTable="IdTipoProductoColumn" msprop:Generator_UserColumnName="IdTipoProducto" type="xs:int" />
+              <xs:element name="IdSegmento" msprop:Generator_ColumnVarNameInTable="columnIdSegmento" msprop:Generator_ColumnPropNameInRow="IdSegmento" msprop:Generator_ColumnPropNameInTable="IdSegmentoColumn" msprop:Generator_UserColumnName="IdSegmento" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListadoCotizaciones" msprop:Generator_TableClassName="ListadoCotizacionesDataTable" msprop:Generator_TableVarName="tableListadoCotizaciones" msprop:Generator_RowChangedName="ListadoCotizacionesRowChanged" msprop:Generator_TablePropName="ListadoCotizaciones" msprop:Generator_RowDeletingName="ListadoCotizacionesRowDeleting" msprop:Generator_RowChangingName="ListadoCotizacionesRowChanging" msprop:Generator_RowEvHandlerName="ListadoCotizacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="ListadoCotizacionesRowDeleted" msprop:Generator_RowClassName="ListadoCotizacionesRow" msprop:Generator_UserTableName="ListadoCotizaciones" msprop:Generator_RowEvArgName="ListadoCotizacionesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Numero" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnNumero" msprop:Generator_ColumnPropNameInRow="Numero" msprop:Generator_ColumnPropNameInTable="NumeroColumn" msprop:Generator_UserColumnName="Numero" type="xs:int" />
+              <xs:element name="IdCliente" msprop:Generator_ColumnVarNameInTable="columnIdCliente" msprop:Generator_ColumnPropNameInRow="IdCliente" msprop:Generator_ColumnPropNameInTable="IdClienteColumn" msprop:Generator_UserColumnName="IdCliente" type="xs:int" minOccurs="0" />
+              <xs:element name="NitCliente" msprop:Generator_ColumnVarNameInTable="columnNitCliente" msprop:Generator_ColumnPropNameInRow="NitCliente" msprop:Generator_ColumnPropNameInTable="NitClienteColumn" msprop:Generator_UserColumnName="NitCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NombreCliente" msprop:Generator_ColumnVarNameInTable="columnNombreCliente" msprop:Generator_ColumnPropNameInRow="NombreCliente" msprop:Generator_ColumnPropNameInTable="NombreClienteColumn" msprop:Generator_UserColumnName="NombreCliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contacto" msprop:Generator_ColumnVarNameInTable="columnContacto" msprop:Generator_ColumnPropNameInRow="Contacto" msprop:Generator_ColumnPropNameInTable="ContactoColumn" msprop:Generator_UserColumnName="Contacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormaPago" msprop:Generator_ColumnVarNameInTable="columnFormaPago" msprop:Generator_ColumnPropNameInRow="FormaPago" msprop:Generator_ColumnPropNameInTable="FormaPagoColumn" msprop:Generator_UserColumnName="FormaPago" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlazoEntrega" msprop:Generator_ColumnVarNameInTable="columnPlazoEntrega" msprop:Generator_ColumnPropNameInRow="PlazoEntrega" msprop:Generator_ColumnPropNameInTable="PlazoEntregaColumn" msprop:Generator_UserColumnName="PlazoEntrega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SitioEntrega" msprop:Generator_ColumnVarNameInTable="columnSitioEntrega" msprop:Generator_ColumnPropNameInRow="SitioEntrega" msprop:Generator_ColumnPropNameInTable="SitioEntregaColumn" msprop:Generator_UserColumnName="SitioEntrega" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCotizacionDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCotizacionDetalle" msprop:Generator_ColumnPropNameInRow="IdCotizacionDetalle" msprop:Generator_ColumnPropNameInTable="IdCotizacionDetalleColumn" msprop:Generator_UserColumnName="IdCotizacionDetalle" type="xs:int" minOccurs="0" />
+              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" minOccurs="0" />
+              <xs:element name="CodigoProducto" msprop:Generator_ColumnVarNameInTable="columnCodigoProducto" msprop:Generator_ColumnPropNameInRow="CodigoProducto" msprop:Generator_ColumnPropNameInTable="CodigoProductoColumn" msprop:Generator_UserColumnName="CodigoProducto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DescripcionProducto" msprop:Generator_ColumnVarNameInTable="columnDescripcionProducto" msprop:Generator_ColumnPropNameInRow="DescripcionProducto" msprop:Generator_ColumnPropNameInTable="DescripcionProductoColumn" msprop:Generator_UserColumnName="DescripcionProducto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Cantidad" msprop:Generator_ColumnVarNameInTable="columnCantidad" msprop:Generator_ColumnPropNameInRow="Cantidad" msprop:Generator_ColumnPropNameInTable="CantidadColumn" msprop:Generator_UserColumnName="Cantidad" type="xs:double" minOccurs="0" />
+              <xs:element name="ValorEstapillas" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorEstapillas" msprop:Generator_ColumnPropNameInRow="ValorEstapillas" msprop:Generator_ColumnPropNameInTable="ValorEstapillasColumn" msprop:Generator_UserColumnName="ValorEstapillas" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2065,6 +2655,18 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
       <xs:selector xpath=".//mstns:CotizacionDetalle" />
       <xs:field xpath="mstns:IdCotizacionDetalle" />
     </xs:unique>
+    <xs:unique name="ListadoProductos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ListadoProductos" />
+      <xs:field xpath="mstns:IdProducto" />
+    </xs:unique>
+    <xs:unique name="ReporteCotizacion_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReporteCotizacion" />
+      <xs:field xpath="mstns:IdCotizacion" />
+      <xs:field xpath="mstns:Precio" />
+      <xs:field xpath="mstns:IdCliente" />
+      <xs:field xpath="mstns:IdCotizacionDetalle" />
+      <xs:field xpath="mstns:IdProducto" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -2082,8 +2684,9 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
       <msdata:Relationship name="FK_Productos_PesoBrutoVh" msdata:parent="PesoBrutoVh" msdata:child="Productos" msdata:parentkey="IdPesoBrutoVh" msdata:childkey="IdPesoBrutoVh" msprop:Generator_UserChildTable="Productos" msprop:Generator_ChildPropName="GetProductosRows" msprop:Generator_UserRelationName="FK_Productos_PesoBrutoVh" msprop:Generator_RelationVarName="relationFK_Productos_PesoBrutoVh" msprop:Generator_UserParentTable="PesoBrutoVh" msprop:Generator_ParentPropName="PesoBrutoVhRow" />
       <msdata:Relationship name="FK_Productos_Segmentos" msdata:parent="Segmentos" msdata:child="Productos" msdata:parentkey="IdSegmento" msdata:childkey="IdSegmento" msprop:Generator_UserChildTable="Productos" msprop:Generator_ChildPropName="GetProductosRows" msprop:Generator_UserRelationName="FK_Productos_Segmentos" msprop:Generator_RelationVarName="relationFK_Productos_Segmentos" msprop:Generator_UserParentTable="Segmentos" msprop:Generator_ParentPropName="SegmentosRow" />
       <msdata:Relationship name="FK_Productos_TipoProducto" msdata:parent="TipoProducto" msdata:child="Productos" msdata:parentkey="IdTipoProducto" msdata:childkey="IdTipoProducto" msprop:Generator_UserChildTable="Productos" msprop:Generator_ChildPropName="GetProductosRows" msprop:Generator_UserRelationName="FK_Productos_TipoProducto" msprop:Generator_RelationVarName="relationFK_Productos_TipoProducto" msprop:Generator_UserParentTable="TipoProducto" msprop:Generator_ParentPropName="TipoProductoRow" />
-      <msdata:Relationship name="FK_CotizacionDetalle_IdCotizacion" msdata:parent="Cotizacion" msdata:child="CotizacionDetalle" msdata:parentkey="IdCotizacion" msdata:childkey="IdCotizacion" msprop:Generator_UserChildTable="CotizacionDetalle" msprop:Generator_ChildPropName="GetCotizacionDetalleRows" msprop:Generator_UserRelationName="FK_CotizacionDetalle_IdCotizacion" msprop:Generator_ParentPropName="CotizacionRow" msprop:Generator_RelationVarName="relationFK_CotizacionDetalle_IdCotizacion" msprop:Generator_UserParentTable="Cotizacion" />
-      <msdata:Relationship name="FK_CotizacionDetalle_IdProducto" msdata:parent="Productos" msdata:child="CotizacionDetalle" msdata:parentkey="IdProducto" msdata:childkey="IdProducto" msprop:Generator_UserChildTable="CotizacionDetalle" msprop:Generator_ChildPropName="GetCotizacionDetalleRows" msprop:Generator_UserRelationName="FK_CotizacionDetalle_IdProducto" msprop:Generator_ParentPropName="ProductosRow" msprop:Generator_RelationVarName="relationFK_CotizacionDetalle_IdProducto" msprop:Generator_UserParentTable="Productos" />
+      <msdata:Relationship name="FK_CotizacionDetalle_IdCotizacion" msdata:parent="Cotizacion" msdata:child="CotizacionDetalle" msdata:parentkey="IdCotizacion" msdata:childkey="IdCotizacion" msprop:Generator_UserChildTable="CotizacionDetalle" msprop:Generator_ChildPropName="GetCotizacionDetalleRows" msprop:Generator_UserRelationName="FK_CotizacionDetalle_IdCotizacion" msprop:Generator_RelationVarName="relationFK_CotizacionDetalle_IdCotizacion" msprop:Generator_UserParentTable="Cotizacion" msprop:Generator_ParentPropName="CotizacionRow" />
+      <msdata:Relationship name="FK_CotizacionDetalle_IdProducto" msdata:parent="Productos" msdata:child="CotizacionDetalle" msdata:parentkey="IdProducto" msdata:childkey="IdProducto" msprop:Generator_UserChildTable="CotizacionDetalle" msprop:Generator_ChildPropName="GetCotizacionDetalleRows" msprop:Generator_UserRelationName="FK_CotizacionDetalle_IdProducto" msprop:Generator_RelationVarName="relationFK_CotizacionDetalle_IdProducto" msprop:Generator_UserParentTable="Productos" msprop:Generator_ParentPropName="ProductosRow" />
+      <msdata:Relationship name="FK_Cotizacion_IdCliente1" msdata:parent="Clientes" msdata:child="ListadoCotizaciones" msdata:parentkey="IdCliente" msdata:childkey="IdCliente" msprop:Generator_UserChildTable="ListadoCotizaciones" msprop:Generator_ChildPropName="GetListadoCotizacionesRows" msprop:Generator_UserRelationName="FK_Cotizacion_IdCliente1" msprop:Generator_RelationVarName="relationFK_Cotizacion_IdCliente1" msprop:Generator_UserParentTable="Clientes" msprop:Generator_ParentPropName="ClientesRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

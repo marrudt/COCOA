@@ -7040,8 +7040,6 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnDetalleNumeroItem;
             
-            private global::System.Data.DataColumn columnDescripcionItem;
-            
             private global::System.Data.DataColumn columnIdProducto;
             
             private global::System.Data.DataColumn columnDescripcionProducto;
@@ -7118,14 +7116,6 @@ namespace DAL {
             public global::System.Data.DataColumn DetalleNumeroItemColumn {
                 get {
                     return this.columnDetalleNumeroItem;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescripcionItemColumn {
-                get {
-                    return this.columnDescripcionItem;
                 }
             }
             
@@ -7222,14 +7212,13 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public CotizacionDetalleRow AddCotizacionDetalleRow(CotizacionRow parentCotizacionRowByFK_CotizacionDetalle_IdCotizacion, int NumeroItem, string DetalleNumeroItem, string DescripcionItem, ProductosRow parentProductosRowByFK_CotizacionDetalle_IdProducto, string DescripcionProducto, decimal Precio, double Cantidad, double PorcentajeIVA, double PorcentajeImpoconsumo, decimal Estampillas) {
+            public CotizacionDetalleRow AddCotizacionDetalleRow(CotizacionRow parentCotizacionRowByFK_CotizacionDetalle_IdCotizacion, int NumeroItem, string DetalleNumeroItem, ProductosRow parentProductosRowByFK_CotizacionDetalle_IdProducto, string DescripcionProducto, decimal Precio, double Cantidad, double PorcentajeIVA, double PorcentajeImpoconsumo, decimal Estampillas) {
                 CotizacionDetalleRow rowCotizacionDetalleRow = ((CotizacionDetalleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         NumeroItem,
                         DetalleNumeroItem,
-                        DescripcionItem,
                         null,
                         DescripcionProducto,
                         Precio,
@@ -7241,7 +7230,7 @@ namespace DAL {
                     columnValuesArray[1] = parentCotizacionRowByFK_CotizacionDetalle_IdCotizacion[0];
                 }
                 if ((parentProductosRowByFK_CotizacionDetalle_IdProducto != null)) {
-                    columnValuesArray[5] = parentProductosRowByFK_CotizacionDetalle_IdProducto[0];
+                    columnValuesArray[4] = parentProductosRowByFK_CotizacionDetalle_IdProducto[0];
                 }
                 rowCotizacionDetalleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCotizacionDetalleRow);
@@ -7276,7 +7265,6 @@ namespace DAL {
                 this.columnIdCotizacion = base.Columns["IdCotizacion"];
                 this.columnNumeroItem = base.Columns["NumeroItem"];
                 this.columnDetalleNumeroItem = base.Columns["DetalleNumeroItem"];
-                this.columnDescripcionItem = base.Columns["DescripcionItem"];
                 this.columnIdProducto = base.Columns["IdProducto"];
                 this.columnDescripcionProducto = base.Columns["DescripcionProducto"];
                 this.columnPrecio = base.Columns["Precio"];
@@ -7297,8 +7285,6 @@ namespace DAL {
                 base.Columns.Add(this.columnNumeroItem);
                 this.columnDetalleNumeroItem = new global::System.Data.DataColumn("DetalleNumeroItem", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDetalleNumeroItem);
-                this.columnDescripcionItem = new global::System.Data.DataColumn("DescripcionItem", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescripcionItem);
                 this.columnIdProducto = new global::System.Data.DataColumn("IdProducto", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdProducto);
                 this.columnDescripcionProducto = new global::System.Data.DataColumn("DescripcionProducto", typeof(string), null, global::System.Data.MappingType.Element);
@@ -7323,7 +7309,6 @@ namespace DAL {
                 this.columnIdCotizacionDetalle.Unique = true;
                 this.columnIdCotizacion.AllowDBNull = false;
                 this.columnDetalleNumeroItem.MaxLength = 2147483647;
-                this.columnDescripcionItem.MaxLength = 2147483647;
                 this.columnIdProducto.AllowDBNull = false;
                 this.columnDescripcionProducto.MaxLength = 50;
             }
@@ -9840,22 +9825,6 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string DescripcionItem {
-                get {
-                    try {
-                        return ((string)(this[this.tableCotizacionDetalle.DescripcionItemColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'DescripcionItem\' in table \'CotizacionDetalle\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCotizacionDetalle.DescripcionItemColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int IdProducto {
                 get {
                     return ((int)(this[this.tableCotizacionDetalle.IdProductoColumn]));
@@ -10007,18 +9976,6 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDetalleNumeroItemNull() {
                 this[this.tableCotizacionDetalle.DetalleNumeroItemColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDescripcionItemNull() {
-                return this.IsNull(this.tableCotizacionDetalle.DescripcionItemColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDescripcionItemNull() {
-                this[this.tableCotizacionDetalle.DescripcionItemColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17360,7 +17317,7 @@ SELECT IdCotizacion, Fecha, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioE
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "dbo.InsertVenta";
+            this._commandCollection[1].CommandText = "dbo.InsertCotizacion";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -17669,7 +17626,7 @@ SELECT IdCotizacion, Fecha, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object InsertVenta(global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega) {
+        public virtual object InsertCotizacion(global::System.Nullable<global::System.DateTime> Fecha, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
             if ((Fecha.HasValue == true)) {
                 command.Parameters[1].Value = ((System.DateTime)(Fecha.Value));
@@ -18828,7 +18785,6 @@ SELECT IdProducto, IdTipoProducto, CodigoProducto, DescripcionProducto, DetalleP
             tableMapping.ColumnMappings.Add("IdCotizacion", "IdCotizacion");
             tableMapping.ColumnMappings.Add("NumeroItem", "NumeroItem");
             tableMapping.ColumnMappings.Add("DetalleNumeroItem", "DetalleNumeroItem");
-            tableMapping.ColumnMappings.Add("DescripcionItem", "DescripcionItem");
             tableMapping.ColumnMappings.Add("IdProducto", "IdProducto");
             tableMapping.ColumnMappings.Add("DescripcionProducto", "DescripcionProducto");
             tableMapping.ColumnMappings.Add("Precio", "Precio");
@@ -18860,13 +18816,12 @@ SELECT IdProducto, IdTipoProducto, CodigoProducto, DescripcionProducto, DetalleP
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Estampillas", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Estampillas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CotizacionDetalle] ([IdCotizacion], [NumeroItem], [DetalleNumeroItem], [DescripcionItem], [IdProducto], [DescripcionProducto], [Precio], [Cantidad], [PorcentajeIVA], [PorcentajeImpoconsumo], [Estampillas]) VALUES (@IdCotizacion, @NumeroItem, @DetalleNumeroItem, @DescripcionItem, @IdProducto, @DescripcionProducto, @Precio, @Cantidad, @PorcentajeIVA, @PorcentajeImpoconsumo, @Estampillas);
-SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[CotizacionDetalle] ([IdCotizacion], [NumeroItem], [DetalleNumeroItem], [IdProducto], [DescripcionProducto], [Precio], [Cantidad], [PorcentajeIVA], [PorcentajeImpoconsumo], [Estampillas]) VALUES (@IdCotizacion, @NumeroItem, @DetalleNumeroItem, @IdProducto, @DescripcionProducto, @Precio, @Cantidad, @PorcentajeIVA, @PorcentajeImpoconsumo, @Estampillas);
+SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetalleNumeroItem", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetalleNumeroItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionItem", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProducto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionProducto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18877,30 +18832,29 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[CotizacionDetalle] SET [IdCotizacion] = @IdCotizacion, [NumeroItem]" +
-                " = @NumeroItem, [DetalleNumeroItem] = @DetalleNumeroItem, [DescripcionItem] = @D" +
-                "escripcionItem, [IdProducto] = @IdProducto, [DescripcionProducto] = @Descripcion" +
-                "Producto, [Precio] = @Precio, [Cantidad] = @Cantidad, [PorcentajeIVA] = @Porcent" +
-                "ajeIVA, [PorcentajeImpoconsumo] = @PorcentajeImpoconsumo, [Estampillas] = @Estam" +
-                "pillas WHERE (([IdCotizacionDetalle] = @Original_IdCotizacionDetalle) AND ([IdCo" +
-                "tizacion] = @Original_IdCotizacion) AND ((@IsNull_NumeroItem = 1 AND [NumeroItem" +
-                "] IS NULL) OR ([NumeroItem] = @Original_NumeroItem)) AND ([IdProducto] = @Origin" +
-                "al_IdProducto) AND ((@IsNull_DescripcionProducto = 1 AND [DescripcionProducto] I" +
-                "S NULL) OR ([DescripcionProducto] = @Original_DescripcionProducto)) AND ((@IsNul" +
-                "l_Precio = 1 AND [Precio] IS NULL) OR ([Precio] = @Original_Precio)) AND ((@IsNu" +
-                "ll_Cantidad = 1 AND [Cantidad] IS NULL) OR ([Cantidad] = @Original_Cantidad)) AN" +
-                "D ((@IsNull_PorcentajeIVA = 1 AND [PorcentajeIVA] IS NULL) OR ([PorcentajeIVA] =" +
-                " @Original_PorcentajeIVA)) AND ((@IsNull_PorcentajeImpoconsumo = 1 AND [Porcenta" +
-                "jeImpoconsumo] IS NULL) OR ([PorcentajeImpoconsumo] = @Original_PorcentajeImpoco" +
-                "nsumo)) AND ((@IsNull_Estampillas = 1 AND [Estampillas] IS NULL) OR ([Estampilla" +
-                "s] = @Original_Estampillas)));\r\nSELECT IdCotizacionDetalle, IdCotizacion, Numero" +
-                "Item, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Preci" +
-                "o, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas FROM CotizacionDe" +
-                "talle WHERE (IdCotizacionDetalle = @IdCotizacionDetalle)";
+                " = @NumeroItem, [DetalleNumeroItem] = @DetalleNumeroItem, [IdProducto] = @IdProd" +
+                "ucto, [DescripcionProducto] = @DescripcionProducto, [Precio] = @Precio, [Cantida" +
+                "d] = @Cantidad, [PorcentajeIVA] = @PorcentajeIVA, [PorcentajeImpoconsumo] = @Por" +
+                "centajeImpoconsumo, [Estampillas] = @Estampillas WHERE (([IdCotizacionDetalle] =" +
+                " @Original_IdCotizacionDetalle) AND ([IdCotizacion] = @Original_IdCotizacion) AN" +
+                "D ((@IsNull_NumeroItem = 1 AND [NumeroItem] IS NULL) OR ([NumeroItem] = @Origina" +
+                "l_NumeroItem)) AND ([IdProducto] = @Original_IdProducto) AND ((@IsNull_Descripci" +
+                "onProducto = 1 AND [DescripcionProducto] IS NULL) OR ([DescripcionProducto] = @O" +
+                "riginal_DescripcionProducto)) AND ((@IsNull_Precio = 1 AND [Precio] IS NULL) OR " +
+                "([Precio] = @Original_Precio)) AND ((@IsNull_Cantidad = 1 AND [Cantidad] IS NULL" +
+                ") OR ([Cantidad] = @Original_Cantidad)) AND ((@IsNull_PorcentajeIVA = 1 AND [Por" +
+                "centajeIVA] IS NULL) OR ([PorcentajeIVA] = @Original_PorcentajeIVA)) AND ((@IsNu" +
+                "ll_PorcentajeImpoconsumo = 1 AND [PorcentajeImpoconsumo] IS NULL) OR ([Porcentaj" +
+                "eImpoconsumo] = @Original_PorcentajeImpoconsumo)) AND ((@IsNull_Estampillas = 1 " +
+                "AND [Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)));\r\nSELECT" +
+                " IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, D" +
+                "escripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Esta" +
+                "mpillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = @IdCotizacionDetalle" +
+                ")";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetalleNumeroItem", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DetalleNumeroItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionItem", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProducto", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionProducto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionProducto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18941,9 +18895,9 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descripc" +
-                "ionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, Porce" +
-                "ntajeImpoconsumo, Estampillas FROM dbo.CotizacionDetalle";
+            this._commandCollection[0].CommandText = "SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProduc" +
+                "to, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo," +
+                " Estampillas FROM dbo.CotizacionDetalle";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -18953,7 +18907,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCotizacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroItem", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetalleNumeroItem", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionItem", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProducto", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionProducto", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -18982,83 +18935,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DSCOCOA.CotizacionDetalleDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DSCOCOA.CotizacionDetalleDataTable dataTable = new DSCOCOA.CotizacionDetalleDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DSCOCOA.CotizacionDetalleDataTable InsertCotizacionDetalle(global::System.Nullable<int> IdCotizacion, global::System.Nullable<int> NumeroItem, string DetalleNumeroItem, string DescripcionItem, global::System.Nullable<int> IdProducto, string DescripcionProducto, global::System.Nullable<decimal> Precio, global::System.Nullable<double> Cantidad, global::System.Nullable<double> PorcentajeIVA, global::System.Nullable<double> PorcentajeImpoconsumo, global::System.Nullable<decimal> Estampillas) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((IdCotizacion.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IdCotizacion.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((NumeroItem.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(NumeroItem.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((DetalleNumeroItem == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(DetalleNumeroItem));
-            }
-            if ((DescripcionItem == null)) {
-                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[4].Value = ((string)(DescripcionItem));
-            }
-            if ((IdProducto.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[5].Value = ((int)(IdProducto.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((DescripcionProducto == null)) {
-                this.Adapter.SelectCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[6].Value = ((string)(DescripcionProducto));
-            }
-            if ((Precio.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[7].Value = ((decimal)(Precio.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Cantidad.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[8].Value = ((double)(Cantidad.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
-            if ((PorcentajeIVA.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[9].Value = ((double)(PorcentajeIVA.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((PorcentajeImpoconsumo.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[10].Value = ((double)(PorcentajeImpoconsumo.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Estampillas.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[11].Value = ((decimal)(Estampillas.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
             DSCOCOA.CotizacionDetalleDataTable dataTable = new DSCOCOA.CotizacionDetalleDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -19177,7 +19053,7 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int IdCotizacion, global::System.Nullable<int> NumeroItem, string DetalleNumeroItem, string DescripcionItem, int IdProducto, string DescripcionProducto, global::System.Nullable<decimal> Precio, global::System.Nullable<double> Cantidad, global::System.Nullable<double> PorcentajeIVA, global::System.Nullable<double> PorcentajeImpoconsumo, global::System.Nullable<decimal> Estampillas) {
+        public virtual int Insert(int IdCotizacion, global::System.Nullable<int> NumeroItem, string DetalleNumeroItem, int IdProducto, string DescripcionProducto, global::System.Nullable<decimal> Precio, global::System.Nullable<double> Cantidad, global::System.Nullable<double> PorcentajeIVA, global::System.Nullable<double> PorcentajeImpoconsumo, global::System.Nullable<decimal> Estampillas) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(IdCotizacion));
             if ((NumeroItem.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(NumeroItem.Value));
@@ -19191,48 +19067,42 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DetalleNumeroItem));
             }
-            if ((DescripcionItem == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(DescripcionItem));
-            }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(IdProducto));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(IdProducto));
             if ((DescripcionProducto == null)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(DescripcionProducto));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(DescripcionProducto));
             }
             if ((Precio.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((decimal)(Precio.Value));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(Precio.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Cantidad.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((double)(Cantidad.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Cantidad.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(Cantidad.Value));
+            if ((PorcentajeIVA.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((double)(PorcentajeIVA.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((PorcentajeIVA.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(PorcentajeIVA.Value));
+            if ((PorcentajeImpoconsumo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((double)(PorcentajeImpoconsumo.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((PorcentajeImpoconsumo.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((double)(PorcentajeImpoconsumo.Value));
+            if ((Estampillas.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((decimal)(Estampillas.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            if ((Estampillas.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((decimal)(Estampillas.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -19258,7 +19128,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                     int IdCotizacion, 
                     global::System.Nullable<int> NumeroItem, 
                     string DetalleNumeroItem, 
-                    string DescripcionItem, 
                     int IdProducto, 
                     string DescripcionProducto, 
                     global::System.Nullable<decimal> Precio, 
@@ -19290,109 +19159,103 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(DetalleNumeroItem));
             }
-            if ((DescripcionItem == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DescripcionItem));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(IdProducto));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(IdProducto));
             if ((DescripcionProducto == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(DescripcionProducto));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(DescripcionProducto));
             }
             if ((Precio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Precio.Value));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Precio.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Cantidad.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((double)(Cantidad.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Cantidad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(Cantidad.Value));
+            if ((PorcentajeIVA.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((double)(PorcentajeIVA.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((PorcentajeIVA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(PorcentajeIVA.Value));
+            if ((PorcentajeImpoconsumo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((double)(PorcentajeImpoconsumo.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((PorcentajeImpoconsumo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((double)(PorcentajeImpoconsumo.Value));
+            if ((Estampillas.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(Estampillas.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Estampillas.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((decimal)(Estampillas.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_IdCotizacionDetalle));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_IdCotizacion));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_IdCotizacionDetalle));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_IdCotizacion));
             if ((Original_NumeroItem.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_NumeroItem.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_NumeroItem.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_IdProducto));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_IdProducto));
             if ((Original_DescripcionProducto == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_DescripcionProducto));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_DescripcionProducto));
             }
             if ((Original_Precio.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(Original_Precio.Value));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(Original_Precio.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             if ((Original_Cantidad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((double)(Original_Cantidad.Value));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((double)(Original_Cantidad.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             if ((Original_PorcentajeIVA.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((double)(Original_PorcentajeIVA.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((double)(Original_PorcentajeIVA.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             if ((Original_PorcentajeImpoconsumo.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((double)(Original_PorcentajeImpoconsumo.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((double)(Original_PorcentajeImpoconsumo.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             if ((Original_Estampillas.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((decimal)(Original_Estampillas.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((decimal)(Original_Estampillas.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(IdCotizacionDetalle));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(IdCotizacionDetalle));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -19417,7 +19280,6 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                     int IdCotizacion, 
                     global::System.Nullable<int> NumeroItem, 
                     string DetalleNumeroItem, 
-                    string DescripcionItem, 
                     int IdProducto, 
                     string DescripcionProducto, 
                     global::System.Nullable<decimal> Precio, 
@@ -19435,7 +19297,90 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, Descrip
                     global::System.Nullable<double> Original_PorcentajeIVA, 
                     global::System.Nullable<double> Original_PorcentajeImpoconsumo, 
                     global::System.Nullable<decimal> Original_Estampillas) {
-            return this.Update(IdCotizacion, NumeroItem, DetalleNumeroItem, DescripcionItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas, Original_IdCotizacionDetalle, Original_IdCotizacion, Original_NumeroItem, Original_IdProducto, Original_DescripcionProducto, Original_Precio, Original_Cantidad, Original_PorcentajeIVA, Original_PorcentajeImpoconsumo, Original_Estampillas, Original_IdCotizacionDetalle);
+            return this.Update(IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estampillas, Original_IdCotizacionDetalle, Original_IdCotizacion, Original_NumeroItem, Original_IdProducto, Original_DescripcionProducto, Original_Precio, Original_Cantidad, Original_PorcentajeIVA, Original_PorcentajeImpoconsumo, Original_Estampillas, Original_IdCotizacionDetalle);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertCotizacionDetalle(global::System.Nullable<int> IdCotizacion, global::System.Nullable<int> NumeroItem, string DetalleNumeroItem, global::System.Nullable<int> IdProducto, string DescripcionProducto, global::System.Nullable<decimal> Precio, global::System.Nullable<double> Cantidad, global::System.Nullable<double> PorcentajeIVA, global::System.Nullable<double> PorcentajeImpoconsumo, global::System.Nullable<decimal> Estampillas) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((IdCotizacion.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(IdCotizacion.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((NumeroItem.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(NumeroItem.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((DetalleNumeroItem == null)) {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[3].Value = ((string)(DetalleNumeroItem));
+            }
+            if ((IdProducto.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(IdProducto.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((DescripcionProducto == null)) {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[5].Value = ((string)(DescripcionProducto));
+            }
+            if ((Precio.HasValue == true)) {
+                command.Parameters[6].Value = ((decimal)(Precio.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Cantidad.HasValue == true)) {
+                command.Parameters[7].Value = ((double)(Cantidad.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((PorcentajeIVA.HasValue == true)) {
+                command.Parameters[8].Value = ((double)(PorcentajeIVA.Value));
+            }
+            else {
+                command.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((PorcentajeImpoconsumo.HasValue == true)) {
+                command.Parameters[9].Value = ((double)(PorcentajeImpoconsumo.Value));
+            }
+            else {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Estampillas.HasValue == true)) {
+                command.Parameters[10].Value = ((decimal)(Estampillas.Value));
+            }
+            else {
+                command.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

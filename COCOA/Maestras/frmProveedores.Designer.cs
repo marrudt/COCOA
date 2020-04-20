@@ -39,8 +39,8 @@
             System.Windows.Forms.Label nombreContactoLabel;
             System.Windows.Forms.Label nombreProveedorLabel;
             System.Windows.Forms.Label nitLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
             System.Windows.Forms.Label idProveedorLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProveedores));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.proveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedoresTableAdapter = new COCOA.DSCOCOATableAdapters.ProveedoresTableAdapter();
@@ -86,6 +86,7 @@
             this.nitTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idProveedorTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             activoLabel = new System.Windows.Forms.Label();
             notasLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
@@ -195,6 +196,15 @@
             nitLabel.TabIndex = 3;
             nitLabel.Text = "Nit*:";
             // 
+            // idProveedorLabel
+            // 
+            idProveedorLabel.AutoSize = true;
+            idProveedorLabel.Location = new System.Drawing.Point(429, 42);
+            idProveedorLabel.Name = "idProveedorLabel";
+            idProveedorLabel.Size = new System.Drawing.Size(19, 13);
+            idProveedorLabel.TabIndex = 1;
+            idProveedorLabel.Text = "Id:";
+            // 
             // dSCOCOA
             // 
             this.dSCOCOA.DataSetName = "DSCOCOA";
@@ -258,7 +268,8 @@
             this.bindingNavigatorSaveItem,
             this.bindingNavigatorCancel,
             this.bindingNavigatorSearch,
-            this.bindingNavigatorExit});
+            this.bindingNavigatorExit,
+            this.toolStripButton1});
             this.proveedoresBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.proveedoresBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.proveedoresBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -357,7 +368,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.ToolTipText = "Nuevo";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Agregar";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
@@ -653,15 +664,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // idProveedorLabel
-            // 
-            idProveedorLabel.AutoSize = true;
-            idProveedorLabel.Location = new System.Drawing.Point(429, 42);
-            idProveedorLabel.Name = "idProveedorLabel";
-            idProveedorLabel.Size = new System.Drawing.Size(19, 13);
-            idProveedorLabel.TabIndex = 1;
-            idProveedorLabel.Text = "Id:";
-            // 
             // idProveedorTextBox
             // 
             this.idProveedorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "IdProveedor", true));
@@ -670,6 +672,15 @@
             this.idProveedorTextBox.ReadOnly = true;
             this.idProveedorTextBox.Size = new System.Drawing.Size(67, 20);
             this.idProveedorTextBox.TabIndex = 2;
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(28, 28);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // frmProveedores
             // 
@@ -764,5 +775,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorSearch;
         private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
         private System.Windows.Forms.TextBox idProveedorTextBox;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

@@ -123,6 +123,7 @@
             this.notasTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             idTipoProductoLabel = new System.Windows.Forms.Label();
             codigoProductoLabel = new System.Windows.Forms.Label();
             idProductoLabel = new System.Windows.Forms.Label();
@@ -410,7 +411,8 @@
             this.bindingNavigatorSaveItem,
             this.bindingNavigatorCancel,
             this.bindingNavigatorSearch,
-            this.bindingNavigatorExit});
+            this.bindingNavigatorExit,
+            this.bindingNavigatorPrint});
             this.productosBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.productosBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.productosBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -1037,6 +1039,17 @@
             this.activoCheckBox.TabIndex = 25;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
+            // bindingNavigatorPrint
+            // 
+            this.bindingNavigatorPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorPrint.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorPrint.Image")));
+            this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
+            this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorPrint.Text = "toolStripButton1";
+            this.bindingNavigatorPrint.ToolTipText = "Imprimir";
+            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1175,5 +1188,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.CheckBox activoCheckBox;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorPrint;
     }
 }

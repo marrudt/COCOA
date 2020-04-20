@@ -1,4 +1,6 @@
-﻿using COCOA.Maestras;
+﻿using COCOA.Listados;
+using COCOA.Maestras;
+using COCOA.Reportes;
 using COCOA.Seguridad;
 using COCOA.Transacciones;
 using DAL;
@@ -397,6 +399,27 @@ namespace COCOA
         private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOrdenCompras miForm = new frmOrdenCompras();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void productosToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmListadoProductos miForm = new frmListadoProductos();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void cotizacionesToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmReporteCotizacion miForm = new frmReporteCotizacion();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void cotizacionesToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            frmListadoCotizaciones miForm = new frmListadoCotizaciones();
             miForm.MdiParent = this;
             miForm.Show();
         }

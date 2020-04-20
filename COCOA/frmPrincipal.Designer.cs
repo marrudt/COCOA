@@ -65,10 +65,13 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizacionesToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeCompraToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreCOCOAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.nombreUsuarioStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.cotizacionesToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +84,7 @@
             this.transaccionesToolStripMenuItem,
             this.consultasToolStripMenuItem,
             this.reportesToolStripMenuItem,
+            this.listadosToolStripMenuItem,
             this.acercaDeToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -349,12 +353,29 @@
             this.cotizacionesToolStripMenuItem2.Name = "cotizacionesToolStripMenuItem2";
             this.cotizacionesToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.cotizacionesToolStripMenuItem2.Text = "&Cotizaciones";
+            this.cotizacionesToolStripMenuItem2.Click += new System.EventHandler(this.cotizacionesToolStripMenuItem2_Click);
             // 
             // ordenesDeCompraToolStripMenuItem2
             // 
             this.ordenesDeCompraToolStripMenuItem2.Name = "ordenesDeCompraToolStripMenuItem2";
             this.ordenesDeCompraToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.ordenesDeCompraToolStripMenuItem2.Text = "&Ordenes de Compra";
+            // 
+            // listadosToolStripMenuItem
+            // 
+            this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cotizacionesToolStripMenuItem3,
+            this.productosToolStripMenuItem2});
+            this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
+            this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.listadosToolStripMenuItem.Text = "&Listados";
+            // 
+            // productosToolStripMenuItem2
+            // 
+            this.productosToolStripMenuItem2.Name = "productosToolStripMenuItem2";
+            this.productosToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.productosToolStripMenuItem2.Text = "&Productos";
+            this.productosToolStripMenuItem2.Click += new System.EventHandler(this.productosToolStripMenuItem2_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -386,6 +407,13 @@
             this.nombreUsuarioStripStatusLabel.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.nombreUsuarioStripStatusLabel.Name = "nombreUsuarioStripStatusLabel";
             this.nombreUsuarioStripStatusLabel.Size = new System.Drawing.Size(0, 17);
+            // 
+            // cotizacionesToolStripMenuItem3
+            // 
+            this.cotizacionesToolStripMenuItem3.Name = "cotizacionesToolStripMenuItem3";
+            this.cotizacionesToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.cotizacionesToolStripMenuItem3.Text = "&Cotizaciones";
+            this.cotizacionesToolStripMenuItem3.Click += new System.EventHandler(this.cotizacionesToolStripMenuItem3_Click);
             // 
             // frmPrincipal
             // 
@@ -462,5 +490,8 @@
         private System.Windows.Forms.ToolStripMenuItem iVAToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem formulariosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem listadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem cotizacionesToolStripMenuItem3;
     }
 }

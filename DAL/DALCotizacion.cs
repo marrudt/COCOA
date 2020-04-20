@@ -11,9 +11,9 @@ namespace DAL
     {
         private static CotizacionTableAdapter adaptador = new CotizacionTableAdapter();
 
-        public static int InsertVenta(DateTime Fecha, int IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega)
+        public static int InsertCotizacion(DateTime Fecha, int IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega)
         {
-            return (int)adaptador.InsertVenta(Fecha, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega);
+            return (int)adaptador.InsertCotizacion(Fecha, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega);
         }
     }
 }

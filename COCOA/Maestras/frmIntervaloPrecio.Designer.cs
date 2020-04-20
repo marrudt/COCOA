@@ -109,6 +109,7 @@
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = this.intervaloPreciosTableAdapter;
             this.tableAdapterManager.IVATableAdapter = null;
@@ -247,6 +248,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Agregar";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
@@ -257,6 +259,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.ToolTipText = "Eliminar";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorSaveItem
@@ -267,6 +270,7 @@
             this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
             this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorSaveItem.Text = "Save Data";
+            this.bindingNavigatorSaveItem.ToolTipText = "Guardar";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.intervaloPreciosBindingNavigatorSaveItem_Click);
             // 
             // bindingNavigatorCancel
@@ -278,6 +282,7 @@
             this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
             this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorCancel.Text = "toolStripButton1";
+            this.bindingNavigatorCancel.ToolTipText = "Cancelar";
             this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
             // 
             // bindingNavigatorExit

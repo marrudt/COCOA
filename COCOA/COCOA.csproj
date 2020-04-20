@@ -33,9 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +89,30 @@
     </Compile>
     <Compile Include="Busqueda\frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmListadoCotizaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmListadoCotizaciones.Designer.cs">
+      <DependentUpon>frmListadoCotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmListadoProductos.Designer.cs">
+      <DependentUpon>frmListadoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\rptListadoCotizaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListadoCotizaciones.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Listados\rptListadoProductos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListadoProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Maestras\frmCilindraje.cs">
       <SubType>Form</SubType>
@@ -161,6 +192,18 @@
     <Compile Include="Maestras\frmTipoProducto.Designer.cs">
       <DependentUpon>frmTipoProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReporteCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteCotizacion.Designer.cs">
+      <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCotizacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteCotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Seguridad\frmCambioClave.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +266,20 @@
     <EmbeddedResource Include="Busqueda\frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmListadoCotizaciones.resx">
+      <DependentUpon>frmListadoCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmListadoProductos.resx">
+      <DependentUpon>frmListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\rptListadoCotizaciones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListadoCotizaciones.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\rptListadoProductos.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListadoProductos.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmCilindraje.resx">
       <DependentUpon>frmCilindraje.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +318,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmTipoProducto.resx">
       <DependentUpon>frmTipoProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteCotizacion.resx">
+      <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteCotizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteCotizacion1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmCambioClave.resx">
       <DependentUpon>frmCambioClave.cs</DependentUpon>
@@ -319,15 +383,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Listados\" />
-    <Folder Include="Reportes\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{a4a3553b-7355-46b8-96b3-81f60fde040d}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,6 @@
 ﻿using COCOA.Busqueda;
 using COCOA.Clases;
+using COCOA.Reportes;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -145,19 +146,13 @@ namespace COCOA.Transacciones
             DetalleCotizacion miDetalle = new DetalleCotizacion();
             miDetalle.NumeroItem = numeroItem;
             miDetalle.DetalleNumeroItem = detalleNumeroItem;
-            miDetalle.DescripcionItem = ultimoProducto.DetalleProducto;
             miDetalle.Cantidad = cantidad;
             miDetalle.Precio = ultimoProducto.Precio;
             miDetalle.DescripcionProducto = ultimoProducto.DescripcionProducto;
             miDetalle.IdProducto = ultimoProducto.IdProducto;
             miDetalle.PorcentajeIVA = (float)miIVA.Tarifa;
             miDetalle.PorcentajeImpoconsumo = (float)miImpoconsumo.Tarifa;
-            miDetalle.Estampillas = estampillas;
-            //miDetalle.IdSegmento = ultimoProducto.IdSegmento;
-            //miDetalle.IdCilindraje = ultimoProducto.IdCilindraje;
-            //miDetalle.IdNumeroPasajeros = ultimoProducto.IdNumeroPasajeros;
-            //miDetalle.IdPesoBrutoVh = ultimoProducto.IdPesoBrutoVh;
-            //miDetalle.IdIntervaloPrecio = ultimoProducto.IdIntervaloPrecio;
+            miDetalle.Estampillas = estampillas;            
 
             misDetalles.Add(miDetalle);
             RefrescaGrid();
@@ -205,13 +200,7 @@ namespace COCOA.Transacciones
 
         private void PersonalizarGrid()
         {
-            detalleCotizacionDataGridView.Columns["DetalleNumeroItem"].Visible = false;
-            detalleCotizacionDataGridView.Columns["DescripcionItem"].Visible = false;
-            //detalleCotizacionDataGridView.Columns["IdSegmento"].Visible = false;
-            //detalleCotizacionDataGridView.Columns["IdCilindraje"].Visible = false;
-            //detalleCotizacionDataGridView.Columns["IdNumeroPasajeros"].Visible = false;
-            //detalleCotizacionDataGridView.Columns["IdPesoBrutoVh"].Visible = false;
-            //detalleCotizacionDataGridView.Columns["IdIntervaloPrecio"].Visible = false;
+            detalleCotizacionDataGridView.Columns["DetalleNumeroItem"].Visible = false;            
 
             detalleCotizacionDataGridView.Columns["NumeroItem"].HeaderText = "No.";
             detalleCotizacionDataGridView.Columns["NumeroItem"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -427,17 +416,21 @@ namespace COCOA.Transacciones
             string sitioEntrega = sitioEntregaTextBox.Text;
 
             //Guarda encabezado            
-            int IdCotizacion = DALCotizacion.InsertVenta(fecha, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega);
+            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega);
 
             //Guarda detalle           
             foreach (DetalleCotizacion miDetalle in misDetalles)
             {
-                DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.DescripcionItem,
-                    miDetalle.IdProducto, miDetalle.DescripcionProducto, miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo,
-                    miDetalle.Estampillas);                
+                DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.IdProducto, miDetalle.DescripcionProducto, 
+                    miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo, miDetalle.Estampillas);
+                
             }
 
             MessageBox.Show(string.Format("Cotización {0} guardada exitosamente", IdCotizacion), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            frmReporteCotizacion miReporte = new frmReporteCotizacion();
+            miReporte.IDCotizacion = IdCotizacion;
+            miReporte.Show();
 
             totalSubtotal = 0;
             totalIVA = 0;
@@ -504,7 +497,22 @@ namespace COCOA.Transacciones
             miBusqueda.ShowDialog();
             if (miBusqueda.IDCliente == 0) return;
             clienteComboBox.SelectedValue = miBusqueda.IDCliente;
-        }                
+        }
+
+        private void frmCotizaciones_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (misDetalles.Count != 0)
+            {
+                DialogResult rta = MessageBox.Show("Perderá el documento actual...", "¿Salir?",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+                if (rta == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
     }
 
 }
