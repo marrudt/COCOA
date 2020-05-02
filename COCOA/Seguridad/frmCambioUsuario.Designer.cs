@@ -93,7 +93,7 @@
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(131, 151);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '|';
+            this.passwordTextBox.PasswordChar = '•';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 17;
             this.passwordTextBox.Text = "123";
@@ -134,7 +134,7 @@
             this.AcceptButton = this.AceptarButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.Cancelarbutton;
             this.ClientSize = new System.Drawing.Size(365, 269);
             this.ControlBox = false;

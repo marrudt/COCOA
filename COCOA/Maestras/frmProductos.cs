@@ -39,6 +39,7 @@ namespace COCOA.Maestras
             }
             errorProvider1.Clear();
             DeshabilitarCampos();
+            VerificaPermisos();
         }
 
         private void DeshabilitarCampos()
@@ -195,7 +196,30 @@ namespace COCOA.Maestras
             this.claseTableAdapter.Fill(this.dSCOCOA.Clase);
             this.tipoProductoTableAdapter.Fill(this.dSCOCOA.TipoProducto);
             this.productosTableAdapter.FillBy(this.dSCOCOA.Productos);
+            VerificaPermisos();
+        }
 
+        private void VerificaPermisos()
+        {
+            if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 3))
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+                bindingNavigatorEdit.Enabled = true;
+            }
+            else
+            {
+                bindingNavigatorAddNewItem.Enabled = false;
+                bindingNavigatorEdit.Enabled = false;
+            }
+
+            if (DALPermisoRol.PuedeEliminar(usuarioLogueado.IdRol, 3))
+            {
+                bindingNavigatorDeleteItem.Enabled = true;
+            }
+            else
+            {
+                bindingNavigatorDeleteItem.Enabled = false;
+            }
         }
 
         private void bindingNavigatorEdit_Click(object sender, EventArgs e)
@@ -265,6 +289,7 @@ namespace COCOA.Maestras
         {
             this.productosBindingSource.CancelEdit();
             DeshabilitarCampos();
+            VerificaPermisos();
         }
 
         private void bindingNavigatorSearch_Click(object sender, EventArgs e)

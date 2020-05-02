@@ -41,11 +41,34 @@ namespace COCOA.Maestras
             VerificaPermisos();
         }
 
+        private void VerificaPermisos()
+        {
+            if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 1))
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+                bindingNavigatorEdit.Enabled = true;
+            }
+            else
+            {
+                bindingNavigatorAddNewItem.Enabled = false;
+                bindingNavigatorEdit.Enabled = false;
+            }
+
+            if (DALPermisoRol.PuedeEliminar(usuarioLogueado.IdRol, 1))
+            {
+                bindingNavigatorDeleteItem.Enabled = true;
+            }
+            else
+            {
+                bindingNavigatorDeleteItem.Enabled = false;
+            }
+        }
+
         private bool ValidarCampos()
         {
             if (nitTextBox.Text == "")
             {
-                errorProvider1.SetError(nitTextBox, "El campo nit es obligatorio");
+                errorProvider1.SetError(nitTextBox, "El campo Nit es obligatorio");
                 nitTextBox.Focus();
                 return false;
             }
@@ -53,7 +76,7 @@ namespace COCOA.Maestras
 
             if (nombreProveedorTextBox.Text == "")
             {
-                errorProvider1.SetError(nombreProveedorTextBox, "El campo nombre de proveedor es obligatorio");
+                errorProvider1.SetError(nombreProveedorTextBox, "El campo Nombre de Proveedor es obligatorio");
                 nombreProveedorTextBox.Focus();
                 return false;
             }
@@ -61,7 +84,15 @@ namespace COCOA.Maestras
 
             if (direccionTextBox.Text == "")
             {
-                errorProvider1.SetError(direccionTextBox, "El campo dirección es oblitorio");
+                errorProvider1.SetError(direccionTextBox, "El campo Dirección es oblitorio");
+                direccionTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            if (ciudadTextBox.Text == "")
+            {
+                errorProvider1.SetError(ciudadTextBox, "El campo Ciudad es oblitorio");
                 direccionTextBox.Focus();
                 return false;
             }
@@ -93,7 +124,6 @@ namespace COCOA.Maestras
             errorProvider1.Clear();
 
             return true;
-
         }
 
         private void DeshabilitarCampos()
@@ -102,6 +132,7 @@ namespace COCOA.Maestras
             nombreProveedorTextBox.ReadOnly = true;
             nombreContactoTextBox.ReadOnly = true;
             direccionTextBox.ReadOnly = true;
+            ciudadTextBox.ReadOnly = true;
             emailTextBox.ReadOnly = true;
             telefono1TextBox.ReadOnly = true;
             telefono2TextBox.ReadOnly = true;
@@ -127,30 +158,6 @@ namespace COCOA.Maestras
         {
             this.proveedoresTableAdapter.Fill(this.dSCOCOA.Proveedores);
             VerificaPermisos();
-
-        }
-
-        private void VerificaPermisos()
-        {
-            if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 1)) 
-            {
-                bindingNavigatorAddNewItem.Enabled = true;
-                bindingNavigatorEdit.Enabled = true;
-            }
-            else
-            {
-                bindingNavigatorAddNewItem.Enabled = false;
-                bindingNavigatorEdit.Enabled = false;
-            }
-
-            if (DALPermisoRol.PuedeEliminar(usuarioLogueado.IdRol, 1))
-            {
-                bindingNavigatorDeleteItem.Enabled = true;                
-            }
-            else
-            {
-                bindingNavigatorDeleteItem.Enabled = false;
-            }
         }
 
         private void bindingNavigatorEdit_Click(object sender, EventArgs e)
@@ -164,6 +171,7 @@ namespace COCOA.Maestras
             nombreProveedorTextBox.ReadOnly = false;
             nombreContactoTextBox.ReadOnly = false;
             direccionTextBox.ReadOnly = false;
+            ciudadTextBox.ReadOnly = false;
             emailTextBox.ReadOnly = false;
             telefono1TextBox.ReadOnly = false;
             telefono2TextBox.ReadOnly = false;
@@ -183,18 +191,6 @@ namespace COCOA.Maestras
             bindingNavigatorSearch.Enabled = false;
             bindingNavigatorCountItem.Enabled = false;
             bindingNavigatorExit.Enabled = false;
-        }
-
-        private void bindingNavigatorExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void bindingNavigatorCancel_Click(object sender, EventArgs e)
-        {
-            this.proveedoresBindingSource.CancelEdit();
-            DeshabilitarCampos();
-            VerificaPermisos();
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -218,6 +214,13 @@ namespace COCOA.Maestras
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
         }
 
+        private void bindingNavigatorCancel_Click(object sender, EventArgs e)
+        {
+            this.proveedoresBindingSource.CancelEdit();
+            DeshabilitarCampos();
+            VerificaPermisos();
+        }
+
         private void bindingNavigatorSearch_Click(object sender, EventArgs e)
         {
             frmBusquedaProveedor miBusqueda = new frmBusquedaProveedor();
@@ -225,6 +228,11 @@ namespace COCOA.Maestras
             if (miBusqueda.IDProveedor == 0) return;
             int posicion = proveedoresBindingSource.Find("IDProveedor", miBusqueda.IDProveedor);
             proveedoresBindingSource.Position = posicion;
+        }
+
+        private void bindingNavigatorExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void nitTextBox_KeyPress(object sender, KeyPressEventArgs e)

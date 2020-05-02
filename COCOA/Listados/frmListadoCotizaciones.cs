@@ -1,4 +1,6 @@
-﻿using COCOA.DSCOCOATableAdapters;
+﻿using COCOA.Busqueda;
+using COCOA.DSCOCOATableAdapters;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,14 @@ namespace COCOA.Listados
 {
     public partial class frmListadoCotizaciones : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmListadoCotizaciones()
         {
             InitializeComponent();
@@ -37,8 +47,16 @@ namespace COCOA.Listados
 
         private void frmListadoCotizaciones_Load(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.FillBy3(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy2(this.dSCOCOA.Clientes);
             clienteComboBox.SelectedValue = -1;
+        }
+
+        private void busquedaClienteButton_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCliente miBusqueda = new frmBusquedaCliente();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDCliente == 0) return;
+            clienteComboBox.SelectedValue = miBusqueda.IDCliente;
         }        
     }
 }

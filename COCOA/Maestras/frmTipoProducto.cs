@@ -30,9 +30,17 @@ namespace COCOA.Maestras
 
         private bool ValidarCampos()
         {
+            if (codigoTipoProductoTextBox.Text == "")
+            {
+                errorProvider1.SetError(codigoTipoProductoTextBox, "El campo Código es obligatorio");
+                codigoTipoProductoTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
             if (descripcionTipoProductoTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionTipoProductoTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionTipoProductoTextBox, "El campo Descripción es obligatorio");
                 descripcionTipoProductoTextBox.Focus();
                 return false;
             }
@@ -44,7 +52,6 @@ namespace COCOA.Maestras
         private void frmTipoProducto_Load(object sender, EventArgs e)
         {
             this.tipoProductoTableAdapter.Fill(this.dSCOCOA.TipoProducto);
-
         }
 
         private void bindingNavigatorExit_Click(object sender, EventArgs e)
@@ -60,6 +67,7 @@ namespace COCOA.Maestras
 
         private void DeshabilitarCampos()
         {
+            codigoTipoProductoTextBox.ReadOnly = true;
             descripcionTipoProductoTextBox.ReadOnly = true;
 
             bindingNavigatorMoveFirstItem.Enabled = true;
@@ -82,6 +90,7 @@ namespace COCOA.Maestras
 
         private void HabilitarCampos()
         {
+            codigoTipoProductoTextBox.ReadOnly = false;
             descripcionTipoProductoTextBox.ReadOnly = false;
 
             bindingNavigatorMoveFirstItem.Enabled = false;
@@ -108,12 +117,7 @@ namespace COCOA.Maestras
         {
             DialogResult rta = MessageBox.Show("¿Eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                MessageBoxDefaultButton.Button2);
-            if (rta == DialogResult.No) return;
-            //if (DAL.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
-            //{
-            //    MessageBox.Show("No es posible borrar Proveedor, ya tiene movimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (rta == DialogResult.No) return;            
             tipoProductoBindingSource.RemoveAt(tipoProductoBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
         }

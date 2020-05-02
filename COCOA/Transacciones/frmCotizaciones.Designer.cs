@@ -69,21 +69,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.totalEstampillasTextBox = new System.Windows.Forms.TextBox();
             this.detalleItemTextBox = new System.Windows.Forms.TextBox();
-            this.intervaloPrecioComboBox = new System.Windows.Forms.ComboBox();
-            this.intervaloPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label19 = new System.Windows.Forms.Label();
-            this.pesoBrutoVhComboBox = new System.Windows.Forms.ComboBox();
-            this.pesoBrutoVhBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label20 = new System.Windows.Forms.Label();
-            this.numeroPasajerosComboBox = new System.Windows.Forms.ComboBox();
-            this.numeroPasajerosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label18 = new System.Windows.Forms.Label();
-            this.cilindrajeComboBox = new System.Windows.Forms.ComboBox();
-            this.cilindrajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label17 = new System.Windows.Forms.Label();
-            this.segmentoComboBox = new System.Windows.Forms.ComboBox();
-            this.segmentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label16 = new System.Windows.Forms.Label();
             this.estampillasTextBox = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.productoLabel = new System.Windows.Forms.Label();
@@ -96,6 +81,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.numeroItemTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.intervaloPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pesoBrutoVhBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.numeroPasajerosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cilindrajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.segmentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.segmentosTableAdapter = new COCOA.DSCOCOATableAdapters.SegmentosTableAdapter();
             this.cilindrajesTableAdapter = new COCOA.DSCOCOATableAdapters.CilindrajesTableAdapter();
             this.numeroPasajerosTableAdapter = new COCOA.DSCOCOATableAdapters.NumeroPasajerosTableAdapter();
@@ -124,9 +114,9 @@
             this.salirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salirButton.Image = ((System.Drawing.Image)(resources.GetObject("salirButton.Image")));
-            this.salirButton.Location = new System.Drawing.Point(1416, 32);
+            this.salirButton.Location = new System.Drawing.Point(1182, 128);
             this.salirButton.Name = "salirButton";
-            this.salirButton.Size = new System.Drawing.Size(82, 77);
+            this.salirButton.Size = new System.Drawing.Size(82, 73);
             this.salirButton.TabIndex = 8;
             this.salirButton.Text = "Salir";
             this.salirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -143,9 +133,9 @@
             this.borrarTodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarTodoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarTodoButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarTodoButton.Image")));
-            this.borrarTodoButton.Location = new System.Drawing.Point(1328, 32);
+            this.borrarTodoButton.Location = new System.Drawing.Point(1094, 128);
             this.borrarTodoButton.Name = "borrarTodoButton";
-            this.borrarTodoButton.Size = new System.Drawing.Size(82, 77);
+            this.borrarTodoButton.Size = new System.Drawing.Size(82, 73);
             this.borrarTodoButton.TabIndex = 7;
             this.borrarTodoButton.Text = "Borra Todo";
             this.borrarTodoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -163,9 +153,9 @@
             this.borrarLineaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarLineaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarLineaButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarLineaButton.Image")));
-            this.borrarLineaButton.Location = new System.Drawing.Point(1231, 32);
+            this.borrarLineaButton.Location = new System.Drawing.Point(997, 128);
             this.borrarLineaButton.Name = "borrarLineaButton";
-            this.borrarLineaButton.Size = new System.Drawing.Size(91, 78);
+            this.borrarLineaButton.Size = new System.Drawing.Size(91, 74);
             this.borrarLineaButton.TabIndex = 6;
             this.borrarLineaButton.Text = "Borra Línea";
             this.borrarLineaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -182,9 +172,9 @@
             this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
-            this.cancelarButton.Location = new System.Drawing.Point(1143, 32);
+            this.cancelarButton.Location = new System.Drawing.Point(1182, 39);
             this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(82, 78);
+            this.cancelarButton.Size = new System.Drawing.Size(82, 83);
             this.cancelarButton.TabIndex = 5;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -201,9 +191,9 @@
             this.guardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guardarButton.Image = ((System.Drawing.Image)(resources.GetObject("guardarButton.Image")));
-            this.guardarButton.Location = new System.Drawing.Point(1055, 32);
+            this.guardarButton.Location = new System.Drawing.Point(1094, 39);
             this.guardarButton.Name = "guardarButton";
-            this.guardarButton.Size = new System.Drawing.Size(82, 78);
+            this.guardarButton.Size = new System.Drawing.Size(82, 83);
             this.guardarButton.TabIndex = 4;
             this.guardarButton.Text = "Guardar";
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -215,7 +205,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1332, 211);
+            this.label11.Location = new System.Drawing.Point(1337, 186);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 15);
             this.label11.TabIndex = 15;
@@ -226,7 +216,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1280, 186);
+            this.label10.Location = new System.Drawing.Point(1285, 161);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 15);
             this.label10.TabIndex = 13;
@@ -237,7 +227,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1342, 161);
+            this.label9.Location = new System.Drawing.Point(1347, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 15);
             this.label9.TabIndex = 11;
@@ -248,7 +238,7 @@
             this.totalNetoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.totalNetoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalNetoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalNetoTextBox.Location = new System.Drawing.Point(1371, 209);
+            this.totalNetoTextBox.Location = new System.Drawing.Point(1376, 184);
             this.totalNetoTextBox.Name = "totalNetoTextBox";
             this.totalNetoTextBox.ReadOnly = true;
             this.totalNetoTextBox.Size = new System.Drawing.Size(125, 21);
@@ -260,7 +250,7 @@
             this.totalImpoconsumoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.totalImpoconsumoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalImpoconsumoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1371, 184);
+            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1376, 159);
             this.totalImpoconsumoTextBox.Name = "totalImpoconsumoTextBox";
             this.totalImpoconsumoTextBox.ReadOnly = true;
             this.totalImpoconsumoTextBox.Size = new System.Drawing.Size(125, 21);
@@ -272,7 +262,7 @@
             this.totalIVATextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.totalIVATextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalIVATextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalIVATextBox.Location = new System.Drawing.Point(1371, 159);
+            this.totalIVATextBox.Location = new System.Drawing.Point(1376, 134);
             this.totalIVATextBox.Name = "totalIVATextBox";
             this.totalIVATextBox.ReadOnly = true;
             this.totalIVATextBox.Size = new System.Drawing.Size(125, 21);
@@ -284,7 +274,7 @@
             this.totalSubtotalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.totalSubtotalTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalSubtotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1371, 135);
+            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1376, 110);
             this.totalSubtotalTextBox.Name = "totalSubtotalTextBox";
             this.totalSubtotalTextBox.ReadOnly = true;
             this.totalSubtotalTextBox.Size = new System.Drawing.Size(125, 21);
@@ -296,7 +286,7 @@
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1314, 137);
+            this.label8.Location = new System.Drawing.Point(1319, 112);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 9;
@@ -307,10 +297,8 @@
             this.detalleCotizacionDataGridView.AllowUserToAddRows = false;
             this.detalleCotizacionDataGridView.AllowUserToDeleteRows = false;
             this.detalleCotizacionDataGridView.AllowUserToOrderColumns = true;
-            this.detalleCotizacionDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleCotizacionDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.detalleCotizacionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -328,7 +316,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.detalleCotizacionDataGridView.Location = new System.Drawing.Point(0, 236);
+            this.detalleCotizacionDataGridView.Location = new System.Drawing.Point(0, 211);
             this.detalleCotizacionDataGridView.Name = "detalleCotizacionDataGridView";
             this.detalleCotizacionDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -339,7 +327,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.detalleCotizacionDataGridView.Size = new System.Drawing.Size(1513, 273);
+            this.detalleCotizacionDataGridView.Size = new System.Drawing.Size(1513, 298);
             this.detalleCotizacionDataGridView.TabIndex = 17;
             // 
             // agregarButton
@@ -352,9 +340,9 @@
             this.agregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarButton.Image")));
-            this.agregarButton.Location = new System.Drawing.Point(967, 32);
+            this.agregarButton.Location = new System.Drawing.Point(997, 39);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Size = new System.Drawing.Size(82, 78);
+            this.agregarButton.Size = new System.Drawing.Size(91, 83);
             this.agregarButton.TabIndex = 3;
             this.agregarButton.Text = "Agregar";
             this.agregarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -477,7 +465,7 @@
             this.busquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.busquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaClienteButton.Location = new System.Drawing.Point(454, 41);
+            this.busquedaClienteButton.Location = new System.Drawing.Point(447, 41);
             this.busquedaClienteButton.Name = "busquedaClienteButton";
             this.busquedaClienteButton.Size = new System.Drawing.Size(63, 23);
             this.busquedaClienteButton.TabIndex = 4;
@@ -529,16 +517,6 @@
             this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.groupBox2.Controls.Add(this.totalEstampillasTextBox);
             this.groupBox2.Controls.Add(this.detalleItemTextBox);
-            this.groupBox2.Controls.Add(this.intervaloPrecioComboBox);
-            this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.pesoBrutoVhComboBox);
-            this.groupBox2.Controls.Add(this.label20);
-            this.groupBox2.Controls.Add(this.numeroPasajerosComboBox);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.cilindrajeComboBox);
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.segmentoComboBox);
-            this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.estampillasTextBox);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.productoLabel);
@@ -551,21 +529,20 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.numeroItemTextBox);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(12, 116);
+            this.groupBox2.Location = new System.Drawing.Point(12, 125);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1253, 114);
+            this.groupBox2.Size = new System.Drawing.Size(949, 80);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
             // 
             // totalEstampillasTextBox
             // 
-            this.totalEstampillasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.totalEstampillasTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalEstampillasTextBox.Cursor = System.Windows.Forms.Cursors.No;
             this.totalEstampillasTextBox.Enabled = false;
             this.totalEstampillasTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalEstampillasTextBox.Location = new System.Drawing.Point(732, 23);
+            this.totalEstampillasTextBox.Location = new System.Drawing.Point(725, 52);
             this.totalEstampillasTextBox.Name = "totalEstampillasTextBox";
             this.totalEstampillasTextBox.ReadOnly = true;
             this.totalEstampillasTextBox.Size = new System.Drawing.Size(125, 20);
@@ -581,139 +558,9 @@
             this.detalleItemTextBox.Size = new System.Drawing.Size(290, 20);
             this.detalleItemTextBox.TabIndex = 2;
             // 
-            // intervaloPrecioComboBox
-            // 
-            this.intervaloPrecioComboBox.DataSource = this.intervaloPreciosBindingSource;
-            this.intervaloPrecioComboBox.DisplayMember = "DescripcionIntervaloPrecio";
-            this.intervaloPrecioComboBox.Enabled = false;
-            this.intervaloPrecioComboBox.FormattingEnabled = true;
-            this.intervaloPrecioComboBox.Location = new System.Drawing.Point(990, 77);
-            this.intervaloPrecioComboBox.Name = "intervaloPrecioComboBox";
-            this.intervaloPrecioComboBox.Size = new System.Drawing.Size(239, 21);
-            this.intervaloPrecioComboBox.TabIndex = 23;
-            this.intervaloPrecioComboBox.ValueMember = "IdIntervaloPrecio";
-            // 
-            // intervaloPreciosBindingSource
-            // 
-            this.intervaloPreciosBindingSource.DataMember = "IntervaloPrecios";
-            this.intervaloPreciosBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(888, 80);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(99, 13);
-            this.label19.TabIndex = 22;
-            this.label19.Text = "Intervalo de Precio:";
-            // 
-            // pesoBrutoVhComboBox
-            // 
-            this.pesoBrutoVhComboBox.DataSource = this.pesoBrutoVhBindingSource;
-            this.pesoBrutoVhComboBox.DisplayMember = "DescripcionPesoBrutoVh";
-            this.pesoBrutoVhComboBox.Enabled = false;
-            this.pesoBrutoVhComboBox.FormattingEnabled = true;
-            this.pesoBrutoVhComboBox.Location = new System.Drawing.Point(990, 50);
-            this.pesoBrutoVhComboBox.Name = "pesoBrutoVhComboBox";
-            this.pesoBrutoVhComboBox.Size = new System.Drawing.Size(239, 21);
-            this.pesoBrutoVhComboBox.TabIndex = 21;
-            this.pesoBrutoVhComboBox.ValueMember = "IdPesoBrutoVh";
-            // 
-            // pesoBrutoVhBindingSource
-            // 
-            this.pesoBrutoVhBindingSource.DataMember = "PesoBrutoVh";
-            this.pesoBrutoVhBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(909, 53);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(78, 13);
-            this.label20.TabIndex = 20;
-            this.label20.Text = "Peso Bruto Vh:";
-            // 
-            // numeroPasajerosComboBox
-            // 
-            this.numeroPasajerosComboBox.DataSource = this.numeroPasajerosBindingSource;
-            this.numeroPasajerosComboBox.DisplayMember = "NumeroPasajeros";
-            this.numeroPasajerosComboBox.Enabled = false;
-            this.numeroPasajerosComboBox.FormattingEnabled = true;
-            this.numeroPasajerosComboBox.Location = new System.Drawing.Point(990, 23);
-            this.numeroPasajerosComboBox.Name = "numeroPasajerosComboBox";
-            this.numeroPasajerosComboBox.Size = new System.Drawing.Size(239, 21);
-            this.numeroPasajerosComboBox.TabIndex = 19;
-            this.numeroPasajerosComboBox.ValueMember = "IdNumeroPasajeros";
-            // 
-            // numeroPasajerosBindingSource
-            // 
-            this.numeroPasajerosBindingSource.DataMember = "NumeroPasajeros";
-            this.numeroPasajerosBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(911, 26);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(76, 13);
-            this.label18.TabIndex = 18;
-            this.label18.Text = "No. Pasajeros:";
-            // 
-            // cilindrajeComboBox
-            // 
-            this.cilindrajeComboBox.DataSource = this.cilindrajesBindingSource;
-            this.cilindrajeComboBox.DisplayMember = "DescripcionCilindraje";
-            this.cilindrajeComboBox.Enabled = false;
-            this.cilindrajeComboBox.FormattingEnabled = true;
-            this.cilindrajeComboBox.Location = new System.Drawing.Point(618, 76);
-            this.cilindrajeComboBox.Name = "cilindrajeComboBox";
-            this.cilindrajeComboBox.Size = new System.Drawing.Size(239, 21);
-            this.cilindrajeComboBox.TabIndex = 16;
-            this.cilindrajeComboBox.ValueMember = "IdCilindraje";
-            // 
-            // cilindrajesBindingSource
-            // 
-            this.cilindrajesBindingSource.DataMember = "Cilindrajes";
-            this.cilindrajesBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(563, 79);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(52, 13);
-            this.label17.TabIndex = 15;
-            this.label17.Text = "Cilindraje:";
-            // 
-            // segmentoComboBox
-            // 
-            this.segmentoComboBox.DataSource = this.segmentosBindingSource;
-            this.segmentoComboBox.DisplayMember = "DescripcionSegmento";
-            this.segmentoComboBox.Enabled = false;
-            this.segmentoComboBox.FormattingEnabled = true;
-            this.segmentoComboBox.Location = new System.Drawing.Point(618, 49);
-            this.segmentoComboBox.Name = "segmentoComboBox";
-            this.segmentoComboBox.Size = new System.Drawing.Size(239, 21);
-            this.segmentoComboBox.TabIndex = 14;
-            this.segmentoComboBox.ValueMember = "IdSegmento";
-            // 
-            // segmentosBindingSource
-            // 
-            this.segmentosBindingSource.DataMember = "Segmentos";
-            this.segmentosBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(557, 52);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 13);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "Segmento:";
-            // 
             // estampillasTextBox
             // 
-            this.estampillasTextBox.Location = new System.Drawing.Point(618, 23);
+            this.estampillasTextBox.Location = new System.Drawing.Point(586, 49);
             this.estampillasTextBox.Name = "estampillasTextBox";
             this.estampillasTextBox.Size = new System.Drawing.Size(67, 20);
             this.estampillasTextBox.TabIndex = 10;
@@ -722,7 +569,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(553, 26);
+            this.label15.Location = new System.Drawing.Point(521, 52);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 13);
             this.label15.TabIndex = 9;
@@ -755,7 +602,7 @@
             // 
             this.precioTextBox.Cursor = System.Windows.Forms.Cursors.No;
             this.precioTextBox.Enabled = false;
-            this.precioTextBox.Location = new System.Drawing.Point(300, 74);
+            this.precioTextBox.Location = new System.Drawing.Point(815, 22);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.ReadOnly = true;
             this.precioTextBox.Size = new System.Drawing.Size(119, 20);
@@ -764,7 +611,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(218, 77);
+            this.label7.Location = new System.Drawing.Point(733, 25);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 11;
@@ -772,7 +619,7 @@
             // 
             // cantidadTextBox
             // 
-            this.cantidadTextBox.Location = new System.Drawing.Point(66, 74);
+            this.cantidadTextBox.Location = new System.Drawing.Point(586, 22);
             this.cantidadTextBox.Name = "cantidadTextBox";
             this.cantidadTextBox.Size = new System.Drawing.Size(119, 20);
             this.cantidadTextBox.TabIndex = 8;
@@ -781,7 +628,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 77);
+            this.label6.Location = new System.Drawing.Point(531, 25);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 7;
@@ -792,7 +639,7 @@
             this.buscarProductoButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.buscarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarProductoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buscarProductoButton.Location = new System.Drawing.Point(454, 46);
+            this.buscarProductoButton.Location = new System.Drawing.Point(447, 46);
             this.buscarProductoButton.Name = "buscarProductoButton";
             this.buscarProductoButton.Size = new System.Drawing.Size(63, 23);
             this.buscarProductoButton.TabIndex = 6;
@@ -826,6 +673,31 @@
             this.label4.Size = new System.Drawing.Size(50, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "No. Item:";
+            // 
+            // intervaloPreciosBindingSource
+            // 
+            this.intervaloPreciosBindingSource.DataMember = "IntervaloPrecios";
+            this.intervaloPreciosBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // pesoBrutoVhBindingSource
+            // 
+            this.pesoBrutoVhBindingSource.DataMember = "PesoBrutoVh";
+            this.pesoBrutoVhBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // numeroPasajerosBindingSource
+            // 
+            this.numeroPasajerosBindingSource.DataMember = "NumeroPasajeros";
+            this.numeroPasajerosBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // cilindrajesBindingSource
+            // 
+            this.cilindrajesBindingSource.DataMember = "Cilindrajes";
+            this.cilindrajesBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // segmentosBindingSource
+            // 
+            this.segmentosBindingSource.DataMember = "Segmentos";
+            this.segmentosBindingSource.DataSource = this.dSCOCOA;
             // 
             // segmentosTableAdapter
             // 
@@ -917,8 +789,6 @@
         private DSCOCOATableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox segmentoComboBox;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox estampillasTextBox;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label productoLabel;
@@ -947,16 +817,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource segmentosBindingSource;
         private DSCOCOATableAdapters.SegmentosTableAdapter segmentosTableAdapter;
-        private System.Windows.Forms.ComboBox cilindrajeComboBox;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.BindingSource cilindrajesBindingSource;
         private DSCOCOATableAdapters.CilindrajesTableAdapter cilindrajesTableAdapter;
-        private System.Windows.Forms.ComboBox numeroPasajerosComboBox;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.ComboBox intervaloPrecioComboBox;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.ComboBox pesoBrutoVhComboBox;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.BindingSource numeroPasajerosBindingSource;
         private DSCOCOATableAdapters.NumeroPasajerosTableAdapter numeroPasajerosTableAdapter;
         private System.Windows.Forms.BindingSource pesoBrutoVhBindingSource;

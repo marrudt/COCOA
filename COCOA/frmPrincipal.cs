@@ -38,6 +38,7 @@ namespace COCOA
         {
             frmClientes miForm = new frmClientes();
             miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
 
@@ -58,17 +59,16 @@ namespace COCOA
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            nombreUsuarioStripStatusLabel.Text = "Usuario actual: " + usuarioLogueado.Nombres;
+            nombreUsuarioStripStatusLabel.Text = "Usuario: " + usuarioLogueado.Nombres;
             VerificarPermisos();
         }
 
         private void VerificarPermisos()
         {
-            if (DALPermisoRol.PuedeVer(1, 1))
-            {
-                clientesToolStripMenuItem.Visible = true;
-            }
-            
+            //if (DALPermisoRol.PuedeVer(1, 1))
+            //{
+            //    clientesToolStripMenuItem.Visible = true;
+            //}            
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 2))
             {
@@ -90,46 +90,38 @@ namespace COCOA
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 7))
             {
-                cilindrajeToolStripMenuItem1.Visible = true;
-                
+                cilindrajeToolStripMenuItem1.Visible = true;                
             }
             else
             {
-                cilindrajeToolStripMenuItem1.Visible = false;
-                
+                cilindrajeToolStripMenuItem1.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 8))
             {
-                claseToolStripMenuItem1.Visible = true;
-                
+                claseToolStripMenuItem1.Visible = true;                
             }
             else
             {
-                claseToolStripMenuItem1.Visible = false;
-                
+                claseToolStripMenuItem1.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 9))
             {
-                intervaloDePreciosToolStripMenuItem1.Visible = true;
-                
+                intervaloDePreciosToolStripMenuItem1.Visible = true;                
             }
             else
             {
-                intervaloDePreciosToolStripMenuItem1.Visible = false;
-                
+                intervaloDePreciosToolStripMenuItem1.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 10))
             {
-                númeroDePasajerosToolStripMenuItem1.Visible = true;
-                
+                númeroDePasajerosToolStripMenuItem1.Visible = true;                
             }
             else
             {
-                númeroDePasajerosToolStripMenuItem1.Visible = false;
-                
+                númeroDePasajerosToolStripMenuItem1.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 11))
@@ -139,8 +131,7 @@ namespace COCOA
             }
             else
             {
-                pesoBrutoVehicularToolStripMenuItem1.Visible = false;
-                
+                pesoBrutoVehicularToolStripMenuItem1.Visible = false;                
             }            
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 3))
@@ -149,31 +140,26 @@ namespace COCOA
                 productosToolStripMenuItem1.Visible = true;
             }
             else
-            {
-                
+            {                
                 productosToolStripMenuItem1.Visible = false;
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 12))
             {
-                segmentoToolStripMenuItem1.Visible = true;
-                
+                segmentoToolStripMenuItem1.Visible = true;                
             }
             else
             {
-                segmentoToolStripMenuItem1.Visible = false;
-                
+                segmentoToolStripMenuItem1.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 13))
             {
-                tipoProductoToolStripMenuItem1.Visible = true;
-                
+                tipoProductoToolStripMenuItem1.Visible = true;                
             }
             else
             {
-                tipoProductoToolStripMenuItem1.Visible = false;
-                
+                tipoProductoToolStripMenuItem1.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 14))
@@ -277,6 +263,53 @@ namespace COCOA
             {
                 ordenesDeCompraToolStripMenuItem.Visible = false;
             }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 24))
+            {
+                reporteCotizacionesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                reporteCotizacionesToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 25))
+            {
+                reporteOrdenesDeCompraToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                reporteOrdenesDeCompraToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 26))
+            {
+                listadoCotizacionesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                listadoCotizacionesToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 23))
+            {
+                listadoProductosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                listadoProductosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 27))
+            {
+                listadoOrdenDeCompraToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                listadoOrdenDeCompraToolStripMenuItem.Visible = false;
+            }
+
+
         }
 
         private void cambioDeClaveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -379,6 +412,7 @@ namespace COCOA
         {
             frmProductos miForm = new frmProductos();
             miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
         }
 
@@ -401,25 +435,30 @@ namespace COCOA
             frmOrdenCompras miForm = new frmOrdenCompras();
             miForm.MdiParent = this;
             miForm.Show();
+        }          
+
+        private void reporteCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
 
-        private void productosToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void listadoCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoCotizaciones miForm = new frmListadoCotizaciones();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListadoProductos miForm = new frmListadoProductos();
             miForm.MdiParent = this;
             miForm.Show();
         }
 
-        private void cotizacionesToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void reporteOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmReporteCotizacion miForm = new frmReporteCotizacion();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void cotizacionesToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            frmListadoCotizaciones miForm = new frmListadoCotizaciones();
+            frmReporteOrdenCompra miForm = new frmReporteOrdenCompra();
             miForm.MdiParent = this;
             miForm.Show();
         }

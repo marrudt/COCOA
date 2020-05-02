@@ -39,6 +39,7 @@ namespace COCOA.Maestras
             }
             errorProvider1.Clear();
             DeshabilitarCampos();
+            VerificaPermisos();
         }
 
         private bool ValidarCampos()
@@ -50,8 +51,6 @@ namespace COCOA.Maestras
                 return false;
             }
             errorProvider1.Clear();
-
-
 
             if (nombreClienteTextBox.Text == "")
             {
@@ -65,6 +64,14 @@ namespace COCOA.Maestras
             {
                 errorProvider1.SetError(direccionTextBox, "El campo dirección es oblitorio");
                 direccionTextBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            if (ciudadTextBox.Text == "")
+            {
+                errorProvider1.SetError(ciudadTextBox, "El campo Ciudad es oblitorio");
+                ciudadTextBox.Focus();
                 return false;
             }
             errorProvider1.Clear();
@@ -97,77 +104,13 @@ namespace COCOA.Maestras
             return true;
         }
 
-        private void frmClientes_Load(object sender, EventArgs e)
-        {
-            this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
-
-        }
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            HabilitarCampos();
-            clientesBindingSource.AddNew();
-            nitTextBox.Focus();
-        }
-
-        private void bindingNavigatorEdit_Click(object sender, EventArgs e)
-        {
-            HabilitarCampos();
-        }
-
-        private void HabilitarCampos()
-        {
-            nitTextBox.ReadOnly = false;
-            nombreClienteTextBox.ReadOnly = false;
-            nombreContactoTextBox.ReadOnly = false;
-            direccionTextBox.ReadOnly = false;
-            emailTextBox.ReadOnly = false;
-            telefono1TextBox.ReadOnly = false;
-            telefono2TextBox.ReadOnly = false;
-            celularTextBox.ReadOnly = false;
-            notasTextBox.ReadOnly = false;
-            activoCheckBox.Enabled = true;
-
-            bindingNavigatorMoveFirstItem.Enabled = false;
-            bindingNavigatorMovePreviousItem.Enabled = false;
-            bindingNavigatorMoveNextItem.Enabled = false;
-            bindingNavigatorMoveLastItem.Enabled = false;
-            bindingNavigatorEdit.Enabled = false;
-            bindingNavigatorAddNewItem.Enabled = false;
-            bindingNavigatorDeleteItem.Enabled = false;
-            bindingNavigatorSaveItem.Enabled = true;
-            bindingNavigatorCancel.Enabled = true;
-            bindingNavigatorSearch.Enabled = false;
-            bindingNavigatorCountItem.Enabled = false;
-            bindingNavigatorExit.Enabled = false;
-        }
-
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
-        {
-            DialogResult rta = MessageBox.Show("¿Eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
-                MessageBoxDefaultButton.Button2);
-            if (rta == DialogResult.No) return;
-            //if (DAL.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
-            //{
-            //    MessageBox.Show("No es posible borrar Proveedor, ya tiene movimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            clientesBindingSource.RemoveAt(clientesBindingSource.Position);
-            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
-        }
-
-        private void bindingNavigatorCancel_Click(object sender, EventArgs e)
-        {
-            this.clientesBindingSource.CancelEdit();
-            DeshabilitarCampos();
-        }
-
         private void DeshabilitarCampos()
         {
             nitTextBox.ReadOnly = true;
             nombreClienteTextBox.ReadOnly = true;
             nombreContactoTextBox.ReadOnly = true;
             direccionTextBox.ReadOnly = true;
+            ciudadTextBox.ReadOnly = true;
             emailTextBox.ReadOnly = true;
             telefono1TextBox.ReadOnly = true;
             telefono2TextBox.ReadOnly = true;
@@ -189,9 +132,94 @@ namespace COCOA.Maestras
             bindingNavigatorExit.Enabled = true;
         }
 
-        private void bindingNavigatorExit_Click(object sender, EventArgs e)
+        private void frmClientes_Load(object sender, EventArgs e)
         {
-            this.Close();
+            this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
+            VerificaPermisos();
+        }
+
+        private void VerificaPermisos()
+        {
+            if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 2))
+            {
+                bindingNavigatorAddNewItem.Enabled = true;
+                bindingNavigatorEdit.Enabled = true;
+            }
+            else
+            {
+                bindingNavigatorAddNewItem.Enabled = false;
+                bindingNavigatorEdit.Enabled = false;
+            }
+
+            if (DALPermisoRol.PuedeEliminar(usuarioLogueado.IdRol, 2))
+            {
+                bindingNavigatorDeleteItem.Enabled = true;
+            }
+            else
+            {
+                bindingNavigatorDeleteItem.Enabled = false;
+            }
+        }
+
+        private void bindingNavigatorEdit_Click(object sender, EventArgs e)
+        {
+            HabilitarCampos();
+        }
+
+        private void HabilitarCampos()
+        {
+            nitTextBox.ReadOnly = false;
+            nombreClienteTextBox.ReadOnly = false;
+            nombreContactoTextBox.ReadOnly = false;
+            direccionTextBox.ReadOnly = false;
+            ciudadTextBox.ReadOnly = false;
+            emailTextBox.ReadOnly = false;
+            telefono1TextBox.ReadOnly = false;
+            telefono2TextBox.ReadOnly = false;
+            celularTextBox.ReadOnly = false;
+            notasTextBox.ReadOnly = false;
+            activoCheckBox.Enabled = true;
+
+            bindingNavigatorMoveFirstItem.Enabled = false;
+            bindingNavigatorMovePreviousItem.Enabled = false;
+            bindingNavigatorMoveNextItem.Enabled = false;
+            bindingNavigatorMoveLastItem.Enabled = false;
+            bindingNavigatorEdit.Enabled = false;
+            bindingNavigatorAddNewItem.Enabled = false;
+            bindingNavigatorDeleteItem.Enabled = false;
+            bindingNavigatorSaveItem.Enabled = true;
+            bindingNavigatorCancel.Enabled = true;
+            bindingNavigatorSearch.Enabled = false;
+            bindingNavigatorCountItem.Enabled = false;
+            bindingNavigatorExit.Enabled = false;
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            HabilitarCampos();
+            clientesBindingSource.AddNew();
+            nitTextBox.Focus();
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            DialogResult rta = MessageBox.Show("¿Eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2);
+            if (rta == DialogResult.No) return;
+            //if (DAL.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
+            //{
+            //    MessageBox.Show("No es posible borrar Proveedor, ya tiene movimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            clientesBindingSource.RemoveAt(clientesBindingSource.Position);
+            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
+        }
+
+        private void bindingNavigatorCancel_Click(object sender, EventArgs e)
+        {
+            this.clientesBindingSource.CancelEdit();
+            DeshabilitarCampos();
+            VerificaPermisos();
         }
 
         private void bindingNavigatorSearch_Click(object sender, EventArgs e)
@@ -201,6 +229,11 @@ namespace COCOA.Maestras
             if (miBusqueda.IDCliente == 0) return;
             int posicion = clientesBindingSource.Find("IDCliente", miBusqueda.IDCliente);
             clientesBindingSource.Position = posicion;
+        }
+
+        private void bindingNavigatorExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private void nitTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -221,6 +254,6 @@ namespace COCOA.Maestras
         private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }                
+        }
     }
 }

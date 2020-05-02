@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label descripcionTipoProductoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoProducto));
-            this.dSCOCOA = new COCOA.DSCOCOA();
-            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tipoProductoTableAdapter = new COCOA.DSCOCOATableAdapters.TipoProductoTableAdapter();
-            this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
+            System.Windows.Forms.Label codigoTipoProductoLabel;
+            System.Windows.Forms.Label descripcionTipoProductoLabel;
             this.tipoProductoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -51,67 +48,26 @@
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSCOCOA = new COCOA.DSCOCOA();
+            this.tipoProductoTableAdapter = new COCOA.DSCOCOATableAdapters.TipoProductoTableAdapter();
+            this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.tipoProductoDataGridView = new System.Windows.Forms.DataGridView();
+            this.codigoTipoProductoTextBox = new System.Windows.Forms.TextBox();
+            this.descripcionTipoProductoTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionTipoProductoTextBox = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            codigoTipoProductoLabel = new System.Windows.Forms.Label();
             descripcionTipoProductoLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingNavigator)).BeginInit();
             this.tipoProductoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // descripcionTipoProductoLabel
-            // 
-            descripcionTipoProductoLabel.AutoSize = true;
-            descripcionTipoProductoLabel.Location = new System.Drawing.Point(8, 49);
-            descripcionTipoProductoLabel.Name = "descripcionTipoProductoLabel";
-            descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionTipoProductoLabel.TabIndex = 2;
-            descripcionTipoProductoLabel.Text = "Descripción:";
-            // 
-            // dSCOCOA
-            // 
-            this.dSCOCOA.DataSetName = "DSCOCOA";
-            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tipoProductoBindingSource
-            // 
-            this.tipoProductoBindingSource.DataMember = "TipoProducto";
-            this.tipoProductoBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // tipoProductoTableAdapter
-            // 
-            this.tipoProductoTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CilindrajesTableAdapter = null;
-            this.tableAdapterManager.ClaseTableAdapter = null;
-            this.tableAdapterManager.ClientesTableAdapter = null;
-            this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
-            this.tableAdapterManager.CotizacionTableAdapter = null;
-            this.tableAdapterManager.FormularioTableAdapter = null;
-            this.tableAdapterManager.ImpoconsumoTableAdapter = null;
-            this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
-            this.tableAdapterManager.IVATableAdapter = null;
-            this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
-            this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
-            this.tableAdapterManager.OrdenCompraTableAdapter = null;
-            this.tableAdapterManager.PermisoRolTableAdapter = null;
-            this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
-            this.tableAdapterManager.ProductosTableAdapter = null;
-            this.tableAdapterManager.ProveedoresTableAdapter = null;
-            this.tableAdapterManager.RolTableAdapter = null;
-            this.tableAdapterManager.SegmentosTableAdapter = null;
-            this.tableAdapterManager.TipoProductoTableAdapter = this.tipoProductoTableAdapter;
-            this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
             // tipoProductoBindingNavigator
             // 
@@ -283,26 +239,104 @@
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // tipoProductoBindingSource
+            // 
+            this.tipoProductoBindingSource.DataMember = "TipoProducto";
+            this.tipoProductoBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // dSCOCOA
+            // 
+            this.dSCOCOA.DataSetName = "DSCOCOA";
+            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoProductoTableAdapter
+            // 
+            this.tipoProductoTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CilindrajesTableAdapter = null;
+            this.tableAdapterManager.ClaseTableAdapter = null;
+            this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
+            this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.FormularioTableAdapter = null;
+            this.tableAdapterManager.ImpoconsumoTableAdapter = null;
+            this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
+            this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
+            this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
+            this.tableAdapterManager.OrdenCompraTableAdapter = null;
+            this.tableAdapterManager.PermisoRolTableAdapter = null;
+            this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProveedoresTableAdapter = null;
+            this.tableAdapterManager.RolTableAdapter = null;
+            this.tableAdapterManager.SegmentosTableAdapter = null;
+            this.tableAdapterManager.TipoProductoTableAdapter = this.tipoProductoTableAdapter;
+            this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
+            // 
             // tipoProductoDataGridView
             // 
             this.tipoProductoDataGridView.AllowUserToAddRows = false;
             this.tipoProductoDataGridView.AllowUserToDeleteRows = false;
             this.tipoProductoDataGridView.AllowUserToOrderColumns = true;
-            this.tipoProductoDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tipoProductoDataGridView.AutoGenerateColumns = false;
             this.tipoProductoDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.tipoProductoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tipoProductoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
             this.tipoProductoDataGridView.DataSource = this.tipoProductoBindingSource;
-            this.tipoProductoDataGridView.Location = new System.Drawing.Point(0, 75);
+            this.tipoProductoDataGridView.Location = new System.Drawing.Point(0, 95);
             this.tipoProductoDataGridView.Name = "tipoProductoDataGridView";
             this.tipoProductoDataGridView.ReadOnly = true;
-            this.tipoProductoDataGridView.Size = new System.Drawing.Size(394, 215);
-            this.tipoProductoDataGridView.TabIndex = 1;
+            this.tipoProductoDataGridView.Size = new System.Drawing.Size(394, 194);
+            this.tipoProductoDataGridView.TabIndex = 3;
+            // 
+            // codigoTipoProductoLabel
+            // 
+            codigoTipoProductoLabel.AutoSize = true;
+            codigoTipoProductoLabel.Location = new System.Drawing.Point(16, 46);
+            codigoTipoProductoLabel.Name = "codigoTipoProductoLabel";
+            codigoTipoProductoLabel.Size = new System.Drawing.Size(43, 13);
+            codigoTipoProductoLabel.TabIndex = 3;
+            codigoTipoProductoLabel.Text = "Código:";
+            // 
+            // codigoTipoProductoTextBox
+            // 
+            this.codigoTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "CodigoTipoProducto", true));
+            this.codigoTipoProductoTextBox.Location = new System.Drawing.Point(88, 43);
+            this.codigoTipoProductoTextBox.Name = "codigoTipoProductoTextBox";
+            this.codigoTipoProductoTextBox.ReadOnly = true;
+            this.codigoTipoProductoTextBox.Size = new System.Drawing.Size(44, 20);
+            this.codigoTipoProductoTextBox.TabIndex = 4;
+            // 
+            // descripcionTipoProductoLabel
+            // 
+            descripcionTipoProductoLabel.AutoSize = true;
+            descripcionTipoProductoLabel.Location = new System.Drawing.Point(16, 72);
+            descripcionTipoProductoLabel.Name = "descripcionTipoProductoLabel";
+            descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionTipoProductoLabel.TabIndex = 4;
+            descripcionTipoProductoLabel.Text = "Descripción:";
+            // 
+            // descripcionTipoProductoTextBox
+            // 
+            this.descripcionTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "DescripcionTipoProducto", true));
+            this.descripcionTipoProductoTextBox.Location = new System.Drawing.Point(88, 69);
+            this.descripcionTipoProductoTextBox.Name = "descripcionTipoProductoTextBox";
+            this.descripcionTipoProductoTextBox.ReadOnly = true;
+            this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(278, 20);
+            this.descripcionTipoProductoTextBox.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -315,36 +349,32 @@
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DescripcionTipoProducto";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodigoTipoProducto";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Código";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 88;
+            this.dataGridViewTextBoxColumn2.Width = 65;
             // 
-            // descripcionTipoProductoTextBox
+            // dataGridViewTextBoxColumn3
             // 
-            this.descripcionTipoProductoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "DescripcionTipoProducto", true));
-            this.descripcionTipoProductoTextBox.Location = new System.Drawing.Point(80, 46);
-            this.descripcionTipoProductoTextBox.Name = "descripcionTipoProductoTextBox";
-            this.descripcionTipoProductoTextBox.ReadOnly = true;
-            this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(272, 20);
-            this.descripcionTipoProductoTextBox.TabIndex = 3;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescripcionTipoProducto";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 88;
             // 
             // frmTipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(394, 290);
+            this.ClientSize = new System.Drawing.Size(394, 289);
             this.ControlBox = false;
             this.Controls.Add(descripcionTipoProductoLabel);
             this.Controls.Add(this.descripcionTipoProductoTextBox);
+            this.Controls.Add(codigoTipoProductoLabel);
+            this.Controls.Add(this.codigoTipoProductoTextBox);
             this.Controls.Add(this.tipoProductoDataGridView);
             this.Controls.Add(this.tipoProductoBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -352,13 +382,13 @@
             this.Name = "frmTipoProducto";
             this.Text = "Tipo de Producto";
             this.Load += new System.EventHandler(this.frmTipoProducto_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingNavigator)).EndInit();
             this.tipoProductoBindingNavigator.ResumeLayout(false);
             this.tipoProductoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoProductoDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -383,13 +413,15 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView tipoProductoDataGridView;
-        private System.Windows.Forms.TextBox descripcionTipoProductoTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
         private System.Windows.Forms.ToolStripButton bindingNavigatorEdit;
         private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
+        private System.Windows.Forms.DataGridView tipoProductoDataGridView;
+        private System.Windows.Forms.TextBox descripcionTipoProductoTextBox;
+        private System.Windows.Forms.TextBox codigoTipoProductoTextBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

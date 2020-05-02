@@ -78,6 +78,7 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             this.productosDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -123,7 +124,6 @@
             this.notasTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             idTipoProductoLabel = new System.Windows.Forms.Label();
             codigoProductoLabel = new System.Windows.Forms.Label();
             idProductoLabel = new System.Windows.Forms.Label();
@@ -216,7 +216,7 @@
             // precioLabel
             // 
             precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(291, 102);
+            precioLabel.Location = new System.Drawing.Point(282, 102);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(83, 13);
             precioLabel.TabIndex = 14;
@@ -330,10 +330,12 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CilindrajesTableAdapter = this.cilindrajesTableAdapter;
+            this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = this.claseTableAdapter;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.DepartamentosTableAdapter = null;
             this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = this.impoconsumoTableAdapter;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = this.intervaloPreciosTableAdapter;
@@ -341,6 +343,7 @@
             this.tableAdapterManager.NumeroPasajerosTableAdapter = this.numeroPasajerosTableAdapter;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
+            this.tableAdapterManager.PaisesTableAdapter = null;
             this.tableAdapterManager.PermisoRolTableAdapter = null;
             this.tableAdapterManager.PesoBrutoVhTableAdapter = this.pesoBrutoVhTableAdapter;
             this.tableAdapterManager.ProductosTableAdapter = this.productosTableAdapter;
@@ -526,6 +529,7 @@
             // bindingNavigatorSaveItem
             // 
             this.bindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorSaveItem.Enabled = false;
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
             this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
             this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
@@ -564,6 +568,17 @@
             this.bindingNavigatorExit.Text = "toolStripButton4";
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
+            // 
+            // bindingNavigatorPrint
+            // 
+            this.bindingNavigatorPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorPrint.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorPrint.Image")));
+            this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
+            this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorPrint.Text = "toolStripButton1";
+            this.bindingNavigatorPrint.ToolTipText = "Imprimir";
+            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
             // 
             // productosDataGridView
             // 
@@ -821,7 +836,7 @@
             // idTipoProductoComboBox
             // 
             this.idTipoProductoComboBox.DataSource = this.tipoProductoBindingSource;
-            this.idTipoProductoComboBox.DisplayMember = "DescripcionTipoProducto";
+            this.idTipoProductoComboBox.DisplayMember = "CodigoTipoProducto";
             this.idTipoProductoComboBox.Enabled = false;
             this.idTipoProductoComboBox.FormattingEnabled = true;
             this.idTipoProductoComboBox.Location = new System.Drawing.Point(101, 45);
@@ -882,10 +897,10 @@
             // precioTextBox
             // 
             this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Precio", true));
-            this.precioTextBox.Location = new System.Drawing.Point(377, 98);
+            this.precioTextBox.Location = new System.Drawing.Point(367, 98);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.ReadOnly = true;
-            this.precioTextBox.Size = new System.Drawing.Size(143, 20);
+            this.precioTextBox.Size = new System.Drawing.Size(153, 20);
             this.precioTextBox.TabIndex = 15;
             // 
             // idIVAComboBox
@@ -1038,17 +1053,6 @@
             this.activoCheckBox.Size = new System.Drawing.Size(15, 24);
             this.activoCheckBox.TabIndex = 25;
             this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // bindingNavigatorPrint
-            // 
-            this.bindingNavigatorPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorPrint.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorPrint.Image")));
-            this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
-            this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorPrint.Text = "toolStripButton1";
-            this.bindingNavigatorPrint.ToolTipText = "Imprimir";
-            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
             // 
             // frmProductos
             // 

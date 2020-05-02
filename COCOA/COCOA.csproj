@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -96,6 +97,12 @@
     <Compile Include="Listados\frmListadoCotizaciones.Designer.cs">
       <DependentUpon>frmListadoCotizaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\frmListadoOrdenCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmListadoOrdenCompras.Designer.cs">
+      <DependentUpon>frmListadoOrdenCompras.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listados\frmListadoProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +127,12 @@
     <Compile Include="Maestras\frmCilindraje.Designer.cs">
       <DependentUpon>frmCilindraje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Maestras\frmCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmCiudad.Designer.cs">
+      <DependentUpon>frmCiudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maestras\frmClase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,6 +144,12 @@
     </Compile>
     <Compile Include="Maestras\frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmDepartamento.Designer.cs">
+      <DependentUpon>frmDepartamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestras\frmFormulario.cs">
       <SubType>Form</SubType>
@@ -161,6 +180,12 @@
     </Compile>
     <Compile Include="Maestras\frmNumeroPasajeros.Designer.cs">
       <DependentUpon>frmNumeroPasajeros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maestras\frmPais.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maestras\frmPais.Designer.cs">
+      <DependentUpon>frmPais.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestras\frmPesoBrutoVehicular.cs">
       <SubType>Form</SubType>
@@ -198,10 +223,22 @@
     <Compile Include="Reportes\frmReporteCotizacion.Designer.cs">
       <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\rptReporteCotizacion.cs">
+    <Compile Include="Reportes\frmReporteOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteOrdenCompra.Designer.cs">
+      <DependentUpon>frmReporteOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCotizacion1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptReporteCotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteOrdenCompra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteOrdenCompra.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Seguridad\frmCambioClave.cs">
@@ -304,6 +341,9 @@
     <EmbeddedResource Include="Maestras\frmNumeroPasajeros.resx">
       <DependentUpon>frmNumeroPasajeros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmPais.resx">
+      <DependentUpon>frmPais.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmPesoBrutoVehicular.resx">
       <DependentUpon>frmPesoBrutoVehicular.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,9 +362,16 @@
     <EmbeddedResource Include="Reportes\frmReporteCotizacion.resx">
       <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteOrdenCompra.resx">
+      <DependentUpon>frmReporteOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReporteCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptReporteCotizacion1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteOrdenCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteOrdenCompra.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\frmCambioClave.resx">
       <DependentUpon>frmCambioClave.cs</DependentUpon>
@@ -391,6 +438,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

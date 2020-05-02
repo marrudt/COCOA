@@ -34,6 +34,7 @@
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.verReporteButton = new System.Windows.Forms.Button();
             this.filtroGroupBox = new System.Windows.Forms.GroupBox();
+            this.busquedaClienteButton = new System.Windows.Forms.Button();
             this.cotizacionNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.clienteComboBox = new System.Windows.Forms.ComboBox();
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -42,7 +43,6 @@
             this.clienteRadioButton = new System.Windows.Forms.RadioButton();
             this.todosRadioButton = new System.Windows.Forms.RadioButton();
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
-            this.busquedaClienteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.filtroGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cotizacionNumericUpDown)).BeginInit();
@@ -55,6 +55,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.crystalReportViewer1);
             this.panel1.Location = new System.Drawing.Point(-1, 65);
             this.panel1.Name = "panel1";
@@ -64,12 +65,12 @@
             // crystalReportViewer1
             // 
             this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1375, 582);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1371, 578);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // verReporteButton
@@ -77,7 +78,7 @@
             this.verReporteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.verReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verReporteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.verReporteButton.Location = new System.Drawing.Point(835, 23);
+            this.verReporteButton.Location = new System.Drawing.Point(836, 16);
             this.verReporteButton.Name = "verReporteButton";
             this.verReporteButton.Size = new System.Drawing.Size(93, 30);
             this.verReporteButton.TabIndex = 1;
@@ -94,12 +95,26 @@
             this.filtroGroupBox.Controls.Add(this.cotizacionRadioButton);
             this.filtroGroupBox.Controls.Add(this.clienteRadioButton);
             this.filtroGroupBox.Controls.Add(this.todosRadioButton);
-            this.filtroGroupBox.Location = new System.Drawing.Point(13, 9);
+            this.filtroGroupBox.Location = new System.Drawing.Point(6, 2);
             this.filtroGroupBox.Name = "filtroGroupBox";
-            this.filtroGroupBox.Size = new System.Drawing.Size(816, 50);
+            this.filtroGroupBox.Size = new System.Drawing.Size(824, 61);
             this.filtroGroupBox.TabIndex = 2;
             this.filtroGroupBox.TabStop = false;
             this.filtroGroupBox.Text = "Filtros";
+            // 
+            // busquedaClienteButton
+            // 
+            this.busquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.busquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.busquedaClienteButton.Location = new System.Drawing.Point(741, 18);
+            this.busquedaClienteButton.Name = "busquedaClienteButton";
+            this.busquedaClienteButton.Size = new System.Drawing.Size(63, 23);
+            this.busquedaClienteButton.TabIndex = 5;
+            this.busquedaClienteButton.Text = "Buscar";
+            this.busquedaClienteButton.UseVisualStyleBackColor = false;
+            this.busquedaClienteButton.Visible = false;
+            this.busquedaClienteButton.Click += new System.EventHandler(this.busquedaClienteButton_Click);
             // 
             // cotizacionNumericUpDown
             // 
@@ -166,7 +181,7 @@
             this.clienteRadioButton.TabIndex = 1;
             this.clienteRadioButton.Text = "Cliente";
             this.clienteRadioButton.UseVisualStyleBackColor = true;
-            this.clienteRadioButton.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            this.clienteRadioButton.CheckedChanged += new System.EventHandler(this.clienteRadioButton_CheckedChanged);
             // 
             // todosRadioButton
             // 
@@ -184,20 +199,6 @@
             // clientesTableAdapter
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // busquedaClienteButton
-            // 
-            this.busquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.busquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaClienteButton.Location = new System.Drawing.Point(741, 18);
-            this.busquedaClienteButton.Name = "busquedaClienteButton";
-            this.busquedaClienteButton.Size = new System.Drawing.Size(63, 23);
-            this.busquedaClienteButton.TabIndex = 5;
-            this.busquedaClienteButton.Text = "Buscar";
-            this.busquedaClienteButton.UseVisualStyleBackColor = false;
-            this.busquedaClienteButton.Visible = false;
-            this.busquedaClienteButton.Click += new System.EventHandler(this.busquedaClienteButton_Click);
             // 
             // frmReporteCotizacion
             // 

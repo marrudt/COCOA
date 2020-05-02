@@ -1,4 +1,6 @@
 ﻿using COCOA.DSCOCOATableAdapters;
+using COCOA.Maestras;
+using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +15,14 @@ namespace COCOA.Listados
 {
     public partial class frmListadoProductos : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         public frmListadoProductos()
         {
             InitializeComponent();

@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 91);
+            this.label1.Location = new System.Drawing.Point(71, 104);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 0;
@@ -55,24 +55,24 @@
             // 
             // claveAnteriorTextBox
             // 
-            this.claveAnteriorTextBox.Location = new System.Drawing.Point(175, 88);
+            this.claveAnteriorTextBox.Location = new System.Drawing.Point(181, 101);
             this.claveAnteriorTextBox.Name = "claveAnteriorTextBox";
-            this.claveAnteriorTextBox.PasswordChar = '|';
+            this.claveAnteriorTextBox.PasswordChar = '•';
             this.claveAnteriorTextBox.Size = new System.Drawing.Size(106, 20);
             this.claveAnteriorTextBox.TabIndex = 1;
             // 
             // nuevaClaveTextBox
             // 
-            this.nuevaClaveTextBox.Location = new System.Drawing.Point(175, 114);
+            this.nuevaClaveTextBox.Location = new System.Drawing.Point(181, 127);
             this.nuevaClaveTextBox.Name = "nuevaClaveTextBox";
-            this.nuevaClaveTextBox.PasswordChar = '|';
+            this.nuevaClaveTextBox.PasswordChar = '•';
             this.nuevaClaveTextBox.Size = new System.Drawing.Size(106, 20);
             this.nuevaClaveTextBox.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 117);
+            this.label2.Location = new System.Drawing.Point(75, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 13);
             this.label2.TabIndex = 2;
@@ -80,16 +80,16 @@
             // 
             // confirmarClaveTextBox
             // 
-            this.confirmarClaveTextBox.Location = new System.Drawing.Point(175, 140);
+            this.confirmarClaveTextBox.Location = new System.Drawing.Point(181, 153);
             this.confirmarClaveTextBox.Name = "confirmarClaveTextBox";
-            this.confirmarClaveTextBox.PasswordChar = '|';
+            this.confirmarClaveTextBox.PasswordChar = '•';
             this.confirmarClaveTextBox.Size = new System.Drawing.Size(106, 20);
             this.confirmarClaveTextBox.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(57, 143);
+            this.label3.Location = new System.Drawing.Point(63, 156);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 13);
             this.label3.TabIndex = 4;
@@ -106,7 +106,7 @@
             this.Cancelarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelarbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Cancelarbutton.Location = new System.Drawing.Point(178, 179);
+            this.Cancelarbutton.Location = new System.Drawing.Point(184, 192);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(92, 35);
             this.Cancelarbutton.TabIndex = 7;
@@ -123,7 +123,7 @@
             this.AceptarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AceptarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AceptarButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AceptarButton.Location = new System.Drawing.Point(80, 179);
+            this.AceptarButton.Location = new System.Drawing.Point(86, 192);
             this.AceptarButton.Name = "AceptarButton";
             this.AceptarButton.Size = new System.Drawing.Size(92, 35);
             this.AceptarButton.TabIndex = 6;
@@ -134,7 +134,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(77, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,7 +153,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.CancelButton = this.Cancelarbutton;
-            this.ClientSize = new System.Drawing.Size(357, 243);
+            this.ClientSize = new System.Drawing.Size(365, 269);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Cancelarbutton);

@@ -1,6 +1,7 @@
 ﻿using COCOA.Busqueda;
 using COCOA.Clases;
 using COCOA.Maestras;
+using COCOA.Reportes;
 using DAL;
 using System;
 using System.Collections.Generic;
@@ -11,9 +12,10 @@ namespace COCOA.Transacciones
 {
     public partial class frmOrdenCompras : Form
     {
-        List<DetalleOrdenCompra> misDetalles = new List<DetalleOrdenCompra>();
+        BindingList<DetalleOrdenCompra> misDetalles = new BindingList<DetalleOrdenCompra>();
         DALProducto ultimoProducto = null;
         private DALUsuario usuarioLogueado;
+
         private decimal totalSubtotal = 0;
         private decimal totalIVA = 0;
         private decimal totalImpoconsumo = 0;
@@ -32,14 +34,21 @@ namespace COCOA.Transacciones
 
         private void frmOrdenCompras_Load(object sender, EventArgs e)
         {
+            this.clientesTableAdapter.FillBy4(this.dSCOCOA.Clientes);
+            this.ordenCompraTableAdapter.Fill(this.dSCOCOA.OrdenCompra);
             this.ordenCompraDetalleTableAdapter.Fill(this.dSCOCOA.OrdenCompraDetalle);
             this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);
+            this.productosTableAdapter.FillBy4(this.dSCOCOA.Productos); 
 
             fechaDateTimePicker.Value = DateTime.Now;
             proveedorComboBox.SelectedIndex = -1;
+            vehiculoComboBox.SelectedIndex = -1;
+            entidadComboBox.SelectedIndex = -1;
             plazoEntregaTextBox.Text = string.Empty;
+            numeroCosteoTextBox.Text = string.Empty;
+            contratoTextBox.Text = string.Empty;
+            formaPagoTextBox.Text = string.Empty;
             productoLabel.Text = string.Empty;
-            //precioLabel.Text = string.Empty;
             detalleOrdenCompraDataGridView.DataSource = misDetalles;
             ultimoProducto = null;
         }
@@ -258,6 +267,46 @@ namespace COCOA.Transacciones
             }
             errorProvider1.Clear();
 
+            if (formaPagoTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(formaPagoTextBox, "El campo Forma de Pago es obligatorio");
+                formaPagoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (entidadComboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(entidadComboBox, "Seleccione una Entidad");
+                entidadComboBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (numeroCosteoTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(numeroCosteoTextBox, "El campo Número Costeo es obligatorio");
+                numeroCosteoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (contratoTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(contratoTextBox, "El campo Contrato es obligatorio");
+                contratoTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (vehiculoComboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(vehiculoComboBox, "Seleccione un Vehículo");
+                vehiculoComboBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
             if (proveedorComboBox.SelectedIndex == -1)
             {
                 errorProvider1.SetError(proveedorComboBox, "Seleccione un Proveedor");
@@ -279,9 +328,15 @@ namespace COCOA.Transacciones
 
             int IdProveedor = (int)proveedorComboBox.SelectedValue;
             string plazoEntrega = plazoEntregaTextBox.Text;
+            string formaPago = formaPagoTextBox.Text;
+            DateTime fecha = fechaDateTimePicker.Value;
+            int IdCliente = (int)entidadComboBox.SelectedValue;
+            string numeroCosteo = numeroCosteoTextBox.Text;
+            string contrato = contratoTextBox.Text;
+            int IdProducto = (int)vehiculoComboBox.SelectedValue;
 
             //Guarda encabezado            
-            int IdOrdenCompra = DALOrdenCompra.InsertOrdenCompra(fechaDateTimePicker.Value, IdProveedor, plazoEntrega);
+            int IdOrdenCompra = DALOrdenCompra.InsertOrdenCompra(fecha, IdProveedor, plazoEntrega, formaPago, IdCliente, numeroCosteo, contrato, IdProducto);
 
             //Guarda detalle           
             foreach (DetalleOrdenCompra miDetalle in misDetalles)
@@ -292,6 +347,10 @@ namespace COCOA.Transacciones
 
             MessageBox.Show(string.Format("Orden de Compra {0} guardada exitosamente", IdOrdenCompra), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            frmReporteOrdenCompra miReporte = new frmReporteOrdenCompra();
+            miReporte.IDOrdenCompra = IdOrdenCompra;
+            miReporte.Show();
+
             totalSubtotal = 0;
             totalIVA = 0;
             totalImpoconsumo = 0;
@@ -300,7 +359,7 @@ namespace COCOA.Transacciones
             proveedorComboBox.SelectedIndex = -1;
             misDetalles.Clear();
             plazoEntregaTextBox.Text = string.Empty;
-            //precioLabel.Text = string.Empty;
+            formaPagoTextBox.Text = string.Empty;
             RefrescaGrid();
             plazoEntregaTextBox.Focus();
         }
@@ -323,7 +382,7 @@ namespace COCOA.Transacciones
         {
             errorProvider1.Clear();
             if (misDetalles.Count == 0) return;
-            if (detalleOrdenCompraDataGridView.SelectedRows.Count == 0) 
+            if (detalleOrdenCompraDataGridView.SelectedRows.Count == 0)
             {
                 misDetalles.RemoveAt(misDetalles.Count - 1);
                 RefrescaGrid();
@@ -338,7 +397,7 @@ namespace COCOA.Transacciones
                         misDetalles.RemoveAt(i);
                         break;
                     }
-                }                
+                }
             }
             RefrescaGrid();
         }
@@ -369,6 +428,19 @@ namespace COCOA.Transacciones
         }        
 
         private void productoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }        
+
+        private void BusquedaClienteButton_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCliente miBusqueda = new frmBusquedaCliente();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDCliente == 0) return;
+            entidadComboBox.SelectedValue = miBusqueda.IDCliente;
+        }
+
+        private void numeroCosteoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
         }

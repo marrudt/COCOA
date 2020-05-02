@@ -1,5 +1,6 @@
 ﻿using COCOA.Busqueda;
 using COCOA.DSCOCOATableAdapters;
+using DAL;
 using System;
 using System.Windows.Forms;
 
@@ -7,6 +8,14 @@ namespace COCOA.Reportes
 {
     public partial class frmReporteCotizacion : Form
     {
+        private DALUsuario usuarioLogueado;
+
+        public DALUsuario UsuarioLogueado
+        {
+            get => usuarioLogueado;
+            set => usuarioLogueado = value;
+        }
+
         private int idCotizacion;
 
         public int IDCotizacion
@@ -14,7 +23,6 @@ namespace COCOA.Reportes
             get => idCotizacion;
             set => idCotizacion = value;
         }
-
 
         public frmReporteCotizacion()
         {
@@ -44,7 +52,7 @@ namespace COCOA.Reportes
 
         private void frmReporteCotizacion_Load(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.FillBy2(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes);
             clienteComboBox.SelectedValue = -1;
             if (idCotizacion != 0)
             {
@@ -83,12 +91,7 @@ namespace COCOA.Reportes
                 busquedaClienteButton.Visible = false;
                 cotizacionNumericUpDown.Visible = true;
             }
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            ActualizaFiltro();
-        }
+        }        
 
         private void cotizacionRadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -101,6 +104,11 @@ namespace COCOA.Reportes
             miBusqueda.ShowDialog();
             if (miBusqueda.IDCliente == 0) return;
             clienteComboBox.SelectedValue = miBusqueda.IDCliente;
+        }
+
+        private void clienteRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            ActualizaFiltro();
         }
     }
 }

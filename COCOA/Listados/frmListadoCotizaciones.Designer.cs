@@ -39,6 +39,7 @@
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.label1 = new System.Windows.Forms.Label();
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
+            this.busquedaClienteButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
@@ -52,7 +53,7 @@
             this.panel1.Controls.Add(this.crystalReportViewer1);
             this.panel1.Location = new System.Drawing.Point(0, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1317, 537);
+            this.panel1.Size = new System.Drawing.Size(1357, 537);
             this.panel1.TabIndex = 0;
             // 
             // crystalReportViewer1
@@ -65,7 +66,7 @@
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
             this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1317, 537);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1357, 537);
             this.crystalReportViewer1.TabIndex = 0;
             // 
             // verReporteButton
@@ -73,7 +74,7 @@
             this.verReporteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.verReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verReporteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.verReporteButton.Location = new System.Drawing.Point(453, 5);
+            this.verReporteButton.Location = new System.Drawing.Point(529, 5);
             this.verReporteButton.Name = "verReporteButton";
             this.verReporteButton.Size = new System.Drawing.Size(93, 30);
             this.verReporteButton.TabIndex = 2;
@@ -127,11 +128,26 @@
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
+            // busquedaClienteButton
+            // 
+            this.busquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.busquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.busquedaClienteButton.Location = new System.Drawing.Point(460, 9);
+            this.busquedaClienteButton.Name = "busquedaClienteButton";
+            this.busquedaClienteButton.Size = new System.Drawing.Size(63, 23);
+            this.busquedaClienteButton.TabIndex = 6;
+            this.busquedaClienteButton.Text = "Buscar";
+            this.busquedaClienteButton.UseVisualStyleBackColor = false;
+            this.busquedaClienteButton.Click += new System.EventHandler(this.busquedaClienteButton_Click);
+            // 
             // frmListadoCotizaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1317, 598);
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.ClientSize = new System.Drawing.Size(1357, 598);
+            this.Controls.Add(this.busquedaClienteButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.clienteComboBox);
             this.Controls.Add(this.todosCheckBox);
@@ -160,5 +176,6 @@
         private DSCOCOA dSCOCOA;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private DSCOCOATableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.Button busquedaClienteButton;
     }
 }

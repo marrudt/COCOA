@@ -53,7 +53,7 @@
             this.Cancelarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Cancelarbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Cancelarbutton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Cancelarbutton.Location = new System.Drawing.Point(190, 206);
+            this.Cancelarbutton.Location = new System.Drawing.Point(190, 193);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(86, 35);
             this.Cancelarbutton.TabIndex = 13;
@@ -71,7 +71,7 @@
             this.AceptarButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AceptarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AceptarButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.AceptarButton.Location = new System.Drawing.Point(98, 206);
+            this.AceptarButton.Location = new System.Drawing.Point(98, 193);
             this.AceptarButton.Name = "AceptarButton";
             this.AceptarButton.Size = new System.Drawing.Size(86, 35);
             this.AceptarButton.TabIndex = 12;
@@ -82,7 +82,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(85, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(85, 38);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(204, 42);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -91,9 +91,9 @@
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(132, 165);
+            this.passwordTextBox.Location = new System.Drawing.Point(132, 152);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.PasswordChar = '|';
+            this.passwordTextBox.PasswordChar = '•';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 20);
             this.passwordTextBox.TabIndex = 10;
             this.passwordTextBox.Text = "123";
@@ -101,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(149, 149);
+            this.label2.Location = new System.Drawing.Point(149, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 9;
@@ -109,7 +109,7 @@
             // 
             // usuarioTextBox
             // 
-            this.usuarioTextBox.Location = new System.Drawing.Point(132, 121);
+            this.usuarioTextBox.Location = new System.Drawing.Point(132, 108);
             this.usuarioTextBox.Name = "usuarioTextBox";
             this.usuarioTextBox.Size = new System.Drawing.Size(100, 20);
             this.usuarioTextBox.TabIndex = 8;
@@ -118,7 +118,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 105);
+            this.label1.Location = new System.Drawing.Point(160, 92);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 7;

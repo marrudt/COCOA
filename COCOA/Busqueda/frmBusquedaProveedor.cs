@@ -26,11 +26,45 @@ namespace COCOA.Maestras
 
         private void frmBusquedaProveedor_Load(object sender, EventArgs e)
         {
+            this.ciudadesTableAdapter.Fill(this.dSCOCOA.Ciudades);
+            this.departamentosTableAdapter.Fill(this.dSCOCOA.Departamentos);
             this.proveedoresTableAdapter.Fill(this.dSCOCOA.Proveedores);
 
+        }        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            nitToolStripTextBox.Text = "";
+            nombreProveedorToolStripTextBox.Text = "";
+            nombreContactoToolStripTextBox.Text = "";
+            emailToolStripTextBox.Text = "";
+            fillByToolStripButton1_Click(sender, e);
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void Cancelarbutton_Click(object sender, EventArgs e)
+        {
+            IdProveedor = 0;
+            this.Close();
+        }
+
+        private void volverButton_Click(object sender, EventArgs e)
+        {
+            if (busquedaDataGridView.Rows.Count == 0)
+            {
+                IdProveedor = 0;
+            }
+            else if (busquedaDataGridView.SelectedRows.Count != 0)
+            {
+                IdProveedor = (int)busquedaDataGridView.SelectedRows[0].Cells[0].Value;
+            }
+            else
+            {
+                IdProveedor = (int)busquedaDataGridView.Rows[0].Cells[0].Value;
+            }
+            this.Close();
+        }        
+
+        private void fillByToolStripButton1_Click(object sender, EventArgs e)
         {
             string nit, nombreProveedor, nombreContacto, email;
 
@@ -78,39 +112,6 @@ namespace COCOA.Maestras
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            nitToolStripTextBox.Text = "";
-            nombreProveedorToolStripTextBox.Text = "";
-            nombreContactoToolStripTextBox.Text = "";
-            emailToolStripTextBox.Text = "";
-            fillByToolStripButton_Click(sender, e);
-        }
-
-        private void Cancelarbutton_Click(object sender, EventArgs e)
-        {
-            IdProveedor = 0;
-            this.Close();
-        }
-
-        private void volverButton_Click(object sender, EventArgs e)
-        {
-            if (busquedaDataGridView.Rows.Count == 0)
-            {
-                IdProveedor = 0;
-            }
-            else if (busquedaDataGridView.SelectedRows.Count != 0)
-            {
-                IdProveedor = (int)busquedaDataGridView.SelectedRows[0].Cells[0].Value;
-            }
-            else
-            {
-                IdProveedor = (int)busquedaDataGridView.Rows[0].Cells[0].Value;
-            }
-            this.Close();
-        }        
     }
 }

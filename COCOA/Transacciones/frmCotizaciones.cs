@@ -5,11 +5,6 @@ using DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Transacciones
@@ -20,7 +15,7 @@ namespace COCOA.Transacciones
         private DALUsuario usuarioLogueado;
         DALProducto ultimoProducto = null;
 
-        //private decimal totalEstampillas = 0;
+        private decimal totalEstampillas = 0;
         private decimal totalSubtotal = 0;
         private decimal totalIVA = 0;
         private decimal totalImpoconsumo = 0;
@@ -44,17 +39,12 @@ namespace COCOA.Transacciones
             this.numeroPasajerosTableAdapter.Fill(this.dSCOCOA.NumeroPasajeros);
             this.cilindrajesTableAdapter.Fill(this.dSCOCOA.Cilindrajes);
             this.segmentosTableAdapter.Fill(this.dSCOCOA.Segmentos);
-            this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy3(this.dSCOCOA.Clientes);
 
-            clienteComboBox.SelectedIndex = -1;
-            segmentoComboBox.SelectedIndex = -1;
-            cilindrajeComboBox.SelectedIndex = -1;
-            numeroPasajerosComboBox.SelectedIndex = -1;
-            pesoBrutoVhComboBox.SelectedIndex = -1;
-            intervaloPrecioComboBox.SelectedIndex = -1;
+            clienteComboBox.SelectedIndex = -1;            
             productoLabel.Text = string.Empty;
 
-        }     
+        }
 
         private void agregarButton_Click(object sender, EventArgs e)
         {
@@ -152,7 +142,7 @@ namespace COCOA.Transacciones
             miDetalle.IdProducto = ultimoProducto.IdProducto;
             miDetalle.PorcentajeIVA = (float)miIVA.Tarifa;
             miDetalle.PorcentajeImpoconsumo = (float)miImpoconsumo.Tarifa;
-            miDetalle.Estampillas = estampillas;            
+            miDetalle.Estampillas = estampillas;
 
             misDetalles.Add(miDetalle);
             RefrescaGrid();
@@ -174,7 +164,7 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.DataSource = null;
             detalleCotizacionDataGridView.DataSource = misDetalles;
 
-            //totalEstampillas = 0;
+            totalEstampillas = 0;
             totalSubtotal = 0;
             totalIVA = 0;
             totalImpoconsumo = 0;
@@ -182,14 +172,14 @@ namespace COCOA.Transacciones
 
             foreach (DetalleCotizacion miDetalle in misDetalles)
             {
-                //totalEstampillas += miDetalle.ValorEstampillas;
+                totalEstampillas += miDetalle.ValorEstampillas;
                 totalSubtotal += miDetalle.Subtotal;
                 totalIVA += miDetalle.ValorIVA;
                 totalImpoconsumo += miDetalle.ValorImpoconsumo;
                 totalNeto += miDetalle.ValorNeto;
             }
 
-            //totalEstampillasTextBox.Text = string.Format("{0:C2}", totalEstampillas);
+            totalEstampillasTextBox.Text = string.Format("{0:C2}", totalEstampillas);
             totalSubtotalTextBox.Text = string.Format("{0:C2}", totalSubtotal);
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
             totalImpoconsumoTextBox.Text = string.Format("{0:C2}", totalImpoconsumo);
@@ -200,7 +190,7 @@ namespace COCOA.Transacciones
 
         private void PersonalizarGrid()
         {
-            detalleCotizacionDataGridView.Columns["DetalleNumeroItem"].Visible = false;            
+            detalleCotizacionDataGridView.Columns["DetalleNumeroItem"].Visible = false;
 
             detalleCotizacionDataGridView.Columns["NumeroItem"].HeaderText = "No.";
             detalleCotizacionDataGridView.Columns["NumeroItem"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -294,7 +284,7 @@ namespace COCOA.Transacciones
             if (miBusqueda.IDProducto == 0) return;
             productoTextBox.Text = miBusqueda.IDProducto.ToString();
             productoTextBox_Validating_1(sender, new CancelEventArgs());
-        }        
+        }
 
         private void productoTextBox_Validating_1(object sender, CancelEventArgs e)
         {
@@ -335,12 +325,7 @@ namespace COCOA.Transacciones
                 ultimoProducto = miProducto;
             }
 
-            precioTextBox.Text = string.Format("{0:C2}", ultimoProducto.Precio);
-            segmentoComboBox.SelectedValue = ultimoProducto.IdSegmento;
-            cilindrajeComboBox.SelectedValue = ultimoProducto.IdCilindraje;
-            numeroPasajerosComboBox.SelectedValue = ultimoProducto.IdNumeroPasajeros;
-            pesoBrutoVhComboBox.SelectedValue = ultimoProducto.IdPesoBrutoVh;
-            intervaloPrecioComboBox.SelectedValue = ultimoProducto.IdIntervaloPrecio;
+            precioTextBox.Text = string.Format("{0:C2}", ultimoProducto.Precio);            
         }
 
         private void numeroItemTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -421,9 +406,10 @@ namespace COCOA.Transacciones
             //Guarda detalle           
             foreach (DetalleCotizacion miDetalle in misDetalles)
             {
-                DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.IdProducto, miDetalle.DescripcionProducto, 
-                    miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo, miDetalle.Estampillas);
-                
+                DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.IdProducto,
+                    miDetalle.DescripcionProducto, miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo,
+                    miDetalle.Estampillas);
+
             }
 
             MessageBox.Show(string.Format("Cotización {0} guardada exitosamente", IdCotizacion), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -465,7 +451,7 @@ namespace COCOA.Transacciones
             }
             else
             {
-                int IDProducto = (int)detalleCotizacionDataGridView.SelectedRows[0].Cells[0].Value;
+                int IDProducto = (int)detalleCotizacionDataGridView.SelectedRows[0].Cells[2].Value;
                 for (int i = 0; i < misDetalles.Count; i++)
                 {
                     if (misDetalles[i].IdProducto == IDProducto)
@@ -473,7 +459,7 @@ namespace COCOA.Transacciones
                         misDetalles.RemoveAt(i);
                         break;
                     }
-                }                
+                }
             }
             RefrescaGrid();
         }
@@ -512,7 +498,7 @@ namespace COCOA.Transacciones
                     e.Cancel = true;
                 }
             }
-        }
+        }        
     }
 
 }
