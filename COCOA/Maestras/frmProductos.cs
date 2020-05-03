@@ -281,6 +281,13 @@ namespace COCOA.Maestras
                     MessageBoxIcon.Error);
                 return;
             }
+            else if (DALCotizacionDetalle.ProductoTieneMovimientoByIdProducto(Convert.ToInt32(idProductoTextBox.Text)))
+            {
+                MessageBox.Show("El Producto tiene movimientos", "No es posible eliminar",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
             productosBindingSource.RemoveAt(productosBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
         }

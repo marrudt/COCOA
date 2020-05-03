@@ -16,14 +16,14 @@ namespace COCOA.Listados {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptListadoProductos : ReportClass {
+    public class rptListadoOrdenCompras : ReportClass {
         
-        public rptListadoProductos() {
+        public rptListadoOrdenCompras() {
         }
         
         public override string ResourceName {
             get {
-                return "rptListadoProductos.rpt";
+                return "rptListadoOrdenCompras.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace COCOA.Listados {
         
         public override string FullResourceName {
             get {
-                return "COCOA.Listados.rptListadoProductos.rpt";
+                return "COCOA.Listados.rptListadoOrdenCompras.rpt";
             }
             set {
                 // Do nothing
@@ -122,9 +122,9 @@ namespace COCOA.Listados {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptListadoProductos : Component, ICachedReport {
+    public class CachedrptListadoOrdenCompras : Component, ICachedReport {
         
-        public CachedrptListadoProductos() {
+        public CachedrptListadoOrdenCompras() {
         }
         
         [Browsable(false)]
@@ -161,7 +161,7 @@ namespace COCOA.Listados {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptListadoProductos rpt = new rptListadoProductos();
+            rptListadoOrdenCompras rpt = new rptListadoOrdenCompras();
             rpt.Site = this.Site;
             return rpt;
         }

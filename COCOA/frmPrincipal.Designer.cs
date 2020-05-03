@@ -66,9 +66,11 @@
             this.reporteCotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteOrdenesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoCotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobreCOCOAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -367,32 +369,49 @@
             // listadosToolStripMenuItem
             // 
             this.listadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoClientesToolStripMenuItem,
             this.listadoCotizacionesToolStripMenuItem,
             this.listadoOrdenDeCompraToolStripMenuItem,
-            this.listadoProductosToolStripMenuItem});
+            this.listadoProductosToolStripMenuItem,
+            this.listadoProveedoresToolStripMenuItem});
             this.listadosToolStripMenuItem.Name = "listadosToolStripMenuItem";
             this.listadosToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.listadosToolStripMenuItem.Text = "&Listados";
             // 
+            // listadoClientesToolStripMenuItem
+            // 
+            this.listadoClientesToolStripMenuItem.Name = "listadoClientesToolStripMenuItem";
+            this.listadoClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoClientesToolStripMenuItem.Text = "Clie&ntes";
+            this.listadoClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoClientesToolStripMenuItem_Click);
+            // 
             // listadoCotizacionesToolStripMenuItem
             // 
             this.listadoCotizacionesToolStripMenuItem.Name = "listadoCotizacionesToolStripMenuItem";
-            this.listadoCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoCotizacionesToolStripMenuItem.Text = "&Cotizaciones";
             this.listadoCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.listadoCotizacionesToolStripMenuItem_Click);
             // 
             // listadoOrdenDeCompraToolStripMenuItem
             // 
             this.listadoOrdenDeCompraToolStripMenuItem.Name = "listadoOrdenDeCompraToolStripMenuItem";
-            this.listadoOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoOrdenDeCompraToolStripMenuItem.Text = "&Orden de Compra";
+            this.listadoOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.listadoOrdenDeCompraToolStripMenuItem_Click);
             // 
             // listadoProductosToolStripMenuItem
             // 
             this.listadoProductosToolStripMenuItem.Name = "listadoProductosToolStripMenuItem";
-            this.listadoProductosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoProductosToolStripMenuItem.Text = "&Productos";
             this.listadoProductosToolStripMenuItem.Click += new System.EventHandler(this.listadoProductosToolStripMenuItem_Click);
+            // 
+            // listadoProveedoresToolStripMenuItem
+            // 
+            this.listadoProveedoresToolStripMenuItem.Name = "listadoProveedoresToolStripMenuItem";
+            this.listadoProveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.listadoProveedoresToolStripMenuItem.Text = "Pro&veedores";
+            this.listadoProveedoresToolStripMenuItem.Click += new System.EventHandler(this.listadoProveedoresToolStripMenuItem_Click);
             // 
             // acercaDeToolStripMenuItem
             // 
@@ -504,5 +523,7 @@
         private System.Windows.Forms.ToolStripMenuItem listadoProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoCotizacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoOrdenDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoProveedoresToolStripMenuItem;
     }
 }

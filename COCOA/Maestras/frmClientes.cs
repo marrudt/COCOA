@@ -1,5 +1,6 @@
 ﻿using COCOA.Busqueda;
 using COCOA.Clases;
+using COCOA.Listados;
 using DAL;
 using System;
 using System.Windows.Forms;
@@ -206,11 +207,11 @@ namespace COCOA.Maestras
             DialogResult rta = MessageBox.Show("¿Eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
             if (rta == DialogResult.No) return;
-            //if (DAL.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
-            //{
-            //    MessageBox.Show("No es posible borrar Proveedor, ya tiene movimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (DALCotizacion.ClienteTieneCotizacion(Convert.ToInt32(idClienteTextBox.Text)))
+            {
+                MessageBox.Show("El Cliente tiene Cotizaciones", "No es posible eliminarlo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             clientesBindingSource.RemoveAt(clientesBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
         }
@@ -254,6 +255,12 @@ namespace COCOA.Maestras
         private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void bindingNavigatorPrint_Click(object sender, EventArgs e)
+        {
+            frmListadoClientes miForm = new frmListadoClientes();
+            miForm.ShowDialog();
         }
     }
 }

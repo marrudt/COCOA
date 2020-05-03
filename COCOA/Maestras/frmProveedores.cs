@@ -1,4 +1,5 @@
 ﻿using COCOA.Clases;
+using COCOA.Listados;
 using DAL;
 using System;
 using System.Windows.Forms;
@@ -207,7 +208,7 @@ namespace COCOA.Maestras
             if (rta == DialogResult.No) return;
             if (DALOrdenCompra.ProveedorTieneOrdenCompra(Convert.ToInt32(idProveedorTextBox.Text)))
             {
-                MessageBox.Show("El Proveedor tiene transacciones", "No es posible eliminar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El Proveedor tiene Órdenes de Compra", "No es posible eliminarlo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             proveedoresBindingSource.RemoveAt(proveedoresBindingSource.Position);
@@ -253,6 +254,12 @@ namespace COCOA.Maestras
         private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void bindingNavigatorPrint_Click(object sender, EventArgs e)
+        {
+            frmListadoProveedores miForm = new frmListadoProveedores();
+            miForm.ShowDialog();
         }
     }
 }

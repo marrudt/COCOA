@@ -161,17 +161,22 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CilindrajesTableAdapter = null;
+            this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.DepartamentosTableAdapter = null;
             this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
+            this.tableAdapterManager.PaisesTableAdapter = null;
             this.tableAdapterManager.PermisoRolTableAdapter = null;
             this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
@@ -473,7 +478,7 @@
             this.claveTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuariosBindingSource, "Clave", true));
             this.claveTextBox.Location = new System.Drawing.Point(160, 97);
             this.claveTextBox.Name = "claveTextBox";
-            this.claveTextBox.PasswordChar = '|';
+            this.claveTextBox.PasswordChar = '•';
             this.claveTextBox.ReadOnly = true;
             this.claveTextBox.Size = new System.Drawing.Size(100, 20);
             this.claveTextBox.TabIndex = 8;
@@ -491,7 +496,7 @@
             // 
             this.confirmacionTextBox.Location = new System.Drawing.Point(379, 97);
             this.confirmacionTextBox.Name = "confirmacionTextBox";
-            this.confirmacionTextBox.PasswordChar = '|';
+            this.confirmacionTextBox.PasswordChar = '•';
             this.confirmacionTextBox.ReadOnly = true;
             this.confirmacionTextBox.Size = new System.Drawing.Size(100, 20);
             this.confirmacionTextBox.TabIndex = 10;

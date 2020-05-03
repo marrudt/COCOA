@@ -15,5 +15,14 @@ namespace DAL
         {
             return (int)adaptador.InsertCotizacion(Fecha, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega);
         }
+
+        public static bool ClienteTieneCotizacion(int IdCliente)
+        {
+            if (adaptador.ClienteTieneCotizacion(IdCliente) == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

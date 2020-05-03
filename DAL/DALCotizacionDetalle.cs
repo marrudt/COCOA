@@ -17,5 +17,14 @@ namespace DAL
             adaptador.InsertCotizacionDetalle(IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, 
                 PorcentajeIVA, PorcentajeImpoconsumo, (decimal)Estampillas);
         }
+
+        public static bool ProductoTieneMovimientoByIdProducto(int IdProducto)
+        {
+            if (adaptador.ProductoTieneMovimientoByIdProducto(IdProducto) == null)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

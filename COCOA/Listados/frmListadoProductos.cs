@@ -45,7 +45,7 @@ namespace COCOA.Listados
             }
             else
             {
-                adapter.FillBy(miDS.ListadoProductos, (int)tipoComboBox.SelectedValue);
+                adapter.FillBy(miDS.ListadoProductos, tipoComboBox.Text);
             }
             miListado.SetDataSource(miDS);
             crystalReportViewer1.ReportSource = miListado;

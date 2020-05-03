@@ -309,6 +309,23 @@ namespace COCOA
                 listadoOrdenDeCompraToolStripMenuItem.Visible = false;
             }
 
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 28))
+            {
+                listadoClientesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                listadoClientesToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 29))
+            {
+                listadoProveedoresToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                listadoProveedoresToolStripMenuItem.Visible = false;
+            }
 
         }
 
@@ -459,6 +476,27 @@ namespace COCOA
         private void reporteOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmReporteOrdenCompra miForm = new frmReporteOrdenCompra();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoOrdenCompras miForm = new frmListadoOrdenCompras();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoClientes miForm = new frmListadoClientes();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoProveedores miForm = new frmListadoProveedores();
             miForm.MdiParent = this;
             miForm.Show();
         }

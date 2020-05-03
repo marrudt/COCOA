@@ -91,6 +91,12 @@
     <Compile Include="Busqueda\frmBusquedaProveedor.Designer.cs">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\frmListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmListadoClientes.Designer.cs">
+      <DependentUpon>frmListadoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listados\frmListadoCotizaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,16 +115,40 @@
     <Compile Include="Listados\frmListadoProductos.Designer.cs">
       <DependentUpon>frmListadoProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\frmListadoProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmListadoProveedores.Designer.cs">
+      <DependentUpon>frmListadoProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\rptListadoClientes.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListadoClientes.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Listados\rptListadoCotizaciones.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptListadoCotizaciones.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Listados\rptListadoOrdenCompras.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListadoOrdenCompras.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Listados\rptListadoProductos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptListadoProductos.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Listados\rptListadoProveedores.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptListadoProveedores.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Maestras\frmCilindraje.cs">
@@ -303,19 +333,40 @@
     <EmbeddedResource Include="Busqueda\frmBusquedaProveedor.resx">
       <DependentUpon>frmBusquedaProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmListadoClientes.resx">
+      <DependentUpon>frmListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\frmListadoCotizaciones.resx">
       <DependentUpon>frmListadoCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmListadoOrdenCompras.resx">
+      <DependentUpon>frmListadoOrdenCompras.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\frmListadoProductos.resx">
       <DependentUpon>frmListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmListadoProveedores.resx">
+      <DependentUpon>frmListadoProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\rptListadoClientes.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListadoClientes.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\rptListadoCotizaciones.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListadoCotizaciones.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\rptListadoOrdenCompras.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListadoOrdenCompras.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\rptListadoProductos.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListadoProductos.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\rptListadoProveedores.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptListadoProveedores.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmCilindraje.resx">
       <DependentUpon>frmCilindraje.cs</DependentUpon>
@@ -412,7 +463,6 @@
     <None Include="DSCOCOA.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSCOCOA.Designer.cs</LastGenOutput>
     </None>
     <None Include="DSCOCOA.xss">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>

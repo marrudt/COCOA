@@ -16,14 +16,14 @@ namespace COCOA.Listados {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class rptListadoProductos : ReportClass {
+    public class rptListadoProveedores : ReportClass {
         
-        public rptListadoProductos() {
+        public rptListadoProveedores() {
         }
         
         public override string ResourceName {
             get {
-                return "rptListadoProductos.rpt";
+                return "rptListadoProveedores.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace COCOA.Listados {
         
         public override string FullResourceName {
             get {
-                return "COCOA.Listados.rptListadoProductos.rpt";
+                return "COCOA.Listados.rptListadoProveedores.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace COCOA.Listados {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection2 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace COCOA.Listados {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,7 +82,7 @@ namespace COCOA.Listados {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -90,7 +90,7 @@ namespace COCOA.Listados {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[5];
             }
@@ -98,33 +98,17 @@ namespace COCOA.Listados {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection2 {
-            get {
-                return this.ReportDefinition.Sections[6];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[7];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[8];
+                return this.ReportDefinition.Sections[6];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedrptListadoProductos : Component, ICachedReport {
+    public class CachedrptListadoProveedores : Component, ICachedReport {
         
-        public CachedrptListadoProductos() {
+        public CachedrptListadoProveedores() {
         }
         
         [Browsable(false)]
@@ -161,7 +145,7 @@ namespace COCOA.Listados {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            rptListadoProductos rpt = new rptListadoProductos();
+            rptListadoProveedores rpt = new rptListadoProveedores();
             rpt.Site = this.Site;
             return rpt;
         }
