@@ -1,4 +1,5 @@
-﻿using COCOA.Listados;
+﻿using COCOA.Consultas;
+using COCOA.Listados;
 using COCOA.Maestras;
 using COCOA.Reportes;
 using COCOA.Seguridad;
@@ -327,6 +328,23 @@ namespace COCOA
                 listadoProveedoresToolStripMenuItem.Visible = false;
             }
 
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 30))
+            {
+                consultaOrdenesDeCompraToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                consultaOrdenesDeCompraToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 31))
+            {
+                consultaCotizacionesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                consultaCotizacionesToolStripMenuItem.Visible = false;
+            }
         }
 
         private void cambioDeClaveToolStripMenuItem_Click(object sender, EventArgs e)
@@ -499,6 +517,20 @@ namespace COCOA
         private void listadoProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListadoProveedores miForm = new frmListadoProveedores();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void consultaOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaOrdenCompra miForm = new frmConsultaOrdenCompra();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void consultaCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaCotizacion miForm = new frmConsultaCotizacion();
             miForm.MdiParent = this;
             miForm.Show();
         }

@@ -38,7 +38,9 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
@@ -71,10 +73,34 @@
     <Compile Include="Clases\DetalleCotizacion.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="Clases\ValidarTextBox.cs" />
+    <Compile Include="Consultas\frmConsultaCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaCotizacion.Designer.cs">
+      <DependentUpon>frmConsultaCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaOrdenCompra.Designer.cs">
+      <DependentUpon>frmConsultaOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\rptConsultaCotizacion.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptConsultaCotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Consultas\rptConsultaOrdenCompra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptConsultaOrdenCompra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DSCOCOA.cs">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DSCOCOA.Designer.cs">
+    <Compile Include="DSCOCOA1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSCOCOA.xsd</DependentUpon>
@@ -327,6 +353,20 @@
     <EmbeddedResource Include="Busqueda\frmBusquedaProducto.resx">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaCotizacion.resx">
+      <DependentUpon>frmConsultaCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaOrdenCompra.resx">
+      <DependentUpon>frmConsultaOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\rptConsultaCotizacion.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConsultaCotizacion.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\rptConsultaOrdenCompra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptConsultaOrdenCompra.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -463,6 +503,7 @@
     <None Include="DSCOCOA.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSCOCOA1.Designer.cs</LastGenOutput>
     </None>
     <None Include="DSCOCOA.xss">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>

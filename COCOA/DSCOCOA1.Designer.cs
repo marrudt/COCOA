@@ -20138,8 +20138,8 @@ namespace COCOA.DSCOCOATableAdapters {
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Cilindrajes] ([DescripcionCilindraje], [Activo]) VALUES (@Desc" +
-                "ripcionCilindraje, @Activo);\r\nSELECT IdCilindraje, DescripcionCilindraje, Activo" +
-                " FROM Cilindrajes WHERE (IdCilindraje = SCOPE_IDENTITY())";
+                "ripcionCilindraje, @Activo);\nSELECT IdCilindraje, DescripcionCilindraje, Activo " +
+                "FROM Cilindrajes WHERE (IdCilindraje = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionCilindraje", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionCilindraje", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20468,9 +20468,9 @@ SELECT IdCilindraje, DescripcionCilindraje, Activo FROM Cilindrajes WHERE (IdCil
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Impoconsumo] ([DescripcionImpoconsumo], [Tarifa], [Activo]) VA" +
-                "LUES (@DescripcionImpoconsumo, @Tarifa, @Activo);\r\nSELECT IdImpoconsumo, Descrip" +
-                "cionImpoconsumo, Tarifa, Activo FROM Impoconsumo WHERE (IdImpoconsumo = SCOPE_ID" +
-                "ENTITY())";
+                "LUES (@DescripcionImpoconsumo, @Tarifa, @Activo);\nSELECT IdImpoconsumo, Descripc" +
+                "ionImpoconsumo, Tarifa, Activo FROM Impoconsumo WHERE (IdImpoconsumo = SCOPE_IDE" +
+                "NTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionImpoconsumo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionImpoconsumo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarifa", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarifa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20855,9 +20855,9 @@ SELECT IdImpoconsumo, DescripcionImpoconsumo, Tarifa, Activo FROM Impoconsumo WH
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[IntervaloPrecios] ([DescripcionIntervaloPrecio], [Activo]) VAL" +
-                "UES (@DescripcionIntervaloPrecio, @Activo);\r\nSELECT IdIntervaloPrecio, Descripci" +
-                "onIntervaloPrecio, Activo FROM IntervaloPrecios WHERE (IdIntervaloPrecio = SCOPE" +
-                "_IDENTITY())";
+                "UES (@DescripcionIntervaloPrecio, @Activo);\nSELECT IdIntervaloPrecio, Descripcio" +
+                "nIntervaloPrecio, Activo FROM IntervaloPrecios WHERE (IdIntervaloPrecio = SCOPE_" +
+                "IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionIntervaloPrecio", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionIntervaloPrecio", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21188,8 +21188,8 @@ SELECT IdIntervaloPrecio, DescripcionIntervaloPrecio, Activo FROM IntervaloPreci
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[IVA] ([DescripcionIVA], [Tarifa], [Activo]) VALUES (@Descripci" +
-                "onIVA, @Tarifa, @Activo);\r\nSELECT IdIVA, DescripcionIVA, Tarifa, Activo FROM IVA" +
-                " WHERE (IdIVA = SCOPE_IDENTITY())";
+                "onIVA, @Tarifa, @Activo);\nSELECT IdIVA, DescripcionIVA, Tarifa, Activo FROM IVA " +
+                "WHERE (IdIVA = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionIVA", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionIVA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tarifa", global::System.Data.SqlDbType.Float, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tarifa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21548,8 +21548,8 @@ SELECT IdIVA, DescripcionIVA, Tarifa, Activo FROM IVA WHERE (IdIVA = @IdIVA)";
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[NumeroPasajeros] ([NumeroPasajeros], [Activo]) VALUES (@Numero" +
-                "Pasajeros, @Activo);\r\nSELECT IdNumeroPasajeros, NumeroPasajeros, Activo FROM Num" +
-                "eroPasajeros WHERE (IdNumeroPasajeros = SCOPE_IDENTITY())";
+                "Pasajeros, @Activo);\nSELECT IdNumeroPasajeros, NumeroPasajeros, Activo FROM Nume" +
+                "roPasajeros WHERE (IdNumeroPasajeros = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroPasajeros", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroPasajeros", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21877,8 +21877,8 @@ SELECT IdNumeroPasajeros, NumeroPasajeros, Activo FROM NumeroPasajeros WHERE (Id
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Rol] ([DescripcionRol], [Activo]) VALUES (@DescripcionRol, @Ac" +
-                "tivo);\r\nSELECT IdRol, DescripcionRol, Activo FROM Rol WHERE (IdRol = SCOPE_IDENT" +
-                "ITY())";
+                "tivo);\nSELECT IdRol, DescripcionRol, Activo FROM Rol WHERE (IdRol = SCOPE_IDENTI" +
+                "TY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionRol", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionRol", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -21913,7 +21913,7 @@ SELECT IdRol, DescripcionRol, Activo FROM Rol WHERE (IdRol = @IdRol)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdRol, DescripcionRol, Activo \r\nFROM dbo.Rol\r\nORDER BY DescripcionRol";
+            this._commandCollection[1].CommandText = "SELECT IdRol, DescripcionRol, Activo \nFROM dbo.Rol\nORDER BY DescripcionRol";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -22247,8 +22247,8 @@ SELECT IdRol, DescripcionRol, Activo FROM Rol WHERE (IdRol = @IdRol)";
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Segmentos] ([DescripcionSegmento], [Activo]) VALUES (@Descripc" +
-                "ionSegmento, @Activo);\r\nSELECT IdSegmento, DescripcionSegmento, Activo FROM Segm" +
-                "entos WHERE (IdSegmento = SCOPE_IDENTITY())";
+                "ionSegmento, @Activo);\nSELECT IdSegmento, DescripcionSegmento, Activo FROM Segme" +
+                "ntos WHERE (IdSegmento = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionSegmento", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionSegmento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -22580,9 +22580,9 @@ SELECT IdSegmento, DescripcionSegmento, Activo FROM Segmentos WHERE (IdSegmento 
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Usuarios] ([IdUsuario], [Nombres], [Clave], [IdRol], [Email], " +
-                "[Activo]) VALUES (@IdUsuario, @Nombres, @Clave, @IdRol, @Email, @Activo);\r\nSELEC" +
-                "T IdUsuario, Nombres, Clave, IdRol, Email, Activo FROM Usuarios WHERE (IdUsuario" +
-                " = @IdUsuario)";
+                "[Activo]) VALUES (@IdUsuario, @Nombres, @Clave, @IdRol, @Email, @Activo);\nSELECT" +
+                " IdUsuario, Nombres, Clave, IdRol, Email, Activo FROM Usuarios WHERE (IdUsuario " +
+                "= @IdUsuario)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdUsuario", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdUsuario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Nombres", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Nombres", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23018,8 +23018,8 @@ SELECT IdUsuario, Nombres, Clave, IdRol, Email, Activo FROM Usuarios WHERE (IdUs
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PesoBrutoVh] ([DescripcionPesoBrutoVh], [Activo]) VALUES (@Des" +
-                "cripcionPesoBrutoVh, @Activo);\r\nSELECT IdPesoBrutoVh, DescripcionPesoBrutoVh, Ac" +
-                "tivo FROM PesoBrutoVh WHERE (IdPesoBrutoVh = SCOPE_IDENTITY())";
+                "cripcionPesoBrutoVh, @Activo);\nSELECT IdPesoBrutoVh, DescripcionPesoBrutoVh, Act" +
+                "ivo FROM PesoBrutoVh WHERE (IdPesoBrutoVh = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionPesoBrutoVh", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionPesoBrutoVh", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23372,8 +23372,8 @@ SELECT IdPesoBrutoVh, DescripcionPesoBrutoVh, Activo FROM PesoBrutoVh WHERE (IdP
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Clase] ([DescripcionClase], [Activo]) VALUES (@DescripcionClas" +
-                "e, @Activo);\r\nSELECT IdClase, DescripcionClase, Activo FROM Clase WHERE (IdClase" +
-                " = SCOPE_IDENTITY())";
+                "e, @Activo);\nSELECT IdClase, DescripcionClase, Activo FROM Clase WHERE (IdClase " +
+                "= SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionClase", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionClase", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -23779,13 +23779,13 @@ SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar F
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar \r\n" +
-                "FROM dbo.PermisoRol\r\nORDER BY IdRol";
+            this._commandCollection[1].CommandText = "SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar \nF" +
+                "ROM dbo.PermisoRol\nORDER BY IdRol";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar \r\n" +
-                "FROM dbo.PermisoRol\r\nORDER BY IdFormulario";
+            this._commandCollection[2].CommandText = "SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar \nF" +
+                "ROM dbo.PermisoRol\nORDER BY IdFormulario";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -24173,8 +24173,8 @@ SELECT IdPermisoRol, IdRol, IdFormulario, PuedeVer, PuedeEditar, PuedeEliminar F
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Formulario] ([DescripcionFormulario], [Activo]) VALUES (@Descr" +
-                "ipcionFormulario, @Activo);\r\nSELECT IdFormulario, DescripcionFormulario, Activo " +
-                "FROM Formulario WHERE (IdFormulario = SCOPE_IDENTITY())";
+                "ipcionFormulario, @Activo);\nSELECT IdFormulario, DescripcionFormulario, Activo F" +
+                "ROM Formulario WHERE (IdFormulario = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionFormulario", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionFormulario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Activo", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Activo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -24209,8 +24209,8 @@ SELECT IdFormulario, DescripcionFormulario, Activo FROM Formulario WHERE (IdForm
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdFormulario, DescripcionFormulario, Activo \r\nFROM dbo.Formulario\r\nORDER B" +
-                "Y DescripcionFormulario";
+            this._commandCollection[1].CommandText = "SELECT IdFormulario, DescripcionFormulario, Activo \nFROM dbo.Formulario\nORDER BY " +
+                "DescripcionFormulario";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -26198,11 +26198,11 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProdu
                 "centajeIVA] IS NULL) OR ([PorcentajeIVA] = @Original_PorcentajeIVA)) AND ((@IsNu" +
                 "ll_PorcentajeImpoconsumo = 1 AND [PorcentajeImpoconsumo] IS NULL) OR ([Porcentaj" +
                 "eImpoconsumo] = @Original_PorcentajeImpoconsumo)) AND ((@IsNull_Estampillas = 1 " +
-                "AND [Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)));\r\nSELECT" +
-                " IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, D" +
-                "escripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Esta" +
-                "mpillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = @IdCotizacionDetalle" +
-                ")";
+                "AND [Estampillas] IS NULL) OR ([Estampillas] = @Original_Estampillas)));\nSELECT " +
+                "IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, De" +
+                "scripcionProducto, Precio, Cantidad, PorcentajeIVA, PorcentajeImpoconsumo, Estam" +
+                "pillas FROM CotizacionDetalle WHERE (IdCotizacionDetalle = @IdCotizacionDetalle)" +
+                "";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NumeroItem", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NumeroItem", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -27974,13 +27974,13 @@ SELECT IdCiudad, IdDepartamento, IdPais, CodigoCiudad, DescripcionCiudad FROM Ci
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdCiudad, IdDepartamento, IdPais, CodigoCiudad, DescripcionCiudad \r\nFROM d" +
-                "bo.Ciudades\r\nORDER BY DescripcionCiudad";
+            this._commandCollection[1].CommandText = "SELECT IdCiudad, IdDepartamento, IdPais, CodigoCiudad, DescripcionCiudad \nFROM db" +
+                "o.Ciudades\nORDER BY DescripcionCiudad";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT IdCiudad, IdDepartamento, IdPais, CodigoCiudad, DescripcionCiudad \r\nFROM d" +
-                "bo.Ciudades\r\nORDER BY DescripcionCiudad";
+            this._commandCollection[2].CommandText = "SELECT IdCiudad, IdDepartamento, IdPais, CodigoCiudad, DescripcionCiudad \nFROM db" +
+                "o.Ciudades\nORDER BY DescripcionCiudad";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -28431,19 +28431,19 @@ SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento FROM 
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento \r\nFROM" +
-                " dbo.Departamentos\r\nWHERE IdPais = @IdPais";
+            this._commandCollection[1].CommandText = "SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento \nFROM " +
+                "dbo.Departamentos\nWHERE IdPais = @IdPais";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdPais", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdPais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento \r\nFROM" +
-                " dbo.Departamentos\r\nORDER BY DescripcionDepartamento";
+            this._commandCollection[2].CommandText = "SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento \nFROM " +
+                "dbo.Departamentos\nORDER BY DescripcionDepartamento";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento \r\nFROM" +
-                " dbo.Departamentos\r\nORDER BY DescripcionDepartamento";
+            this._commandCollection[3].CommandText = "SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento \nFROM " +
+                "dbo.Departamentos\nORDER BY DescripcionDepartamento";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -28841,8 +28841,8 @@ SELECT IdDepartamento, IdPais, CodigoDepartamento, DescripcionDepartamento FROM 
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Paises] ([CodigoPais], [DescripcionPais]) VALUES (@CodigoPais," +
-                " @DescripcionPais);\r\nSELECT IdPais, CodigoPais, DescripcionPais FROM Paises WHER" +
-                "E (IdPais = SCOPE_IDENTITY())";
+                " @DescripcionPais);\nSELECT IdPais, CodigoPais, DescripcionPais FROM Paises WHERE" +
+                " (IdPais = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoPais", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoPais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionPais", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionPais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -28878,24 +28878,24 @@ SELECT IdPais, CodigoPais, DescripcionPais FROM Paises WHERE (IdPais = @IdPais)"
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT IdPais, CodigoPais, DescripcionPais \r\nFROM dbo.Paises\r\nORDER BY Descripcio" +
-                "nPais";
+            this._commandCollection[1].CommandText = "SELECT IdPais, CodigoPais, DescripcionPais \nFROM dbo.Paises\nORDER BY DescripcionP" +
+                "ais";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT IdPais, CodigoPais, DescripcionPais \r\nFROM dbo.Paises\r\nORDER BY Descripcio" +
-                "nPais";
+            this._commandCollection[2].CommandText = "SELECT IdPais, CodigoPais, DescripcionPais \nFROM dbo.Paises\nORDER BY DescripcionP" +
+                "ais";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT IdPais, CodigoPais, DescripcionPais \r\nFROM dbo.Paises\r\nWHERE IdPais = @IdP" +
-                "ais";
+            this._commandCollection[3].CommandText = "SELECT IdPais, CodigoPais, DescripcionPais \nFROM dbo.Paises\nWHERE IdPais = @IdPai" +
+                "s";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdPais", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdPais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT p.IdPais, CodigoPais, DescripcionPais \r\nFROM dbo.Paises p\r\nINNER JOIN dbo." +
-                "Clientes c on c.IdPais = @IdPais";
+            this._commandCollection[4].CommandText = "SELECT p.IdPais, CodigoPais, DescripcionPais \nFROM dbo.Paises p\nINNER JOIN dbo.Cl" +
+                "ientes c on c.IdPais = @IdPais";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdPais", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdPais", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -29350,7 +29350,7 @@ SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, Tel
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, Tele" +
@@ -29372,22 +29372,28 @@ Email LIKE @Email";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, \r\nTe" +
-                "lefono1, Telefono2, Celular, Email, Notas, Activo \r\nFROM dbo.Proveedores\r\nORDER " +
-                "BY NombreProveedor";
+            this._commandCollection[2].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, \nTel" +
+                "efono1, Telefono2, Celular, Email, Notas, Activo \nFROM dbo.Proveedores\nORDER BY " +
+                "NombreProveedor";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, \r\nCiudad, Te" +
-                "lefono1, Telefono2, Celular, Email, Notas, Activo \r\nFROM dbo.Proveedores\r\nORDER " +
-                "BY NombreProveedor";
+            this._commandCollection[3].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, \nCiudad, Tel" +
+                "efono1, Telefono2, Celular, Email, Notas, Activo \nFROM dbo.Proveedores\nORDER BY " +
+                "NombreProveedor";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, \r\nTe" +
+            this._commandCollection[4].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, \nTel" +
+                "efono1, Telefono2, Celular, Email, Notas, Activo \nFROM dbo.Proveedores\nORDER BY " +
+                "NombreProveedor";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, \r\nTe" +
                 "lefono1, Telefono2, Celular, Email, Notas, Activo \r\nFROM dbo.Proveedores\r\nORDER " +
                 "BY NombreProveedor";
-            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -29483,6 +29489,19 @@ Email LIKE @Email";
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy3(DSCOCOA.ProveedoresDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy4(DSCOCOA.ProveedoresDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -30084,27 +30103,27 @@ and Email LIKE @Email";
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \r\nTelefo" +
-                "no1, Telefono2, Celular, Email, Notas, Activo \r\nFROM dbo.Clientes\r\nORDER BY Nomb" +
-                "reCliente";
+            this._commandCollection[2].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \nTelefon" +
+                "o1, Telefono2, Celular, Email, Notas, Activo \nFROM dbo.Clientes\nORDER BY NombreC" +
+                "liente";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \r\nTelefo" +
-                "no1, Telefono2, Celular, Email, Notas, Activo \r\nFROM dbo.Clientes\r\nORDER BY Nomb" +
-                "reCliente";
+            this._commandCollection[3].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \nTelefon" +
+                "o1, Telefono2, Celular, Email, Notas, Activo \nFROM dbo.Clientes\nORDER BY NombreC" +
+                "liente";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \r\nTelefo" +
-                "no1, Telefono2, Celular, Email, Notas, Activo FROM dbo.Clientes\r\nORDER BY Nombre" +
-                "Cliente";
+            this._commandCollection[4].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \nTelefon" +
+                "o1, Telefono2, Celular, Email, Notas, Activo FROM dbo.Clientes\nORDER BY NombreCl" +
+                "iente";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \r\nTelefo" +
-                "no1, Telefono2, Celular, Email, Notas, Activo \r\nFROM dbo.Clientes\r\nORDER BY Nomb" +
-                "reCliente";
+            this._commandCollection[5].CommandText = "SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, \nTelefon" +
+                "o1, Telefono2, Celular, Email, Notas, Activo \nFROM dbo.Clientes\nORDER BY NombreC" +
+                "liente";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -31826,7 +31845,7 @@ SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, Ciudad, Telefon
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "select * from Clientes\r\nWHERE IdCliente = @IdCliente";
+            this._commandCollection[1].CommandText = "select * from Clientes\nWHERE IdCliente = @IdCliente";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -32460,7 +32479,7 @@ SELECT IdProveedor, Nit, NombreProveedor, NombreContacto, Direccion, Ciudad, Tel
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "select * from Proveedores\r\nwhere IdProveedor = @IdProveedor";
+            this._commandCollection[1].CommandText = "select * from Proveedores\nwhere IdProveedor = @IdProveedor";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProveedor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
