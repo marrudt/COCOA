@@ -162,25 +162,25 @@
             // idTipoProductoLabel
             // 
             idTipoProductoLabel.AutoSize = true;
-            idTipoProductoLabel.Location = new System.Drawing.Point(63, 48);
+            idTipoProductoLabel.Location = new System.Drawing.Point(67, 48);
             idTipoProductoLabel.Name = "idTipoProductoLabel";
-            idTipoProductoLabel.Size = new System.Drawing.Size(35, 13);
+            idTipoProductoLabel.Size = new System.Drawing.Size(31, 13);
             idTipoProductoLabel.TabIndex = 2;
-            idTipoProductoLabel.Text = "Tipo*:";
+            idTipoProductoLabel.Text = "Tipo:";
             // 
             // codigoProductoLabel
             // 
             codigoProductoLabel.AutoSize = true;
-            codigoProductoLabel.Location = new System.Drawing.Point(199, 48);
+            codigoProductoLabel.Location = new System.Drawing.Point(206, 48);
             codigoProductoLabel.Name = "codigoProductoLabel";
-            codigoProductoLabel.Size = new System.Drawing.Size(47, 13);
+            codigoProductoLabel.Size = new System.Drawing.Size(43, 13);
             codigoProductoLabel.TabIndex = 4;
-            codigoProductoLabel.Text = "Codigo*:";
+            codigoProductoLabel.Text = "Código:";
             // 
             // idProductoLabel
             // 
             idProductoLabel.AutoSize = true;
-            idProductoLabel.Location = new System.Drawing.Point(452, 48);
+            idProductoLabel.Location = new System.Drawing.Point(455, 48);
             idProductoLabel.Name = "idProductoLabel";
             idProductoLabel.Size = new System.Drawing.Size(19, 13);
             idProductoLabel.TabIndex = 6;
@@ -189,92 +189,92 @@
             // descripcionProductoLabel
             // 
             descripcionProductoLabel.AutoSize = true;
-            descripcionProductoLabel.Location = new System.Drawing.Point(28, 74);
+            descripcionProductoLabel.Location = new System.Drawing.Point(32, 74);
             descripcionProductoLabel.Name = "descripcionProductoLabel";
-            descripcionProductoLabel.Size = new System.Drawing.Size(70, 13);
+            descripcionProductoLabel.Size = new System.Drawing.Size(66, 13);
             descripcionProductoLabel.TabIndex = 8;
-            descripcionProductoLabel.Text = "Descripcion*:";
+            descripcionProductoLabel.Text = "Descripción:";
             // 
             // idClaseLabel
             // 
             idClaseLabel.AutoSize = true;
-            idClaseLabel.Location = new System.Drawing.Point(58, 101);
+            idClaseLabel.Location = new System.Drawing.Point(62, 101);
             idClaseLabel.Name = "idClaseLabel";
-            idClaseLabel.Size = new System.Drawing.Size(40, 13);
+            idClaseLabel.Size = new System.Drawing.Size(36, 13);
             idClaseLabel.TabIndex = 10;
-            idClaseLabel.Text = "Clase*:";
+            idClaseLabel.Text = "Clase:";
             // 
             // modeloAnoLabel
             // 
             modeloAnoLabel.AutoSize = true;
-            modeloAnoLabel.Location = new System.Drawing.Point(37, 25);
+            modeloAnoLabel.Location = new System.Drawing.Point(40, 25);
             modeloAnoLabel.Name = "modeloAnoLabel";
-            modeloAnoLabel.Size = new System.Drawing.Size(71, 13);
+            modeloAnoLabel.Size = new System.Drawing.Size(67, 13);
             modeloAnoLabel.TabIndex = 12;
-            modeloAnoLabel.Text = "Modelo Año*:";
+            modeloAnoLabel.Text = "Modelo Año:";
             // 
             // precioLabel
             // 
             precioLabel.AutoSize = true;
-            precioLabel.Location = new System.Drawing.Point(282, 102);
+            precioLabel.Location = new System.Drawing.Point(285, 102);
             precioLabel.Name = "precioLabel";
-            precioLabel.Size = new System.Drawing.Size(83, 13);
+            precioLabel.Size = new System.Drawing.Size(79, 13);
             precioLabel.TabIndex = 14;
-            precioLabel.Text = "Precio Unitario*:";
+            precioLabel.Text = "Precio Unitario:";
             // 
             // idIVALabel
             // 
             idIVALabel.AutoSize = true;
-            idIVALabel.Location = new System.Drawing.Point(67, 128);
+            idIVALabel.Location = new System.Drawing.Point(71, 128);
             idIVALabel.Name = "idIVALabel";
-            idIVALabel.Size = new System.Drawing.Size(31, 13);
+            idIVALabel.Size = new System.Drawing.Size(27, 13);
             idIVALabel.TabIndex = 16;
-            idIVALabel.Text = "IVA*:";
+            idIVALabel.Text = "IVA:";
             // 
             // idImpoconsumoLabel
             // 
             idImpoconsumoLabel.AutoSize = true;
-            idImpoconsumoLabel.Location = new System.Drawing.Point(285, 128);
+            idImpoconsumoLabel.Location = new System.Drawing.Point(288, 128);
             idImpoconsumoLabel.Name = "idImpoconsumoLabel";
-            idImpoconsumoLabel.Size = new System.Drawing.Size(80, 13);
+            idImpoconsumoLabel.Size = new System.Drawing.Size(76, 13);
             idImpoconsumoLabel.TabIndex = 18;
-            idImpoconsumoLabel.Text = "Impoconsumo*:";
+            idImpoconsumoLabel.Text = "Impoconsumo:";
             // 
             // idSegmentoLabel
             // 
             idSegmentoLabel.AutoSize = true;
-            idSegmentoLabel.Location = new System.Drawing.Point(46, 52);
+            idSegmentoLabel.Location = new System.Drawing.Point(49, 52);
             idSegmentoLabel.Name = "idSegmentoLabel";
-            idSegmentoLabel.Size = new System.Drawing.Size(62, 13);
+            idSegmentoLabel.Size = new System.Drawing.Size(58, 13);
             idSegmentoLabel.TabIndex = 20;
-            idSegmentoLabel.Text = "Segmento*:";
+            idSegmentoLabel.Text = "Segmento:";
             // 
             // idNumeroPasajerosLabel
             // 
             idNumeroPasajerosLabel.AutoSize = true;
-            idNumeroPasajerosLabel.Location = new System.Drawing.Point(8, 106);
+            idNumeroPasajerosLabel.Location = new System.Drawing.Point(11, 106);
             idNumeroPasajerosLabel.Name = "idNumeroPasajerosLabel";
-            idNumeroPasajerosLabel.Size = new System.Drawing.Size(100, 13);
+            idNumeroPasajerosLabel.Size = new System.Drawing.Size(96, 13);
             idNumeroPasajerosLabel.TabIndex = 21;
-            idNumeroPasajerosLabel.Text = "Número Pasajeros*:";
+            idNumeroPasajerosLabel.Text = "Número Pasajeros:";
             // 
             // idPesoBrutoVhLabel
             // 
             idPesoBrutoVhLabel.AutoSize = true;
-            idPesoBrutoVhLabel.Location = new System.Drawing.Point(26, 133);
+            idPesoBrutoVhLabel.Location = new System.Drawing.Point(29, 133);
             idPesoBrutoVhLabel.Name = "idPesoBrutoVhLabel";
-            idPesoBrutoVhLabel.Size = new System.Drawing.Size(82, 13);
+            idPesoBrutoVhLabel.Size = new System.Drawing.Size(78, 13);
             idPesoBrutoVhLabel.TabIndex = 22;
-            idPesoBrutoVhLabel.Text = "Peso Bruto Vh*:";
+            idPesoBrutoVhLabel.Text = "Peso Bruto Vh:";
             // 
             // idIntervaloPrecioLabel
             // 
             idIntervaloPrecioLabel.AutoSize = true;
-            idIntervaloPrecioLabel.Location = new System.Drawing.Point(20, 160);
+            idIntervaloPrecioLabel.Location = new System.Drawing.Point(23, 160);
             idIntervaloPrecioLabel.Name = "idIntervaloPrecioLabel";
-            idIntervaloPrecioLabel.Size = new System.Drawing.Size(88, 13);
+            idIntervaloPrecioLabel.Size = new System.Drawing.Size(84, 13);
             idIntervaloPrecioLabel.TabIndex = 23;
-            idIntervaloPrecioLabel.Text = "Intervalo Precio*:";
+            idIntervaloPrecioLabel.Text = "Intervalo Precio:";
             // 
             // detalleProductoLabel
             // 
@@ -297,11 +297,11 @@
             // idCilindrajeLabel
             // 
             idCilindrajeLabel.AutoSize = true;
-            idCilindrajeLabel.Location = new System.Drawing.Point(52, 79);
+            idCilindrajeLabel.Location = new System.Drawing.Point(55, 79);
             idCilindrajeLabel.Name = "idCilindrajeLabel";
-            idCilindrajeLabel.Size = new System.Drawing.Size(56, 13);
+            idCilindrajeLabel.Size = new System.Drawing.Size(52, 13);
             idCilindrajeLabel.TabIndex = 24;
-            idCilindrajeLabel.Text = "Cilindraje*:";
+            idCilindrajeLabel.Text = "Cilindraje:";
             // 
             // activoLabel
             // 
@@ -340,6 +340,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = this.impoconsumoTableAdapter;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = this.intervaloPreciosTableAdapter;
             this.tableAdapterManager.IVATableAdapter = this.iVATableAdapter;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = this.numeroPasajerosTableAdapter;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;

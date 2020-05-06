@@ -64,12 +64,268 @@ namespace COCOA
             VerificarPermisos();
         }
 
+        private void cambioDeClaveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCambioClave miForm = new frmCambioClave();
+            miForm.UsuarioLogueado = this.usuarioLogueado;
+            miForm.ShowDialog();
+        }
+
+        private void cambioDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCambioUsuario miForm = new frmCambioUsuario();
+            miForm.ShowDialog();
+            if (miForm.UsuarioLogueado != null)
+            {
+                this.usuarioLogueado = miForm.UsuarioLogueado;
+                nombreUsuarioStripStatusLabel.Text = "Usuario actual: " + usuarioLogueado.Nombres;
+                VerificarPermisos();
+            }
+        }
+
+        private void rolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRol miForm = new frmRol();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void permisosRolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPermisoRol miForm = new frmPermisoRol();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void cilindrajeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCilindraje miForm = new frmCilindraje();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void claseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmClase miForm = new frmClase();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void númeroDePasajerosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmNumeroPasajeros miForm = new frmNumeroPasajeros();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void pesoBrutoVehicularToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmPesoBrutoVehicular miForm = new frmPesoBrutoVehicular();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void segmentoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmSegmento miForm = new frmSegmento();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void tipoProductoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmTipoProducto miForm = new frmTipoProducto();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void intervaloDePreciosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmIntervaloPrecio miForm = new frmIntervaloPrecio();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void impoconsumoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmImpoconsumo miForm = new frmImpoconsumo();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void iVAToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmIVA miForm = new frmIVA();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmProductos miForm = new frmProductos();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void formulariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmFormulario miForm = new frmFormulario();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCotizaciones miForm = new frmCotizaciones();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrdenCompras miForm = new frmOrdenCompras();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void reporteCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteCotizacion miForm = new frmReporteCotizacion();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoCotizaciones miForm = new frmListadoCotizaciones();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoProductos miForm = new frmListadoProductos();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void reporteOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteOrdenCompra miForm = new frmReporteOrdenCompra();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoOrdenCompras miForm = new frmListadoOrdenCompras();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoClientes miForm = new frmListadoClientes();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void listadoProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmListadoProveedores miForm = new frmListadoProveedores();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void consultaOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaOrdenCompra miForm = new frmConsultaOrdenCompra();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void consultaCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaCotizacion miForm = new frmConsultaCotizacion();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void sobreCOCOAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAcercaDe miForm = new frmAcercaDe();
+            miForm.ShowDialog();
+        }
+
         private void VerificarPermisos()
         {
-            //if (DALPermisoRol.PuedeVer(1, 1))
-            //{
-            //    clientesToolStripMenuItem.Visible = true;
-            //}            
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 21))
+            {
+                transaccionesToolStripMenuItem.Visible = true;
+            }
+            else if(DALPermisoRol.PuedeVer(usuarioLogueado.IdRol,22))
+            {
+                transaccionesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                transaccionesToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 30))
+            {
+                consultasToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 31))
+            {
+                consultasToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                consultasToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 24))
+            {
+                reportesToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 25))
+            {
+                reportesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                reportesToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 23))
+            {
+                listadosToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 26))
+            {
+                listadosToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 27))
+            {
+                listadosToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 28))
+            {
+                listadosToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 29))
+            {
+                listadosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                reportesToolStripMenuItem.Visible = false;
+            }
+
+
+
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 2))
             {
@@ -249,16 +505,16 @@ namespace COCOA
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 22))
             {
-                cotizacionesToolStripMenuItem.Visible = true;
+                cotizacionesToolStripMenuItem.Visible = true;                               
             }
             else
             {
-                cotizacionesToolStripMenuItem.Visible = false;
+                cotizacionesToolStripMenuItem.Visible = false;                               
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 21))
-            {
-                ordenesDeCompraToolStripMenuItem.Visible = true;
+            {                
+                ordenesDeCompraToolStripMenuItem.Visible = true;                
             }
             else
             {
@@ -267,43 +523,43 @@ namespace COCOA
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 24))
             {
-                reporteCotizacionesToolStripMenuItem.Visible = true;
+                reporteCotizacionesToolStripMenuItem.Visible = true;                
             }
             else
             {
-                reporteCotizacionesToolStripMenuItem.Visible = false;
+                reporteCotizacionesToolStripMenuItem.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 25))
             {
-                reporteOrdenesDeCompraToolStripMenuItem.Visible = true;
+                reporteOrdenesDeCompraToolStripMenuItem.Visible = true;               
             }
             else
             {
-                reporteOrdenesDeCompraToolStripMenuItem.Visible = false;
+                reporteOrdenesDeCompraToolStripMenuItem.Visible = false;               
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 26))
             {
-                listadoCotizacionesToolStripMenuItem.Visible = true;
+                listadoCotizacionesToolStripMenuItem.Visible = true;                
             }
             else
             {
-                listadoCotizacionesToolStripMenuItem.Visible = false;
+                listadoCotizacionesToolStripMenuItem.Visible = false;                
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 23))
             {
-                listadoProductosToolStripMenuItem.Visible = true;
+                listadoProductosToolStripMenuItem.Visible = true;               
             }
             else
             {
-                listadoProductosToolStripMenuItem.Visible = false;
+                listadoProductosToolStripMenuItem.Visible = false;               
             }
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 27))
             {
-                listadoOrdenDeCompraToolStripMenuItem.Visible = true;
+                listadoOrdenDeCompraToolStripMenuItem.Visible = true;                
             }
             else
             {
@@ -330,7 +586,7 @@ namespace COCOA
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 30))
             {
-                consultaOrdenesDeCompraToolStripMenuItem.Visible = true;
+                consultaOrdenesDeCompraToolStripMenuItem.Visible = true;                
             }
             else
             {
@@ -345,194 +601,6 @@ namespace COCOA
             {
                 consultaCotizacionesToolStripMenuItem.Visible = false;
             }
-        }
-
-        private void cambioDeClaveToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCambioClave miForm = new frmCambioClave();
-            miForm.UsuarioLogueado = this.usuarioLogueado;
-            miForm.ShowDialog();
-        }
-
-        private void cambioDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCambioUsuario miForm = new frmCambioUsuario();
-            miForm.ShowDialog();
-            if (miForm.UsuarioLogueado != null)
-            {
-                this.usuarioLogueado = miForm.UsuarioLogueado;
-                nombreUsuarioStripStatusLabel.Text = "Usuario actual: " + usuarioLogueado.Nombres;
-                VerificarPermisos();
-            }
-        }
-
-        private void rolToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmRol miForm = new frmRol();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void permisosRolToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmPermisoRol miForm = new frmPermisoRol();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void cilindrajeToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmCilindraje miForm = new frmCilindraje();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void claseToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmClase miForm = new frmClase();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void númeroDePasajerosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmNumeroPasajeros miForm = new frmNumeroPasajeros();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void pesoBrutoVehicularToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmPesoBrutoVehicular miForm = new frmPesoBrutoVehicular();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void segmentoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmSegmento miForm = new frmSegmento();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void tipoProductoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmTipoProducto miForm = new frmTipoProducto();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void intervaloDePreciosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmIntervaloPrecio miForm = new frmIntervaloPrecio();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void impoconsumoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmImpoconsumo miForm = new frmImpoconsumo();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void iVAToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmIVA miForm = new frmIVA();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmProductos miForm = new frmProductos();
-            miForm.MdiParent = this;
-            miForm.UsuarioLogueado = usuarioLogueado;
-            miForm.Show();
-        }
-
-        private void formulariosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            frmFormulario miForm = new frmFormulario();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCotizaciones miForm = new frmCotizaciones();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmOrdenCompras miForm = new frmOrdenCompras();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }          
-
-        private void reporteCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReporteCotizacion miForm = new frmReporteCotizacion();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void listadoCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListadoCotizaciones miForm = new frmListadoCotizaciones();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void listadoProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListadoProductos miForm = new frmListadoProductos();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void reporteOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmReporteOrdenCompra miForm = new frmReporteOrdenCompra();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void listadoOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListadoOrdenCompras miForm = new frmListadoOrdenCompras();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void listadoClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListadoClientes miForm = new frmListadoClientes();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void listadoProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmListadoProveedores miForm = new frmListadoProveedores();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void consultaOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmConsultaOrdenCompra miForm = new frmConsultaOrdenCompra();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
-
-        private void consultaCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmConsultaCotizacion miForm = new frmConsultaCotizacion();
-            miForm.MdiParent = this;
-            miForm.Show();
-        }
+        }       
     }
 }

@@ -30,6 +30,8 @@ namespace DAL
             if (adaptador.PuedeEliminar(IdRol, IdFormulario) == null)
                 return false;
             return true;
-        }                
+        } 
+        
+
     }
 }

@@ -205,11 +205,13 @@ namespace COCOA.Maestras
             {
                 bindingNavigatorAddNewItem.Enabled = true;
                 bindingNavigatorEdit.Enabled = true;
+                precioTextBox.Enabled = false;
             }
             else
             {
                 bindingNavigatorAddNewItem.Enabled = false;
                 bindingNavigatorEdit.Enabled = false;
+                precioTextBox.Enabled = true;
             }
 
             if (DALPermisoRol.PuedeEliminar(usuarioLogueado.IdRol, 3))
