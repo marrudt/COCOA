@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoProducto));
             System.Windows.Forms.Label codigoTipoProductoLabel;
             System.Windows.Forms.Label descripcionTipoProductoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoProducto));
             this.tipoProductoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSCOCOA = new COCOA.DSCOCOA();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -49,25 +51,41 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSCOCOA = new COCOA.DSCOCOA();
             this.tipoProductoTableAdapter = new COCOA.DSCOCOATableAdapters.TipoProductoTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.tipoProductoDataGridView = new System.Windows.Forms.DataGridView();
-            this.codigoTipoProductoTextBox = new System.Windows.Forms.TextBox();
-            this.descripcionTipoProductoTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoTipoProductoTextBox = new System.Windows.Forms.TextBox();
+            this.descripcionTipoProductoTextBox = new System.Windows.Forms.TextBox();
             codigoTipoProductoLabel = new System.Windows.Forms.Label();
             descripcionTipoProductoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingNavigator)).BeginInit();
             this.tipoProductoBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoDataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // codigoTipoProductoLabel
+            // 
+            codigoTipoProductoLabel.AutoSize = true;
+            codigoTipoProductoLabel.Location = new System.Drawing.Point(16, 46);
+            codigoTipoProductoLabel.Name = "codigoTipoProductoLabel";
+            codigoTipoProductoLabel.Size = new System.Drawing.Size(43, 13);
+            codigoTipoProductoLabel.TabIndex = 3;
+            codigoTipoProductoLabel.Text = "Código:";
+            // 
+            // descripcionTipoProductoLabel
+            // 
+            descripcionTipoProductoLabel.AutoSize = true;
+            descripcionTipoProductoLabel.Location = new System.Drawing.Point(16, 72);
+            descripcionTipoProductoLabel.Name = "descripcionTipoProductoLabel";
+            descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionTipoProductoLabel.TabIndex = 4;
+            descripcionTipoProductoLabel.Text = "Descripción:";
             // 
             // tipoProductoBindingNavigator
             // 
@@ -103,6 +121,16 @@
             this.tipoProductoBindingNavigator.Size = new System.Drawing.Size(394, 31);
             this.tipoProductoBindingNavigator.TabIndex = 0;
             this.tipoProductoBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // tipoProductoBindingSource
+            // 
+            this.tipoProductoBindingSource.DataMember = "TipoProducto";
+            this.tipoProductoBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // dSCOCOA
+            // 
+            this.dSCOCOA.DataSetName = "DSCOCOA";
+            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -244,16 +272,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // tipoProductoBindingSource
-            // 
-            this.tipoProductoBindingSource.DataMember = "TipoProducto";
-            this.tipoProductoBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // dSCOCOA
-            // 
-            this.dSCOCOA.DataSetName = "DSCOCOA";
-            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tipoProductoTableAdapter
             // 
             this.tipoProductoTableAdapter.ClearBeforeFill = true;
@@ -262,17 +280,22 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CilindrajesTableAdapter = null;
+            this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.DepartamentosTableAdapter = null;
             this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
+            this.tableAdapterManager.PaisesTableAdapter = null;
             this.tableAdapterManager.PermisoRolTableAdapter = null;
             this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
@@ -290,6 +313,7 @@
             this.tipoProductoDataGridView.AllowUserToOrderColumns = true;
             this.tipoProductoDataGridView.AutoGenerateColumns = false;
             this.tipoProductoDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.tipoProductoDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.tipoProductoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tipoProductoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -301,42 +325,6 @@
             this.tipoProductoDataGridView.ReadOnly = true;
             this.tipoProductoDataGridView.Size = new System.Drawing.Size(394, 194);
             this.tipoProductoDataGridView.TabIndex = 3;
-            // 
-            // codigoTipoProductoLabel
-            // 
-            codigoTipoProductoLabel.AutoSize = true;
-            codigoTipoProductoLabel.Location = new System.Drawing.Point(16, 46);
-            codigoTipoProductoLabel.Name = "codigoTipoProductoLabel";
-            codigoTipoProductoLabel.Size = new System.Drawing.Size(43, 13);
-            codigoTipoProductoLabel.TabIndex = 3;
-            codigoTipoProductoLabel.Text = "Código:";
-            // 
-            // codigoTipoProductoTextBox
-            // 
-            this.codigoTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "CodigoTipoProducto", true));
-            this.codigoTipoProductoTextBox.Location = new System.Drawing.Point(88, 43);
-            this.codigoTipoProductoTextBox.Name = "codigoTipoProductoTextBox";
-            this.codigoTipoProductoTextBox.ReadOnly = true;
-            this.codigoTipoProductoTextBox.Size = new System.Drawing.Size(44, 20);
-            this.codigoTipoProductoTextBox.TabIndex = 4;
-            // 
-            // descripcionTipoProductoLabel
-            // 
-            descripcionTipoProductoLabel.AutoSize = true;
-            descripcionTipoProductoLabel.Location = new System.Drawing.Point(16, 72);
-            descripcionTipoProductoLabel.Name = "descripcionTipoProductoLabel";
-            descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionTipoProductoLabel.TabIndex = 4;
-            descripcionTipoProductoLabel.Text = "Descripción:";
-            // 
-            // descripcionTipoProductoTextBox
-            // 
-            this.descripcionTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "DescripcionTipoProducto", true));
-            this.descripcionTipoProductoTextBox.Location = new System.Drawing.Point(88, 69);
-            this.descripcionTipoProductoTextBox.Name = "descripcionTipoProductoTextBox";
-            this.descripcionTipoProductoTextBox.ReadOnly = true;
-            this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(278, 20);
-            this.descripcionTipoProductoTextBox.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -364,6 +352,24 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 88;
             // 
+            // codigoTipoProductoTextBox
+            // 
+            this.codigoTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "CodigoTipoProducto", true));
+            this.codigoTipoProductoTextBox.Location = new System.Drawing.Point(88, 43);
+            this.codigoTipoProductoTextBox.Name = "codigoTipoProductoTextBox";
+            this.codigoTipoProductoTextBox.ReadOnly = true;
+            this.codigoTipoProductoTextBox.Size = new System.Drawing.Size(44, 20);
+            this.codigoTipoProductoTextBox.TabIndex = 4;
+            // 
+            // descripcionTipoProductoTextBox
+            // 
+            this.descripcionTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "DescripcionTipoProducto", true));
+            this.descripcionTipoProductoTextBox.Location = new System.Drawing.Point(88, 69);
+            this.descripcionTipoProductoTextBox.Name = "descripcionTipoProductoTextBox";
+            this.descripcionTipoProductoTextBox.ReadOnly = true;
+            this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(278, 20);
+            this.descripcionTipoProductoTextBox.TabIndex = 5;
+            // 
             // frmTipoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,9 +391,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingNavigator)).EndInit();
             this.tipoProductoBindingNavigator.ResumeLayout(false);
             this.tipoProductoBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

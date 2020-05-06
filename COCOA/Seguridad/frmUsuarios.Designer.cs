@@ -376,6 +376,7 @@
             this.usuariosDataGridView.AutoGenerateColumns = false;
             this.usuariosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.usuariosDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.usuariosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.usuariosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usuariosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,

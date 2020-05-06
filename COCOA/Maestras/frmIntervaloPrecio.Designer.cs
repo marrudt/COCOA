@@ -105,17 +105,22 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CilindrajesTableAdapter = null;
+            this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.DepartamentosTableAdapter = null;
             this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = this.intervaloPreciosTableAdapter;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
+            this.tableAdapterManager.PaisesTableAdapter = null;
             this.tableAdapterManager.PermisoRolTableAdapter = null;
             this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = null;
@@ -306,6 +311,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.intervaloPreciosDataGridView.AutoGenerateColumns = false;
             this.intervaloPreciosDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.intervaloPreciosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.intervaloPreciosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.intervaloPreciosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,

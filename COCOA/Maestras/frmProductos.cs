@@ -222,6 +222,15 @@ namespace COCOA.Maestras
             {
                 bindingNavigatorDeleteItem.Enabled = false;
             }
+
+            if (DALPermisoRol.Especifico(usuarioLogueado.IdRol, 3))
+            {
+                precioTextBox.Enabled = true;
+            }
+            else
+            {
+                precioTextBox.Enabled = false;
+            }
         }
 
         private void bindingNavigatorEdit_Click(object sender, EventArgs e)

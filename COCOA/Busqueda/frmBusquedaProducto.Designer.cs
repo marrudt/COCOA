@@ -62,12 +62,6 @@
             this.pesoBrutoVhTableAdapter = new COCOA.DSCOCOATableAdapters.PesoBrutoVhTableAdapter();
             this.intervaloPreciosTableAdapter = new COCOA.DSCOCOATableAdapters.IntervaloPreciosTableAdapter();
             this.busquedaDataGridView = new System.Windows.Forms.DataGridView();
-            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.codigoProductoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.codigoProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.descripcionProductoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.descripcionProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,6 +79,12 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
+            this.codigoProductoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.codigoProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.descripcionProductoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.descripcionProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseBindingSource)).BeginInit();
@@ -261,17 +261,22 @@
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.CilindrajesTableAdapter = null;
+            this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = this.claseTableAdapter;
             this.tableAdapterManager.ClientesTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.DepartamentosTableAdapter = null;
             this.tableAdapterManager.FormularioTableAdapter = null;
             this.tableAdapterManager.ImpoconsumoTableAdapter = this.impoconsumoTableAdapter;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = this.iVATableAdapter;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
+            this.tableAdapterManager.PaisesTableAdapter = null;
             this.tableAdapterManager.PermisoRolTableAdapter = null;
             this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
             this.tableAdapterManager.ProductosTableAdapter = this.productosTableAdapter;
@@ -337,6 +342,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.busquedaDataGridView.AutoGenerateColumns = false;
             this.busquedaDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.busquedaDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.busquedaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.busquedaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -362,56 +368,6 @@
             this.busquedaDataGridView.ReadOnly = true;
             this.busquedaDataGridView.Size = new System.Drawing.Size(1099, 464);
             this.busquedaDataGridView.TabIndex = 22;
-            // 
-            // fillBy2ToolStrip
-            // 
-            this.fillBy2ToolStrip.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.codigoProductoToolStripLabel,
-            this.codigoProductoToolStripTextBox,
-            this.descripcionProductoToolStripLabel,
-            this.descripcionProductoToolStripTextBox,
-            this.fillBy2ToolStripButton});
-            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
-            this.fillBy2ToolStrip.Size = new System.Drawing.Size(1099, 25);
-            this.fillBy2ToolStrip.TabIndex = 23;
-            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
-            // 
-            // codigoProductoToolStripLabel
-            // 
-            this.codigoProductoToolStripLabel.Name = "codigoProductoToolStripLabel";
-            this.codigoProductoToolStripLabel.Size = new System.Drawing.Size(49, 22);
-            this.codigoProductoToolStripLabel.Text = "Código:";
-            // 
-            // codigoProductoToolStripTextBox
-            // 
-            this.codigoProductoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.codigoProductoToolStripTextBox.Name = "codigoProductoToolStripTextBox";
-            this.codigoProductoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // descripcionProductoToolStripLabel
-            // 
-            this.descripcionProductoToolStripLabel.Name = "descripcionProductoToolStripLabel";
-            this.descripcionProductoToolStripLabel.Size = new System.Drawing.Size(72, 22);
-            this.descripcionProductoToolStripLabel.Text = "Descripción:";
-            // 
-            // descripcionProductoToolStripTextBox
-            // 
-            this.descripcionProductoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.descripcionProductoToolStripTextBox.Name = "descripcionProductoToolStripTextBox";
-            this.descripcionProductoToolStripTextBox.Size = new System.Drawing.Size(250, 25);
-            // 
-            // fillBy2ToolStripButton
-            // 
-            this.fillBy2ToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy2ToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.fillBy2ToolStripButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
-            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(48, 22);
-            this.fillBy2ToolStripButton.Text = "Buscar";
-            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -478,7 +434,7 @@
             this.dataGridViewTextBoxColumn7.HeaderText = "Modelo Año";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 89;
+            this.dataGridViewTextBoxColumn7.Width = 82;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -593,6 +549,56 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
+            // 
+            // fillBy2ToolStrip
+            // 
+            this.fillBy2ToolStrip.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.codigoProductoToolStripLabel,
+            this.codigoProductoToolStripTextBox,
+            this.descripcionProductoToolStripLabel,
+            this.descripcionProductoToolStripTextBox,
+            this.fillBy2ToolStripButton});
+            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
+            this.fillBy2ToolStrip.Size = new System.Drawing.Size(1099, 25);
+            this.fillBy2ToolStrip.TabIndex = 23;
+            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
+            // 
+            // codigoProductoToolStripLabel
+            // 
+            this.codigoProductoToolStripLabel.Name = "codigoProductoToolStripLabel";
+            this.codigoProductoToolStripLabel.Size = new System.Drawing.Size(49, 22);
+            this.codigoProductoToolStripLabel.Text = "Código:";
+            // 
+            // codigoProductoToolStripTextBox
+            // 
+            this.codigoProductoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.codigoProductoToolStripTextBox.Name = "codigoProductoToolStripTextBox";
+            this.codigoProductoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // descripcionProductoToolStripLabel
+            // 
+            this.descripcionProductoToolStripLabel.Name = "descripcionProductoToolStripLabel";
+            this.descripcionProductoToolStripLabel.Size = new System.Drawing.Size(72, 22);
+            this.descripcionProductoToolStripLabel.Text = "Descripción:";
+            // 
+            // descripcionProductoToolStripTextBox
+            // 
+            this.descripcionProductoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.descripcionProductoToolStripTextBox.Name = "descripcionProductoToolStripTextBox";
+            this.descripcionProductoToolStripTextBox.Size = new System.Drawing.Size(250, 25);
+            // 
+            // fillBy2ToolStripButton
+            // 
+            this.fillBy2ToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy2ToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.fillBy2ToolStripButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
+            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(48, 22);
+            this.fillBy2ToolStripButton.Text = "Buscar";
+            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
             // 
             // frmBusquedaProducto
             // 

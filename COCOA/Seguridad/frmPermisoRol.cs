@@ -45,6 +45,7 @@ namespace COCOA.Seguridad
             puedeEditarCheckBox.Enabled = false;
             puedeEliminarCheckBox.Enabled = false;
             puedeVerCheckBox.Enabled = false;
+            especificoCheckBox.Enabled = false;
 
             bindingNavigatorMoveFirstItem.Enabled = true;
             bindingNavigatorMovePreviousItem.Enabled = true;
@@ -100,6 +101,7 @@ namespace COCOA.Seguridad
             puedeEditarCheckBox.Enabled = true;
             puedeEliminarCheckBox.Enabled = true;
             puedeVerCheckBox.Enabled = true;
+            especificoCheckBox.Enabled = true;
 
             bindingNavigatorMoveFirstItem.Enabled = false;
             bindingNavigatorMovePreviousItem.Enabled = false;

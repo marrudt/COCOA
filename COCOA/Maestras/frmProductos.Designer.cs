@@ -47,7 +47,7 @@
             System.Windows.Forms.Label idCilindrajeLabel;
             System.Windows.Forms.Label activoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosTableAdapter = new COCOA.DSCOCOATableAdapters.ProductosTableAdapter();
@@ -425,7 +425,7 @@
             this.productosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.productosBindingNavigator.Name = "productosBindingNavigator";
             this.productosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.productosBindingNavigator.Size = new System.Drawing.Size(964, 31);
+            this.productosBindingNavigator.Size = new System.Drawing.Size(1284, 31);
             this.productosBindingNavigator.TabIndex = 0;
             this.productosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -591,7 +591,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.productosDataGridView.AutoGenerateColumns = false;
+            this.productosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.productosDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.productosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.productosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.productosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -615,7 +617,7 @@
             this.productosDataGridView.Location = new System.Drawing.Point(0, 259);
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.ReadOnly = true;
-            this.productosDataGridView.Size = new System.Drawing.Size(964, 412);
+            this.productosDataGridView.Size = new System.Drawing.Size(1284, 412);
             this.productosDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -690,10 +692,10 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn8.HeaderText = "Precio Unitario";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -1061,7 +1063,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(964, 671);
+            this.ClientSize = new System.Drawing.Size(1284, 671);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(notasLabel);
@@ -1088,8 +1090,6 @@
             this.Controls.Add(this.productosDataGridView);
             this.Controls.Add(this.productosBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(1350, 1600);
-            this.MinimumSize = new System.Drawing.Size(920, 650);
             this.Name = "frmProductos";
             this.Text = "Productos";
             this.Load += new System.EventHandler(this.frmProductos_Load);

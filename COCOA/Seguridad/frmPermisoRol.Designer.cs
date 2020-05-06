@@ -35,6 +35,7 @@
             System.Windows.Forms.Label puedeEditarLabel;
             System.Windows.Forms.Label puedeEliminarLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPermisoRol));
+            System.Windows.Forms.Label especificoLabel;
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.permisoRolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.permisoRolTableAdapter = new COCOA.DSCOCOATableAdapters.PermisoRolTableAdapter();
@@ -57,7 +58,6 @@
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
-            this.permisoRolDataGridView = new System.Windows.Forms.DataGridView();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formularioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idRolComboBox = new System.Windows.Forms.ComboBox();
@@ -66,31 +66,35 @@
             this.puedeEditarCheckBox = new System.Windows.Forms.CheckBox();
             this.puedeEliminarCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.permisoRolDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.especificoCheckBox = new System.Windows.Forms.CheckBox();
             idRolLabel = new System.Windows.Forms.Label();
             idFormularioLabel = new System.Windows.Forms.Label();
             puedeVerLabel = new System.Windows.Forms.Label();
             puedeEditarLabel = new System.Windows.Forms.Label();
             puedeEliminarLabel = new System.Windows.Forms.Label();
+            especificoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permisoRolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.permisoRolBindingNavigator)).BeginInit();
             this.permisoRolBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.permisoRolDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formularioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.permisoRolDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // idRolLabel
             // 
             idRolLabel.AutoSize = true;
-            idRolLabel.Location = new System.Drawing.Point(165, 50);
+            idRolLabel.Location = new System.Drawing.Point(177, 50);
             idRolLabel.Name = "idRolLabel";
             idRolLabel.Size = new System.Drawing.Size(26, 13);
             idRolLabel.TabIndex = 2;
@@ -99,7 +103,7 @@
             // idFormularioLabel
             // 
             idFormularioLabel.AutoSize = true;
-            idFormularioLabel.Location = new System.Drawing.Point(133, 77);
+            idFormularioLabel.Location = new System.Drawing.Point(145, 77);
             idFormularioLabel.Name = "idFormularioLabel";
             idFormularioLabel.Size = new System.Drawing.Size(58, 13);
             idFormularioLabel.TabIndex = 4;
@@ -108,29 +112,29 @@
             // puedeVerLabel
             // 
             puedeVerLabel.AutoSize = true;
-            puedeVerLabel.Location = new System.Drawing.Point(133, 106);
+            puedeVerLabel.Location = new System.Drawing.Point(152, 106);
             puedeVerLabel.Name = "puedeVerLabel";
-            puedeVerLabel.Size = new System.Drawing.Size(60, 13);
+            puedeVerLabel.Size = new System.Drawing.Size(51, 13);
             puedeVerLabel.TabIndex = 6;
-            puedeVerLabel.Text = "Puede Ver:";
+            puedeVerLabel.Text = "Consulta:";
             // 
             // puedeEditarLabel
             // 
             puedeEditarLabel.AutoSize = true;
-            puedeEditarLabel.Location = new System.Drawing.Point(211, 106);
+            puedeEditarLabel.Location = new System.Drawing.Point(223, 106);
             puedeEditarLabel.Name = "puedeEditarLabel";
-            puedeEditarLabel.Size = new System.Drawing.Size(71, 13);
+            puedeEditarLabel.Size = new System.Drawing.Size(45, 13);
             puedeEditarLabel.TabIndex = 8;
-            puedeEditarLabel.Text = "Puede Editar:";
+            puedeEditarLabel.Text = "Edición:";
             // 
             // puedeEliminarLabel
             // 
             puedeEliminarLabel.AutoSize = true;
-            puedeEliminarLabel.Location = new System.Drawing.Point(299, 106);
+            puedeEliminarLabel.Location = new System.Drawing.Point(288, 106);
             puedeEliminarLabel.Name = "puedeEliminarLabel";
-            puedeEliminarLabel.Size = new System.Drawing.Size(80, 13);
+            puedeEliminarLabel.Size = new System.Drawing.Size(63, 13);
             puedeEliminarLabel.TabIndex = 10;
-            puedeEliminarLabel.Text = "Puede Eliminar:";
+            puedeEliminarLabel.Text = "Eliminación:";
             // 
             // dSCOCOA
             // 
@@ -160,6 +164,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -213,7 +219,7 @@
             this.permisoRolBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.permisoRolBindingNavigator.Name = "permisoRolBindingNavigator";
             this.permisoRolBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.permisoRolBindingNavigator.Size = new System.Drawing.Size(624, 31);
+            this.permisoRolBindingNavigator.Size = new System.Drawing.Size(644, 31);
             this.permisoRolBindingNavigator.TabIndex = 0;
             this.permisoRolBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -352,31 +358,6 @@
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
-            // permisoRolDataGridView
-            // 
-            this.permisoRolDataGridView.AllowUserToAddRows = false;
-            this.permisoRolDataGridView.AllowUserToDeleteRows = false;
-            this.permisoRolDataGridView.AllowUserToOrderColumns = true;
-            this.permisoRolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.permisoRolDataGridView.AutoGenerateColumns = false;
-            this.permisoRolDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.permisoRolDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.permisoRolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewCheckBoxColumn2,
-            this.dataGridViewCheckBoxColumn3});
-            this.permisoRolDataGridView.DataSource = this.permisoRolBindingSource;
-            this.permisoRolDataGridView.Location = new System.Drawing.Point(0, 131);
-            this.permisoRolDataGridView.Name = "permisoRolDataGridView";
-            this.permisoRolDataGridView.ReadOnly = true;
-            this.permisoRolDataGridView.Size = new System.Drawing.Size(624, 409);
-            this.permisoRolDataGridView.TabIndex = 1;
-            // 
             // rolBindingSource
             // 
             this.rolBindingSource.DataMember = "Rol";
@@ -394,9 +375,9 @@
             this.idRolComboBox.DisplayMember = "DescripcionRol";
             this.idRolComboBox.Enabled = false;
             this.idRolComboBox.FormattingEnabled = true;
-            this.idRolComboBox.Location = new System.Drawing.Point(194, 47);
+            this.idRolComboBox.Location = new System.Drawing.Point(206, 47);
             this.idRolComboBox.Name = "idRolComboBox";
-            this.idRolComboBox.Size = new System.Drawing.Size(201, 21);
+            this.idRolComboBox.Size = new System.Drawing.Size(245, 21);
             this.idRolComboBox.TabIndex = 3;
             this.idRolComboBox.ValueMember = "IdRol";
             // 
@@ -407,9 +388,9 @@
             this.idFormularioComboBox.DisplayMember = "DescripcionFormulario";
             this.idFormularioComboBox.Enabled = false;
             this.idFormularioComboBox.FormattingEnabled = true;
-            this.idFormularioComboBox.Location = new System.Drawing.Point(194, 74);
+            this.idFormularioComboBox.Location = new System.Drawing.Point(206, 74);
             this.idFormularioComboBox.Name = "idFormularioComboBox";
-            this.idFormularioComboBox.Size = new System.Drawing.Size(201, 21);
+            this.idFormularioComboBox.Size = new System.Drawing.Size(245, 21);
             this.idFormularioComboBox.TabIndex = 5;
             this.idFormularioComboBox.ValueMember = "IdFormulario";
             // 
@@ -417,7 +398,7 @@
             // 
             this.puedeVerCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "PuedeVer", true));
             this.puedeVerCheckBox.Enabled = false;
-            this.puedeVerCheckBox.Location = new System.Drawing.Point(194, 101);
+            this.puedeVerCheckBox.Location = new System.Drawing.Point(206, 101);
             this.puedeVerCheckBox.Name = "puedeVerCheckBox";
             this.puedeVerCheckBox.Size = new System.Drawing.Size(23, 24);
             this.puedeVerCheckBox.TabIndex = 7;
@@ -427,7 +408,7 @@
             // 
             this.puedeEditarCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "PuedeEditar", true));
             this.puedeEditarCheckBox.Enabled = false;
-            this.puedeEditarCheckBox.Location = new System.Drawing.Point(283, 101);
+            this.puedeEditarCheckBox.Location = new System.Drawing.Point(272, 101);
             this.puedeEditarCheckBox.Name = "puedeEditarCheckBox";
             this.puedeEditarCheckBox.Size = new System.Drawing.Size(23, 24);
             this.puedeEditarCheckBox.TabIndex = 9;
@@ -437,7 +418,7 @@
             // 
             this.puedeEliminarCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "PuedeEliminar", true));
             this.puedeEliminarCheckBox.Enabled = false;
-            this.puedeEliminarCheckBox.Location = new System.Drawing.Point(381, 101);
+            this.puedeEliminarCheckBox.Location = new System.Drawing.Point(353, 101);
             this.puedeEliminarCheckBox.Name = "puedeEliminarCheckBox";
             this.puedeEliminarCheckBox.Size = new System.Drawing.Size(23, 24);
             this.puedeEliminarCheckBox.TabIndex = 11;
@@ -448,13 +429,42 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
+            // permisoRolDataGridView
+            // 
+            this.permisoRolDataGridView.AllowUserToAddRows = false;
+            this.permisoRolDataGridView.AllowUserToDeleteRows = false;
+            this.permisoRolDataGridView.AllowUserToOrderColumns = true;
+            this.permisoRolDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.permisoRolDataGridView.AutoGenerateColumns = false;
+            this.permisoRolDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.permisoRolDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.permisoRolDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.permisoRolDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.permisoRolDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewCheckBoxColumn2,
+            this.dataGridViewCheckBoxColumn3,
+            this.dataGridViewCheckBoxColumn4});
+            this.permisoRolDataGridView.DataSource = this.permisoRolBindingSource;
+            this.permisoRolDataGridView.Location = new System.Drawing.Point(0, 131);
+            this.permisoRolDataGridView.Name = "permisoRolDataGridView";
+            this.permisoRolDataGridView.ReadOnly = true;
+            this.permisoRolDataGridView.Size = new System.Drawing.Size(644, 430);
+            this.permisoRolDataGridView.TabIndex = 11;
+            // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdPermisoRol";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IdPermisoRol";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 41;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -467,7 +477,6 @@
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IdRol";
-            this.dataGridViewTextBoxColumn2.Width = 161;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -480,41 +489,71 @@
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "IdFormulario";
-            this.dataGridViewTextBoxColumn3.Width = 160;
             // 
             // dataGridViewCheckBoxColumn1
             // 
             this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "PuedeVer";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Consultar";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Consulta";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 57;
+            this.dataGridViewCheckBoxColumn1.Width = 54;
             // 
             // dataGridViewCheckBoxColumn2
             // 
             this.dataGridViewCheckBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewCheckBoxColumn2.DataPropertyName = "PuedeEditar";
-            this.dataGridViewCheckBoxColumn2.HeaderText = "Modificar";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "Edición";
             this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
             this.dataGridViewCheckBoxColumn2.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn2.Width = 56;
+            this.dataGridViewCheckBoxColumn2.Width = 48;
             // 
             // dataGridViewCheckBoxColumn3
             // 
             this.dataGridViewCheckBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewCheckBoxColumn3.DataPropertyName = "PuedeEliminar";
-            this.dataGridViewCheckBoxColumn3.HeaderText = "Eliminar";
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Eliminación";
             this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
             this.dataGridViewCheckBoxColumn3.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn3.Width = 49;
+            this.dataGridViewCheckBoxColumn3.Width = 66;
+            // 
+            // dataGridViewCheckBoxColumn4
+            // 
+            this.dataGridViewCheckBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewCheckBoxColumn4.DataPropertyName = "Especifico";
+            this.dataGridViewCheckBoxColumn4.HeaderText = "Específico";
+            this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
+            this.dataGridViewCheckBoxColumn4.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn4.Width = 64;
+            // 
+            // especificoLabel
+            // 
+            especificoLabel.AutoSize = true;
+            especificoLabel.Location = new System.Drawing.Point(372, 106);
+            especificoLabel.Name = "especificoLabel";
+            especificoLabel.Size = new System.Drawing.Size(61, 13);
+            especificoLabel.TabIndex = 12;
+            especificoLabel.Text = "Específico:";
+            // 
+            // especificoCheckBox
+            // 
+            this.especificoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "Especifico", true));
+            this.especificoCheckBox.Enabled = false;
+            this.especificoCheckBox.Location = new System.Drawing.Point(437, 101);
+            this.especificoCheckBox.Name = "especificoCheckBox";
+            this.especificoCheckBox.Size = new System.Drawing.Size(16, 24);
+            this.especificoCheckBox.TabIndex = 13;
+            this.especificoCheckBox.UseVisualStyleBackColor = true;
             // 
             // frmPermisoRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(624, 541);
+            this.ClientSize = new System.Drawing.Size(644, 561);
+            this.Controls.Add(especificoLabel);
+            this.Controls.Add(this.especificoCheckBox);
+            this.Controls.Add(this.permisoRolDataGridView);
             this.Controls.Add(puedeEliminarLabel);
             this.Controls.Add(this.puedeEliminarCheckBox);
             this.Controls.Add(puedeEditarLabel);
@@ -525,7 +564,6 @@
             this.Controls.Add(this.idFormularioComboBox);
             this.Controls.Add(idRolLabel);
             this.Controls.Add(this.idRolComboBox);
-            this.Controls.Add(this.permisoRolDataGridView);
             this.Controls.Add(this.permisoRolBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(670, 1000);
@@ -537,10 +575,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.permisoRolBindingNavigator)).EndInit();
             this.permisoRolBindingNavigator.ResumeLayout(false);
             this.permisoRolBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.permisoRolDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.formularioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.permisoRolDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,7 +603,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView permisoRolDataGridView;
         private System.Windows.Forms.ComboBox idRolComboBox;
         private System.Windows.Forms.ComboBox idFormularioComboBox;
         private System.Windows.Forms.CheckBox puedeVerCheckBox;
@@ -579,11 +616,14 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorEdit;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
         private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
+        private System.Windows.Forms.DataGridView permisoRolDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
+        private System.Windows.Forms.CheckBox especificoCheckBox;
     }
 }
