@@ -25115,7 +25115,7 @@ SELECT IdProducto, IdTipoProducto, CodigoProducto, DescripcionProducto, DetalleP
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdProducto, IdTipoProducto, CodigoProducto, DescripcionProducto, DetallePr" +
@@ -25171,6 +25171,15 @@ WHERE IdTipoProducto = 1
 ORDER BY DescripcionProducto
 ";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = @"SELECT IdProducto, IdTipoProducto, CodigoProducto, DescripcionProducto, 
+DetalleProducto, IdClase, ModeloAno, Precio, IdIVA, IdImpoconsumo, IdSegmento,
+ IdCilindraje, IdNumeroPasajeros, IdPesoBrutoVh, IdIntervaloPrecio, Notas, Activo 
+FROM dbo.Productos
+WHERE IdTipoProducto = 1
+ORDER BY DescripcionProducto";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25267,6 +25276,19 @@ ORDER BY DescripcionProducto
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillBy4(DSCOCOA.ProductosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy5(DSCOCOA.ProductosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }

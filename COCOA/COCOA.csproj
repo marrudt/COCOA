@@ -347,6 +347,18 @@
     <Compile Include="Transacciones\frmCotizaciones.Designer.cs">
       <DependentUpon>frmCotizaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Transacciones\frmEdicionCotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\frmEdicionCotizacion.Designer.cs">
+      <DependentUpon>frmEdicionCotizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\frmEdicionOrdenCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\frmEdicionOrdenCompra.Designer.cs">
+      <DependentUpon>frmEdicionOrdenCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transacciones\frmOrdenCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -502,6 +514,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\frmCotizaciones.resx">
       <DependentUpon>frmCotizaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\frmEdicionCotizacion.resx">
+      <DependentUpon>frmEdicionCotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\frmEdicionOrdenCompra.resx">
+      <DependentUpon>frmEdicionOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\frmOrdenCompras.resx">
       <DependentUpon>frmOrdenCompras.cs</DependentUpon>

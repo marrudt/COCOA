@@ -258,6 +258,22 @@ namespace COCOA
             miForm.ShowDialog();
         }
 
+        private void EdicionOrdenCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEdicionOrdenCompra miForm = new frmEdicionOrdenCompra();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void edicionCotizaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEdicionCotizacion miForm = new frmEdicionCotizacion();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
         private void VerificarPermisos()
         {
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 21))
@@ -265,6 +281,14 @@ namespace COCOA
                 transaccionesToolStripMenuItem.Visible = true;
             }
             else if(DALPermisoRol.PuedeVer(usuarioLogueado.IdRol,22))
+            {
+                transaccionesToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 32))
+            {
+                transaccionesToolStripMenuItem.Visible = true;
+            }
+            else if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 33))
             {
                 transaccionesToolStripMenuItem.Visible = true;
             }
@@ -323,9 +347,6 @@ namespace COCOA
             {
                 reportesToolStripMenuItem.Visible = false;
             }
-
-
-
 
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 2))
             {
@@ -601,6 +622,24 @@ namespace COCOA
             {
                 consultaCotizacionesToolStripMenuItem.Visible = false;
             }
-        }       
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 32))
+            {
+                EdicionOrdenCompraToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                EdicionOrdenCompraToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 33))
+            {
+                edicionCotizaciónToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                edicionCotizaciónToolStripMenuItem.Visible = false;
+            }
+        }        
     }
 }

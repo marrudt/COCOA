@@ -313,7 +313,6 @@
             this.detalleOrdenCompraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 244);
             this.detalleOrdenCompraDataGridView.Name = "detalleOrdenCompraDataGridView";
-            this.detalleOrdenCompraDataGridView.ReadOnly = true;
             this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1513, 265);
             this.detalleOrdenCompraDataGridView.TabIndex = 14;
             // 
@@ -382,6 +381,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = this.ordenCompraDetalleTableAdapter;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
