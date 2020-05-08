@@ -75,7 +75,7 @@
             descripcionIntervaloPrecioLabel.Location = new System.Drawing.Point(8, 42);
             descripcionIntervaloPrecioLabel.Name = "descripcionIntervaloPrecioLabel";
             descripcionIntervaloPrecioLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionIntervaloPrecioLabel.TabIndex = 2;
+            descripcionIntervaloPrecioLabel.TabIndex = 0;
             descripcionIntervaloPrecioLabel.Text = "Descripción:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(34, 70);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // intervaloPreciosBindingNavigator
             // 
             this.intervaloPreciosBindingNavigator.AddNewItem = null;
-            this.intervaloPreciosBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.intervaloPreciosBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.intervaloPreciosBindingNavigator.BindingSource = this.intervaloPreciosBindingSource;
             this.intervaloPreciosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.intervaloPreciosBindingNavigator.DeleteItem = null;
@@ -322,7 +322,7 @@
             this.intervaloPreciosDataGridView.Name = "intervaloPreciosDataGridView";
             this.intervaloPreciosDataGridView.ReadOnly = true;
             this.intervaloPreciosDataGridView.Size = new System.Drawing.Size(394, 197);
-            this.intervaloPreciosDataGridView.TabIndex = 1;
+            this.intervaloPreciosDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -358,7 +358,7 @@
             this.descripcionIntervaloPrecioTextBox.Name = "descripcionIntervaloPrecioTextBox";
             this.descripcionIntervaloPrecioTextBox.ReadOnly = true;
             this.descripcionIntervaloPrecioTextBox.Size = new System.Drawing.Size(268, 20);
-            this.descripcionIntervaloPrecioTextBox.TabIndex = 3;
+            this.descripcionIntervaloPrecioTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -369,7 +369,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(80, 65);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

@@ -34,8 +34,8 @@
             System.Windows.Forms.Label puedeVerLabel;
             System.Windows.Forms.Label puedeEditarLabel;
             System.Windows.Forms.Label puedeEliminarLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPermisoRol));
             System.Windows.Forms.Label especificoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPermisoRol));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.permisoRolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.permisoRolTableAdapter = new COCOA.DSCOCOATableAdapters.PermisoRolTableAdapter();
@@ -97,7 +97,7 @@
             idRolLabel.Location = new System.Drawing.Point(177, 50);
             idRolLabel.Name = "idRolLabel";
             idRolLabel.Size = new System.Drawing.Size(26, 13);
-            idRolLabel.TabIndex = 2;
+            idRolLabel.TabIndex = 0;
             idRolLabel.Text = "Rol:";
             // 
             // idFormularioLabel
@@ -106,7 +106,7 @@
             idFormularioLabel.Location = new System.Drawing.Point(145, 77);
             idFormularioLabel.Name = "idFormularioLabel";
             idFormularioLabel.Size = new System.Drawing.Size(58, 13);
-            idFormularioLabel.TabIndex = 4;
+            idFormularioLabel.TabIndex = 2;
             idFormularioLabel.Text = "Formulario:";
             // 
             // puedeVerLabel
@@ -115,7 +115,7 @@
             puedeVerLabel.Location = new System.Drawing.Point(152, 106);
             puedeVerLabel.Name = "puedeVerLabel";
             puedeVerLabel.Size = new System.Drawing.Size(51, 13);
-            puedeVerLabel.TabIndex = 6;
+            puedeVerLabel.TabIndex = 4;
             puedeVerLabel.Text = "Consulta:";
             // 
             // puedeEditarLabel
@@ -124,7 +124,7 @@
             puedeEditarLabel.Location = new System.Drawing.Point(223, 106);
             puedeEditarLabel.Name = "puedeEditarLabel";
             puedeEditarLabel.Size = new System.Drawing.Size(45, 13);
-            puedeEditarLabel.TabIndex = 8;
+            puedeEditarLabel.TabIndex = 6;
             puedeEditarLabel.Text = "Edición:";
             // 
             // puedeEliminarLabel
@@ -133,8 +133,17 @@
             puedeEliminarLabel.Location = new System.Drawing.Point(288, 106);
             puedeEliminarLabel.Name = "puedeEliminarLabel";
             puedeEliminarLabel.Size = new System.Drawing.Size(63, 13);
-            puedeEliminarLabel.TabIndex = 10;
+            puedeEliminarLabel.TabIndex = 8;
             puedeEliminarLabel.Text = "Eliminación:";
+            // 
+            // especificoLabel
+            // 
+            especificoLabel.AutoSize = true;
+            especificoLabel.Location = new System.Drawing.Point(372, 106);
+            especificoLabel.Name = "especificoLabel";
+            especificoLabel.Size = new System.Drawing.Size(61, 13);
+            especificoLabel.TabIndex = 10;
+            especificoLabel.Text = "Específico:";
             // 
             // dSCOCOA
             // 
@@ -191,7 +200,7 @@
             // permisoRolBindingNavigator
             // 
             this.permisoRolBindingNavigator.AddNewItem = null;
-            this.permisoRolBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.permisoRolBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.permisoRolBindingNavigator.BindingSource = this.permisoRolBindingSource;
             this.permisoRolBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.permisoRolBindingNavigator.DeleteItem = null;
@@ -378,7 +387,7 @@
             this.idRolComboBox.Location = new System.Drawing.Point(206, 47);
             this.idRolComboBox.Name = "idRolComboBox";
             this.idRolComboBox.Size = new System.Drawing.Size(245, 21);
-            this.idRolComboBox.TabIndex = 3;
+            this.idRolComboBox.TabIndex = 1;
             this.idRolComboBox.ValueMember = "IdRol";
             // 
             // idFormularioComboBox
@@ -391,7 +400,7 @@
             this.idFormularioComboBox.Location = new System.Drawing.Point(206, 74);
             this.idFormularioComboBox.Name = "idFormularioComboBox";
             this.idFormularioComboBox.Size = new System.Drawing.Size(245, 21);
-            this.idFormularioComboBox.TabIndex = 5;
+            this.idFormularioComboBox.TabIndex = 3;
             this.idFormularioComboBox.ValueMember = "IdFormulario";
             // 
             // puedeVerCheckBox
@@ -401,7 +410,7 @@
             this.puedeVerCheckBox.Location = new System.Drawing.Point(206, 101);
             this.puedeVerCheckBox.Name = "puedeVerCheckBox";
             this.puedeVerCheckBox.Size = new System.Drawing.Size(23, 24);
-            this.puedeVerCheckBox.TabIndex = 7;
+            this.puedeVerCheckBox.TabIndex = 5;
             this.puedeVerCheckBox.UseVisualStyleBackColor = true;
             // 
             // puedeEditarCheckBox
@@ -411,7 +420,7 @@
             this.puedeEditarCheckBox.Location = new System.Drawing.Point(272, 101);
             this.puedeEditarCheckBox.Name = "puedeEditarCheckBox";
             this.puedeEditarCheckBox.Size = new System.Drawing.Size(23, 24);
-            this.puedeEditarCheckBox.TabIndex = 9;
+            this.puedeEditarCheckBox.TabIndex = 7;
             this.puedeEditarCheckBox.UseVisualStyleBackColor = true;
             // 
             // puedeEliminarCheckBox
@@ -421,7 +430,7 @@
             this.puedeEliminarCheckBox.Location = new System.Drawing.Point(353, 101);
             this.puedeEliminarCheckBox.Name = "puedeEliminarCheckBox";
             this.puedeEliminarCheckBox.Size = new System.Drawing.Size(23, 24);
-            this.puedeEliminarCheckBox.TabIndex = 11;
+            this.puedeEliminarCheckBox.TabIndex = 9;
             this.puedeEliminarCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1
@@ -455,7 +464,7 @@
             this.permisoRolDataGridView.Name = "permisoRolDataGridView";
             this.permisoRolDataGridView.ReadOnly = true;
             this.permisoRolDataGridView.Size = new System.Drawing.Size(644, 430);
-            this.permisoRolDataGridView.TabIndex = 11;
+            this.permisoRolDataGridView.TabIndex = 12;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -526,15 +535,6 @@
             this.dataGridViewCheckBoxColumn4.ReadOnly = true;
             this.dataGridViewCheckBoxColumn4.Width = 64;
             // 
-            // especificoLabel
-            // 
-            especificoLabel.AutoSize = true;
-            especificoLabel.Location = new System.Drawing.Point(372, 106);
-            especificoLabel.Name = "especificoLabel";
-            especificoLabel.Size = new System.Drawing.Size(61, 13);
-            especificoLabel.TabIndex = 12;
-            especificoLabel.Text = "Específico:";
-            // 
             // especificoCheckBox
             // 
             this.especificoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "Especifico", true));
@@ -542,7 +542,7 @@
             this.especificoCheckBox.Location = new System.Drawing.Point(437, 101);
             this.especificoCheckBox.Name = "especificoCheckBox";
             this.especificoCheckBox.Size = new System.Drawing.Size(16, 24);
-            this.especificoCheckBox.TabIndex = 13;
+            this.especificoCheckBox.TabIndex = 11;
             this.especificoCheckBox.UseVisualStyleBackColor = true;
             // 
             // frmPermisoRol

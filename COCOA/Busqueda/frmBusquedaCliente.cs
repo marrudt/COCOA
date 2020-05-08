@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Busqueda
@@ -14,9 +7,9 @@ namespace COCOA.Busqueda
     {
         private int IdCliente;
 
-        public int IDCliente 
-        { 
-            get => IdCliente;  
+        public int IDCliente
+        {
+            get => IdCliente;
         }
 
         public frmBusquedaCliente()
@@ -30,7 +23,7 @@ namespace COCOA.Busqueda
             this.departamentosTableAdapter.Fill(this.dSCOCOA.Departamentos);
             this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
 
-        }        
+        }
 
         private void borrarFiltrosbutton_Click(object sender, EventArgs e)
         {
@@ -63,7 +56,7 @@ namespace COCOA.Busqueda
             }
             this.Close();
         }
-        
+
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)
         {

@@ -39,10 +39,10 @@
             System.Windows.Forms.Label contratoLabel;
             System.Windows.Forms.Label idProductoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdicionOrdenCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.ordenCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ordenCompraTableAdapter = new COCOA.DSCOCOATableAdapters.OrdenCompraTableAdapter();
@@ -171,7 +171,7 @@
             idClienteLabel.Location = new System.Drawing.Point(503, 71);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(46, 13);
-            idClienteLabel.TabIndex = 10;
+            idClienteLabel.TabIndex = 11;
             idClienteLabel.Text = "Entidad:";
             // 
             // numeroCosteoLabel
@@ -180,7 +180,7 @@
             numeroCosteoLabel.Location = new System.Drawing.Point(466, 98);
             numeroCosteoLabel.Name = "numeroCosteoLabel";
             numeroCosteoLabel.Size = new System.Drawing.Size(83, 13);
-            numeroCosteoLabel.TabIndex = 12;
+            numeroCosteoLabel.TabIndex = 14;
             numeroCosteoLabel.Text = "Numero Costeo:";
             // 
             // contratoLabel
@@ -189,7 +189,7 @@
             contratoLabel.Location = new System.Drawing.Point(681, 99);
             contratoLabel.Name = "contratoLabel";
             contratoLabel.Size = new System.Drawing.Size(50, 13);
-            contratoLabel.TabIndex = 14;
+            contratoLabel.TabIndex = 16;
             contratoLabel.Text = "Contrato:";
             // 
             // idProductoLabel
@@ -198,7 +198,7 @@
             idProductoLabel.Location = new System.Drawing.Point(496, 124);
             idProductoLabel.Name = "idProductoLabel";
             idProductoLabel.Size = new System.Drawing.Size(53, 13);
-            idProductoLabel.TabIndex = 16;
+            idProductoLabel.TabIndex = 18;
             idProductoLabel.Text = "Vehículo:";
             // 
             // dSCOCOA
@@ -470,7 +470,7 @@
             this.idClienteComboBox.Location = new System.Drawing.Point(552, 68);
             this.idClienteComboBox.Name = "idClienteComboBox";
             this.idClienteComboBox.Size = new System.Drawing.Size(332, 21);
-            this.idClienteComboBox.TabIndex = 11;
+            this.idClienteComboBox.TabIndex = 12;
             this.idClienteComboBox.ValueMember = "IdCliente";
             // 
             // clientesBindingSource
@@ -485,7 +485,7 @@
             this.numeroCosteoTextBox.Name = "numeroCosteoTextBox";
             this.numeroCosteoTextBox.ReadOnly = true;
             this.numeroCosteoTextBox.Size = new System.Drawing.Size(123, 20);
-            this.numeroCosteoTextBox.TabIndex = 13;
+            this.numeroCosteoTextBox.TabIndex = 15;
             this.numeroCosteoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numeroCosteoTextBox_KeyPress);
             // 
             // contratoTextBox
@@ -495,7 +495,7 @@
             this.contratoTextBox.Name = "contratoTextBox";
             this.contratoTextBox.ReadOnly = true;
             this.contratoTextBox.Size = new System.Drawing.Size(147, 20);
-            this.contratoTextBox.TabIndex = 15;
+            this.contratoTextBox.TabIndex = 17;
             // 
             // idProductoComboBox
             // 
@@ -507,7 +507,7 @@
             this.idProductoComboBox.Location = new System.Drawing.Point(552, 121);
             this.idProductoComboBox.Name = "idProductoComboBox";
             this.idProductoComboBox.Size = new System.Drawing.Size(332, 21);
-            this.idProductoComboBox.TabIndex = 17;
+            this.idProductoComboBox.TabIndex = 19;
             this.idProductoComboBox.ValueMember = "IdProducto";
             // 
             // productosBindingSource
@@ -545,7 +545,7 @@
             this.ordenCompraDetalleDataGridView.Location = new System.Drawing.Point(0, 191);
             this.ordenCompraDetalleDataGridView.Name = "ordenCompraDetalleDataGridView";
             this.ordenCompraDetalleDataGridView.Size = new System.Drawing.Size(973, 273);
-            this.ordenCompraDetalleDataGridView.TabIndex = 18;
+            this.ordenCompraDetalleDataGridView.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -582,10 +582,10 @@
             // 
             this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Precio";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn5.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 62;
@@ -594,10 +594,10 @@
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "N0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn6.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 74;
@@ -606,10 +606,10 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "IVA";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn7.HeaderText = "IVA";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 49;
@@ -618,10 +618,10 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Impoconsumo";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn8.HeaderText = "Impoc.";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 64;
@@ -651,7 +651,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
             this.bindingNavigator1.Size = new System.Drawing.Size(142, 31);
-            this.bindingNavigator1.TabIndex = 20;
+            this.bindingNavigator1.TabIndex = 21;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItemDetalle
@@ -720,7 +720,7 @@
             this.busquedaProveedorButton.Location = new System.Drawing.Point(890, 39);
             this.busquedaProveedorButton.Name = "busquedaProveedorButton";
             this.busquedaProveedorButton.Size = new System.Drawing.Size(63, 23);
-            this.busquedaProveedorButton.TabIndex = 21;
+            this.busquedaProveedorButton.TabIndex = 10;
             this.busquedaProveedorButton.Text = "Buscar";
             this.busquedaProveedorButton.UseVisualStyleBackColor = false;
             this.busquedaProveedorButton.Click += new System.EventHandler(this.busquedaProveedorButton_Click);
@@ -734,7 +734,7 @@
             this.BusquedaClienteButton.Location = new System.Drawing.Point(890, 68);
             this.BusquedaClienteButton.Name = "BusquedaClienteButton";
             this.BusquedaClienteButton.Size = new System.Drawing.Size(63, 23);
-            this.BusquedaClienteButton.TabIndex = 22;
+            this.BusquedaClienteButton.TabIndex = 13;
             this.BusquedaClienteButton.Text = "Buscar";
             this.BusquedaClienteButton.UseVisualStyleBackColor = false;
             this.BusquedaClienteButton.Click += new System.EventHandler(this.BusquedaClienteButton_Click);
@@ -748,7 +748,7 @@
             this.BusquedaProductoButton.Location = new System.Drawing.Point(890, 120);
             this.BusquedaProductoButton.Name = "BusquedaProductoButton";
             this.BusquedaProductoButton.Size = new System.Drawing.Size(63, 23);
-            this.BusquedaProductoButton.TabIndex = 23;
+            this.BusquedaProductoButton.TabIndex = 20;
             this.BusquedaProductoButton.Text = "Buscar";
             this.BusquedaProductoButton.UseVisualStyleBackColor = false;
             this.BusquedaProductoButton.Click += new System.EventHandler(this.BusquedaProductoButton_Click);

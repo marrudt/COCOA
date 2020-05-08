@@ -75,7 +75,7 @@
             descripcionRolLabel.Location = new System.Drawing.Point(13, 44);
             descripcionRolLabel.Name = "descripcionRolLabel";
             descripcionRolLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionRolLabel.TabIndex = 2;
+            descripcionRolLabel.TabIndex = 0;
             descripcionRolLabel.Text = "Descripción:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(39, 72);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // rolBindingNavigator
             // 
             this.rolBindingNavigator.AddNewItem = null;
-            this.rolBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.rolBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.rolBindingNavigator.BindingSource = this.rolBindingSource;
             this.rolBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.rolBindingNavigator.DeleteItem = null;
@@ -322,7 +322,7 @@
             this.rolDataGridView.Name = "rolDataGridView";
             this.rolDataGridView.ReadOnly = true;
             this.rolDataGridView.Size = new System.Drawing.Size(394, 190);
-            this.rolDataGridView.TabIndex = 1;
+            this.rolDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -357,7 +357,7 @@
             this.descripcionRolTextBox.Name = "descripcionRolTextBox";
             this.descripcionRolTextBox.ReadOnly = true;
             this.descripcionRolTextBox.Size = new System.Drawing.Size(271, 20);
-            this.descripcionRolTextBox.TabIndex = 3;
+            this.descripcionRolTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -368,7 +368,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(85, 67);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(27, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

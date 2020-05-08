@@ -75,7 +75,7 @@
             descripcionPesoBrutoVhLabel.Location = new System.Drawing.Point(6, 45);
             descripcionPesoBrutoVhLabel.Name = "descripcionPesoBrutoVhLabel";
             descripcionPesoBrutoVhLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionPesoBrutoVhLabel.TabIndex = 2;
+            descripcionPesoBrutoVhLabel.TabIndex = 0;
             descripcionPesoBrutoVhLabel.Text = "Descripción:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(32, 70);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // pesoBrutoVhBindingNavigator
             // 
             this.pesoBrutoVhBindingNavigator.AddNewItem = null;
-            this.pesoBrutoVhBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.pesoBrutoVhBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.pesoBrutoVhBindingNavigator.BindingSource = this.pesoBrutoVhBindingSource;
             this.pesoBrutoVhBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.pesoBrutoVhBindingNavigator.DeleteItem = null;
@@ -322,7 +322,7 @@
             this.pesoBrutoVhDataGridView.Name = "pesoBrutoVhDataGridView";
             this.pesoBrutoVhDataGridView.ReadOnly = true;
             this.pesoBrutoVhDataGridView.Size = new System.Drawing.Size(394, 194);
-            this.pesoBrutoVhDataGridView.TabIndex = 1;
+            this.pesoBrutoVhDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -358,7 +358,7 @@
             this.descripcionPesoBrutoVhTextBox.Name = "descripcionPesoBrutoVhTextBox";
             this.descripcionPesoBrutoVhTextBox.ReadOnly = true;
             this.descripcionPesoBrutoVhTextBox.Size = new System.Drawing.Size(277, 20);
-            this.descripcionPesoBrutoVhTextBox.TabIndex = 3;
+            this.descripcionPesoBrutoVhTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -369,7 +369,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(78, 65);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

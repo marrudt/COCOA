@@ -75,7 +75,7 @@
             descripcionFormularioLabel.Location = new System.Drawing.Point(12, 44);
             descripcionFormularioLabel.Name = "descripcionFormularioLabel";
             descripcionFormularioLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionFormularioLabel.TabIndex = 2;
+            descripcionFormularioLabel.TabIndex = 0;
             descripcionFormularioLabel.Text = "Descripción:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(38, 72);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // formularioBindingNavigator
             // 
             this.formularioBindingNavigator.AddNewItem = null;
-            this.formularioBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.formularioBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.formularioBindingNavigator.BindingSource = this.formularioBindingSource;
             this.formularioBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.formularioBindingNavigator.DeleteItem = null;
@@ -322,7 +322,7 @@
             this.formularioDataGridView.Name = "formularioDataGridView";
             this.formularioDataGridView.ReadOnly = true;
             this.formularioDataGridView.Size = new System.Drawing.Size(394, 191);
-            this.formularioDataGridView.TabIndex = 1;
+            this.formularioDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -356,7 +356,7 @@
             this.descripcionFormularioTextBox.Name = "descripcionFormularioTextBox";
             this.descripcionFormularioTextBox.ReadOnly = true;
             this.descripcionFormularioTextBox.Size = new System.Drawing.Size(278, 20);
-            this.descripcionFormularioTextBox.TabIndex = 3;
+            this.descripcionFormularioTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -367,7 +367,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(84, 67);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(24, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

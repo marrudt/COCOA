@@ -75,7 +75,7 @@
             descripcionClaseLabel.Location = new System.Drawing.Point(5, 44);
             descripcionClaseLabel.Name = "descripcionClaseLabel";
             descripcionClaseLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionClaseLabel.TabIndex = 2;
+            descripcionClaseLabel.TabIndex = 0;
             descripcionClaseLabel.Text = "Descripción:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(31, 72);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // claseBindingNavigator
             // 
             this.claseBindingNavigator.AddNewItem = null;
-            this.claseBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.claseBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.claseBindingNavigator.BindingSource = this.claseBindingSource;
             this.claseBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.claseBindingNavigator.DeleteItem = null;
@@ -323,7 +323,7 @@
             this.claseDataGridView.Name = "claseDataGridView";
             this.claseDataGridView.ReadOnly = true;
             this.claseDataGridView.Size = new System.Drawing.Size(394, 193);
-            this.claseDataGridView.TabIndex = 1;
+            this.claseDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -359,7 +359,7 @@
             this.descripcionClaseTextBox.Name = "descripcionClaseTextBox";
             this.descripcionClaseTextBox.ReadOnly = true;
             this.descripcionClaseTextBox.Size = new System.Drawing.Size(250, 20);
-            this.descripcionClaseTextBox.TabIndex = 3;
+            this.descripcionClaseTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -369,7 +369,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(77, 67);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(30, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

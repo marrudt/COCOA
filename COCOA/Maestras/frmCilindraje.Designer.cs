@@ -75,7 +75,7 @@
             descripcionCilindrajeLabel.Location = new System.Drawing.Point(8, 41);
             descripcionCilindrajeLabel.Name = "descripcionCilindrajeLabel";
             descripcionCilindrajeLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionCilindrajeLabel.TabIndex = 2;
+            descripcionCilindrajeLabel.TabIndex = 0;
             descripcionCilindrajeLabel.Text = "Descripción:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(34, 69);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // cilindrajesBindingNavigator
             // 
             this.cilindrajesBindingNavigator.AddNewItem = null;
-            this.cilindrajesBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.cilindrajesBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.cilindrajesBindingNavigator.BindingSource = this.cilindrajesBindingSource;
             this.cilindrajesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.cilindrajesBindingNavigator.DeleteItem = null;
@@ -292,6 +292,7 @@
             // 
             // bindingNavigatorExit
             // 
+            this.bindingNavigatorExit.BackColor = System.Drawing.SystemColors.Control;
             this.bindingNavigatorExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
             this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -322,7 +323,7 @@
             this.cilindrajesDataGridView.Name = "cilindrajesDataGridView";
             this.cilindrajesDataGridView.ReadOnly = true;
             this.cilindrajesDataGridView.Size = new System.Drawing.Size(391, 195);
-            this.cilindrajesDataGridView.TabIndex = 1;
+            this.cilindrajesDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -358,7 +359,7 @@
             this.descripcionCilindrajeTextBox.Name = "descripcionCilindrajeTextBox";
             this.descripcionCilindrajeTextBox.ReadOnly = true;
             this.descripcionCilindrajeTextBox.Size = new System.Drawing.Size(250, 20);
-            this.descripcionCilindrajeTextBox.TabIndex = 3;
+            this.descripcionCilindrajeTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -369,7 +370,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(80, 64);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

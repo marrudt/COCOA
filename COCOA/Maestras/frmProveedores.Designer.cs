@@ -63,6 +63,7 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             this.proveedoresDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +90,6 @@
             this.notasTextBox = new System.Windows.Forms.TextBox();
             this.idProveedorTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             nitLabel = new System.Windows.Forms.Label();
             nombreProveedorLabel = new System.Windows.Forms.Label();
             nombreContactoLabel = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             nitLabel.Location = new System.Drawing.Point(91, 43);
             nitLabel.Name = "nitLabel";
             nitLabel.Size = new System.Drawing.Size(23, 13);
-            nitLabel.TabIndex = 2;
+            nitLabel.TabIndex = 0;
             nitLabel.Text = "Nit:";
             // 
             // nombreProveedorLabel
@@ -152,7 +152,7 @@
             telefono1Label.Location = new System.Drawing.Point(587, 43);
             telefono1Label.Name = "telefono1Label";
             telefono1Label.Size = new System.Drawing.Size(61, 13);
-            telefono1Label.TabIndex = 10;
+            telefono1Label.TabIndex = 12;
             telefono1Label.Text = "Teléfono 1:";
             // 
             // telefono2Label
@@ -161,7 +161,7 @@
             telefono2Label.Location = new System.Drawing.Point(587, 69);
             telefono2Label.Name = "telefono2Label";
             telefono2Label.Size = new System.Drawing.Size(61, 13);
-            telefono2Label.TabIndex = 12;
+            telefono2Label.TabIndex = 14;
             telefono2Label.Text = "Teléfono 2:";
             // 
             // celularLabel
@@ -170,7 +170,7 @@
             celularLabel.Location = new System.Drawing.Point(606, 95);
             celularLabel.Name = "celularLabel";
             celularLabel.Size = new System.Drawing.Size(42, 13);
-            celularLabel.TabIndex = 14;
+            celularLabel.TabIndex = 16;
             celularLabel.Text = "Celular:";
             // 
             // emailLabel
@@ -179,7 +179,7 @@
             emailLabel.Location = new System.Drawing.Point(79, 147);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(35, 13);
-            emailLabel.TabIndex = 16;
+            emailLabel.TabIndex = 10;
             emailLabel.Text = "Email:";
             // 
             // ciudadLabel
@@ -215,7 +215,7 @@
             idProveedorLabel.Location = new System.Drawing.Point(487, 43);
             idProveedorLabel.Name = "idProveedorLabel";
             idProveedorLabel.Size = new System.Drawing.Size(19, 13);
-            idProveedorLabel.TabIndex = 24;
+            idProveedorLabel.TabIndex = 2;
             idProveedorLabel.Text = "Id:";
             // 
             // dSCOCOA
@@ -246,6 +246,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -263,7 +265,7 @@
             // proveedoresBindingNavigator
             // 
             this.proveedoresBindingNavigator.AddNewItem = null;
-            this.proveedoresBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.proveedoresBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.proveedoresBindingNavigator.BindingSource = this.proveedoresBindingSource;
             this.proveedoresBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.proveedoresBindingNavigator.DeleteItem = null;
@@ -440,6 +442,17 @@
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
+            // bindingNavigatorPrint
+            // 
+            this.bindingNavigatorPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorPrint.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorPrint.Image")));
+            this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
+            this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorPrint.Text = "toolStripButton1";
+            this.bindingNavigatorPrint.ToolTipText = "Imprimir";
+            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
+            // 
             // proveedoresDataGridView
             // 
             this.proveedoresDataGridView.AllowUserToAddRows = false;
@@ -470,7 +483,7 @@
             this.proveedoresDataGridView.Name = "proveedoresDataGridView";
             this.proveedoresDataGridView.ReadOnly = true;
             this.proveedoresDataGridView.Size = new System.Drawing.Size(807, 304);
-            this.proveedoresDataGridView.TabIndex = 1;
+            this.proveedoresDataGridView.TabIndex = 24;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -583,7 +596,7 @@
             this.nitTextBox.Name = "nitTextBox";
             this.nitTextBox.ReadOnly = true;
             this.nitTextBox.Size = new System.Drawing.Size(109, 20);
-            this.nitTextBox.TabIndex = 3;
+            this.nitTextBox.TabIndex = 1;
             this.nitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitTextBox_KeyPress);
             // 
             // nombreProveedorTextBox
@@ -623,7 +636,7 @@
             this.telefono1TextBox.Name = "telefono1TextBox";
             this.telefono1TextBox.ReadOnly = true;
             this.telefono1TextBox.Size = new System.Drawing.Size(135, 20);
-            this.telefono1TextBox.TabIndex = 11;
+            this.telefono1TextBox.TabIndex = 13;
             this.telefono1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono1TextBox_KeyPress);
             // 
             // telefono2TextBox
@@ -633,7 +646,7 @@
             this.telefono2TextBox.Name = "telefono2TextBox";
             this.telefono2TextBox.ReadOnly = true;
             this.telefono2TextBox.Size = new System.Drawing.Size(135, 20);
-            this.telefono2TextBox.TabIndex = 13;
+            this.telefono2TextBox.TabIndex = 15;
             this.telefono2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono2TextBox_KeyPress);
             // 
             // celularTextBox
@@ -643,7 +656,7 @@
             this.celularTextBox.Name = "celularTextBox";
             this.celularTextBox.ReadOnly = true;
             this.celularTextBox.Size = new System.Drawing.Size(135, 20);
-            this.celularTextBox.TabIndex = 15;
+            this.celularTextBox.TabIndex = 17;
             this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celularTextBox_KeyPress);
             // 
             // emailTextBox
@@ -654,7 +667,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.ReadOnly = true;
             this.emailTextBox.Size = new System.Drawing.Size(444, 20);
-            this.emailTextBox.TabIndex = 17;
+            this.emailTextBox.TabIndex = 11;
             // 
             // ciudadTextBox
             // 
@@ -695,22 +708,11 @@
             this.idProveedorTextBox.Name = "idProveedorTextBox";
             this.idProveedorTextBox.ReadOnly = true;
             this.idProveedorTextBox.Size = new System.Drawing.Size(49, 20);
-            this.idProveedorTextBox.TabIndex = 25;
+            this.idProveedorTextBox.TabIndex = 3;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // bindingNavigatorPrint
-            // 
-            this.bindingNavigatorPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorPrint.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorPrint.Image")));
-            this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
-            this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorPrint.Text = "toolStripButton1";
-            this.bindingNavigatorPrint.ToolTipText = "Imprimir";
-            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
             // 
             // frmProveedores
             // 

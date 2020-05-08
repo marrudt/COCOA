@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
@@ -30,7 +23,7 @@ namespace COCOA.Maestras
             this.departamentosTableAdapter.Fill(this.dSCOCOA.Departamentos);
             this.proveedoresTableAdapter.Fill(this.dSCOCOA.Proveedores);
 
-        }        
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -62,7 +55,7 @@ namespace COCOA.Maestras
                 IdProveedor = (int)busquedaDataGridView.Rows[0].Cells[0].Value;
             }
             this.Close();
-        }        
+        }
 
         private void fillByToolStripButton1_Click(object sender, EventArgs e)
         {

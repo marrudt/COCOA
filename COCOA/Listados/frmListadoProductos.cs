@@ -1,14 +1,6 @@
 ﻿using COCOA.DSCOCOATableAdapters;
-using COCOA.Maestras;
 using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Listados
@@ -27,7 +19,7 @@ namespace COCOA.Listados
         {
             InitializeComponent();
         }
-                
+
         private void frmListadoProductos_Load(object sender, EventArgs e)
         {
             this.tipoProductoTableAdapter.Fill(this.dSCOCOA.TipoProducto);
@@ -49,6 +41,6 @@ namespace COCOA.Listados
             }
             miListado.SetDataSource(miDS);
             crystalReportViewer1.ReportSource = miListado;
-        }        
+        }
     }
 }

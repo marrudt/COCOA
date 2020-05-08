@@ -75,7 +75,7 @@
             descripcionSegmentoLabel.Location = new System.Drawing.Point(12, 45);
             descripcionSegmentoLabel.Name = "descripcionSegmentoLabel";
             descripcionSegmentoLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionSegmentoLabel.TabIndex = 2;
+            descripcionSegmentoLabel.TabIndex = 0;
             descripcionSegmentoLabel.Text = "Descripción:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(38, 73);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // segmentosBindingNavigator
             // 
             this.segmentosBindingNavigator.AddNewItem = null;
-            this.segmentosBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.segmentosBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.segmentosBindingNavigator.BindingSource = this.segmentosBindingSource;
             this.segmentosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.segmentosBindingNavigator.DeleteItem = null;
@@ -323,7 +323,7 @@
             this.segmentosDataGridView.Name = "segmentosDataGridView";
             this.segmentosDataGridView.ReadOnly = true;
             this.segmentosDataGridView.Size = new System.Drawing.Size(394, 192);
-            this.segmentosDataGridView.TabIndex = 1;
+            this.segmentosDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -359,7 +359,7 @@
             this.descripcionSegmentoTextBox.Name = "descripcionSegmentoTextBox";
             this.descripcionSegmentoTextBox.ReadOnly = true;
             this.descripcionSegmentoTextBox.Size = new System.Drawing.Size(274, 20);
-            this.descripcionSegmentoTextBox.TabIndex = 3;
+            this.descripcionSegmentoTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -370,7 +370,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(84, 68);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(29, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

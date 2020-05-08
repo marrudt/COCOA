@@ -79,7 +79,7 @@
             descripcionIVALabel.Location = new System.Drawing.Point(7, 43);
             descripcionIVALabel.Name = "descripcionIVALabel";
             descripcionIVALabel.Size = new System.Drawing.Size(66, 13);
-            descripcionIVALabel.TabIndex = 2;
+            descripcionIVALabel.TabIndex = 0;
             descripcionIVALabel.Text = "Descripción:";
             // 
             // tarifaLabel
@@ -88,7 +88,7 @@
             tarifaLabel.Location = new System.Drawing.Point(36, 69);
             tarifaLabel.Name = "tarifaLabel";
             tarifaLabel.Size = new System.Drawing.Size(37, 13);
-            tarifaLabel.TabIndex = 4;
+            tarifaLabel.TabIndex = 2;
             tarifaLabel.Text = "Tarifa:";
             // 
             // activoLabel
@@ -97,7 +97,7 @@
             activoLabel.Location = new System.Drawing.Point(189, 69);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 6;
+            activoLabel.TabIndex = 4;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -147,7 +147,7 @@
             // iVABindingNavigator
             // 
             this.iVABindingNavigator.AddNewItem = null;
-            this.iVABindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.iVABindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.iVABindingNavigator.BindingSource = this.iVABindingSource;
             this.iVABindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.iVABindingNavigator.DeleteItem = null;
@@ -336,7 +336,7 @@
             this.iVADataGridView.Name = "iVADataGridView";
             this.iVADataGridView.ReadOnly = true;
             this.iVADataGridView.Size = new System.Drawing.Size(394, 196);
-            this.iVADataGridView.TabIndex = 1;
+            this.iVADataGridView.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -381,7 +381,7 @@
             this.descripcionIVATextBox.Name = "descripcionIVATextBox";
             this.descripcionIVATextBox.ReadOnly = true;
             this.descripcionIVATextBox.Size = new System.Drawing.Size(260, 20);
-            this.descripcionIVATextBox.TabIndex = 3;
+            this.descripcionIVATextBox.TabIndex = 1;
             // 
             // tarifaTextBox
             // 
@@ -390,7 +390,7 @@
             this.tarifaTextBox.Name = "tarifaTextBox";
             this.tarifaTextBox.ReadOnly = true;
             this.tarifaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.tarifaTextBox.TabIndex = 5;
+            this.tarifaTextBox.TabIndex = 3;
             // 
             // activoCheckBox
             // 
@@ -401,7 +401,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(235, 64);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(34, 24);
-            this.activoCheckBox.TabIndex = 7;
+            this.activoCheckBox.TabIndex = 5;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

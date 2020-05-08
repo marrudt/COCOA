@@ -63,6 +63,7 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             this.clientesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -89,7 +90,6 @@
             this.notasTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idClienteTextBox = new System.Windows.Forms.TextBox();
-            this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             nitLabel = new System.Windows.Forms.Label();
             nombreClienteLabel = new System.Windows.Forms.Label();
             nombreContactoLabel = new System.Windows.Forms.Label();
@@ -116,7 +116,7 @@
             nitLabel.Location = new System.Drawing.Point(95, 47);
             nitLabel.Name = "nitLabel";
             nitLabel.Size = new System.Drawing.Size(23, 13);
-            nitLabel.TabIndex = 2;
+            nitLabel.TabIndex = 0;
             nitLabel.Text = "Nit:";
             // 
             // nombreClienteLabel
@@ -152,7 +152,7 @@
             ciudadLabel.Location = new System.Drawing.Point(599, 121);
             ciudadLabel.Name = "ciudadLabel";
             ciudadLabel.Size = new System.Drawing.Size(43, 13);
-            ciudadLabel.TabIndex = 10;
+            ciudadLabel.TabIndex = 18;
             ciudadLabel.Text = "Ciudad:";
             // 
             // telefono1Label
@@ -188,7 +188,7 @@
             emailLabel.Location = new System.Drawing.Point(83, 151);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(35, 13);
-            emailLabel.TabIndex = 18;
+            emailLabel.TabIndex = 10;
             emailLabel.Text = "Email:";
             // 
             // activoLabel
@@ -215,7 +215,7 @@
             idClienteLabel.Location = new System.Drawing.Point(484, 43);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(19, 13);
-            idClienteLabel.TabIndex = 24;
+            idClienteLabel.TabIndex = 2;
             idClienteLabel.Text = "Id:";
             // 
             // dSCOCOA
@@ -246,6 +246,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -263,7 +265,7 @@
             // clientesBindingNavigator
             // 
             this.clientesBindingNavigator.AddNewItem = null;
-            this.clientesBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.clientesBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.clientesBindingNavigator.BindingSource = this.clientesBindingSource;
             this.clientesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.clientesBindingNavigator.DeleteItem = null;
@@ -442,6 +444,17 @@
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
+            // bindingNavigatorPrint
+            // 
+            this.bindingNavigatorPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorPrint.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorPrint.Image")));
+            this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
+            this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorPrint.Text = "toolStripButton1";
+            this.bindingNavigatorPrint.ToolTipText = "Imprimir";
+            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
+            // 
             // clientesDataGridView
             // 
             this.clientesDataGridView.AllowUserToAddRows = false;
@@ -472,7 +485,7 @@
             this.clientesDataGridView.Name = "clientesDataGridView";
             this.clientesDataGridView.ReadOnly = true;
             this.clientesDataGridView.Size = new System.Drawing.Size(827, 319);
-            this.clientesDataGridView.TabIndex = 1;
+            this.clientesDataGridView.TabIndex = 24;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -585,7 +598,7 @@
             this.nitTextBox.Name = "nitTextBox";
             this.nitTextBox.ReadOnly = true;
             this.nitTextBox.Size = new System.Drawing.Size(115, 20);
-            this.nitTextBox.TabIndex = 3;
+            this.nitTextBox.TabIndex = 1;
             this.nitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitTextBox_KeyPress);
             // 
             // nombreClienteTextBox
@@ -626,7 +639,7 @@
             this.ciudadTextBox.Name = "ciudadTextBox";
             this.ciudadTextBox.ReadOnly = true;
             this.ciudadTextBox.Size = new System.Drawing.Size(135, 20);
-            this.ciudadTextBox.TabIndex = 11;
+            this.ciudadTextBox.TabIndex = 19;
             // 
             // telefono1TextBox
             // 
@@ -666,7 +679,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.ReadOnly = true;
             this.emailTextBox.Size = new System.Drawing.Size(437, 20);
-            this.emailTextBox.TabIndex = 19;
+            this.emailTextBox.TabIndex = 11;
             // 
             // activoCheckBox
             // 
@@ -703,18 +716,7 @@
             this.idClienteTextBox.Name = "idClienteTextBox";
             this.idClienteTextBox.ReadOnly = true;
             this.idClienteTextBox.Size = new System.Drawing.Size(49, 20);
-            this.idClienteTextBox.TabIndex = 25;
-            // 
-            // bindingNavigatorPrint
-            // 
-            this.bindingNavigatorPrint.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorPrint.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorPrint.Image")));
-            this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
-            this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorPrint.Text = "toolStripButton1";
-            this.bindingNavigatorPrint.ToolTipText = "Imprimir";
-            this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
+            this.idClienteTextBox.TabIndex = 3;
             // 
             // frmClientes
             // 

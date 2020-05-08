@@ -71,7 +71,7 @@
             this.verReporteButton.UseVisualStyleBackColor = false;
             this.verReporteButton.Click += new System.EventHandler(this.verReporteButton_Click);
             // 
-            // fmrListadoClientes
+            // frmListadoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -80,8 +80,9 @@
             this.Controls.Add(this.verReporteButton);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "fmrListadoClientes";
+            this.Name = "frmListadoClientes";
             this.Text = "Listado Clientes";
+            this.Load += new System.EventHandler(this.frmListadoClientes_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

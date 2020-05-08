@@ -75,7 +75,7 @@
             codigoTipoProductoLabel.Location = new System.Drawing.Point(16, 46);
             codigoTipoProductoLabel.Name = "codigoTipoProductoLabel";
             codigoTipoProductoLabel.Size = new System.Drawing.Size(43, 13);
-            codigoTipoProductoLabel.TabIndex = 3;
+            codigoTipoProductoLabel.TabIndex = 0;
             codigoTipoProductoLabel.Text = "Código:";
             // 
             // descripcionTipoProductoLabel
@@ -84,13 +84,13 @@
             descripcionTipoProductoLabel.Location = new System.Drawing.Point(16, 72);
             descripcionTipoProductoLabel.Name = "descripcionTipoProductoLabel";
             descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionTipoProductoLabel.TabIndex = 4;
+            descripcionTipoProductoLabel.TabIndex = 2;
             descripcionTipoProductoLabel.Text = "Descripción:";
             // 
             // tipoProductoBindingNavigator
             // 
             this.tipoProductoBindingNavigator.AddNewItem = null;
-            this.tipoProductoBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.tipoProductoBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.tipoProductoBindingNavigator.BindingSource = this.tipoProductoBindingSource;
             this.tipoProductoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.tipoProductoBindingNavigator.DeleteItem = null;
@@ -324,7 +324,7 @@
             this.tipoProductoDataGridView.Name = "tipoProductoDataGridView";
             this.tipoProductoDataGridView.ReadOnly = true;
             this.tipoProductoDataGridView.Size = new System.Drawing.Size(394, 194);
-            this.tipoProductoDataGridView.TabIndex = 3;
+            this.tipoProductoDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -359,7 +359,7 @@
             this.codigoTipoProductoTextBox.Name = "codigoTipoProductoTextBox";
             this.codigoTipoProductoTextBox.ReadOnly = true;
             this.codigoTipoProductoTextBox.Size = new System.Drawing.Size(44, 20);
-            this.codigoTipoProductoTextBox.TabIndex = 4;
+            this.codigoTipoProductoTextBox.TabIndex = 1;
             // 
             // descripcionTipoProductoTextBox
             // 
@@ -368,7 +368,7 @@
             this.descripcionTipoProductoTextBox.Name = "descripcionTipoProductoTextBox";
             this.descripcionTipoProductoTextBox.ReadOnly = true;
             this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(278, 20);
-            this.descripcionTipoProductoTextBox.TabIndex = 5;
+            this.descripcionTipoProductoTextBox.TabIndex = 3;
             // 
             // frmTipoProducto
             // 

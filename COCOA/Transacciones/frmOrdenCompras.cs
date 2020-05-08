@@ -4,7 +4,6 @@ using COCOA.Maestras;
 using COCOA.Reportes;
 using DAL;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
 
@@ -38,7 +37,7 @@ namespace COCOA.Transacciones
             this.ordenCompraTableAdapter.Fill(this.dSCOCOA.OrdenCompra);
             this.ordenCompraDetalleTableAdapter.Fill(this.dSCOCOA.OrdenCompraDetalle);
             this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);
-            this.productosTableAdapter.FillBy4(this.dSCOCOA.Productos); 
+            this.productosTableAdapter.FillBy4(this.dSCOCOA.Productos);
 
             fechaDateTimePicker.Value = DateTime.Now;
             proveedorComboBox.SelectedIndex = -1;
@@ -108,7 +107,7 @@ namespace COCOA.Transacciones
                 productoLabel.Text = miProducto.DescripcionProducto;
                 ultimoProducto = miProducto;
             }
-            
+
             precioTextBox.Text = string.Format("{0:C2}", ultimoProducto.Precio);
         }
 
@@ -144,7 +143,7 @@ namespace COCOA.Transacciones
                 errorProvider1.SetError(cantidadTextBox, "La cantidad debe ser mayor a cero");
                 return;
             }
-            errorProvider1.Clear();            
+            errorProvider1.Clear();
 
             DALIVA miIVA = DALIVA.GetIVA(ultimoProducto.IdIVA);
             DALImpoconsumo miImpoconsumo = DALImpoconsumo.GetImpoconsumo(ultimoProducto.IdImpoconsumo);
@@ -155,7 +154,7 @@ namespace COCOA.Transacciones
             miDetalle.DescripcionProducto = ultimoProducto.DescripcionProducto;
             miDetalle.IdProducto = ultimoProducto.IdProducto;
             miDetalle.IVA = (float)miIVA.Tarifa;
-            miDetalle.Impoconsumo = (float)miImpoconsumo.Tarifa;           
+            miDetalle.Impoconsumo = (float)miImpoconsumo.Tarifa;
 
             misDetalles.Add(miDetalle);
             RefrescaGrid();
@@ -185,7 +184,7 @@ namespace COCOA.Transacciones
                 totalIVA += miDetalle.ValorIVA;
                 totalImpoconsumo += miDetalle.ValorImpoconsumo;
                 totalNeto += miDetalle.ValorNeto;
-            }              
+            }
 
             totalSubtotalTextBox.Text = string.Format("{0:C2}", totalSubtotal);
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
@@ -249,7 +248,7 @@ namespace COCOA.Transacciones
             detalleOrdenCompraDataGridView.Columns["ValorNeto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleOrdenCompraDataGridView.Columns["ValorNeto"].DefaultCellStyle.Format = "C2";
             detalleOrdenCompraDataGridView.Columns["ValorNeto"].Width = 150;
-            
+
         }
 
         private void cancelarButton_Click(object sender, EventArgs e)
@@ -368,11 +367,11 @@ namespace COCOA.Transacciones
         {
             errorProvider1.Clear();
             if (misDetalles.Count == 0) return;
-            DialogResult rta = MessageBox.Show("¿Eliminar todo?", "Confirmación", 
-                MessageBoxButtons.YesNo, 
-                MessageBoxIcon.Question, 
+            DialogResult rta = MessageBox.Show("¿Eliminar todo?", "Confirmación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
-            if (rta == DialogResult.No) return;            
+            if (rta == DialogResult.No) return;
             misDetalles.Clear();
             RefrescaGrid();
 
@@ -406,11 +405,11 @@ namespace COCOA.Transacciones
         {
             if (misDetalles.Count != 0)
             {
-                DialogResult rta = MessageBox.Show("Perderá el documento actual...", "¿Salir?", 
-                    MessageBoxButtons.YesNo, 
-                    MessageBoxIcon.Question, 
+                DialogResult rta = MessageBox.Show("Perderá el documento actual...", "¿Salir?",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question,
                     MessageBoxDefaultButton.Button2);
-                if (rta == DialogResult.No) 
+                if (rta == DialogResult.No)
                 {
                     e.Cancel = true;
                 }
@@ -425,12 +424,12 @@ namespace COCOA.Transacciones
         private void cantidadTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }        
+        }
 
         private void productoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }        
+        }
 
         private void BusquedaClienteButton_Click(object sender, EventArgs e)
         {

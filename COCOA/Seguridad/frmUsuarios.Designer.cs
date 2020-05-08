@@ -95,7 +95,7 @@
             nombresLabel.Location = new System.Drawing.Point(102, 74);
             nombresLabel.Name = "nombresLabel";
             nombresLabel.Size = new System.Drawing.Size(56, 13);
-            nombresLabel.TabIndex = 5;
+            nombresLabel.TabIndex = 4;
             nombresLabel.Text = "Nombres*:";
             // 
             // idUsuarioLabel
@@ -104,7 +104,7 @@
             idUsuarioLabel.Location = new System.Drawing.Point(108, 48);
             idUsuarioLabel.Name = "idUsuarioLabel";
             idUsuarioLabel.Size = new System.Drawing.Size(50, 13);
-            idUsuarioLabel.TabIndex = 1;
+            idUsuarioLabel.TabIndex = 0;
             idUsuarioLabel.Text = "Usuario*:";
             // 
             // claveLabel
@@ -113,7 +113,7 @@
             claveLabel.Location = new System.Drawing.Point(117, 100);
             claveLabel.Name = "claveLabel";
             claveLabel.Size = new System.Drawing.Size(41, 13);
-            claveLabel.TabIndex = 7;
+            claveLabel.TabIndex = 6;
             claveLabel.Text = "Clave*:";
             // 
             // idRolLabel
@@ -122,7 +122,7 @@
             idRolLabel.Location = new System.Drawing.Point(328, 47);
             idRolLabel.Name = "idRolLabel";
             idRolLabel.Size = new System.Drawing.Size(30, 13);
-            idRolLabel.TabIndex = 3;
+            idRolLabel.TabIndex = 2;
             idRolLabel.Text = "Rol*:";
             // 
             // emailLabel
@@ -131,7 +131,7 @@
             emailLabel.Location = new System.Drawing.Point(119, 126);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(39, 13);
-            emailLabel.TabIndex = 11;
+            emailLabel.TabIndex = 10;
             emailLabel.Text = "Email*:";
             // 
             // activoLabel
@@ -140,7 +140,7 @@
             activoLabel.Location = new System.Drawing.Point(424, 126);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 13;
+            activoLabel.TabIndex = 12;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -194,6 +194,7 @@
             // usuariosBindingNavigator
             // 
             this.usuariosBindingNavigator.AddNewItem = null;
+            this.usuariosBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.usuariosBindingNavigator.BindingSource = this.usuariosBindingSource;
             this.usuariosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.usuariosBindingNavigator.DeleteItem = null;
@@ -390,7 +391,7 @@
             this.usuariosDataGridView.Name = "usuariosDataGridView";
             this.usuariosDataGridView.ReadOnly = true;
             this.usuariosDataGridView.Size = new System.Drawing.Size(605, 191);
-            this.usuariosDataGridView.TabIndex = 15;
+            this.usuariosDataGridView.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -462,7 +463,7 @@
             this.nombresTextBox.Name = "nombresTextBox";
             this.nombresTextBox.ReadOnly = true;
             this.nombresTextBox.Size = new System.Drawing.Size(320, 20);
-            this.nombresTextBox.TabIndex = 6;
+            this.nombresTextBox.TabIndex = 5;
             // 
             // idUsuarioTextBox
             // 
@@ -472,7 +473,7 @@
             this.idUsuarioTextBox.Name = "idUsuarioTextBox";
             this.idUsuarioTextBox.ReadOnly = true;
             this.idUsuarioTextBox.Size = new System.Drawing.Size(143, 20);
-            this.idUsuarioTextBox.TabIndex = 2;
+            this.idUsuarioTextBox.TabIndex = 1;
             // 
             // claveTextBox
             // 
@@ -482,7 +483,7 @@
             this.claveTextBox.PasswordChar = '•';
             this.claveTextBox.ReadOnly = true;
             this.claveTextBox.Size = new System.Drawing.Size(100, 20);
-            this.claveTextBox.TabIndex = 8;
+            this.claveTextBox.TabIndex = 7;
             // 
             // label1
             // 
@@ -490,7 +491,7 @@
             this.label1.Location = new System.Drawing.Point(302, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(75, 13);
-            this.label1.TabIndex = 9;
+            this.label1.TabIndex = 8;
             this.label1.Text = "Confirmación*:";
             // 
             // confirmacionTextBox
@@ -500,7 +501,7 @@
             this.confirmacionTextBox.PasswordChar = '•';
             this.confirmacionTextBox.ReadOnly = true;
             this.confirmacionTextBox.Size = new System.Drawing.Size(100, 20);
-            this.confirmacionTextBox.TabIndex = 10;
+            this.confirmacionTextBox.TabIndex = 9;
             // 
             // idRolComboBox
             // 
@@ -512,7 +513,7 @@
             this.idRolComboBox.Location = new System.Drawing.Point(358, 44);
             this.idRolComboBox.Name = "idRolComboBox";
             this.idRolComboBox.Size = new System.Drawing.Size(121, 21);
-            this.idRolComboBox.TabIndex = 4;
+            this.idRolComboBox.TabIndex = 3;
             this.idRolComboBox.ValueMember = "IdRol";
             // 
             // emailTextBox
@@ -523,7 +524,7 @@
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.ReadOnly = true;
             this.emailTextBox.Size = new System.Drawing.Size(216, 20);
-            this.emailTextBox.TabIndex = 12;
+            this.emailTextBox.TabIndex = 11;
             // 
             // activoCheckBox
             // 
@@ -534,7 +535,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(465, 121);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(28, 24);
-            this.activoCheckBox.TabIndex = 14;
+            this.activoCheckBox.TabIndex = 13;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

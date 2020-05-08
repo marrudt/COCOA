@@ -47,7 +47,7 @@
             System.Windows.Forms.Label idCilindrajeLabel;
             System.Windows.Forms.Label activoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProductos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.productosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productosTableAdapter = new COCOA.DSCOCOATableAdapters.ProductosTableAdapter();
@@ -165,7 +165,7 @@
             idTipoProductoLabel.Location = new System.Drawing.Point(67, 48);
             idTipoProductoLabel.Name = "idTipoProductoLabel";
             idTipoProductoLabel.Size = new System.Drawing.Size(31, 13);
-            idTipoProductoLabel.TabIndex = 2;
+            idTipoProductoLabel.TabIndex = 0;
             idTipoProductoLabel.Text = "Tipo:";
             // 
             // codigoProductoLabel
@@ -174,7 +174,7 @@
             codigoProductoLabel.Location = new System.Drawing.Point(206, 48);
             codigoProductoLabel.Name = "codigoProductoLabel";
             codigoProductoLabel.Size = new System.Drawing.Size(43, 13);
-            codigoProductoLabel.TabIndex = 4;
+            codigoProductoLabel.TabIndex = 2;
             codigoProductoLabel.Text = "Código:";
             // 
             // idProductoLabel
@@ -183,7 +183,7 @@
             idProductoLabel.Location = new System.Drawing.Point(455, 48);
             idProductoLabel.Name = "idProductoLabel";
             idProductoLabel.Size = new System.Drawing.Size(19, 13);
-            idProductoLabel.TabIndex = 6;
+            idProductoLabel.TabIndex = 4;
             idProductoLabel.Text = "Id:";
             // 
             // descripcionProductoLabel
@@ -192,7 +192,7 @@
             descripcionProductoLabel.Location = new System.Drawing.Point(32, 74);
             descripcionProductoLabel.Name = "descripcionProductoLabel";
             descripcionProductoLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionProductoLabel.TabIndex = 8;
+            descripcionProductoLabel.TabIndex = 6;
             descripcionProductoLabel.Text = "Descripción:";
             // 
             // idClaseLabel
@@ -201,7 +201,7 @@
             idClaseLabel.Location = new System.Drawing.Point(62, 101);
             idClaseLabel.Name = "idClaseLabel";
             idClaseLabel.Size = new System.Drawing.Size(36, 13);
-            idClaseLabel.TabIndex = 10;
+            idClaseLabel.TabIndex = 8;
             idClaseLabel.Text = "Clase:";
             // 
             // modeloAnoLabel
@@ -210,7 +210,7 @@
             modeloAnoLabel.Location = new System.Drawing.Point(40, 25);
             modeloAnoLabel.Name = "modeloAnoLabel";
             modeloAnoLabel.Size = new System.Drawing.Size(67, 13);
-            modeloAnoLabel.TabIndex = 12;
+            modeloAnoLabel.TabIndex = 0;
             modeloAnoLabel.Text = "Modelo Año:";
             // 
             // precioLabel
@@ -219,7 +219,7 @@
             precioLabel.Location = new System.Drawing.Point(285, 102);
             precioLabel.Name = "precioLabel";
             precioLabel.Size = new System.Drawing.Size(79, 13);
-            precioLabel.TabIndex = 14;
+            precioLabel.TabIndex = 10;
             precioLabel.Text = "Precio Unitario:";
             // 
             // idIVALabel
@@ -228,7 +228,7 @@
             idIVALabel.Location = new System.Drawing.Point(71, 128);
             idIVALabel.Name = "idIVALabel";
             idIVALabel.Size = new System.Drawing.Size(27, 13);
-            idIVALabel.TabIndex = 16;
+            idIVALabel.TabIndex = 12;
             idIVALabel.Text = "IVA:";
             // 
             // idImpoconsumoLabel
@@ -237,7 +237,7 @@
             idImpoconsumoLabel.Location = new System.Drawing.Point(288, 128);
             idImpoconsumoLabel.Name = "idImpoconsumoLabel";
             idImpoconsumoLabel.Size = new System.Drawing.Size(76, 13);
-            idImpoconsumoLabel.TabIndex = 18;
+            idImpoconsumoLabel.TabIndex = 14;
             idImpoconsumoLabel.Text = "Impoconsumo:";
             // 
             // idSegmentoLabel
@@ -246,7 +246,7 @@
             idSegmentoLabel.Location = new System.Drawing.Point(49, 52);
             idSegmentoLabel.Name = "idSegmentoLabel";
             idSegmentoLabel.Size = new System.Drawing.Size(58, 13);
-            idSegmentoLabel.TabIndex = 20;
+            idSegmentoLabel.TabIndex = 2;
             idSegmentoLabel.Text = "Segmento:";
             // 
             // idNumeroPasajerosLabel
@@ -255,7 +255,7 @@
             idNumeroPasajerosLabel.Location = new System.Drawing.Point(11, 106);
             idNumeroPasajerosLabel.Name = "idNumeroPasajerosLabel";
             idNumeroPasajerosLabel.Size = new System.Drawing.Size(96, 13);
-            idNumeroPasajerosLabel.TabIndex = 21;
+            idNumeroPasajerosLabel.TabIndex = 6;
             idNumeroPasajerosLabel.Text = "Número Pasajeros:";
             // 
             // idPesoBrutoVhLabel
@@ -264,7 +264,7 @@
             idPesoBrutoVhLabel.Location = new System.Drawing.Point(29, 133);
             idPesoBrutoVhLabel.Name = "idPesoBrutoVhLabel";
             idPesoBrutoVhLabel.Size = new System.Drawing.Size(78, 13);
-            idPesoBrutoVhLabel.TabIndex = 22;
+            idPesoBrutoVhLabel.TabIndex = 8;
             idPesoBrutoVhLabel.Text = "Peso Bruto Vh:";
             // 
             // idIntervaloPrecioLabel
@@ -273,7 +273,7 @@
             idIntervaloPrecioLabel.Location = new System.Drawing.Point(23, 160);
             idIntervaloPrecioLabel.Name = "idIntervaloPrecioLabel";
             idIntervaloPrecioLabel.Size = new System.Drawing.Size(84, 13);
-            idIntervaloPrecioLabel.TabIndex = 23;
+            idIntervaloPrecioLabel.TabIndex = 10;
             idIntervaloPrecioLabel.Text = "Intervalo Precio:";
             // 
             // detalleProductoLabel
@@ -282,7 +282,7 @@
             detalleProductoLabel.Location = new System.Drawing.Point(55, 155);
             detalleProductoLabel.Name = "detalleProductoLabel";
             detalleProductoLabel.Size = new System.Drawing.Size(43, 13);
-            detalleProductoLabel.TabIndex = 22;
+            detalleProductoLabel.TabIndex = 16;
             detalleProductoLabel.Text = "Detalle:";
             // 
             // notasLabel
@@ -291,7 +291,7 @@
             notasLabel.Location = new System.Drawing.Point(60, 205);
             notasLabel.Name = "notasLabel";
             notasLabel.Size = new System.Drawing.Size(38, 13);
-            notasLabel.TabIndex = 23;
+            notasLabel.TabIndex = 18;
             notasLabel.Text = "Notas:";
             // 
             // idCilindrajeLabel
@@ -300,7 +300,7 @@
             idCilindrajeLabel.Location = new System.Drawing.Point(55, 79);
             idCilindrajeLabel.Name = "idCilindrajeLabel";
             idCilindrajeLabel.Size = new System.Drawing.Size(52, 13);
-            idCilindrajeLabel.TabIndex = 24;
+            idCilindrajeLabel.TabIndex = 4;
             idCilindrajeLabel.Text = "Cilindraje:";
             // 
             // activoLabel
@@ -309,7 +309,7 @@
             activoLabel.Location = new System.Drawing.Point(542, 240);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 24;
+            activoLabel.TabIndex = 20;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -395,7 +395,7 @@
             // productosBindingNavigator
             // 
             this.productosBindingNavigator.AddNewItem = null;
-            this.productosBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.productosBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.productosBindingNavigator.BindingSource = this.productosBindingSource;
             this.productosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.productosBindingNavigator.DeleteItem = null;
@@ -618,7 +618,7 @@
             this.productosDataGridView.Name = "productosDataGridView";
             this.productosDataGridView.ReadOnly = true;
             this.productosDataGridView.Size = new System.Drawing.Size(1284, 412);
-            this.productosDataGridView.TabIndex = 1;
+            this.productosDataGridView.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -692,10 +692,10 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Precio";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn8.HeaderText = "Precio Unitario";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -846,7 +846,7 @@
             this.idTipoProductoComboBox.Location = new System.Drawing.Point(101, 45);
             this.idTipoProductoComboBox.Name = "idTipoProductoComboBox";
             this.idTipoProductoComboBox.Size = new System.Drawing.Size(52, 21);
-            this.idTipoProductoComboBox.TabIndex = 3;
+            this.idTipoProductoComboBox.TabIndex = 1;
             this.idTipoProductoComboBox.ValueMember = "IdTipoProducto";
             // 
             // codigoProductoTextBox
@@ -856,7 +856,7 @@
             this.codigoProductoTextBox.Name = "codigoProductoTextBox";
             this.codigoProductoTextBox.ReadOnly = true;
             this.codigoProductoTextBox.Size = new System.Drawing.Size(148, 20);
-            this.codigoProductoTextBox.TabIndex = 5;
+            this.codigoProductoTextBox.TabIndex = 3;
             // 
             // idProductoTextBox
             // 
@@ -865,7 +865,7 @@
             this.idProductoTextBox.Name = "idProductoTextBox";
             this.idProductoTextBox.ReadOnly = true;
             this.idProductoTextBox.Size = new System.Drawing.Size(43, 20);
-            this.idProductoTextBox.TabIndex = 7;
+            this.idProductoTextBox.TabIndex = 5;
             // 
             // descripcionProductoTextBox
             // 
@@ -874,7 +874,7 @@
             this.descripcionProductoTextBox.Name = "descripcionProductoTextBox";
             this.descripcionProductoTextBox.ReadOnly = true;
             this.descripcionProductoTextBox.Size = new System.Drawing.Size(419, 20);
-            this.descripcionProductoTextBox.TabIndex = 9;
+            this.descripcionProductoTextBox.TabIndex = 7;
             // 
             // idClaseComboBox
             // 
@@ -886,7 +886,7 @@
             this.idClaseComboBox.Location = new System.Drawing.Point(101, 98);
             this.idClaseComboBox.Name = "idClaseComboBox";
             this.idClaseComboBox.Size = new System.Drawing.Size(153, 21);
-            this.idClaseComboBox.TabIndex = 11;
+            this.idClaseComboBox.TabIndex = 9;
             this.idClaseComboBox.ValueMember = "IdClase";
             // 
             // modeloAnoTextBox
@@ -896,7 +896,7 @@
             this.modeloAnoTextBox.Name = "modeloAnoTextBox";
             this.modeloAnoTextBox.ReadOnly = true;
             this.modeloAnoTextBox.Size = new System.Drawing.Size(61, 20);
-            this.modeloAnoTextBox.TabIndex = 13;
+            this.modeloAnoTextBox.TabIndex = 1;
             // 
             // precioTextBox
             // 
@@ -905,7 +905,7 @@
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.ReadOnly = true;
             this.precioTextBox.Size = new System.Drawing.Size(153, 20);
-            this.precioTextBox.TabIndex = 15;
+            this.precioTextBox.TabIndex = 11;
             // 
             // idIVAComboBox
             // 
@@ -917,7 +917,7 @@
             this.idIVAComboBox.Location = new System.Drawing.Point(101, 125);
             this.idIVAComboBox.Name = "idIVAComboBox";
             this.idIVAComboBox.Size = new System.Drawing.Size(153, 21);
-            this.idIVAComboBox.TabIndex = 17;
+            this.idIVAComboBox.TabIndex = 13;
             this.idIVAComboBox.ValueMember = "IdIVA";
             // 
             // idImpoconsumoComboBox
@@ -930,7 +930,7 @@
             this.idImpoconsumoComboBox.Location = new System.Drawing.Point(367, 124);
             this.idImpoconsumoComboBox.Name = "idImpoconsumoComboBox";
             this.idImpoconsumoComboBox.Size = new System.Drawing.Size(153, 21);
-            this.idImpoconsumoComboBox.TabIndex = 19;
+            this.idImpoconsumoComboBox.TabIndex = 15;
             this.idImpoconsumoComboBox.ValueMember = "IdImpoconsumo";
             // 
             // idSegmentoComboBox
@@ -943,7 +943,7 @@
             this.idSegmentoComboBox.Location = new System.Drawing.Point(110, 49);
             this.idSegmentoComboBox.Name = "idSegmentoComboBox";
             this.idSegmentoComboBox.Size = new System.Drawing.Size(229, 21);
-            this.idSegmentoComboBox.TabIndex = 21;
+            this.idSegmentoComboBox.TabIndex = 3;
             this.idSegmentoComboBox.ValueMember = "IdSegmento";
             // 
             // groupBox1
@@ -977,7 +977,7 @@
             this.idCilindrajeComboBox.Location = new System.Drawing.Point(110, 76);
             this.idCilindrajeComboBox.Name = "idCilindrajeComboBox";
             this.idCilindrajeComboBox.Size = new System.Drawing.Size(229, 21);
-            this.idCilindrajeComboBox.TabIndex = 25;
+            this.idCilindrajeComboBox.TabIndex = 5;
             this.idCilindrajeComboBox.ValueMember = "IdCilindraje";
             // 
             // idIntervaloPrecioComboBox
@@ -990,7 +990,7 @@
             this.idIntervaloPrecioComboBox.Location = new System.Drawing.Point(110, 157);
             this.idIntervaloPrecioComboBox.Name = "idIntervaloPrecioComboBox";
             this.idIntervaloPrecioComboBox.Size = new System.Drawing.Size(229, 21);
-            this.idIntervaloPrecioComboBox.TabIndex = 24;
+            this.idIntervaloPrecioComboBox.TabIndex = 11;
             this.idIntervaloPrecioComboBox.ValueMember = "IdIntervaloPrecio";
             // 
             // idPesoBrutoVhComboBox
@@ -1003,7 +1003,7 @@
             this.idPesoBrutoVhComboBox.Location = new System.Drawing.Point(110, 130);
             this.idPesoBrutoVhComboBox.Name = "idPesoBrutoVhComboBox";
             this.idPesoBrutoVhComboBox.Size = new System.Drawing.Size(229, 21);
-            this.idPesoBrutoVhComboBox.TabIndex = 23;
+            this.idPesoBrutoVhComboBox.TabIndex = 9;
             this.idPesoBrutoVhComboBox.ValueMember = "IdPesoBrutoVh";
             // 
             // idNumeroPasajerosComboBox
@@ -1016,7 +1016,7 @@
             this.idNumeroPasajerosComboBox.Location = new System.Drawing.Point(110, 103);
             this.idNumeroPasajerosComboBox.Name = "idNumeroPasajerosComboBox";
             this.idNumeroPasajerosComboBox.Size = new System.Drawing.Size(229, 21);
-            this.idNumeroPasajerosComboBox.TabIndex = 22;
+            this.idNumeroPasajerosComboBox.TabIndex = 7;
             this.idNumeroPasajerosComboBox.ValueMember = "IdNumeroPasajeros";
             // 
             // detalleProductoTextBox
@@ -1028,7 +1028,7 @@
             this.detalleProductoTextBox.ReadOnly = true;
             this.detalleProductoTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.detalleProductoTextBox.Size = new System.Drawing.Size(419, 44);
-            this.detalleProductoTextBox.TabIndex = 23;
+            this.detalleProductoTextBox.TabIndex = 17;
             // 
             // notasTextBox
             // 
@@ -1039,7 +1039,7 @@
             this.notasTextBox.ReadOnly = true;
             this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.notasTextBox.Size = new System.Drawing.Size(419, 51);
-            this.notasTextBox.TabIndex = 24;
+            this.notasTextBox.TabIndex = 19;
             // 
             // errorProvider1
             // 
@@ -1055,7 +1055,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(588, 235);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(15, 24);
-            this.activoCheckBox.TabIndex = 25;
+            this.activoCheckBox.TabIndex = 21;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // frmProductos

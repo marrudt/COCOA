@@ -2,13 +2,6 @@
 using COCOA.Maestras;
 using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Reportes
@@ -25,10 +18,10 @@ namespace COCOA.Reportes
 
         private int idOrdenCompra;
 
-        public int IDOrdenCompra 
-        { 
-            get => idOrdenCompra; 
-            set => idOrdenCompra = value; 
+        public int IDOrdenCompra
+        {
+            get => idOrdenCompra;
+            set => idOrdenCompra = value;
         }
 
 
@@ -60,7 +53,7 @@ namespace COCOA.Reportes
 
         private void frmReporteOrdenCompra_Load(object sender, EventArgs e)
         {
-            this.proveedoresTableAdapter.FillBy2(this.dSCOCOA.Proveedores);            
+            this.proveedoresTableAdapter.FillBy2(this.dSCOCOA.Proveedores);
             proveedorComboBox.SelectedValue = -1;
             if (idOrdenCompra != 0)
             {

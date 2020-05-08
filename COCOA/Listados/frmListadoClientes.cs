@@ -36,5 +36,10 @@ namespace COCOA.Listados
             miListado.SetDataSource(miDS);
             crystalReportViewer1.ReportSource = miListado;
         }
+
+        private void frmListadoClientes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

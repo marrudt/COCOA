@@ -47,16 +47,6 @@
             this.ciudadesTableAdapter = new COCOA.DSCOCOATableAdapters.CiudadesTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.busquedaDataGridView = new System.Windows.Forms.DataGridView();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.nitToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.nitToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.nombreClienteToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.nombreClienteToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.nombreContactoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.nombreContactoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.emailToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.emailToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,6 +59,16 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.nitToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.nitToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.nombreClienteToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.nombreClienteToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.nombreContactoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.nombreContactoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.emailToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.emailToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -230,6 +230,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
+            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -275,83 +277,6 @@
             this.busquedaDataGridView.ReadOnly = true;
             this.busquedaDataGridView.Size = new System.Drawing.Size(1039, 404);
             this.busquedaDataGridView.TabIndex = 19;
-            // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nitToolStripLabel,
-            this.nitToolStripTextBox,
-            this.nombreClienteToolStripLabel,
-            this.nombreClienteToolStripTextBox,
-            this.nombreContactoToolStripLabel,
-            this.nombreContactoToolStripTextBox,
-            this.emailToolStripLabel,
-            this.emailToolStripTextBox,
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(1039, 25);
-            this.fillByToolStrip.TabIndex = 20;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // nitToolStripLabel
-            // 
-            this.nitToolStripLabel.Name = "nitToolStripLabel";
-            this.nitToolStripLabel.Size = new System.Drawing.Size(26, 22);
-            this.nitToolStripLabel.Text = "Nit:";
-            // 
-            // nitToolStripTextBox
-            // 
-            this.nitToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nitToolStripTextBox.Name = "nitToolStripTextBox";
-            this.nitToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // nombreClienteToolStripLabel
-            // 
-            this.nombreClienteToolStripLabel.Name = "nombreClienteToolStripLabel";
-            this.nombreClienteToolStripLabel.Size = new System.Drawing.Size(47, 22);
-            this.nombreClienteToolStripLabel.Text = "Cliente:";
-            // 
-            // nombreClienteToolStripTextBox
-            // 
-            this.nombreClienteToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nombreClienteToolStripTextBox.Name = "nombreClienteToolStripTextBox";
-            this.nombreClienteToolStripTextBox.Size = new System.Drawing.Size(200, 25);
-            // 
-            // nombreContactoToolStripLabel
-            // 
-            this.nombreContactoToolStripLabel.Name = "nombreContactoToolStripLabel";
-            this.nombreContactoToolStripLabel.Size = new System.Drawing.Size(59, 22);
-            this.nombreContactoToolStripLabel.Text = "Contacto:";
-            // 
-            // nombreContactoToolStripTextBox
-            // 
-            this.nombreContactoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nombreContactoToolStripTextBox.Name = "nombreContactoToolStripTextBox";
-            this.nombreContactoToolStripTextBox.Size = new System.Drawing.Size(200, 25);
-            // 
-            // emailToolStripLabel
-            // 
-            this.emailToolStripLabel.Name = "emailToolStripLabel";
-            this.emailToolStripLabel.Size = new System.Drawing.Size(39, 22);
-            this.emailToolStripLabel.Text = "Email:";
-            // 
-            // emailToolStripTextBox
-            // 
-            this.emailToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.emailToolStripTextBox.Name = "emailToolStripTextBox";
-            this.emailToolStripTextBox.Size = new System.Drawing.Size(200, 25);
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.fillByToolStripButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 22);
-            this.fillByToolStripButton.Text = "Buscar";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -453,6 +378,84 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.BackColor = System.Drawing.Color.Transparent;
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nitToolStripLabel,
+            this.nitToolStripTextBox,
+            this.nombreClienteToolStripLabel,
+            this.nombreClienteToolStripTextBox,
+            this.nombreContactoToolStripLabel,
+            this.nombreContactoToolStripTextBox,
+            this.emailToolStripLabel,
+            this.emailToolStripTextBox,
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1039, 25);
+            this.fillByToolStrip.TabIndex = 20;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // nitToolStripLabel
+            // 
+            this.nitToolStripLabel.Name = "nitToolStripLabel";
+            this.nitToolStripLabel.Size = new System.Drawing.Size(26, 22);
+            this.nitToolStripLabel.Text = "Nit:";
+            // 
+            // nitToolStripTextBox
+            // 
+            this.nitToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nitToolStripTextBox.Name = "nitToolStripTextBox";
+            this.nitToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // nombreClienteToolStripLabel
+            // 
+            this.nombreClienteToolStripLabel.Name = "nombreClienteToolStripLabel";
+            this.nombreClienteToolStripLabel.Size = new System.Drawing.Size(47, 22);
+            this.nombreClienteToolStripLabel.Text = "Cliente:";
+            // 
+            // nombreClienteToolStripTextBox
+            // 
+            this.nombreClienteToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nombreClienteToolStripTextBox.Name = "nombreClienteToolStripTextBox";
+            this.nombreClienteToolStripTextBox.Size = new System.Drawing.Size(200, 25);
+            // 
+            // nombreContactoToolStripLabel
+            // 
+            this.nombreContactoToolStripLabel.Name = "nombreContactoToolStripLabel";
+            this.nombreContactoToolStripLabel.Size = new System.Drawing.Size(59, 22);
+            this.nombreContactoToolStripLabel.Text = "Contacto:";
+            // 
+            // nombreContactoToolStripTextBox
+            // 
+            this.nombreContactoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nombreContactoToolStripTextBox.Name = "nombreContactoToolStripTextBox";
+            this.nombreContactoToolStripTextBox.Size = new System.Drawing.Size(200, 25);
+            // 
+            // emailToolStripLabel
+            // 
+            this.emailToolStripLabel.Name = "emailToolStripLabel";
+            this.emailToolStripLabel.Size = new System.Drawing.Size(39, 22);
+            this.emailToolStripLabel.Text = "Email:";
+            // 
+            // emailToolStripTextBox
+            // 
+            this.emailToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.emailToolStripTextBox.Name = "emailToolStripTextBox";
+            this.emailToolStripTextBox.Size = new System.Drawing.Size(200, 25);
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.fillByToolStripButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 22);
+            this.fillByToolStripButton.Text = "Buscar";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // frmBusquedaCliente
             // 

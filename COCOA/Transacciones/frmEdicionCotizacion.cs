@@ -2,13 +2,6 @@
 using COCOA.Reportes;
 using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Transacciones
@@ -60,7 +53,7 @@ namespace COCOA.Transacciones
             idClienteComboBox.Enabled = true;
             sitioEntregaTextBox.ReadOnly = false;
             idClienteComboBox.Enabled = true;
-            contactoTextBox.Enabled = true;            
+            contactoTextBox.Enabled = true;
 
             busquedaClienteButton.Enabled = true;
             bindingNavigatorMoveFirstItem.Enabled = false;
@@ -181,7 +174,7 @@ namespace COCOA.Transacciones
 
         private void bindingNavigatorCancelDetalle_Click(object sender, EventArgs e)
         {
-            this.cotizacionDetalleBindingSource.CancelEdit();            
+            this.cotizacionDetalleBindingSource.CancelEdit();
             DeshabilitarCamposDetalle();
             VerificaPermisos();
         }

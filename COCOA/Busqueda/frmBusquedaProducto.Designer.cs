@@ -552,7 +552,7 @@
             // 
             // fillBy2ToolStrip
             // 
-            this.fillBy2ToolStrip.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.fillBy2ToolStrip.BackColor = System.Drawing.Color.Transparent;
             this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.codigoProductoToolStripLabel,
             this.codigoProductoToolStripTextBox,

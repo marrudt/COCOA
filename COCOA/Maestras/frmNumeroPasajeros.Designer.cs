@@ -75,7 +75,7 @@
             numeroPasajerosLabel.Location = new System.Drawing.Point(10, 44);
             numeroPasajerosLabel.Name = "numeroPasajerosLabel";
             numeroPasajerosLabel.Size = new System.Drawing.Size(111, 13);
-            numeroPasajerosLabel.TabIndex = 2;
+            numeroPasajerosLabel.TabIndex = 0;
             numeroPasajerosLabel.Text = "Número de Pasajeros:";
             // 
             // activoLabel
@@ -84,7 +84,7 @@
             activoLabel.Location = new System.Drawing.Point(81, 69);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 4;
+            activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -134,7 +134,7 @@
             // numeroPasajerosBindingNavigator
             // 
             this.numeroPasajerosBindingNavigator.AddNewItem = null;
-            this.numeroPasajerosBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.numeroPasajerosBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.numeroPasajerosBindingNavigator.BindingSource = this.numeroPasajerosBindingSource;
             this.numeroPasajerosBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.numeroPasajerosBindingNavigator.DeleteItem = null;
@@ -321,7 +321,7 @@
             this.numeroPasajerosDataGridView.Name = "numeroPasajerosDataGridView";
             this.numeroPasajerosDataGridView.ReadOnly = true;
             this.numeroPasajerosDataGridView.Size = new System.Drawing.Size(394, 196);
-            this.numeroPasajerosDataGridView.TabIndex = 1;
+            this.numeroPasajerosDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -357,7 +357,7 @@
             this.numeroPasajerosTextBox.Name = "numeroPasajerosTextBox";
             this.numeroPasajerosTextBox.ReadOnly = true;
             this.numeroPasajerosTextBox.Size = new System.Drawing.Size(211, 20);
-            this.numeroPasajerosTextBox.TabIndex = 3;
+            this.numeroPasajerosTextBox.TabIndex = 1;
             // 
             // activoCheckBox
             // 
@@ -367,7 +367,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(127, 64);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(18, 24);
-            this.activoCheckBox.TabIndex = 5;
+            this.activoCheckBox.TabIndex = 3;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

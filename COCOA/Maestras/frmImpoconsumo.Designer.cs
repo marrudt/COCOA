@@ -79,7 +79,7 @@
             descripcionImpoconsumoLabel.Location = new System.Drawing.Point(8, 45);
             descripcionImpoconsumoLabel.Name = "descripcionImpoconsumoLabel";
             descripcionImpoconsumoLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionImpoconsumoLabel.TabIndex = 2;
+            descripcionImpoconsumoLabel.TabIndex = 0;
             descripcionImpoconsumoLabel.Text = "Descripción:";
             // 
             // tarifaLabel
@@ -88,7 +88,7 @@
             tarifaLabel.Location = new System.Drawing.Point(37, 71);
             tarifaLabel.Name = "tarifaLabel";
             tarifaLabel.Size = new System.Drawing.Size(37, 13);
-            tarifaLabel.TabIndex = 4;
+            tarifaLabel.TabIndex = 2;
             tarifaLabel.Text = "Tarifa:";
             // 
             // activoLabel
@@ -97,7 +97,7 @@
             activoLabel.Location = new System.Drawing.Point(194, 71);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 6;
+            activoLabel.TabIndex = 4;
             activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
@@ -147,7 +147,7 @@
             // impoconsumoBindingNavigator
             // 
             this.impoconsumoBindingNavigator.AddNewItem = null;
-            this.impoconsumoBindingNavigator.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.impoconsumoBindingNavigator.BackColor = System.Drawing.Color.Transparent;
             this.impoconsumoBindingNavigator.BindingSource = this.impoconsumoBindingSource;
             this.impoconsumoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.impoconsumoBindingNavigator.DeleteItem = null;
@@ -336,7 +336,7 @@
             this.impoconsumoDataGridView.Name = "impoconsumoDataGridView";
             this.impoconsumoDataGridView.ReadOnly = true;
             this.impoconsumoDataGridView.Size = new System.Drawing.Size(393, 189);
-            this.impoconsumoDataGridView.TabIndex = 1;
+            this.impoconsumoDataGridView.TabIndex = 6;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -381,7 +381,7 @@
             this.descripcionImpoconsumoTextBox.Name = "descripcionImpoconsumoTextBox";
             this.descripcionImpoconsumoTextBox.ReadOnly = true;
             this.descripcionImpoconsumoTextBox.Size = new System.Drawing.Size(251, 20);
-            this.descripcionImpoconsumoTextBox.TabIndex = 3;
+            this.descripcionImpoconsumoTextBox.TabIndex = 1;
             // 
             // tarifaTextBox
             // 
@@ -390,7 +390,7 @@
             this.tarifaTextBox.Name = "tarifaTextBox";
             this.tarifaTextBox.ReadOnly = true;
             this.tarifaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.tarifaTextBox.TabIndex = 5;
+            this.tarifaTextBox.TabIndex = 3;
             // 
             // activoCheckBox
             // 
@@ -401,7 +401,7 @@
             this.activoCheckBox.Location = new System.Drawing.Point(240, 66);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(29, 24);
-            this.activoCheckBox.TabIndex = 7;
+            this.activoCheckBox.TabIndex = 5;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
             // errorProvider1

@@ -127,7 +127,7 @@
             numeroCosteoLabel.Location = new System.Drawing.Point(12, 150);
             numeroCosteoLabel.Name = "numeroCosteoLabel";
             numeroCosteoLabel.Size = new System.Drawing.Size(83, 13);
-            numeroCosteoLabel.TabIndex = 11;
+            numeroCosteoLabel.TabIndex = 9;
             numeroCosteoLabel.Text = "Número Costeo:";
             // 
             // contratoLabel
@@ -136,7 +136,7 @@
             contratoLabel.Location = new System.Drawing.Point(262, 150);
             contratoLabel.Name = "contratoLabel";
             contratoLabel.Size = new System.Drawing.Size(50, 13);
-            contratoLabel.TabIndex = 12;
+            contratoLabel.TabIndex = 11;
             contratoLabel.Text = "Contrato:";
             // 
             // idProductoLabel
@@ -633,7 +633,7 @@
             this.contratoTextBox.Location = new System.Drawing.Point(318, 147);
             this.contratoTextBox.Name = "contratoTextBox";
             this.contratoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.contratoTextBox.TabIndex = 13;
+            this.contratoTextBox.TabIndex = 12;
             // 
             // numeroCosteoTextBox
             // 
@@ -641,7 +641,7 @@
             this.numeroCosteoTextBox.Location = new System.Drawing.Point(97, 147);
             this.numeroCosteoTextBox.Name = "numeroCosteoTextBox";
             this.numeroCosteoTextBox.Size = new System.Drawing.Size(143, 20);
-            this.numeroCosteoTextBox.TabIndex = 12;
+            this.numeroCosteoTextBox.TabIndex = 10;
             this.numeroCosteoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numeroCosteoTextBox_KeyPress);
             // 
             // BusquedaClienteButton
@@ -652,7 +652,7 @@
             this.BusquedaClienteButton.Location = new System.Drawing.Point(449, 118);
             this.BusquedaClienteButton.Name = "BusquedaClienteButton";
             this.BusquedaClienteButton.Size = new System.Drawing.Size(63, 23);
-            this.BusquedaClienteButton.TabIndex = 11;
+            this.BusquedaClienteButton.TabIndex = 8;
             this.BusquedaClienteButton.Text = "Buscar";
             this.BusquedaClienteButton.UseVisualStyleBackColor = false;
             this.BusquedaClienteButton.Click += new System.EventHandler(this.BusquedaClienteButton_Click);

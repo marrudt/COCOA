@@ -82,6 +82,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListadoProveedores";
             this.Text = "Listado Proveedores";
+            this.Load += new System.EventHandler(this.frmListadoProveedores_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

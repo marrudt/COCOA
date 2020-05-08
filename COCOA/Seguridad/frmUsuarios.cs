@@ -1,13 +1,6 @@
 ﻿using COCOA.Clases;
 using DAL;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Seguridad
@@ -39,7 +32,7 @@ namespace COCOA.Seguridad
 
         private bool ValidarCampos()
         {
-            if(nuevo)
+            if (nuevo)
             {
                 if (idUsuarioTextBox.Text == string.Empty)
                 {
@@ -57,7 +50,7 @@ namespace COCOA.Seguridad
                 }
             }
 
-            if(idRolComboBox.SelectedIndex == -1)
+            if (idRolComboBox.SelectedIndex == -1)
             {
                 errorProvider1.SetError(idRolComboBox, "El campo Rol es obligatorio");
                 idUsuarioTextBox.Focus();
@@ -114,7 +107,7 @@ namespace COCOA.Seguridad
             }
             errorProvider1.Clear();
 
-            return true;            
+            return true;
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -181,7 +174,7 @@ namespace COCOA.Seguridad
 
         private void bindingNavigatorCancel_Click(object sender, EventArgs e)
         {
-            usuariosBindingSource.CancelEdit();            
+            usuariosBindingSource.CancelEdit();
             confirmacionTextBox.Text = claveTextBox.Text;
             DeshabilitarCampos();
         }
