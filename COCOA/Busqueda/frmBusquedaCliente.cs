@@ -31,7 +31,7 @@ namespace COCOA.Busqueda
             nombreClienteToolStripTextBox.Text = "";
             nombreContactoToolStripTextBox.Text = "";
             emailToolStripTextBox.Text = "";
-            fillByToolStripButton_Click(sender, e);
+            fillBy1ToolStripButton_Click(sender, e);
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
@@ -55,10 +55,9 @@ namespace COCOA.Busqueda
                 IdCliente = (int)busquedaDataGridView.Rows[0].Cells[0].Value;
             }
             this.Close();
-        }
+        }        
 
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
         {
             string nit, nombreCliente, nombreContacto, email;
 
@@ -96,7 +95,7 @@ namespace COCOA.Busqueda
 
             try
             {
-                this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes,
+                this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes,
                     nit,
                     nombreCliente,
                     nombreContacto,
@@ -106,6 +105,7 @@ namespace COCOA.Busqueda
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+
         }
     }
 }

@@ -40,7 +40,7 @@ namespace COCOA.Listados
 
         private void frmListadoCotizaciones_Load(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.FillBy2(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
             clienteComboBox.SelectedValue = -1;
         }
 

@@ -52,7 +52,7 @@ namespace COCOA.Reportes
 
         private void frmReporteCotizacion_Load(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
             clienteComboBox.SelectedValue = -1;
             if (idCotizacion != 0)
             {
@@ -110,5 +110,6 @@ namespace COCOA.Reportes
         {
             ActualizaFiltro();
         }
+        
     }
 }

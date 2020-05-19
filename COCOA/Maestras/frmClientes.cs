@@ -69,10 +69,10 @@ namespace COCOA.Maestras
             }
             errorProvider1.Clear();
 
-            if (ciudadTextBox.Text == "")
+            if (idCiudadComboBox.SelectedIndex == -1)
             {
-                errorProvider1.SetError(ciudadTextBox, "El campo Ciudad es oblitorio");
-                ciudadTextBox.Focus();
+                errorProvider1.SetError(idCiudadComboBox, "El campo Ciudad es oblitorio");
+                idCiudadComboBox.Focus();
                 return false;
             }
             errorProvider1.Clear();
@@ -111,7 +111,7 @@ namespace COCOA.Maestras
             nombreClienteTextBox.ReadOnly = true;
             nombreContactoTextBox.ReadOnly = true;
             direccionTextBox.ReadOnly = true;
-            ciudadTextBox.ReadOnly = true;
+            idCiudadComboBox.Enabled = false;
             emailTextBox.ReadOnly = true;
             telefono1TextBox.ReadOnly = true;
             telefono2TextBox.ReadOnly = true;
@@ -135,6 +135,7 @@ namespace COCOA.Maestras
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
+            this.ciudadesTableAdapter.Fill(this.dSCOCOA.Ciudades);
             this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
             VerificaPermisos();
         }
@@ -173,7 +174,7 @@ namespace COCOA.Maestras
             nombreClienteTextBox.ReadOnly = false;
             nombreContactoTextBox.ReadOnly = false;
             direccionTextBox.ReadOnly = false;
-            ciudadTextBox.ReadOnly = false;
+            idCiudadComboBox.Enabled = true;
             emailTextBox.ReadOnly = false;
             telefono1TextBox.ReadOnly = false;
             telefono2TextBox.ReadOnly = false;

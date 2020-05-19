@@ -33,7 +33,7 @@ namespace COCOA.Transacciones
 
         private void frmOrdenCompras_Load(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.FillBy4(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
             this.ordenCompraTableAdapter.Fill(this.dSCOCOA.OrdenCompra);
             this.ordenCompraDetalleTableAdapter.Fill(this.dSCOCOA.OrdenCompraDetalle);
             this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);

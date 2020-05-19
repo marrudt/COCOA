@@ -39,7 +39,7 @@ namespace COCOA.Transacciones
             this.numeroPasajerosTableAdapter.Fill(this.dSCOCOA.NumeroPasajeros);
             this.cilindrajesTableAdapter.Fill(this.dSCOCOA.Cilindrajes);
             this.segmentosTableAdapter.Fill(this.dSCOCOA.Segmentos);
-            this.clientesTableAdapter.FillBy3(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
 
             clienteComboBox.SelectedIndex = -1;            
             productoLabel.Text = string.Empty;

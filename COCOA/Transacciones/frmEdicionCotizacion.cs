@@ -31,7 +31,7 @@ namespace COCOA.Transacciones
 
         private void frmEdicionCotizacion_Load(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes);
+            this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
             this.cotizacionDetalleTableAdapter.Fill(this.dSCOCOA.CotizacionDetalle);
             this.cotizacionTableAdapter.Fill(this.dSCOCOA.Cotizacion);
             bindingNavigatorAddNewItemDetalle.Enabled = false;
