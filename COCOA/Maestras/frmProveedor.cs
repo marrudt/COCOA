@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace COCOA.Maestras
 {
-    public partial class frmProveedores : Form
+    public partial class frmProveedor : Form
     {
         private DALUsuario usuarioLogueado;
 
@@ -16,7 +16,7 @@ namespace COCOA.Maestras
             set => usuarioLogueado = value;
         }
 
-        public frmProveedores()
+        public frmProveedor()
         {
             InitializeComponent();
         }
@@ -65,6 +65,34 @@ namespace COCOA.Maestras
             }
         }
 
+        private void DeshabilitarCampos()
+        {
+            nitTextBox.ReadOnly = true;
+            nombreProveedorTextBox.ReadOnly = true;
+            nombreContactoTextBox.ReadOnly = true;
+            direccionTextBox.ReadOnly = true;
+            idCiudadComboBox.Enabled = false;
+            emailTextBox.ReadOnly = true;
+            telefono1TextBox.ReadOnly = true;
+            telefono2TextBox.ReadOnly = true;
+            celularTextBox.ReadOnly = true;
+            notasTextBox.ReadOnly = true;
+            activoCheckBox.Enabled = false;
+
+            bindingNavigatorMoveFirstItem.Enabled = true;
+            bindingNavigatorMovePreviousItem.Enabled = true;
+            bindingNavigatorMoveNextItem.Enabled = true;
+            bindingNavigatorMoveLastItem.Enabled = true;
+            bindingNavigatorEdit.Enabled = true;
+            bindingNavigatorAddNewItem.Enabled = true;
+            bindingNavigatorDeleteItem.Enabled = true;
+            bindingNavigatorSaveItem.Enabled = false;
+            bindingNavigatorCancel.Enabled = false;
+            bindingNavigatorSearch.Enabled = true;
+            bindingNavigatorCountItem.Enabled = true;
+            bindingNavigatorExit.Enabled = true;
+        }
+
         private bool ValidarCampos()
         {
             if (nitTextBox.Text == "")
@@ -91,10 +119,10 @@ namespace COCOA.Maestras
             }
             errorProvider1.Clear();
 
-            if (ciudadTextBox.Text == "")
+            if (idCiudadComboBox.SelectedIndex == -1)
             {
-                errorProvider1.SetError(ciudadTextBox, "El campo Ciudad es oblitorio");
-                direccionTextBox.Focus();
+                errorProvider1.SetError(idCiudadComboBox, "El campo Ciudad es oblitorio");
+                idCiudadComboBox.Focus();
                 return false;
             }
             errorProvider1.Clear();
@@ -127,36 +155,9 @@ namespace COCOA.Maestras
             return true;
         }
 
-        private void DeshabilitarCampos()
+        private void frmProveedor_Load(object sender, EventArgs e)
         {
-            nitTextBox.ReadOnly = true;
-            nombreProveedorTextBox.ReadOnly = true;
-            nombreContactoTextBox.ReadOnly = true;
-            direccionTextBox.ReadOnly = true;
-            ciudadTextBox.ReadOnly = true;
-            emailTextBox.ReadOnly = true;
-            telefono1TextBox.ReadOnly = true;
-            telefono2TextBox.ReadOnly = true;
-            celularTextBox.ReadOnly = true;
-            notasTextBox.ReadOnly = true;
-            activoCheckBox.Enabled = false;
-
-            bindingNavigatorMoveFirstItem.Enabled = true;
-            bindingNavigatorMovePreviousItem.Enabled = true;
-            bindingNavigatorMoveNextItem.Enabled = true;
-            bindingNavigatorMoveLastItem.Enabled = true;
-            bindingNavigatorEdit.Enabled = true;
-            bindingNavigatorAddNewItem.Enabled = true;
-            bindingNavigatorDeleteItem.Enabled = true;
-            bindingNavigatorSaveItem.Enabled = false;
-            bindingNavigatorCancel.Enabled = false;
-            bindingNavigatorSearch.Enabled = true;
-            bindingNavigatorCountItem.Enabled = true;
-            bindingNavigatorExit.Enabled = true;
-        }
-
-        private void frmProveedores_Load(object sender, EventArgs e)
-        {
+            this.ciudadesTableAdapter.Fill(this.dSCOCOA.Ciudades);
             this.proveedoresTableAdapter.Fill(this.dSCOCOA.Proveedores);
             VerificaPermisos();
         }
@@ -172,7 +173,7 @@ namespace COCOA.Maestras
             nombreProveedorTextBox.ReadOnly = false;
             nombreContactoTextBox.ReadOnly = false;
             direccionTextBox.ReadOnly = false;
-            ciudadTextBox.ReadOnly = false;
+            idCiudadComboBox.Enabled = true;
             emailTextBox.ReadOnly = false;
             telefono1TextBox.ReadOnly = false;
             telefono2TextBox.ReadOnly = false;
@@ -236,6 +237,12 @@ namespace COCOA.Maestras
             this.Close();
         }
 
+        private void bindingNavigatorPrint_Click(object sender, EventArgs e)
+        {
+            frmListadoProveedores miForm = new frmListadoProveedores();
+            miForm.ShowDialog();
+        }
+
         private void nitTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
@@ -254,12 +261,6 @@ namespace COCOA.Maestras
         private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }
-
-        private void bindingNavigatorPrint_Click(object sender, EventArgs e)
-        {
-            frmListadoProveedores miForm = new frmListadoProveedores();
-            miForm.ShowDialog();
         }
     }
 }

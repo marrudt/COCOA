@@ -48,7 +48,7 @@ namespace COCOA.Listados
 
         private void frmListadoOrdenCompras_Load(object sender, EventArgs e)
         {
-            this.proveedoresTableAdapter.FillBy3(this.dSCOCOA.Proveedores);
+            this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);
             proveedorComboBox.SelectedValue = -1;
         }
     }

@@ -53,7 +53,7 @@ namespace COCOA.Reportes
 
         private void frmReporteOrdenCompra_Load(object sender, EventArgs e)
         {
-            this.proveedoresTableAdapter.FillBy2(this.dSCOCOA.Proveedores);
+            this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);
             proveedorComboBox.SelectedValue = -1;
             if (idOrdenCompra != 0)
             {

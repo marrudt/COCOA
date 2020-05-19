@@ -45,7 +45,7 @@ namespace COCOA
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmProveedores miForm = new frmProveedores();
+            frmProveedor miForm = new frmProveedor();
             miForm.MdiParent = this;
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();

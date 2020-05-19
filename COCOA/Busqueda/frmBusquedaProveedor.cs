@@ -31,7 +31,7 @@ namespace COCOA.Maestras
             nombreProveedorToolStripTextBox.Text = "";
             nombreContactoToolStripTextBox.Text = "";
             emailToolStripTextBox.Text = "";
-            fillByToolStripButton1_Click(sender, e);
+            fillByToolStripButton_Click(sender, e);
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
@@ -56,8 +56,8 @@ namespace COCOA.Maestras
             }
             this.Close();
         }
-
-        private void fillByToolStripButton1_Click(object sender, EventArgs e)
+        
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
             string nit, nombreProveedor, nombreContacto, email;
 

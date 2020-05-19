@@ -261,11 +261,11 @@
     <Compile Include="Maestras\frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maestras\frmProveedores.cs">
+    <Compile Include="Maestras\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maestras\frmProveedores.Designer.cs">
-      <DependentUpon>frmProveedores.cs</DependentUpon>
+    <Compile Include="Maestras\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestras\frmSegmento.cs">
       <SubType>Form</SubType>
@@ -462,8 +462,8 @@
     <EmbeddedResource Include="Maestras\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maestras\frmProveedores.resx">
-      <DependentUpon>frmProveedores.cs</DependentUpon>
+    <EmbeddedResource Include="Maestras\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmSegmento.resx">
       <DependentUpon>frmSegmento.cs</DependentUpon>
