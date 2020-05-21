@@ -397,6 +397,7 @@
             // 
             this.nitToolStripTextBox.Name = "nitToolStripTextBox";
             this.nitToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.nitToolStripTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitToolStripTextBox_KeyPress);
             // 
             // nombreProveedorToolStripLabel1
             // 
@@ -406,6 +407,7 @@
             // 
             // nombreProveedorToolStripTextBox
             // 
+            this.nombreProveedorToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombreProveedorToolStripTextBox.Name = "nombreProveedorToolStripTextBox";
             this.nombreProveedorToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 
@@ -417,6 +419,7 @@
             // 
             // nombreContactoToolStripTextBox
             // 
+            this.nombreContactoToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombreContactoToolStripTextBox.Name = "nombreContactoToolStripTextBox";
             this.nombreContactoToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 
@@ -428,6 +431,7 @@
             // 
             // emailToolStripTextBox
             // 
+            this.emailToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.emailToolStripTextBox.Name = "emailToolStripTextBox";
             this.emailToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 

@@ -31843,8 +31843,8 @@ SELECT IdCiudad, CodigoCiudad, DescripcionCiudad, Activo FROM Ciudades WHERE (Id
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT IdCiudad, CodigoCiudad, DescripcionCiudad, Activo \r\nFROM dbo.Ciudades\r\nWHE" +
-                "RE CodigoCiudad LIKE @CodigoCiudad \r\nand DescripcionCiudad LIKE @DescripcionCiud" +
-                "ad";
+                "RE CodigoCiudad LIKE @CodigoCiudad\r\nAND DescripcionCiudad LIKE @DescripcionCiuda" +
+                "d";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CodigoCiudad", global::System.Data.SqlDbType.NVarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, "CodigoCiudad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DescripcionCiudad", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "DescripcionCiudad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));

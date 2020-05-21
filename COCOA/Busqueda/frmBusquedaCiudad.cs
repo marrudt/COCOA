@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COCOA.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,54 +36,13 @@ namespace COCOA.Busqueda
         private void frmBusquedaCiudad_Load(object sender, EventArgs e)
         {
             this.ciudadesTableAdapter.Fill(this.dSCOCOA.Ciudades);
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            string codigo, descripcion;
-
-            if (contengaRadioButton.Checked == true)
-            {
-                codigo = "%" + codigoCiudadToolStripTextBox.Text + "%";
-                descripcion = "%" + descripcionCiudadToolStripTextBox.Text + "%";                
-            }
-
-            else if (empiezaRadioButton.Checked == true)
-            {
-                codigo = codigoCiudadToolStripTextBox.Text + "%";
-                descripcion = descripcionCiudadToolStripTextBox.Text + "%";                
-            }
-
-            else if (terminaRadioButton.Checked == true)
-            {
-                codigo = "%" + codigoCiudadToolStripTextBox.Text;
-                descripcion = "%" + descripcionCiudadToolStripTextBox.Text;                
-            }
-
-            else
-            {
-                codigo = codigoCiudadToolStripTextBox.Text;
-                descripcion = descripcionCiudadToolStripTextBox.Text;                
-            }
-
-            try
-            {
-                this.ciudadesTableAdapter.FillBy(this.dSCOCOA.Ciudades,
-                    codigo,
-                    descripcion);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }           
-
-        }
+        }                
 
         private void borrarFiltrosbutton_Click(object sender, EventArgs e)
         {
             codigoCiudadToolStripTextBox.Text = "";
-            descripcionCiudadToolStripTextBox.Text = "";            
-            fillByToolStripButton_Click(sender, e);
+            descripcionCiudadToolStripTextBox.Text = "";
+            buscarFillByToolStripButton_Click(sender, e);
         }
 
         private void volverButton_Click(object sender, EventArgs e)
@@ -106,6 +66,51 @@ namespace COCOA.Busqueda
         {
             IdCiudad = 0;
             this.Close();
+        }        
+
+        private void buscarFillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            string codigo, descripcion;
+
+            if (contengaRadioButton.Checked == true)
+            {
+                codigo = "%" + codigoCiudadToolStripTextBox.Text + "%";
+                descripcion = "%" + descripcionCiudadToolStripTextBox.Text + "%";
+            }
+
+            else if (empiezaRadioButton.Checked == true)
+            {
+                codigo = codigoCiudadToolStripTextBox.Text + "%";
+                descripcion = descripcionCiudadToolStripTextBox.Text + "%";
+            }
+
+            else if (terminaRadioButton.Checked == true)
+            {
+                codigo = "%" + codigoCiudadToolStripTextBox.Text;
+                descripcion = "%" + descripcionCiudadToolStripTextBox.Text;
+            }
+
+            else
+            {
+                codigo = codigoCiudadToolStripTextBox.Text;
+                descripcion = descripcionCiudadToolStripTextBox.Text;
+            }
+
+            try
+            {
+                this.ciudadesTableAdapter.FillBy(this.dSCOCOA.Ciudades,
+                    codigo,
+                    descripcion);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void codigoCiudadToolStripTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }
     }
 }

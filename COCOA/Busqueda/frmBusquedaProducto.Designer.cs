@@ -573,7 +573,6 @@
             // 
             // codigoProductoToolStripTextBox
             // 
-            this.codigoProductoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.codigoProductoToolStripTextBox.Name = "codigoProductoToolStripTextBox";
             this.codigoProductoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
             // 
@@ -585,7 +584,7 @@
             // 
             // descripcionProductoToolStripTextBox
             // 
-            this.descripcionProductoToolStripTextBox.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.descripcionProductoToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionProductoToolStripTextBox.Name = "descripcionProductoToolStripTextBox";
             this.descripcionProductoToolStripTextBox.Size = new System.Drawing.Size(250, 25);
             // 

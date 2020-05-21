@@ -35,6 +35,10 @@
             this.ciudadesTableAdapter = new COCOA.DSCOCOATableAdapters.CiudadesTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.busquedaCiudadesDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.borrarFiltrosbutton = new System.Windows.Forms.Button();
             this.igualRadioButton = new System.Windows.Forms.RadioButton();
@@ -43,21 +47,17 @@
             this.contengaRadioButton = new System.Windows.Forms.RadioButton();
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.volverButton = new System.Windows.Forms.Button();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.codigoCiudadToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.fillByToolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.codigoCiudadToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.codigoCiudadToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.descripcionCiudadToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.descripcionCiudadToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.descripcionCiudadToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buscarFillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busquedaCiudadesDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.fillByToolStrip.SuspendLayout();
+            this.fillByToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dSCOCOA
@@ -125,8 +125,44 @@
             this.busquedaCiudadesDataGridView.Location = new System.Drawing.Point(0, 88);
             this.busquedaCiudadesDataGridView.Name = "busquedaCiudadesDataGridView";
             this.busquedaCiudadesDataGridView.ReadOnly = true;
-            this.busquedaCiudadesDataGridView.Size = new System.Drawing.Size(641, 442);
+            this.busquedaCiudadesDataGridView.Size = new System.Drawing.Size(661, 463);
             this.busquedaCiudadesDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCiudad";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 41;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodigoCiudad";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Código";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 65;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescripcionCiudad";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 88;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
             // groupBox1
             // 
@@ -234,98 +270,64 @@
             this.volverButton.UseVisualStyleBackColor = false;
             this.volverButton.Click += new System.EventHandler(this.volverButton_Click);
             // 
-            // fillByToolStrip
+            // fillByToolStrip1
             // 
-            this.fillByToolStrip.BackColor = System.Drawing.Color.Transparent;
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.codigoCiudadToolStripLabel,
+            this.fillByToolStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.fillByToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.codigoCiudadToolStripLabel1,
             this.codigoCiudadToolStripTextBox,
-            this.descripcionCiudadToolStripLabel,
+            this.descripcionCiudadToolStripLabel1,
             this.descripcionCiudadToolStripTextBox,
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(641, 25);
-            this.fillByToolStrip.TabIndex = 20;
-            this.fillByToolStrip.Text = "fillByToolStrip";
+            this.buscarFillByToolStripButton});
+            this.fillByToolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip1.Name = "fillByToolStrip1";
+            this.fillByToolStrip1.Size = new System.Drawing.Size(661, 25);
+            this.fillByToolStrip1.TabIndex = 21;
+            this.fillByToolStrip1.Text = "fillByToolStrip1";
             // 
-            // codigoCiudadToolStripLabel
+            // codigoCiudadToolStripLabel1
             // 
-            this.codigoCiudadToolStripLabel.Name = "codigoCiudadToolStripLabel";
-            this.codigoCiudadToolStripLabel.Size = new System.Drawing.Size(49, 22);
-            this.codigoCiudadToolStripLabel.Text = "Código:";
+            this.codigoCiudadToolStripLabel1.Name = "codigoCiudadToolStripLabel1";
+            this.codigoCiudadToolStripLabel1.Size = new System.Drawing.Size(49, 22);
+            this.codigoCiudadToolStripLabel1.Text = "Código:";
             // 
             // codigoCiudadToolStripTextBox
             // 
             this.codigoCiudadToolStripTextBox.Name = "codigoCiudadToolStripTextBox";
             this.codigoCiudadToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.codigoCiudadToolStripTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigoCiudadToolStripTextBox_KeyPress_1);
             // 
-            // descripcionCiudadToolStripLabel
+            // descripcionCiudadToolStripLabel1
             // 
-            this.descripcionCiudadToolStripLabel.Name = "descripcionCiudadToolStripLabel";
-            this.descripcionCiudadToolStripLabel.Size = new System.Drawing.Size(72, 22);
-            this.descripcionCiudadToolStripLabel.Text = "Descripción:";
+            this.descripcionCiudadToolStripLabel1.Name = "descripcionCiudadToolStripLabel1";
+            this.descripcionCiudadToolStripLabel1.Size = new System.Drawing.Size(72, 22);
+            this.descripcionCiudadToolStripLabel1.Text = "Descripción:";
             // 
             // descripcionCiudadToolStripTextBox
             // 
+            this.descripcionCiudadToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionCiudadToolStripTextBox.Name = "descripcionCiudadToolStripTextBox";
             this.descripcionCiudadToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 
-            // fillByToolStripButton
+            // buscarFillByToolStripButton
             // 
-            this.fillByToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.fillByToolStripButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 22);
-            this.fillByToolStripButton.Text = "Buscar";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCiudad";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 41;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "CodigoCiudad";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Código";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 65;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DescripcionCiudad";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 88;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 43;
+            this.buscarFillByToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.buscarFillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.buscarFillByToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.buscarFillByToolStripButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buscarFillByToolStripButton.Name = "buscarFillByToolStripButton";
+            this.buscarFillByToolStripButton.Size = new System.Drawing.Size(48, 22);
+            this.buscarFillByToolStripButton.Text = "Buscar";
+            this.buscarFillByToolStripButton.Click += new System.EventHandler(this.buscarFillByToolStripButton_Click);
             // 
             // frmBusquedaCiudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(641, 529);
+            this.ClientSize = new System.Drawing.Size(661, 550);
             this.ControlBox = false;
-            this.Controls.Add(this.fillByToolStrip);
+            this.Controls.Add(this.fillByToolStrip1);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.volverButton);
             this.Controls.Add(this.groupBox1);
@@ -339,8 +341,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.busquedaCiudadesDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
+            this.fillByToolStrip1.ResumeLayout(false);
+            this.fillByToolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,15 +363,15 @@
         private System.Windows.Forms.RadioButton contengaRadioButton;
         private System.Windows.Forms.Button Cancelarbutton;
         private System.Windows.Forms.Button volverButton;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripLabel codigoCiudadToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox codigoCiudadToolStripTextBox;
-        private System.Windows.Forms.ToolStripLabel descripcionCiudadToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox descripcionCiudadToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.ToolStrip fillByToolStrip1;
+        private System.Windows.Forms.ToolStripLabel codigoCiudadToolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox codigoCiudadToolStripTextBox;
+        private System.Windows.Forms.ToolStripLabel descripcionCiudadToolStripLabel1;
+        private System.Windows.Forms.ToolStripTextBox descripcionCiudadToolStripTextBox;
+        private System.Windows.Forms.ToolStripButton buscarFillByToolStripButton;
     }
 }

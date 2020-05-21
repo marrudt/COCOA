@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COCOA.Clases;
+using System;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
@@ -105,6 +106,11 @@ namespace COCOA.Maestras
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+        }
+
+        private void nitToolStripTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }
     }
 }
