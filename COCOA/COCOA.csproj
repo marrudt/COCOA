@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Busqueda\frmBusquedaCiudad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmBusquedaCiudad.Designer.cs">
+      <DependentUpon>frmBusquedaCiudad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Busqueda\frmBusquedaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     <Compile Include="Transacciones\frmOrdenCompras.Designer.cs">
       <DependentUpon>frmOrdenCompras.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Busqueda\frmBusquedaCiudad.resx">
+      <DependentUpon>frmBusquedaCiudad.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -431,6 +440,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmCilindraje.resx">
       <DependentUpon>frmCilindraje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maestras\frmCiudad.resx">
+      <DependentUpon>frmCiudad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmClase.resx">
       <DependentUpon>frmClase.cs</DependentUpon>

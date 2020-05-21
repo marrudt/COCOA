@@ -274,6 +274,13 @@ namespace COCOA
             miForm.Show();
         }
 
+        private void ciudadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCiudad miForm = new frmCiudad();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
         private void VerificarPermisos()
         {
             if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 21))
@@ -639,6 +646,15 @@ namespace COCOA
             else
             {
                 edicionCotizaciónToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 34))
+            {
+                ciudadesToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                ciudadesToolStripMenuItem.Visible = false;
             }
         }        
     }

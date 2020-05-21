@@ -1,4 +1,5 @@
-﻿using COCOA.Clases;
+﻿using COCOA.Busqueda;
+using COCOA.Clases;
 using COCOA.Listados;
 using DAL;
 using System;
@@ -91,6 +92,7 @@ namespace COCOA.Maestras
             bindingNavigatorSearch.Enabled = true;
             bindingNavigatorCountItem.Enabled = true;
             bindingNavigatorExit.Enabled = true;
+            busquedaCiudadButton.Enabled = false;
         }
 
         private bool ValidarCampos()
@@ -193,6 +195,7 @@ namespace COCOA.Maestras
             bindingNavigatorSearch.Enabled = false;
             bindingNavigatorCountItem.Enabled = false;
             bindingNavigatorExit.Enabled = false;
+            busquedaCiudadButton.Enabled = true;
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
@@ -261,6 +264,15 @@ namespace COCOA.Maestras
         private void celularTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void busquedaCiudadButton_Click(object sender, EventArgs e)
+        {
+            frmBusquedaCiudad miBusqueda = new frmBusquedaCiudad();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDCiudad == 0) return;
+            int posicion = ciudadesBindingSource.Find("IDCiudad", miBusqueda.IDCiudad);
+            ciudadesBindingSource.Position = posicion;
         }
     }
 }

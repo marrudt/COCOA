@@ -200,7 +200,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -358,7 +357,7 @@
             this.descripcionCilindrajeTextBox.Location = new System.Drawing.Point(80, 38);
             this.descripcionCilindrajeTextBox.Name = "descripcionCilindrajeTextBox";
             this.descripcionCilindrajeTextBox.ReadOnly = true;
-            this.descripcionCilindrajeTextBox.Size = new System.Drawing.Size(250, 20);
+            this.descripcionCilindrajeTextBox.Size = new System.Drawing.Size(286, 20);
             this.descripcionCilindrajeTextBox.TabIndex = 1;
             // 
             // activoCheckBox
