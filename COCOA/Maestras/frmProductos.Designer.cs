@@ -899,7 +899,7 @@
             // 
             // precioTextBox
             // 
-            this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Precio", true));
+            this.precioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "Precio", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             this.precioTextBox.Location = new System.Drawing.Point(367, 98);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.ReadOnly = true;

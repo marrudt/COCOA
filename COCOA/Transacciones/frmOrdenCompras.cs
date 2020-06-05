@@ -374,7 +374,6 @@ namespace COCOA.Transacciones
             if (rta == DialogResult.No) return;
             misDetalles.Clear();
             RefrescaGrid();
-
         }
 
         private void borrarLineaButton_Click(object sender, EventArgs e)
