@@ -10,8 +10,14 @@ namespace COCOA.Busqueda
 
         public int IDCliente
         {
-            get => IdCliente;
+          get { return IdCliente; }
         }
+
+
+        //public int IDCliente
+        //{
+        //    get => IdCliente;
+        //}
 
         public frmBusquedaCliente()
         {

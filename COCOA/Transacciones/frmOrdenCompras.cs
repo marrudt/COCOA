@@ -15,16 +15,22 @@ namespace COCOA.Transacciones
         DALProducto ultimoProducto = null;
         private DALUsuario usuarioLogueado;
 
+        public DALUsuario UsuarioLogueado
+        {
+          get { return usuarioLogueado; }
+          set { usuarioLogueado = value; }
+        }
+
         private decimal totalSubtotal = 0;
         private decimal totalIVA = 0;
         private decimal totalImpoconsumo = 0;
         private decimal totalNeto = 0;
 
-        public DALUsuario UsuarioLogueado
-        {
-            get => usuarioLogueado;
-            set => usuarioLogueado = value;
-        }
+        //public DALUsuario UsuarioLogueado
+        //{
+        //    get => usuarioLogueado;
+        //    set => usuarioLogueado = value;
+        //}
 
         public frmOrdenCompras()
         {

@@ -16,9 +16,15 @@ namespace COCOA
 
         public DALUsuario UsuarioLogueado
         {
-            get => usuarioLogueado;
-            set => usuarioLogueado = value;
+            get { return usuarioLogueado; }
+            set { usuarioLogueado = value; }
         }
+
+        //public DALUsuario UsuarioLogueado
+        //{
+        //    get => usuarioLogueado;
+        //    set => usuarioLogueado = value;
+        //}
 
         public frmPrincipal()
         {

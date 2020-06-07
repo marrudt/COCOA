@@ -9,8 +9,15 @@ namespace COCOA.Busqueda
 
         public int IDProducto
         {
-            get => IdProducto;
+          get { return IdProducto; }  
         }
+
+        //public int IDProducto
+
+
+        //{
+        //    get => IdProducto;
+        //}
 
         public frmBusquedaProducto()
         {

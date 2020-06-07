@@ -21,11 +21,18 @@ namespace COCOA.Transacciones
         private decimal totalImpoconsumo = 0;
         private decimal totalNeto = 0;
 
+
         public DALUsuario UsuarioLogueado
         {
-            get => usuarioLogueado;
-            set => usuarioLogueado = value;
+            get { return usuarioLogueado; }
+            set { usuarioLogueado = value; }
         }
+
+        //public DALUsuario UsuarioLogueado
+        //{
+        //    get => usuarioLogueado;
+        //    set => usuarioLogueado = value;
+        //}
 
         public frmCotizaciones()
         {

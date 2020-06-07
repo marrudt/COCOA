@@ -17,8 +17,14 @@ namespace COCOA.Busqueda
 
         public int IDCiudad
         {
-            get => IdCiudad;
+          get { return IdCiudad; }
+          set { IdCiudad = value; }
         }
+
+        //public int IDCiudad
+        //{
+        //    get => IdCiudad;
+        //}
 
         public frmBusquedaCiudad()
         {

@@ -12,17 +12,29 @@ namespace COCOA.Consultas
 
         public DALUsuario UsuarioLogueado
         {
-            get => usuarioLogueado;
-            set => usuarioLogueado = value;
+            get { return usuarioLogueado; }
+            set { usuarioLogueado = value; }
         }
+
+        //public DALUsuario UsuarioLogueado
+        //{
+        //    get => usuarioLogueado;
+        //    set => usuarioLogueado = value;
+        //}
 
         private int idCotizacion;
 
         public int IDCotizacion
         {
-            get => idCotizacion;
-            set => idCotizacion = value;
+          get { return idCotizacion; }
+          set { idCotizacion = value; }
         }
+
+        //public int IDCotizacion
+        //{
+        //    get => idCotizacion;
+        //    set => idCotizacion = value;
+        //}
 
         public frmConsultaCotizacion()
         {

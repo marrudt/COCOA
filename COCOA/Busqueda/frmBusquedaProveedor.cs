@@ -10,8 +10,14 @@ namespace COCOA.Maestras
 
         public int IDProveedor
         {
-            get => IdProveedor;
+          get { return IdProveedor; }  
         }
+
+
+        //public int IDProveedor
+        //{
+        //    get => IdProveedor;
+        //}
 
         public frmBusquedaProveedor()
         {
