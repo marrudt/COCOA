@@ -32,6 +32,7 @@
             System.Windows.Forms.Label descripcionRolLabel;
             System.Windows.Forms.Label activoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRol));
+            System.Windows.Forms.Label idRolLabel;
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new COCOA.DSCOCOATableAdapters.RolTableAdapter();
@@ -53,14 +54,16 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.rolDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.descripcionRolTextBox = new System.Windows.Forms.TextBox();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idRolTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             descripcionRolLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
+            idRolLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolBindingNavigator)).BeginInit();
@@ -72,7 +75,7 @@
             // descripcionRolLabel
             // 
             descripcionRolLabel.AutoSize = true;
-            descripcionRolLabel.Location = new System.Drawing.Point(13, 44);
+            descripcionRolLabel.Location = new System.Drawing.Point(16, 74);
             descripcionRolLabel.Name = "descripcionRolLabel";
             descripcionRolLabel.Size = new System.Drawing.Size(66, 13);
             descripcionRolLabel.TabIndex = 0;
@@ -81,7 +84,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(39, 72);
+            activoLabel.Location = new System.Drawing.Point(42, 102);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
@@ -162,7 +165,7 @@
             this.rolBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.rolBindingNavigator.Name = "rolBindingNavigator";
             this.rolBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.rolBindingNavigator.Size = new System.Drawing.Size(394, 31);
+            this.rolBindingNavigator.Size = new System.Drawing.Size(414, 31);
             this.rolBindingNavigator.TabIndex = 0;
             this.rolBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -200,7 +203,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -318,18 +320,65 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewCheckBoxColumn1});
             this.rolDataGridView.DataSource = this.rolBindingSource;
-            this.rolDataGridView.Location = new System.Drawing.Point(0, 100);
+            this.rolDataGridView.Location = new System.Drawing.Point(0, 127);
             this.rolDataGridView.Name = "rolDataGridView";
             this.rolDataGridView.ReadOnly = true;
-            this.rolDataGridView.Size = new System.Drawing.Size(394, 190);
+            this.rolDataGridView.Size = new System.Drawing.Size(414, 183);
             this.rolDataGridView.TabIndex = 4;
+            // 
+            // descripcionRolTextBox
+            // 
+            this.descripcionRolTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionRolTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rolBindingSource, "DescripcionRol", true));
+            this.descripcionRolTextBox.Location = new System.Drawing.Point(85, 71);
+            this.descripcionRolTextBox.Name = "descripcionRolTextBox";
+            this.descripcionRolTextBox.ReadOnly = true;
+            this.descripcionRolTextBox.Size = new System.Drawing.Size(294, 20);
+            this.descripcionRolTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rolBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(85, 97);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(27, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // idRolLabel
+            // 
+            idRolLabel.AutoSize = true;
+            idRolLabel.Location = new System.Drawing.Point(63, 48);
+            idRolLabel.Name = "idRolLabel";
+            idRolLabel.Size = new System.Drawing.Size(19, 13);
+            idRolLabel.TabIndex = 6;
+            idRolLabel.Text = "Id:";
+            // 
+            // idRolTextBox
+            // 
+            this.idRolTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rolBindingSource, "IdRol", true));
+            this.idRolTextBox.Enabled = false;
+            this.idRolTextBox.Location = new System.Drawing.Point(85, 45);
+            this.idRolTextBox.Name = "idRolTextBox";
+            this.idRolTextBox.ReadOnly = true;
+            this.idRolTextBox.Size = new System.Drawing.Size(27, 20);
+            this.idRolTextBox.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdRol";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 41;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -349,39 +398,15 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
-            // descripcionRolTextBox
-            // 
-            this.descripcionRolTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionRolTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rolBindingSource, "DescripcionRol", true));
-            this.descripcionRolTextBox.Location = new System.Drawing.Point(85, 41);
-            this.descripcionRolTextBox.Name = "descripcionRolTextBox";
-            this.descripcionRolTextBox.ReadOnly = true;
-            this.descripcionRolTextBox.Size = new System.Drawing.Size(271, 20);
-            this.descripcionRolTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rolBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(85, 67);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(27, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // frmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(394, 290);
+            this.ClientSize = new System.Drawing.Size(414, 310);
             this.ControlBox = false;
+            this.Controls.Add(idRolLabel);
+            this.Controls.Add(this.idRolTextBox);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionRolLabel);
@@ -434,5 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.TextBox idRolTextBox;
     }
 }

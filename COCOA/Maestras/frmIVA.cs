@@ -1,4 +1,5 @@
-﻿using DAL;
+﻿using COCOA.Clases;
+using DAL;
 using System;
 using System.Windows.Forms;
 
@@ -134,6 +135,11 @@ namespace COCOA.Maestras
         private void bindingNavigatorExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void tarifaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }
     }
 }

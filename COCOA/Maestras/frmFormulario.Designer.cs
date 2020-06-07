@@ -32,6 +32,7 @@
             System.Windows.Forms.Label descripcionFormularioLabel;
             System.Windows.Forms.Label activoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFormulario));
+            System.Windows.Forms.Label idFormularioLabel;
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.formularioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formularioTableAdapter = new COCOA.DSCOCOATableAdapters.FormularioTableAdapter();
@@ -53,14 +54,16 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.formularioDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.descripcionFormularioTextBox = new System.Windows.Forms.TextBox();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.idFormularioTextBox = new System.Windows.Forms.TextBox();
             descripcionFormularioLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
+            idFormularioLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formularioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.formularioBindingNavigator)).BeginInit();
@@ -72,7 +75,7 @@
             // descripcionFormularioLabel
             // 
             descripcionFormularioLabel.AutoSize = true;
-            descripcionFormularioLabel.Location = new System.Drawing.Point(12, 44);
+            descripcionFormularioLabel.Location = new System.Drawing.Point(15, 72);
             descripcionFormularioLabel.Name = "descripcionFormularioLabel";
             descripcionFormularioLabel.Size = new System.Drawing.Size(66, 13);
             descripcionFormularioLabel.TabIndex = 0;
@@ -81,7 +84,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(38, 72);
+            activoLabel.Location = new System.Drawing.Point(41, 100);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
@@ -162,7 +165,7 @@
             this.formularioBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.formularioBindingNavigator.Name = "formularioBindingNavigator";
             this.formularioBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.formularioBindingNavigator.Size = new System.Drawing.Size(394, 31);
+            this.formularioBindingNavigator.Size = new System.Drawing.Size(409, 31);
             this.formularioBindingNavigator.TabIndex = 0;
             this.formularioBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -200,7 +203,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -318,18 +320,46 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewCheckBoxColumn1});
             this.formularioDataGridView.DataSource = this.formularioBindingSource;
-            this.formularioDataGridView.Location = new System.Drawing.Point(0, 97);
+            this.formularioDataGridView.Location = new System.Drawing.Point(0, 125);
             this.formularioDataGridView.Name = "formularioDataGridView";
             this.formularioDataGridView.ReadOnly = true;
-            this.formularioDataGridView.Size = new System.Drawing.Size(394, 191);
+            this.formularioDataGridView.Size = new System.Drawing.Size(409, 181);
             this.formularioDataGridView.TabIndex = 4;
+            // 
+            // descripcionFormularioTextBox
+            // 
+            this.descripcionFormularioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formularioBindingSource, "DescripcionFormulario", true));
+            this.descripcionFormularioTextBox.Location = new System.Drawing.Point(84, 69);
+            this.descripcionFormularioTextBox.Name = "descripcionFormularioTextBox";
+            this.descripcionFormularioTextBox.ReadOnly = true;
+            this.descripcionFormularioTextBox.Size = new System.Drawing.Size(292, 20);
+            this.descripcionFormularioTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.formularioBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(84, 95);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(24, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdFormulario";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 41;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -349,39 +379,34 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
-            // descripcionFormularioTextBox
+            // idFormularioLabel
             // 
-            this.descripcionFormularioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formularioBindingSource, "DescripcionFormulario", true));
-            this.descripcionFormularioTextBox.Location = new System.Drawing.Point(84, 41);
-            this.descripcionFormularioTextBox.Name = "descripcionFormularioTextBox";
-            this.descripcionFormularioTextBox.ReadOnly = true;
-            this.descripcionFormularioTextBox.Size = new System.Drawing.Size(278, 20);
-            this.descripcionFormularioTextBox.TabIndex = 1;
+            idFormularioLabel.AutoSize = true;
+            idFormularioLabel.Location = new System.Drawing.Point(62, 46);
+            idFormularioLabel.Name = "idFormularioLabel";
+            idFormularioLabel.Size = new System.Drawing.Size(19, 13);
+            idFormularioLabel.TabIndex = 6;
+            idFormularioLabel.Text = "Id:";
             // 
-            // activoCheckBox
+            // idFormularioTextBox
             // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.formularioBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(84, 67);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(24, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            this.idFormularioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.formularioBindingSource, "IdFormulario", true));
+            this.idFormularioTextBox.Enabled = false;
+            this.idFormularioTextBox.Location = new System.Drawing.Point(84, 43);
+            this.idFormularioTextBox.Name = "idFormularioTextBox";
+            this.idFormularioTextBox.ReadOnly = true;
+            this.idFormularioTextBox.Size = new System.Drawing.Size(43, 20);
+            this.idFormularioTextBox.TabIndex = 7;
             // 
             // frmFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(394, 290);
+            this.ClientSize = new System.Drawing.Size(409, 308);
             this.ControlBox = false;
+            this.Controls.Add(idFormularioLabel);
+            this.Controls.Add(this.idFormularioTextBox);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionFormularioLabel);
@@ -434,5 +459,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.TextBox idFormularioTextBox;
     }
 }

@@ -32,6 +32,7 @@
             System.Windows.Forms.Label descripcionCilindrajeLabel;
             System.Windows.Forms.Label activoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCilindraje));
+            System.Windows.Forms.Label idCilindrajeLabel;
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.cilindrajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cilindrajesTableAdapter = new COCOA.DSCOCOATableAdapters.CilindrajesTableAdapter();
@@ -53,14 +54,16 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.cilindrajesDataGridView = new System.Windows.Forms.DataGridView();
-            this.descripcionCilindrajeTextBox = new System.Windows.Forms.TextBox();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descripcionCilindrajeTextBox = new System.Windows.Forms.TextBox();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idCilindrajeTextBox = new System.Windows.Forms.TextBox();
             descripcionCilindrajeLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
+            idCilindrajeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cilindrajesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cilindrajesBindingNavigator)).BeginInit();
@@ -72,7 +75,7 @@
             // descripcionCilindrajeLabel
             // 
             descripcionCilindrajeLabel.AutoSize = true;
-            descripcionCilindrajeLabel.Location = new System.Drawing.Point(8, 41);
+            descripcionCilindrajeLabel.Location = new System.Drawing.Point(10, 72);
             descripcionCilindrajeLabel.Name = "descripcionCilindrajeLabel";
             descripcionCilindrajeLabel.Size = new System.Drawing.Size(66, 13);
             descripcionCilindrajeLabel.TabIndex = 0;
@@ -81,7 +84,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(34, 69);
+            activoLabel.Location = new System.Drawing.Point(36, 100);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
@@ -162,15 +165,15 @@
             this.cilindrajesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.cilindrajesBindingNavigator.Name = "cilindrajesBindingNavigator";
             this.cilindrajesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.cilindrajesBindingNavigator.Size = new System.Drawing.Size(420, 31);
+            this.cilindrajesBindingNavigator.Size = new System.Drawing.Size(423, 31);
             this.cilindrajesBindingNavigator.TabIndex = 0;
             this.cilindrajesBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -317,38 +320,11 @@
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewCheckBoxColumn1});
             this.cilindrajesDataGridView.DataSource = this.cilindrajesBindingSource;
-            this.cilindrajesDataGridView.Location = new System.Drawing.Point(2, 94);
+            this.cilindrajesDataGridView.Location = new System.Drawing.Point(2, 125);
             this.cilindrajesDataGridView.Name = "cilindrajesDataGridView";
             this.cilindrajesDataGridView.ReadOnly = true;
-            this.cilindrajesDataGridView.Size = new System.Drawing.Size(417, 195);
+            this.cilindrajesDataGridView.Size = new System.Drawing.Size(420, 216);
             this.cilindrajesDataGridView.TabIndex = 4;
-            // 
-            // descripcionCilindrajeTextBox
-            // 
-            this.descripcionCilindrajeTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionCilindrajeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cilindrajesBindingSource, "DescripcionCilindraje", true));
-            this.descripcionCilindrajeTextBox.Location = new System.Drawing.Point(80, 38);
-            this.descripcionCilindrajeTextBox.Name = "descripcionCilindrajeTextBox";
-            this.descripcionCilindrajeTextBox.ReadOnly = true;
-            this.descripcionCilindrajeTextBox.Size = new System.Drawing.Size(286, 20);
-            this.descripcionCilindrajeTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cilindrajesBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(80, 64);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -377,13 +353,61 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
+            // descripcionCilindrajeTextBox
+            // 
+            this.descripcionCilindrajeTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionCilindrajeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cilindrajesBindingSource, "DescripcionCilindraje", true));
+            this.descripcionCilindrajeTextBox.Location = new System.Drawing.Point(80, 69);
+            this.descripcionCilindrajeTextBox.Name = "descripcionCilindrajeTextBox";
+            this.descripcionCilindrajeTextBox.ReadOnly = true;
+            this.descripcionCilindrajeTextBox.Size = new System.Drawing.Size(313, 20);
+            this.descripcionCilindrajeTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cilindrajesBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(80, 95);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(16, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // idCilindrajeLabel
+            // 
+            idCilindrajeLabel.AutoSize = true;
+            idCilindrajeLabel.Location = new System.Drawing.Point(57, 46);
+            idCilindrajeLabel.Name = "idCilindrajeLabel";
+            idCilindrajeLabel.Size = new System.Drawing.Size(19, 13);
+            idCilindrajeLabel.TabIndex = 6;
+            idCilindrajeLabel.Text = "Id:";
+            // 
+            // idCilindrajeTextBox
+            // 
+            this.idCilindrajeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cilindrajesBindingSource, "IdCilindraje", true));
+            this.idCilindrajeTextBox.Enabled = false;
+            this.idCilindrajeTextBox.Location = new System.Drawing.Point(80, 43);
+            this.idCilindrajeTextBox.Name = "idCilindrajeTextBox";
+            this.idCilindrajeTextBox.ReadOnly = true;
+            this.idCilindrajeTextBox.Size = new System.Drawing.Size(41, 20);
+            this.idCilindrajeTextBox.TabIndex = 7;
+            // 
             // frmCilindraje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(420, 290);
+            this.ClientSize = new System.Drawing.Size(423, 342);
             this.ControlBox = false;
+            this.Controls.Add(idCilindrajeLabel);
+            this.Controls.Add(this.idCilindrajeTextBox);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionCilindrajeLabel);
@@ -436,5 +460,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.TextBox idCilindrajeTextBox;
     }
 }

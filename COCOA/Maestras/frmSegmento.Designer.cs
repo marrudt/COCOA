@@ -32,6 +32,7 @@
             System.Windows.Forms.Label descripcionSegmentoLabel;
             System.Windows.Forms.Label activoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSegmento));
+            System.Windows.Forms.Label idSegmentoLabel;
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.segmentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.segmentosTableAdapter = new COCOA.DSCOCOATableAdapters.SegmentosTableAdapter();
@@ -53,14 +54,16 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.segmentosDataGridView = new System.Windows.Forms.DataGridView();
-            this.descripcionSegmentoTextBox = new System.Windows.Forms.TextBox();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descripcionSegmentoTextBox = new System.Windows.Forms.TextBox();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.idSegmentoTextBox = new System.Windows.Forms.TextBox();
             descripcionSegmentoLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
+            idSegmentoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.segmentosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.segmentosBindingNavigator)).BeginInit();
@@ -72,7 +75,7 @@
             // descripcionSegmentoLabel
             // 
             descripcionSegmentoLabel.AutoSize = true;
-            descripcionSegmentoLabel.Location = new System.Drawing.Point(12, 45);
+            descripcionSegmentoLabel.Location = new System.Drawing.Point(14, 72);
             descripcionSegmentoLabel.Name = "descripcionSegmentoLabel";
             descripcionSegmentoLabel.Size = new System.Drawing.Size(66, 13);
             descripcionSegmentoLabel.TabIndex = 0;
@@ -81,7 +84,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(38, 73);
+            activoLabel.Location = new System.Drawing.Point(40, 100);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
@@ -162,15 +165,15 @@
             this.segmentosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.segmentosBindingNavigator.Name = "segmentosBindingNavigator";
             this.segmentosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.segmentosBindingNavigator.Size = new System.Drawing.Size(418, 31);
+            this.segmentosBindingNavigator.Size = new System.Drawing.Size(406, 31);
             this.segmentosBindingNavigator.TabIndex = 0;
             this.segmentosBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -318,38 +321,11 @@
             this.dataGridViewCheckBoxColumn1});
             this.segmentosDataGridView.DataSource = this.segmentosBindingSource;
             this.segmentosDataGridView.GridColor = System.Drawing.SystemColors.Control;
-            this.segmentosDataGridView.Location = new System.Drawing.Point(0, 98);
+            this.segmentosDataGridView.Location = new System.Drawing.Point(0, 131);
             this.segmentosDataGridView.Name = "segmentosDataGridView";
             this.segmentosDataGridView.ReadOnly = true;
-            this.segmentosDataGridView.Size = new System.Drawing.Size(418, 192);
+            this.segmentosDataGridView.Size = new System.Drawing.Size(406, 179);
             this.segmentosDataGridView.TabIndex = 4;
-            // 
-            // descripcionSegmentoTextBox
-            // 
-            this.descripcionSegmentoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionSegmentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.segmentosBindingSource, "DescripcionSegmento", true));
-            this.descripcionSegmentoTextBox.Location = new System.Drawing.Point(84, 42);
-            this.descripcionSegmentoTextBox.Name = "descripcionSegmentoTextBox";
-            this.descripcionSegmentoTextBox.ReadOnly = true;
-            this.descripcionSegmentoTextBox.Size = new System.Drawing.Size(274, 20);
-            this.descripcionSegmentoTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.segmentosBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(84, 68);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(29, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -378,13 +354,61 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
+            // descripcionSegmentoTextBox
+            // 
+            this.descripcionSegmentoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionSegmentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.segmentosBindingSource, "DescripcionSegmento", true));
+            this.descripcionSegmentoTextBox.Location = new System.Drawing.Point(84, 69);
+            this.descripcionSegmentoTextBox.Name = "descripcionSegmentoTextBox";
+            this.descripcionSegmentoTextBox.ReadOnly = true;
+            this.descripcionSegmentoTextBox.Size = new System.Drawing.Size(294, 20);
+            this.descripcionSegmentoTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.segmentosBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(84, 95);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(29, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // idSegmentoLabel
+            // 
+            idSegmentoLabel.AutoSize = true;
+            idSegmentoLabel.Location = new System.Drawing.Point(61, 46);
+            idSegmentoLabel.Name = "idSegmentoLabel";
+            idSegmentoLabel.Size = new System.Drawing.Size(19, 13);
+            idSegmentoLabel.TabIndex = 6;
+            idSegmentoLabel.Text = "Id:";
+            // 
+            // idSegmentoTextBox
+            // 
+            this.idSegmentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.segmentosBindingSource, "IdSegmento", true));
+            this.idSegmentoTextBox.Enabled = false;
+            this.idSegmentoTextBox.Location = new System.Drawing.Point(84, 43);
+            this.idSegmentoTextBox.Name = "idSegmentoTextBox";
+            this.idSegmentoTextBox.ReadOnly = true;
+            this.idSegmentoTextBox.Size = new System.Drawing.Size(36, 20);
+            this.idSegmentoTextBox.TabIndex = 7;
+            // 
             // frmSegmento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(418, 290);
+            this.ClientSize = new System.Drawing.Size(406, 310);
             this.ControlBox = false;
+            this.Controls.Add(idSegmentoLabel);
+            this.Controls.Add(this.idSegmentoTextBox);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionSegmentoLabel);
@@ -437,5 +461,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.TextBox idSegmentoTextBox;
     }
 }

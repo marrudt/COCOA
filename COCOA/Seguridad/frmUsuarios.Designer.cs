@@ -92,47 +92,47 @@
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
-            nombresLabel.Location = new System.Drawing.Point(102, 74);
+            nombresLabel.Location = new System.Drawing.Point(106, 74);
             nombresLabel.Name = "nombresLabel";
-            nombresLabel.Size = new System.Drawing.Size(56, 13);
+            nombresLabel.Size = new System.Drawing.Size(52, 13);
             nombresLabel.TabIndex = 4;
-            nombresLabel.Text = "Nombres*:";
+            nombresLabel.Text = "Nombres:";
             // 
             // idUsuarioLabel
             // 
             idUsuarioLabel.AutoSize = true;
-            idUsuarioLabel.Location = new System.Drawing.Point(108, 48);
+            idUsuarioLabel.Location = new System.Drawing.Point(112, 48);
             idUsuarioLabel.Name = "idUsuarioLabel";
-            idUsuarioLabel.Size = new System.Drawing.Size(50, 13);
+            idUsuarioLabel.Size = new System.Drawing.Size(46, 13);
             idUsuarioLabel.TabIndex = 0;
-            idUsuarioLabel.Text = "Usuario*:";
+            idUsuarioLabel.Text = "Usuario:";
             // 
             // claveLabel
             // 
             claveLabel.AutoSize = true;
-            claveLabel.Location = new System.Drawing.Point(117, 100);
+            claveLabel.Location = new System.Drawing.Point(121, 100);
             claveLabel.Name = "claveLabel";
-            claveLabel.Size = new System.Drawing.Size(41, 13);
+            claveLabel.Size = new System.Drawing.Size(37, 13);
             claveLabel.TabIndex = 6;
-            claveLabel.Text = "Clave*:";
+            claveLabel.Text = "Clave:";
             // 
             // idRolLabel
             // 
             idRolLabel.AutoSize = true;
-            idRolLabel.Location = new System.Drawing.Point(328, 47);
+            idRolLabel.Location = new System.Drawing.Point(330, 47);
             idRolLabel.Name = "idRolLabel";
-            idRolLabel.Size = new System.Drawing.Size(30, 13);
+            idRolLabel.Size = new System.Drawing.Size(26, 13);
             idRolLabel.TabIndex = 2;
-            idRolLabel.Text = "Rol*:";
+            idRolLabel.Text = "Rol:";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(119, 126);
+            emailLabel.Location = new System.Drawing.Point(123, 126);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(39, 13);
+            emailLabel.Size = new System.Drawing.Size(35, 13);
             emailLabel.TabIndex = 10;
-            emailLabel.Text = "Email*:";
+            emailLabel.Text = "Email:";
             // 
             // activoLabel
             // 
@@ -263,7 +263,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -488,11 +487,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(302, 100);
+            this.label1.Location = new System.Drawing.Point(305, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 13);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 8;
-            this.label1.Text = "Confirmación*:";
+            this.label1.Text = "Confirmación:";
             // 
             // confirmacionTextBox
             // 
