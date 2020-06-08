@@ -290,7 +290,7 @@
             this.ordenCompraBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ordenCompraBindingNavigator.Name = "ordenCompraBindingNavigator";
             this.ordenCompraBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ordenCompraBindingNavigator.Size = new System.Drawing.Size(974, 31);
+            this.ordenCompraBindingNavigator.Size = new System.Drawing.Size(993, 31);
             this.ordenCompraBindingNavigator.TabIndex = 0;
             this.ordenCompraBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -328,7 +328,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -544,7 +543,7 @@
             this.ordenCompraDetalleDataGridView.Enabled = false;
             this.ordenCompraDetalleDataGridView.Location = new System.Drawing.Point(0, 191);
             this.ordenCompraDetalleDataGridView.Name = "ordenCompraDetalleDataGridView";
-            this.ordenCompraDetalleDataGridView.Size = new System.Drawing.Size(973, 273);
+            this.ordenCompraDetalleDataGridView.Size = new System.Drawing.Size(992, 293);
             this.ordenCompraDetalleDataGridView.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn1
@@ -758,7 +757,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(974, 464);
+            this.ClientSize = new System.Drawing.Size(993, 484);
             this.ControlBox = false;
             this.Controls.Add(this.BusquedaProductoButton);
             this.Controls.Add(this.BusquedaClienteButton);

@@ -32,8 +32,8 @@
             System.Windows.Forms.Label descripcionIVALabel;
             System.Windows.Forms.Label tarifaLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIVA));
             System.Windows.Forms.Label idIVALabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIVA));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.iVABindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iVATableAdapter = new COCOA.DSCOCOATableAdapters.IVATableAdapter();
@@ -55,14 +55,14 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.iVADataGridView = new System.Windows.Forms.DataGridView();
-            this.descripcionIVATextBox = new System.Windows.Forms.TextBox();
-            this.tarifaTextBox = new System.Windows.Forms.TextBox();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descripcionIVATextBox = new System.Windows.Forms.TextBox();
+            this.tarifaTextBox = new System.Windows.Forms.TextBox();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idIVATextBox = new System.Windows.Forms.TextBox();
             descripcionIVALabel = new System.Windows.Forms.Label();
             tarifaLabel = new System.Windows.Forms.Label();
@@ -102,6 +102,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 4;
             activoLabel.Text = "Activo:";
+            // 
+            // idIVALabel
+            // 
+            idIVALabel.AutoSize = true;
+            idIVALabel.Location = new System.Drawing.Point(54, 46);
+            idIVALabel.Name = "idIVALabel";
+            idIVALabel.Size = new System.Drawing.Size(19, 13);
+            idIVALabel.TabIndex = 8;
+            idIVALabel.Text = "Id:";
             // 
             // dSCOCOA
             // 
@@ -340,6 +349,42 @@
             this.iVADataGridView.Size = new System.Drawing.Size(414, 187);
             this.iVADataGridView.TabIndex = 6;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdIVA";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 41;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DescripcionIVA";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 88;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Tarifa";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tarifa";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 59;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 43;
+            // 
             // descripcionIVATextBox
             // 
             this.descripcionIVATextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -377,51 +422,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdIVA";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 41;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DescripcionIVA";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 88;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Tarifa";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tarifa";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 59;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 43;
-            // 
-            // idIVALabel
-            // 
-            idIVALabel.AutoSize = true;
-            idIVALabel.Location = new System.Drawing.Point(54, 46);
-            idIVALabel.Name = "idIVALabel";
-            idIVALabel.Size = new System.Drawing.Size(19, 13);
-            idIVALabel.TabIndex = 8;
-            idIVALabel.Text = "Id:";
-            // 
             // idIVATextBox
             // 
             this.idIVATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.iVABindingSource, "IdIVA", true));
@@ -438,7 +438,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(414, 310);
-            this.ControlBox = false;
             this.Controls.Add(idIVALabel);
             this.Controls.Add(this.idIVATextBox);
             this.Controls.Add(activoLabel);
@@ -449,8 +448,10 @@
             this.Controls.Add(this.descripcionIVATextBox);
             this.Controls.Add(this.iVADataGridView);
             this.Controls.Add(this.iVABindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmIVA";
             this.Text = "Tarifa de IVA";
             this.Load += new System.EventHandler(this.frmIVA_Load);

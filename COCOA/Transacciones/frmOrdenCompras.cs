@@ -43,7 +43,7 @@ namespace COCOA.Transacciones
             this.ordenCompraTableAdapter.Fill(this.dSCOCOA.OrdenCompra);
             this.ordenCompraDetalleTableAdapter.Fill(this.dSCOCOA.OrdenCompraDetalle);
             this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);
-            this.productosTableAdapter.FillBy4(this.dSCOCOA.Productos);
+            this.productosTableAdapter.Fill(this.dSCOCOA.Productos);
 
             fechaDateTimePicker.Value = DateTime.Now;
             proveedorComboBox.SelectedIndex = -1;

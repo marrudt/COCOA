@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionClaseLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClase));
             System.Windows.Forms.Label idClaseLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClase));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.claseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.claseTableAdapter = new COCOA.DSCOCOATableAdapters.ClaseTableAdapter();
@@ -54,12 +54,12 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.claseDataGridView = new System.Windows.Forms.DataGridView();
-            this.descripcionClaseTextBox = new System.Windows.Forms.TextBox();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.descripcionClaseTextBox = new System.Windows.Forms.TextBox();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idClaseTextBox = new System.Windows.Forms.TextBox();
             descripcionClaseLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
@@ -89,6 +89,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
+            // 
+            // idClaseLabel
+            // 
+            idClaseLabel.AutoSize = true;
+            idClaseLabel.Location = new System.Drawing.Point(55, 45);
+            idClaseLabel.Name = "idClaseLabel";
+            idClaseLabel.Size = new System.Drawing.Size(19, 13);
+            idClaseLabel.TabIndex = 6;
+            idClaseLabel.Text = "Id:";
             // 
             // dSCOCOA
             // 
@@ -327,32 +336,6 @@
             this.claseDataGridView.Size = new System.Drawing.Size(414, 186);
             this.claseDataGridView.TabIndex = 4;
             // 
-            // descripcionClaseTextBox
-            // 
-            this.descripcionClaseTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionClaseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.claseBindingSource, "DescripcionClase", true));
-            this.descripcionClaseTextBox.Location = new System.Drawing.Point(77, 68);
-            this.descripcionClaseTextBox.Name = "descripcionClaseTextBox";
-            this.descripcionClaseTextBox.ReadOnly = true;
-            this.descripcionClaseTextBox.Size = new System.Drawing.Size(250, 20);
-            this.descripcionClaseTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.claseBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(77, 94);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(17, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -380,14 +363,31 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
-            // idClaseLabel
+            // descripcionClaseTextBox
             // 
-            idClaseLabel.AutoSize = true;
-            idClaseLabel.Location = new System.Drawing.Point(55, 45);
-            idClaseLabel.Name = "idClaseLabel";
-            idClaseLabel.Size = new System.Drawing.Size(19, 13);
-            idClaseLabel.TabIndex = 6;
-            idClaseLabel.Text = "Id:";
+            this.descripcionClaseTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionClaseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.claseBindingSource, "DescripcionClase", true));
+            this.descripcionClaseTextBox.Location = new System.Drawing.Point(77, 68);
+            this.descripcionClaseTextBox.Name = "descripcionClaseTextBox";
+            this.descripcionClaseTextBox.ReadOnly = true;
+            this.descripcionClaseTextBox.Size = new System.Drawing.Size(250, 20);
+            this.descripcionClaseTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.claseBindingSource, "Activo", true));
+            this.activoCheckBox.Location = new System.Drawing.Point(77, 94);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(17, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // idClaseTextBox
             // 
@@ -405,7 +405,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(414, 310);
-            this.ControlBox = false;
             this.Controls.Add(idClaseLabel);
             this.Controls.Add(this.idClaseTextBox);
             this.Controls.Add(activoLabel);
@@ -414,8 +413,10 @@
             this.Controls.Add(this.descripcionClaseTextBox);
             this.Controls.Add(this.claseDataGridView);
             this.Controls.Add(this.claseBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmClase";
             this.Text = "Clase Producto";
             this.Load += new System.EventHandler(this.frmClase_Load);

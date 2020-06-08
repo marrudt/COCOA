@@ -36,7 +36,6 @@ namespace COCOA.Busqueda
             this.Validate();
             this.ciudadesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
-
         }
 
         private void frmBusquedaCiudad_Load(object sender, EventArgs e)
@@ -48,7 +47,7 @@ namespace COCOA.Busqueda
         {
             codigoCiudadToolStripTextBox.Text = "";
             descripcionCiudadToolStripTextBox.Text = "";
-            buscarFillByToolStripButton_Click(sender, e);
+            fillByToolStripButton_Click(sender, e);
         }
 
         private void volverButton_Click(object sender, EventArgs e)
@@ -74,7 +73,7 @@ namespace COCOA.Busqueda
             this.Close();
         }        
 
-        private void buscarFillByToolStripButton_Click(object sender, EventArgs e)
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
             string codigo, descripcion;
 
@@ -114,7 +113,7 @@ namespace COCOA.Busqueda
             }
         }
 
-        private void codigoCiudadToolStripTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void codigoCiudadToolStripTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
         }

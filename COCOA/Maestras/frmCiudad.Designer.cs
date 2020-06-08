@@ -29,53 +29,80 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCiudad));
             System.Windows.Forms.Label codigoCiudadLabel;
             System.Windows.Forms.Label descripcionCiudadLabel;
-            System.Windows.Forms.Label idCiudadLabel;
             System.Windows.Forms.Label activoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCiudad));
+            System.Windows.Forms.Label idCiudadLabel;
             this.ciudadesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSCOCOA = new COCOA.DSCOCOA();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.ciudadesDataGridView = new System.Windows.Forms.DataGridView();
-            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
-            this.codigoCiudadTextBox = new System.Windows.Forms.TextBox();
-            this.descripcionCiudadTextBox = new System.Windows.Forms.TextBox();
-            this.idCiudadTextBox = new System.Windows.Forms.TextBox();
-            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSCOCOA = new COCOA.DSCOCOA();
+            this.ciudadesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.codigoCiudadTextBox = new System.Windows.Forms.TextBox();
+            this.descripcionCiudadTextBox = new System.Windows.Forms.TextBox();
+            this.activoCheckBox = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.ciudadesTableAdapter = new COCOA.DSCOCOATableAdapters.CiudadesTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
-            this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
+            this.idCiudadTextBox = new System.Windows.Forms.TextBox();
             codigoCiudadLabel = new System.Windows.Forms.Label();
             descripcionCiudadLabel = new System.Windows.Forms.Label();
-            idCiudadLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
+            idCiudadLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingNavigator)).BeginInit();
             this.ciudadesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // codigoCiudadLabel
+            // 
+            codigoCiudadLabel.AutoSize = true;
+            codigoCiudadLabel.Location = new System.Drawing.Point(44, 71);
+            codigoCiudadLabel.Name = "codigoCiudadLabel";
+            codigoCiudadLabel.Size = new System.Drawing.Size(43, 13);
+            codigoCiudadLabel.TabIndex = 2;
+            codigoCiudadLabel.Text = "Código:";
+            // 
+            // descripcionCiudadLabel
+            // 
+            descripcionCiudadLabel.AutoSize = true;
+            descripcionCiudadLabel.Location = new System.Drawing.Point(21, 97);
+            descripcionCiudadLabel.Name = "descripcionCiudadLabel";
+            descripcionCiudadLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionCiudadLabel.TabIndex = 4;
+            descripcionCiudadLabel.Text = "Descripción:";
+            // 
+            // activoLabel
+            // 
+            activoLabel.AutoSize = true;
+            activoLabel.Location = new System.Drawing.Point(47, 122);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(40, 13);
+            activoLabel.TabIndex = 8;
+            activoLabel.Text = "Activo:";
             // 
             // ciudadesBindingNavigator
             // 
@@ -113,6 +140,23 @@
             this.ciudadesBindingNavigator.TabIndex = 0;
             this.ciudadesBindingNavigator.Text = "bindingNavigator1";
             // 
+            // ciudadesBindingSource
+            // 
+            this.ciudadesBindingSource.DataMember = "Ciudades";
+            this.ciudadesBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // dSCOCOA
+            // 
+            this.dSCOCOA.DataSetName = "DSCOCOA";
+            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorMoveFirstItem
             // 
             this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -145,16 +189,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
@@ -177,8 +214,19 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorEdit
+            // 
+            this.bindingNavigatorEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorEdit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEdit.Image")));
+            this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
+            this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorEdit.Text = "toolStripButton1";
+            this.bindingNavigatorEdit.ToolTipText = "Editar";
+            this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -205,10 +253,45 @@
             this.bindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorSaveItem.Enabled = false;
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
-            this.bindingNavigatorSaveItem.Name = "ciudadesBindingNavigatorSaveItem";
+            this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
             this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorSaveItem.Text = "Save Data";
+            this.bindingNavigatorSaveItem.ToolTipText = "Guardar";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.ciudadesBindingNavigatorSaveItem_Click);
+            // 
+            // bindingNavigatorCancel
+            // 
+            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorCancel.Enabled = false;
+            this.bindingNavigatorCancel.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancel.Image")));
+            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
+            this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorCancel.Text = "toolStripButton1";
+            this.bindingNavigatorCancel.ToolTipText = "Cancelar";
+            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
+            // 
+            // bindingNavigatorSearch
+            // 
+            this.bindingNavigatorSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorSearch.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearch.Image")));
+            this.bindingNavigatorSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorSearch.Name = "bindingNavigatorSearch";
+            this.bindingNavigatorSearch.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorSearch.Text = "toolStripButton3";
+            this.bindingNavigatorSearch.ToolTipText = "Buscar";
+            this.bindingNavigatorSearch.Click += new System.EventHandler(this.bindingNavigatorSearch_Click);
+            // 
+            // bindingNavigatorExit
+            // 
+            this.bindingNavigatorExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
+            this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorExit.Name = "bindingNavigatorExit";
+            this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorExit.Text = "toolStripButton4";
+            this.bindingNavigatorExit.ToolTipText = "Salir";
+            this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
             // ciudadesDataGridView
             // 
@@ -231,135 +314,8 @@
             this.ciudadesDataGridView.Location = new System.Drawing.Point(0, 142);
             this.ciudadesDataGridView.Name = "ciudadesDataGridView";
             this.ciudadesDataGridView.ReadOnly = true;
-            this.ciudadesDataGridView.Size = new System.Drawing.Size(447, 301);
+            this.ciudadesDataGridView.Size = new System.Drawing.Size(447, 365);
             this.ciudadesDataGridView.TabIndex = 1;
-            // 
-            // bindingNavigatorEdit
-            // 
-            this.bindingNavigatorEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorEdit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEdit.Image")));
-            this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
-            this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorEdit.Text = "toolStripButton1";
-            this.bindingNavigatorEdit.ToolTipText = "Editar";
-            this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
-            // 
-            // bindingNavigatorCancel
-            // 
-            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorCancel.Enabled = false;
-            this.bindingNavigatorCancel.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorCancel.Image")));
-            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
-            this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorCancel.Text = "toolStripButton1";
-            this.bindingNavigatorCancel.ToolTipText = "Cancelar";
-            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
-            // 
-            // codigoCiudadLabel
-            // 
-            codigoCiudadLabel.AutoSize = true;
-            codigoCiudadLabel.Location = new System.Drawing.Point(44, 71);
-            codigoCiudadLabel.Name = "codigoCiudadLabel";
-            codigoCiudadLabel.Size = new System.Drawing.Size(43, 13);
-            codigoCiudadLabel.TabIndex = 2;
-            codigoCiudadLabel.Text = "Código:";
-            // 
-            // codigoCiudadTextBox
-            // 
-            this.codigoCiudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadesBindingSource, "CodigoCiudad", true));
-            this.codigoCiudadTextBox.Location = new System.Drawing.Point(91, 68);
-            this.codigoCiudadTextBox.MaxLength = 5;
-            this.codigoCiudadTextBox.Name = "codigoCiudadTextBox";
-            this.codigoCiudadTextBox.ReadOnly = true;
-            this.codigoCiudadTextBox.Size = new System.Drawing.Size(51, 20);
-            this.codigoCiudadTextBox.TabIndex = 3;
-            this.codigoCiudadTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigoCiudadTextBox_KeyPress);
-            // 
-            // descripcionCiudadLabel
-            // 
-            descripcionCiudadLabel.AutoSize = true;
-            descripcionCiudadLabel.Location = new System.Drawing.Point(21, 97);
-            descripcionCiudadLabel.Name = "descripcionCiudadLabel";
-            descripcionCiudadLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionCiudadLabel.TabIndex = 4;
-            descripcionCiudadLabel.Text = "Descripción:";
-            // 
-            // descripcionCiudadTextBox
-            // 
-            this.descripcionCiudadTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionCiudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadesBindingSource, "DescripcionCiudad", true));
-            this.descripcionCiudadTextBox.Location = new System.Drawing.Point(91, 94);
-            this.descripcionCiudadTextBox.Name = "descripcionCiudadTextBox";
-            this.descripcionCiudadTextBox.ReadOnly = true;
-            this.descripcionCiudadTextBox.Size = new System.Drawing.Size(280, 20);
-            this.descripcionCiudadTextBox.TabIndex = 5;
-            // 
-            // idCiudadLabel
-            // 
-            idCiudadLabel.AutoSize = true;
-            idCiudadLabel.Location = new System.Drawing.Point(68, 45);
-            idCiudadLabel.Name = "idCiudadLabel";
-            idCiudadLabel.Size = new System.Drawing.Size(19, 13);
-            idCiudadLabel.TabIndex = 6;
-            idCiudadLabel.Text = "Id:";
-            // 
-            // idCiudadTextBox
-            // 
-            this.idCiudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadesBindingSource, "IdCiudad", true));
-            this.idCiudadTextBox.Enabled = false;
-            this.idCiudadTextBox.Location = new System.Drawing.Point(91, 42);
-            this.idCiudadTextBox.Name = "idCiudadTextBox";
-            this.idCiudadTextBox.ReadOnly = true;
-            this.idCiudadTextBox.Size = new System.Drawing.Size(51, 20);
-            this.idCiudadTextBox.TabIndex = 7;
-            // 
-            // activoLabel
-            // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(47, 122);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 8;
-            activoLabel.Text = "Activo:";
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.ciudadesBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(91, 117);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(19, 24);
-            this.activoCheckBox.TabIndex = 9;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // bindingNavigatorExit
-            // 
-            this.bindingNavigatorExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorExit.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorExit.Image")));
-            this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorExit.Name = "bindingNavigatorExit";
-            this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorExit.Text = "toolStripButton4";
-            this.bindingNavigatorExit.ToolTipText = "Salir";
-            this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // ciudadesBindingSource
-            // 
-            this.ciudadesBindingSource.DataMember = "Ciudades";
-            this.ciudadesBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // dSCOCOA
-            // 
-            this.dSCOCOA.DataSetName = "DSCOCOA";
-            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -397,6 +353,44 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
+            // codigoCiudadTextBox
+            // 
+            this.codigoCiudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadesBindingSource, "CodigoCiudad", true));
+            this.codigoCiudadTextBox.Location = new System.Drawing.Point(91, 68);
+            this.codigoCiudadTextBox.MaxLength = 5;
+            this.codigoCiudadTextBox.Name = "codigoCiudadTextBox";
+            this.codigoCiudadTextBox.ReadOnly = true;
+            this.codigoCiudadTextBox.Size = new System.Drawing.Size(51, 20);
+            this.codigoCiudadTextBox.TabIndex = 3;
+            this.codigoCiudadTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.codigoCiudadTextBox_KeyPress);
+            // 
+            // descripcionCiudadTextBox
+            // 
+            this.descripcionCiudadTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionCiudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadesBindingSource, "DescripcionCiudad", true));
+            this.descripcionCiudadTextBox.Location = new System.Drawing.Point(91, 94);
+            this.descripcionCiudadTextBox.Name = "descripcionCiudadTextBox";
+            this.descripcionCiudadTextBox.ReadOnly = true;
+            this.descripcionCiudadTextBox.Size = new System.Drawing.Size(280, 20);
+            this.descripcionCiudadTextBox.TabIndex = 5;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.ciudadesBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(91, 117);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(19, 24);
+            this.activoCheckBox.TabIndex = 9;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
             // ciudadesTableAdapter
             // 
             this.ciudadesTableAdapter.ClearBeforeFill = true;
@@ -431,24 +425,31 @@
             this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
             // 
-            // bindingNavigatorSearch
+            // idCiudadTextBox
             // 
-            this.bindingNavigatorSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorSearch.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearch.Image")));
-            this.bindingNavigatorSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorSearch.Name = "bindingNavigatorSearch";
-            this.bindingNavigatorSearch.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorSearch.Text = "toolStripButton3";
-            this.bindingNavigatorSearch.ToolTipText = "Buscar";
-            this.bindingNavigatorSearch.Click += new System.EventHandler(this.bindingNavigatorSearch_Click);
+            this.idCiudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ciudadesBindingSource, "IdCiudad", true));
+            this.idCiudadTextBox.Enabled = false;
+            this.idCiudadTextBox.Location = new System.Drawing.Point(91, 42);
+            this.idCiudadTextBox.Name = "idCiudadTextBox";
+            this.idCiudadTextBox.ReadOnly = true;
+            this.idCiudadTextBox.Size = new System.Drawing.Size(51, 20);
+            this.idCiudadTextBox.TabIndex = 7;
+            // 
+            // idCiudadLabel
+            // 
+            idCiudadLabel.AutoSize = true;
+            idCiudadLabel.Location = new System.Drawing.Point(68, 45);
+            idCiudadLabel.Name = "idCiudadLabel";
+            idCiudadLabel.Size = new System.Drawing.Size(19, 13);
+            idCiudadLabel.TabIndex = 6;
+            idCiudadLabel.Text = "Id:";
             // 
             // frmCiudad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(447, 443);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(447, 507);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(idCiudadLabel);
@@ -459,17 +460,20 @@
             this.Controls.Add(this.codigoCiudadTextBox);
             this.Controls.Add(this.ciudadesDataGridView);
             this.Controls.Add(this.ciudadesBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCiudad";
             this.Text = "Ciudades";
             this.Load += new System.EventHandler(this.frmCiudad_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingNavigator)).EndInit();
             this.ciudadesBindingNavigator.ResumeLayout(false);
             this.ciudadesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ciudadesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ciudadesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,10 +507,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.TextBox idCiudadTextBox;
         private System.Windows.Forms.CheckBox activoCheckBox;
         private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSearch;
+        private System.Windows.Forms.TextBox idCiudadTextBox;
     }
 }

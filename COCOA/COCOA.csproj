@@ -273,11 +273,11 @@
     <Compile Include="Maestras\frmPais.Designer.cs">
       <DependentUpon>frmPais.cs</DependentUpon>
     </Compile>
-    <Compile Include="Maestras\frmPesoBrutoVehicular.cs">
+    <Compile Include="Maestras\frmPesoBrutoVh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Maestras\frmPesoBrutoVehicular.Designer.cs">
-      <DependentUpon>frmPesoBrutoVehicular.cs</DependentUpon>
+    <Compile Include="Maestras\frmPesoBrutoVh.Designer.cs">
+      <DependentUpon>frmPesoBrutoVh.cs</DependentUpon>
     </Compile>
     <Compile Include="Maestras\frmProductos.cs">
       <SubType>Form</SubType>
@@ -486,8 +486,8 @@
     <EmbeddedResource Include="Maestras\frmPais.resx">
       <DependentUpon>frmPais.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Maestras\frmPesoBrutoVehicular.resx">
-      <DependentUpon>frmPesoBrutoVehicular.cs</DependentUpon>
+    <EmbeddedResource Include="Maestras\frmPesoBrutoVh.resx">
+      <DependentUpon>frmPesoBrutoVh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maestras\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>

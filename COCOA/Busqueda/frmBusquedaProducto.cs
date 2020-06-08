@@ -42,7 +42,7 @@ namespace COCOA.Busqueda
         {
             codigoProductoToolStripTextBox.Text = "";
             descripcionProductoToolStripTextBox.Text = "";
-            fillBy2ToolStripButton_Click(sender, e);
+            fillByToolStripButton_Click(sender, e);
         }
 
         private void volverButton_Click(object sender, EventArgs e)
@@ -66,9 +66,9 @@ namespace COCOA.Busqueda
         {
             IdProducto = 0;
             this.Close();
-        }
+        }        
 
-        private void fillBy2ToolStripButton_Click(object sender, EventArgs e)
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
         {
             string codigoProducto, descripcionProducto;
 
@@ -98,7 +98,7 @@ namespace COCOA.Busqueda
 
             try
             {
-                this.productosTableAdapter.FillBy2(this.dSCOCOA.Productos,
+                this.productosTableAdapter.FillBy(this.dSCOCOA.Productos,
                     codigoProducto,
                     descripcionProducto);
             }
@@ -106,7 +106,6 @@ namespace COCOA.Busqueda
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
     }
 }

@@ -57,7 +57,7 @@ namespace COCOA.Transacciones
 
         private void frmEdicionOrdenCompra_Load(object sender, EventArgs e)
         {
-            this.productosTableAdapter.FillBy5(this.dSCOCOA.Productos);
+            this.productosTableAdapter.FillBy1(this.dSCOCOA.Productos);
             this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
             this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);
             this.ordenCompraDetalleTableAdapter.Fill(this.dSCOCOA.OrdenCompraDetalle);
@@ -224,6 +224,6 @@ namespace COCOA.Transacciones
         private void numeroCosteoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }
+        }        
     }
 }

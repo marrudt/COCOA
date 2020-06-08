@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionRolLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRol));
             System.Windows.Forms.Label idRolLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRol));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.rolBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolTableAdapter = new COCOA.DSCOCOATableAdapters.RolTableAdapter();
@@ -54,13 +54,13 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.rolDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.descripcionRolTextBox = new System.Windows.Forms.TextBox();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idRolTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             descripcionRolLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
             idRolLabel = new System.Windows.Forms.Label();
@@ -89,6 +89,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
+            // 
+            // idRolLabel
+            // 
+            idRolLabel.AutoSize = true;
+            idRolLabel.Location = new System.Drawing.Point(63, 48);
+            idRolLabel.Name = "idRolLabel";
+            idRolLabel.Size = new System.Drawing.Size(19, 13);
+            idRolLabel.TabIndex = 6;
+            idRolLabel.Text = "Id:";
             // 
             // dSCOCOA
             // 
@@ -326,51 +335,6 @@
             this.rolDataGridView.Size = new System.Drawing.Size(414, 183);
             this.rolDataGridView.TabIndex = 4;
             // 
-            // descripcionRolTextBox
-            // 
-            this.descripcionRolTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionRolTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rolBindingSource, "DescripcionRol", true));
-            this.descripcionRolTextBox.Location = new System.Drawing.Point(85, 71);
-            this.descripcionRolTextBox.Name = "descripcionRolTextBox";
-            this.descripcionRolTextBox.ReadOnly = true;
-            this.descripcionRolTextBox.Size = new System.Drawing.Size(294, 20);
-            this.descripcionRolTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rolBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(85, 97);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(27, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // idRolLabel
-            // 
-            idRolLabel.AutoSize = true;
-            idRolLabel.Location = new System.Drawing.Point(63, 48);
-            idRolLabel.Name = "idRolLabel";
-            idRolLabel.Size = new System.Drawing.Size(19, 13);
-            idRolLabel.TabIndex = 6;
-            idRolLabel.Text = "Id:";
-            // 
-            // idRolTextBox
-            // 
-            this.idRolTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rolBindingSource, "IdRol", true));
-            this.idRolTextBox.Enabled = false;
-            this.idRolTextBox.Location = new System.Drawing.Point(85, 45);
-            this.idRolTextBox.Name = "idRolTextBox";
-            this.idRolTextBox.ReadOnly = true;
-            this.idRolTextBox.Size = new System.Drawing.Size(27, 20);
-            this.idRolTextBox.TabIndex = 7;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -398,13 +362,48 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
+            // descripcionRolTextBox
+            // 
+            this.descripcionRolTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionRolTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rolBindingSource, "DescripcionRol", true));
+            this.descripcionRolTextBox.Location = new System.Drawing.Point(85, 71);
+            this.descripcionRolTextBox.Name = "descripcionRolTextBox";
+            this.descripcionRolTextBox.ReadOnly = true;
+            this.descripcionRolTextBox.Size = new System.Drawing.Size(294, 20);
+            this.descripcionRolTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.rolBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(85, 97);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(27, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // idRolTextBox
+            // 
+            this.idRolTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.rolBindingSource, "IdRol", true));
+            this.idRolTextBox.Enabled = false;
+            this.idRolTextBox.Location = new System.Drawing.Point(85, 45);
+            this.idRolTextBox.Name = "idRolTextBox";
+            this.idRolTextBox.ReadOnly = true;
+            this.idRolTextBox.Size = new System.Drawing.Size(27, 20);
+            this.idRolTextBox.TabIndex = 7;
+            // 
             // frmRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(414, 310);
-            this.ControlBox = false;
             this.Controls.Add(idRolLabel);
             this.Controls.Add(this.idRolTextBox);
             this.Controls.Add(activoLabel);
@@ -413,8 +412,10 @@
             this.Controls.Add(this.descripcionRolTextBox);
             this.Controls.Add(this.rolDataGridView);
             this.Controls.Add(this.rolBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmRol";
             this.Text = "Roles";
             this.Load += new System.EventHandler(this.frmRol_Load);

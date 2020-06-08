@@ -32,8 +32,8 @@
             System.Windows.Forms.Label descripcionImpoconsumoLabel;
             System.Windows.Forms.Label tarifaLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImpoconsumo));
             System.Windows.Forms.Label idImpoconsumoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImpoconsumo));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.impoconsumoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.impoconsumoTableAdapter = new COCOA.DSCOCOATableAdapters.ImpoconsumoTableAdapter();
@@ -55,15 +55,15 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.impoconsumoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.descripcionImpoconsumoTextBox = new System.Windows.Forms.TextBox();
             this.tarifaTextBox = new System.Windows.Forms.TextBox();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idImpoconsumoTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             descripcionImpoconsumoLabel = new System.Windows.Forms.Label();
             tarifaLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
@@ -102,6 +102,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 4;
             activoLabel.Text = "Activo:";
+            // 
+            // idImpoconsumoLabel
+            // 
+            idImpoconsumoLabel.AutoSize = true;
+            idImpoconsumoLabel.Location = new System.Drawing.Point(58, 43);
+            idImpoconsumoLabel.Name = "idImpoconsumoLabel";
+            idImpoconsumoLabel.Size = new System.Drawing.Size(19, 13);
+            idImpoconsumoLabel.TabIndex = 8;
+            idImpoconsumoLabel.Text = "Id:";
             // 
             // dSCOCOA
             // 
@@ -340,6 +349,42 @@
             this.impoconsumoDataGridView.Size = new System.Drawing.Size(413, 188);
             this.impoconsumoDataGridView.TabIndex = 6;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdImpoconsumo";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 41;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DescripcionImpoconsumo";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 88;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Tarifa";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Tarifa";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 59;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 43;
+            // 
             // descripcionImpoconsumoTextBox
             // 
             this.descripcionImpoconsumoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -377,15 +422,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // idImpoconsumoLabel
-            // 
-            idImpoconsumoLabel.AutoSize = true;
-            idImpoconsumoLabel.Location = new System.Drawing.Point(58, 43);
-            idImpoconsumoLabel.Name = "idImpoconsumoLabel";
-            idImpoconsumoLabel.Size = new System.Drawing.Size(19, 13);
-            idImpoconsumoLabel.TabIndex = 8;
-            idImpoconsumoLabel.Text = "Id:";
-            // 
             // idImpoconsumoTextBox
             // 
             this.idImpoconsumoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.impoconsumoBindingSource, "IdImpoconsumo", true));
@@ -396,49 +432,12 @@
             this.idImpoconsumoTextBox.Size = new System.Drawing.Size(44, 20);
             this.idImpoconsumoTextBox.TabIndex = 9;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdImpoconsumo";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 41;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DescripcionImpoconsumo";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 88;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Tarifa";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Tarifa";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 59;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 43;
-            // 
             // frmImpoconsumo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(414, 309);
-            this.ControlBox = false;
             this.Controls.Add(idImpoconsumoLabel);
             this.Controls.Add(this.idImpoconsumoTextBox);
             this.Controls.Add(activoLabel);
@@ -449,8 +448,10 @@
             this.Controls.Add(this.descripcionImpoconsumoTextBox);
             this.Controls.Add(this.impoconsumoDataGridView);
             this.Controls.Add(this.impoconsumoBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmImpoconsumo";
             this.Text = "Tarifa de Impoconsumo";
             this.Load += new System.EventHandler(this.frmImpoconsumo_Load);

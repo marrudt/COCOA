@@ -121,5 +121,10 @@ namespace COCOA.Maestras
             bindingNavigatorCountItem.Enabled = true;
             bindingNavigatorExit.Enabled = true;
         }
+
+        private void bindingNavigatorExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

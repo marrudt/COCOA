@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionIntervaloPrecioLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntervaloPrecio));
             System.Windows.Forms.Label idIntervaloPrecioLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmIntervaloPrecio));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.intervaloPreciosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.intervaloPreciosTableAdapter = new COCOA.DSCOCOATableAdapters.IntervaloPreciosTableAdapter();
@@ -54,13 +54,13 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.intervaloPreciosDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.descripcionIntervaloPrecioTextBox = new System.Windows.Forms.TextBox();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idIntervaloPrecioTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             descripcionIntervaloPrecioLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
             idIntervaloPrecioLabel = new System.Windows.Forms.Label();
@@ -89,6 +89,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
+            // 
+            // idIntervaloPrecioLabel
+            // 
+            idIntervaloPrecioLabel.AutoSize = true;
+            idIntervaloPrecioLabel.Location = new System.Drawing.Point(56, 42);
+            idIntervaloPrecioLabel.Name = "idIntervaloPrecioLabel";
+            idIntervaloPrecioLabel.Size = new System.Drawing.Size(19, 13);
+            idIntervaloPrecioLabel.TabIndex = 6;
+            idIntervaloPrecioLabel.Text = "Id:";
             // 
             // dSCOCOA
             // 
@@ -326,52 +335,6 @@
             this.intervaloPreciosDataGridView.Size = new System.Drawing.Size(412, 187);
             this.intervaloPreciosDataGridView.TabIndex = 4;
             // 
-            // descripcionIntervaloPrecioTextBox
-            // 
-            this.descripcionIntervaloPrecioTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionIntervaloPrecioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.intervaloPreciosBindingSource, "DescripcionIntervaloPrecio", true));
-            this.descripcionIntervaloPrecioTextBox.Location = new System.Drawing.Point(81, 65);
-            this.descripcionIntervaloPrecioTextBox.Name = "descripcionIntervaloPrecioTextBox";
-            this.descripcionIntervaloPrecioTextBox.ReadOnly = true;
-            this.descripcionIntervaloPrecioTextBox.Size = new System.Drawing.Size(268, 20);
-            this.descripcionIntervaloPrecioTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.intervaloPreciosBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(81, 91);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(18, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // idIntervaloPrecioLabel
-            // 
-            idIntervaloPrecioLabel.AutoSize = true;
-            idIntervaloPrecioLabel.Location = new System.Drawing.Point(56, 42);
-            idIntervaloPrecioLabel.Name = "idIntervaloPrecioLabel";
-            idIntervaloPrecioLabel.Size = new System.Drawing.Size(19, 13);
-            idIntervaloPrecioLabel.TabIndex = 6;
-            idIntervaloPrecioLabel.Text = "Id:";
-            // 
-            // idIntervaloPrecioTextBox
-            // 
-            this.idIntervaloPrecioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.intervaloPreciosBindingSource, "IdIntervaloPrecio", true));
-            this.idIntervaloPrecioTextBox.Enabled = false;
-            this.idIntervaloPrecioTextBox.Location = new System.Drawing.Point(81, 39);
-            this.idIntervaloPrecioTextBox.Name = "idIntervaloPrecioTextBox";
-            this.idIntervaloPrecioTextBox.ReadOnly = true;
-            this.idIntervaloPrecioTextBox.Size = new System.Drawing.Size(42, 20);
-            this.idIntervaloPrecioTextBox.TabIndex = 7;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -399,13 +362,49 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
+            // descripcionIntervaloPrecioTextBox
+            // 
+            this.descripcionIntervaloPrecioTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionIntervaloPrecioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.intervaloPreciosBindingSource, "DescripcionIntervaloPrecio", true));
+            this.descripcionIntervaloPrecioTextBox.Location = new System.Drawing.Point(81, 65);
+            this.descripcionIntervaloPrecioTextBox.Name = "descripcionIntervaloPrecioTextBox";
+            this.descripcionIntervaloPrecioTextBox.ReadOnly = true;
+            this.descripcionIntervaloPrecioTextBox.Size = new System.Drawing.Size(268, 20);
+            this.descripcionIntervaloPrecioTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.intervaloPreciosBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(81, 91);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(18, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // idIntervaloPrecioTextBox
+            // 
+            this.idIntervaloPrecioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.intervaloPreciosBindingSource, "IdIntervaloPrecio", true));
+            this.idIntervaloPrecioTextBox.Enabled = false;
+            this.idIntervaloPrecioTextBox.Location = new System.Drawing.Point(81, 39);
+            this.idIntervaloPrecioTextBox.Name = "idIntervaloPrecioTextBox";
+            this.idIntervaloPrecioTextBox.ReadOnly = true;
+            this.idIntervaloPrecioTextBox.Size = new System.Drawing.Size(42, 20);
+            this.idIntervaloPrecioTextBox.TabIndex = 7;
+            // 
             // frmIntervaloPrecio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(412, 309);
-            this.ControlBox = false;
             this.Controls.Add(idIntervaloPrecioLabel);
             this.Controls.Add(this.idIntervaloPrecioTextBox);
             this.Controls.Add(activoLabel);
@@ -414,8 +413,10 @@
             this.Controls.Add(this.descripcionIntervaloPrecioTextBox);
             this.Controls.Add(this.intervaloPreciosDataGridView);
             this.Controls.Add(this.intervaloPreciosBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmIntervaloPrecio";
             this.Text = "Intervalo de Precios";
             this.Load += new System.EventHandler(this.frmIntervaloPrecio_Load);

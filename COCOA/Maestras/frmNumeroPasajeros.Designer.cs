@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label numeroPasajerosLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNumeroPasajeros));
             System.Windows.Forms.Label idNumeroPasajerosLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNumeroPasajeros));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.numeroPasajerosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.numeroPasajerosTableAdapter = new COCOA.DSCOCOATableAdapters.NumeroPasajerosTableAdapter();
@@ -54,13 +54,13 @@
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.numeroPasajerosDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.numeroPasajerosTextBox = new System.Windows.Forms.TextBox();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.idNumeroPasajerosTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             numeroPasajerosLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
             idNumeroPasajerosLabel = new System.Windows.Forms.Label();
@@ -89,6 +89,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
+            // 
+            // idNumeroPasajerosLabel
+            // 
+            idNumeroPasajerosLabel.AutoSize = true;
+            idNumeroPasajerosLabel.Location = new System.Drawing.Point(14, 45);
+            idNumeroPasajerosLabel.Name = "idNumeroPasajerosLabel";
+            idNumeroPasajerosLabel.Size = new System.Drawing.Size(108, 13);
+            idNumeroPasajerosLabel.TabIndex = 6;
+            idNumeroPasajerosLabel.Text = "Id Numero Pasajeros:";
             // 
             // dSCOCOA
             // 
@@ -301,6 +310,7 @@
             this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorExit.Text = "toolStripButton4";
             this.bindingNavigatorExit.ToolTipText = "Salir";
+            this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
             // numeroPasajerosDataGridView
             // 
@@ -324,51 +334,6 @@
             this.numeroPasajerosDataGridView.ReadOnly = true;
             this.numeroPasajerosDataGridView.Size = new System.Drawing.Size(412, 189);
             this.numeroPasajerosDataGridView.TabIndex = 4;
-            // 
-            // numeroPasajerosTextBox
-            // 
-            this.numeroPasajerosTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.numeroPasajerosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.numeroPasajerosBindingSource, "NumeroPasajeros", true));
-            this.numeroPasajerosTextBox.Location = new System.Drawing.Point(128, 68);
-            this.numeroPasajerosTextBox.Name = "numeroPasajerosTextBox";
-            this.numeroPasajerosTextBox.ReadOnly = true;
-            this.numeroPasajerosTextBox.Size = new System.Drawing.Size(250, 20);
-            this.numeroPasajerosTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.numeroPasajerosBindingSource, "Activo", true));
-            this.activoCheckBox.Location = new System.Drawing.Point(128, 91);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(18, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // idNumeroPasajerosLabel
-            // 
-            idNumeroPasajerosLabel.AutoSize = true;
-            idNumeroPasajerosLabel.Location = new System.Drawing.Point(14, 45);
-            idNumeroPasajerosLabel.Name = "idNumeroPasajerosLabel";
-            idNumeroPasajerosLabel.Size = new System.Drawing.Size(108, 13);
-            idNumeroPasajerosLabel.TabIndex = 6;
-            idNumeroPasajerosLabel.Text = "Id Numero Pasajeros:";
-            // 
-            // idNumeroPasajerosTextBox
-            // 
-            this.idNumeroPasajerosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.numeroPasajerosBindingSource, "IdNumeroPasajeros", true));
-            this.idNumeroPasajerosTextBox.Enabled = false;
-            this.idNumeroPasajerosTextBox.Location = new System.Drawing.Point(128, 42);
-            this.idNumeroPasajerosTextBox.Name = "idNumeroPasajerosTextBox";
-            this.idNumeroPasajerosTextBox.ReadOnly = true;
-            this.idNumeroPasajerosTextBox.Size = new System.Drawing.Size(34, 20);
-            this.idNumeroPasajerosTextBox.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -397,13 +362,48 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
+            // numeroPasajerosTextBox
+            // 
+            this.numeroPasajerosTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.numeroPasajerosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.numeroPasajerosBindingSource, "NumeroPasajeros", true));
+            this.numeroPasajerosTextBox.Location = new System.Drawing.Point(128, 68);
+            this.numeroPasajerosTextBox.Name = "numeroPasajerosTextBox";
+            this.numeroPasajerosTextBox.ReadOnly = true;
+            this.numeroPasajerosTextBox.Size = new System.Drawing.Size(250, 20);
+            this.numeroPasajerosTextBox.TabIndex = 1;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.numeroPasajerosBindingSource, "Activo", true));
+            this.activoCheckBox.Location = new System.Drawing.Point(128, 91);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(18, 24);
+            this.activoCheckBox.TabIndex = 3;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // idNumeroPasajerosTextBox
+            // 
+            this.idNumeroPasajerosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.numeroPasajerosBindingSource, "IdNumeroPasajeros", true));
+            this.idNumeroPasajerosTextBox.Enabled = false;
+            this.idNumeroPasajerosTextBox.Location = new System.Drawing.Point(128, 42);
+            this.idNumeroPasajerosTextBox.Name = "idNumeroPasajerosTextBox";
+            this.idNumeroPasajerosTextBox.ReadOnly = true;
+            this.idNumeroPasajerosTextBox.Size = new System.Drawing.Size(34, 20);
+            this.idNumeroPasajerosTextBox.TabIndex = 7;
+            // 
             // frmNumeroPasajeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(412, 310);
-            this.ControlBox = false;
             this.Controls.Add(idNumeroPasajerosLabel);
             this.Controls.Add(this.idNumeroPasajerosTextBox);
             this.Controls.Add(activoLabel);
@@ -412,8 +412,10 @@
             this.Controls.Add(this.numeroPasajerosTextBox);
             this.Controls.Add(this.numeroPasajerosDataGridView);
             this.Controls.Add(this.numeroPasajerosBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNumeroPasajeros";
             this.Text = "Número de Pasajeros";
             this.Load += new System.EventHandler(this.frmNumeroPasajeros_Load);

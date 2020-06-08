@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionCilindrajeLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCilindraje));
             System.Windows.Forms.Label idCilindrajeLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCilindraje));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.cilindrajesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cilindrajesTableAdapter = new COCOA.DSCOCOATableAdapters.CilindrajesTableAdapter();
@@ -89,6 +89,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
+            // 
+            // idCilindrajeLabel
+            // 
+            idCilindrajeLabel.AutoSize = true;
+            idCilindrajeLabel.Location = new System.Drawing.Point(57, 46);
+            idCilindrajeLabel.Name = "idCilindrajeLabel";
+            idCilindrajeLabel.Size = new System.Drawing.Size(19, 13);
+            idCilindrajeLabel.TabIndex = 6;
+            idCilindrajeLabel.Text = "Id:";
             // 
             // dSCOCOA
             // 
@@ -323,7 +332,7 @@
             this.cilindrajesDataGridView.Location = new System.Drawing.Point(2, 125);
             this.cilindrajesDataGridView.Name = "cilindrajesDataGridView";
             this.cilindrajesDataGridView.ReadOnly = true;
-            this.cilindrajesDataGridView.Size = new System.Drawing.Size(420, 216);
+            this.cilindrajesDataGridView.Size = new System.Drawing.Size(420, 291);
             this.cilindrajesDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -380,15 +389,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // idCilindrajeLabel
-            // 
-            idCilindrajeLabel.AutoSize = true;
-            idCilindrajeLabel.Location = new System.Drawing.Point(57, 46);
-            idCilindrajeLabel.Name = "idCilindrajeLabel";
-            idCilindrajeLabel.Size = new System.Drawing.Size(19, 13);
-            idCilindrajeLabel.TabIndex = 6;
-            idCilindrajeLabel.Text = "Id:";
-            // 
             // idCilindrajeTextBox
             // 
             this.idCilindrajeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cilindrajesBindingSource, "IdCilindraje", true));
@@ -404,8 +404,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(423, 342);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(423, 417);
             this.Controls.Add(idCilindrajeLabel);
             this.Controls.Add(this.idCilindrajeTextBox);
             this.Controls.Add(activoLabel);
@@ -414,8 +413,10 @@
             this.Controls.Add(this.descripcionCilindrajeTextBox);
             this.Controls.Add(this.cilindrajesDataGridView);
             this.Controls.Add(this.cilindrajesBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCilindraje";
             this.Text = "Cilindraje";
             this.Load += new System.EventHandler(this.frmCilindraje_Load);

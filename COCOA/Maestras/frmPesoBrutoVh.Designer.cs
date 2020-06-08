@@ -1,6 +1,6 @@
 ﻿namespace COCOA.Maestras
 {
-    partial class frmPesoBrutoVehicular
+    partial class frmPesoBrutoVh
     {
         /// <summary>
         /// Required designer variable.
@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesoBrutoVh));
+            System.Windows.Forms.Label idPesoBrutoVhLabel;
             System.Windows.Forms.Label descripcionPesoBrutoVhLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPesoBrutoVehicular));
-            System.Windows.Forms.Label idPesoBrutoVhLabel;
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.pesoBrutoVhBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pesoBrutoVhTableAdapter = new COCOA.DSCOCOATableAdapters.PesoBrutoVhTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.pesoBrutoVhBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.pesoBrutoVhDataGridView = new System.Windows.Forms.DataGridView();
+            this.idPesoBrutoVhTextBox = new System.Windows.Forms.TextBox();
             this.descripcionPesoBrutoVhTextBox = new System.Windows.Forms.TextBox();
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.idPesoBrutoVhTextBox = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.bindingNavigatorEdit = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            idPesoBrutoVhLabel = new System.Windows.Forms.Label();
             descripcionPesoBrutoVhLabel = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
-            idPesoBrutoVhLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingNavigator)).BeginInit();
@@ -71,24 +71,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // descripcionPesoBrutoVhLabel
-            // 
-            descripcionPesoBrutoVhLabel.AutoSize = true;
-            descripcionPesoBrutoVhLabel.Location = new System.Drawing.Point(10, 78);
-            descripcionPesoBrutoVhLabel.Name = "descripcionPesoBrutoVhLabel";
-            descripcionPesoBrutoVhLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionPesoBrutoVhLabel.TabIndex = 0;
-            descripcionPesoBrutoVhLabel.Text = "Descripción:";
-            // 
-            // activoLabel
-            // 
-            activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(36, 103);
-            activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
-            activoLabel.TabIndex = 2;
-            activoLabel.Text = "Activo:";
             // 
             // dSCOCOA
             // 
@@ -165,16 +147,9 @@
             this.pesoBrutoVhBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.pesoBrutoVhBindingNavigator.Name = "pesoBrutoVhBindingNavigator";
             this.pesoBrutoVhBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.pesoBrutoVhBindingNavigator.Size = new System.Drawing.Size(408, 31);
+            this.pesoBrutoVhBindingNavigator.Size = new System.Drawing.Size(432, 31);
             this.pesoBrutoVhBindingNavigator.TabIndex = 0;
             this.pesoBrutoVhBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -208,9 +183,16 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
             // 
             // bindingNavigatorMoveNextItem
@@ -233,8 +215,147 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
+            // 
+            // bindingNavigatorSaveItem
+            // 
+            this.bindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorSaveItem.Enabled = false;
+            this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
+            this.bindingNavigatorSaveItem.Name = "pesoBrutoVhBindingNavigatorSaveItem";
+            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorSaveItem.Text = "Save Data";
+            this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.pesoBrutoVhBindingNavigatorSaveItem_Click);
+            // 
+            // pesoBrutoVhDataGridView
+            // 
+            this.pesoBrutoVhDataGridView.AllowUserToAddRows = false;
+            this.pesoBrutoVhDataGridView.AllowUserToDeleteRows = false;
+            this.pesoBrutoVhDataGridView.AllowUserToOrderColumns = true;
+            this.pesoBrutoVhDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pesoBrutoVhDataGridView.AutoGenerateColumns = false;
+            this.pesoBrutoVhDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pesoBrutoVhDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pesoBrutoVhDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pesoBrutoVhDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewCheckBoxColumn1});
+            this.pesoBrutoVhDataGridView.DataSource = this.pesoBrutoVhBindingSource;
+            this.pesoBrutoVhDataGridView.Location = new System.Drawing.Point(0, 128);
+            this.pesoBrutoVhDataGridView.Name = "pesoBrutoVhDataGridView";
+            this.pesoBrutoVhDataGridView.ReadOnly = true;
+            this.pesoBrutoVhDataGridView.Size = new System.Drawing.Size(432, 242);
+            this.pesoBrutoVhDataGridView.TabIndex = 1;
+            // 
+            // idPesoBrutoVhLabel
+            // 
+            idPesoBrutoVhLabel.AutoSize = true;
+            idPesoBrutoVhLabel.Location = new System.Drawing.Point(58, 49);
+            idPesoBrutoVhLabel.Name = "idPesoBrutoVhLabel";
+            idPesoBrutoVhLabel.Size = new System.Drawing.Size(19, 13);
+            idPesoBrutoVhLabel.TabIndex = 2;
+            idPesoBrutoVhLabel.Text = "Id:";
+            // 
+            // idPesoBrutoVhTextBox
+            // 
+            this.idPesoBrutoVhTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pesoBrutoVhBindingSource, "IdPesoBrutoVh", true));
+            this.idPesoBrutoVhTextBox.Enabled = false;
+            this.idPesoBrutoVhTextBox.Location = new System.Drawing.Point(83, 46);
+            this.idPesoBrutoVhTextBox.Name = "idPesoBrutoVhTextBox";
+            this.idPesoBrutoVhTextBox.ReadOnly = true;
+            this.idPesoBrutoVhTextBox.Size = new System.Drawing.Size(32, 20);
+            this.idPesoBrutoVhTextBox.TabIndex = 3;
+            // 
+            // descripcionPesoBrutoVhLabel
+            // 
+            descripcionPesoBrutoVhLabel.AutoSize = true;
+            descripcionPesoBrutoVhLabel.Location = new System.Drawing.Point(11, 75);
+            descripcionPesoBrutoVhLabel.Name = "descripcionPesoBrutoVhLabel";
+            descripcionPesoBrutoVhLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionPesoBrutoVhLabel.TabIndex = 4;
+            descripcionPesoBrutoVhLabel.Text = "Descripción:";
+            // 
+            // descripcionPesoBrutoVhTextBox
+            // 
+            this.descripcionPesoBrutoVhTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.descripcionPesoBrutoVhTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pesoBrutoVhBindingSource, "DescripcionPesoBrutoVh", true));
+            this.descripcionPesoBrutoVhTextBox.Location = new System.Drawing.Point(83, 72);
+            this.descripcionPesoBrutoVhTextBox.Name = "descripcionPesoBrutoVhTextBox";
+            this.descripcionPesoBrutoVhTextBox.ReadOnly = true;
+            this.descripcionPesoBrutoVhTextBox.Size = new System.Drawing.Size(325, 20);
+            this.descripcionPesoBrutoVhTextBox.TabIndex = 5;
+            // 
+            // activoLabel
+            // 
+            activoLabel.AutoSize = true;
+            activoLabel.Location = new System.Drawing.Point(37, 103);
+            activoLabel.Name = "activoLabel";
+            activoLabel.Size = new System.Drawing.Size(40, 13);
+            activoLabel.TabIndex = 6;
+            activoLabel.Text = "Activo:";
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pesoBrutoVhBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(83, 98);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(17, 24);
+            this.activoCheckBox.TabIndex = 7;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdPesoBrutoVh";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 41;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DescripcionPesoBrutoVh";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 88;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
             // bindingNavigatorEdit
             // 
@@ -246,39 +367,6 @@
             this.bindingNavigatorEdit.Text = "toolStripButton1";
             this.bindingNavigatorEdit.ToolTipText = "Editar";
             this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.ToolTipText = "Agregar";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            this.bindingNavigatorDeleteItem.ToolTipText = "Eliminar";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
-            // 
-            // bindingNavigatorSaveItem
-            // 
-            this.bindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorSaveItem.Enabled = false;
-            this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
-            this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
-            this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorSaveItem.Text = "Save Data";
-            this.bindingNavigatorSaveItem.ToolTipText = "Guardar";
-            this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.pesoBrutoVhBindingNavigatorSaveItem_Click);
             // 
             // bindingNavigatorCancel
             // 
@@ -303,122 +391,32 @@
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
-            // pesoBrutoVhDataGridView
-            // 
-            this.pesoBrutoVhDataGridView.AllowUserToAddRows = false;
-            this.pesoBrutoVhDataGridView.AllowUserToDeleteRows = false;
-            this.pesoBrutoVhDataGridView.AllowUserToOrderColumns = true;
-            this.pesoBrutoVhDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pesoBrutoVhDataGridView.AutoGenerateColumns = false;
-            this.pesoBrutoVhDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.pesoBrutoVhDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pesoBrutoVhDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.pesoBrutoVhDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewCheckBoxColumn1});
-            this.pesoBrutoVhDataGridView.DataSource = this.pesoBrutoVhBindingSource;
-            this.pesoBrutoVhDataGridView.Location = new System.Drawing.Point(0, 132);
-            this.pesoBrutoVhDataGridView.Name = "pesoBrutoVhDataGridView";
-            this.pesoBrutoVhDataGridView.ReadOnly = true;
-            this.pesoBrutoVhDataGridView.Size = new System.Drawing.Size(408, 178);
-            this.pesoBrutoVhDataGridView.TabIndex = 4;
-            // 
-            // descripcionPesoBrutoVhTextBox
-            // 
-            this.descripcionPesoBrutoVhTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionPesoBrutoVhTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pesoBrutoVhBindingSource, "DescripcionPesoBrutoVh", true));
-            this.descripcionPesoBrutoVhTextBox.Location = new System.Drawing.Point(82, 75);
-            this.descripcionPesoBrutoVhTextBox.Name = "descripcionPesoBrutoVhTextBox";
-            this.descripcionPesoBrutoVhTextBox.ReadOnly = true;
-            this.descripcionPesoBrutoVhTextBox.Size = new System.Drawing.Size(292, 20);
-            this.descripcionPesoBrutoVhTextBox.TabIndex = 1;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.pesoBrutoVhBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(82, 98);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(104, 24);
-            this.activoCheckBox.TabIndex = 3;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // idPesoBrutoVhLabel
-            // 
-            idPesoBrutoVhLabel.AutoSize = true;
-            idPesoBrutoVhLabel.Location = new System.Drawing.Point(57, 52);
-            idPesoBrutoVhLabel.Name = "idPesoBrutoVhLabel";
-            idPesoBrutoVhLabel.Size = new System.Drawing.Size(19, 13);
-            idPesoBrutoVhLabel.TabIndex = 6;
-            idPesoBrutoVhLabel.Text = "Id:";
-            // 
-            // idPesoBrutoVhTextBox
-            // 
-            this.idPesoBrutoVhTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.pesoBrutoVhBindingSource, "IdPesoBrutoVh", true));
-            this.idPesoBrutoVhTextBox.Enabled = false;
-            this.idPesoBrutoVhTextBox.Location = new System.Drawing.Point(82, 49);
-            this.idPesoBrutoVhTextBox.Name = "idPesoBrutoVhTextBox";
-            this.idPesoBrutoVhTextBox.ReadOnly = true;
-            this.idPesoBrutoVhTextBox.Size = new System.Drawing.Size(39, 20);
-            this.idPesoBrutoVhTextBox.TabIndex = 7;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdPesoBrutoVh";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 41;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DescripcionPesoBrutoVh";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción Peso Vh";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 108;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 43;
-            // 
-            // frmPesoBrutoVehicular
+            // frmPesoBrutoVh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(408, 310);
-            this.ControlBox = false;
-            this.Controls.Add(idPesoBrutoVhLabel);
-            this.Controls.Add(this.idPesoBrutoVhTextBox);
+            this.ClientSize = new System.Drawing.Size(432, 372);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(descripcionPesoBrutoVhLabel);
             this.Controls.Add(this.descripcionPesoBrutoVhTextBox);
+            this.Controls.Add(idPesoBrutoVhLabel);
+            this.Controls.Add(this.idPesoBrutoVhTextBox);
             this.Controls.Add(this.pesoBrutoVhDataGridView);
             this.Controls.Add(this.pesoBrutoVhBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmPesoBrutoVehicular";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmPesoBrutoVh";
             this.Text = "Peso Bruto Vehicular";
-            this.Load += new System.EventHandler(this.frmPesoBrutoVehicular_Load);
+            this.Load += new System.EventHandler(this.frmPesoBrutoVh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingNavigator)).EndInit();
@@ -451,15 +449,15 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView pesoBrutoVhDataGridView;
+        private System.Windows.Forms.TextBox idPesoBrutoVhTextBox;
         private System.Windows.Forms.TextBox descripcionPesoBrutoVhTextBox;
         private System.Windows.Forms.CheckBox activoCheckBox;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorEdit;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.TextBox idPesoBrutoVhTextBox;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorEdit;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

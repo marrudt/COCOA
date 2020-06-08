@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label codigoTipoProductoLabel;
             System.Windows.Forms.Label descripcionTipoProductoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoProducto));
             System.Windows.Forms.Label idTipoProductoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTipoProducto));
             this.tipoProductoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.tipoProductoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSCOCOA = new COCOA.DSCOCOA();
@@ -89,6 +89,15 @@
             descripcionTipoProductoLabel.Size = new System.Drawing.Size(66, 13);
             descripcionTipoProductoLabel.TabIndex = 2;
             descripcionTipoProductoLabel.Text = "Descripción:";
+            // 
+            // idTipoProductoLabel
+            // 
+            idTipoProductoLabel.AutoSize = true;
+            idTipoProductoLabel.Location = new System.Drawing.Point(66, 44);
+            idTipoProductoLabel.Name = "idTipoProductoLabel";
+            idTipoProductoLabel.Size = new System.Drawing.Size(19, 13);
+            idTipoProductoLabel.TabIndex = 6;
+            idTipoProductoLabel.Text = "Id:";
             // 
             // tipoProductoBindingNavigator
             // 
@@ -378,15 +387,6 @@
             this.descripcionTipoProductoTextBox.Size = new System.Drawing.Size(296, 20);
             this.descripcionTipoProductoTextBox.TabIndex = 3;
             // 
-            // idTipoProductoLabel
-            // 
-            idTipoProductoLabel.AutoSize = true;
-            idTipoProductoLabel.Location = new System.Drawing.Point(66, 44);
-            idTipoProductoLabel.Name = "idTipoProductoLabel";
-            idTipoProductoLabel.Size = new System.Drawing.Size(19, 13);
-            idTipoProductoLabel.TabIndex = 6;
-            idTipoProductoLabel.Text = "Id:";
-            // 
             // idTipoProductoTextBox
             // 
             this.idTipoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.tipoProductoBindingSource, "IdTipoProducto", true));
@@ -403,7 +403,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(410, 309);
-            this.ControlBox = false;
             this.Controls.Add(idTipoProductoLabel);
             this.Controls.Add(this.idTipoProductoTextBox);
             this.Controls.Add(descripcionTipoProductoLabel);
@@ -412,8 +411,10 @@
             this.Controls.Add(this.codigoTipoProductoTextBox);
             this.Controls.Add(this.tipoProductoDataGridView);
             this.Controls.Add(this.tipoProductoBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmTipoProducto";
             this.Text = "Tipo de Producto";
             this.Load += new System.EventHandler(this.frmTipoProducto_Load);

@@ -62,6 +62,12 @@
             this.pesoBrutoVhTableAdapter = new COCOA.DSCOCOATableAdapters.PesoBrutoVhTableAdapter();
             this.intervaloPreciosTableAdapter = new COCOA.DSCOCOATableAdapters.IntervaloPreciosTableAdapter();
             this.busquedaDataGridView = new System.Windows.Forms.DataGridView();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.codigoProductoToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.codigoProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.descripcionProductoToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.descripcionProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,12 +85,6 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fillBy2ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.codigoProductoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.codigoProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.descripcionProductoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.descripcionProductoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillBy2ToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.tipoProductoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.claseBindingSource)).BeginInit();
@@ -98,7 +98,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervaloPreciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busquedaDataGridView)).BeginInit();
-            this.fillBy2ToolStrip.SuspendLayout();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // tipoProductoBindingSource
@@ -366,8 +366,56 @@
             this.busquedaDataGridView.Location = new System.Drawing.Point(0, 102);
             this.busquedaDataGridView.Name = "busquedaDataGridView";
             this.busquedaDataGridView.ReadOnly = true;
-            this.busquedaDataGridView.Size = new System.Drawing.Size(1099, 464);
+            this.busquedaDataGridView.Size = new System.Drawing.Size(1119, 484);
             this.busquedaDataGridView.TabIndex = 22;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.BackColor = System.Drawing.Color.Transparent;
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.codigoProductoToolStripLabel1,
+            this.codigoProductoToolStripTextBox,
+            this.descripcionProductoToolStripLabel1,
+            this.descripcionProductoToolStripTextBox,
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1119, 25);
+            this.fillByToolStrip.TabIndex = 24;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // codigoProductoToolStripLabel1
+            // 
+            this.codigoProductoToolStripLabel1.Name = "codigoProductoToolStripLabel1";
+            this.codigoProductoToolStripLabel1.Size = new System.Drawing.Size(49, 22);
+            this.codigoProductoToolStripLabel1.Text = "Código:";
+            // 
+            // codigoProductoToolStripTextBox
+            // 
+            this.codigoProductoToolStripTextBox.Name = "codigoProductoToolStripTextBox";
+            this.codigoProductoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            // 
+            // descripcionProductoToolStripLabel1
+            // 
+            this.descripcionProductoToolStripLabel1.Name = "descripcionProductoToolStripLabel1";
+            this.descripcionProductoToolStripLabel1.Size = new System.Drawing.Size(72, 22);
+            this.descripcionProductoToolStripLabel1.Text = "Descripción:";
+            // 
+            // descripcionProductoToolStripTextBox
+            // 
+            this.descripcionProductoToolStripTextBox.Name = "descripcionProductoToolStripTextBox";
+            this.descripcionProductoToolStripTextBox.Size = new System.Drawing.Size(250, 25);
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.fillByToolStripButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 22);
+            this.fillByToolStripButton.Text = "Buscar";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -379,6 +427,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "IdTipoProducto";
             this.dataGridViewTextBoxColumn2.DataSource = this.tipoProductoBindingSource;
             this.dataGridViewTextBoxColumn2.DisplayMember = "DescripcionTipoProducto";
@@ -388,6 +437,7 @@
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IdTipoProducto";
+            this.dataGridViewTextBoxColumn2.Width = 120;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -417,6 +467,7 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn6.DataPropertyName = "IdClase";
             this.dataGridViewTextBoxColumn6.DataSource = this.claseBindingSource;
             this.dataGridViewTextBoxColumn6.DisplayMember = "DescripcionClase";
@@ -426,15 +477,16 @@
             this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn6.ValueMember = "IdClase";
+            this.dataGridViewTextBoxColumn6.Width = 120;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ModeloAno";
             this.dataGridViewTextBoxColumn7.HeaderText = "Modelo Año";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 82;
+            this.dataGridViewTextBoxColumn7.Width = 60;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -451,30 +503,35 @@
             // 
             // dataGridViewTextBoxColumn9
             // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn9.DataPropertyName = "IdIVA";
             this.dataGridViewTextBoxColumn9.DataSource = this.iVABindingSource;
-            this.dataGridViewTextBoxColumn9.DisplayMember = "DescripcionIVA";
+            this.dataGridViewTextBoxColumn9.DisplayMember = "Tarifa";
             this.dataGridViewTextBoxColumn9.HeaderText = "IVA";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn9.ValueMember = "IdIVA";
+            this.dataGridViewTextBoxColumn9.Width = 60;
             // 
             // dataGridViewTextBoxColumn10
             // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "IdImpoconsumo";
             this.dataGridViewTextBoxColumn10.DataSource = this.impoconsumoBindingSource;
-            this.dataGridViewTextBoxColumn10.DisplayMember = "DescripcionImpoconsumo";
+            this.dataGridViewTextBoxColumn10.DisplayMember = "Tarifa";
             this.dataGridViewTextBoxColumn10.HeaderText = "Impoconsumo";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn10.ValueMember = "IdImpoconsumo";
+            this.dataGridViewTextBoxColumn10.Width = 60;
             // 
             // dataGridViewTextBoxColumn11
             // 
+            this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn11.DataPropertyName = "IdSegmento";
             this.dataGridViewTextBoxColumn11.DataSource = this.segmentosBindingSource;
             this.dataGridViewTextBoxColumn11.DisplayMember = "DescripcionSegmento";
@@ -484,9 +541,11 @@
             this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn11.ValueMember = "IdSegmento";
+            this.dataGridViewTextBoxColumn11.Width = 250;
             // 
             // dataGridViewTextBoxColumn12
             // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn12.DataPropertyName = "IdCilindraje";
             this.dataGridViewTextBoxColumn12.DataSource = this.cilindrajesBindingSource;
             this.dataGridViewTextBoxColumn12.DisplayMember = "DescripcionCilindraje";
@@ -496,9 +555,11 @@
             this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn12.ValueMember = "IdCilindraje";
+            this.dataGridViewTextBoxColumn12.Width = 150;
             // 
             // dataGridViewTextBoxColumn13
             // 
+            this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn13.DataPropertyName = "IdNumeroPasajeros";
             this.dataGridViewTextBoxColumn13.DataSource = this.numeroPasajerosBindingSource;
             this.dataGridViewTextBoxColumn13.DisplayMember = "NumeroPasajeros";
@@ -508,9 +569,11 @@
             this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn13.ValueMember = "IdNumeroPasajeros";
+            this.dataGridViewTextBoxColumn13.Width = 180;
             // 
             // dataGridViewTextBoxColumn14
             // 
+            this.dataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn14.DataPropertyName = "IdPesoBrutoVh";
             this.dataGridViewTextBoxColumn14.DataSource = this.pesoBrutoVhBindingSource;
             this.dataGridViewTextBoxColumn14.DisplayMember = "DescripcionPesoBrutoVh";
@@ -520,9 +583,11 @@
             this.dataGridViewTextBoxColumn14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn14.ValueMember = "IdPesoBrutoVh";
+            this.dataGridViewTextBoxColumn14.Width = 250;
             // 
             // dataGridViewTextBoxColumn15
             // 
+            this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn15.DataPropertyName = "IdIntervaloPrecio";
             this.dataGridViewTextBoxColumn15.DataSource = this.intervaloPreciosBindingSource;
             this.dataGridViewTextBoxColumn15.DisplayMember = "DescripcionIntervaloPrecio";
@@ -532,6 +597,7 @@
             this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn15.ValueMember = "IdIntervaloPrecio";
+            this.dataGridViewTextBoxColumn15.Width = 150;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -550,63 +616,14 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
-            // fillBy2ToolStrip
-            // 
-            this.fillBy2ToolStrip.BackColor = System.Drawing.Color.Transparent;
-            this.fillBy2ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.codigoProductoToolStripLabel,
-            this.codigoProductoToolStripTextBox,
-            this.descripcionProductoToolStripLabel,
-            this.descripcionProductoToolStripTextBox,
-            this.fillBy2ToolStripButton});
-            this.fillBy2ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy2ToolStrip.Name = "fillBy2ToolStrip";
-            this.fillBy2ToolStrip.Size = new System.Drawing.Size(1099, 25);
-            this.fillBy2ToolStrip.TabIndex = 23;
-            this.fillBy2ToolStrip.Text = "fillBy2ToolStrip";
-            // 
-            // codigoProductoToolStripLabel
-            // 
-            this.codigoProductoToolStripLabel.Name = "codigoProductoToolStripLabel";
-            this.codigoProductoToolStripLabel.Size = new System.Drawing.Size(49, 22);
-            this.codigoProductoToolStripLabel.Text = "Código:";
-            // 
-            // codigoProductoToolStripTextBox
-            // 
-            this.codigoProductoToolStripTextBox.Name = "codigoProductoToolStripTextBox";
-            this.codigoProductoToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            // 
-            // descripcionProductoToolStripLabel
-            // 
-            this.descripcionProductoToolStripLabel.Name = "descripcionProductoToolStripLabel";
-            this.descripcionProductoToolStripLabel.Size = new System.Drawing.Size(72, 22);
-            this.descripcionProductoToolStripLabel.Text = "Descripción:";
-            // 
-            // descripcionProductoToolStripTextBox
-            // 
-            this.descripcionProductoToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.descripcionProductoToolStripTextBox.Name = "descripcionProductoToolStripTextBox";
-            this.descripcionProductoToolStripTextBox.Size = new System.Drawing.Size(250, 25);
-            // 
-            // fillBy2ToolStripButton
-            // 
-            this.fillBy2ToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.fillBy2ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy2ToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.fillBy2ToolStripButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.fillBy2ToolStripButton.Name = "fillBy2ToolStripButton";
-            this.fillBy2ToolStripButton.Size = new System.Drawing.Size(48, 22);
-            this.fillBy2ToolStripButton.Text = "Buscar";
-            this.fillBy2ToolStripButton.Click += new System.EventHandler(this.fillBy2ToolStripButton_Click);
-            // 
             // frmBusquedaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1099, 566);
+            this.ClientSize = new System.Drawing.Size(1119, 586);
             this.ControlBox = false;
-            this.Controls.Add(this.fillBy2ToolStrip);
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.busquedaDataGridView);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.volverButton);
@@ -630,8 +647,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervaloPreciosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.busquedaDataGridView)).EndInit();
-            this.fillBy2ToolStrip.ResumeLayout(false);
-            this.fillBy2ToolStrip.PerformLayout();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -670,12 +687,12 @@
         private System.Windows.Forms.BindingSource intervaloPreciosBindingSource;
         private DSCOCOATableAdapters.IntervaloPreciosTableAdapter intervaloPreciosTableAdapter;
         private System.Windows.Forms.DataGridView busquedaDataGridView;
-        private System.Windows.Forms.ToolStrip fillBy2ToolStrip;
-        private System.Windows.Forms.ToolStripLabel codigoProductoToolStripLabel;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripLabel codigoProductoToolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox codigoProductoToolStripTextBox;
-        private System.Windows.Forms.ToolStripLabel descripcionProductoToolStripLabel;
+        private System.Windows.Forms.ToolStripLabel descripcionProductoToolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox descripcionProductoToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillBy2ToolStripButton;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

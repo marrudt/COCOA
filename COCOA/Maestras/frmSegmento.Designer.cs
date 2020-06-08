@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label descripcionSegmentoLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSegmento));
             System.Windows.Forms.Label idSegmentoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSegmento));
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.segmentosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.segmentosTableAdapter = new COCOA.DSCOCOATableAdapters.SegmentosTableAdapter();
@@ -89,6 +89,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 2;
             activoLabel.Text = "Activo:";
+            // 
+            // idSegmentoLabel
+            // 
+            idSegmentoLabel.AutoSize = true;
+            idSegmentoLabel.Location = new System.Drawing.Point(61, 46);
+            idSegmentoLabel.Name = "idSegmentoLabel";
+            idSegmentoLabel.Size = new System.Drawing.Size(19, 13);
+            idSegmentoLabel.TabIndex = 6;
+            idSegmentoLabel.Text = "Id:";
             // 
             // dSCOCOA
             // 
@@ -381,15 +390,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // idSegmentoLabel
-            // 
-            idSegmentoLabel.AutoSize = true;
-            idSegmentoLabel.Location = new System.Drawing.Point(61, 46);
-            idSegmentoLabel.Name = "idSegmentoLabel";
-            idSegmentoLabel.Size = new System.Drawing.Size(19, 13);
-            idSegmentoLabel.TabIndex = 6;
-            idSegmentoLabel.Text = "Id:";
-            // 
             // idSegmentoTextBox
             // 
             this.idSegmentoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.segmentosBindingSource, "IdSegmento", true));
@@ -406,7 +406,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(406, 310);
-            this.ControlBox = false;
             this.Controls.Add(idSegmentoLabel);
             this.Controls.Add(this.idSegmentoTextBox);
             this.Controls.Add(activoLabel);
@@ -415,8 +414,10 @@
             this.Controls.Add(this.descripcionSegmentoTextBox);
             this.Controls.Add(this.segmentosDataGridView);
             this.Controls.Add(this.segmentosBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSegmento";
             this.Text = "Segmento";
             this.Load += new System.EventHandler(this.frmSegmento_Load);

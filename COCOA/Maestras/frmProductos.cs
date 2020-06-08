@@ -193,15 +193,15 @@ namespace COCOA.Maestras
         private void frmProductos_Load(object sender, EventArgs e)
         {
             this.cilindrajesTableAdapter.Fill(this.dSCOCOA.Cilindrajes);
-            this.numeroPasajerosTableAdapter.Fill(this.dSCOCOA.NumeroPasajeros);
+            this.numeroPasajerosTableAdapter.FillBy(this.dSCOCOA.NumeroPasajeros);
             this.intervaloPreciosTableAdapter.Fill(this.dSCOCOA.IntervaloPrecios);
             this.pesoBrutoVhTableAdapter.Fill(this.dSCOCOA.PesoBrutoVh);
-            this.segmentosTableAdapter.Fill(this.dSCOCOA.Segmentos);
+            this.segmentosTableAdapter.FillBy(this.dSCOCOA.Segmentos);
             this.impoconsumoTableAdapter.Fill(this.dSCOCOA.Impoconsumo);
             this.iVATableAdapter.Fill(this.dSCOCOA.IVA);
             this.claseTableAdapter.Fill(this.dSCOCOA.Clase);
             this.tipoProductoTableAdapter.Fill(this.dSCOCOA.TipoProducto);
-            this.productosTableAdapter.FillBy(this.dSCOCOA.Productos);
+            this.productosTableAdapter.Fill(this.dSCOCOA.Productos);
             VerificaPermisos();
         }
 
@@ -334,7 +334,7 @@ namespace COCOA.Maestras
         {
             try
             {
-                this.productosTableAdapter.FillBy(this.dSCOCOA.Productos);
+                this.productosTableAdapter.Fill(this.dSCOCOA.Productos);
             }
             catch (System.Exception ex)
             {
@@ -347,6 +347,6 @@ namespace COCOA.Maestras
         {
             frmListadoProductos miForm = new frmListadoProductos();
             miForm.ShowDialog();            
-        }
+        }        
     }
 }

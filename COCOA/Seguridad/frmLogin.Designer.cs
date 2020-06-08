@@ -125,6 +125,7 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // frmLogin
             // 
@@ -134,7 +135,6 @@
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.CancelButton = this.Cancelarbutton;
             this.ClientSize = new System.Drawing.Size(365, 269);
-            this.ControlBox = false;
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.AceptarButton);
             this.Controls.Add(this.pictureBox1);
@@ -142,7 +142,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.usuarioTextBox);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

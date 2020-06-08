@@ -548,7 +548,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(605, 342);
-            this.ControlBox = false;
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
             this.Controls.Add(emailLabel);
@@ -565,8 +564,10 @@
             this.Controls.Add(this.nombresTextBox);
             this.Controls.Add(this.usuariosDataGridView);
             this.Controls.Add(this.usuariosBindingNavigator);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUsuarios";
             this.Text = "Usuarios";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);

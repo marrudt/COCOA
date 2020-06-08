@@ -1,26 +1,18 @@
-﻿using DAL;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COCOA.Maestras
 {
-    public partial class frmPesoBrutoVehicular : Form
+    public partial class frmPesoBrutoVh : Form
     {
-        private DALUsuario usuarioLogueado;
-
-        public DALUsuario UsuarioLogueado
-        {
-            get { return usuarioLogueado; }
-            set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
-        public frmPesoBrutoVehicular()
+        public frmPesoBrutoVh()
         {
             InitializeComponent();
         }
@@ -32,24 +24,6 @@ namespace COCOA.Maestras
             this.pesoBrutoVhBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
             DeshabilitarCampos();
-        }
-
-        private void DeshabilitarCampos()
-        {
-            descripcionPesoBrutoVhTextBox.ReadOnly = true;
-            activoCheckBox.Enabled = false;
-
-            bindingNavigatorMoveFirstItem.Enabled = true;
-            bindingNavigatorMovePreviousItem.Enabled = true;
-            bindingNavigatorMoveNextItem.Enabled = true;
-            bindingNavigatorMoveLastItem.Enabled = true;
-            bindingNavigatorEdit.Enabled = true;
-            bindingNavigatorAddNewItem.Enabled = true;
-            bindingNavigatorDeleteItem.Enabled = true;
-            bindingNavigatorSaveItem.Enabled = false;
-            bindingNavigatorCancel.Enabled = false;
-            bindingNavigatorCountItem.Enabled = true;
-            bindingNavigatorExit.Enabled = true;
         }
 
         private bool ValidarCampos()
@@ -65,7 +39,7 @@ namespace COCOA.Maestras
             return true;
         }
 
-        private void frmPesoBrutoVehicular_Load(object sender, EventArgs e)
+        private void frmPesoBrutoVh_Load(object sender, EventArgs e)
         {
             this.pesoBrutoVhTableAdapter.Fill(this.dSCOCOA.PesoBrutoVh);
 
@@ -119,6 +93,24 @@ namespace COCOA.Maestras
         {
             this.pesoBrutoVhBindingSource.CancelEdit();
             DeshabilitarCampos();
+        }
+
+        private void DeshabilitarCampos()
+        {
+            descripcionPesoBrutoVhTextBox.ReadOnly = true;
+            activoCheckBox.Enabled = false;
+
+            bindingNavigatorMoveFirstItem.Enabled = true;
+            bindingNavigatorMovePreviousItem.Enabled = true;
+            bindingNavigatorMoveNextItem.Enabled = true;
+            bindingNavigatorMoveLastItem.Enabled = true;
+            bindingNavigatorEdit.Enabled = true;
+            bindingNavigatorAddNewItem.Enabled = true;
+            bindingNavigatorDeleteItem.Enabled = true;
+            bindingNavigatorSaveItem.Enabled = false;
+            bindingNavigatorCancel.Enabled = false;
+            bindingNavigatorCountItem.Enabled = true;
+            bindingNavigatorExit.Enabled = true;
         }
 
         private void bindingNavigatorExit_Click(object sender, EventArgs e)
