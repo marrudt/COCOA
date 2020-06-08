@@ -13,8 +13,6 @@ namespace COCOA.Busqueda
         }
 
         //public int IDProducto
-
-
         //{
         //    get => IdProducto;
         //}

@@ -40,7 +40,7 @@ namespace COCOA.Maestras
         {
             if (descripcionImpoconsumoTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionImpoconsumoTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionImpoconsumoTextBox, "El campo Descripción es obligatorio");
                 descripcionImpoconsumoTextBox.Focus();
                 return false;
             }
@@ -48,7 +48,7 @@ namespace COCOA.Maestras
 
             if (tarifaTextBox.Text == "")
             {
-                errorProvider1.SetError(tarifaTextBox, "El campo tarifa es obligatorio");
+                errorProvider1.SetError(tarifaTextBox, "El campo Tarifa es obligatorio");
                 tarifaTextBox.Focus();
                 return false;
             }

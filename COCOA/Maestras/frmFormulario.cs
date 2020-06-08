@@ -56,7 +56,7 @@ namespace COCOA.Maestras
         {
             if (descripcionFormularioTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionFormularioTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionFormularioTextBox, "El campo Descripción es obligatorio");
                 descripcionFormularioTextBox.Focus();
                 return false;
             }

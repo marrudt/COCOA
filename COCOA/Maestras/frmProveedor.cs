@@ -154,7 +154,7 @@ namespace COCOA.Maestras
 
             if (telefono1TextBox.Text == "")
             {
-                errorProvider1.SetError(telefono1TextBox, "Debe ingresar mínimo un numero teléfonico");
+                errorProvider1.SetError(telefono1TextBox, "Debe ingresar mínimo un número teléfonico");
                 nitTextBox.Focus();
                 return false;
             }

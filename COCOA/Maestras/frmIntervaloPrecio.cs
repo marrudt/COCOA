@@ -56,7 +56,7 @@ namespace COCOA.Maestras
         {
             if (descripcionIntervaloPrecioTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionIntervaloPrecioTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionIntervaloPrecioTextBox, "El campo Descripción es obligatorio");
                 descripcionIntervaloPrecioTextBox.Focus();
                 return false;
             }

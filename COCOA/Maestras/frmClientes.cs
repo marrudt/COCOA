@@ -53,7 +53,7 @@ namespace COCOA.Maestras
         {
             if (nitTextBox.Text == "")
             {
-                errorProvider1.SetError(nitTextBox, "El campo nit es obligatorio");
+                errorProvider1.SetError(nitTextBox, "El campo Nit es obligatorio");
                 nitTextBox.Focus();
                 return false;
             }
@@ -61,7 +61,7 @@ namespace COCOA.Maestras
 
             if (nombreClienteTextBox.Text == "")
             {
-                errorProvider1.SetError(nombreClienteTextBox, "El campo nombre de cliente es obligatorio");
+                errorProvider1.SetError(nombreClienteTextBox, "El campo Nombre de Cliente es obligatorio");
                 nombreClienteTextBox.Focus();
                 return false;
             }
@@ -69,7 +69,7 @@ namespace COCOA.Maestras
 
             if (direccionTextBox.Text == "")
             {
-                errorProvider1.SetError(direccionTextBox, "El campo dirección es oblitorio");
+                errorProvider1.SetError(direccionTextBox, "El campo Dirección es oblitorio");
                 direccionTextBox.Focus();
                 return false;
             }
@@ -102,7 +102,7 @@ namespace COCOA.Maestras
 
             if (telefono1TextBox.Text == "")
             {
-                errorProvider1.SetError(telefono1TextBox, "Debe ingresar mínimo un numero teléfonico");
+                errorProvider1.SetError(telefono1TextBox, "Debe ingresar mínimo un número teléfonico");
                 nitTextBox.Focus();
                 return false;
             }

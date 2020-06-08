@@ -56,7 +56,7 @@ namespace COCOA.Maestras
         {
             if (descripcionSegmentoTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionSegmentoTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionSegmentoTextBox, "El campo Descripción es obligatorio");
                 descripcionSegmentoTextBox.Focus();
                 return false;
             }

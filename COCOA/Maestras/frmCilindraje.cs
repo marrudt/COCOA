@@ -38,7 +38,7 @@ namespace COCOA.Maestras
         {
             if (descripcionCilindrajeTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionCilindrajeTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionCilindrajeTextBox, "El campo Descripción es obligatorio");
                 descripcionCilindrajeTextBox.Focus();
                 return false;
             }

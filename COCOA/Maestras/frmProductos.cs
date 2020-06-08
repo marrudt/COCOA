@@ -85,7 +85,7 @@ namespace COCOA.Maestras
         {
             if (idTipoProductoComboBox.SelectedIndex == -1)
             {
-                errorProvider1.SetError(idTipoProductoComboBox, "El campo tipo de producto es obligatorio");
+                errorProvider1.SetError(idTipoProductoComboBox, "El campo Tipo de producto es obligatorio");
                 idTipoProductoComboBox.Focus();
                 return false;
             }
@@ -93,7 +93,7 @@ namespace COCOA.Maestras
 
             if (codigoProductoTextBox.Text == "")
             {
-                errorProvider1.SetError(codigoProductoTextBox, "El campo código es obligatorio");
+                errorProvider1.SetError(codigoProductoTextBox, "El campo Código es obligatorio");
                 codigoProductoTextBox.Focus();
                 return false;
             }
@@ -101,7 +101,7 @@ namespace COCOA.Maestras
 
             if (descripcionProductoTextBox.Text == "")
             {
-                errorProvider1.SetError(codigoProductoTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(codigoProductoTextBox, "El campo Descripción es obligatorio");
                 codigoProductoTextBox.Focus();
                 return false;
             }
@@ -109,7 +109,7 @@ namespace COCOA.Maestras
 
             if (idClaseComboBox.SelectedIndex == -1)
             {
-                errorProvider1.SetError(idClaseComboBox, "El campo clase de producto es obligatorio");
+                errorProvider1.SetError(idClaseComboBox, "El campo Clase de producto es obligatorio");
                 idClaseComboBox.Focus();
                 return false;
             }
@@ -117,7 +117,7 @@ namespace COCOA.Maestras
 
             if (precioTextBox.Text == "")
             {
-                errorProvider1.SetError(precioTextBox, "El campo precio es obligatorio");
+                errorProvider1.SetError(precioTextBox, "El campo Precio es obligatorio");
                 precioTextBox.Focus();
                 return false;
             }
@@ -181,7 +181,7 @@ namespace COCOA.Maestras
 
             if (idIntervaloPrecioComboBox.SelectedIndex == -1)
             {
-                errorProvider1.SetError(idIntervaloPrecioComboBox, "El campo Intervalo de Precio es obligatorio");
+                errorProvider1.SetError(idIntervaloPrecioComboBox, "El ampo Intervalo de Precio es obligatorio");
                 idIntervaloPrecioComboBox.Focus();
                 return false;
             }
@@ -291,6 +291,7 @@ namespace COCOA.Maestras
                MessageBoxIcon.Question,
                MessageBoxDefaultButton.Button2);
             if (rta == DialogResult.No) return;
+
             if (DALOrdenCompraDetalle.ProductoTieneMovimientoByIdProducto(Convert.ToInt32(idProductoTextBox.Text)))
             {
                 MessageBox.Show("El Producto tiene movimientos", "No es posible eliminar",
@@ -340,7 +341,6 @@ namespace COCOA.Maestras
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private void bindingNavigatorPrint_Click(object sender, EventArgs e)

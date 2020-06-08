@@ -38,7 +38,7 @@ namespace COCOA.Maestras
         {
             if (numeroPasajerosTextBox.Text == "")
             {
-                errorProvider1.SetError(numeroPasajerosTextBox, "El campo número pasajeros es obligatorio");
+                errorProvider1.SetError(numeroPasajerosTextBox, "El campo Número Pasajeros es obligatorio");
                 numeroPasajerosTextBox.Focus();
                 return false;
             }
@@ -49,9 +49,7 @@ namespace COCOA.Maestras
 
         private void frmNumeroPasajeros_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSCOCOA.NumeroPasajeros' table. You can move, or remove it, as needed.
             this.numeroPasajerosTableAdapter.Fill(this.dSCOCOA.NumeroPasajeros);
-
         }
 
         private void bindingNavigatorEdit_Click(object sender, EventArgs e)

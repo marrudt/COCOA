@@ -35,11 +35,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.usuarioTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.usuarioComboBox = new System.Windows.Forms.ComboBox();
+            this.dSCOCOA = new COCOA.DSCOCOA();
+            this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuariosTableAdapter = new COCOA.DSCOCOATableAdapters.UsuariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // Cancelarbutton
@@ -106,13 +111,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "&Contraseña";
             // 
-            // usuarioTextBox
-            // 
-            this.usuarioTextBox.Location = new System.Drawing.Point(131, 107);
-            this.usuarioTextBox.Name = "usuarioTextBox";
-            this.usuarioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.usuarioTextBox.TabIndex = 15;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -127,6 +125,31 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
+            // usuarioComboBox
+            // 
+            this.usuarioComboBox.DataSource = this.usuariosBindingSource;
+            this.usuarioComboBox.DisplayMember = "IdUsuario";
+            this.usuarioComboBox.FormattingEnabled = true;
+            this.usuarioComboBox.Location = new System.Drawing.Point(131, 107);
+            this.usuarioComboBox.Name = "usuarioComboBox";
+            this.usuarioComboBox.Size = new System.Drawing.Size(100, 21);
+            this.usuarioComboBox.TabIndex = 21;
+            this.usuarioComboBox.ValueMember = "IdUsuario";
+            // 
+            // dSCOCOA
+            // 
+            this.dSCOCOA.DataSetName = "DSCOCOA";
+            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // usuariosBindingSource
+            // 
+            this.usuariosBindingSource.DataMember = "Usuarios";
+            this.usuariosBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // usuariosTableAdapter
+            // 
+            this.usuariosTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCambioUsuario
             // 
             this.AcceptButton = this.AceptarButton;
@@ -135,12 +158,12 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.CancelButton = this.Cancelarbutton;
             this.ClientSize = new System.Drawing.Size(365, 269);
+            this.Controls.Add(this.usuarioComboBox);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.AceptarButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.usuarioTextBox);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -149,8 +172,11 @@
             this.Name = "frmCambioUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambio de Usuario";
+            this.Load += new System.EventHandler(this.frmCambioUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,8 +189,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox usuarioTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ComboBox usuarioComboBox;
+        private DSCOCOA dSCOCOA;
+        private System.Windows.Forms.BindingSource usuariosBindingSource;
+        private DSCOCOATableAdapters.UsuariosTableAdapter usuariosTableAdapter;
     }
 }

@@ -30,7 +30,7 @@ namespace COCOA.Maestras
         {
             if (descripcionPesoBrutoVhTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionPesoBrutoVhTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionPesoBrutoVhTextBox, "El campo Descripción es obligatorio");
                 descripcionPesoBrutoVhTextBox.Focus();
                 return false;
             }

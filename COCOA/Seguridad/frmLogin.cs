@@ -32,10 +32,10 @@ namespace COCOA
 
         private void AceptarButton_Click(object sender, EventArgs e)
         {
-            if (usuarioTextBox.Text == "")
+            if (usuarioComboBox.SelectedIndex == -1)
             {
-                errorProvider1.SetError(usuarioTextBox, "Ingrese Usuario");
-                usuarioTextBox.Focus();
+                errorProvider1.SetError(usuarioComboBox, "Seleccione Usuario");
+                usuarioComboBox.Focus();
                 return;
             }
             errorProvider1.Clear();
@@ -48,19 +48,26 @@ namespace COCOA
             }
             errorProvider1.Clear();
 
-            if (DALUsuario.ValidarUsuario(usuarioTextBox.Text, passwordTextBox.Text))
+            if (DALUsuario.ValidarUsuario(usuarioComboBox.Text, passwordTextBox.Text))
             {
                 MessageBox.Show("Usuario o Contraseña no válido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                usuarioTextBox.Text = "";
+                usuarioComboBox.Text = "";
                 passwordTextBox.Text = "";
-                usuarioTextBox.Focus();
+                usuarioComboBox.Focus();
                 return;
             }
 
             frmPrincipal miForm = new frmPrincipal();
-            miForm.UsuarioLogueado = DALUsuario.GetUsuario(usuarioTextBox.Text);
+            miForm.UsuarioLogueado = DALUsuario.GetUsuario(usuarioComboBox.Text);
             miForm.Show();
             this.Hide();
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            this.usuariosTableAdapter.Fill(this.dSCOCOA.Usuarios);
+            usuarioComboBox.SelectedIndex = -1;
+            usuarioComboBox.Focus();
         }
     }
 }
