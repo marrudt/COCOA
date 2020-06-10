@@ -142,9 +142,10 @@ namespace COCOA.Maestras
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
-            this.ciudadesTableAdapter.Fill(this.dSCOCOA.Ciudades);
+            this.ciudadesTableAdapter.FillBy1(this.dSCOCOA.Ciudades);
             this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
             VerificaPermisos();
+            errorProvider1.Clear();
         }
 
         private void VerificaPermisos()
@@ -230,6 +231,7 @@ namespace COCOA.Maestras
             this.clientesBindingSource.CancelEdit();
             DeshabilitarCampos();
             VerificaPermisos();
+            errorProvider1.Clear();
         }
 
         private void bindingNavigatorSearch_Click(object sender, EventArgs e)

@@ -14,13 +14,7 @@ namespace COCOA.Listados
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
         }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
+        
         public frmListadoClientes()
         {
             InitializeComponent();
@@ -41,11 +35,6 @@ namespace COCOA.Listados
             //}
             miListado.SetDataSource(miDS);
             crystalReportViewer1.ReportSource = miListado;
-        }
-
-        private void frmListadoClientes_Load(object sender, EventArgs e)
-        {
-
-        }
+        }        
     }
 }

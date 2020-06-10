@@ -43,7 +43,7 @@ namespace COCOA.Transacciones
             this.ordenCompraTableAdapter.Fill(this.dSCOCOA.OrdenCompra);
             this.ordenCompraDetalleTableAdapter.Fill(this.dSCOCOA.OrdenCompraDetalle);
             this.proveedoresTableAdapter.FillBy1(this.dSCOCOA.Proveedores);
-            this.productosTableAdapter.Fill(this.dSCOCOA.Productos);
+            this.productosTableAdapter.FillBy1(this.dSCOCOA.Productos);
 
             fechaDateTimePicker.Value = DateTime.Now;
             proveedorComboBox.SelectedIndex = -1;
@@ -447,6 +447,14 @@ namespace COCOA.Transacciones
         private void numeroCosteoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void BusquedaProductoButton_Click(object sender, EventArgs e)
+        {
+            frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
+            miBusqueda.ShowDialog();
+            if (miBusqueda.IDProducto == 0) return;
+            vehiculoComboBox.SelectedValue = miBusqueda.IDProducto;
         }
     }
 }

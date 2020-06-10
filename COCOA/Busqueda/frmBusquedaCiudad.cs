@@ -17,13 +17,8 @@ namespace COCOA.Busqueda
 
         public int IDCiudad
         {
-          get { return IdCiudad; }          
-        }
-
-        //public int IDCiudad
-        //{
-        //    get => IdCiudad;
-        //}
+            get { return IdCiudad; }            
+        }        
 
         public frmBusquedaCiudad()
         {
@@ -99,7 +94,6 @@ namespace COCOA.Busqueda
                 codigo = codigoCiudadToolStripTextBox.Text;
                 descripcion = descripcionCiudadToolStripTextBox.Text;
             }
-
             try
             {
                 this.ciudadesTableAdapter.FillBy(this.dSCOCOA.Ciudades,

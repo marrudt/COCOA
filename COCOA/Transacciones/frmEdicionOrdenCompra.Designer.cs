@@ -98,6 +98,7 @@
             this.busquedaProveedorButton = new System.Windows.Forms.Button();
             this.BusquedaClienteButton = new System.Windows.Forms.Button();
             this.BusquedaProductoButton = new System.Windows.Forms.Button();
+            this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             idOrdenCompraLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             idProveedorLabel = new System.Windows.Forms.Label();
@@ -229,7 +230,7 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = this.ordenCompraDetalleTableAdapter;
@@ -282,7 +283,8 @@
             this.bindingNavigatorEdit,
             this.bindingNavigatorSaveItem,
             this.bindingNavigatorCancel,
-            this.bindingNavigatorExit});
+            this.bindingNavigatorExit,
+            this.bindingNavigatorSearch});
             this.ordenCompraBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.ordenCompraBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.ordenCompraBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -416,11 +418,13 @@
             // 
             // fechaDateTimePicker
             // 
+            this.fechaDateTimePicker.CustomFormat = "dd/MMM/yyyy";
             this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.ordenCompraBindingSource, "Fecha", true));
             this.fechaDateTimePicker.Enabled = false;
+            this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaDateTimePicker.Location = new System.Drawing.Point(110, 70);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(332, 20);
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(125, 20);
             this.fechaDateTimePicker.TabIndex = 3;
             // 
             // idProveedorComboBox
@@ -752,6 +756,17 @@
             this.BusquedaProductoButton.UseVisualStyleBackColor = false;
             this.BusquedaProductoButton.Click += new System.EventHandler(this.BusquedaProductoButton_Click);
             // 
+            // bindingNavigatorSearch
+            // 
+            this.bindingNavigatorSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorSearch.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearch.Image")));
+            this.bindingNavigatorSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorSearch.Name = "bindingNavigatorSearch";
+            this.bindingNavigatorSearch.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorSearch.Text = "toolStripButton3";
+            this.bindingNavigatorSearch.ToolTipText = "Buscar";
+            this.bindingNavigatorSearch.Click += new System.EventHandler(this.bindingNavigatorSearch_Click);
+            // 
             // frmEdicionOrdenCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -862,5 +877,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorSearch;
     }
 }

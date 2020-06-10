@@ -63,19 +63,7 @@
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             this.clientesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCiudad = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nitTextBox = new System.Windows.Forms.TextBox();
             this.nombreClienteTextBox = new System.Windows.Forms.TextBox();
             this.nombreContactoTextBox = new System.Windows.Forms.TextBox();
@@ -93,6 +81,18 @@
             this.idCiudadComboBox = new System.Windows.Forms.ComboBox();
             this.ciudadesTableAdapter = new COCOA.DSCOCOATableAdapters.CiudadesTableAdapter();
             this.busquedaCiudadButton = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCiudad = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             nitLabel = new System.Windows.Forms.Label();
             nombreClienteLabel = new System.Windows.Forms.Label();
             nombreContactoLabel = new System.Windows.Forms.Label();
@@ -153,7 +153,7 @@
             // telefono1Label
             // 
             telefono1Label.AutoSize = true;
-            telefono1Label.Location = new System.Drawing.Point(581, 44);
+            telefono1Label.Location = new System.Drawing.Point(576, 44);
             telefono1Label.Name = "telefono1Label";
             telefono1Label.Size = new System.Drawing.Size(61, 13);
             telefono1Label.TabIndex = 10;
@@ -162,7 +162,7 @@
             // telefono2Label
             // 
             telefono2Label.AutoSize = true;
-            telefono2Label.Location = new System.Drawing.Point(581, 69);
+            telefono2Label.Location = new System.Drawing.Point(576, 69);
             telefono2Label.Name = "telefono2Label";
             telefono2Label.Size = new System.Drawing.Size(61, 13);
             telefono2Label.TabIndex = 12;
@@ -171,7 +171,7 @@
             // celularLabel
             // 
             celularLabel.AutoSize = true;
-            celularLabel.Location = new System.Drawing.Point(600, 95);
+            celularLabel.Location = new System.Drawing.Point(595, 95);
             celularLabel.Name = "celularLabel";
             celularLabel.Size = new System.Drawing.Size(42, 13);
             celularLabel.TabIndex = 14;
@@ -189,7 +189,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(602, 149);
+            activoLabel.Location = new System.Drawing.Point(597, 149);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 18;
@@ -216,7 +216,7 @@
             // idCiudadLabel
             // 
             idCiudadLabel.AutoSize = true;
-            idCiudadLabel.Location = new System.Drawing.Point(599, 121);
+            idCiudadLabel.Location = new System.Drawing.Point(594, 121);
             idCiudadLabel.Name = "idCiudadLabel";
             idCiudadLabel.Size = new System.Drawing.Size(43, 13);
             idCiudadLabel.TabIndex = 16;
@@ -255,7 +255,7 @@
             this.clientesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clientesBindingNavigator.Name = "clientesBindingNavigator";
             this.clientesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clientesBindingNavigator.Size = new System.Drawing.Size(929, 31);
+            this.clientesBindingNavigator.Size = new System.Drawing.Size(970, 31);
             this.clientesBindingNavigator.TabIndex = 0;
             this.clientesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -272,8 +272,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -450,11 +450,199 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewCheckBoxColumn1});
             this.clientesDataGridView.DataSource = this.clientesBindingSource;
-            this.clientesDataGridView.Location = new System.Drawing.Point(0, 256);
+            this.clientesDataGridView.Location = new System.Drawing.Point(0, 241);
             this.clientesDataGridView.Name = "clientesDataGridView";
             this.clientesDataGridView.ReadOnly = true;
-            this.clientesDataGridView.Size = new System.Drawing.Size(929, 339);
+            this.clientesDataGridView.Size = new System.Drawing.Size(970, 354);
             this.clientesDataGridView.TabIndex = 22;
+            // 
+            // ciudadesBindingSource
+            // 
+            this.ciudadesBindingSource.DataMember = "Ciudades";
+            this.ciudadesBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // nitTextBox
+            // 
+            this.nitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Nit", true));
+            this.nitTextBox.Location = new System.Drawing.Point(121, 44);
+            this.nitTextBox.Name = "nitTextBox";
+            this.nitTextBox.ReadOnly = true;
+            this.nitTextBox.Size = new System.Drawing.Size(115, 20);
+            this.nitTextBox.TabIndex = 1;
+            this.nitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitTextBox_KeyPress);
+            // 
+            // nombreClienteTextBox
+            // 
+            this.nombreClienteTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombreClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "NombreCliente", true));
+            this.nombreClienteTextBox.Location = new System.Drawing.Point(121, 70);
+            this.nombreClienteTextBox.Name = "nombreClienteTextBox";
+            this.nombreClienteTextBox.ReadOnly = true;
+            this.nombreClienteTextBox.Size = new System.Drawing.Size(437, 20);
+            this.nombreClienteTextBox.TabIndex = 3;
+            // 
+            // nombreContactoTextBox
+            // 
+            this.nombreContactoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombreContactoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "NombreContacto", true));
+            this.nombreContactoTextBox.Location = new System.Drawing.Point(121, 96);
+            this.nombreContactoTextBox.Name = "nombreContactoTextBox";
+            this.nombreContactoTextBox.ReadOnly = true;
+            this.nombreContactoTextBox.Size = new System.Drawing.Size(437, 20);
+            this.nombreContactoTextBox.TabIndex = 5;
+            // 
+            // direccionTextBox
+            // 
+            this.direccionTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Direccion", true));
+            this.direccionTextBox.Location = new System.Drawing.Point(121, 122);
+            this.direccionTextBox.Name = "direccionTextBox";
+            this.direccionTextBox.ReadOnly = true;
+            this.direccionTextBox.Size = new System.Drawing.Size(437, 20);
+            this.direccionTextBox.TabIndex = 7;
+            // 
+            // telefono1TextBox
+            // 
+            this.telefono1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Telefono1", true));
+            this.telefono1TextBox.Location = new System.Drawing.Point(640, 40);
+            this.telefono1TextBox.Name = "telefono1TextBox";
+            this.telefono1TextBox.ReadOnly = true;
+            this.telefono1TextBox.Size = new System.Drawing.Size(236, 20);
+            this.telefono1TextBox.TabIndex = 11;
+            this.telefono1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono1TextBox_KeyPress);
+            // 
+            // telefono2TextBox
+            // 
+            this.telefono2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Telefono2", true));
+            this.telefono2TextBox.Location = new System.Drawing.Point(640, 66);
+            this.telefono2TextBox.Name = "telefono2TextBox";
+            this.telefono2TextBox.ReadOnly = true;
+            this.telefono2TextBox.Size = new System.Drawing.Size(236, 20);
+            this.telefono2TextBox.TabIndex = 13;
+            this.telefono2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono2TextBox_KeyPress);
+            // 
+            // celularTextBox
+            // 
+            this.celularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Celular", true));
+            this.celularTextBox.Location = new System.Drawing.Point(640, 92);
+            this.celularTextBox.Name = "celularTextBox";
+            this.celularTextBox.ReadOnly = true;
+            this.celularTextBox.Size = new System.Drawing.Size(236, 20);
+            this.celularTextBox.TabIndex = 15;
+            this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celularTextBox_KeyPress);
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(121, 148);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.ReadOnly = true;
+            this.emailTextBox.Size = new System.Drawing.Size(437, 20);
+            this.emailTextBox.TabIndex = 9;
+            // 
+            // activoCheckBox
+            // 
+            this.activoCheckBox.Checked = true;
+            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.clientesBindingSource, "Activo", true));
+            this.activoCheckBox.Enabled = false;
+            this.activoCheckBox.Location = new System.Drawing.Point(640, 144);
+            this.activoCheckBox.Name = "activoCheckBox";
+            this.activoCheckBox.Size = new System.Drawing.Size(81, 24);
+            this.activoCheckBox.TabIndex = 19;
+            this.activoCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // notasTextBox
+            // 
+            this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Notas", true));
+            this.notasTextBox.Location = new System.Drawing.Point(121, 174);
+            this.notasTextBox.Multiline = true;
+            this.notasTextBox.Name = "notasTextBox";
+            this.notasTextBox.ReadOnly = true;
+            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.notasTextBox.Size = new System.Drawing.Size(755, 61);
+            this.notasTextBox.TabIndex = 21;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // idClienteTextBox
+            // 
+            this.idClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "IdCliente", true));
+            this.idClienteTextBox.Enabled = false;
+            this.idClienteTextBox.Location = new System.Drawing.Point(509, 40);
+            this.idClienteTextBox.Name = "idClienteTextBox";
+            this.idClienteTextBox.ReadOnly = true;
+            this.idClienteTextBox.Size = new System.Drawing.Size(49, 20);
+            this.idClienteTextBox.TabIndex = 3;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CilindrajesTableAdapter = null;
+            this.tableAdapterManager.CiudadesTableAdapter = null;
+            this.tableAdapterManager.ClaseTableAdapter = null;
+            this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
+            this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
+            this.tableAdapterManager.CotizacionTableAdapter = null;
+            this.tableAdapterManager.DepartamentosTableAdapter = null;
+            this.tableAdapterManager.FormularioTableAdapter = null;
+            this.tableAdapterManager.ImpoconsumoTableAdapter = null;
+            this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
+            this.tableAdapterManager.IVATableAdapter = null;
+            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
+            this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
+            this.tableAdapterManager.OrdenCompraTableAdapter = null;
+            this.tableAdapterManager.PaisesTableAdapter = null;
+            this.tableAdapterManager.PermisoRolTableAdapter = null;
+            this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
+            this.tableAdapterManager.ProductosTableAdapter = null;
+            this.tableAdapterManager.ProveedoresTableAdapter = null;
+            this.tableAdapterManager.RolTableAdapter = null;
+            this.tableAdapterManager.SegmentosTableAdapter = null;
+            this.tableAdapterManager.TipoProductoTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsuariosTableAdapter = null;
+            // 
+            // idCiudadComboBox
+            // 
+            this.idCiudadComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clientesBindingSource, "IdCiudad", true));
+            this.idCiudadComboBox.DataSource = this.ciudadesBindingSource;
+            this.idCiudadComboBox.DisplayMember = "DescripcionCiudad";
+            this.idCiudadComboBox.Enabled = false;
+            this.idCiudadComboBox.FormattingEnabled = true;
+            this.idCiudadComboBox.Location = new System.Drawing.Point(640, 118);
+            this.idCiudadComboBox.Name = "idCiudadComboBox";
+            this.idCiudadComboBox.Size = new System.Drawing.Size(236, 21);
+            this.idCiudadComboBox.TabIndex = 17;
+            this.idCiudadComboBox.ValueMember = "IdCiudad";
+            // 
+            // ciudadesTableAdapter
+            // 
+            this.ciudadesTableAdapter.ClearBeforeFill = true;
+            // 
+            // busquedaCiudadButton
+            // 
+            this.busquedaCiudadButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.busquedaCiudadButton.Enabled = false;
+            this.busquedaCiudadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busquedaCiudadButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.busquedaCiudadButton.Location = new System.Drawing.Point(896, 119);
+            this.busquedaCiudadButton.Name = "busquedaCiudadButton";
+            this.busquedaCiudadButton.Size = new System.Drawing.Size(63, 23);
+            this.busquedaCiudadButton.TabIndex = 23;
+            this.busquedaCiudadButton.Text = "Buscar";
+            this.busquedaCiudadButton.UseVisualStyleBackColor = false;
+            this.busquedaCiudadButton.Click += new System.EventHandler(this.busquedaCiudadButton_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -502,18 +690,15 @@
             // 
             // IdCiudad
             // 
+            this.IdCiudad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.IdCiudad.DataPropertyName = "IdCiudad";
             this.IdCiudad.DataSource = this.ciudadesBindingSource;
             this.IdCiudad.DisplayMember = "DescripcionCiudad";
-            this.IdCiudad.HeaderText = "IdCiudad";
+            this.IdCiudad.HeaderText = "Ciudad";
             this.IdCiudad.Name = "IdCiudad";
             this.IdCiudad.ReadOnly = true;
             this.IdCiudad.ValueMember = "IdCiudad";
-            // 
-            // ciudadesBindingSource
-            // 
-            this.ciudadesBindingSource.DataMember = "Ciudades";
-            this.ciudadesBindingSource.DataSource = this.dSCOCOA;
+            this.IdCiudad.Width = 250;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -566,195 +751,12 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             // 
-            // nitTextBox
-            // 
-            this.nitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Nit", true));
-            this.nitTextBox.Location = new System.Drawing.Point(121, 44);
-            this.nitTextBox.Name = "nitTextBox";
-            this.nitTextBox.ReadOnly = true;
-            this.nitTextBox.Size = new System.Drawing.Size(115, 20);
-            this.nitTextBox.TabIndex = 1;
-            this.nitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitTextBox_KeyPress);
-            // 
-            // nombreClienteTextBox
-            // 
-            this.nombreClienteTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nombreClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "NombreCliente", true));
-            this.nombreClienteTextBox.Location = new System.Drawing.Point(121, 70);
-            this.nombreClienteTextBox.Name = "nombreClienteTextBox";
-            this.nombreClienteTextBox.ReadOnly = true;
-            this.nombreClienteTextBox.Size = new System.Drawing.Size(437, 20);
-            this.nombreClienteTextBox.TabIndex = 3;
-            // 
-            // nombreContactoTextBox
-            // 
-            this.nombreContactoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nombreContactoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "NombreContacto", true));
-            this.nombreContactoTextBox.Location = new System.Drawing.Point(121, 96);
-            this.nombreContactoTextBox.Name = "nombreContactoTextBox";
-            this.nombreContactoTextBox.ReadOnly = true;
-            this.nombreContactoTextBox.Size = new System.Drawing.Size(437, 20);
-            this.nombreContactoTextBox.TabIndex = 5;
-            // 
-            // direccionTextBox
-            // 
-            this.direccionTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Direccion", true));
-            this.direccionTextBox.Location = new System.Drawing.Point(121, 122);
-            this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.ReadOnly = true;
-            this.direccionTextBox.Size = new System.Drawing.Size(437, 20);
-            this.direccionTextBox.TabIndex = 7;
-            // 
-            // telefono1TextBox
-            // 
-            this.telefono1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Telefono1", true));
-            this.telefono1TextBox.Location = new System.Drawing.Point(645, 40);
-            this.telefono1TextBox.Name = "telefono1TextBox";
-            this.telefono1TextBox.ReadOnly = true;
-            this.telefono1TextBox.Size = new System.Drawing.Size(190, 20);
-            this.telefono1TextBox.TabIndex = 11;
-            this.telefono1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono1TextBox_KeyPress);
-            // 
-            // telefono2TextBox
-            // 
-            this.telefono2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Telefono2", true));
-            this.telefono2TextBox.Location = new System.Drawing.Point(645, 66);
-            this.telefono2TextBox.Name = "telefono2TextBox";
-            this.telefono2TextBox.ReadOnly = true;
-            this.telefono2TextBox.Size = new System.Drawing.Size(190, 20);
-            this.telefono2TextBox.TabIndex = 13;
-            this.telefono2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono2TextBox_KeyPress);
-            // 
-            // celularTextBox
-            // 
-            this.celularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Celular", true));
-            this.celularTextBox.Location = new System.Drawing.Point(645, 92);
-            this.celularTextBox.Name = "celularTextBox";
-            this.celularTextBox.ReadOnly = true;
-            this.celularTextBox.Size = new System.Drawing.Size(190, 20);
-            this.celularTextBox.TabIndex = 15;
-            this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celularTextBox_KeyPress);
-            // 
-            // emailTextBox
-            // 
-            this.emailTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(121, 148);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.ReadOnly = true;
-            this.emailTextBox.Size = new System.Drawing.Size(437, 20);
-            this.emailTextBox.TabIndex = 9;
-            // 
-            // activoCheckBox
-            // 
-            this.activoCheckBox.Checked = true;
-            this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.clientesBindingSource, "Activo", true));
-            this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(645, 144);
-            this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(81, 24);
-            this.activoCheckBox.TabIndex = 19;
-            this.activoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // notasTextBox
-            // 
-            this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "Notas", true));
-            this.notasTextBox.Location = new System.Drawing.Point(121, 174);
-            this.notasTextBox.Multiline = true;
-            this.notasTextBox.Name = "notasTextBox";
-            this.notasTextBox.ReadOnly = true;
-            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.notasTextBox.Size = new System.Drawing.Size(714, 76);
-            this.notasTextBox.TabIndex = 21;
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
-            // 
-            // idClienteTextBox
-            // 
-            this.idClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clientesBindingSource, "IdCliente", true));
-            this.idClienteTextBox.Enabled = false;
-            this.idClienteTextBox.Location = new System.Drawing.Point(509, 40);
-            this.idClienteTextBox.Name = "idClienteTextBox";
-            this.idClienteTextBox.ReadOnly = true;
-            this.idClienteTextBox.Size = new System.Drawing.Size(49, 20);
-            this.idClienteTextBox.TabIndex = 3;
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CilindrajesTableAdapter = null;
-            this.tableAdapterManager.CiudadesTableAdapter = null;
-            this.tableAdapterManager.ClaseTableAdapter = null;
-            this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
-            this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
-            this.tableAdapterManager.CotizacionTableAdapter = null;
-            this.tableAdapterManager.DepartamentosTableAdapter = null;
-            this.tableAdapterManager.FormularioTableAdapter = null;
-            this.tableAdapterManager.ImpoconsumoTableAdapter = null;
-            this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
-            this.tableAdapterManager.IVATableAdapter = null;
-            this.tableAdapterManager.ListadoClientesTableAdapter = null;
-            this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
-            this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
-            this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
-            this.tableAdapterManager.OrdenCompraTableAdapter = null;
-            this.tableAdapterManager.PaisesTableAdapter = null;
-            this.tableAdapterManager.PermisoRolTableAdapter = null;
-            this.tableAdapterManager.PesoBrutoVhTableAdapter = null;
-            this.tableAdapterManager.ProductosTableAdapter = null;
-            this.tableAdapterManager.ProveedoresTableAdapter = null;
-            this.tableAdapterManager.RolTableAdapter = null;
-            this.tableAdapterManager.SegmentosTableAdapter = null;
-            this.tableAdapterManager.TipoProductoTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UsuariosTableAdapter = null;
-            // 
-            // idCiudadComboBox
-            // 
-            this.idCiudadComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clientesBindingSource, "IdCiudad", true));
-            this.idCiudadComboBox.DataSource = this.ciudadesBindingSource;
-            this.idCiudadComboBox.DisplayMember = "DescripcionCiudad";
-            this.idCiudadComboBox.Enabled = false;
-            this.idCiudadComboBox.FormattingEnabled = true;
-            this.idCiudadComboBox.Location = new System.Drawing.Point(645, 118);
-            this.idCiudadComboBox.Name = "idCiudadComboBox";
-            this.idCiudadComboBox.Size = new System.Drawing.Size(190, 21);
-            this.idCiudadComboBox.TabIndex = 17;
-            this.idCiudadComboBox.ValueMember = "IdCiudad";
-            // 
-            // ciudadesTableAdapter
-            // 
-            this.ciudadesTableAdapter.ClearBeforeFill = true;
-            // 
-            // busquedaCiudadButton
-            // 
-            this.busquedaCiudadButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.busquedaCiudadButton.Enabled = false;
-            this.busquedaCiudadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busquedaCiudadButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaCiudadButton.Location = new System.Drawing.Point(858, 119);
-            this.busquedaCiudadButton.Name = "busquedaCiudadButton";
-            this.busquedaCiudadButton.Size = new System.Drawing.Size(63, 23);
-            this.busquedaCiudadButton.TabIndex = 23;
-            this.busquedaCiudadButton.Text = "Buscar";
-            this.busquedaCiudadButton.UseVisualStyleBackColor = false;
-            this.busquedaCiudadButton.Click += new System.EventHandler(this.busquedaCiudadButton_Click);
-            // 
             // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(929, 595);
+            this.ClientSize = new System.Drawing.Size(970, 595);
             this.Controls.Add(this.busquedaCiudadButton);
             this.Controls.Add(idCiudadLabel);
             this.Controls.Add(this.idCiudadComboBox);
@@ -839,6 +841,7 @@
         private System.Windows.Forms.ComboBox idCiudadComboBox;
         private System.Windows.Forms.BindingSource ciudadesBindingSource;
         private DSCOCOATableAdapters.CiudadesTableAdapter ciudadesTableAdapter;
+        private System.Windows.Forms.Button busquedaCiudadButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -851,6 +854,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.Button busquedaCiudadButton;
     }
 }

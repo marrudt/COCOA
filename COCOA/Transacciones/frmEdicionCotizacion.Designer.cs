@@ -37,11 +37,11 @@
             System.Windows.Forms.Label sitioEntregaLabel;
             System.Windows.Forms.Label idClienteLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdicionCotizacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.cotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cotizacionTableAdapter = new COCOA.DSCOCOATableAdapters.CotizacionTableAdapter();
@@ -61,6 +61,7 @@
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             this.idCotizacionTextBox = new System.Windows.Forms.TextBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.contactoTextBox = new System.Windows.Forms.TextBox();
@@ -201,7 +202,7 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
@@ -242,7 +243,8 @@
             this.bindingNavigatorEdit,
             this.bindingNavigatorSaveItem,
             this.bindingNavigatorCancel,
-            this.bindingNavigatorExit});
+            this.bindingNavigatorExit,
+            this.bindingNavigatorSearch});
             this.cotizacionBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.cotizacionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.cotizacionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -257,8 +259,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -288,7 +290,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -366,6 +367,17 @@
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
+            // bindingNavigatorSearch
+            // 
+            this.bindingNavigatorSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorSearch.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearch.Image")));
+            this.bindingNavigatorSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorSearch.Name = "bindingNavigatorSearch";
+            this.bindingNavigatorSearch.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorSearch.Text = "toolStripButton3";
+            this.bindingNavigatorSearch.ToolTipText = "Buscar";
+            this.bindingNavigatorSearch.Click += new System.EventHandler(this.bindingNavigatorSearch_Click);
+            // 
             // idCotizacionTextBox
             // 
             this.idCotizacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionBindingSource, "IdCotizacion", true));
@@ -377,11 +389,13 @@
             // 
             // fechaDateTimePicker
             // 
+            this.fechaDateTimePicker.CustomFormat = "dd/MMM/yyyy";
             this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.cotizacionBindingSource, "Fecha", true));
             this.fechaDateTimePicker.Enabled = false;
+            this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaDateTimePicker.Location = new System.Drawing.Point(124, 74);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(332, 20);
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(125, 20);
             this.fechaDateTimePicker.TabIndex = 3;
             // 
             // contactoTextBox
@@ -505,10 +519,10 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Precio";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn7.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 62;
@@ -517,10 +531,10 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Format = "N0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 74;
@@ -529,10 +543,10 @@
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn9.DataPropertyName = "PorcentajeIVA";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "N0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn9.HeaderText = "IVA";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 49;
@@ -541,10 +555,10 @@
             // 
             this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "PorcentajeImpoconsumo";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Format = "N0";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn10.HeaderText = "Impoc.";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Width = 64;
@@ -553,10 +567,10 @@
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Estampillas";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "N1";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Format = "N1";
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn11.HeaderText = "Estampillas";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 84;
@@ -779,5 +793,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private DSCOCOATableAdapters.ClientesTableAdapter clientesTableAdapter;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorSearch;
     }
 }

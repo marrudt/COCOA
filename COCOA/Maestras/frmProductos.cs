@@ -14,13 +14,7 @@ namespace COCOA.Maestras
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }        
 
         public frmProductos()
         {

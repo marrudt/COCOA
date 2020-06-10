@@ -271,7 +271,7 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = this.impoconsumoTableAdapter;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = this.iVATableAdapter;
-            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
@@ -365,7 +365,6 @@
             this.busquedaDataGridView.DataSource = this.productosBindingSource;
             this.busquedaDataGridView.Location = new System.Drawing.Point(0, 102);
             this.busquedaDataGridView.Name = "busquedaDataGridView";
-            this.busquedaDataGridView.ReadOnly = true;
             this.busquedaDataGridView.Size = new System.Drawing.Size(1119, 484);
             this.busquedaDataGridView.TabIndex = 22;
             // 
@@ -419,11 +418,11 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdProducto";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IdProducto";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
+            this.dataGridViewTextBoxColumn1.Width = 41;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -433,7 +432,6 @@
             this.dataGridViewTextBoxColumn2.DisplayMember = "DescripcionTipoProducto";
             this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IdTipoProducto";
@@ -445,7 +443,6 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "CodigoProducto";
             this.dataGridViewTextBoxColumn3.HeaderText = "Código";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 65;
             // 
             // dataGridViewTextBoxColumn4
@@ -454,7 +451,6 @@
             this.dataGridViewTextBoxColumn4.DataPropertyName = "DescripcionProducto";
             this.dataGridViewTextBoxColumn4.HeaderText = "Descripción";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 88;
             // 
             // dataGridViewTextBoxColumn5
@@ -462,7 +458,6 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "DetalleProducto";
             this.dataGridViewTextBoxColumn5.HeaderText = "DetalleProducto";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
@@ -473,7 +468,6 @@
             this.dataGridViewTextBoxColumn6.DisplayMember = "DescripcionClase";
             this.dataGridViewTextBoxColumn6.HeaderText = "Clase";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn6.ValueMember = "IdClase";
@@ -485,7 +479,6 @@
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ModeloAno";
             this.dataGridViewTextBoxColumn7.HeaderText = "Modelo Año";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 60;
             // 
             // dataGridViewTextBoxColumn8
@@ -498,7 +491,6 @@
             this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn8.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Width = 62;
             // 
             // dataGridViewTextBoxColumn9
@@ -509,7 +501,6 @@
             this.dataGridViewTextBoxColumn9.DisplayMember = "Tarifa";
             this.dataGridViewTextBoxColumn9.HeaderText = "IVA";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
             this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn9.ValueMember = "IdIVA";
@@ -523,7 +514,6 @@
             this.dataGridViewTextBoxColumn10.DisplayMember = "Tarifa";
             this.dataGridViewTextBoxColumn10.HeaderText = "Impoconsumo";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
             this.dataGridViewTextBoxColumn10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn10.ValueMember = "IdImpoconsumo";
@@ -537,7 +527,6 @@
             this.dataGridViewTextBoxColumn11.DisplayMember = "DescripcionSegmento";
             this.dataGridViewTextBoxColumn11.HeaderText = "Segmento";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn11.ValueMember = "IdSegmento";
@@ -551,7 +540,6 @@
             this.dataGridViewTextBoxColumn12.DisplayMember = "DescripcionCilindraje";
             this.dataGridViewTextBoxColumn12.HeaderText = "Cilindraje";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn12.ValueMember = "IdCilindraje";
@@ -565,7 +553,6 @@
             this.dataGridViewTextBoxColumn13.DisplayMember = "NumeroPasajeros";
             this.dataGridViewTextBoxColumn13.HeaderText = "Número Pasajeros";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
             this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn13.ValueMember = "IdNumeroPasajeros";
@@ -579,7 +566,6 @@
             this.dataGridViewTextBoxColumn14.DisplayMember = "DescripcionPesoBrutoVh";
             this.dataGridViewTextBoxColumn14.HeaderText = "Peso Bruto Vh";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
             this.dataGridViewTextBoxColumn14.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn14.ValueMember = "IdPesoBrutoVh";
@@ -593,7 +579,6 @@
             this.dataGridViewTextBoxColumn15.DisplayMember = "DescripcionIntervaloPrecio";
             this.dataGridViewTextBoxColumn15.HeaderText = "Intervalo Precio";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
             this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn15.ValueMember = "IdIntervaloPrecio";
@@ -604,7 +589,6 @@
             this.dataGridViewTextBoxColumn16.DataPropertyName = "Notas";
             this.dataGridViewTextBoxColumn16.HeaderText = "Notas";
             this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
             this.dataGridViewTextBoxColumn16.Visible = false;
             // 
             // dataGridViewCheckBoxColumn1
@@ -613,7 +597,6 @@
             this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
             this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
             // frmBusquedaProducto

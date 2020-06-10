@@ -16,26 +16,13 @@ namespace COCOA.Reportes
             set { usuarioLogueado = value; }
         }
 
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
         private int idOrdenCompra;
 
         public int IDOrdenCompra
         {
           get { return idOrdenCompra; }
           set { idOrdenCompra = value; }
-        }
-
-        //public int IDOrdenCompra
-        //{
-        //    get => idOrdenCompra;
-        //    set => idOrdenCompra = value;
-        //}
-
+        }        
 
         public frmReporteOrdenCompra()
         {

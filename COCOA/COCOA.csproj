@@ -124,7 +124,7 @@
     <Compile Include="DSCOCOA.cs">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DSCOCOA1.Designer.cs">
+    <Compile Include="DSCOCOA.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSCOCOA.xsd</DependentUpon>
@@ -560,7 +560,7 @@
     <None Include="DSCOCOA.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DSCOCOA1.Designer.cs</LastGenOutput>
+      <LastGenOutput>DSCOCOA.Designer.cs</LastGenOutput>
     </None>
     <None Include="DSCOCOA.xss">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>

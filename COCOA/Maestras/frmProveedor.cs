@@ -15,13 +15,7 @@ namespace COCOA.Maestras
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }        
 
         public frmProveedor()
         {
@@ -165,9 +159,10 @@ namespace COCOA.Maestras
 
         private void frmProveedor_Load(object sender, EventArgs e)
         {
-            this.ciudadesTableAdapter.Fill(this.dSCOCOA.Ciudades);
+            this.ciudadesTableAdapter.FillBy1(this.dSCOCOA.Ciudades);
             this.proveedoresTableAdapter.Fill(this.dSCOCOA.Proveedores);
             VerificaPermisos();
+            errorProvider1.Clear();
         }
 
         private void bindingNavigatorEdit_Click(object sender, EventArgs e)
@@ -230,6 +225,7 @@ namespace COCOA.Maestras
             this.proveedoresBindingSource.CancelEdit();
             DeshabilitarCampos();
             VerificaPermisos();
+            errorProvider1.Clear();
         }
 
         private void bindingNavigatorSearch_Click(object sender, EventArgs e)
@@ -279,6 +275,6 @@ namespace COCOA.Maestras
             if (miBusqueda.IDCiudad == 0) return;
             int posicion = ciudadesBindingSource.Find("IDCiudad", miBusqueda.IDCiudad);
             ciudadesBindingSource.Position = posicion;
-        }
+        }        
     }
 }

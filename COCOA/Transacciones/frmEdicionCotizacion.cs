@@ -14,13 +14,7 @@ namespace COCOA.Transacciones
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }       
 
         public frmEdicionCotizacion()
         {
@@ -91,7 +85,7 @@ namespace COCOA.Transacciones
 
         private void VerificaPermisos()
         {
-            if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 33))
+            if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 31))
             {
                 //bindingNavigatorAddNewItemDetalle.Enabled = true;
                 bindingNavigatorEdit.Enabled = true;
@@ -191,6 +185,12 @@ namespace COCOA.Transacciones
             miBusqueda.ShowDialog();
             if (miBusqueda.IDCliente == 0) return;
             idClienteComboBox.SelectedValue = miBusqueda.IDCliente;
+        }
+
+        private void bindingNavigatorSearch_Click(object sender, EventArgs e)
+        {
+            frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
+            miBusqueda.ShowDialog();            
         }
     }
 }

@@ -496,11 +496,11 @@
             // 
             // fechaDateTimePicker
             // 
-            this.fechaDateTimePicker.CustomFormat = "";
-            this.fechaDateTimePicker.Enabled = false;
+            this.fechaDateTimePicker.CustomFormat = "dd/MMM/yyyy";
+            this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaDateTimePicker.Location = new System.Drawing.Point(66, 17);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(198, 20);
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(125, 20);
             this.fechaDateTimePicker.TabIndex = 1;
             // 
             // label2
@@ -577,14 +577,13 @@
             // 
             // productoLabel
             // 
-            this.productoLabel.AutoSize = true;
             this.productoLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.productoLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productoLabel.ForeColor = System.Drawing.Color.Maroon;
             this.productoLabel.Location = new System.Drawing.Point(129, 52);
             this.productoLabel.Name = "productoLabel";
-            this.productoLabel.Size = new System.Drawing.Size(104, 15);
+            this.productoLabel.Size = new System.Drawing.Size(381, 17);
             this.productoLabel.TabIndex = 5;
             this.productoLabel.Text = "Detalle Producto";
             // 
@@ -639,7 +638,7 @@
             this.buscarProductoButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.buscarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarProductoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buscarProductoButton.Location = new System.Drawing.Point(447, 46);
+            this.buscarProductoButton.Location = new System.Drawing.Point(447, 21);
             this.buscarProductoButton.Name = "buscarProductoButton";
             this.buscarProductoButton.Size = new System.Drawing.Size(63, 23);
             this.buscarProductoButton.TabIndex = 6;

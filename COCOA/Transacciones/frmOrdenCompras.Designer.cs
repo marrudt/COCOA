@@ -75,6 +75,7 @@
             this.borrarLineaButton = new System.Windows.Forms.Button();
             this.salirButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BusquedaProductoButton = new System.Windows.Forms.Button();
             this.vehiculoComboBox = new System.Windows.Forms.ComboBox();
             this.ordenCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contratoTextBox = new System.Windows.Forms.TextBox();
@@ -159,11 +160,11 @@
             // 
             // fechaDateTimePicker
             // 
-            this.fechaDateTimePicker.CustomFormat = "";
-            this.fechaDateTimePicker.Enabled = false;
+            this.fechaDateTimePicker.CustomFormat = "dd/MMM/yyyy";
+            this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaDateTimePicker.Location = new System.Drawing.Point(97, 43);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(321, 20);
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(125, 20);
             this.fechaDateTimePicker.TabIndex = 1;
             // 
             // label3
@@ -347,14 +348,13 @@
             // 
             // productoLabel
             // 
-            this.productoLabel.AutoSize = true;
             this.productoLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.productoLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productoLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.productoLabel.Location = new System.Drawing.Point(172, 53);
+            this.productoLabel.Location = new System.Drawing.Point(166, 53);
             this.productoLabel.Name = "productoLabel";
-            this.productoLabel.Size = new System.Drawing.Size(104, 15);
+            this.productoLabel.Size = new System.Drawing.Size(281, 17);
             this.productoLabel.TabIndex = 5;
             this.productoLabel.Text = "Detalle Producto";
             // 
@@ -381,7 +381,6 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = this.ordenCompraDetalleTableAdapter;
@@ -588,6 +587,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.BusquedaProductoButton);
             this.groupBox1.Controls.Add(idProductoLabel);
             this.groupBox1.Controls.Add(this.vehiculoComboBox);
             this.groupBox1.Controls.Add(contratoLabel);
@@ -609,6 +609,19 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
+            // 
+            // BusquedaProductoButton
+            // 
+            this.BusquedaProductoButton.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.BusquedaProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BusquedaProductoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BusquedaProductoButton.Location = new System.Drawing.Point(449, 171);
+            this.BusquedaProductoButton.Name = "BusquedaProductoButton";
+            this.BusquedaProductoButton.Size = new System.Drawing.Size(63, 23);
+            this.BusquedaProductoButton.TabIndex = 21;
+            this.BusquedaProductoButton.Text = "Buscar";
+            this.BusquedaProductoButton.UseVisualStyleBackColor = false;
+            this.BusquedaProductoButton.Click += new System.EventHandler(this.BusquedaProductoButton_Click);
             // 
             // vehiculoComboBox
             // 
@@ -812,5 +825,6 @@
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private DSCOCOATableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.ComboBox vehiculoComboBox;
+        private System.Windows.Forms.Button BusquedaProductoButton;
     }
 }

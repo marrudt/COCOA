@@ -66,19 +66,7 @@
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorPrint = new System.Windows.Forms.ToolStripButton();
             this.proveedoresDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nitTextBox = new System.Windows.Forms.TextBox();
             this.nombreProveedorTextBox = new System.Windows.Forms.TextBox();
             this.nombreContactoTextBox = new System.Windows.Forms.TextBox();
@@ -93,6 +81,18 @@
             this.activoCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.busquedaCiudadButton = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             nitLabel = new System.Windows.Forms.Label();
             nombreProveedorLabel = new System.Windows.Forms.Label();
             nombreContactoLabel = new System.Windows.Forms.Label();
@@ -180,7 +180,7 @@
             // telefono1Label
             // 
             telefono1Label.AutoSize = true;
-            telefono1Label.Location = new System.Drawing.Point(591, 44);
+            telefono1Label.Location = new System.Drawing.Point(587, 44);
             telefono1Label.Name = "telefono1Label";
             telefono1Label.Size = new System.Drawing.Size(61, 13);
             telefono1Label.TabIndex = 10;
@@ -189,7 +189,7 @@
             // telefono2Label
             // 
             telefono2Label.AutoSize = true;
-            telefono2Label.Location = new System.Drawing.Point(591, 70);
+            telefono2Label.Location = new System.Drawing.Point(587, 70);
             telefono2Label.Name = "telefono2Label";
             telefono2Label.Size = new System.Drawing.Size(61, 13);
             telefono2Label.TabIndex = 12;
@@ -198,7 +198,7 @@
             // celularLabel
             // 
             celularLabel.AutoSize = true;
-            celularLabel.Location = new System.Drawing.Point(610, 96);
+            celularLabel.Location = new System.Drawing.Point(606, 96);
             celularLabel.Name = "celularLabel";
             celularLabel.Size = new System.Drawing.Size(42, 13);
             celularLabel.TabIndex = 14;
@@ -207,7 +207,7 @@
             // idCiudadLabel
             // 
             idCiudadLabel.AutoSize = true;
-            idCiudadLabel.Location = new System.Drawing.Point(609, 122);
+            idCiudadLabel.Location = new System.Drawing.Point(605, 122);
             idCiudadLabel.Name = "idCiudadLabel";
             idCiudadLabel.Size = new System.Drawing.Size(43, 13);
             idCiudadLabel.TabIndex = 16;
@@ -216,7 +216,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(612, 151);
+            activoLabel.Location = new System.Drawing.Point(608, 151);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 18;
@@ -250,7 +250,7 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            this.tableAdapterManager.ListadoClientesTableAdapter = null;
+            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
@@ -303,15 +303,15 @@
             this.proveedoresBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.proveedoresBindingNavigator.Name = "proveedoresBindingNavigator";
             this.proveedoresBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.proveedoresBindingNavigator.Size = new System.Drawing.Size(932, 31);
+            this.proveedoresBindingNavigator.Size = new System.Drawing.Size(990, 31);
             this.proveedoresBindingNavigator.TabIndex = 0;
             this.proveedoresBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -489,121 +489,13 @@
             this.proveedoresDataGridView.Location = new System.Drawing.Point(0, 251);
             this.proveedoresDataGridView.Name = "proveedoresDataGridView";
             this.proveedoresDataGridView.ReadOnly = true;
-            this.proveedoresDataGridView.Size = new System.Drawing.Size(932, 343);
+            this.proveedoresDataGridView.Size = new System.Drawing.Size(990, 362);
             this.proveedoresDataGridView.TabIndex = 22;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdProveedor";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IdProveedor";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nit";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nit";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 45;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NombreProveedor";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre Proveedor";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 111;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NombreContacto";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre Contacto";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 105;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Direccion";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Dirección";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Width = 77;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdCiudad";
-            this.dataGridViewTextBoxColumn6.DataSource = this.ciudadesBindingSource;
-            this.dataGridViewTextBoxColumn6.DisplayMember = "DescripcionCiudad";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Ciudad";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn6.ValueMember = "IdCiudad";
             // 
             // ciudadesBindingSource
             // 
             this.ciudadesBindingSource.DataMember = "Ciudades";
             this.ciudadesBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Telefono1";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Teléfono 1";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 77;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Telefono2";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Telefono2";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Celular";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Celular";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 64;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Width = 57;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Notas";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Notas";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            this.dataGridViewTextBoxColumn11.Visible = false;
-            // 
-            // dataGridViewCheckBoxColumn1
-            // 
-            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
-            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
-            this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
             // nitTextBox
             // 
@@ -678,30 +570,30 @@
             // telefono1TextBox
             // 
             this.telefono1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "Telefono1", true));
-            this.telefono1TextBox.Location = new System.Drawing.Point(655, 41);
+            this.telefono1TextBox.Location = new System.Drawing.Point(651, 41);
             this.telefono1TextBox.Name = "telefono1TextBox";
             this.telefono1TextBox.ReadOnly = true;
-            this.telefono1TextBox.Size = new System.Drawing.Size(185, 20);
+            this.telefono1TextBox.Size = new System.Drawing.Size(236, 20);
             this.telefono1TextBox.TabIndex = 11;
             this.telefono1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono1TextBox_KeyPress);
             // 
             // telefono2TextBox
             // 
             this.telefono2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "Telefono2", true));
-            this.telefono2TextBox.Location = new System.Drawing.Point(655, 67);
+            this.telefono2TextBox.Location = new System.Drawing.Point(651, 67);
             this.telefono2TextBox.Name = "telefono2TextBox";
             this.telefono2TextBox.ReadOnly = true;
-            this.telefono2TextBox.Size = new System.Drawing.Size(185, 20);
+            this.telefono2TextBox.Size = new System.Drawing.Size(236, 20);
             this.telefono2TextBox.TabIndex = 13;
             this.telefono2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.telefono2TextBox_KeyPress);
             // 
             // celularTextBox
             // 
             this.celularTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedoresBindingSource, "Celular", true));
-            this.celularTextBox.Location = new System.Drawing.Point(655, 93);
+            this.celularTextBox.Location = new System.Drawing.Point(651, 93);
             this.celularTextBox.Name = "celularTextBox";
             this.celularTextBox.ReadOnly = true;
-            this.celularTextBox.Size = new System.Drawing.Size(185, 20);
+            this.celularTextBox.Size = new System.Drawing.Size(236, 20);
             this.celularTextBox.TabIndex = 15;
             this.celularTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.celularTextBox_KeyPress);
             // 
@@ -712,9 +604,9 @@
             this.idCiudadComboBox.DisplayMember = "DescripcionCiudad";
             this.idCiudadComboBox.Enabled = false;
             this.idCiudadComboBox.FormattingEnabled = true;
-            this.idCiudadComboBox.Location = new System.Drawing.Point(655, 119);
+            this.idCiudadComboBox.Location = new System.Drawing.Point(651, 119);
             this.idCiudadComboBox.Name = "idCiudadComboBox";
-            this.idCiudadComboBox.Size = new System.Drawing.Size(185, 21);
+            this.idCiudadComboBox.Size = new System.Drawing.Size(236, 21);
             this.idCiudadComboBox.TabIndex = 17;
             this.idCiudadComboBox.ValueMember = "IdCiudad";
             // 
@@ -724,7 +616,7 @@
             this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.proveedoresBindingSource, "Activo", true));
             this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(655, 146);
+            this.activoCheckBox.Location = new System.Drawing.Point(651, 146);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(17, 24);
             this.activoCheckBox.TabIndex = 19;
@@ -741,7 +633,7 @@
             this.busquedaCiudadButton.Enabled = false;
             this.busquedaCiudadButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busquedaCiudadButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaCiudadButton.Location = new System.Drawing.Point(863, 119);
+            this.busquedaCiudadButton.Location = new System.Drawing.Point(911, 119);
             this.busquedaCiudadButton.Name = "busquedaCiudadButton";
             this.busquedaCiudadButton.Size = new System.Drawing.Size(63, 23);
             this.busquedaCiudadButton.TabIndex = 24;
@@ -749,12 +641,122 @@
             this.busquedaCiudadButton.UseVisualStyleBackColor = false;
             this.busquedaCiudadButton.Click += new System.EventHandler(this.busquedaCiudadButton_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdProveedor";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdProveedor";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nit";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nit";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 45;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NombreProveedor";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre Proveedor";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 111;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "NombreContacto";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Nombre Contacto";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 105;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Direccion";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Dirección";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 77;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "IdCiudad";
+            this.dataGridViewTextBoxColumn6.DataSource = this.ciudadesBindingSource;
+            this.dataGridViewTextBoxColumn6.DisplayMember = "DescripcionCiudad";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Ciudad";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn6.ValueMember = "IdCiudad";
+            this.dataGridViewTextBoxColumn6.Width = 250;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Telefono1";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Teléfono 1";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 77;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Telefono2";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Telefono2";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Celular";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Celular";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 64;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 57;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Notas";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Notas";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Visible = false;
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "Activo";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "Activo";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.dataGridViewCheckBoxColumn1.ReadOnly = true;
+            this.dataGridViewCheckBoxColumn1.Width = 43;
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(932, 595);
+            this.ClientSize = new System.Drawing.Size(990, 614);
             this.Controls.Add(this.busquedaCiudadButton);
             this.Controls.Add(activoLabel);
             this.Controls.Add(this.activoCheckBox);
@@ -839,6 +841,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
         private System.Windows.Forms.ToolStripButton bindingNavigatorPrint;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button busquedaCiudadButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -851,6 +854,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.Button busquedaCiudadButton;
     }
 }
