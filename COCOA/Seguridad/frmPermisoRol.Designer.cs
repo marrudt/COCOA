@@ -67,6 +67,7 @@
             this.puedeEliminarCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.permisoRolDataGridView = new System.Windows.Forms.DataGridView();
+            this.especificoCheckBox = new System.Windows.Forms.CheckBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -74,7 +75,6 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.especificoCheckBox = new System.Windows.Forms.CheckBox();
             idRolLabel = new System.Windows.Forms.Label();
             idFormularioLabel = new System.Windows.Forms.Label();
             puedeVerLabel = new System.Windows.Forms.Label();
@@ -173,7 +173,6 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
@@ -266,7 +265,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -466,6 +464,16 @@
             this.permisoRolDataGridView.Size = new System.Drawing.Size(644, 430);
             this.permisoRolDataGridView.TabIndex = 12;
             // 
+            // especificoCheckBox
+            // 
+            this.especificoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "Especifico", true));
+            this.especificoCheckBox.Enabled = false;
+            this.especificoCheckBox.Location = new System.Drawing.Point(437, 101);
+            this.especificoCheckBox.Name = "especificoCheckBox";
+            this.especificoCheckBox.Size = new System.Drawing.Size(16, 24);
+            this.especificoCheckBox.TabIndex = 11;
+            this.especificoCheckBox.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -477,6 +485,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "IdRol";
             this.dataGridViewTextBoxColumn2.DataSource = this.rolBindingSource;
             this.dataGridViewTextBoxColumn2.DisplayMember = "DescripcionRol";
@@ -486,9 +495,11 @@
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn2.ValueMember = "IdRol";
+            this.dataGridViewTextBoxColumn2.Width = 120;
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "IdFormulario";
             this.dataGridViewTextBoxColumn3.DataSource = this.formularioBindingSource;
             this.dataGridViewTextBoxColumn3.DisplayMember = "DescripcionFormulario";
@@ -498,6 +509,7 @@
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "IdFormulario";
+            this.dataGridViewTextBoxColumn3.Width = 180;
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -534,16 +546,6 @@
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             this.dataGridViewCheckBoxColumn4.ReadOnly = true;
             this.dataGridViewCheckBoxColumn4.Width = 64;
-            // 
-            // especificoCheckBox
-            // 
-            this.especificoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "Especifico", true));
-            this.especificoCheckBox.Enabled = false;
-            this.especificoCheckBox.Location = new System.Drawing.Point(437, 101);
-            this.especificoCheckBox.Name = "especificoCheckBox";
-            this.especificoCheckBox.Size = new System.Drawing.Size(16, 24);
-            this.especificoCheckBox.TabIndex = 11;
-            this.especificoCheckBox.UseVisualStyleBackColor = true;
             // 
             // frmPermisoRol
             // 
@@ -617,6 +619,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
         private System.Windows.Forms.ToolStripButton bindingNavigatorExit;
         private System.Windows.Forms.DataGridView permisoRolDataGridView;
+        private System.Windows.Forms.CheckBox especificoCheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
@@ -624,6 +627,5 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn4;
-        private System.Windows.Forms.CheckBox especificoCheckBox;
     }
 }

@@ -16,7 +16,7 @@ namespace DAL
 
         private static IVATableAdapter adaptador = new IVATableAdapter();
 
-        public static  DALIVA GetIVA(int IdIVA)
+        public static DALIVA GetIVA(int IdIVA)
         {
             DALIVA miIVA = null;
             DSCOCOA.IVADataTable miTabla = adaptador.GetIVA(IdIVA);

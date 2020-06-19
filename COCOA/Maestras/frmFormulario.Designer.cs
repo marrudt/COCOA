@@ -127,7 +127,6 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
@@ -174,7 +173,7 @@
             this.formularioBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.formularioBindingNavigator.Name = "formularioBindingNavigator";
             this.formularioBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.formularioBindingNavigator.Size = new System.Drawing.Size(409, 31);
+            this.formularioBindingNavigator.Size = new System.Drawing.Size(435, 31);
             this.formularioBindingNavigator.TabIndex = 0;
             this.formularioBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -332,7 +331,7 @@
             this.formularioDataGridView.Location = new System.Drawing.Point(0, 125);
             this.formularioDataGridView.Name = "formularioDataGridView";
             this.formularioDataGridView.ReadOnly = true;
-            this.formularioDataGridView.Size = new System.Drawing.Size(409, 569);
+            this.formularioDataGridView.Size = new System.Drawing.Size(435, 569);
             this.formularioDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -403,7 +402,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(409, 696);
+            this.ClientSize = new System.Drawing.Size(435, 696);
             this.Controls.Add(idFormularioLabel);
             this.Controls.Add(this.idFormularioTextBox);
             this.Controls.Add(activoLabel);

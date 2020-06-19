@@ -40,7 +40,6 @@
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.ordenCompraRadioButton = new System.Windows.Forms.RadioButton();
             this.proveedorRadioButton = new System.Windows.Forms.RadioButton();
-            this.todosRadioButton = new System.Windows.Forms.RadioButton();
             this.verReporteButton = new System.Windows.Forms.Button();
             this.proveedoresTableAdapter = new COCOA.DSCOCOATableAdapters.ProveedoresTableAdapter();
             this.panel1.SuspendLayout();
@@ -81,10 +80,9 @@
             this.filtroGroupBox.Controls.Add(this.proveedorComboBox);
             this.filtroGroupBox.Controls.Add(this.ordenCompraRadioButton);
             this.filtroGroupBox.Controls.Add(this.proveedorRadioButton);
-            this.filtroGroupBox.Controls.Add(this.todosRadioButton);
             this.filtroGroupBox.Location = new System.Drawing.Point(6, 4);
             this.filtroGroupBox.Name = "filtroGroupBox";
-            this.filtroGroupBox.Size = new System.Drawing.Size(824, 61);
+            this.filtroGroupBox.Size = new System.Drawing.Size(755, 61);
             this.filtroGroupBox.TabIndex = 4;
             this.filtroGroupBox.TabStop = false;
             this.filtroGroupBox.Text = "Filtros";
@@ -94,7 +92,7 @@
             this.busquedaProveedorButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.busquedaProveedorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busquedaProveedorButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaProveedorButton.Location = new System.Drawing.Point(741, 18);
+            this.busquedaProveedorButton.Location = new System.Drawing.Point(669, 20);
             this.busquedaProveedorButton.Name = "busquedaProveedorButton";
             this.busquedaProveedorButton.Size = new System.Drawing.Size(63, 23);
             this.busquedaProveedorButton.TabIndex = 5;
@@ -105,7 +103,7 @@
             // 
             // ordenCompraNumericUpDown
             // 
-            this.ordenCompraNumericUpDown.Location = new System.Drawing.Point(284, 19);
+            this.ordenCompraNumericUpDown.Location = new System.Drawing.Point(212, 23);
             this.ordenCompraNumericUpDown.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -131,7 +129,7 @@
             this.proveedorComboBox.DataSource = this.proveedoresBindingSource;
             this.proveedorComboBox.DisplayMember = "NombreProveedor";
             this.proveedorComboBox.FormattingEnabled = true;
-            this.proveedorComboBox.Location = new System.Drawing.Point(393, 18);
+            this.proveedorComboBox.Location = new System.Drawing.Point(321, 22);
             this.proveedorComboBox.Name = "proveedorComboBox";
             this.proveedorComboBox.Size = new System.Drawing.Size(342, 21);
             this.proveedorComboBox.TabIndex = 3;
@@ -151,7 +149,7 @@
             // ordenCompraRadioButton
             // 
             this.ordenCompraRadioButton.AutoSize = true;
-            this.ordenCompraRadioButton.Location = new System.Drawing.Point(175, 19);
+            this.ordenCompraRadioButton.Location = new System.Drawing.Point(103, 23);
             this.ordenCompraRadioButton.Name = "ordenCompraRadioButton";
             this.ordenCompraRadioButton.Size = new System.Drawing.Size(108, 17);
             this.ordenCompraRadioButton.TabIndex = 2;
@@ -162,7 +160,7 @@
             // proveedorRadioButton
             // 
             this.proveedorRadioButton.AutoSize = true;
-            this.proveedorRadioButton.Location = new System.Drawing.Point(89, 19);
+            this.proveedorRadioButton.Location = new System.Drawing.Point(17, 23);
             this.proveedorRadioButton.Name = "proveedorRadioButton";
             this.proveedorRadioButton.Size = new System.Drawing.Size(74, 17);
             this.proveedorRadioButton.TabIndex = 1;
@@ -170,25 +168,12 @@
             this.proveedorRadioButton.UseVisualStyleBackColor = true;
             this.proveedorRadioButton.CheckedChanged += new System.EventHandler(this.proveedorRadioButton_CheckedChanged);
             // 
-            // todosRadioButton
-            // 
-            this.todosRadioButton.AutoSize = true;
-            this.todosRadioButton.Checked = true;
-            this.todosRadioButton.Location = new System.Drawing.Point(21, 19);
-            this.todosRadioButton.Name = "todosRadioButton";
-            this.todosRadioButton.Size = new System.Drawing.Size(55, 17);
-            this.todosRadioButton.TabIndex = 0;
-            this.todosRadioButton.TabStop = true;
-            this.todosRadioButton.Text = "Todos";
-            this.todosRadioButton.UseVisualStyleBackColor = true;
-            this.todosRadioButton.CheckedChanged += new System.EventHandler(this.todosRadioButton_CheckedChanged);
-            // 
             // verReporteButton
             // 
             this.verReporteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.verReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verReporteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.verReporteButton.Location = new System.Drawing.Point(836, 18);
+            this.verReporteButton.Location = new System.Drawing.Point(767, 20);
             this.verReporteButton.Name = "verReporteButton";
             this.verReporteButton.Size = new System.Drawing.Size(93, 30);
             this.verReporteButton.TabIndex = 3;
@@ -233,7 +218,6 @@
         private System.Windows.Forms.ComboBox proveedorComboBox;
         private System.Windows.Forms.RadioButton ordenCompraRadioButton;
         private System.Windows.Forms.RadioButton proveedorRadioButton;
-        private System.Windows.Forms.RadioButton todosRadioButton;
         private System.Windows.Forms.Button verReporteButton;
         private DSCOCOA dSCOCOA;
         private System.Windows.Forms.BindingSource proveedoresBindingSource;

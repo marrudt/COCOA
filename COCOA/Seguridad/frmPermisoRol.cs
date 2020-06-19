@@ -12,13 +12,7 @@ namespace COCOA.Seguridad
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }        
 
         public frmPermisoRol()
         {
@@ -92,7 +86,6 @@ namespace COCOA.Seguridad
             this.formularioTableAdapter.FillBy(this.dSCOCOA.Formulario);
             this.rolTableAdapter.FillBy(this.dSCOCOA.Rol);
             this.permisoRolTableAdapter.Fill(this.dSCOCOA.PermisoRol);
-
         }
 
         private void bindingNavigatorEdit_Click(object sender, EventArgs e)
@@ -142,6 +135,7 @@ namespace COCOA.Seguridad
         {
             this.rolBindingSource.CancelEdit();
             DeshabilitarCampos();
+            errorProvider1.Clear();
         }
 
         private void bindingNavigatorExit_Click(object sender, EventArgs e)

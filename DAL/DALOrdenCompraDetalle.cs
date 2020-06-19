@@ -7,9 +7,9 @@ namespace DAL
         private static OrdenCompraDetalleTableAdapter adaptador = new OrdenCompraDetalleTableAdapter();
 
         public static void InsertOrdenCompraDetalle(int IdOrdenCompra, int IdProducto, string DescripcionProducto, decimal Precio,
-            float Cantidad, float IVA, float Impoconsumo)
+            float Cantidad, decimal Descuento, float IVA, float Impoconsumo)
         {
-            adaptador.InsertOrdenCompraDetalle(IdOrdenCompra, IdProducto, DescripcionProducto, Precio, Cantidad, IVA, Impoconsumo);
+            adaptador.InsertOrdenCompraDetalle(IdOrdenCompra, IdProducto, DescripcionProducto, Precio, Cantidad,  Descuento, IVA, Impoconsumo);
         }
 
         public static bool ProductoTieneMovimientoByIdProducto(int IdProducto)

@@ -18,13 +18,7 @@ namespace COCOA
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }        
 
         public frmPrincipal()
         {
@@ -184,6 +178,7 @@ namespace COCOA
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCotizaciones miForm = new frmCotizaciones();
+            miForm.UsuarioLogueado = usuarioLogueado;
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -191,6 +186,7 @@ namespace COCOA
         private void ordenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOrdenCompras miForm = new frmOrdenCompras();
+            miForm.UsuarioLogueado = usuarioLogueado;
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -283,6 +279,14 @@ namespace COCOA
         private void ciudadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCiudad miForm = new frmCiudad();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void logToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAuditoria miForm = new frmAuditoria();
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -483,6 +487,17 @@ namespace COCOA
             else
             {
                 formulariosToolStripMenuItem1.Visible = false;
+                usuariosToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 33))
+            {
+                logToolStripMenuItem.Visible = true;
+                usuariosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                logToolStripMenuItem.Visible = false;
                 usuariosToolStripMenuItem.Visible = false;
             }
 

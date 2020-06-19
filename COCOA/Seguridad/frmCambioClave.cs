@@ -12,13 +12,7 @@ namespace COCOA.Seguridad
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }        
 
         public frmCambioClave()
         {
@@ -70,5 +64,7 @@ namespace COCOA.Seguridad
             MessageBox.Show("Cambio de clave exitoso", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
+
+        
     }
 }

@@ -14,13 +14,7 @@ namespace COCOA.Seguridad
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
         }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
+        
         private bool nuevo = false;
         public frmUsuarios()
         {
@@ -59,7 +53,7 @@ namespace COCOA.Seguridad
             if (idRolComboBox.SelectedIndex == -1)
             {
                 errorProvider1.SetError(idRolComboBox, "El campo Rol es obligatorio");
-                idUsuarioTextBox.Focus();
+                idRolComboBox.Focus();
                 return false;
             }
 
@@ -74,7 +68,7 @@ namespace COCOA.Seguridad
             if (claveTextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(claveTextBox, "El campo Clave es obligatorio");
-                nombresTextBox.Focus();
+                claveTextBox.Focus();
                 return false;
             }
             errorProvider1.Clear();

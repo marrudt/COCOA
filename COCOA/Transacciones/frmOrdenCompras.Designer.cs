@@ -34,6 +34,7 @@
             System.Windows.Forms.Label numeroCosteoLabel;
             System.Windows.Forms.Label contratoLabel;
             System.Windows.Forms.Label idProductoLabel;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenCompras));
             this.label2 = new System.Windows.Forms.Label();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -75,9 +76,10 @@
             this.borrarLineaButton = new System.Windows.Forms.Button();
             this.salirButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.terminosGarantiaTextBox = new System.Windows.Forms.TextBox();
+            this.ordenCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.BusquedaProductoButton = new System.Windows.Forms.Button();
             this.vehiculoComboBox = new System.Windows.Forms.ComboBox();
-            this.ordenCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contratoTextBox = new System.Windows.Forms.TextBox();
             this.numeroCosteoTextBox = new System.Windows.Forms.TextBox();
             this.BusquedaClienteButton = new System.Windows.Forms.Button();
@@ -85,13 +87,20 @@
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formaPagoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.productoButton = new System.Windows.Forms.Button();
+            this.editarDescuentoButton = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.descuentoTextBox = new System.Windows.Forms.TextBox();
             this.ordenCompraTableAdapter = new COCOA.DSCOCOATableAdapters.OrdenCompraTableAdapter();
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
+            this.label13 = new System.Windows.Forms.Label();
+            this.totalDescuentoTextBox = new System.Windows.Forms.TextBox();
             formaPagoLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             numeroCosteoLabel = new System.Windows.Forms.Label();
             contratoLabel = new System.Windows.Forms.Label();
             idProductoLabel = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -107,7 +116,7 @@
             // formaPagoLabel
             // 
             formaPagoLabel.AutoSize = true;
-            formaPagoLabel.Location = new System.Drawing.Point(13, 97);
+            formaPagoLabel.Location = new System.Drawing.Point(21, 81);
             formaPagoLabel.Name = "formaPagoLabel";
             formaPagoLabel.Size = new System.Drawing.Size(82, 13);
             formaPagoLabel.TabIndex = 4;
@@ -116,43 +125,52 @@
             // idClienteLabel
             // 
             idClienteLabel.AutoSize = true;
-            idClienteLabel.Location = new System.Drawing.Point(49, 123);
+            idClienteLabel.Location = new System.Drawing.Point(57, 133);
             idClienteLabel.Name = "idClienteLabel";
             idClienteLabel.Size = new System.Drawing.Size(46, 13);
-            idClienteLabel.TabIndex = 6;
+            idClienteLabel.TabIndex = 8;
             idClienteLabel.Text = "Entidad:";
             // 
             // numeroCosteoLabel
             // 
             numeroCosteoLabel.AutoSize = true;
-            numeroCosteoLabel.Location = new System.Drawing.Point(12, 150);
+            numeroCosteoLabel.Location = new System.Drawing.Point(20, 160);
             numeroCosteoLabel.Name = "numeroCosteoLabel";
             numeroCosteoLabel.Size = new System.Drawing.Size(83, 13);
-            numeroCosteoLabel.TabIndex = 9;
+            numeroCosteoLabel.TabIndex = 11;
             numeroCosteoLabel.Text = "Número Costeo:";
             // 
             // contratoLabel
             // 
             contratoLabel.AutoSize = true;
-            contratoLabel.Location = new System.Drawing.Point(262, 150);
+            contratoLabel.Location = new System.Drawing.Point(270, 160);
             contratoLabel.Name = "contratoLabel";
             contratoLabel.Size = new System.Drawing.Size(50, 13);
-            contratoLabel.TabIndex = 11;
+            contratoLabel.TabIndex = 13;
             contratoLabel.Text = "Contrato:";
             // 
             // idProductoLabel
             // 
             idProductoLabel.AutoSize = true;
-            idProductoLabel.Location = new System.Drawing.Point(42, 176);
+            idProductoLabel.Location = new System.Drawing.Point(50, 186);
             idProductoLabel.Name = "idProductoLabel";
             idProductoLabel.Size = new System.Drawing.Size(53, 13);
-            idProductoLabel.TabIndex = 13;
+            idProductoLabel.TabIndex = 15;
             idProductoLabel.Text = "Vehículo:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(6, 107);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(98, 13);
+            label1.TabIndex = 6;
+            label1.Text = "Términos Garantía:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(55, 46);
+            this.label2.Location = new System.Drawing.Point(63, 30);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 0;
@@ -162,7 +180,7 @@
             // 
             this.fechaDateTimePicker.CustomFormat = "dd/MMM/yyyy";
             this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.fechaDateTimePicker.Location = new System.Drawing.Point(97, 43);
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(105, 27);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(125, 20);
             this.fechaDateTimePicker.TabIndex = 1;
@@ -201,7 +219,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(19, 72);
+            this.label4.Location = new System.Drawing.Point(27, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 2;
@@ -210,7 +228,7 @@
             // plazoEntregaTextBox
             // 
             this.plazoEntregaTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.plazoEntregaTextBox.Location = new System.Drawing.Point(97, 68);
+            this.plazoEntregaTextBox.Location = new System.Drawing.Point(105, 52);
             this.plazoEntregaTextBox.Name = "plazoEntregaTextBox";
             this.plazoEntregaTextBox.Size = new System.Drawing.Size(321, 20);
             this.plazoEntregaTextBox.TabIndex = 3;
@@ -226,7 +244,7 @@
             this.busquedaProveedorButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.busquedaProveedorButton.Location = new System.Drawing.Point(472, 21);
             this.busquedaProveedorButton.Name = "busquedaProveedorButton";
-            this.busquedaProveedorButton.Size = new System.Drawing.Size(63, 23);
+            this.busquedaProveedorButton.Size = new System.Drawing.Size(76, 23);
             this.busquedaProveedorButton.TabIndex = 2;
             this.busquedaProveedorButton.Text = "Buscar";
             this.busquedaProveedorButton.UseVisualStyleBackColor = false;
@@ -248,7 +266,7 @@
             this.buscarProductoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buscarProductoButton.Location = new System.Drawing.Point(472, 48);
             this.buscarProductoButton.Name = "buscarProductoButton";
-            this.buscarProductoButton.Size = new System.Drawing.Size(63, 23);
+            this.buscarProductoButton.Size = new System.Drawing.Size(76, 23);
             this.buscarProductoButton.TabIndex = 6;
             this.buscarProductoButton.Text = "Buscar";
             this.buscarProductoButton.UseVisualStyleBackColor = false;
@@ -309,18 +327,21 @@
             this.detalleOrdenCompraDataGridView.AllowUserToAddRows = false;
             this.detalleOrdenCompraDataGridView.AllowUserToDeleteRows = false;
             this.detalleOrdenCompraDataGridView.AllowUserToOrderColumns = true;
+            this.detalleOrdenCompraDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleOrdenCompraDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.detalleOrdenCompraDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.detalleOrdenCompraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 244);
             this.detalleOrdenCompraDataGridView.Name = "detalleOrdenCompraDataGridView";
             this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1513, 265);
-            this.detalleOrdenCompraDataGridView.TabIndex = 14;
+            this.detalleOrdenCompraDataGridView.TabIndex = 16;
             // 
             // precioTextBox
             // 
             this.precioTextBox.Enabled = false;
-            this.precioTextBox.Location = new System.Drawing.Point(103, 103);
+            this.precioTextBox.Location = new System.Drawing.Point(328, 78);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.ReadOnly = true;
             this.precioTextBox.Size = new System.Drawing.Size(119, 20);
@@ -329,7 +350,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 106);
+            this.label7.Location = new System.Drawing.Point(246, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
             this.label7.TabIndex = 9;
@@ -398,10 +419,11 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1317, 126);
+            this.label8.Location = new System.Drawing.Point(1317, 105);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 6;
@@ -409,10 +431,11 @@
             // 
             // totalSubtotalTextBox
             // 
-            this.totalSubtotalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.totalSubtotalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.totalSubtotalTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalSubtotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1376, 124);
+            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1376, 103);
             this.totalSubtotalTextBox.Name = "totalSubtotalTextBox";
             this.totalSubtotalTextBox.ReadOnly = true;
             this.totalSubtotalTextBox.Size = new System.Drawing.Size(125, 21);
@@ -421,10 +444,11 @@
             // 
             // totalIVATextBox
             // 
-            this.totalIVATextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.totalIVATextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.totalIVATextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalIVATextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalIVATextBox.Location = new System.Drawing.Point(1376, 153);
+            this.totalIVATextBox.Location = new System.Drawing.Point(1376, 130);
             this.totalIVATextBox.Name = "totalIVATextBox";
             this.totalIVATextBox.ReadOnly = true;
             this.totalIVATextBox.Size = new System.Drawing.Size(125, 21);
@@ -433,10 +457,11 @@
             // 
             // totalImpoconsumoTextBox
             // 
-            this.totalImpoconsumoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.totalImpoconsumoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.totalImpoconsumoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalImpoconsumoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1376, 182);
+            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1376, 157);
             this.totalImpoconsumoTextBox.Name = "totalImpoconsumoTextBox";
             this.totalImpoconsumoTextBox.ReadOnly = true;
             this.totalImpoconsumoTextBox.Size = new System.Drawing.Size(125, 21);
@@ -445,22 +470,24 @@
             // 
             // totalNetoTextBox
             // 
-            this.totalNetoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.totalNetoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.totalNetoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalNetoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalNetoTextBox.Location = new System.Drawing.Point(1376, 211);
             this.totalNetoTextBox.Name = "totalNetoTextBox";
             this.totalNetoTextBox.ReadOnly = true;
             this.totalNetoTextBox.Size = new System.Drawing.Size(125, 21);
-            this.totalNetoTextBox.TabIndex = 13;
+            this.totalNetoTextBox.TabIndex = 15;
             this.totalNetoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1345, 155);
+            this.label9.Location = new System.Drawing.Point(1345, 132);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 15);
             this.label9.TabIndex = 8;
@@ -468,10 +495,11 @@
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1283, 179);
+            this.label10.Location = new System.Drawing.Point(1283, 160);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 15);
             this.label10.TabIndex = 10;
@@ -479,13 +507,14 @@
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(1335, 213);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 15);
-            this.label11.TabIndex = 12;
+            this.label11.TabIndex = 14;
             this.label11.Text = "Total";
             // 
             // guardarButton
@@ -587,6 +616,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(label1);
+            this.groupBox1.Controls.Add(this.terminosGarantiaTextBox);
             this.groupBox1.Controls.Add(this.BusquedaProductoButton);
             this.groupBox1.Controls.Add(idProductoLabel);
             this.groupBox1.Controls.Add(this.vehiculoComboBox);
@@ -610,15 +641,29 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
             // 
+            // terminosGarantiaTextBox
+            // 
+            this.terminosGarantiaTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.terminosGarantiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "FormaPago", true));
+            this.terminosGarantiaTextBox.Location = new System.Drawing.Point(105, 104);
+            this.terminosGarantiaTextBox.Name = "terminosGarantiaTextBox";
+            this.terminosGarantiaTextBox.Size = new System.Drawing.Size(321, 20);
+            this.terminosGarantiaTextBox.TabIndex = 7;
+            // 
+            // ordenCompraBindingSource
+            // 
+            this.ordenCompraBindingSource.DataMember = "OrdenCompra";
+            this.ordenCompraBindingSource.DataSource = this.dSCOCOA;
+            // 
             // BusquedaProductoButton
             // 
             this.BusquedaProductoButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BusquedaProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BusquedaProductoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BusquedaProductoButton.Location = new System.Drawing.Point(449, 171);
+            this.BusquedaProductoButton.Location = new System.Drawing.Point(454, 181);
             this.BusquedaProductoButton.Name = "BusquedaProductoButton";
             this.BusquedaProductoButton.Size = new System.Drawing.Size(63, 23);
-            this.BusquedaProductoButton.TabIndex = 21;
+            this.BusquedaProductoButton.TabIndex = 17;
             this.BusquedaProductoButton.Text = "Buscar";
             this.BusquedaProductoButton.UseVisualStyleBackColor = false;
             this.BusquedaProductoButton.Click += new System.EventHandler(this.BusquedaProductoButton_Click);
@@ -629,32 +674,27 @@
             this.vehiculoComboBox.DataSource = this.productosBindingSource;
             this.vehiculoComboBox.DisplayMember = "DescripcionProducto";
             this.vehiculoComboBox.FormattingEnabled = true;
-            this.vehiculoComboBox.Location = new System.Drawing.Point(97, 173);
+            this.vehiculoComboBox.Location = new System.Drawing.Point(105, 183);
             this.vehiculoComboBox.Name = "vehiculoComboBox";
             this.vehiculoComboBox.Size = new System.Drawing.Size(321, 21);
-            this.vehiculoComboBox.TabIndex = 14;
+            this.vehiculoComboBox.TabIndex = 16;
             this.vehiculoComboBox.ValueMember = "IdProducto";
-            // 
-            // ordenCompraBindingSource
-            // 
-            this.ordenCompraBindingSource.DataMember = "OrdenCompra";
-            this.ordenCompraBindingSource.DataSource = this.dSCOCOA;
             // 
             // contratoTextBox
             // 
             this.contratoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "Contrato", true));
-            this.contratoTextBox.Location = new System.Drawing.Point(318, 147);
+            this.contratoTextBox.Location = new System.Drawing.Point(326, 157);
             this.contratoTextBox.Name = "contratoTextBox";
             this.contratoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.contratoTextBox.TabIndex = 12;
+            this.contratoTextBox.TabIndex = 14;
             // 
             // numeroCosteoTextBox
             // 
             this.numeroCosteoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "NumeroCosteo", true));
-            this.numeroCosteoTextBox.Location = new System.Drawing.Point(97, 147);
+            this.numeroCosteoTextBox.Location = new System.Drawing.Point(105, 157);
             this.numeroCosteoTextBox.Name = "numeroCosteoTextBox";
             this.numeroCosteoTextBox.Size = new System.Drawing.Size(143, 20);
-            this.numeroCosteoTextBox.TabIndex = 10;
+            this.numeroCosteoTextBox.TabIndex = 12;
             this.numeroCosteoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numeroCosteoTextBox_KeyPress);
             // 
             // BusquedaClienteButton
@@ -662,10 +702,10 @@
             this.BusquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BusquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BusquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BusquedaClienteButton.Location = new System.Drawing.Point(449, 118);
+            this.BusquedaClienteButton.Location = new System.Drawing.Point(454, 128);
             this.BusquedaClienteButton.Name = "BusquedaClienteButton";
             this.BusquedaClienteButton.Size = new System.Drawing.Size(63, 23);
-            this.BusquedaClienteButton.TabIndex = 8;
+            this.BusquedaClienteButton.TabIndex = 10;
             this.BusquedaClienteButton.Text = "Buscar";
             this.BusquedaClienteButton.UseVisualStyleBackColor = false;
             this.BusquedaClienteButton.Click += new System.EventHandler(this.BusquedaClienteButton_Click);
@@ -676,10 +716,10 @@
             this.entidadComboBox.DataSource = this.clientesBindingSource;
             this.entidadComboBox.DisplayMember = "NombreCliente";
             this.entidadComboBox.FormattingEnabled = true;
-            this.entidadComboBox.Location = new System.Drawing.Point(97, 120);
+            this.entidadComboBox.Location = new System.Drawing.Point(105, 130);
             this.entidadComboBox.Name = "entidadComboBox";
             this.entidadComboBox.Size = new System.Drawing.Size(321, 21);
-            this.entidadComboBox.TabIndex = 7;
+            this.entidadComboBox.TabIndex = 9;
             this.entidadComboBox.ValueMember = "IdCliente";
             // 
             // clientesBindingSource
@@ -691,7 +731,7 @@
             // 
             this.formaPagoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.formaPagoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "FormaPago", true));
-            this.formaPagoTextBox.Location = new System.Drawing.Point(97, 94);
+            this.formaPagoTextBox.Location = new System.Drawing.Point(105, 78);
             this.formaPagoTextBox.Name = "formaPagoTextBox";
             this.formaPagoTextBox.Size = new System.Drawing.Size(321, 20);
             this.formaPagoTextBox.TabIndex = 5;
@@ -699,6 +739,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.Controls.Add(this.productoButton);
+            this.groupBox2.Controls.Add(this.editarDescuentoButton);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.descuentoTextBox);
             this.groupBox2.Controls.Add(this.productoTextBox);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.proveedorComboBox);
@@ -712,10 +756,57 @@
             this.groupBox2.Controls.Add(this.productoLabel);
             this.groupBox2.Location = new System.Drawing.Point(549, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(548, 143);
+            this.groupBox2.Size = new System.Drawing.Size(564, 143);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
+            // 
+            // productoButton
+            // 
+            this.productoButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.productoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productoButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.productoButton.Location = new System.Drawing.Point(472, 76);
+            this.productoButton.Name = "productoButton";
+            this.productoButton.Size = new System.Drawing.Size(76, 23);
+            this.productoButton.TabIndex = 11;
+            this.productoButton.Text = "Producto";
+            this.productoButton.UseVisualStyleBackColor = false;
+            this.productoButton.Click += new System.EventHandler(this.productoButton_Click);
+            // 
+            // editarDescuentoButton
+            // 
+            this.editarDescuentoButton.BackColor = System.Drawing.Color.Tomato;
+            this.editarDescuentoButton.Enabled = false;
+            this.editarDescuentoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editarDescuentoButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.editarDescuentoButton.Location = new System.Drawing.Point(249, 102);
+            this.editarDescuentoButton.Name = "editarDescuentoButton";
+            this.editarDescuentoButton.Size = new System.Drawing.Size(63, 23);
+            this.editarDescuentoButton.TabIndex = 14;
+            this.editarDescuentoButton.Text = "Editar";
+            this.editarDescuentoButton.UseVisualStyleBackColor = false;
+            this.editarDescuentoButton.Click += new System.EventHandler(this.desbloquearDescuentoButton_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(38, 105);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(62, 13);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Descuento:";
+            // 
+            // descuentoTextBox
+            // 
+            this.descuentoTextBox.Enabled = false;
+            this.descuentoTextBox.Location = new System.Drawing.Point(103, 102);
+            this.descuentoTextBox.Name = "descuentoTextBox";
+            this.descuentoTextBox.ReadOnly = true;
+            this.descuentoTextBox.Size = new System.Drawing.Size(119, 20);
+            this.descuentoTextBox.TabIndex = 13;
+            this.descuentoTextBox.Text = "0";
+            this.descuentoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descuentoTextBox_KeyPress);
             // 
             // ordenCompraTableAdapter
             // 
@@ -725,6 +816,31 @@
             // 
             this.clientesTableAdapter.ClearBeforeFill = true;
             // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1303, 187);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(66, 15);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Descuento";
+            // 
+            // totalDescuentoTextBox
+            // 
+            this.totalDescuentoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.totalDescuentoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.totalDescuentoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDescuentoTextBox.Location = new System.Drawing.Point(1376, 184);
+            this.totalDescuentoTextBox.Name = "totalDescuentoTextBox";
+            this.totalDescuentoTextBox.ReadOnly = true;
+            this.totalDescuentoTextBox.Size = new System.Drawing.Size(125, 21);
+            this.totalDescuentoTextBox.TabIndex = 13;
+            this.totalDescuentoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // frmOrdenCompras
             // 
             this.AcceptButton = this.agregarButton;
@@ -732,7 +848,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1513, 510);
-            this.ControlBox = false;
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.totalDescuentoTextBox);
             this.Controls.Add(this.agregarButton);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -750,7 +867,6 @@
             this.Controls.Add(this.totalSubtotalTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.detalleOrdenCompraDataGridView);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOrdenCompras";
             this.Text = "Ordenes de Compra";
@@ -826,5 +942,12 @@
         private DSCOCOATableAdapters.ClientesTableAdapter clientesTableAdapter;
         private System.Windows.Forms.ComboBox vehiculoComboBox;
         private System.Windows.Forms.Button BusquedaProductoButton;
+        private System.Windows.Forms.TextBox terminosGarantiaTextBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox descuentoTextBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox totalDescuentoTextBox;
+        private System.Windows.Forms.Button editarDescuentoButton;
+        private System.Windows.Forms.Button productoButton;
     }
 }

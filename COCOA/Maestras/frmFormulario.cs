@@ -14,12 +14,6 @@ namespace COCOA.Maestras
             set { usuarioLogueado = value; }
         }
 
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
         public frmFormulario()
         {
             InitializeComponent();
@@ -105,12 +99,7 @@ namespace COCOA.Maestras
         {
             DialogResult rta = MessageBox.Show("¿Eliminar el registro?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
                 MessageBoxDefaultButton.Button2);
-            if (rta == DialogResult.No) return;
-            //if (DAL.ProveedorTieneCompras(Convert.ToInt32(iDProveedorTextBox.Text)))
-            //{
-            //    MessageBox.Show("No es posible borrar Proveedor, ya tiene movimiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (rta == DialogResult.No) return;            
             formularioBindingSource.RemoveAt(formularioBindingSource.Position);
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
         }

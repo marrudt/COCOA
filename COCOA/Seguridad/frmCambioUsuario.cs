@@ -13,13 +13,7 @@ namespace COCOA.Seguridad
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
         }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
+       
         public frmCambioUsuario()
         {
             InitializeComponent();

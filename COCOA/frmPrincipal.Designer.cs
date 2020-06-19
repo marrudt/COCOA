@@ -52,6 +52,7 @@
             this.permisosRolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.logToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.cambioDeClaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambioDeUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -244,6 +245,7 @@
             // 
             this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.formulariosToolStripMenuItem1,
+            this.logToolStripMenuItem,
             this.permisosRolToolStripMenuItem,
             this.rolToolStripMenuItem,
             this.usuariosToolStripMenuItem1});
@@ -254,30 +256,37 @@
             // formulariosToolStripMenuItem1
             // 
             this.formulariosToolStripMenuItem1.Name = "formulariosToolStripMenuItem1";
-            this.formulariosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.formulariosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.formulariosToolStripMenuItem1.Text = "&Formularios";
             this.formulariosToolStripMenuItem1.Click += new System.EventHandler(this.formulariosToolStripMenuItem1_Click);
             // 
             // permisosRolToolStripMenuItem
             // 
             this.permisosRolToolStripMenuItem.Name = "permisosRolToolStripMenuItem";
-            this.permisosRolToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.permisosRolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.permisosRolToolStripMenuItem.Text = "&Permisos Rol";
             this.permisosRolToolStripMenuItem.Click += new System.EventHandler(this.permisosRolToolStripMenuItem_Click);
             // 
             // rolToolStripMenuItem
             // 
             this.rolToolStripMenuItem.Name = "rolToolStripMenuItem";
-            this.rolToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.rolToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.rolToolStripMenuItem.Text = "&Rol";
             this.rolToolStripMenuItem.Click += new System.EventHandler(this.rolToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.usuariosToolStripMenuItem1.Text = "&Usuarios";
             this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
+            // 
+            // logToolStripMenuItem
+            // 
+            this.logToolStripMenuItem.Name = "logToolStripMenuItem";
+            this.logToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logToolStripMenuItem.Text = "&Log";
+            this.logToolStripMenuItem.Click += new System.EventHandler(this.logToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -567,5 +576,6 @@
         private System.Windows.Forms.ToolStripMenuItem edicionCotizaciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem ciudadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logToolStripMenuItem;
     }
 }

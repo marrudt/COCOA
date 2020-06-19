@@ -34,11 +34,7 @@ namespace COCOA.Reportes
             rptReporteOrdenCompra miListado = new rptReporteOrdenCompra();
             DSCOCOA miDS = new DSCOCOA();
             ReporteOrdenCompraTableAdapter adapter = new ReporteOrdenCompraTableAdapter();
-            if (todosRadioButton.Checked)
-            {
-                adapter.Fill(miDS.ReporteOrdenCompra);
-            }
-            else if (proveedorRadioButton.Checked)
+            if (proveedorRadioButton.Checked)
             {
                 adapter.FillByByIdProveedor(miDS.ReporteOrdenCompra, (int)proveedorComboBox.SelectedValue);
             }
@@ -72,13 +68,7 @@ namespace COCOA.Reportes
 
         private void ActualizaFiltro()
         {
-            if (todosRadioButton.Checked)
-            {
-                proveedorComboBox.Visible = false;
-                ordenCompraNumericUpDown.Visible = false;
-                busquedaProveedorButton.Visible = false;
-            }
-            else if (proveedorRadioButton.Checked)
+            if (proveedorRadioButton.Checked)
             {
                 proveedorComboBox.Visible = true;
                 busquedaProveedorButton.Visible = true;

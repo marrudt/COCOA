@@ -56,7 +56,7 @@ namespace COCOA.Seguridad
         {
             if (descripcionRolTextBox.Text == "")
             {
-                errorProvider1.SetError(descripcionRolTextBox, "El campo descripción es obligatorio");
+                errorProvider1.SetError(descripcionRolTextBox, "El campo Descripción es obligatorio");
                 descripcionRolTextBox.Focus();
                 return false;
             }

@@ -13,24 +13,20 @@ namespace COCOA.Transacciones
     {
         BindingList<DetalleOrdenCompra> misDetalles = new BindingList<DetalleOrdenCompra>();
         DALProducto ultimoProducto = null;
+
         private DALUsuario usuarioLogueado;
 
         public DALUsuario UsuarioLogueado
         {
-          get { return usuarioLogueado; }
-          set { usuarioLogueado = value; }
+            get { return usuarioLogueado; }
+            set { usuarioLogueado = value; }
         }
 
         private decimal totalSubtotal = 0;
         private decimal totalIVA = 0;
         private decimal totalImpoconsumo = 0;
+        private decimal totalDescuento = 0;
         private decimal totalNeto = 0;
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
 
         public frmOrdenCompras()
         {
@@ -53,9 +49,28 @@ namespace COCOA.Transacciones
             numeroCosteoTextBox.Text = string.Empty;
             contratoTextBox.Text = string.Empty;
             formaPagoTextBox.Text = string.Empty;
+            terminosGarantiaTextBox.Text = string.Empty;
             productoLabel.Text = string.Empty;
             detalleOrdenCompraDataGridView.DataSource = misDetalles;
+            precioTextBox.Enabled = false;
+            precioTextBox.ReadOnly = true;
+            descuentoTextBox.Enabled = false;
+            descuentoTextBox.ReadOnly = true;
+            descuentoTextBox.Text = "0";
             ultimoProducto = null;
+            VerificaPermiso();
+        }
+
+        private void VerificaPermiso()
+        {
+            if (DALPermisoRol.Especifico(usuarioLogueado.IdRol, 19))
+            {
+                editarDescuentoButton.Enabled = true;
+            }
+            else
+            {
+                editarDescuentoButton.Enabled = false;
+            }
         }
 
         private void busquedaProveedorButton_Click_1(object sender, EventArgs e)
@@ -129,7 +144,7 @@ namespace COCOA.Transacciones
 
             if (cantidadTextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(cantidadTextBox, "El campo cantidad es obligatorio");
+                errorProvider1.SetError(cantidadTextBox, "El campo Cantidad es obligatorio");
                 cantidadTextBox.Focus();
                 return;
             }
@@ -139,14 +154,30 @@ namespace COCOA.Transacciones
 
             if (!float.TryParse(cantidadTextBox.Text, out cantidad))
             {
-                errorProvider1.SetError(cantidadTextBox, "El campo cantidad es numerico");
+                errorProvider1.SetError(cantidadTextBox, "El campo Cantidad es numérico");
                 return;
             }
             errorProvider1.Clear();
 
             if (cantidad <= 0)
             {
-                errorProvider1.SetError(cantidadTextBox, "La cantidad debe ser mayor a cero");
+                errorProvider1.SetError(cantidadTextBox, "La Cantidad debe ser mayor a cero");
+                return;
+            }
+            errorProvider1.Clear();
+
+            decimal descuento;
+
+            if (!decimal.TryParse(descuentoTextBox.Text, out descuento))
+            {
+                errorProvider1.SetError(descuentoTextBox, "El campo Descuento es numérico");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (descuento < 0)
+            {
+                errorProvider1.SetError(descuentoTextBox, "El Descuento debe ser mayor a cero");
                 return;
             }
             errorProvider1.Clear();
@@ -156,6 +187,7 @@ namespace COCOA.Transacciones
 
             DetalleOrdenCompra miDetalle = new DetalleOrdenCompra();
             miDetalle.Cantidad = cantidad;
+            miDetalle.Descuento = descuento;
             miDetalle.Precio = ultimoProducto.Precio;
             miDetalle.DescripcionProducto = ultimoProducto.DescripcionProducto;
             miDetalle.IdProducto = ultimoProducto.IdProducto;
@@ -171,7 +203,11 @@ namespace COCOA.Transacciones
             productoLabel.Text = string.Empty;
             cantidadTextBox.Text = string.Empty;
             precioTextBox.Text = string.Empty;
+            descuentoTextBox.Text = string.Empty;
             productoTextBox.Focus();
+            descuentoTextBox.Text = "0";
+            descuentoTextBox.Enabled = false;
+            descuentoTextBox.ReadOnly = true;
         }
 
         private void RefrescaGrid()
@@ -182,6 +218,7 @@ namespace COCOA.Transacciones
             totalSubtotal = 0;
             totalIVA = 0;
             totalImpoconsumo = 0;
+            totalDescuento = 0;
             totalNeto = 0;
 
             foreach (DetalleOrdenCompra miDetalle in misDetalles)
@@ -189,12 +226,14 @@ namespace COCOA.Transacciones
                 totalSubtotal += miDetalle.Subtotal;
                 totalIVA += miDetalle.ValorIVA;
                 totalImpoconsumo += miDetalle.ValorImpoconsumo;
+                totalDescuento += miDetalle.Descuento;
                 totalNeto += miDetalle.ValorNeto;
             }
 
             totalSubtotalTextBox.Text = string.Format("{0:C2}", totalSubtotal);
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
             totalImpoconsumoTextBox.Text = string.Format("{0:C2}", totalImpoconsumo);
+            totalDescuentoTextBox.Text = string.Format("{0:C2}", totalDescuento);
             totalNetoTextBox.Text = string.Format("{0:C2}", totalNeto);
 
             PersonalizarGrid();
@@ -220,6 +259,11 @@ namespace COCOA.Transacciones
             detalleOrdenCompraDataGridView.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleOrdenCompraDataGridView.Columns["Cantidad"].DefaultCellStyle.Format = "N2";
             detalleOrdenCompraDataGridView.Columns["Cantidad"].Width = 50;
+
+            detalleOrdenCompraDataGridView.Columns["Descuento"].HeaderText = "Descuento";
+            detalleOrdenCompraDataGridView.Columns["Descuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            detalleOrdenCompraDataGridView.Columns["Descuento"].DefaultCellStyle.Format = "C2";
+            detalleOrdenCompraDataGridView.Columns["Descuento"].Width = 100;
 
             detalleOrdenCompraDataGridView.Columns["IVA"].HeaderText = "% IVA";
             detalleOrdenCompraDataGridView.Columns["IVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -334,6 +378,7 @@ namespace COCOA.Transacciones
             int IdProveedor = (int)proveedorComboBox.SelectedValue;
             string plazoEntrega = plazoEntregaTextBox.Text;
             string formaPago = formaPagoTextBox.Text;
+            string terminosGarantia = terminosGarantiaTextBox.Text;
             DateTime fecha = fechaDateTimePicker.Value;
             int IdCliente = (int)entidadComboBox.SelectedValue;
             string numeroCosteo = numeroCosteoTextBox.Text;
@@ -341,13 +386,13 @@ namespace COCOA.Transacciones
             int IdProducto = (int)vehiculoComboBox.SelectedValue;
 
             //Guarda encabezado            
-            int IdOrdenCompra = DALOrdenCompra.InsertOrdenCompra(fecha, IdProveedor, plazoEntrega, formaPago, IdCliente, numeroCosteo, contrato, IdProducto);
+            int IdOrdenCompra = DALOrdenCompra.InsertOrdenCompra(fecha, IdProveedor, plazoEntrega, formaPago, terminosGarantia, IdCliente, numeroCosteo, contrato, IdProducto);
 
             //Guarda detalle           
             foreach (DetalleOrdenCompra miDetalle in misDetalles)
             {
                 DALOrdenCompraDetalle.InsertOrdenCompraDetalle(IdOrdenCompra, miDetalle.IdProducto, miDetalle.DescripcionProducto, miDetalle.Precio,
-                    miDetalle.Cantidad, miDetalle.IVA, miDetalle.Impoconsumo);
+                    miDetalle.Cantidad, miDetalle.Descuento, miDetalle.IVA, miDetalle.Impoconsumo);
             }
 
             MessageBox.Show(string.Format("Orden de Compra {0} guardada exitosamente", IdOrdenCompra), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -359,12 +404,14 @@ namespace COCOA.Transacciones
             totalSubtotal = 0;
             totalIVA = 0;
             totalImpoconsumo = 0;
+            totalDescuento = 0;
             totalNeto = 0;
 
             proveedorComboBox.SelectedIndex = -1;
             misDetalles.Clear();
             plazoEntregaTextBox.Text = string.Empty;
             formaPagoTextBox.Text = string.Empty;
+            terminosGarantiaTextBox.Text = string.Empty;
             RefrescaGrid();
             plazoEntregaTextBox.Focus();
         }
@@ -455,6 +502,30 @@ namespace COCOA.Transacciones
             miBusqueda.ShowDialog();
             if (miBusqueda.IDProducto == 0) return;
             vehiculoComboBox.SelectedValue = miBusqueda.IDProducto;
+        }
+
+        private void descuentoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void desbloquearDescuentoButton_Click(object sender, EventArgs e)
+        {
+            descuentoTextBox.ReadOnly = false;
+            descuentoTextBox.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            precioTextBox.ReadOnly = false;
+            precioTextBox.Enabled = true;
+        }
+
+        private void productoButton_Click(object sender, EventArgs e)
+        {
+            frmProductos miForm = new frmProductos();
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
         }
     }
 }

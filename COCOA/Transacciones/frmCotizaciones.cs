@@ -21,18 +21,11 @@ namespace COCOA.Transacciones
         private decimal totalImpoconsumo = 0;
         private decimal totalNeto = 0;
 
-
         public DALUsuario UsuarioLogueado
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }       
 
         public frmCotizaciones()
         {
@@ -50,6 +43,7 @@ namespace COCOA.Transacciones
 
             clienteComboBox.SelectedIndex = -1;            
             productoLabel.Text = string.Empty;
+            valorEstampillasTextBox.Text = "0";
 
         }
 
@@ -110,21 +104,21 @@ namespace COCOA.Transacciones
             }
             errorProvider1.Clear();
 
-            float estampillas;
+            decimal estampillas;
 
-            if (!float.TryParse(estampillasTextBox.Text, out estampillas))
+            if (!decimal.TryParse(valorEstampillasTextBox.Text, out estampillas))
             {
-                errorProvider1.SetError(estampillasTextBox, "El campo Estampillas es decimal");
+                errorProvider1.SetError(valorEstampillasTextBox, "El campo Estampillas es numérico");
                 return;
             }
             errorProvider1.Clear();
 
-            //if (estampillas <= 0)
-            //{
-            //    errorProvider1.SetError(estampillasTextBox, "el valor de las Estampillas debe ser mayor a cero");
-            //    return;
-            //}
-            //errorProvider1.Clear();
+            if (estampillas < 0)
+            {
+                errorProvider1.SetError(valorEstampillasTextBox, "el valor de las Estampillas debe ser mayor a cero");
+                return;
+            }
+            errorProvider1.Clear();
 
             string detalleNumeroItem = detalleItemTextBox.Text;
 
@@ -149,7 +143,7 @@ namespace COCOA.Transacciones
             miDetalle.IdProducto = ultimoProducto.IdProducto;
             miDetalle.PorcentajeIVA = (float)miIVA.Tarifa;
             miDetalle.PorcentajeImpoconsumo = (float)miImpoconsumo.Tarifa;
-            miDetalle.Estampillas = estampillas;
+            miDetalle.ValorEstampillas = estampillas;
 
             misDetalles.Add(miDetalle);
             RefrescaGrid();
@@ -160,8 +154,8 @@ namespace COCOA.Transacciones
             productoLabel.Text = string.Empty;
             cantidadTextBox.Text = string.Empty;
             precioTextBox.Text = string.Empty;
-            estampillasTextBox.Text = "0.00";
-            totalEstampillasTextBox.Text = string.Empty;
+            descuentoTextBox.Text = "0.00";
+            valorEstampillasTextBox.Text = "0";
             productoTextBox.Focus();
 
         }
@@ -235,8 +229,8 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.Columns["Estampillas"].HeaderText = "Estampillas";
             detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Estampillas"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
-            detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Format = "N2";
-            detalleCotizacionDataGridView.Columns["Estampillas"].Width = 70;
+            detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Format = "C2";
+            detalleCotizacionDataGridView.Columns["Estampillas"].Width = 100;
 
             detalleCotizacionDataGridView.Columns["ValorEstampillas"].HeaderText = "Valor Estampillas";
             detalleCotizacionDataGridView.Columns["ValorEstampillas"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -415,7 +409,7 @@ namespace COCOA.Transacciones
             {
                 DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.IdProducto,
                     miDetalle.DescripcionProducto, miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo,
-                    miDetalle.Estampillas);
+                    miDetalle.ValorEstampillas);
 
             }
 
@@ -505,7 +499,12 @@ namespace COCOA.Transacciones
                     e.Cancel = true;
                 }
             }
-        }        
+        }
+
+        private void valorEstampillasTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
     }
 
 }

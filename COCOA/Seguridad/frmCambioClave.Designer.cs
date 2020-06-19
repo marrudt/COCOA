@@ -47,11 +47,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(71, 104);
+            this.label1.Location = new System.Drawing.Point(75, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.Size = new System.Drawing.Size(103, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Contraseña Anterior*:";
+            this.label1.Text = "Contraseña &Anterior:";
             // 
             // claveAnteriorTextBox
             // 
@@ -72,11 +72,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 130);
+            this.label2.Location = new System.Drawing.Point(79, 130);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nueva Contraseña*:";
+            this.label2.Text = "&Nueva Contraseña:";
             // 
             // confirmarClaveTextBox
             // 
@@ -89,11 +89,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(63, 156);
+            this.label3.Location = new System.Drawing.Point(67, 156);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.Size = new System.Drawing.Size(111, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Confirmar Contraseña*:";
+            this.label3.Text = "&Confirmar Contraseña:";
             // 
             // Cancelarbutton
             // 
