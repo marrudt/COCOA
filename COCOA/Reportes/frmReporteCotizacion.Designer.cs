@@ -41,7 +41,6 @@
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.cotizacionRadioButton = new System.Windows.Forms.RadioButton();
             this.clienteRadioButton = new System.Windows.Forms.RadioButton();
-            this.todosRadioButton = new System.Windows.Forms.RadioButton();
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
             this.panel1.SuspendLayout();
             this.filtroGroupBox.SuspendLayout();
@@ -78,7 +77,7 @@
             this.verReporteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.verReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.verReporteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.verReporteButton.Location = new System.Drawing.Point(836, 16);
+            this.verReporteButton.Location = new System.Drawing.Point(770, 16);
             this.verReporteButton.Name = "verReporteButton";
             this.verReporteButton.Size = new System.Drawing.Size(93, 30);
             this.verReporteButton.TabIndex = 1;
@@ -94,10 +93,9 @@
             this.filtroGroupBox.Controls.Add(this.clienteComboBox);
             this.filtroGroupBox.Controls.Add(this.cotizacionRadioButton);
             this.filtroGroupBox.Controls.Add(this.clienteRadioButton);
-            this.filtroGroupBox.Controls.Add(this.todosRadioButton);
             this.filtroGroupBox.Location = new System.Drawing.Point(6, 2);
             this.filtroGroupBox.Name = "filtroGroupBox";
-            this.filtroGroupBox.Size = new System.Drawing.Size(824, 61);
+            this.filtroGroupBox.Size = new System.Drawing.Size(749, 61);
             this.filtroGroupBox.TabIndex = 2;
             this.filtroGroupBox.TabStop = false;
             this.filtroGroupBox.Text = "Filtros";
@@ -107,7 +105,7 @@
             this.busquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.busquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaClienteButton.Location = new System.Drawing.Point(741, 18);
+            this.busquedaClienteButton.Location = new System.Drawing.Point(669, 18);
             this.busquedaClienteButton.Name = "busquedaClienteButton";
             this.busquedaClienteButton.Size = new System.Drawing.Size(63, 23);
             this.busquedaClienteButton.TabIndex = 5;
@@ -118,7 +116,7 @@
             // 
             // cotizacionNumericUpDown
             // 
-            this.cotizacionNumericUpDown.Location = new System.Drawing.Point(255, 19);
+            this.cotizacionNumericUpDown.Location = new System.Drawing.Point(172, 19);
             this.cotizacionNumericUpDown.Maximum = new decimal(new int[] {
             100000000,
             0,
@@ -143,8 +141,9 @@
             // 
             this.clienteComboBox.DataSource = this.clientesBindingSource;
             this.clienteComboBox.DisplayMember = "NombreCliente";
+            this.clienteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.clienteComboBox.FormattingEnabled = true;
-            this.clienteComboBox.Location = new System.Drawing.Point(364, 18);
+            this.clienteComboBox.Location = new System.Drawing.Point(281, 18);
             this.clienteComboBox.Name = "clienteComboBox";
             this.clienteComboBox.Size = new System.Drawing.Size(371, 21);
             this.clienteComboBox.TabIndex = 3;
@@ -164,7 +163,7 @@
             // cotizacionRadioButton
             // 
             this.cotizacionRadioButton.AutoSize = true;
-            this.cotizacionRadioButton.Location = new System.Drawing.Point(175, 19);
+            this.cotizacionRadioButton.Location = new System.Drawing.Point(92, 19);
             this.cotizacionRadioButton.Name = "cotizacionRadioButton";
             this.cotizacionRadioButton.Size = new System.Drawing.Size(74, 17);
             this.cotizacionRadioButton.TabIndex = 2;
@@ -175,26 +174,13 @@
             // clienteRadioButton
             // 
             this.clienteRadioButton.AutoSize = true;
-            this.clienteRadioButton.Location = new System.Drawing.Point(97, 19);
+            this.clienteRadioButton.Location = new System.Drawing.Point(14, 19);
             this.clienteRadioButton.Name = "clienteRadioButton";
             this.clienteRadioButton.Size = new System.Drawing.Size(57, 17);
             this.clienteRadioButton.TabIndex = 1;
             this.clienteRadioButton.Text = "Cliente";
             this.clienteRadioButton.UseVisualStyleBackColor = true;
             this.clienteRadioButton.CheckedChanged += new System.EventHandler(this.clienteRadioButton_CheckedChanged);
-            // 
-            // todosRadioButton
-            // 
-            this.todosRadioButton.AutoSize = true;
-            this.todosRadioButton.Checked = true;
-            this.todosRadioButton.Location = new System.Drawing.Point(21, 19);
-            this.todosRadioButton.Name = "todosRadioButton";
-            this.todosRadioButton.Size = new System.Drawing.Size(55, 17);
-            this.todosRadioButton.TabIndex = 0;
-            this.todosRadioButton.TabStop = true;
-            this.todosRadioButton.Text = "Todos";
-            this.todosRadioButton.UseVisualStyleBackColor = true;
-            this.todosRadioButton.CheckedChanged += new System.EventHandler(this.todosRadioButton_CheckedChanged);
             // 
             // clientesTableAdapter
             // 
@@ -232,7 +218,6 @@
         private System.Windows.Forms.ComboBox clienteComboBox;
         private System.Windows.Forms.RadioButton cotizacionRadioButton;
         private System.Windows.Forms.RadioButton clienteRadioButton;
-        private System.Windows.Forms.RadioButton todosRadioButton;
         private DSCOCOA dSCOCOA;
         private System.Windows.Forms.BindingSource clientesBindingSource;
         private DSCOCOATableAdapters.ClientesTableAdapter clientesTableAdapter;

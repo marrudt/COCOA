@@ -56,7 +56,7 @@ namespace COCOA.Transacciones
             precioTextBox.ReadOnly = true;
             descuentoTextBox.Enabled = false;
             descuentoTextBox.ReadOnly = true;
-            descuentoTextBox.Text = "0";
+            descuentoTextBox.Text = "0.00";
             ultimoProducto = null;
             VerificaPermiso();
         }
@@ -70,6 +70,15 @@ namespace COCOA.Transacciones
             else
             {
                 editarDescuentoButton.Enabled = false;
+            }
+
+            if (DALPermisoRol.Especifico(usuarioLogueado.IdRol, 19))
+            {
+                editarPrecioButton.Enabled = true;
+            }
+            else
+            {
+                editarPrecioButton.Enabled = false;
             }
         }
 
@@ -128,8 +137,7 @@ namespace COCOA.Transacciones
                 productoLabel.Text = miProducto.DescripcionProducto;
                 ultimoProducto = miProducto;
             }
-
-            precioTextBox.Text = string.Format("{0:C2}", ultimoProducto.Precio);
+            precioTextBox.Text = string.Format("{0:N0}", ultimoProducto.Precio);
         }
 
         private void agregarButton_Click_1(object sender, EventArgs e)
@@ -155,6 +163,7 @@ namespace COCOA.Transacciones
             if (!float.TryParse(cantidadTextBox.Text, out cantidad))
             {
                 errorProvider1.SetError(cantidadTextBox, "El campo Cantidad es numérico");
+                cantidadTextBox.Focus();
                 return;
             }
             errorProvider1.Clear();
@@ -162,6 +171,33 @@ namespace COCOA.Transacciones
             if (cantidad <= 0)
             {
                 errorProvider1.SetError(cantidadTextBox, "La Cantidad debe ser mayor a cero");
+                cantidadTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (precioTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(precioTextBox, "El campo Precio es obligatorio");
+                precioTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            decimal precio;
+
+            if (!decimal.TryParse(precioTextBox.Text, out precio))
+            {
+                errorProvider1.SetError(precioTextBox, "El campo Precio es numérico");
+                precioTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (precio < 0)
+            {
+                errorProvider1.SetError(precioTextBox, "El Precio debe ser mayor a cero");
+                precioTextBox.Focus();
                 return;
             }
             errorProvider1.Clear();
@@ -188,7 +224,7 @@ namespace COCOA.Transacciones
             DetalleOrdenCompra miDetalle = new DetalleOrdenCompra();
             miDetalle.Cantidad = cantidad;
             miDetalle.Descuento = descuento;
-            miDetalle.Precio = ultimoProducto.Precio;
+            miDetalle.Precio = precio;
             miDetalle.DescripcionProducto = ultimoProducto.DescripcionProducto;
             miDetalle.IdProducto = ultimoProducto.IdProducto;
             miDetalle.IVA = (float)miIVA.Tarifa;
@@ -205,7 +241,7 @@ namespace COCOA.Transacciones
             precioTextBox.Text = string.Empty;
             descuentoTextBox.Text = string.Empty;
             productoTextBox.Focus();
-            descuentoTextBox.Text = "0";
+            descuentoTextBox.Text = "0.00";
             descuentoTextBox.Enabled = false;
             descuentoTextBox.ReadOnly = true;
         }
@@ -412,6 +448,12 @@ namespace COCOA.Transacciones
             plazoEntregaTextBox.Text = string.Empty;
             formaPagoTextBox.Text = string.Empty;
             terminosGarantiaTextBox.Text = string.Empty;
+            entidadComboBox.Text = string.Empty;
+            numeroCosteoTextBox.Text = string.Empty;
+            contratoTextBox.Text = string.Empty;
+            vehiculoComboBox.SelectedIndex = -1;
+            precioTextBox.Text = "0.00";
+            descuentoTextBox.Text = "0.00";
             RefrescaGrid();
             plazoEntregaTextBox.Focus();
         }
@@ -526,6 +568,12 @@ namespace COCOA.Transacciones
             frmProductos miForm = new frmProductos();
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
+        }
+
+        private void editarPrecioButton_Click(object sender, EventArgs e)
+        {
+            precioTextBox.ReadOnly = false;
+            precioTextBox.Enabled = true;
         }
     }
 }

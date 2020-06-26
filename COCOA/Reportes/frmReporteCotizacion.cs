@@ -16,25 +16,13 @@ namespace COCOA.Reportes
             set { usuarioLogueado = value; }
         }
 
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
         private int idCotizacion;
 
         public int IDCotizacion
         {
-          get { return idCotizacion; }
-          set { idCotizacion = value; }
+            get { return idCotizacion; }
+            set { idCotizacion = value; }
         }
-
-        //public int IDCotizacion
-        //{
-        //    get => idCotizacion;
-        //    set => idCotizacion = value;
-        //}
 
         public frmReporteCotizacion()
         {
@@ -46,16 +34,13 @@ namespace COCOA.Reportes
             rptReporteCotizacion miListado = new rptReporteCotizacion();
             DSCOCOA miDS = new DSCOCOA();
             ReporteCotizacionTableAdapter adapter = new ReporteCotizacionTableAdapter();
-            if (todosRadioButton.Checked)
-            {
-                adapter.Fill(miDS.ReporteCotizacion);
-            }
-            else if (clienteRadioButton.Checked)
+
+            if (clienteRadioButton.Checked)
             {
                 adapter.FillByIdCliente(miDS.ReporteCotizacion, (int)clienteComboBox.SelectedValue);
             }
             else
-            { 
+            {
                 adapter.FillByIdCotizacion(miDS.ReporteCotizacion, (int)cotizacionNumericUpDown.Value);
             }
             miListado.SetDataSource(miDS);
@@ -75,7 +60,7 @@ namespace COCOA.Reportes
                 miListado.SetDataSource(miDS);
                 crystalReportViewer1.ReportSource = miListado;
             }
-            
+
         }
 
         private void todosRadioButton_CheckedChanged(object sender, EventArgs e)
@@ -85,13 +70,7 @@ namespace COCOA.Reportes
 
         private void ActualizaFiltro()
         {
-            if (todosRadioButton.Checked)
-            {
-                clienteComboBox.Visible = false;
-                cotizacionNumericUpDown.Visible = false;
-                busquedaClienteButton.Visible = false;
-            }
-            else if (clienteRadioButton.Checked)
+            if (clienteRadioButton.Checked)
             {
                 clienteComboBox.Visible = true;
                 busquedaClienteButton.Visible = true;
@@ -103,7 +82,7 @@ namespace COCOA.Reportes
                 busquedaClienteButton.Visible = false;
                 cotizacionNumericUpDown.Visible = true;
             }
-        }        
+        }
 
         private void cotizacionRadioButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -122,6 +101,6 @@ namespace COCOA.Reportes
         {
             ActualizaFiltro();
         }
-        
+
     }
 }

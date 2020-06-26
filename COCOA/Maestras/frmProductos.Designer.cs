@@ -307,7 +307,7 @@
             // activoLabel
             // 
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(542, 240);
+            activoLabel.Location = new System.Drawing.Point(542, 254);
             activoLabel.Name = "activoLabel";
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 20;
@@ -342,6 +342,7 @@
             this.tableAdapterManager.IntervaloPreciosTableAdapter = this.intervaloPreciosTableAdapter;
             this.tableAdapterManager.IVATableAdapter = this.iVATableAdapter;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = this.numeroPasajerosTableAdapter;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -432,8 +433,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -503,7 +504,7 @@
             this.bindingNavigatorEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorEdit.Name = "bindingNavigatorEdit";
             this.bindingNavigatorEdit.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorEdit.Text = "toolStripButton1";
+            this.bindingNavigatorEdit.Text = "Editar";
             this.bindingNavigatorEdit.ToolTipText = "Editar";
             this.bindingNavigatorEdit.Click += new System.EventHandler(this.bindingNavigatorEdit_Click);
             // 
@@ -514,7 +515,7 @@
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Text = "Nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
@@ -524,7 +525,7 @@
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Text = "Eliminar";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorSaveItem
@@ -534,7 +535,7 @@
             this.bindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSaveItem.Image")));
             this.bindingNavigatorSaveItem.Name = "bindingNavigatorSaveItem";
             this.bindingNavigatorSaveItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorSaveItem.Text = "Save Data";
+            this.bindingNavigatorSaveItem.Text = "Guardar";
             this.bindingNavigatorSaveItem.Click += new System.EventHandler(this.productosBindingNavigatorSaveItem_Click);
             // 
             // bindingNavigatorCancel
@@ -545,7 +546,7 @@
             this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
             this.bindingNavigatorCancel.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorCancel.Text = "toolStripButton1";
+            this.bindingNavigatorCancel.Text = "Cancelar";
             this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
             // 
             // bindingNavigatorSearch
@@ -555,7 +556,7 @@
             this.bindingNavigatorSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorSearch.Name = "bindingNavigatorSearch";
             this.bindingNavigatorSearch.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorSearch.Text = "toolStripButton3";
+            this.bindingNavigatorSearch.Text = "Buscar";
             this.bindingNavigatorSearch.ToolTipText = "Buscar";
             this.bindingNavigatorSearch.Click += new System.EventHandler(this.bindingNavigatorSearch_Click);
             // 
@@ -566,7 +567,7 @@
             this.bindingNavigatorExit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorExit.Name = "bindingNavigatorExit";
             this.bindingNavigatorExit.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorExit.Text = "toolStripButton4";
+            this.bindingNavigatorExit.Text = "Salir";
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.bindingNavigatorExit_Click);
             // 
@@ -577,7 +578,7 @@
             this.bindingNavigatorPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.bindingNavigatorPrint.Name = "bindingNavigatorPrint";
             this.bindingNavigatorPrint.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorPrint.Text = "toolStripButton1";
+            this.bindingNavigatorPrint.Text = "Listado";
             this.bindingNavigatorPrint.ToolTipText = "Imprimir";
             this.bindingNavigatorPrint.Click += new System.EventHandler(this.bindingNavigatorPrint_Click);
             // 
@@ -670,6 +671,7 @@
             this.idTipoProductoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdTipoProducto", true));
             this.idTipoProductoComboBox.DataSource = this.tipoProductoBindingSource;
             this.idTipoProductoComboBox.DisplayMember = "DescripcionTipoProducto";
+            this.idTipoProductoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idTipoProductoComboBox.Enabled = false;
             this.idTipoProductoComboBox.FormattingEnabled = true;
             this.idTipoProductoComboBox.Location = new System.Drawing.Point(101, 45);
@@ -680,6 +682,7 @@
             // 
             // codigoProductoTextBox
             // 
+            this.codigoProductoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.codigoProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "CodigoProducto", true));
             this.codigoProductoTextBox.Location = new System.Drawing.Point(325, 45);
             this.codigoProductoTextBox.Name = "codigoProductoTextBox";
@@ -698,6 +701,7 @@
             // 
             // descripcionProductoTextBox
             // 
+            this.descripcionProductoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.descripcionProductoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productosBindingSource, "DescripcionProducto", true));
             this.descripcionProductoTextBox.Location = new System.Drawing.Point(101, 72);
             this.descripcionProductoTextBox.Name = "descripcionProductoTextBox";
@@ -710,6 +714,7 @@
             this.idClaseComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdClase", true));
             this.idClaseComboBox.DataSource = this.claseBindingSource;
             this.idClaseComboBox.DisplayMember = "DescripcionClase";
+            this.idClaseComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idClaseComboBox.Enabled = false;
             this.idClaseComboBox.FormattingEnabled = true;
             this.idClaseComboBox.Location = new System.Drawing.Point(101, 98);
@@ -726,6 +731,7 @@
             this.modeloAnoTextBox.ReadOnly = true;
             this.modeloAnoTextBox.Size = new System.Drawing.Size(61, 20);
             this.modeloAnoTextBox.TabIndex = 1;
+            this.modeloAnoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.modeloAnoTextBox_KeyPress);
             // 
             // precioTextBox
             // 
@@ -735,12 +741,14 @@
             this.precioTextBox.ReadOnly = true;
             this.precioTextBox.Size = new System.Drawing.Size(153, 20);
             this.precioTextBox.TabIndex = 11;
+            this.precioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precioTextBox_KeyPress);
             // 
             // idIVAComboBox
             // 
             this.idIVAComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdIVA", true));
             this.idIVAComboBox.DataSource = this.iVABindingSource;
             this.idIVAComboBox.DisplayMember = "DescripcionIVA";
+            this.idIVAComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idIVAComboBox.Enabled = false;
             this.idIVAComboBox.FormattingEnabled = true;
             this.idIVAComboBox.Location = new System.Drawing.Point(101, 125);
@@ -754,6 +762,7 @@
             this.idImpoconsumoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdImpoconsumo", true));
             this.idImpoconsumoComboBox.DataSource = this.impoconsumoBindingSource;
             this.idImpoconsumoComboBox.DisplayMember = "DescripcionImpoconsumo";
+            this.idImpoconsumoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idImpoconsumoComboBox.Enabled = false;
             this.idImpoconsumoComboBox.FormattingEnabled = true;
             this.idImpoconsumoComboBox.Location = new System.Drawing.Point(367, 124);
@@ -767,6 +776,7 @@
             this.idSegmentoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdSegmento", true));
             this.idSegmentoComboBox.DataSource = this.segmentosBindingSource;
             this.idSegmentoComboBox.DisplayMember = "DescripcionSegmento";
+            this.idSegmentoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idSegmentoComboBox.Enabled = false;
             this.idSegmentoComboBox.FormattingEnabled = true;
             this.idSegmentoComboBox.Location = new System.Drawing.Point(110, 49);
@@ -794,13 +804,14 @@
             this.groupBox1.Size = new System.Drawing.Size(416, 198);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Vehículos";
+            this.groupBox1.Text = "Detalle (vehículos)";
             // 
             // idCilindrajeComboBox
             // 
             this.idCilindrajeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdCilindraje", true));
             this.idCilindrajeComboBox.DataSource = this.cilindrajesBindingSource;
             this.idCilindrajeComboBox.DisplayMember = "DescripcionCilindraje";
+            this.idCilindrajeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idCilindrajeComboBox.Enabled = false;
             this.idCilindrajeComboBox.FormattingEnabled = true;
             this.idCilindrajeComboBox.Location = new System.Drawing.Point(110, 76);
@@ -814,6 +825,7 @@
             this.idIntervaloPrecioComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdIntervaloPrecio", true));
             this.idIntervaloPrecioComboBox.DataSource = this.intervaloPreciosBindingSource;
             this.idIntervaloPrecioComboBox.DisplayMember = "DescripcionIntervaloPrecio";
+            this.idIntervaloPrecioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idIntervaloPrecioComboBox.Enabled = false;
             this.idIntervaloPrecioComboBox.FormattingEnabled = true;
             this.idIntervaloPrecioComboBox.Location = new System.Drawing.Point(110, 157);
@@ -827,6 +839,7 @@
             this.idPesoBrutoVhComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdPesoBrutoVh", true));
             this.idPesoBrutoVhComboBox.DataSource = this.pesoBrutoVhBindingSource;
             this.idPesoBrutoVhComboBox.DisplayMember = "DescripcionPesoBrutoVh";
+            this.idPesoBrutoVhComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idPesoBrutoVhComboBox.Enabled = false;
             this.idPesoBrutoVhComboBox.FormattingEnabled = true;
             this.idPesoBrutoVhComboBox.Location = new System.Drawing.Point(110, 130);
@@ -840,6 +853,7 @@
             this.idNumeroPasajerosComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productosBindingSource, "IdNumeroPasajeros", true));
             this.idNumeroPasajerosComboBox.DataSource = this.numeroPasajerosBindingSource;
             this.idNumeroPasajerosComboBox.DisplayMember = "NumeroPasajeros";
+            this.idNumeroPasajerosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idNumeroPasajerosComboBox.Enabled = false;
             this.idNumeroPasajerosComboBox.FormattingEnabled = true;
             this.idNumeroPasajerosComboBox.Location = new System.Drawing.Point(110, 103);
@@ -881,7 +895,7 @@
             this.activoCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.productosBindingSource, "Activo", true));
             this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(588, 235);
+            this.activoCheckBox.Location = new System.Drawing.Point(588, 249);
             this.activoCheckBox.Name = "activoCheckBox";
             this.activoCheckBox.Size = new System.Drawing.Size(15, 24);
             this.activoCheckBox.TabIndex = 21;
@@ -902,6 +916,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "IdTipoProducto";
             this.dataGridViewTextBoxColumn2.DataSource = this.tipoProductoBindingSource;
             this.dataGridViewTextBoxColumn2.DisplayMember = "DescripcionTipoProducto";
+            this.dataGridViewTextBoxColumn2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn2.HeaderText = "Tipo";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -942,6 +957,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "IdClase";
             this.dataGridViewTextBoxColumn6.DataSource = this.claseBindingSource;
             this.dataGridViewTextBoxColumn6.DisplayMember = "DescripcionClase";
+            this.dataGridViewTextBoxColumn6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn6.HeaderText = "Clase";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -954,7 +970,7 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "ModeloAno";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Modelo Año";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Año";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 60;
@@ -967,10 +983,10 @@
             dataGridViewCellStyle1.Format = "C2";
             dataGridViewCellStyle1.NullValue = null;
             this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Precio Unitario";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 93;
+            this.dataGridViewTextBoxColumn8.Width = 62;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -978,6 +994,7 @@
             this.dataGridViewTextBoxColumn9.DataPropertyName = "IdIVA";
             this.dataGridViewTextBoxColumn9.DataSource = this.iVABindingSource;
             this.dataGridViewTextBoxColumn9.DisplayMember = "Tarifa";
+            this.dataGridViewTextBoxColumn9.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn9.HeaderText = "IVA";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -992,6 +1009,7 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "IdImpoconsumo";
             this.dataGridViewTextBoxColumn10.DataSource = this.impoconsumoBindingSource;
             this.dataGridViewTextBoxColumn10.DisplayMember = "Tarifa";
+            this.dataGridViewTextBoxColumn10.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn10.HeaderText = "Impoconsumo";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.ReadOnly = true;
@@ -1006,6 +1024,7 @@
             this.dataGridViewTextBoxColumn11.DataPropertyName = "IdSegmento";
             this.dataGridViewTextBoxColumn11.DataSource = this.segmentosBindingSource;
             this.dataGridViewTextBoxColumn11.DisplayMember = "DescripcionSegmento";
+            this.dataGridViewTextBoxColumn11.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn11.HeaderText = "Segmento";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -1020,6 +1039,7 @@
             this.dataGridViewTextBoxColumn12.DataPropertyName = "IdCilindraje";
             this.dataGridViewTextBoxColumn12.DataSource = this.cilindrajesBindingSource;
             this.dataGridViewTextBoxColumn12.DisplayMember = "DescripcionCilindraje";
+            this.dataGridViewTextBoxColumn12.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn12.HeaderText = "Cilindraje";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.ReadOnly = true;
@@ -1034,6 +1054,7 @@
             this.dataGridViewTextBoxColumn13.DataPropertyName = "IdNumeroPasajeros";
             this.dataGridViewTextBoxColumn13.DataSource = this.numeroPasajerosBindingSource;
             this.dataGridViewTextBoxColumn13.DisplayMember = "NumeroPasajeros";
+            this.dataGridViewTextBoxColumn13.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn13.HeaderText = "Número Pasajeros";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -1048,6 +1069,7 @@
             this.dataGridViewTextBoxColumn14.DataPropertyName = "IdPesoBrutoVh";
             this.dataGridViewTextBoxColumn14.DataSource = this.pesoBrutoVhBindingSource;
             this.dataGridViewTextBoxColumn14.DisplayMember = "DescripcionPesoBrutoVh";
+            this.dataGridViewTextBoxColumn14.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn14.HeaderText = "Peso Bruto Vh";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
@@ -1062,6 +1084,7 @@
             this.dataGridViewTextBoxColumn15.DataPropertyName = "IdIntervaloPrecio";
             this.dataGridViewTextBoxColumn15.DataSource = this.intervaloPreciosBindingSource;
             this.dataGridViewTextBoxColumn15.DisplayMember = "DescripcionIntervaloPrecio";
+            this.dataGridViewTextBoxColumn15.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn15.HeaderText = "Intervalo Precio";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;

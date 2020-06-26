@@ -65,6 +65,7 @@
             this.bindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorExit = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             this.idOrdenCompraTextBox = new System.Windows.Forms.TextBox();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.idProveedorComboBox = new System.Windows.Forms.ComboBox();
@@ -98,7 +99,6 @@
             this.busquedaProveedorButton = new System.Windows.Forms.Button();
             this.BusquedaClienteButton = new System.Windows.Forms.Button();
             this.BusquedaProductoButton = new System.Windows.Forms.Button();
-            this.bindingNavigatorSearch = new System.Windows.Forms.ToolStripButton();
             idOrdenCompraLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             idProveedorLabel = new System.Windows.Forms.Label();
@@ -230,8 +230,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = this.ordenCompraDetalleTableAdapter;
             this.tableAdapterManager.OrdenCompraTableAdapter = this.ordenCompraTableAdapter;
@@ -407,6 +407,17 @@
             this.bindingNavigatorExit.ToolTipText = "Salir";
             this.bindingNavigatorExit.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
+            // bindingNavigatorSearch
+            // 
+            this.bindingNavigatorSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorSearch.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearch.Image")));
+            this.bindingNavigatorSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorSearch.Name = "bindingNavigatorSearch";
+            this.bindingNavigatorSearch.Size = new System.Drawing.Size(28, 28);
+            this.bindingNavigatorSearch.Text = "toolStripButton3";
+            this.bindingNavigatorSearch.ToolTipText = "Buscar";
+            this.bindingNavigatorSearch.Click += new System.EventHandler(this.bindingNavigatorSearch_Click);
+            // 
             // idOrdenCompraTextBox
             // 
             this.idOrdenCompraTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "IdOrdenCompra", true));
@@ -432,6 +443,7 @@
             this.idProveedorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ordenCompraBindingSource, "IdProveedor", true));
             this.idProveedorComboBox.DataSource = this.proveedoresBindingSource;
             this.idProveedorComboBox.DisplayMember = "NombreProveedor";
+            this.idProveedorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idProveedorComboBox.Enabled = false;
             this.idProveedorComboBox.FormattingEnabled = true;
             this.idProveedorComboBox.Location = new System.Drawing.Point(552, 41);
@@ -468,6 +480,7 @@
             this.idClienteComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ordenCompraBindingSource, "IdCliente", true));
             this.idClienteComboBox.DataSource = this.clientesBindingSource;
             this.idClienteComboBox.DisplayMember = "NombreCliente";
+            this.idClienteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idClienteComboBox.Enabled = false;
             this.idClienteComboBox.FormattingEnabled = true;
             this.idClienteComboBox.Location = new System.Drawing.Point(552, 68);
@@ -505,6 +518,7 @@
             this.idProductoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ordenCompraBindingSource, "IdProducto", true));
             this.idProductoComboBox.DataSource = this.productosBindingSource;
             this.idProductoComboBox.DisplayMember = "DescripcionProducto";
+            this.idProductoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idProductoComboBox.Enabled = false;
             this.idProductoComboBox.FormattingEnabled = true;
             this.idProductoComboBox.Location = new System.Drawing.Point(552, 121);
@@ -755,17 +769,6 @@
             this.BusquedaProductoButton.Text = "Buscar";
             this.BusquedaProductoButton.UseVisualStyleBackColor = false;
             this.BusquedaProductoButton.Click += new System.EventHandler(this.BusquedaProductoButton_Click);
-            // 
-            // bindingNavigatorSearch
-            // 
-            this.bindingNavigatorSearch.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorSearch.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorSearch.Image")));
-            this.bindingNavigatorSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorSearch.Name = "bindingNavigatorSearch";
-            this.bindingNavigatorSearch.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorSearch.Text = "toolStripButton3";
-            this.bindingNavigatorSearch.ToolTipText = "Buscar";
-            this.bindingNavigatorSearch.Click += new System.EventHandler(this.bindingNavigatorSearch_Click);
             // 
             // frmEdicionOrdenCompra
             // 

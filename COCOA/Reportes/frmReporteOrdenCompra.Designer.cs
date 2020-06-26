@@ -128,6 +128,7 @@
             // 
             this.proveedorComboBox.DataSource = this.proveedoresBindingSource;
             this.proveedorComboBox.DisplayMember = "NombreProveedor";
+            this.proveedorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.proveedorComboBox.FormattingEnabled = true;
             this.proveedorComboBox.Location = new System.Drawing.Point(321, 22);
             this.proveedorComboBox.Name = "proveedorComboBox";

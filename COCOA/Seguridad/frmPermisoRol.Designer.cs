@@ -174,6 +174,7 @@
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -489,6 +490,7 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "IdRol";
             this.dataGridViewTextBoxColumn2.DataSource = this.rolBindingSource;
             this.dataGridViewTextBoxColumn2.DisplayMember = "DescripcionRol";
+            this.dataGridViewTextBoxColumn2.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn2.HeaderText = "Rol";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -503,6 +505,7 @@
             this.dataGridViewTextBoxColumn3.DataPropertyName = "IdFormulario";
             this.dataGridViewTextBoxColumn3.DataSource = this.formularioBindingSource;
             this.dataGridViewTextBoxColumn3.DisplayMember = "DescripcionFormulario";
+            this.dataGridViewTextBoxColumn3.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn3.HeaderText = "Formulario";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;

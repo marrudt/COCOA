@@ -38,13 +38,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.usuarioComboBox = new System.Windows.Forms.ComboBox();
-            this.dSCOCOA = new COCOA.DSCOCOA();
             this.usuariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dSCOCOA = new COCOA.DSCOCOA();
             this.usuariosTableAdapter = new COCOA.DSCOCOATableAdapters.UsuariosTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             this.SuspendLayout();
             // 
             // Cancelarbutton
@@ -129,6 +129,7 @@
             // 
             this.usuarioComboBox.DataSource = this.usuariosBindingSource;
             this.usuarioComboBox.DisplayMember = "IdUsuario";
+            this.usuarioComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.usuarioComboBox.FormattingEnabled = true;
             this.usuarioComboBox.Location = new System.Drawing.Point(132, 108);
             this.usuarioComboBox.Name = "usuarioComboBox";
@@ -136,15 +137,15 @@
             this.usuarioComboBox.TabIndex = 14;
             this.usuarioComboBox.ValueMember = "IdUsuario";
             // 
-            // dSCOCOA
-            // 
-            this.dSCOCOA.DataSetName = "DSCOCOA";
-            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // usuariosBindingSource
             // 
             this.usuariosBindingSource.DataMember = "Usuarios";
             this.usuariosBindingSource.DataSource = this.dSCOCOA;
+            // 
+            // dSCOCOA
+            // 
+            this.dSCOCOA.DataSetName = "DSCOCOA";
+            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usuariosTableAdapter
             // 
@@ -175,8 +176,8 @@
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuariosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

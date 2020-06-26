@@ -95,6 +95,7 @@
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
             this.label13 = new System.Windows.Forms.Label();
             this.totalDescuentoTextBox = new System.Windows.Forms.TextBox();
+            this.editarPrecioButton = new System.Windows.Forms.Button();
             formaPagoLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             numeroCosteoLabel = new System.Windows.Forms.Label();
@@ -143,7 +144,7 @@
             // contratoLabel
             // 
             contratoLabel.AutoSize = true;
-            contratoLabel.Location = new System.Drawing.Point(270, 160);
+            contratoLabel.Location = new System.Drawing.Point(246, 160);
             contratoLabel.Name = "contratoLabel";
             contratoLabel.Size = new System.Drawing.Size(50, 13);
             contratoLabel.TabIndex = 13;
@@ -199,10 +200,11 @@
             this.proveedorComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.proveedoresBindingSource, "IdProveedor", true));
             this.proveedorComboBox.DataSource = this.proveedoresBindingSource;
             this.proveedorComboBox.DisplayMember = "NombreProveedor";
+            this.proveedorComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.proveedorComboBox.FormattingEnabled = true;
             this.proveedorComboBox.Location = new System.Drawing.Point(103, 23);
             this.proveedorComboBox.Name = "proveedorComboBox";
-            this.proveedorComboBox.Size = new System.Drawing.Size(344, 21);
+            this.proveedorComboBox.Size = new System.Drawing.Size(410, 21);
             this.proveedorComboBox.TabIndex = 1;
             this.proveedorComboBox.ValueMember = "IdProveedor";
             // 
@@ -230,7 +232,7 @@
             this.plazoEntregaTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.plazoEntregaTextBox.Location = new System.Drawing.Point(105, 52);
             this.plazoEntregaTextBox.Name = "plazoEntregaTextBox";
-            this.plazoEntregaTextBox.Size = new System.Drawing.Size(321, 20);
+            this.plazoEntregaTextBox.Size = new System.Drawing.Size(408, 20);
             this.plazoEntregaTextBox.TabIndex = 3;
             // 
             // proveedoresTableAdapter
@@ -242,7 +244,7 @@
             this.busquedaProveedorButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.busquedaProveedorButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busquedaProveedorButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaProveedorButton.Location = new System.Drawing.Point(472, 21);
+            this.busquedaProveedorButton.Location = new System.Drawing.Point(537, 21);
             this.busquedaProveedorButton.Name = "busquedaProveedorButton";
             this.busquedaProveedorButton.Size = new System.Drawing.Size(76, 23);
             this.busquedaProveedorButton.TabIndex = 2;
@@ -264,7 +266,7 @@
             this.buscarProductoButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.buscarProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buscarProductoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buscarProductoButton.Location = new System.Drawing.Point(472, 48);
+            this.buscarProductoButton.Location = new System.Drawing.Point(537, 48);
             this.buscarProductoButton.Name = "buscarProductoButton";
             this.buscarProductoButton.Size = new System.Drawing.Size(76, 23);
             this.buscarProductoButton.TabIndex = 6;
@@ -313,9 +315,9 @@
             this.agregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarButton.Image")));
-            this.agregarButton.Location = new System.Drawing.Point(549, 161);
+            this.agregarButton.Location = new System.Drawing.Point(637, 313);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Size = new System.Drawing.Size(90, 77);
+            this.agregarButton.Size = new System.Drawing.Size(94, 74);
             this.agregarButton.TabIndex = 0;
             this.agregarButton.Text = "Agregar";
             this.agregarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -333,9 +335,9 @@
             this.detalleOrdenCompraDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.detalleOrdenCompraDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.detalleOrdenCompraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 244);
+            this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 393);
             this.detalleOrdenCompraDataGridView.Name = "detalleOrdenCompraDataGridView";
-            this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1513, 265);
+            this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1174, 283);
             this.detalleOrdenCompraDataGridView.TabIndex = 16;
             // 
             // precioTextBox
@@ -344,7 +346,7 @@
             this.precioTextBox.Location = new System.Drawing.Point(328, 78);
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.ReadOnly = true;
-            this.precioTextBox.Size = new System.Drawing.Size(119, 20);
+            this.precioTextBox.Size = new System.Drawing.Size(185, 20);
             this.precioTextBox.TabIndex = 10;
             // 
             // label7
@@ -375,7 +377,7 @@
             this.productoLabel.ForeColor = System.Drawing.Color.Maroon;
             this.productoLabel.Location = new System.Drawing.Point(166, 53);
             this.productoLabel.Name = "productoLabel";
-            this.productoLabel.Size = new System.Drawing.Size(281, 17);
+            this.productoLabel.Size = new System.Drawing.Size(347, 17);
             this.productoLabel.TabIndex = 5;
             this.productoLabel.Text = "Detalle Producto";
             // 
@@ -403,6 +405,7 @@
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = this.ordenCompraDetalleTableAdapter;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -423,7 +426,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1317, 105);
+            this.label8.Location = new System.Drawing.Point(978, 258);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 6;
@@ -435,7 +438,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalSubtotalTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalSubtotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1376, 103);
+            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1037, 256);
             this.totalSubtotalTextBox.Name = "totalSubtotalTextBox";
             this.totalSubtotalTextBox.ReadOnly = true;
             this.totalSubtotalTextBox.Size = new System.Drawing.Size(125, 21);
@@ -448,7 +451,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalIVATextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalIVATextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalIVATextBox.Location = new System.Drawing.Point(1376, 130);
+            this.totalIVATextBox.Location = new System.Drawing.Point(1037, 283);
             this.totalIVATextBox.Name = "totalIVATextBox";
             this.totalIVATextBox.ReadOnly = true;
             this.totalIVATextBox.Size = new System.Drawing.Size(125, 21);
@@ -461,7 +464,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalImpoconsumoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalImpoconsumoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1376, 157);
+            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1037, 310);
             this.totalImpoconsumoTextBox.Name = "totalImpoconsumoTextBox";
             this.totalImpoconsumoTextBox.ReadOnly = true;
             this.totalImpoconsumoTextBox.Size = new System.Drawing.Size(125, 21);
@@ -474,7 +477,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalNetoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalNetoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalNetoTextBox.Location = new System.Drawing.Point(1376, 211);
+            this.totalNetoTextBox.Location = new System.Drawing.Point(1037, 364);
             this.totalNetoTextBox.Name = "totalNetoTextBox";
             this.totalNetoTextBox.ReadOnly = true;
             this.totalNetoTextBox.Size = new System.Drawing.Size(125, 21);
@@ -487,7 +490,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1345, 132);
+            this.label9.Location = new System.Drawing.Point(1006, 285);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 15);
             this.label9.TabIndex = 8;
@@ -499,7 +502,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1283, 160);
+            this.label10.Location = new System.Drawing.Point(944, 313);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 15);
             this.label10.TabIndex = 10;
@@ -511,7 +514,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1335, 213);
+            this.label11.Location = new System.Drawing.Point(996, 366);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 15);
             this.label11.TabIndex = 14;
@@ -527,9 +530,9 @@
             this.guardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guardarButton.Image = ((System.Drawing.Image)(resources.GetObject("guardarButton.Image")));
-            this.guardarButton.Location = new System.Drawing.Point(645, 161);
+            this.guardarButton.Location = new System.Drawing.Point(737, 313);
             this.guardarButton.Name = "guardarButton";
-            this.guardarButton.Size = new System.Drawing.Size(87, 77);
+            this.guardarButton.Size = new System.Drawing.Size(91, 74);
             this.guardarButton.TabIndex = 1;
             this.guardarButton.Text = "Guardar";
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -546,9 +549,9 @@
             this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
-            this.cancelarButton.Location = new System.Drawing.Point(738, 161);
+            this.cancelarButton.Location = new System.Drawing.Point(834, 313);
             this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(82, 77);
+            this.cancelarButton.Size = new System.Drawing.Size(86, 74);
             this.cancelarButton.TabIndex = 2;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -565,9 +568,9 @@
             this.borrarTodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarTodoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarTodoButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarTodoButton.Image")));
-            this.borrarTodoButton.Location = new System.Drawing.Point(922, 161);
+            this.borrarTodoButton.Location = new System.Drawing.Point(737, 233);
             this.borrarTodoButton.Name = "borrarTodoButton";
-            this.borrarTodoButton.Size = new System.Drawing.Size(87, 77);
+            this.borrarTodoButton.Size = new System.Drawing.Size(91, 78);
             this.borrarTodoButton.TabIndex = 4;
             this.borrarTodoButton.Text = "Borrar Todo";
             this.borrarTodoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -585,9 +588,9 @@
             this.borrarLineaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarLineaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarLineaButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarLineaButton.Image")));
-            this.borrarLineaButton.Location = new System.Drawing.Point(826, 161);
+            this.borrarLineaButton.Location = new System.Drawing.Point(637, 233);
             this.borrarLineaButton.Name = "borrarLineaButton";
-            this.borrarLineaButton.Size = new System.Drawing.Size(90, 77);
+            this.borrarLineaButton.Size = new System.Drawing.Size(94, 78);
             this.borrarLineaButton.TabIndex = 3;
             this.borrarLineaButton.Text = "Borrar Línea";
             this.borrarLineaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -604,9 +607,9 @@
             this.salirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salirButton.Image = ((System.Drawing.Image)(resources.GetObject("salirButton.Image")));
-            this.salirButton.Location = new System.Drawing.Point(1015, 161);
+            this.salirButton.Location = new System.Drawing.Point(834, 233);
             this.salirButton.Name = "salirButton";
-            this.salirButton.Size = new System.Drawing.Size(82, 77);
+            this.salirButton.Size = new System.Drawing.Size(86, 78);
             this.salirButton.TabIndex = 5;
             this.salirButton.Text = "Salir";
             this.salirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -636,7 +639,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(6, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(532, 226);
+            this.groupBox1.Size = new System.Drawing.Size(625, 226);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
@@ -647,7 +650,7 @@
             this.terminosGarantiaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "FormaPago", true));
             this.terminosGarantiaTextBox.Location = new System.Drawing.Point(105, 104);
             this.terminosGarantiaTextBox.Name = "terminosGarantiaTextBox";
-            this.terminosGarantiaTextBox.Size = new System.Drawing.Size(321, 20);
+            this.terminosGarantiaTextBox.Size = new System.Drawing.Size(408, 20);
             this.terminosGarantiaTextBox.TabIndex = 7;
             // 
             // ordenCompraBindingSource
@@ -660,9 +663,9 @@
             this.BusquedaProductoButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BusquedaProductoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BusquedaProductoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BusquedaProductoButton.Location = new System.Drawing.Point(454, 181);
+            this.BusquedaProductoButton.Location = new System.Drawing.Point(537, 181);
             this.BusquedaProductoButton.Name = "BusquedaProductoButton";
-            this.BusquedaProductoButton.Size = new System.Drawing.Size(63, 23);
+            this.BusquedaProductoButton.Size = new System.Drawing.Size(76, 23);
             this.BusquedaProductoButton.TabIndex = 17;
             this.BusquedaProductoButton.Text = "Buscar";
             this.BusquedaProductoButton.UseVisualStyleBackColor = false;
@@ -673,19 +676,21 @@
             this.vehiculoComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ordenCompraBindingSource, "IdProducto", true));
             this.vehiculoComboBox.DataSource = this.productosBindingSource;
             this.vehiculoComboBox.DisplayMember = "DescripcionProducto";
+            this.vehiculoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.vehiculoComboBox.FormattingEnabled = true;
             this.vehiculoComboBox.Location = new System.Drawing.Point(105, 183);
             this.vehiculoComboBox.Name = "vehiculoComboBox";
-            this.vehiculoComboBox.Size = new System.Drawing.Size(321, 21);
+            this.vehiculoComboBox.Size = new System.Drawing.Size(408, 21);
             this.vehiculoComboBox.TabIndex = 16;
             this.vehiculoComboBox.ValueMember = "IdProducto";
             // 
             // contratoTextBox
             // 
+            this.contratoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.contratoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "Contrato", true));
-            this.contratoTextBox.Location = new System.Drawing.Point(326, 157);
+            this.contratoTextBox.Location = new System.Drawing.Point(302, 157);
             this.contratoTextBox.Name = "contratoTextBox";
-            this.contratoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.contratoTextBox.Size = new System.Drawing.Size(211, 20);
             this.contratoTextBox.TabIndex = 14;
             // 
             // numeroCosteoTextBox
@@ -693,7 +698,7 @@
             this.numeroCosteoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "NumeroCosteo", true));
             this.numeroCosteoTextBox.Location = new System.Drawing.Point(105, 157);
             this.numeroCosteoTextBox.Name = "numeroCosteoTextBox";
-            this.numeroCosteoTextBox.Size = new System.Drawing.Size(143, 20);
+            this.numeroCosteoTextBox.Size = new System.Drawing.Size(117, 20);
             this.numeroCosteoTextBox.TabIndex = 12;
             this.numeroCosteoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numeroCosteoTextBox_KeyPress);
             // 
@@ -702,9 +707,9 @@
             this.BusquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.BusquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BusquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.BusquedaClienteButton.Location = new System.Drawing.Point(454, 128);
+            this.BusquedaClienteButton.Location = new System.Drawing.Point(537, 128);
             this.BusquedaClienteButton.Name = "BusquedaClienteButton";
-            this.BusquedaClienteButton.Size = new System.Drawing.Size(63, 23);
+            this.BusquedaClienteButton.Size = new System.Drawing.Size(76, 23);
             this.BusquedaClienteButton.TabIndex = 10;
             this.BusquedaClienteButton.Text = "Buscar";
             this.BusquedaClienteButton.UseVisualStyleBackColor = false;
@@ -715,10 +720,11 @@
             this.entidadComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.ordenCompraBindingSource, "IdCliente", true));
             this.entidadComboBox.DataSource = this.clientesBindingSource;
             this.entidadComboBox.DisplayMember = "NombreCliente";
+            this.entidadComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.entidadComboBox.FormattingEnabled = true;
             this.entidadComboBox.Location = new System.Drawing.Point(105, 130);
             this.entidadComboBox.Name = "entidadComboBox";
-            this.entidadComboBox.Size = new System.Drawing.Size(321, 21);
+            this.entidadComboBox.Size = new System.Drawing.Size(408, 21);
             this.entidadComboBox.TabIndex = 9;
             this.entidadComboBox.ValueMember = "IdCliente";
             // 
@@ -733,12 +739,13 @@
             this.formaPagoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "FormaPago", true));
             this.formaPagoTextBox.Location = new System.Drawing.Point(105, 78);
             this.formaPagoTextBox.Name = "formaPagoTextBox";
-            this.formaPagoTextBox.Size = new System.Drawing.Size(321, 20);
+            this.formaPagoTextBox.Size = new System.Drawing.Size(408, 20);
             this.formaPagoTextBox.TabIndex = 5;
             // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox2.Controls.Add(this.editarPrecioButton);
             this.groupBox2.Controls.Add(this.productoButton);
             this.groupBox2.Controls.Add(this.editarDescuentoButton);
             this.groupBox2.Controls.Add(this.label12);
@@ -754,9 +761,9 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.precioTextBox);
             this.groupBox2.Controls.Add(this.productoLabel);
-            this.groupBox2.Location = new System.Drawing.Point(549, 12);
+            this.groupBox2.Location = new System.Drawing.Point(6, 244);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(564, 143);
+            this.groupBox2.Size = new System.Drawing.Size(625, 143);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
@@ -766,7 +773,7 @@
             this.productoButton.BackColor = System.Drawing.Color.SteelBlue;
             this.productoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productoButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.productoButton.Location = new System.Drawing.Point(472, 76);
+            this.productoButton.Location = new System.Drawing.Point(537, 105);
             this.productoButton.Name = "productoButton";
             this.productoButton.Size = new System.Drawing.Size(76, 23);
             this.productoButton.TabIndex = 11;
@@ -782,7 +789,7 @@
             this.editarDescuentoButton.ForeColor = System.Drawing.SystemColors.Window;
             this.editarDescuentoButton.Location = new System.Drawing.Point(249, 102);
             this.editarDescuentoButton.Name = "editarDescuentoButton";
-            this.editarDescuentoButton.Size = new System.Drawing.Size(63, 23);
+            this.editarDescuentoButton.Size = new System.Drawing.Size(76, 23);
             this.editarDescuentoButton.TabIndex = 14;
             this.editarDescuentoButton.Text = "Editar";
             this.editarDescuentoButton.UseVisualStyleBackColor = false;
@@ -805,7 +812,7 @@
             this.descuentoTextBox.ReadOnly = true;
             this.descuentoTextBox.Size = new System.Drawing.Size(119, 20);
             this.descuentoTextBox.TabIndex = 13;
-            this.descuentoTextBox.Text = "0";
+            this.descuentoTextBox.Text = "0.00";
             this.descuentoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.descuentoTextBox_KeyPress);
             // 
             // ordenCompraTableAdapter
@@ -822,7 +829,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1303, 187);
+            this.label13.Location = new System.Drawing.Point(964, 340);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 15);
             this.label13.TabIndex = 12;
@@ -834,12 +841,26 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalDescuentoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalDescuentoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalDescuentoTextBox.Location = new System.Drawing.Point(1376, 184);
+            this.totalDescuentoTextBox.Location = new System.Drawing.Point(1037, 337);
             this.totalDescuentoTextBox.Name = "totalDescuentoTextBox";
             this.totalDescuentoTextBox.ReadOnly = true;
             this.totalDescuentoTextBox.Size = new System.Drawing.Size(125, 21);
             this.totalDescuentoTextBox.TabIndex = 13;
             this.totalDescuentoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // editarPrecioButton
+            // 
+            this.editarPrecioButton.BackColor = System.Drawing.Color.Tomato;
+            this.editarPrecioButton.Enabled = false;
+            this.editarPrecioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editarPrecioButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.editarPrecioButton.Location = new System.Drawing.Point(537, 76);
+            this.editarPrecioButton.Name = "editarPrecioButton";
+            this.editarPrecioButton.Size = new System.Drawing.Size(76, 23);
+            this.editarPrecioButton.TabIndex = 15;
+            this.editarPrecioButton.Text = "Editar";
+            this.editarPrecioButton.UseVisualStyleBackColor = false;
+            this.editarPrecioButton.Click += new System.EventHandler(this.editarPrecioButton_Click);
             // 
             // frmOrdenCompras
             // 
@@ -847,7 +868,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1513, 510);
+            this.ClientSize = new System.Drawing.Size(1174, 677);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.totalDescuentoTextBox);
             this.Controls.Add(this.agregarButton);
@@ -949,5 +970,6 @@
         private System.Windows.Forms.TextBox totalDescuentoTextBox;
         private System.Windows.Forms.Button editarDescuentoButton;
         private System.Windows.Forms.Button productoButton;
+        private System.Windows.Forms.Button editarPrecioButton;
     }
 }

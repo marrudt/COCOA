@@ -1,5 +1,6 @@
 ﻿using COCOA.Busqueda;
 using COCOA.Clases;
+using COCOA.Maestras;
 using COCOA.Reportes;
 using DAL;
 using System;
@@ -16,6 +17,7 @@ namespace COCOA.Transacciones
         DALProducto ultimoProducto = null;
 
         private decimal totalEstampillas = 0;
+        private decimal totalDescuento = 0;
         private decimal totalSubtotal = 0;
         private decimal totalIVA = 0;
         private decimal totalImpoconsumo = 0;
@@ -41,10 +43,43 @@ namespace COCOA.Transacciones
             this.segmentosTableAdapter.Fill(this.dSCOCOA.Segmentos);
             this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
 
-            clienteComboBox.SelectedIndex = -1;            
+            fechaDateTimePicker.Value = DateTime.Now;
+            clienteComboBox.SelectedIndex = -1;
+            contactoTextBox.Text = string.Empty;
+            formaPagoTextBox.Text = string.Empty;
+            plazoEntregaTextBox.Text = string.Empty;
+            sitioEntregaTextBox.Text = string.Empty;
+            numeroItemTextBox.Text = string.Empty;
             productoLabel.Text = string.Empty;
-            valorEstampillasTextBox.Text = "0";
+            cantidadTextBox.Text = string.Empty;
+            precioTextBox.Text = string.Empty;            
+            valorEstampillasTextBox.Text = "0.00";
+            descuentoTextBox.Text = "0.00";
+            precioTextBox.Enabled = false;
+            precioTextBox.ReadOnly = true;
+            ultimoProducto = null;
+            VerificaPermiso();
+        }
 
+        private void VerificaPermiso()
+        {
+            if (DALPermisoRol.Especifico(usuarioLogueado.IdRol, 20))
+            {
+                editarDescuentoButton.Enabled = true;
+            }
+            else
+            {
+                editarDescuentoButton.Enabled = false;
+            }
+
+            if (DALPermisoRol.Especifico(usuarioLogueado.IdRol, 20))
+            {
+                editarPrecioButton.Enabled = true;
+            }
+            else
+            {
+                editarPrecioButton.Enabled = false;
+            }
         }
 
         private void agregarButton_Click(object sender, EventArgs e)
@@ -120,6 +155,38 @@ namespace COCOA.Transacciones
             }
             errorProvider1.Clear();
 
+            decimal precio;
+
+            if (!decimal.TryParse(precioTextBox.Text, out precio))
+            {
+                errorProvider1.SetError(descuentoTextBox, "El campo Precio es numérico");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (precio < 0)
+            {
+                errorProvider1.SetError(descuentoTextBox, "el valor del Precio debe ser mayor a cero");
+                return;
+            }
+            errorProvider1.Clear();
+
+            decimal descuento;
+
+            if (!decimal.TryParse(descuentoTextBox.Text, out descuento))
+            {
+                errorProvider1.SetError(descuentoTextBox, "El campo Descuento es numérico");
+                return;
+            }
+            errorProvider1.Clear();
+
+            if (descuento < 0)
+            {
+                errorProvider1.SetError(descuentoTextBox, "el valor del Descuento debe ser mayor a cero");
+                return;
+            }
+            errorProvider1.Clear();
+
             string detalleNumeroItem = detalleItemTextBox.Text;
 
             if (detalleItemTextBox.Text == string.Empty)
@@ -138,12 +205,13 @@ namespace COCOA.Transacciones
             miDetalle.NumeroItem = numeroItem;
             miDetalle.DetalleNumeroItem = detalleNumeroItem;
             miDetalle.Cantidad = cantidad;
-            miDetalle.Precio = ultimoProducto.Precio;
+            miDetalle.Precio = precio; //ultimoProducto.Precio;
             miDetalle.DescripcionProducto = ultimoProducto.DescripcionProducto;
             miDetalle.IdProducto = ultimoProducto.IdProducto;
             miDetalle.PorcentajeIVA = (float)miIVA.Tarifa;
             miDetalle.PorcentajeImpoconsumo = (float)miImpoconsumo.Tarifa;
             miDetalle.ValorEstampillas = estampillas;
+            miDetalle.Descuento = descuento;
 
             misDetalles.Add(miDetalle);
             RefrescaGrid();
@@ -155,7 +223,9 @@ namespace COCOA.Transacciones
             cantidadTextBox.Text = string.Empty;
             precioTextBox.Text = string.Empty;
             descuentoTextBox.Text = "0.00";
-            valorEstampillasTextBox.Text = "0";
+            valorEstampillasTextBox.Text = "0.00";
+            precioTextBox.ReadOnly = true;
+            precioTextBox.Enabled = false;
             productoTextBox.Focus();
 
         }
@@ -166,6 +236,7 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.DataSource = misDetalles;
 
             totalEstampillas = 0;
+            totalDescuento = 0;
             totalSubtotal = 0;
             totalIVA = 0;
             totalImpoconsumo = 0;
@@ -174,6 +245,7 @@ namespace COCOA.Transacciones
             foreach (DetalleCotizacion miDetalle in misDetalles)
             {
                 totalEstampillas += miDetalle.ValorEstampillas;
+                totalDescuento += miDetalle.Descuento;
                 totalSubtotal += miDetalle.Subtotal;
                 totalIVA += miDetalle.ValorIVA;
                 totalImpoconsumo += miDetalle.ValorImpoconsumo;
@@ -181,6 +253,7 @@ namespace COCOA.Transacciones
             }
 
             totalEstampillasTextBox.Text = string.Format("{0:C2}", totalEstampillas);
+            totalDescuentoTextBox.Text=string.Format("{0:C2}", totalDescuento);
             totalSubtotalTextBox.Text = string.Format("{0:C2}", totalSubtotal);
             totalIVATextBox.Text = string.Format("{0:C2}", totalIVA);
             totalImpoconsumoTextBox.Text = string.Format("{0:C2}", totalImpoconsumo);
@@ -192,6 +265,7 @@ namespace COCOA.Transacciones
         private void PersonalizarGrid()
         {
             detalleCotizacionDataGridView.Columns["DetalleNumeroItem"].Visible = false;
+            detalleCotizacionDataGridView.Columns["Estampillas"].Visible = false;
 
             detalleCotizacionDataGridView.Columns["NumeroItem"].HeaderText = "No.";
             detalleCotizacionDataGridView.Columns["NumeroItem"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
@@ -205,7 +279,7 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.Columns["DescripcionProducto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             detalleCotizacionDataGridView.Columns["DescripcionProducto"].Width = 420;
 
-            detalleCotizacionDataGridView.Columns["Precio"].HeaderText = "Precio Unitario";
+            detalleCotizacionDataGridView.Columns["Precio"].HeaderText = "Precio";
             detalleCotizacionDataGridView.Columns["Precio"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Precio"].DefaultCellStyle.Format = "C2";
@@ -230,37 +304,43 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Estampillas"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Estampillas"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["Estampillas"].Width = 100;
+            detalleCotizacionDataGridView.Columns["Estampillas"].Width = 105;
 
-            detalleCotizacionDataGridView.Columns["ValorEstampillas"].HeaderText = "Valor Estampillas";
+            detalleCotizacionDataGridView.Columns["ValorEstampillas"].HeaderText = "Vr. Estampillas";
             detalleCotizacionDataGridView.Columns["ValorEstampillas"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorEstampillas"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorEstampillas"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["ValorEstampillas"].Width = 115;
+            detalleCotizacionDataGridView.Columns["ValorEstampillas"].Width = 105;
 
             detalleCotizacionDataGridView.Columns["Subtotal"].HeaderText = "Subtotal";
             detalleCotizacionDataGridView.Columns["Subtotal"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Subtotal"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["Subtotal"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["Subtotal"].Width = 115;
+            detalleCotizacionDataGridView.Columns["Subtotal"].Width = 105;
 
-            detalleCotizacionDataGridView.Columns["ValorIVA"].HeaderText = "Valor IVA";
+            detalleCotizacionDataGridView.Columns["ValorIVA"].HeaderText = "Vr. IVA";
             detalleCotizacionDataGridView.Columns["ValorIVA"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorIVA"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorIVA"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["ValorIVA"].Width = 115;
+            detalleCotizacionDataGridView.Columns["ValorIVA"].Width = 105;
 
-            detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].HeaderText = "Valor Impoconsumo";
+            detalleCotizacionDataGridView.Columns["Descuento"].HeaderText = "Descuento";
+            detalleCotizacionDataGridView.Columns["Descuento"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            detalleCotizacionDataGridView.Columns["Descuento"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            detalleCotizacionDataGridView.Columns["Descuento"].DefaultCellStyle.Format = "C2";
+            detalleCotizacionDataGridView.Columns["Descuento"].Width = 105;
+
+            detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].HeaderText = "Vr. Impoconsumo";
             detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].Width = 115;
+            detalleCotizacionDataGridView.Columns["ValorImpoconsumo"].Width = 105;
 
             detalleCotizacionDataGridView.Columns["ValorNeto"].HeaderText = "Valor Neto";
             detalleCotizacionDataGridView.Columns["ValorNeto"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorNeto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorNeto"].DefaultCellStyle.Format = "C2";
-            detalleCotizacionDataGridView.Columns["ValorNeto"].Width = 115;
+            detalleCotizacionDataGridView.Columns["ValorNeto"].Width = 105;
         }
 
         private void productoTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -326,7 +406,7 @@ namespace COCOA.Transacciones
                 ultimoProducto = miProducto;
             }
 
-            precioTextBox.Text = string.Format("{0:C2}", ultimoProducto.Precio);            
+            precioTextBox.Text = string.Format("{0:N0}", ultimoProducto.Precio);            
         }
 
         private void numeroItemTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -351,6 +431,14 @@ namespace COCOA.Transacciones
 
         private void guardarButton_Click(object sender, EventArgs e)
         {
+            if (clienteComboBox.SelectedIndex == -1) 
+            {
+                errorProvider1.SetError(clienteComboBox, "El campo Cliente es obligatorio");
+                clienteComboBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
             if (formaPagoTextBox.Text == string.Empty)
             {
                 errorProvider1.SetError(formaPagoTextBox, "El campo Forma de Pago es obligatorio");
@@ -409,7 +497,7 @@ namespace COCOA.Transacciones
             {
                 DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.IdProducto,
                     miDetalle.DescripcionProducto, miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo,
-                    miDetalle.ValorEstampillas);
+                    miDetalle.ValorEstampillas, miDetalle.Descuento);
 
             }
 
@@ -420,20 +508,31 @@ namespace COCOA.Transacciones
             miReporte.Show();
 
             totalSubtotal = 0;
+            totalDescuento = 0;
+            totalEstampillas = 0;
             totalIVA = 0;
             totalImpoconsumo = 0;
             totalNeto = 0;
 
+            fechaDateTimePicker.Value = DateTime.Now;
             clienteComboBox.SelectedIndex = -1;
-            misDetalles.Clear();
-            plazoEntregaTextBox.Text = string.Empty;
             contactoTextBox.Text = string.Empty;
             formaPagoTextBox.Text = string.Empty;
+            plazoEntregaTextBox.Text = string.Empty;           
             sitioEntregaTextBox.Text = string.Empty;
             numeroItemTextBox.Text = string.Empty;
             detalleItemTextBox.Text = string.Empty;
-            RefrescaGrid();
+            productoTextBox.Text = string.Empty;
+            productoLabel.Text = string.Empty;
+            cantidadTextBox.Text = string.Empty;
+            precioTextBox.Text = string.Empty;
+            valorEstampillasTextBox.Text = "0.00";
+            descuentoTextBox.Text = "0.00";
             clienteComboBox.Focus();
+
+            misDetalles.Clear();
+            RefrescaGrid();
+            
         }
 
         private void cancelarButton_Click(object sender, EventArgs e)
@@ -504,6 +603,25 @@ namespace COCOA.Transacciones
         private void valorEstampillasTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void productoButton_Click(object sender, EventArgs e)
+        {
+            frmProductos miForm = new frmProductos();
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void editarPrecioButton_Click(object sender, EventArgs e)
+        {
+            precioTextBox.ReadOnly = false;
+            precioTextBox.Enabled = true;
+        }
+
+        private void editarDescuentoButton_Click(object sender, EventArgs e)
+        {
+            descuentoTextBox.ReadOnly = false;
+            descuentoTextBox.Enabled = true;
         }
     }
 

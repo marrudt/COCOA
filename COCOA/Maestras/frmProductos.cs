@@ -1,4 +1,5 @@
 ﻿using COCOA.Busqueda;
+using COCOA.Clases;
 using COCOA.Listados;
 using DAL;
 using System;
@@ -341,6 +342,16 @@ namespace COCOA.Maestras
         {
             frmListadoProductos miForm = new frmListadoProductos();
             miForm.ShowDialog();            
+        }
+
+        private void precioTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void modeloAnoTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }        
     }
 }

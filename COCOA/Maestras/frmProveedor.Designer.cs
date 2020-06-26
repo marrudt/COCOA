@@ -250,8 +250,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -310,8 +310,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 28);
-            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 28);
+            this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorMoveFirstItem
@@ -602,6 +602,7 @@
             this.idCiudadComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.proveedoresBindingSource, "IdCiudad", true));
             this.idCiudadComboBox.DataSource = this.ciudadesBindingSource;
             this.idCiudadComboBox.DisplayMember = "DescripcionCiudad";
+            this.idCiudadComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idCiudadComboBox.Enabled = false;
             this.idCiudadComboBox.FormattingEnabled = true;
             this.idCiudadComboBox.Location = new System.Drawing.Point(651, 119);
@@ -691,6 +692,7 @@
             this.dataGridViewTextBoxColumn6.DataPropertyName = "IdCiudad";
             this.dataGridViewTextBoxColumn6.DataSource = this.ciudadesBindingSource;
             this.dataGridViewTextBoxColumn6.DisplayMember = "DescripcionCiudad";
+            this.dataGridViewTextBoxColumn6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
             this.dataGridViewTextBoxColumn6.HeaderText = "Ciudad";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -703,15 +705,15 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Telefono1";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Teléfono 1";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Tel 1";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 77;
+            this.dataGridViewTextBoxColumn7.Width = 47;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Telefono2";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Telefono2";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Tel 2";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Visible = false;
