@@ -194,7 +194,7 @@ namespace COCOA.Maestras
             this.segmentosTableAdapter.FillBy(this.dSCOCOA.Segmentos);
             this.impoconsumoTableAdapter.Fill(this.dSCOCOA.Impoconsumo);
             this.iVATableAdapter.Fill(this.dSCOCOA.IVA);
-            this.claseTableAdapter.Fill(this.dSCOCOA.Clase);
+            this.claseTableAdapter.FillBy(this.dSCOCOA.Clase);
             this.tipoProductoTableAdapter.Fill(this.dSCOCOA.TipoProducto);
             this.productosTableAdapter.Fill(this.dSCOCOA.Productos);
             VerificaPermisos();
@@ -352,6 +352,6 @@ namespace COCOA.Maestras
         private void modeloAnoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }        
+        }               
     }
 }

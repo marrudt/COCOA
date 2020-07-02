@@ -191,6 +191,6 @@ namespace COCOA.Transacciones
         {
             frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
             miBusqueda.ShowDialog();            
-        }
+        }        
     }
 }

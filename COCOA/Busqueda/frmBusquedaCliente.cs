@@ -13,12 +13,6 @@ namespace COCOA.Busqueda
           get { return IdCliente; }
         }
 
-
-        //public int IDCliente
-        //{
-        //    get => IdCliente;
-        //}
-
         public frmBusquedaCliente()
         {
             InitializeComponent();
@@ -29,7 +23,6 @@ namespace COCOA.Busqueda
             this.ciudadesTableAdapter.Fill(this.dSCOCOA.Ciudades);
             this.departamentosTableAdapter.Fill(this.dSCOCOA.Departamentos);
             this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
-
         }
 
         private void borrarFiltrosbutton_Click(object sender, EventArgs e)
@@ -38,7 +31,7 @@ namespace COCOA.Busqueda
             nombreClienteToolStripTextBox.Text = "";
             nombreContactoToolStripTextBox.Text = "";
             emailToolStripTextBox.Text = "";
-            fillBy1ToolStripButton_Click(sender, e);
+            fillBy1ToolStripButton_Click_1(sender, e);
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
@@ -62,9 +55,14 @@ namespace COCOA.Busqueda
                 IdCliente = (int)busquedaDataGridView.Rows[0].Cells[0].Value;
             }
             this.Close();
-        }        
+        }
 
-        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
+        private void nitToolStripTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
         {
             string nit, nombreCliente, nombreContacto, email;
 
@@ -102,10 +100,10 @@ namespace COCOA.Busqueda
 
             try
             {
-                this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes,
-                    nit,
-                    nombreCliente,
-                    nombreContacto,
+                this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes, 
+                    nit, 
+                    nombreCliente, 
+                    nombreContacto, 
                     email);
             }
             catch (System.Exception ex)
@@ -115,7 +113,7 @@ namespace COCOA.Busqueda
 
         }
 
-        private void nitToolStripTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void nitToolStripTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
         }

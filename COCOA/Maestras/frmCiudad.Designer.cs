@@ -32,8 +32,8 @@
             System.Windows.Forms.Label codigoCiudadLabel;
             System.Windows.Forms.Label descripcionCiudadLabel;
             System.Windows.Forms.Label activoLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCiudad));
             System.Windows.Forms.Label idCiudadLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCiudad));
             this.ciudadesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.ciudadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dSCOCOA = new COCOA.DSCOCOA();
@@ -103,6 +103,15 @@
             activoLabel.Size = new System.Drawing.Size(40, 13);
             activoLabel.TabIndex = 8;
             activoLabel.Text = "Activo:";
+            // 
+            // idCiudadLabel
+            // 
+            idCiudadLabel.AutoSize = true;
+            idCiudadLabel.Location = new System.Drawing.Point(68, 45);
+            idCiudadLabel.Name = "idCiudadLabel";
+            idCiudadLabel.Size = new System.Drawing.Size(19, 13);
+            idCiudadLabel.TabIndex = 6;
+            idCiudadLabel.Text = "Id:";
             // 
             // ciudadesBindingNavigator
             // 
@@ -235,7 +244,7 @@
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Text = "Nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
@@ -246,6 +255,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.ToolTipText = "Eliminar";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorSaveItem
@@ -409,8 +419,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -424,6 +434,7 @@
             this.tableAdapterManager.TipoProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
+            this.tableAdapterManager.VersionamientoTableAdapter = null;
             // 
             // idCiudadTextBox
             // 
@@ -434,15 +445,6 @@
             this.idCiudadTextBox.ReadOnly = true;
             this.idCiudadTextBox.Size = new System.Drawing.Size(51, 20);
             this.idCiudadTextBox.TabIndex = 7;
-            // 
-            // idCiudadLabel
-            // 
-            idCiudadLabel.AutoSize = true;
-            idCiudadLabel.Location = new System.Drawing.Point(68, 45);
-            idCiudadLabel.Name = "idCiudadLabel";
-            idCiudadLabel.Size = new System.Drawing.Size(19, 13);
-            idCiudadLabel.TabIndex = 6;
-            idCiudadLabel.Text = "Id:";
             // 
             // frmCiudad
             // 

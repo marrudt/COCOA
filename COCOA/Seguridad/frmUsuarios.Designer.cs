@@ -171,8 +171,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -186,6 +186,7 @@
             this.tableAdapterManager.TipoProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = this.usuariosTableAdapter;
+            this.tableAdapterManager.VersionamientoTableAdapter = null;
             // 
             // rolTableAdapter
             // 
@@ -318,7 +319,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.ToolTipText = "Agregar";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem

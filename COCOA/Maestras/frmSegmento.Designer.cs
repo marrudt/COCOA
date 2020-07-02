@@ -127,8 +127,8 @@
             this.tableAdapterManager.ImpoconsumoTableAdapter = null;
             this.tableAdapterManager.IntervaloPreciosTableAdapter = null;
             this.tableAdapterManager.IVATableAdapter = null;
-            //this.tableAdapterManager.ListadoClientesTableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
+            this.tableAdapterManager.LogTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -142,6 +142,7 @@
             this.tableAdapterManager.TipoProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
+            this.tableAdapterManager.VersionamientoTableAdapter = null;
             // 
             // segmentosBindingNavigator
             // 
@@ -174,7 +175,7 @@
             this.segmentosBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.segmentosBindingNavigator.Name = "segmentosBindingNavigator";
             this.segmentosBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.segmentosBindingNavigator.Size = new System.Drawing.Size(406, 31);
+            this.segmentosBindingNavigator.Size = new System.Drawing.Size(414, 31);
             this.segmentosBindingNavigator.TabIndex = 0;
             this.segmentosBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -264,7 +265,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.ToolTipText = "Agregar";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
@@ -333,7 +334,7 @@
             this.segmentosDataGridView.Location = new System.Drawing.Point(0, 131);
             this.segmentosDataGridView.Name = "segmentosDataGridView";
             this.segmentosDataGridView.ReadOnly = true;
-            this.segmentosDataGridView.Size = new System.Drawing.Size(406, 179);
+            this.segmentosDataGridView.Size = new System.Drawing.Size(414, 179);
             this.segmentosDataGridView.TabIndex = 4;
             // 
             // dataGridViewTextBoxColumn1
@@ -405,7 +406,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(406, 310);
+            this.ClientSize = new System.Drawing.Size(414, 310);
             this.Controls.Add(idSegmentoLabel);
             this.Controls.Add(this.idSegmentoTextBox);
             this.Controls.Add(activoLabel);

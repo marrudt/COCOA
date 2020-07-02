@@ -12,10 +12,10 @@ namespace DAL
         private static CotizacionDetalleTableAdapter adaptador = new CotizacionDetalleTableAdapter();
 
         public static void InsertCotizacionDetalle(int IdCotizacion, int NumeroItem, string DetalleNumeroItem, int IdProducto, 
-            string DescripcionProducto, decimal Precio, float Cantidad, float PorcentajeIVA, float PorcentajeImpoconsumo, decimal Estampillas, decimal Descuento)
+            string DescripcionProducto, decimal Precio, float Cantidad, float PorcentajeIVA, float PorcentajeImpoconsumo, float PorcentajeEstampillas, decimal Estampillas, decimal Descuento)
         {
             adaptador.InsertCotizacionDetalle(IdCotizacion, NumeroItem, DetalleNumeroItem, IdProducto, DescripcionProducto, Precio, Cantidad, 
-                PorcentajeIVA, PorcentajeImpoconsumo, Estampillas, Descuento);
+                PorcentajeIVA, PorcentajeImpoconsumo, PorcentajeEstampillas, Estampillas, Descuento);
         }
 
         public static bool ProductoTieneMovimientoByIdProducto(int IdProducto)

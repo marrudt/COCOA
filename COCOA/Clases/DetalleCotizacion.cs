@@ -15,9 +15,9 @@ namespace COCOA.Clases
         public decimal Precio { get; set; }
         public float Cantidad { get; set; }
         public float PorcentajeIVA { get; set; }
-        public float PorcentajeImpoconsumo { get; set; }
-        public float Estampillas { get; set; }
+        public float PorcentajeImpoconsumo { get; set; }         
         public decimal Descuento { get; set; }
+        public float PorcentajeEstampillas { get; set; }
         public decimal ValorEstampillas { get; set; } //{ get { return Precio * (decimal)Estampillas / 100; } }
         public decimal Subtotal { get { return (Precio * (decimal)Cantidad) / (1 + ((decimal)PorcentajeIVA / 100 + (decimal)PorcentajeImpoconsumo / 100)); } }
         public decimal ValorIVA { get { return Subtotal * (decimal)PorcentajeIVA / 100; } }

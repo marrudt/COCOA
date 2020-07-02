@@ -15,13 +15,7 @@ namespace COCOA.Maestras
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
+        }        
 
         public frmClientes()
         {
@@ -33,6 +27,8 @@ namespace COCOA.Maestras
             if (!ValidarCampos()) return;
             this.Validate();
             this.clientesBindingSource.EndEdit();
+            this.contactosBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
 
             try
             {
@@ -46,8 +42,8 @@ namespace COCOA.Maestras
             }
             errorProvider1.Clear();
             DeshabilitarCampos();
-            VerificaPermisos();
-        }
+            VerificaPermisos();            
+        }              
 
         private bool ValidarCampos()
         {
@@ -124,6 +120,7 @@ namespace COCOA.Maestras
             celularTextBox.ReadOnly = true;
             notasTextBox.ReadOnly = true;
             activoCheckBox.Enabled = false;
+            contactosGroupBox.Enabled = false;
 
             bindingNavigatorMoveFirstItem.Enabled = true;
             bindingNavigatorMovePreviousItem.Enabled = true;
@@ -142,10 +139,17 @@ namespace COCOA.Maestras
 
         private void frmClientes_Load(object sender, EventArgs e)
         {
+            this.contactosClienteTableAdapter.Fill(this.dSCOCOA.ContactosCliente);
             this.ciudadesTableAdapter.FillBy1(this.dSCOCOA.Ciudades);
             this.clientesTableAdapter.Fill(this.dSCOCOA.Clientes);
             VerificaPermisos();
+            LlenarCuadricula();
             errorProvider1.Clear();
+        }
+
+        private void LlenarCuadricula()
+        {
+            this.contactosClienteTableAdapter.FillBy(this.dSCOCOA.ContactosCliente, Convert.ToInt32(idClienteTextBox.Text));
         }
 
         private void VerificaPermisos()
@@ -189,6 +193,7 @@ namespace COCOA.Maestras
             celularTextBox.ReadOnly = false;
             notasTextBox.ReadOnly = false;
             activoCheckBox.Enabled = true;
+            contactosGroupBox.Enabled = true;
 
             bindingNavigatorMoveFirstItem.Enabled = false;
             bindingNavigatorMovePreviousItem.Enabled = false;
@@ -281,6 +286,45 @@ namespace COCOA.Maestras
             if (miBusqueda.IDCiudad == 0) return;
             int posicion = ciudadesBindingSource.Find("IDCiudad", miBusqueda.IDCiudad);
             ciudadesBindingSource.Position = posicion;
+        }               
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.contactosBindingSource.EndEdit();
+        }        
+
+        private void cancelStripButton_Click(object sender, EventArgs e)
+        {
+            this.contactosBindingSource.CancelEdit();
         }
+
+        private void contactosButton_Click(object sender, EventArgs e)
+        {
+            frmContactoCliente miForm = new frmContactoCliente();
+            miForm.IDCliente = Convert.ToInt32(idClienteTextBox.Text);
+            miForm.ShowDialog();
+            this.contactosClienteTableAdapter.FillBy(this.dSCOCOA.ContactosCliente, Convert.ToInt32(idClienteTextBox.Text));
+        }        
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            LlenarCuadricula();
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            LlenarCuadricula();
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            LlenarCuadricula();
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            LlenarCuadricula();
+        }                
     }
 }

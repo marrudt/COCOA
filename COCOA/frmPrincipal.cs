@@ -41,7 +41,7 @@ namespace COCOA
             miForm.MdiParent = this;
             miForm.UsuarioLogueado = usuarioLogueado;
             miForm.Show();
-        }
+        }          
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -288,6 +288,21 @@ namespace COCOA
         {
             frmAuditoria miForm = new frmAuditoria();
             miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void versionamientoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVersionamiento miForm = new frmVersionamiento();
+            miForm.MdiParent = this;
+            miForm.UsuarioLogueado = usuarioLogueado;
+            miForm.Show();
+        }
+
+        private void controlDeCambiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmControlCambios miForm = new frmControlCambios();
+            miForm.MdiParent = this;            
             miForm.Show();
         }
 
@@ -677,6 +692,15 @@ namespace COCOA
             {
                 ciudadesToolStripMenuItem.Visible = false;
             }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 34))
+            {
+                versionamientoToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                versionamientoToolStripMenuItem.Visible = false;
+            }            
         }        
     }
 }

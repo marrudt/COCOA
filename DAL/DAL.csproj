@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DALContactoCliente.cs" />
     <Compile Include="DALCotizacion.cs" />
     <Compile Include="DALCotizacionDetalle.cs" />
     <Compile Include="DALImpoconsumo.cs" />

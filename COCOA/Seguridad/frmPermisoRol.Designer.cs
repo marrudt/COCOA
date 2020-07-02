@@ -67,7 +67,6 @@
             this.puedeEliminarCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.permisoRolDataGridView = new System.Windows.Forms.DataGridView();
-            this.especificoCheckBox = new System.Windows.Forms.CheckBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -75,6 +74,7 @@
             this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewCheckBoxColumn4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.especificoCheckBox = new System.Windows.Forms.CheckBox();
             idRolLabel = new System.Windows.Forms.Label();
             idFormularioLabel = new System.Windows.Forms.Label();
             puedeVerLabel = new System.Windows.Forms.Label();
@@ -188,6 +188,7 @@
             this.tableAdapterManager.TipoProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
+            this.tableAdapterManager.VersionamientoTableAdapter = null;
             // 
             // formularioTableAdapter
             // 
@@ -318,7 +319,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(28, 28);
             this.bindingNavigatorAddNewItem.Text = "Add new";
-            this.bindingNavigatorAddNewItem.ToolTipText = "Agregar";
+            this.bindingNavigatorAddNewItem.ToolTipText = "Nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
@@ -465,16 +466,6 @@
             this.permisoRolDataGridView.Size = new System.Drawing.Size(644, 430);
             this.permisoRolDataGridView.TabIndex = 12;
             // 
-            // especificoCheckBox
-            // 
-            this.especificoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "Especifico", true));
-            this.especificoCheckBox.Enabled = false;
-            this.especificoCheckBox.Location = new System.Drawing.Point(437, 101);
-            this.especificoCheckBox.Name = "especificoCheckBox";
-            this.especificoCheckBox.Size = new System.Drawing.Size(16, 24);
-            this.especificoCheckBox.TabIndex = 11;
-            this.especificoCheckBox.UseVisualStyleBackColor = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -549,6 +540,16 @@
             this.dataGridViewCheckBoxColumn4.Name = "dataGridViewCheckBoxColumn4";
             this.dataGridViewCheckBoxColumn4.ReadOnly = true;
             this.dataGridViewCheckBoxColumn4.Width = 64;
+            // 
+            // especificoCheckBox
+            // 
+            this.especificoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.permisoRolBindingSource, "Especifico", true));
+            this.especificoCheckBox.Enabled = false;
+            this.especificoCheckBox.Location = new System.Drawing.Point(437, 101);
+            this.especificoCheckBox.Name = "especificoCheckBox";
+            this.especificoCheckBox.Size = new System.Drawing.Size(16, 24);
+            this.especificoCheckBox.TabIndex = 11;
+            this.especificoCheckBox.UseVisualStyleBackColor = true;
             // 
             // frmPermisoRol
             // 

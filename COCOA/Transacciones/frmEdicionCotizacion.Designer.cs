@@ -195,6 +195,7 @@
             this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
+            //this.tableAdapterManager.ContactosTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = this.cotizacionDetalleTableAdapter;
             this.tableAdapterManager.CotizacionTableAdapter = this.cotizacionTableAdapter;
             this.tableAdapterManager.DepartamentosTableAdapter = null;
@@ -217,6 +218,7 @@
             this.tableAdapterManager.TipoProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
+            this.tableAdapterManager.VersionamientoTableAdapter = null;
             // 
             // cotizacionDetalleTableAdapter
             // 
@@ -599,7 +601,7 @@
             this.bindingNavigator1.MovePreviousItem = null;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = null;
-            this.bindingNavigator1.Size = new System.Drawing.Size(142, 31);
+            this.bindingNavigator1.Size = new System.Drawing.Size(173, 31);
             this.bindingNavigator1.TabIndex = 15;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
