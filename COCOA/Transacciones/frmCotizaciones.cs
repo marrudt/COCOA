@@ -36,7 +36,7 @@ namespace COCOA.Transacciones
 
         private void frmCotizaciones_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSCOCOA.CotizacionDetalle' table. You can move, or remove it, as needed.
+            this.cotizacionTableAdapter.Fill(this.dSCOCOA.Cotizacion);
             this.cotizacionDetalleTableAdapter.Fill(this.dSCOCOA.CotizacionDetalle);
             this.intervaloPreciosTableAdapter.Fill(this.dSCOCOA.IntervaloPrecios);
             this.pesoBrutoVhTableAdapter.Fill(this.dSCOCOA.PesoBrutoVh);
@@ -55,6 +55,7 @@ namespace COCOA.Transacciones
             productoLabel.Text = string.Empty;
             cantidadTextBox.Text = string.Empty;
             precioTextBox.Text = string.Empty;
+            remplazaCotiacionComboBox.SelectedIndex = -1;
             
             valorEstampillasTextBox.Text = "0.00";
             porcentajeEstampillasTextBox.Text = "0.0";
@@ -512,9 +513,10 @@ namespace COCOA.Transacciones
             string contacto = contactoTextBox.Text;
             string formaPago = formaPagoTextBox.Text;
             string sitioEntrega = sitioEntregaTextBox.Text;
+            string remplazaCotizacion = remplazaCotiacionComboBox.Text;
 
             //Guarda encabezado            
-            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega);
+            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, remplazaCotizacion, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega);
 
             //Guarda detalle           
             foreach (DetalleCotizacion miDetalle in misDetalles)
@@ -553,6 +555,7 @@ namespace COCOA.Transacciones
             valorEstampillasTextBox.Text = "0.00";
             descuentoTextBox.Text = "0.00";
             clienteComboBox.Focus();
+            remplazaCotiacionComboBox.SelectedIndex = -1;
 
             misDetalles.Clear();
             RefrescaGrid();

@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.salirButton = new System.Windows.Forms.Button();
             this.borrarTodoButton = new System.Windows.Forms.Button();
             this.borrarLineaButton = new System.Windows.Forms.Button();
@@ -53,6 +53,9 @@
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.remplazaCotiacionComboBox = new System.Windows.Forms.ComboBox();
+            this.cotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.sitioEntregaTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -67,6 +70,8 @@
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.porcentajeEstampillasTextBox = new System.Windows.Forms.TextBox();
+            this.cotizacionDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.productoButton = new System.Windows.Forms.Button();
@@ -101,22 +106,22 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.totalDescuentoTextBox = new System.Windows.Forms.TextBox();
-            this.cotizacionDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cotizacionDetalleTableAdapter = new COCOA.DSCOCOATableAdapters.CotizacionDetalleTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
-            this.porcentajeEstampillasTextBox = new System.Windows.Forms.TextBox();
+            this.cotizacionTableAdapter = new COCOA.DSCOCOATableAdapters.CotizacionTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCotizacionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cotizacionBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cotizacionDetalleBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervaloPreciosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroPasajerosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cilindrajesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.segmentosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cotizacionDetalleBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // salirButton
@@ -330,34 +335,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleCotizacionDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.detalleCotizacionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.detalleCotizacionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.detalleCotizacionDataGridView.Location = new System.Drawing.Point(0, 335);
             this.detalleCotizacionDataGridView.Name = "detalleCotizacionDataGridView";
             this.detalleCotizacionDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.detalleCotizacionDataGridView.Size = new System.Drawing.Size(1166, 341);
             this.detalleCotizacionDataGridView.TabIndex = 17;
             // 
@@ -403,6 +408,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(this.label21);
+            this.groupBox1.Controls.Add(this.remplazaCotiacionComboBox);
             this.groupBox1.Controls.Add(this.contactoTextBox);
             this.groupBox1.Controls.Add(this.sitioEntregaTextBox);
             this.groupBox1.Controls.Add(this.label14);
@@ -423,6 +430,32 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(340, 19);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(109, 13);
+            this.label21.TabIndex = 14;
+            this.label21.Text = "Remplaza Cotización:";
+            // 
+            // remplazaCotiacionComboBox
+            // 
+            this.remplazaCotiacionComboBox.DataSource = this.cotizacionBindingSource;
+            this.remplazaCotiacionComboBox.DisplayMember = "IdCotizacion";
+            this.remplazaCotiacionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.remplazaCotiacionComboBox.FormattingEnabled = true;
+            this.remplazaCotiacionComboBox.Location = new System.Drawing.Point(452, 16);
+            this.remplazaCotiacionComboBox.Name = "remplazaCotiacionComboBox";
+            this.remplazaCotiacionComboBox.Size = new System.Drawing.Size(61, 21);
+            this.remplazaCotiacionComboBox.TabIndex = 13;
+            this.remplazaCotiacionComboBox.ValueMember = "IdCotizacion";
+            // 
+            // cotizacionBindingSource
+            // 
+            this.cotizacionBindingSource.DataMember = "Cotizacion";
+            this.cotizacionBindingSource.DataSource = this.dSCOCOA;
             // 
             // contactoTextBox
             // 
@@ -575,6 +608,20 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
+            // 
+            // porcentajeEstampillasTextBox
+            // 
+            this.porcentajeEstampillasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionDetalleBindingSource, "PorcentajeEstampillas", true));
+            this.porcentajeEstampillasTextBox.Location = new System.Drawing.Point(79, 100);
+            this.porcentajeEstampillasTextBox.Name = "porcentajeEstampillasTextBox";
+            this.porcentajeEstampillasTextBox.Size = new System.Drawing.Size(30, 20);
+            this.porcentajeEstampillasTextBox.TabIndex = 28;
+            this.porcentajeEstampillasTextBox.Text = "0.0";
+            // 
+            // cotizacionDetalleBindingSource
+            // 
+            this.cotizacionDetalleBindingSource.DataMember = "CotizacionDetalle";
+            this.cotizacionDetalleBindingSource.DataSource = this.dSCOCOA;
             // 
             // label20
             // 
@@ -878,11 +925,6 @@
             this.totalDescuentoTextBox.TabIndex = 21;
             this.totalDescuentoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // cotizacionDetalleBindingSource
-            // 
-            this.cotizacionDetalleBindingSource.DataMember = "CotizacionDetalle";
-            this.cotizacionDetalleBindingSource.DataSource = this.dSCOCOA;
-            // 
             // cotizacionDetalleTableAdapter
             // 
             this.cotizacionDetalleTableAdapter.ClearBeforeFill = true;
@@ -920,14 +962,9 @@
             this.tableAdapterManager.UsuariosTableAdapter = null;
             this.tableAdapterManager.VersionamientoTableAdapter = null;
             // 
-            // porcentajeEstampillasTextBox
+            // cotizacionTableAdapter
             // 
-            this.porcentajeEstampillasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionDetalleBindingSource, "PorcentajeEstampillas", true));
-            this.porcentajeEstampillasTextBox.Location = new System.Drawing.Point(79, 100);
-            this.porcentajeEstampillasTextBox.Name = "porcentajeEstampillasTextBox";
-            this.porcentajeEstampillasTextBox.Size = new System.Drawing.Size(30, 20);
-            this.porcentajeEstampillasTextBox.TabIndex = 28;
-            this.porcentajeEstampillasTextBox.Text = "0.0";
+            this.cotizacionTableAdapter.ClearBeforeFill = true;
             // 
             // frmCotizaciones
             // 
@@ -968,14 +1005,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cotizacionBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cotizacionDetalleBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.intervaloPreciosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pesoBrutoVhBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numeroPasajerosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cilindrajesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.segmentosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cotizacionDetalleBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1054,5 +1092,9 @@
         private DSCOCOATableAdapters.CotizacionDetalleTableAdapter cotizacionDetalleTableAdapter;
         private DSCOCOATableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox porcentajeEstampillasTextBox;
+        private System.Windows.Forms.ComboBox remplazaCotiacionComboBox;
+        private System.Windows.Forms.BindingSource cotizacionBindingSource;
+        private DSCOCOATableAdapters.CotizacionTableAdapter cotizacionTableAdapter;
+        private System.Windows.Forms.Label label21;
     }
 }

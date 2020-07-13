@@ -55,6 +55,15 @@ namespace COCOA.Maestras
             }
             errorProvider1.Clear();
 
+            int nit;
+
+            if (!int.TryParse(nitTextBox.Text, out nit))
+            {
+                errorProvider1.SetError(nitTextBox, "El campo Nit es numérico");
+                return false;
+            }
+            errorProvider1.Clear();
+
             if (nombreClienteTextBox.Text == "")
             {
                 errorProvider1.SetError(nombreClienteTextBox, "El campo Nombre de Cliente es obligatorio");

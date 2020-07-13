@@ -1,4 +1,5 @@
 ﻿using COCOA.Busqueda;
+using COCOA.Clases;
 using COCOA.Reportes;
 using DAL;
 using System;
@@ -14,7 +15,7 @@ namespace COCOA.Transacciones
         {
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
-        }       
+        }
 
         public frmEdicionCotizacion()
         {
@@ -26,7 +27,6 @@ namespace COCOA.Transacciones
             this.Validate();
             this.cotizacionBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
-
         }
 
         private void frmEdicionCotizacion_Load(object sender, EventArgs e)
@@ -37,12 +37,17 @@ namespace COCOA.Transacciones
             bindingNavigatorAddNewItemDetalle.Enabled = false;
             bindingNavigatorDeleteItemDetalle.Enabled = false;
             fechaDateTimePicker.Value = DateTime.Now;
-            VerificaPermisos();
+            VerificaPermisos();            
         }
-
+        
         private void bindingNavigatorEdit_Click(object sender, EventArgs e)
         {
-            HabilitarCampos();
+            if (DALCotizacion.CotizacionTieneRemplazo(idCotizacionTextBox.Text))
+            {                
+                MessageBox.Show("Esta cotización fue remplazada por una versión posterior", "No es posible editar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            HabilitarCampos();              
         }
 
         private void HabilitarCampos()
@@ -54,6 +59,7 @@ namespace COCOA.Transacciones
             sitioEntregaTextBox.ReadOnly = false;
             idClienteComboBox.Enabled = true;
             contactoTextBox.Enabled = true;
+            remplazaCotizacionTextBox.Enabled = true;
 
             busquedaClienteButton.Enabled = true;
             bindingNavigatorMoveFirstItem.Enabled = false;
@@ -87,12 +93,10 @@ namespace COCOA.Transacciones
         {
             if (DALPermisoRol.PuedeEditar(usuarioLogueado.IdRol, 31))
             {
-                //bindingNavigatorAddNewItemDetalle.Enabled = true;
                 bindingNavigatorEdit.Enabled = true;
             }
             else
             {
-                //bindingNavigatorAddNewItemDetalle.Enabled = false;
                 bindingNavigatorEdit.Enabled = false;
             }
 
@@ -107,12 +111,13 @@ namespace COCOA.Transacciones
 
             //if (DALPermisoRol.Especifico(usuarioLogueado.IdRol, 32))
             //{
-            //    precioTextBox.Enabled = true;
+                
             //}
             //else
             //{
-            //    precioTextBox.Enabled = false;
+                
             //}
+            
         }
 
         private void DeshabilitarCamposDetalle()
@@ -133,6 +138,7 @@ namespace COCOA.Transacciones
             sitioEntregaTextBox.ReadOnly = true;
             idClienteComboBox.Enabled = false;
             contactoTextBox.Enabled = false;
+            remplazaCotizacionTextBox.Enabled = false;
 
             busquedaClienteButton.Enabled = false;
             bindingNavigatorMoveFirstItem.Enabled = true;
@@ -151,6 +157,8 @@ namespace COCOA.Transacciones
             this.cotizacionBindingSource.CancelEdit();
             DeshabilitarCampos();
             VerificaPermisos();
+            errorProvider1.Clear();
+            bindingNavigatorEditDetalles.Enabled = true;
         }
 
         private void bindingNavigatorExit_Click(object sender, EventArgs e)
@@ -190,7 +198,43 @@ namespace COCOA.Transacciones
         private void bindingNavigatorSearch_Click(object sender, EventArgs e)
         {
             frmBusquedaProducto miBusqueda = new frmBusquedaProducto();
-            miBusqueda.ShowDialog();            
-        }        
+            miBusqueda.ShowDialog();
+        }
+
+        private void remplazaCotizacionTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
+        private void activarStripButton_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorEdit.Enabled = true;
+            bindingNavigatorSearch.Enabled = true;
+            bindingNavigatorEditDetalles.Enabled = true;
+        }
+
+        private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            bindingNavigatorEditDetalles.Enabled = true;
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            bindingNavigatorEditDetalles.Enabled = true;
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            bindingNavigatorEditDetalles.Enabled = true;
+        }
+
+        private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Clear();
+            bindingNavigatorEditDetalles.Enabled = true;
+        }
     }
 }

@@ -88,19 +88,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_C4977E87770E14BCFDFBFBC2B74AC927"
+        "OwnerKey" = "8:_73F63E99D29CADDE328A62B548BBD3A0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_1F29435147C14502971A8663821744A2"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_73F63E99D29CADDE328A62B548BBD3A0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -133,6 +127,12 @@
         "OwnerKey" = "8:_BE46DBBC3178F28284E31835EA786C90"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C4977E87770E14BCFDFBFBC2B74AC927"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -158,6 +158,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -533,15 +541,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:COCOA"
-        "ProductCode" = "8:{C9D5B8E7-60EE-4DF6-9B38-6BF1FED6F9C0}"
-        "PackageCode" = "8:{09FC2ABB-FDCF-40D1-A630-90F097C08177}"
+        "ProductCode" = "8:{2AFD607D-4C71-4F1A-A651-5738CCC08545}"
+        "PackageCode" = "8:{BEAC3C0C-98A7-4FF2-B744-20CF51D48790}"
         "UpgradeCode" = "8:{83CF1FDA-8F79-41DA-A573-DD6CC67D6752}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.14.000"
+        "ProductVersion" = "8:1.22"
         "Manufacturer" = "8:Automayor S.A."
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
