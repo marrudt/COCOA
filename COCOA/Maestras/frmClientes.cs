@@ -313,7 +313,8 @@ namespace COCOA.Maestras
             frmContactoCliente miForm = new frmContactoCliente();
             miForm.IDCliente = Convert.ToInt32(idClienteTextBox.Text);
             miForm.ShowDialog();
-            this.contactosClienteTableAdapter.FillBy(this.dSCOCOA.ContactosCliente, Convert.ToInt32(idClienteTextBox.Text));
+            LlenarCuadricula();
+            //this.contactosClienteTableAdapter.FillBy(this.dSCOCOA.ContactosCliente, Convert.ToInt32(idClienteTextBox.Text));
         }        
 
         private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
@@ -334,6 +335,11 @@ namespace COCOA.Maestras
         private void bindingNavigatorMoveLastItem_Click(object sender, EventArgs e)
         {
             LlenarCuadricula();
-        }                
+        }
+
+        private void bindingNavigatorPositionItem_Click(object sender, EventArgs e)
+        {
+            LlenarCuadricula();
+        }
     }
 }

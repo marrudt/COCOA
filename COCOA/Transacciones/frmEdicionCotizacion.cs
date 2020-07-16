@@ -58,7 +58,7 @@ namespace COCOA.Transacciones
             idClienteComboBox.Enabled = true;
             sitioEntregaTextBox.ReadOnly = false;
             idClienteComboBox.Enabled = true;
-            contactoTextBox.Enabled = true;
+            contactoTextBox.ReadOnly = false;
             remplazaCotizacionTextBox.Enabled = true;
 
             busquedaClienteButton.Enabled = true;
