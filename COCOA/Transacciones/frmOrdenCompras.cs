@@ -420,9 +420,10 @@ namespace COCOA.Transacciones
             string numeroCosteo = numeroCosteoTextBox.Text;
             string contrato = contratoTextBox.Text;
             int IdProducto = (int)vehiculoComboBox.SelectedValue;
+            string Notas = notasTextBox.Text;
 
             //Guarda encabezado            
-            int IdOrdenCompra = DALOrdenCompra.InsertOrdenCompra(fecha, IdProveedor, plazoEntrega, formaPago, terminosGarantia, IdCliente, numeroCosteo, contrato, IdProducto);
+            int IdOrdenCompra = DALOrdenCompra.InsertOrdenCompra(fecha, IdProveedor, plazoEntrega, formaPago, terminosGarantia, IdCliente, numeroCosteo, contrato, IdProducto, Notas);
 
             //Guarda detalle           
             foreach (DetalleOrdenCompra miDetalle in misDetalles)
@@ -456,6 +457,7 @@ namespace COCOA.Transacciones
             descuentoTextBox.Text = "0.00";
             RefrescaGrid();
             plazoEntregaTextBox.Focus();
+            notasTextBox.Text = string.Empty;
         }
 
         private void borrarTodoButton_Click(object sender, EventArgs e)

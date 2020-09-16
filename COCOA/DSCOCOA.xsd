@@ -698,7 +698,7 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReporteCotizacionTableAdapter" GeneratorDataComponentClassName="ReporteCotizacionTableAdapter" Name="ReporteCotizacion" UserDataComponentName="ReporteCotizacionTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros, c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) AS Subtotal, CASE WHEN CodigoTipoProducto = 'V' THEN p.Notas ELSE '' END AS Notas FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>select *,Subtotal-BaseIVATotal as IVATotal, BaseIVATotal-BaseImpoconsumoTotal AS ImpoconsumoTotal,Precio-BaseIVA as IVA,BaseIVA-BaseImpoconsumo as Impoconsumo,
@@ -713,9 +713,8 @@ select *,Subtotal/(1+PorcentajeIVA/100) as BaseIVATotal,Precio/(1+PorcentajeIVA/
 from
 (
 select c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto,
-p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,
-c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,
-(cd.Precio * Cantidad) as Subtotal
+p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) as Subtotal,
+case when CodigoTipoProducto = 'V' then p.Notas else '' end as Notas
 from 
 Cotizacion c
 inner join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
@@ -732,7 +731,7 @@ inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
 )c
 group by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,
 Estampillas,Descuento,IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio,DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstampillas,PorcentajeIVA,
-PorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal</CommandText>
+PorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal,Notas,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -781,9 +780,14 @@ PorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEstampillas,Bas
               <Mapping SourceColumn="ImpoconsumoTotal" DataSetColumn="ImpoconsumoTotal" />
               <Mapping SourceColumn="TotalVhEA" DataSetColumn="TotalVhEA" />
               <Mapping SourceColumn="ValorVhEA" DataSetColumn="ValorVhEA" />
+              <Mapping SourceColumn="Notas" DataSetColumn="Notas" />
+              <Mapping SourceColumn="IdCilindraje" DataSetColumn="IdCilindraje" />
+              <Mapping SourceColumn="IdIntervaloPrecio" DataSetColumn="IdIntervaloPrecio" />
+              <Mapping SourceColumn="IdPesoBrutoVh" DataSetColumn="IdPesoBrutoVh" />
+              <Mapping SourceColumn="IdNumeroPasajeros" DataSetColumn="IdNumeroPasajeros" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros, c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdCliente" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCliente" GeneratorSourceName="FillByIdCliente" GetMethodModifier="Public" GetMethodName="GetDataByIdCliente" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCliente" UserSourceName="FillByIdCliente">
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) AS Subtotal, CASE WHEN CodigoTipoProducto = 'V' THEN p.Notas ELSE '' END AS Notas FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdCliente" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCliente" GeneratorSourceName="FillByIdCliente" GetMethodModifier="Public" GetMethodName="GetDataByIdCliente" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCliente" UserSourceName="FillByIdCliente">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>select *,Subtotal-BaseIVATotal as IVATotal, BaseIVATotal-BaseImpoconsumoTotal AS ImpoconsumoTotal,Precio-BaseIVA as IVA,BaseIVA-BaseImpoconsumo as Impoconsumo,
@@ -798,9 +802,8 @@ select *,Subtotal/(1+PorcentajeIVA/100) as BaseIVATotal,Precio/(1+PorcentajeIVA/
 from
 (
 select c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto,
-p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,
-c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,
-(cd.Precio * Cantidad) as Subtotal
+p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) as Subtotal,
+case when CodigoTipoProducto = 'V' then p.Notas else '' end as Notas
 from 
 Cotizacion c
 inner join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
@@ -818,14 +821,14 @@ inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
 where IdCliente = @IdCliente
 group by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,
 Estampillas,Descuento,IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio,DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstampillas,PorcentajeIVA,
-PorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal</CommandText>
+PorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal,Notas,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdCliente" ColumnName="IdCliente" DataSourceName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros, c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" Scale="0" Size="4" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCliente" ColumnName="IdCliente" DataSourceName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) AS Subtotal, CASE WHEN CodigoTipoProducto = 'V' THEN p.Notas ELSE '' END AS Notas FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" Scale="0" Size="4" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros, c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdCotizacion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCotizacion" GeneratorSourceName="FillByIdCotizacion" GetMethodModifier="Public" GetMethodName="GetDataByIdCotizacion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCotizacion" UserSourceName="FillByIdCotizacion">
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) AS Subtotal, CASE WHEN CodigoTipoProducto = 'V' THEN p.Notas ELSE '' END AS Notas FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdCotizacion" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdCotizacion" GeneratorSourceName="FillByIdCotizacion" GetMethodModifier="Public" GetMethodName="GetDataByIdCotizacion" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdCotizacion" UserSourceName="FillByIdCotizacion">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>select *,Subtotal-BaseIVATotal as IVATotal, BaseIVATotal-BaseImpoconsumoTotal AS ImpoconsumoTotal,Precio-BaseIVA as IVA,BaseIVA-BaseImpoconsumo as Impoconsumo,
@@ -840,9 +843,8 @@ select *,Subtotal/(1+PorcentajeIVA/100) as BaseIVATotal,Precio/(1+PorcentajeIVA/
 from
 (
 select c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto,
-p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros,
-c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,
-(cd.Precio * Cantidad) as Subtotal
+p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) as Subtotal,
+case when CodigoTipoProducto = 'V' then p.Notas else '' end as Notas
 from 
 Cotizacion c
 inner join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
@@ -860,9 +862,9 @@ inner join NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros
 where IdCotizacion = @IdCotizacion
 group by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,
 Estampillas,Descuento,IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio,DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstampillas,PorcentajeIVA,
-PorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal</CommandText>
+PorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal,Notas,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdCotizacion" ColumnName="IdCotizacion" DataSourceName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.DescripcionCilindraje,i.DescripcionIntervaloPrecio,pbv.DescripcionPesoBrutoVh,np.NumeroPasajeros, c.FormaPago,c.PlazoEntrega,c.SitioEntrega,cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo, (cd.Precio * Cantidad) AS Subtotal FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCotizacion" Precision="0" Scale="0" Size="4" SourceColumn="IdCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdCotizacion" ColumnName="IdCotizacion" DataSourceName="SELECT *,BaseIVATotal/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) AS BaseImpoconsumo FROM ( SELECT *,Subtotal/(1+PorcentajeIVA/100) AS BaseIVATotal,Precio/(1+PorcentajeIVA/100) AS BaseIVA FROM ( SELECT c.Fecha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProducto, p.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas AS ValorEstampillas,cd.PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) AS Subtotal, CASE WHEN CodigoTipoProducto = 'V' THEN p.Notas ELSE '' END AS Notas FROM Cotizacion c INNER JOIN CotizacionDetalle cd ON cd.IdCotizacion = c.IdCotizacion INNER JOIN Clientes cli ON cli.IdCliente = c.IdCliente INNER JOIN Productos p ON p.IdProducto = cd.IdProducto INNER JOIN TipoProducto tp ON tp.IdTipoProducto = p.IdTipoProducto INNER JOIN Segmentos s ON s.IdSegmento = p.IdSegmento INNER JOIN Cilindrajes cil ON cil.IdCilindraje = p.IdCilindraje INNER JOIN IntervaloPrecios i ON i.IdIntervaloPrecio = p.IdIntervaloPrecio INNER JOIN PesoBrutoVh pbv ON pbv.IdPesoBrutoVh = p.IdPesoBrutoVh INNER JOIN NumeroPasajeros np ON np.IdNumeroPasajeros = p.IdNumeroPasajeros )a )b" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdCotizacion" Precision="0" Scale="0" Size="4" SourceColumn="IdCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1183,11 +1185,14 @@ INNER JOIN dbo.Clientes c on c.IdPais = @IdPais</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReporteOrdenCompraTableAdapter" GeneratorDataComponentClassName="ReporteOrdenCompraTableAdapter" Name="ReporteOrdenCompra" UserDataComponentName="ReporteOrdenCompraTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente AS Entidad,NumeroCosteo, Contrato,o.IdProducto,pr.DescripcionProducto AS Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto AS IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) AS ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad AS ValorIva,Cantidad,IVA,Impoconsumo,o.Notas FROM OrdenCompra o LEFT JOIN OrdenCompraDetalle ocd ON ocd.IdOrdenCompra = o.IdOrdenCompra LEFT JOIN Proveedores p ON p.IdProveedor = o.IdProveedor LEFT JOIN Clientes co ON co.IdCliente = o.IdCliente LEFT JOIN Productos pr ON pr.IdProducto = o.IdProducto LEFT JOIN Productos pd ON pd.IdProducto = ocd.IdProducto LEFT JOIN Ciudades c ON c.IdCiudad = p.IdCiudad" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente as Entidad,NumeroCosteo,
-Contrato,o.IdProducto,pr.DescripcionProducto as Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio * Cantidad) / (1 + (IVA / 100)) as ValorAntesIVA,Cantidad,IVA,Impoconsumo,p.Notas
+                    <CommandText>select *,Precio*Cantidad-Descuento as Total 
+from 
+(
+select o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente as Entidad,NumeroCosteo,
+Contrato,o.IdProducto,pr.DescripcionProducto as Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto as IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) as ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad as ValorIva,Cantidad,IVA,Impoconsumo,o.Notas
 from 
 OrdenCompra o 
 left join OrdenCompraDetalle ocd on ocd.IdOrdenCompra = o.IdOrdenCompra
@@ -1195,7 +1200,8 @@ left join Proveedores p on p.IdProveedor = o.IdProveedor
 left join Clientes co on co.IdCliente = o.IdCliente
 left join Productos pr on pr.IdProducto = o.IdProducto
 left join Productos pd on pd.IdProducto = ocd.IdProducto
-left join Ciudades c on c.IdCiudad = p.IdCiudad</CommandText>
+left join Ciudades c on c.IdCiudad = p.IdCiudad
+)a</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1231,13 +1237,19 @@ left join Ciudades c on c.IdCiudad = p.IdCiudad</CommandText>
               <Mapping SourceColumn="Descuento" DataSetColumn="Descuento" />
               <Mapping SourceColumn="DetalleProducto" DataSetColumn="DetalleProducto" />
               <Mapping SourceColumn="Notas" DataSetColumn="Notas" />
+              <Mapping SourceColumn="ValorIva" DataSetColumn="ValorIva" />
+              <Mapping SourceColumn="Total" DataSetColumn="Total" />
+              <Mapping SourceColumn="IdProductoDetalle" DataSetColumn="IdProductoDetalle" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByByIdProveedor" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdProveedor" GeneratorSourceName="FillByByIdProveedor" GetMethodModifier="Public" GetMethodName="GetDataByIdProveedor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdProveedor" UserSourceName="FillByByIdProveedor">
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente AS Entidad,NumeroCosteo, Contrato,o.IdProducto,pr.DescripcionProducto AS Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto AS IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) AS ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad AS ValorIva,Cantidad,IVA,Impoconsumo,o.Notas FROM OrdenCompra o LEFT JOIN OrdenCompraDetalle ocd ON ocd.IdOrdenCompra = o.IdOrdenCompra LEFT JOIN Proveedores p ON p.IdProveedor = o.IdProveedor LEFT JOIN Clientes co ON co.IdCliente = o.IdCliente LEFT JOIN Productos pr ON pr.IdProducto = o.IdProducto LEFT JOIN Productos pd ON pd.IdProducto = ocd.IdProducto LEFT JOIN Ciudades c ON c.IdCiudad = p.IdCiudad" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByByIdProveedor" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByIdProveedor" GeneratorSourceName="FillByByIdProveedor" GetMethodModifier="Public" GetMethodName="GetDataByIdProveedor" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByIdProveedor" UserSourceName="FillByByIdProveedor">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente as Entidad,NumeroCosteo,
-Contrato,o.IdProducto,pr.DescripcionProducto as Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio * Cantidad) / (1 + (IVA / 100)) as ValorAntesIVA,Cantidad,IVA,Impoconsumo,p.Notas
+                    <CommandText>select *,Precio*Cantidad-Descuento as Total 
+from 
+(
+select o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente as Entidad,NumeroCosteo,
+Contrato,o.IdProducto,pr.DescripcionProducto as Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto as IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) as ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad as ValorIva,Cantidad,IVA,Impoconsumo,o.Notas
 from 
 OrdenCompra o 
 left join OrdenCompraDetalle ocd on ocd.IdOrdenCompra = o.IdOrdenCompra
@@ -1246,19 +1258,23 @@ left join Clientes co on co.IdCliente = o.IdCliente
 left join Productos pr on pr.IdProducto = o.IdProducto
 left join Productos pd on pd.IdProducto = ocd.IdProducto
 left join Ciudades c on c.IdCiudad = p.IdCiudad
+)a
 
-WHERE o.IdProveedor = @IdProveedor</CommandText>
+WHERE IdProveedor = @IdProveedor</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdProveedor" ColumnName="IdProveedor" DataSourceName="COCOA.dbo.OrdenCompra" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdProveedor" ColumnName="IdProveedor" DataSourceName="SELECT o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente AS Entidad,NumeroCosteo, Contrato,o.IdProducto,pr.DescripcionProducto AS Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto AS IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) AS ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad AS ValorIva,Cantidad,IVA,Impoconsumo,o.Notas FROM OrdenCompra o LEFT JOIN OrdenCompraDetalle ocd ON ocd.IdOrdenCompra = o.IdOrdenCompra LEFT JOIN Proveedores p ON p.IdProveedor = o.IdProveedor LEFT JOIN Clientes co ON co.IdCliente = o.IdCliente LEFT JOIN Productos pr ON pr.IdProducto = o.IdProducto LEFT JOIN Productos pd ON pd.IdProducto = ocd.IdProducto LEFT JOIN Ciudades c ON c.IdCiudad = p.IdCiudad" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdProveedor" Precision="0" Scale="0" Size="4" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdOrdenCompra" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByOrdenCompra" GeneratorSourceName="FillByIdOrdenCompra" GetMethodModifier="Public" GetMethodName="GetDataByOrdenCompra" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByOrdenCompra" UserSourceName="FillByIdOrdenCompra">
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="SELECT o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente AS Entidad,NumeroCosteo, Contrato,o.IdProducto,pr.DescripcionProducto AS Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto AS IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) AS ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad AS ValorIva,Cantidad,IVA,Impoconsumo,o.Notas FROM OrdenCompra o LEFT JOIN OrdenCompraDetalle ocd ON ocd.IdOrdenCompra = o.IdOrdenCompra LEFT JOIN Proveedores p ON p.IdProveedor = o.IdProveedor LEFT JOIN Clientes co ON co.IdCliente = o.IdCliente LEFT JOIN Productos pr ON pr.IdProducto = o.IdProducto LEFT JOIN Productos pd ON pd.IdProducto = ocd.IdProducto LEFT JOIN Ciudades c ON c.IdCiudad = p.IdCiudad" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByIdOrdenCompra" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByOrdenCompra" GeneratorSourceName="FillByIdOrdenCompra" GetMethodModifier="Public" GetMethodName="GetDataByOrdenCompra" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByOrdenCompra" UserSourceName="FillByIdOrdenCompra">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente as Entidad,NumeroCosteo,
-Contrato,o.IdProducto,pr.DescripcionProducto as Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio * Cantidad) / (1 + (IVA / 100)) as ValorAntesIVA,Cantidad,IVA,Impoconsumo,p.Notas
+                    <CommandText>select *,Precio*Cantidad-Descuento as Total 
+from 
+(
+select o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente as Entidad,NumeroCosteo,
+Contrato,o.IdProducto,pr.DescripcionProducto as Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto as IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) as ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad as ValorIva,Cantidad,IVA,Impoconsumo,o.Notas
 from 
 OrdenCompra o 
 left join OrdenCompraDetalle ocd on ocd.IdOrdenCompra = o.IdOrdenCompra
@@ -1267,10 +1283,11 @@ left join Clientes co on co.IdCliente = o.IdCliente
 left join Productos pr on pr.IdProducto = o.IdProducto
 left join Productos pd on pd.IdProducto = ocd.IdProducto
 left join Ciudades c on c.IdCiudad = p.IdCiudad
+)a
 
-WHERE o.IdOrdenCompra = @IdOrdenCompra</CommandText>
+WHERE IdOrdenCompra = @IdOrdenCompra</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdOrdenCompra" ColumnName="IdOrdenCompra" DataSourceName="COCOA.dbo.OrdenCompra" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdOrdenCompra" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdOrdenCompra" ColumnName="IdOrdenCompra" DataSourceName="SELECT o.IdOrdenCompra,Fecha,o.IdProveedor,p.Nit,p.NombreProveedor,p.Direccion,p.Telefono1,p.Telefono2,p.IdCiudad,c.DescripcionCiudad,o.IdCliente,co.NombreCliente AS Entidad,NumeroCosteo, Contrato,o.IdProducto,pr.DescripcionProducto AS Vehiculo,FormaPago,TerminosGarantia,PlazoEntrega,IdOrdenCompraDetalle,pd.IdProducto AS IdProductoDetalle,ocd.DescripcionProducto,pd.DetalleProducto,ocd.Precio,ocd.Descuento,(Ocd.Precio) / (1 + (IVA / 100)) AS ValorAntesIVA,(ocd.Precio-(ocd.Precio/(1+(IVA/100))))*Cantidad AS ValorIva,Cantidad,IVA,Impoconsumo,o.Notas FROM OrdenCompra o LEFT JOIN OrdenCompraDetalle ocd ON ocd.IdOrdenCompra = o.IdOrdenCompra LEFT JOIN Proveedores p ON p.IdProveedor = o.IdProveedor LEFT JOIN Clientes co ON co.IdCliente = o.IdCliente LEFT JOIN Productos pr ON pr.IdProducto = o.IdProducto LEFT JOIN Productos pd ON pd.IdProducto = ocd.IdProducto LEFT JOIN Ciudades c ON c.IdCiudad = p.IdCiudad" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdOrdenCompra" Precision="0" Scale="0" Size="4" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1639,18 +1656,17 @@ ORDER BY NombreCliente</CommandText>
               <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.Clientes" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, IdCiudad, Telefono1, Telefono2, Celular, Email, Notas, Activo 
+                    <CommandText>SELECT IdCliente, Nit, NombreCliente, NombreContacto, Direccion, IdCiudad, 
+Telefono1, Telefono2, Celular, Email, Notas, Activo 
 FROM dbo.Clientes
 WHERE Nit LIKE @Nit 
 AND NombreCliente LIKE @NombreCliente
-AND NombreContacto LIKE @NombreContacto
 AND Email LIKE @Email
 AND Activo = 1
 </CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="Nit" ColumnName="Nit" DataSourceName="COCOA.dbo.Clientes" DataTypeServer="nvarchar(20)" DbType="String" Direction="Input" ParameterName="@Nit" Precision="0" ProviderType="NVarChar" Scale="0" Size="20" SourceColumn="Nit" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="NombreCliente" ColumnName="NombreCliente" DataSourceName="COCOA.dbo.Clientes" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@NombreCliente" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="NombreCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="NombreContacto" ColumnName="NombreContacto" DataSourceName="COCOA.dbo.Clientes" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@NombreContacto" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="NombreContacto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="Email" ColumnName="Email" DataSourceName="COCOA.dbo.Clientes" DataTypeServer="nvarchar(MAX)" DbType="String" Direction="Input" ParameterName="@Email" Precision="0" ProviderType="NVarChar" Scale="0" Size="2147483647" SourceColumn="Email" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -2128,97 +2144,6 @@ WHERE IdCliente = @IdCliente</CommandText>
                 </SelectCommand>
               </DbSource>
             </Sources>
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenCompraTableAdapter" GeneratorDataComponentClassName="OrdenCompraTableAdapter" Name="OrdenCompra" UserDataComponentName="OrdenCompraTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.OrdenCompra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <DeleteCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[OrdenCompra] WHERE (([IdOrdenCompra] = @Original_IdOrdenCompra) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ([IdProveedor] = @Original_IdProveedor) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_NumeroCosteo = 1 AND [NumeroCosteo] IS NULL) OR ([NumeroCosteo] = @Original_NumeroCosteo)) AND ((@IsNull_Contrato = 1 AND [Contrato] IS NULL) OR ([Contrato] = @Original_Contrato)) AND ((@IsNull_IdProducto = 1 AND [IdProducto] IS NULL) OR ([IdProducto] = @Original_IdProducto)))</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdOrdenCompra" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NumeroCosteo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contrato" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                    </Parameters>
-                  </DbCommand>
-                </DeleteCommand>
-                <InsertCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[OrdenCompra] ([Fecha], [IdProveedor], [PlazoEntrega], [FormaPago], [TerminosGarantia], [IdCliente], [NumeroCosteo], [Contrato], [IdProducto]) VALUES (@Fecha, @IdProveedor, @PlazoEntrega, @FormaPago, @TerminosGarantia, @IdCliente, @NumeroCosteo, @Contrato, @IdProducto);
-SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto FROM OrdenCompra WHERE (IdOrdenCompra = SCOPE_IDENTITY())</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PlazoEntrega" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PlazoEntrega" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FormaPago" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TerminosGarantia" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TerminosGarantia" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </InsertCommand>
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto FROM dbo.OrdenCompra</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-                <UpdateCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[OrdenCompra] SET [Fecha] = @Fecha, [IdProveedor] = @IdProveedor, [PlazoEntrega] = @PlazoEntrega, [FormaPago] = @FormaPago, [TerminosGarantia] = @TerminosGarantia, [IdCliente] = @IdCliente, [NumeroCosteo] = @NumeroCosteo, [Contrato] = @Contrato, [IdProducto] = @IdProducto WHERE (([IdOrdenCompra] = @Original_IdOrdenCompra) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ([IdProveedor] = @Original_IdProveedor) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_NumeroCosteo = 1 AND [NumeroCosteo] IS NULL) OR ([NumeroCosteo] = @Original_NumeroCosteo)) AND ((@IsNull_Contrato = 1 AND [Contrato] IS NULL) OR ([Contrato] = @Original_Contrato)) AND ((@IsNull_IdProducto = 1 AND [IdProducto] IS NULL) OR ([IdProducto] = @Original_IdProducto)));
-SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto FROM OrdenCompra WHERE (IdOrdenCompra = @IdOrdenCompra)</CommandText>
-                    <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PlazoEntrega" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PlazoEntrega" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FormaPago" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TerminosGarantia" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TerminosGarantia" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdOrdenCompra" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NumeroCosteo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contrato" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="false" AutogeneratedName="IdOrdenCompra" ColumnName="IdOrdenCompra" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdOrdenCompra" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
-                    </Parameters>
-                  </DbCommand>
-                </UpdateCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="IdOrdenCompra" DataSetColumn="IdOrdenCompra" />
-              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
-              <Mapping SourceColumn="IdProveedor" DataSetColumn="IdProveedor" />
-              <Mapping SourceColumn="PlazoEntrega" DataSetColumn="PlazoEntrega" />
-              <Mapping SourceColumn="FormaPago" DataSetColumn="FormaPago" />
-              <Mapping SourceColumn="TerminosGarantia" DataSetColumn="TerminosGarantia" />
-              <Mapping SourceColumn="IdCliente" DataSetColumn="IdCliente" />
-              <Mapping SourceColumn="NumeroCosteo" DataSetColumn="NumeroCosteo" />
-              <Mapping SourceColumn="Contrato" DataSetColumn="Contrato" />
-              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
-            </Mappings>
-            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenCompraDetalleTableAdapter" GeneratorDataComponentClassName="OrdenCompraDetalleTableAdapter" Name="OrdenCompraDetalle" UserDataComponentName="OrdenCompraDetalleTableAdapter">
             <MainSource>
@@ -2745,17 +2670,15 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProdu
               <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.Cotizacion" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[Cotizacion] WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_Contacto = 1 AND [Contacto] IS NULL) OR ([Contacto] = @Original_Contacto)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_PlazoEntrega = 1 AND [PlazoEntrega] IS NULL) OR ([PlazoEntrega] = @Original_PlazoEntrega)) AND ((@IsNull_SitioEntrega = 1 AND [SitioEntrega] IS NULL) OR ([SitioEntrega] = @Original_SitioEntrega)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[Cotizacion] WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_PlazoEntrega = 1 AND [PlazoEntrega] IS NULL) OR ([PlazoEntrega] = @Original_PlazoEntrega)) AND ((@IsNull_SitioEntrega = 1 AND [SitioEntrega] IS NULL) OR ([SitioEntrega] = @Original_SitioEntrega)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCotizacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCotizacion" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RemplazaCotizacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_RemplazaCotizacion" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RemplazaCotizacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contacto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Contacto" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FormaPago" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FormaPago" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PlazoEntrega" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PlazoEntrega" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -2771,7 +2694,7 @@ SELECT IdCotizacionDetalle, IdCotizacion, NumeroItem, DetalleNumeroItem, IdProdu
 SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega FROM Cotizacion WHERE (IdCotizacion = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@RemplazaCotizacion" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RemplazaCotizacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Contacto" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FormaPago" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -2788,11 +2711,11 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[Cotizacion] SET [Fecha] = @Fecha, [RemplazaCotizacion] = @RemplazaCotizacion, [IdCliente] = @IdCliente, [Contacto] = @Contacto, [FormaPago] = @FormaPago, [PlazoEntrega] = @PlazoEntrega, [SitioEntrega] = @SitioEntrega WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_Contacto = 1 AND [Contacto] IS NULL) OR ([Contacto] = @Original_Contacto)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_PlazoEntrega = 1 AND [PlazoEntrega] IS NULL) OR ([PlazoEntrega] = @Original_PlazoEntrega)) AND ((@IsNull_SitioEntrega = 1 AND [SitioEntrega] IS NULL) OR ([SitioEntrega] = @Original_SitioEntrega)));
+                    <CommandText>UPDATE [dbo].[Cotizacion] SET [Fecha] = @Fecha, [RemplazaCotizacion] = @RemplazaCotizacion, [IdCliente] = @IdCliente, [Contacto] = @Contacto, [FormaPago] = @FormaPago, [PlazoEntrega] = @PlazoEntrega, [SitioEntrega] = @SitioEntrega WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_FormaPago = 1 AND [FormaPago] IS NULL) OR ([FormaPago] = @Original_FormaPago)) AND ((@IsNull_PlazoEntrega = 1 AND [PlazoEntrega] IS NULL) OR ([PlazoEntrega] = @Original_PlazoEntrega)) AND ((@IsNull_SitioEntrega = 1 AND [SitioEntrega] IS NULL) OR ([SitioEntrega] = @Original_SitioEntrega)));
 SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega FROM Cotizacion WHERE (IdCotizacion = @IdCotizacion)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@RemplazaCotizacion" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@RemplazaCotizacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Contacto" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FormaPago" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -2802,11 +2725,9 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_RemplazaCotizacion" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_RemplazaCotizacion" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_RemplazaCotizacion" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="RemplazaCotizacion" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contacto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Contacto" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contacto" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FormaPago" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FormaPago" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_PlazoEntrega" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="PlazoEntrega" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -2828,6 +2749,100 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <Mapping SourceColumn="FormaPago" DataSetColumn="FormaPago" />
               <Mapping SourceColumn="PlazoEntrega" DataSetColumn="PlazoEntrega" />
               <Mapping SourceColumn="SitioEntrega" DataSetColumn="SitioEntrega" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrdenCompraTableAdapter" GeneratorDataComponentClassName="OrdenCompraTableAdapter" Name="OrdenCompra" UserDataComponentName="OrdenCompraTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="COCOAConnectionString (Settings)" DbObjectName="COCOA.dbo.OrdenCompra" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[OrdenCompra] WHERE (([IdOrdenCompra] = @Original_IdOrdenCompra) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ([IdProveedor] = @Original_IdProveedor) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_NumeroCosteo = 1 AND [NumeroCosteo] IS NULL) OR ([NumeroCosteo] = @Original_NumeroCosteo)) AND ((@IsNull_Contrato = 1 AND [Contrato] IS NULL) OR ([Contrato] = @Original_Contrato)) AND ((@IsNull_IdProducto = 1 AND [IdProducto] IS NULL) OR ([IdProducto] = @Original_IdProducto)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdOrdenCompra" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NumeroCosteo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contrato" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[OrdenCompra] ([Fecha], [IdProveedor], [PlazoEntrega], [FormaPago], [TerminosGarantia], [IdCliente], [NumeroCosteo], [Contrato], [IdProducto], [Notas]) VALUES (@Fecha, @IdProveedor, @PlazoEntrega, @FormaPago, @TerminosGarantia, @IdCliente, @NumeroCosteo, @Contrato, @IdProducto, @Notas);
+SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto, Notas FROM OrdenCompra WHERE (IdOrdenCompra = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PlazoEntrega" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PlazoEntrega" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FormaPago" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TerminosGarantia" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TerminosGarantia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Notas" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Notas" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto, Notas FROM dbo.OrdenCompra</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[OrdenCompra] SET [Fecha] = @Fecha, [IdProveedor] = @IdProveedor, [PlazoEntrega] = @PlazoEntrega, [FormaPago] = @FormaPago, [TerminosGarantia] = @TerminosGarantia, [IdCliente] = @IdCliente, [NumeroCosteo] = @NumeroCosteo, [Contrato] = @Contrato, [IdProducto] = @IdProducto, [Notas] = @Notas WHERE (([IdOrdenCompra] = @Original_IdOrdenCompra) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ([IdProveedor] = @Original_IdProveedor) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)) AND ((@IsNull_NumeroCosteo = 1 AND [NumeroCosteo] IS NULL) OR ([NumeroCosteo] = @Original_NumeroCosteo)) AND ((@IsNull_Contrato = 1 AND [Contrato] IS NULL) OR ([Contrato] = @Original_Contrato)) AND ((@IsNull_IdProducto = 1 AND [IdProducto] IS NULL) OR ([IdProducto] = @Original_IdProducto)));
+SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto, Notas FROM OrdenCompra WHERE (IdOrdenCompra = @IdOrdenCompra)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@PlazoEntrega" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="PlazoEntrega" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@FormaPago" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="FormaPago" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@TerminosGarantia" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="TerminosGarantia" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Notas" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Notas" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdOrdenCompra" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Fecha" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_Fecha" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Fecha" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProveedor" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProveedor" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdCliente" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdCliente" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NumeroCosteo" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_NumeroCosteo" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="NumeroCosteo" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_Contrato" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_Contrato" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="Contrato" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_IdProducto" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="IdProducto" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="IdOrdenCompra" ColumnName="IdOrdenCompra" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@IdOrdenCompra" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="IdOrdenCompra" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdOrdenCompra" DataSetColumn="IdOrdenCompra" />
+              <Mapping SourceColumn="Fecha" DataSetColumn="Fecha" />
+              <Mapping SourceColumn="IdProveedor" DataSetColumn="IdProveedor" />
+              <Mapping SourceColumn="PlazoEntrega" DataSetColumn="PlazoEntrega" />
+              <Mapping SourceColumn="FormaPago" DataSetColumn="FormaPago" />
+              <Mapping SourceColumn="TerminosGarantia" DataSetColumn="TerminosGarantia" />
+              <Mapping SourceColumn="IdCliente" DataSetColumn="IdCliente" />
+              <Mapping SourceColumn="NumeroCosteo" DataSetColumn="NumeroCosteo" />
+              <Mapping SourceColumn="Contrato" DataSetColumn="Contrato" />
+              <Mapping SourceColumn="IdProducto" DataSetColumn="IdProducto" />
+              <Mapping SourceColumn="Notas" DataSetColumn="Notas" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -3113,7 +3128,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <xs:element name="Contacto" msprop:Generator_ColumnVarNameInTable="columnContacto" msprop:Generator_ColumnPropNameInRow="Contacto" msprop:Generator_ColumnPropNameInTable="ContactoColumn" msprop:Generator_UserColumnName="Contacto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -3139,7 +3154,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Precio" msprop:Generator_ColumnVarNameInTable="columnPrecio" msprop:Generator_ColumnPropNameInRow="Precio" msprop:Generator_ColumnPropNameInTable="PrecioColumn" msprop:Generator_UserColumnName="Precio" type="xs:decimal" />
               <xs:element name="Estampillas" msprop:Generator_ColumnVarNameInTable="columnEstampillas" msprop:Generator_ColumnPropNameInRow="Estampillas" msprop:Generator_ColumnPropNameInTable="EstampillasColumn" msprop:Generator_UserColumnName="Estampillas" type="xs:decimal" minOccurs="0" />
               <xs:element name="DescripcionSegmento" msprop:Generator_ColumnVarNameInTable="columnDescripcionSegmento" msprop:Generator_ColumnPropNameInRow="DescripcionSegmento" msprop:Generator_ColumnPropNameInTable="DescripcionSegmentoColumn" msprop:Generator_UserColumnName="DescripcionSegmento">
                 <xs:simpleType>
@@ -3207,7 +3222,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <xs:element name="IdCotizacionDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCotizacionDetalle" msprop:Generator_ColumnPropNameInRow="IdCotizacionDetalle" msprop:Generator_ColumnPropNameInTable="IdCotizacionDetalleColumn" msprop:Generator_UserColumnName="IdCotizacionDetalle" type="xs:int" />
               <xs:element name="IdProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" />
               <xs:element name="IdTipoProducto" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdTipoProducto" msprop:Generator_ColumnPropNameInRow="IdTipoProducto" msprop:Generator_ColumnPropNameInTable="IdTipoProductoColumn" msprop:Generator_UserColumnName="IdTipoProducto" type="xs:int" />
-              <xs:element name="IdSegmento" msprop:Generator_ColumnVarNameInTable="columnIdSegmento" msprop:Generator_ColumnPropNameInRow="IdSegmento" msprop:Generator_ColumnPropNameInTable="IdSegmentoColumn" msprop:Generator_UserColumnName="IdSegmento" type="xs:int" minOccurs="0" />
+              <xs:element name="IdSegmento" msprop:Generator_ColumnVarNameInTable="columnIdSegmento" msprop:Generator_ColumnPropNameInRow="IdSegmento" msprop:Generator_ColumnPropNameInTable="IdSegmentoColumn" msprop:Generator_UserColumnName="IdSegmento" type="xs:int" />
               <xs:element name="CodigoTipoProducto" msprop:Generator_ColumnVarNameInTable="columnCodigoTipoProducto" msprop:Generator_ColumnPropNameInRow="CodigoTipoProducto" msprop:Generator_ColumnPropNameInTable="CodigoTipoProductoColumn" msprop:Generator_UserColumnName="CodigoTipoProducto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -3228,6 +3243,17 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <xs:element name="ImpoconsumoTotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnImpoconsumoTotal" msprop:Generator_ColumnPropNameInRow="ImpoconsumoTotal" msprop:Generator_ColumnPropNameInTable="ImpoconsumoTotalColumn" msprop:Generator_UserColumnName="ImpoconsumoTotal" type="xs:double" minOccurs="0" />
               <xs:element name="TotalVhEA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalVhEA" msprop:Generator_ColumnPropNameInRow="TotalVhEA" msprop:Generator_ColumnPropNameInTable="TotalVhEAColumn" msprop:Generator_UserColumnName="TotalVhEA" type="xs:double" minOccurs="0" />
               <xs:element name="ValorVhEA" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorVhEA" msprop:Generator_ColumnPropNameInRow="ValorVhEA" msprop:Generator_ColumnPropNameInTable="ValorVhEAColumn" msprop:Generator_UserColumnName="ValorVhEA" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Notas" msprop:Generator_ColumnVarNameInTable="columnNotas" msprop:Generator_ColumnPropNameInRow="Notas" msprop:Generator_ColumnPropNameInTable="NotasColumn" msprop:Generator_UserColumnName="Notas" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCilindraje" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCilindraje" msprop:Generator_ColumnPropNameInRow="IdCilindraje" msprop:Generator_ColumnPropNameInTable="IdCilindrajeColumn" msprop:Generator_UserColumnName="IdCilindraje" type="xs:int" />
+              <xs:element name="IdIntervaloPrecio" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdIntervaloPrecio" msprop:Generator_ColumnPropNameInRow="IdIntervaloPrecio" msprop:Generator_ColumnPropNameInTable="IdIntervaloPrecioColumn" msprop:Generator_UserColumnName="IdIntervaloPrecio" type="xs:int" />
+              <xs:element name="IdPesoBrutoVh" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdPesoBrutoVh" msprop:Generator_ColumnPropNameInRow="IdPesoBrutoVh" msprop:Generator_ColumnPropNameInTable="IdPesoBrutoVhColumn" msprop:Generator_UserColumnName="IdPesoBrutoVh" type="xs:int" />
+              <xs:element name="IdNumeroPasajeros" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdNumeroPasajeros" msprop:Generator_ColumnPropNameInRow="IdNumeroPasajeros" msprop:Generator_ColumnPropNameInTable="IdNumeroPasajerosColumn" msprop:Generator_UserColumnName="IdNumeroPasajeros" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3502,6 +3528,9 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="ValorIva" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnValorIva" msprop:Generator_ColumnPropNameInRow="ValorIva" msprop:Generator_ColumnPropNameInTable="ValorIvaColumn" msprop:Generator_UserColumnName="ValorIva" type="xs:double" minOccurs="0" />
+              <xs:element name="Total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotal" msprop:Generator_ColumnPropNameInRow="Total" msprop:Generator_ColumnPropNameInTable="TotalColumn" msprop:Generator_UserColumnName="Total" type="xs:double" minOccurs="0" />
+              <xs:element name="IdProductoDetalle" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProductoDetalle" msprop:Generator_ColumnPropNameInRow="IdProductoDetalle" msprop:Generator_ColumnPropNameInTable="IdProductoDetalleColumn" msprop:Generator_UserColumnName="IdProductoDetalle" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3982,52 +4011,6 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OrdenCompra" msprop:Generator_TableClassName="OrdenCompraDataTable" msprop:Generator_TableVarName="tableOrdenCompra" msprop:Generator_RowChangedName="OrdenCompraRowChanged" msprop:Generator_TablePropName="OrdenCompra" msprop:Generator_RowDeletingName="OrdenCompraRowDeleting" msprop:Generator_RowChangingName="OrdenCompraRowChanging" msprop:Generator_RowEvHandlerName="OrdenCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdenCompraRowDeleted" msprop:Generator_RowClassName="OrdenCompraRow" msprop:Generator_UserTableName="OrdenCompra" msprop:Generator_RowEvArgName="OrdenCompraRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IdOrdenCompra" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdOrdenCompra" msprop:Generator_ColumnPropNameInRow="IdOrdenCompra" msprop:Generator_ColumnPropNameInTable="IdOrdenCompraColumn" msprop:Generator_UserColumnName="IdOrdenCompra" type="xs:int" />
-              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="IdProveedor" msprop:Generator_ColumnVarNameInTable="columnIdProveedor" msprop:Generator_ColumnPropNameInRow="IdProveedor" msprop:Generator_ColumnPropNameInTable="IdProveedorColumn" msprop:Generator_UserColumnName="IdProveedor" type="xs:int" />
-              <xs:element name="PlazoEntrega" msprop:Generator_ColumnVarNameInTable="columnPlazoEntrega" msprop:Generator_ColumnPropNameInRow="PlazoEntrega" msprop:Generator_ColumnPropNameInTable="PlazoEntregaColumn" msprop:Generator_UserColumnName="PlazoEntrega">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FormaPago" msprop:Generator_ColumnVarNameInTable="columnFormaPago" msprop:Generator_ColumnPropNameInRow="FormaPago" msprop:Generator_ColumnPropNameInTable="FormaPagoColumn" msprop:Generator_UserColumnName="FormaPago" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="TerminosGarantia" msprop:Generator_ColumnVarNameInTable="columnTerminosGarantia" msprop:Generator_ColumnPropNameInRow="TerminosGarantia" msprop:Generator_ColumnPropNameInTable="TerminosGarantiaColumn" msprop:Generator_UserColumnName="TerminosGarantia" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="2147483647" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="IdCliente" msprop:Generator_ColumnVarNameInTable="columnIdCliente" msprop:Generator_ColumnPropNameInRow="IdCliente" msprop:Generator_ColumnPropNameInTable="IdClienteColumn" msprop:Generator_UserColumnName="IdCliente" type="xs:int" minOccurs="0" />
-              <xs:element name="NumeroCosteo" msprop:Generator_ColumnVarNameInTable="columnNumeroCosteo" msprop:Generator_ColumnPropNameInRow="NumeroCosteo" msprop:Generator_ColumnPropNameInTable="NumeroCosteoColumn" msprop:Generator_UserColumnName="NumeroCosteo" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Contrato" msprop:Generator_ColumnVarNameInTable="columnContrato" msprop:Generator_ColumnPropNameInRow="Contrato" msprop:Generator_ColumnPropNameInTable="ContratoColumn" msprop:Generator_UserColumnName="Contrato" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="30" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="OrdenCompraDetalle" msprop:Generator_TableClassName="OrdenCompraDetalleDataTable" msprop:Generator_TableVarName="tableOrdenCompraDetalle" msprop:Generator_RowChangedName="OrdenCompraDetalleRowChanged" msprop:Generator_TablePropName="OrdenCompraDetalle" msprop:Generator_RowDeletingName="OrdenCompraDetalleRowDeleting" msprop:Generator_RowChangingName="OrdenCompraDetalleRowChanging" msprop:Generator_RowEvHandlerName="OrdenCompraDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdenCompraDetalleRowDeleted" msprop:Generator_RowClassName="OrdenCompraDetalleRow" msprop:Generator_UserTableName="OrdenCompraDetalle" msprop:Generator_RowEvArgName="OrdenCompraDetalleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
@@ -4037,7 +4020,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <xs:element name="DescripcionProducto" msprop:Generator_ColumnVarNameInTable="columnDescripcionProducto" msprop:Generator_ColumnPropNameInRow="DescripcionProducto" msprop:Generator_ColumnPropNameInTable="DescripcionProductoColumn" msprop:Generator_UserColumnName="DescripcionProducto">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4237,7 +4220,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <xs:element name="DescripcionProducto" msprop:Generator_ColumnVarNameInTable="columnDescripcionProducto" msprop:Generator_ColumnPropNameInRow="DescripcionProducto" msprop:Generator_ColumnPropNameInTable="DescripcionProductoColumn" msprop:Generator_UserColumnName="DescripcionProducto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4251,7 +4234,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Cotizacion" msprop:Generator_TableClassName="CotizacionDataTable" msprop:Generator_TableVarName="tableCotizacion" msprop:Generator_TablePropName="Cotizacion" msprop:Generator_RowDeletingName="CotizacionRowDeleting" msprop:Generator_RowChangingName="CotizacionRowChanging" msprop:Generator_RowEvHandlerName="CotizacionRowChangeEventHandler" msprop:Generator_RowDeletedName="CotizacionRowDeleted" msprop:Generator_UserTableName="Cotizacion" msprop:Generator_RowChangedName="CotizacionRowChanged" msprop:Generator_RowEvArgName="CotizacionRowChangeEvent" msprop:Generator_RowClassName="CotizacionRow">
+        <xs:element name="Cotizacion" msprop:Generator_TableClassName="CotizacionDataTable" msprop:Generator_TableVarName="tableCotizacion" msprop:Generator_RowChangedName="CotizacionRowChanged" msprop:Generator_TablePropName="Cotizacion" msprop:Generator_RowDeletingName="CotizacionRowDeleting" msprop:Generator_RowChangingName="CotizacionRowChanging" msprop:Generator_RowEvHandlerName="CotizacionRowChangeEventHandler" msprop:Generator_RowDeletedName="CotizacionRowDeleted" msprop:Generator_RowClassName="CotizacionRow" msprop:Generator_UserTableName="Cotizacion" msprop:Generator_RowEvArgName="CotizacionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdCotizacion" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdCotizacion" msprop:Generator_ColumnPropNameInRow="IdCotizacion" msprop:Generator_ColumnPropNameInTable="IdCotizacionColumn" msprop:Generator_UserColumnName="IdCotizacion" type="xs:int" />
@@ -4259,7 +4242,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <xs:element name="RemplazaCotizacion" msprop:Generator_ColumnVarNameInTable="columnRemplazaCotizacion" msprop:Generator_ColumnPropNameInRow="RemplazaCotizacion" msprop:Generator_ColumnPropNameInTable="RemplazaCotizacionColumn" msprop:Generator_UserColumnName="RemplazaCotizacion" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
+                    <xs:maxLength value="5" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4267,7 +4250,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
               <xs:element name="Contacto" msprop:Generator_ColumnVarNameInTable="columnContacto" msprop:Generator_ColumnPropNameInRow="Contacto" msprop:Generator_ColumnPropNameInTable="ContactoColumn" msprop:Generator_UserColumnName="Contacto" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4289,6 +4272,59 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OrdenCompra" msprop:Generator_TableClassName="OrdenCompraDataTable" msprop:Generator_TableVarName="tableOrdenCompra" msprop:Generator_TablePropName="OrdenCompra" msprop:Generator_RowDeletingName="OrdenCompraRowDeleting" msprop:Generator_RowChangingName="OrdenCompraRowChanging" msprop:Generator_RowEvHandlerName="OrdenCompraRowChangeEventHandler" msprop:Generator_RowDeletedName="OrdenCompraRowDeleted" msprop:Generator_UserTableName="OrdenCompra" msprop:Generator_RowChangedName="OrdenCompraRowChanged" msprop:Generator_RowEvArgName="OrdenCompraRowChangeEvent" msprop:Generator_RowClassName="OrdenCompraRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="IdOrdenCompra" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdOrdenCompra" msprop:Generator_ColumnPropNameInRow="IdOrdenCompra" msprop:Generator_ColumnPropNameInTable="IdOrdenCompraColumn" msprop:Generator_UserColumnName="IdOrdenCompra" type="xs:int" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IdProveedor" msprop:Generator_ColumnVarNameInTable="columnIdProveedor" msprop:Generator_ColumnPropNameInRow="IdProveedor" msprop:Generator_ColumnPropNameInTable="IdProveedorColumn" msprop:Generator_UserColumnName="IdProveedor" type="xs:int" />
+              <xs:element name="PlazoEntrega" msprop:Generator_ColumnVarNameInTable="columnPlazoEntrega" msprop:Generator_ColumnPropNameInRow="PlazoEntrega" msprop:Generator_ColumnPropNameInTable="PlazoEntregaColumn" msprop:Generator_UserColumnName="PlazoEntrega">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FormaPago" msprop:Generator_ColumnVarNameInTable="columnFormaPago" msprop:Generator_ColumnPropNameInRow="FormaPago" msprop:Generator_ColumnPropNameInTable="FormaPagoColumn" msprop:Generator_UserColumnName="FormaPago" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TerminosGarantia" msprop:Generator_ColumnVarNameInTable="columnTerminosGarantia" msprop:Generator_ColumnPropNameInRow="TerminosGarantia" msprop:Generator_ColumnPropNameInTable="TerminosGarantiaColumn" msprop:Generator_UserColumnName="TerminosGarantia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdCliente" msprop:Generator_ColumnVarNameInTable="columnIdCliente" msprop:Generator_ColumnPropNameInRow="IdCliente" msprop:Generator_ColumnPropNameInTable="IdClienteColumn" msprop:Generator_UserColumnName="IdCliente" type="xs:int" minOccurs="0" />
+              <xs:element name="NumeroCosteo" msprop:Generator_ColumnVarNameInTable="columnNumeroCosteo" msprop:Generator_ColumnPropNameInRow="NumeroCosteo" msprop:Generator_ColumnPropNameInTable="NumeroCosteoColumn" msprop:Generator_UserColumnName="NumeroCosteo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Contrato" msprop:Generator_ColumnVarNameInTable="columnContrato" msprop:Generator_ColumnPropNameInRow="Contrato" msprop:Generator_ColumnPropNameInTable="ContratoColumn" msprop:Generator_UserColumnName="Contrato" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IdProducto" msprop:Generator_ColumnVarNameInTable="columnIdProducto" msprop:Generator_ColumnPropNameInRow="IdProducto" msprop:Generator_ColumnPropNameInTable="IdProductoColumn" msprop:Generator_UserColumnName="IdProducto" type="xs:int" minOccurs="0" />
+              <xs:element name="Notas" msprop:Generator_ColumnVarNameInTable="columnNotas" msprop:Generator_ColumnPropNameInRow="Notas" msprop:Generator_ColumnPropNameInTable="NotasColumn" msprop:Generator_UserColumnName="Notas" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4395,10 +4431,6 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
       <xs:selector xpath=".//mstns:ListadoClientes" />
       <xs:field xpath="mstns:IdCliente" />
     </xs:unique>
-    <xs:unique name="OrdenCompra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:OrdenCompra" />
-      <xs:field xpath="mstns:IdOrdenCompra" />
-    </xs:unique>
     <xs:unique name="OrdenCompraDetalle_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:OrdenCompraDetalle" />
       <xs:field xpath="mstns:IdOrdenCompraDetalle" />
@@ -4424,6 +4456,10 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
       <xs:selector xpath=".//mstns:Cotizacion" />
       <xs:field xpath="mstns:IdCotizacion" />
     </xs:unique>
+    <xs:unique name="OrdenCompra_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:OrdenCompra" />
+      <xs:field xpath="mstns:IdOrdenCompra" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
@@ -4444,9 +4480,6 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
       <msdata:Relationship name="FK_Proveedores_Ciudades2" msdata:parent="ListadoOrdenCompras" msdata:child="Proveedores" msdata:parentkey="IdCiudad" msdata:childkey="IdCiudad" msprop:Generator_UserChildTable="Proveedores" msprop:Generator_ChildPropName="GetProveedoresRows" msprop:Generator_UserRelationName="FK_Proveedores_Ciudades2" msprop:Generator_ParentPropName="ListadoOrdenComprasRow" msprop:Generator_RelationVarName="relationFK_Proveedores_Ciudades2" msprop:Generator_UserParentTable="ListadoOrdenCompras" />
       <msdata:Relationship name="FK_Clientes_Ciudades3" msdata:parent="ListadoClientes" msdata:child="Clientes" msdata:parentkey="IdCiudad" msdata:childkey="IdCiudad" msprop:Generator_UserChildTable="Clientes" msprop:Generator_ChildPropName="GetClientesRows" msprop:Generator_UserRelationName="FK_Clientes_Ciudades3" msprop:Generator_RelationVarName="relationFK_Clientes_Ciudades3" msprop:Generator_UserParentTable="ListadoClientes" msprop:Generator_ParentPropName="ListadoClientesRow" />
       <msdata:Relationship name="FK_Proveedores_Ciudades3" msdata:parent="ListadoClientes" msdata:child="Proveedores" msdata:parentkey="IdCiudad" msdata:childkey="IdCiudad" msprop:Generator_UserChildTable="Proveedores" msprop:Generator_ChildPropName="GetProveedoresRows" msprop:Generator_UserRelationName="FK_Proveedores_Ciudades3" msprop:Generator_RelationVarName="relationFK_Proveedores_Ciudades3" msprop:Generator_UserParentTable="ListadoClientes" msprop:Generator_ParentPropName="ListadoClientesRow" />
-      <msdata:Relationship name="FK_OrdenCompra_Proveedores" msdata:parent="ListadoProveedores" msdata:child="OrdenCompra" msdata:parentkey="IdProveedor" msdata:childkey="IdProveedor" msprop:Generator_UserChildTable="OrdenCompra" msprop:Generator_ChildPropName="GetOrdenCompraRows" msprop:Generator_UserRelationName="FK_OrdenCompra_Proveedores" msprop:Generator_RelationVarName="relationFK_OrdenCompra_Proveedores" msprop:Generator_UserParentTable="ListadoProveedores" msprop:Generator_ParentPropName="ListadoProveedoresRow" />
-      <msdata:Relationship name="FK_OrdenCompra_Proveedores1" msdata:parent="Proveedores" msdata:child="OrdenCompra" msdata:parentkey="IdProveedor" msdata:childkey="IdProveedor" msprop:Generator_UserChildTable="OrdenCompra" msprop:Generator_ChildPropName="GetOrdenCompraRows" msprop:Generator_UserRelationName="FK_OrdenCompra_Proveedores1" msprop:Generator_RelationVarName="relationFK_OrdenCompra_Proveedores1" msprop:Generator_UserParentTable="Proveedores" msprop:Generator_ParentPropName="ProveedoresRow" />
-      <msdata:Relationship name="FK_OrdenCompraDetalle_OrdenCompra" msdata:parent="OrdenCompra" msdata:child="OrdenCompraDetalle" msdata:parentkey="IdOrdenCompra" msdata:childkey="IdOrdenCompra" msprop:Generator_UserChildTable="OrdenCompraDetalle" msprop:Generator_ChildPropName="GetOrdenCompraDetalleRows" msprop:Generator_UserRelationName="FK_OrdenCompraDetalle_OrdenCompra" msprop:Generator_RelationVarName="relationFK_OrdenCompraDetalle_OrdenCompra" msprop:Generator_UserParentTable="OrdenCompra" msprop:Generator_ParentPropName="OrdenCompraRow" />
       <msdata:Relationship name="FK_OrdenCompraDetalle_Productos" msdata:parent="Productos" msdata:child="OrdenCompraDetalle" msdata:parentkey="IdProducto" msdata:childkey="IdProducto" msprop:Generator_UserChildTable="OrdenCompraDetalle" msprop:Generator_ChildPropName="GetOrdenCompraDetalleRows" msprop:Generator_UserRelationName="FK_OrdenCompraDetalle_Productos" msprop:Generator_RelationVarName="relationFK_OrdenCompraDetalle_Productos" msprop:Generator_UserParentTable="Productos" msprop:Generator_ParentPropName="ProductosRow" />
       <msdata:Relationship name="FK_Clientes_Ciudades1" msdata:parent="ReporteOrdenCompra" msdata:child="Clientes" msdata:parentkey="IdCiudad" msdata:childkey="IdCiudad" msprop:Generator_UserChildTable="Clientes" msprop:Generator_ChildPropName="GetClientesRows" msprop:Generator_UserRelationName="FK_Clientes_Ciudades1" msprop:Generator_ParentPropName="ReporteOrdenCompraRow" msprop:Generator_RelationVarName="relationFK_Clientes_Ciudades1" msprop:Generator_UserParentTable="ReporteOrdenCompra" />
       <msdata:Relationship name="FK_Proveedores_Ciudades1" msdata:parent="ReporteOrdenCompra" msdata:child="Proveedores" msdata:parentkey="IdCiudad" msdata:childkey="IdCiudad" msprop:Generator_UserChildTable="Proveedores" msprop:Generator_ChildPropName="GetProveedoresRows" msprop:Generator_UserRelationName="FK_Proveedores_Ciudades1" msprop:Generator_ParentPropName="ReporteOrdenCompraRow" msprop:Generator_RelationVarName="relationFK_Proveedores_Ciudades1" msprop:Generator_UserParentTable="ReporteOrdenCompra" />
@@ -4454,8 +4487,11 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
       <msdata:Relationship name="FK_ContactosCliente_NumeroContacto" msdata:parent="NumeroContacto" msdata:child="ContactosCliente" msdata:parentkey="IdNumeroContacto" msdata:childkey="IdNumeroContacto" msprop:Generator_UserChildTable="ContactosCliente" msprop:Generator_ChildPropName="GetContactosClienteRows" msprop:Generator_UserRelationName="FK_ContactosCliente_NumeroContacto" msprop:Generator_ParentPropName="NumeroContactoRow" msprop:Generator_RelationVarName="relationFK_ContactosCliente_NumeroContacto" msprop:Generator_UserParentTable="NumeroContacto" />
       <msdata:Relationship name="FK_CotizacionDetalle_IdProducto" msdata:parent="Productos" msdata:child="CotizacionDetalle" msdata:parentkey="IdProducto" msdata:childkey="IdProducto" msprop:Generator_UserChildTable="CotizacionDetalle" msprop:Generator_ChildPropName="GetCotizacionDetalleRows" msprop:Generator_UserRelationName="FK_CotizacionDetalle_IdProducto" msprop:Generator_ParentPropName="ProductosRow" msprop:Generator_RelationVarName="relationFK_CotizacionDetalle_IdProducto" msprop:Generator_UserParentTable="Productos" />
       <msdata:Relationship name="FK_Cotizacion_IdCliente1" msdata:parent="Clientes" msdata:child="ListadoCotizaciones" msdata:parentkey="IdCliente" msdata:childkey="IdCliente" msprop:Generator_UserChildTable="ListadoCotizaciones" msprop:Generator_ChildPropName="GetListadoCotizacionesRows" msprop:Generator_UserRelationName="FK_Cotizacion_IdCliente1" msprop:Generator_RelationVarName="relationFK_Cotizacion_IdCliente1" msprop:Generator_UserParentTable="Clientes" msprop:Generator_ParentPropName="ClientesRow" />
-      <msdata:Relationship name="FK_CotizacionDetalle_IdCotizacion" msdata:parent="Cotizacion" msdata:child="CotizacionDetalle" msdata:parentkey="IdCotizacion" msdata:childkey="IdCotizacion" msprop:Generator_UserChildTable="CotizacionDetalle" msprop:Generator_ChildPropName="GetCotizacionDetalleRows" msprop:Generator_UserRelationName="FK_CotizacionDetalle_IdCotizacion" msprop:Generator_RelationVarName="relationFK_CotizacionDetalle_IdCotizacion" msprop:Generator_UserParentTable="Cotizacion" msprop:Generator_ParentPropName="CotizacionRow" />
-      <msdata:Relationship name="FK_Cotizacion_IdCliente" msdata:parent="Clientes" msdata:child="Cotizacion" msdata:parentkey="IdCliente" msdata:childkey="IdCliente" msprop:Generator_UserChildTable="Cotizacion" msprop:Generator_ChildPropName="GetCotizacionRows" msprop:Generator_UserRelationName="FK_Cotizacion_IdCliente" msprop:Generator_ParentPropName="ClientesRow" msprop:Generator_RelationVarName="relationFK_Cotizacion_IdCliente" msprop:Generator_UserParentTable="Clientes" />
+      <msdata:Relationship name="FK_CotizacionDetalle_IdCotizacion" msdata:parent="Cotizacion" msdata:child="CotizacionDetalle" msdata:parentkey="IdCotizacion" msdata:childkey="IdCotizacion" msprop:Generator_UserChildTable="CotizacionDetalle" msprop:Generator_ChildPropName="GetCotizacionDetalleRows" msprop:Generator_UserRelationName="FK_CotizacionDetalle_IdCotizacion" msprop:Generator_ParentPropName="CotizacionRow" msprop:Generator_RelationVarName="relationFK_CotizacionDetalle_IdCotizacion" msprop:Generator_UserParentTable="Cotizacion" />
+      <msdata:Relationship name="FK_Cotizacion_IdCliente" msdata:parent="Clientes" msdata:child="Cotizacion" msdata:parentkey="IdCliente" msdata:childkey="IdCliente" msprop:Generator_UserChildTable="Cotizacion" msprop:Generator_ChildPropName="GetCotizacionRows" msprop:Generator_UserRelationName="FK_Cotizacion_IdCliente" msprop:Generator_RelationVarName="relationFK_Cotizacion_IdCliente" msprop:Generator_UserParentTable="Clientes" msprop:Generator_ParentPropName="ClientesRow" />
+      <msdata:Relationship name="FK_OrdenCompraDetalle_OrdenCompra" msdata:parent="OrdenCompra" msdata:child="OrdenCompraDetalle" msdata:parentkey="IdOrdenCompra" msdata:childkey="IdOrdenCompra" msprop:Generator_UserChildTable="OrdenCompraDetalle" msprop:Generator_ChildPropName="GetOrdenCompraDetalleRows" msprop:Generator_UserRelationName="FK_OrdenCompraDetalle_OrdenCompra" msprop:Generator_RelationVarName="relationFK_OrdenCompraDetalle_OrdenCompra" msprop:Generator_UserParentTable="OrdenCompra" msprop:Generator_ParentPropName="OrdenCompraRow" />
+      <msdata:Relationship name="FK_OrdenCompra_Proveedores" msdata:parent="ListadoProveedores" msdata:child="OrdenCompra" msdata:parentkey="IdProveedor" msdata:childkey="IdProveedor" msprop:Generator_UserChildTable="OrdenCompra" msprop:Generator_ChildPropName="GetOrdenCompraRows" msprop:Generator_UserRelationName="FK_OrdenCompra_Proveedores" msprop:Generator_ParentPropName="ListadoProveedoresRow" msprop:Generator_RelationVarName="relationFK_OrdenCompra_Proveedores" msprop:Generator_UserParentTable="ListadoProveedores" />
+      <msdata:Relationship name="FK_OrdenCompra_Proveedores1" msdata:parent="Proveedores" msdata:child="OrdenCompra" msdata:parentkey="IdProveedor" msdata:childkey="IdProveedor" msprop:Generator_UserChildTable="OrdenCompra" msprop:Generator_ChildPropName="GetOrdenCompraRows" msprop:Generator_UserRelationName="FK_OrdenCompra_Proveedores1" msprop:Generator_ParentPropName="ProveedoresRow" msprop:Generator_RelationVarName="relationFK_OrdenCompra_Proveedores1" msprop:Generator_UserParentTable="Proveedores" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

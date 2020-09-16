@@ -197,7 +197,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmReporteOrdenCompra";
-            this.Text = "Reporte Orden Compra";
+            this.Text = "Reporte Orden Compra Marisol Ibagón";
             this.Load += new System.EventHandler(this.frmReporteOrdenCompra_Load);
             this.panel1.ResumeLayout(false);
             this.filtroGroupBox.ResumeLayout(false);

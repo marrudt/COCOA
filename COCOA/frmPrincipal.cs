@@ -198,6 +198,20 @@ namespace COCOA
             miForm.Show();
         }
 
+        private void cotizacionesSinClasificacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteCotizacionNoClasificacion miForm = new frmReporteCotizacionNoClasificacion();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void cotizaciónEdgarSierraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteCotizacionEdgarSierra miForm = new frmReporteCotizacionEdgarSierra();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
         private void listadoCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListadoCotizaciones miForm = new frmListadoCotizaciones();
@@ -215,6 +229,13 @@ namespace COCOA
         private void reporteOrdenesDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmReporteOrdenCompra miForm = new frmReporteOrdenCompra();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void ordenDeCompraEdgarSierraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteOrdenCompraEdgarSierra miForm = new frmReporteOrdenCompraEdgarSierra();
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -700,7 +721,34 @@ namespace COCOA
             else
             {
                 versionamientoToolStripMenuItem.Visible = false;
-            }            
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 36))
+            {
+                cotizacionesSinClasificacionToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                cotizacionesSinClasificacionToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 37))
+            {
+                ordenDeCompraEdgarSierraToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                ordenDeCompraEdgarSierraToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 38))
+            {
+                cotizaciónEdgarSierraToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                cotizaciónEdgarSierraToolStripMenuItem.Visible = false;
+            }
         }        
     }
 }

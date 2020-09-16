@@ -55,9 +55,9 @@ namespace COCOA.Maestras
             }
             errorProvider1.Clear();
 
-            int nit;
+            long nit;
 
-            if (!int.TryParse(nitTextBox.Text, out nit))
+            if (!long.TryParse(nitTextBox.Text, out nit))
             {
                 errorProvider1.SetError(nitTextBox, "El campo Nit es numérico");
                 return false;
@@ -313,8 +313,7 @@ namespace COCOA.Maestras
             frmContactoCliente miForm = new frmContactoCliente();
             miForm.IDCliente = Convert.ToInt32(idClienteTextBox.Text);
             miForm.ShowDialog();
-            LlenarCuadricula();
-            //this.contactosClienteTableAdapter.FillBy(this.dSCOCOA.ContactosCliente, Convert.ToInt32(idClienteTextBox.Text));
+            LlenarCuadricula();            
         }        
 
         private void bindingNavigatorMoveFirstItem_Click(object sender, EventArgs e)
@@ -341,5 +340,25 @@ namespace COCOA.Maestras
         {
             LlenarCuadricula();
         }
+
+        private void nitTextBox_TextChanged(object sender, EventArgs e)
+        {
+            LlenarCuadricula();
+        }
+
+        private void eliminarButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //private void button1_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult rta = MessageBox.Show("¿Eliminar contacto?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+        //      MessageBoxDefaultButton.Button2);
+        //    if (rta == DialogResult.No) return;
+        //    int cliente = (int)contactosClienteDataGridView.Rows[contactosBindingSource.Position].Cells[1].Value;
+        //    DALContactosCliente.DeleteContactoClienteByIdCliente(cliente);
+        //    this.contactosClienteTableAdapter.FillBy(this.dSCOCOA.ContactosCliente, Convert.ToInt32(idClienteTextBox.Text));
+        //}
     }
 }

@@ -97,6 +97,7 @@
             this.contactosButton = new System.Windows.Forms.Button();
             this.clientesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.contactosGroupBox = new System.Windows.Forms.GroupBox();
+            this.eliminarButton = new System.Windows.Forms.Button();
             this.contactosClienteDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -605,6 +606,7 @@
             this.nitTextBox.ReadOnly = true;
             this.nitTextBox.Size = new System.Drawing.Size(115, 20);
             this.nitTextBox.TabIndex = 1;
+            this.nitTextBox.TextChanged += new System.EventHandler(this.nitTextBox_TextChanged);
             this.nitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitTextBox_KeyPress);
             // 
             // nombreClienteTextBox
@@ -795,7 +797,7 @@
             this.contactosButton.BackColor = System.Drawing.Color.DarkCyan;
             this.contactosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contactosButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.contactosButton.Location = new System.Drawing.Point(887, 19);
+            this.contactosButton.Location = new System.Drawing.Point(872, 16);
             this.contactosButton.Name = "contactosButton";
             this.contactosButton.Size = new System.Drawing.Size(119, 24);
             this.contactosButton.TabIndex = 24;
@@ -811,6 +813,7 @@
             // contactosGroupBox
             // 
             this.contactosGroupBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.contactosGroupBox.Controls.Add(this.eliminarButton);
             this.contactosGroupBox.Controls.Add(this.contactosClienteDataGridView);
             this.contactosGroupBox.Controls.Add(this.contactosButton);
             this.contactosGroupBox.Enabled = false;
@@ -821,6 +824,20 @@
             this.contactosGroupBox.TabIndex = 29;
             this.contactosGroupBox.TabStop = false;
             this.contactosGroupBox.Text = "Contactos";
+            // 
+            // eliminarButton
+            // 
+            this.eliminarButton.BackColor = System.Drawing.Color.Crimson;
+            this.eliminarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminarButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.eliminarButton.Location = new System.Drawing.Point(785, 16);
+            this.eliminarButton.Name = "eliminarButton";
+            this.eliminarButton.Size = new System.Drawing.Size(81, 24);
+            this.eliminarButton.TabIndex = 25;
+            this.eliminarButton.Text = "Eliminar";
+            this.eliminarButton.UseVisualStyleBackColor = false;
+            this.eliminarButton.Visible = false;
+            this.eliminarButton.Click += new System.EventHandler(this.eliminarButton_Click);
             // 
             // contactosClienteDataGridView
             // 
@@ -844,10 +861,10 @@
             this.dataGridViewTextBoxColumn21,
             this.dataGridViewCheckBoxColumn2});
             this.contactosClienteDataGridView.DataSource = this.contactosBindingSource;
-            this.contactosClienteDataGridView.Location = new System.Drawing.Point(5, 49);
+            this.contactosClienteDataGridView.Location = new System.Drawing.Point(5, 46);
             this.contactosClienteDataGridView.Name = "contactosClienteDataGridView";
             this.contactosClienteDataGridView.ReadOnly = true;
-            this.contactosClienteDataGridView.Size = new System.Drawing.Size(1002, 118);
+            this.contactosClienteDataGridView.Size = new System.Drawing.Size(1002, 121);
             this.contactosClienteDataGridView.TabIndex = 24;
             // 
             // dataGridViewTextBoxColumn12
@@ -1068,5 +1085,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Button eliminarButton;
     }
 }

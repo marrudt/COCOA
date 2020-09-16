@@ -34,7 +34,7 @@ namespace COCOA.Maestras
             }
             catch (Exception)
             {
-                errorProvider1.SetError(codigoProductoTextBox, "El Producto ya existe");
+                errorProvider1.SetError(codigoProductoTextBox, "El Código o Producto ya existe");
                 codigoProductoTextBox.Focus();
                 return;
             }
@@ -352,6 +352,12 @@ namespace COCOA.Maestras
         private void modeloAnoTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
-        }               
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmUltimoCodigo miForm = new frmUltimoCodigo();
+            miForm.ShowDialog();
+        }
     }
 }

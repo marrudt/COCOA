@@ -29,9 +29,8 @@ namespace COCOA.Busqueda
         {
             nitToolStripTextBox.Text = "";
             nombreClienteToolStripTextBox.Text = "";
-            nombreContactoToolStripTextBox.Text = "";
             emailToolStripTextBox.Text = "";
-            fillBy1ToolStripButton_Click_1(sender, e);
+            fillBy1ToolStripButton1_Click(sender, e);
         }
 
         private void Cancelarbutton_Click(object sender, EventArgs e)
@@ -60,17 +59,21 @@ namespace COCOA.Busqueda
         private void nitToolStripTextBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
+        }               
+
+        private void nitToolStripTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
         }
 
-        private void fillBy1ToolStripButton_Click_1(object sender, EventArgs e)
+        private void fillBy1ToolStripButton1_Click(object sender, EventArgs e)
         {
-            string nit, nombreCliente, nombreContacto, email;
+            string nit, nombreCliente, email;
 
             if (contengaRadioButton.Checked == true)
             {
                 nit = "%" + nitToolStripTextBox.Text + "%";
                 nombreCliente = "%" + nombreClienteToolStripTextBox.Text + "%";
-                nombreContacto = "%" + nombreContactoToolStripTextBox.Text + "%";
                 email = "%" + emailToolStripTextBox.Text + "%";
             }
 
@@ -78,7 +81,6 @@ namespace COCOA.Busqueda
             {
                 nit = nitToolStripTextBox.Text + "%";
                 nombreCliente = nombreClienteToolStripTextBox.Text + "%";
-                nombreContacto = nombreContactoToolStripTextBox.Text + "%";
                 email = emailToolStripTextBox.Text + "%";
             }
 
@@ -86,7 +88,6 @@ namespace COCOA.Busqueda
             {
                 nit = "%" + nitToolStripTextBox.Text;
                 nombreCliente = "%" + nombreClienteToolStripTextBox.Text;
-                nombreContacto = "%" + nombreContactoToolStripTextBox.Text;
                 email = "%" + emailToolStripTextBox.Text;
             }
 
@@ -94,16 +95,12 @@ namespace COCOA.Busqueda
             {
                 nit = nitToolStripTextBox.Text;
                 nombreCliente = nombreClienteToolStripTextBox.Text;
-                nombreContacto = nombreContactoToolStripTextBox.Text;
                 email = emailToolStripTextBox.Text;
             }
-
             try
             {
-                this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes, 
-                    nit, 
-                    nombreCliente, 
-                    nombreContacto, 
+                this.clientesTableAdapter.FillBy1(this.dSCOCOA.Clientes, nit,
+                    nombreCliente,
                     email);
             }
             catch (System.Exception ex)
@@ -113,7 +110,7 @@ namespace COCOA.Busqueda
 
         }
 
-        private void nitToolStripTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
+        private void nitToolStripTextBox_KeyPress_2(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
         }

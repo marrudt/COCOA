@@ -221,6 +221,7 @@
             this.notasTextBox.Location = new System.Drawing.Point(71, 119);
             this.notasTextBox.Multiline = true;
             this.notasTextBox.Name = "notasTextBox";
+            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.notasTextBox.Size = new System.Drawing.Size(603, 55);
             this.notasTextBox.TabIndex = 18;
             // 

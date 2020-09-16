@@ -77,6 +77,7 @@ namespace COCOA.Transacciones
             idClienteComboBox.Enabled = true;
             idProductoComboBox.Enabled = true;
             contratoTextBox.ReadOnly = false;
+            notasTextBox.ReadOnly = false;
 
             busquedaProveedorButton.Enabled = true;
             BusquedaClienteButton.Enabled = true;
@@ -141,6 +142,7 @@ namespace COCOA.Transacciones
             idClienteComboBox.Enabled = false;
             idProductoComboBox.Enabled = false;
             contratoTextBox.ReadOnly = true;
+            notasTextBox.ReadOnly = true;
 
             busquedaProveedorButton.Enabled = false;
             BusquedaClienteButton.Enabled = false;

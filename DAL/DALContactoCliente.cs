@@ -50,8 +50,7 @@ namespace DAL
             return miContactoCliente;
         }
 
-        public static void UpdateContactoCliente(int IdNumeroContacto, int IdCliente, string NombreContacto, string CargoContacto, string CorreoContacto, string CelularContacto, string Telefono1Contacto,
-            string Ext1Contacto, string Telefono2Contacto, string Ext2Contacto, string Notas, bool Activo)
+        public static void UpdateContactoCliente(int IdNumeroContacto, int IdCliente, string NombreContacto, string CargoContacto, string CorreoContacto, string CelularContacto, string Telefono1Contacto, string Ext1Contacto, string Telefono2Contacto, string Ext2Contacto, string Notas, bool Activo)
         {
             try
             {
@@ -60,12 +59,11 @@ namespace DAL
             }
             catch (Exception)
             {
-                adaptador.UpdateContactoCliente(NombreContacto, CargoContacto, CorreoContacto, CelularContacto, Telefono1Contacto, Ext1Contacto, Telefono2Contacto, Ext2Contacto,
-                    Notas, Activo, IdCliente, IdNumeroContacto);
+                adaptador.UpdateContactoCliente(NombreContacto, CargoContacto, CorreoContacto, CelularContacto, Telefono1Contacto, Ext1Contacto, Telefono2Contacto, Ext2Contacto, Notas, Activo, IdCliente, IdNumeroContacto);
             }
         }
 
-        public static void DeleteContactoCliente(int IdCliente)
+        public static void DeleteContactoClienteByIdCliente(int IdCliente)
         {
             adaptador.DeleteContactoClienteByIdCliente(IdCliente);
         }

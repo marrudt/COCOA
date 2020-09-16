@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.salirButton = new System.Windows.Forms.Button();
             this.borrarTodoButton = new System.Windows.Forms.Button();
             this.borrarLineaButton = new System.Windows.Forms.Button();
@@ -335,34 +335,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleCotizacionDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.detalleCotizacionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.detalleCotizacionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.detalleCotizacionDataGridView.Location = new System.Drawing.Point(0, 335);
             this.detalleCotizacionDataGridView.Name = "detalleCotizacionDataGridView";
             this.detalleCotizacionDataGridView.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.detalleCotizacionDataGridView.Size = new System.Drawing.Size(1166, 341);
             this.detalleCotizacionDataGridView.TabIndex = 17;
             // 
@@ -615,7 +615,7 @@
             this.porcentajeEstampillasTextBox.Location = new System.Drawing.Point(79, 100);
             this.porcentajeEstampillasTextBox.Name = "porcentajeEstampillasTextBox";
             this.porcentajeEstampillasTextBox.Size = new System.Drawing.Size(30, 20);
-            this.porcentajeEstampillasTextBox.TabIndex = 28;
+            this.porcentajeEstampillasTextBox.TabIndex = 13;
             this.porcentajeEstampillasTextBox.Text = "0.0";
             // 
             // cotizacionDetalleBindingSource
@@ -630,7 +630,7 @@
             this.label20.Location = new System.Drawing.Point(127, 103);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(13, 13);
-            this.label20.TabIndex = 27;
+            this.label20.TabIndex = 15;
             this.label20.Text = "$";
             // 
             // label19
@@ -640,7 +640,7 @@
             this.label19.Location = new System.Drawing.Point(108, 103);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(15, 13);
-            this.label19.TabIndex = 26;
+            this.label19.TabIndex = 14;
             this.label19.Text = "%";
             // 
             // productoButton
@@ -651,7 +651,7 @@
             this.productoButton.Location = new System.Drawing.Point(532, 74);
             this.productoButton.Name = "productoButton";
             this.productoButton.Size = new System.Drawing.Size(72, 23);
-            this.productoButton.TabIndex = 22;
+            this.productoButton.TabIndex = 20;
             this.productoButton.Text = "Producto";
             this.productoButton.UseVisualStyleBackColor = false;
             this.productoButton.Click += new System.EventHandler(this.productoButton_Click);
@@ -665,7 +665,7 @@
             this.editarDescuentoButton.Location = new System.Drawing.Point(438, 99);
             this.editarDescuentoButton.Name = "editarDescuentoButton";
             this.editarDescuentoButton.Size = new System.Drawing.Size(76, 23);
-            this.editarDescuentoButton.TabIndex = 24;
+            this.editarDescuentoButton.TabIndex = 19;
             this.editarDescuentoButton.Text = "Editar";
             this.editarDescuentoButton.UseVisualStyleBackColor = false;
             this.editarDescuentoButton.Click += new System.EventHandler(this.editarDescuentoButton_Click);
@@ -679,7 +679,7 @@
             this.editarPrecioButton.Location = new System.Drawing.Point(438, 72);
             this.editarPrecioButton.Name = "editarPrecioButton";
             this.editarPrecioButton.Size = new System.Drawing.Size(76, 23);
-            this.editarPrecioButton.TabIndex = 23;
+            this.editarPrecioButton.TabIndex = 11;
             this.editarPrecioButton.Text = "Editar";
             this.editarPrecioButton.UseVisualStyleBackColor = false;
             this.editarPrecioButton.Click += new System.EventHandler(this.editarPrecioButton_Click);
@@ -690,7 +690,7 @@
             this.label17.Location = new System.Drawing.Point(246, 105);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(62, 13);
-            this.label17.TabIndex = 11;
+            this.label17.TabIndex = 17;
             this.label17.Text = "Descuento:";
             // 
             // valorEstampillasTextBox
@@ -701,7 +701,7 @@
             this.valorEstampillasTextBox.Location = new System.Drawing.Point(142, 100);
             this.valorEstampillasTextBox.Name = "valorEstampillasTextBox";
             this.valorEstampillasTextBox.Size = new System.Drawing.Size(98, 20);
-            this.valorEstampillasTextBox.TabIndex = 10;
+            this.valorEstampillasTextBox.TabIndex = 16;
             this.valorEstampillasTextBox.Text = "0.00";
             this.valorEstampillasTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.valorEstampillasTextBox_KeyPress);
             // 
@@ -720,7 +720,7 @@
             this.descuentoTextBox.Name = "descuentoTextBox";
             this.descuentoTextBox.ReadOnly = true;
             this.descuentoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.descuentoTextBox.TabIndex = 12;
+            this.descuentoTextBox.TabIndex = 18;
             this.descuentoTextBox.Text = "0.00";
             // 
             // label15
@@ -729,7 +729,7 @@
             this.label15.Location = new System.Drawing.Point(13, 103);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(62, 13);
-            this.label15.TabIndex = 9;
+            this.label15.TabIndex = 12;
             this.label15.Text = "Estampillas:";
             // 
             // productoLabel
@@ -762,7 +762,7 @@
             this.precioTextBox.Name = "precioTextBox";
             this.precioTextBox.ReadOnly = true;
             this.precioTextBox.Size = new System.Drawing.Size(153, 20);
-            this.precioTextBox.TabIndex = 12;
+            this.precioTextBox.TabIndex = 10;
             // 
             // label7
             // 
@@ -770,7 +770,7 @@
             this.label7.Location = new System.Drawing.Point(176, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 13);
-            this.label7.TabIndex = 11;
+            this.label7.TabIndex = 9;
             this.label7.Text = "Precio Unitario:";
             // 
             // cantidadTextBox

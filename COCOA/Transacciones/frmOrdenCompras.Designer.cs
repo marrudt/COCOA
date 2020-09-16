@@ -36,6 +36,7 @@
             System.Windows.Forms.Label idProductoLabel;
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenCompras));
+            System.Windows.Forms.Label notasLabel;
             this.label2 = new System.Windows.Forms.Label();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -87,6 +88,7 @@
             this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.formaPagoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.editarPrecioButton = new System.Windows.Forms.Button();
             this.productoButton = new System.Windows.Forms.Button();
             this.editarDescuentoButton = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
@@ -95,13 +97,14 @@
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
             this.label13 = new System.Windows.Forms.Label();
             this.totalDescuentoTextBox = new System.Windows.Forms.TextBox();
-            this.editarPrecioButton = new System.Windows.Forms.Button();
+            this.notasTextBox = new System.Windows.Forms.TextBox();
             formaPagoLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             numeroCosteoLabel = new System.Windows.Forms.Label();
             contratoLabel = new System.Windows.Forms.Label();
             idProductoLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
+            notasLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.proveedoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -315,9 +318,9 @@
             this.agregarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarButton.Image")));
-            this.agregarButton.Location = new System.Drawing.Point(637, 313);
+            this.agregarButton.Location = new System.Drawing.Point(637, 304);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Size = new System.Drawing.Size(94, 74);
+            this.agregarButton.Size = new System.Drawing.Size(94, 70);
             this.agregarButton.TabIndex = 0;
             this.agregarButton.Text = "Agregar";
             this.agregarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -335,9 +338,9 @@
             this.detalleOrdenCompraDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.detalleOrdenCompraDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.detalleOrdenCompraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 393);
+            this.detalleOrdenCompraDataGridView.Location = new System.Drawing.Point(0, 380);
             this.detalleOrdenCompraDataGridView.Name = "detalleOrdenCompraDataGridView";
-            this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1174, 283);
+            this.detalleOrdenCompraDataGridView.Size = new System.Drawing.Size(1174, 296);
             this.detalleOrdenCompraDataGridView.TabIndex = 16;
             // 
             // precioTextBox
@@ -397,6 +400,7 @@
             this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.ContactosClienteTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
             this.tableAdapterManager.DepartamentosTableAdapter = null;
@@ -406,6 +410,7 @@
             this.tableAdapterManager.IVATableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.LogTableAdapter = null;
+            this.tableAdapterManager.NumeroContactoTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = this.ordenCompraDetalleTableAdapter;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -419,6 +424,7 @@
             this.tableAdapterManager.TipoProductoTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = COCOA.DSCOCOATableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UsuariosTableAdapter = null;
+            this.tableAdapterManager.VersionamientoTableAdapter = null;
             // 
             // label8
             // 
@@ -426,7 +432,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(978, 258);
+            this.label8.Location = new System.Drawing.Point(978, 247);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 15);
             this.label8.TabIndex = 6;
@@ -438,7 +444,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalSubtotalTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalSubtotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1037, 256);
+            this.totalSubtotalTextBox.Location = new System.Drawing.Point(1037, 245);
             this.totalSubtotalTextBox.Name = "totalSubtotalTextBox";
             this.totalSubtotalTextBox.ReadOnly = true;
             this.totalSubtotalTextBox.Size = new System.Drawing.Size(125, 21);
@@ -451,7 +457,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalIVATextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalIVATextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalIVATextBox.Location = new System.Drawing.Point(1037, 283);
+            this.totalIVATextBox.Location = new System.Drawing.Point(1037, 272);
             this.totalIVATextBox.Name = "totalIVATextBox";
             this.totalIVATextBox.ReadOnly = true;
             this.totalIVATextBox.Size = new System.Drawing.Size(125, 21);
@@ -464,7 +470,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalImpoconsumoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalImpoconsumoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1037, 310);
+            this.totalImpoconsumoTextBox.Location = new System.Drawing.Point(1037, 299);
             this.totalImpoconsumoTextBox.Name = "totalImpoconsumoTextBox";
             this.totalImpoconsumoTextBox.ReadOnly = true;
             this.totalImpoconsumoTextBox.Size = new System.Drawing.Size(125, 21);
@@ -477,7 +483,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalNetoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalNetoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalNetoTextBox.Location = new System.Drawing.Point(1037, 364);
+            this.totalNetoTextBox.Location = new System.Drawing.Point(1037, 353);
             this.totalNetoTextBox.Name = "totalNetoTextBox";
             this.totalNetoTextBox.ReadOnly = true;
             this.totalNetoTextBox.Size = new System.Drawing.Size(125, 21);
@@ -490,7 +496,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(1006, 285);
+            this.label9.Location = new System.Drawing.Point(1006, 274);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 15);
             this.label9.TabIndex = 8;
@@ -502,7 +508,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(944, 313);
+            this.label10.Location = new System.Drawing.Point(944, 302);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 15);
             this.label10.TabIndex = 10;
@@ -514,7 +520,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(996, 366);
+            this.label11.Location = new System.Drawing.Point(996, 355);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 15);
             this.label11.TabIndex = 14;
@@ -530,9 +536,9 @@
             this.guardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guardarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guardarButton.Image = ((System.Drawing.Image)(resources.GetObject("guardarButton.Image")));
-            this.guardarButton.Location = new System.Drawing.Point(737, 313);
+            this.guardarButton.Location = new System.Drawing.Point(737, 304);
             this.guardarButton.Name = "guardarButton";
-            this.guardarButton.Size = new System.Drawing.Size(91, 74);
+            this.guardarButton.Size = new System.Drawing.Size(91, 70);
             this.guardarButton.TabIndex = 1;
             this.guardarButton.Text = "Guardar";
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -549,9 +555,9 @@
             this.cancelarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
-            this.cancelarButton.Location = new System.Drawing.Point(834, 313);
+            this.cancelarButton.Location = new System.Drawing.Point(834, 304);
             this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(86, 74);
+            this.cancelarButton.Size = new System.Drawing.Size(86, 70);
             this.cancelarButton.TabIndex = 2;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -568,9 +574,9 @@
             this.borrarTodoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarTodoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarTodoButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarTodoButton.Image")));
-            this.borrarTodoButton.Location = new System.Drawing.Point(737, 233);
+            this.borrarTodoButton.Location = new System.Drawing.Point(737, 231);
             this.borrarTodoButton.Name = "borrarTodoButton";
-            this.borrarTodoButton.Size = new System.Drawing.Size(91, 78);
+            this.borrarTodoButton.Size = new System.Drawing.Size(91, 69);
             this.borrarTodoButton.TabIndex = 4;
             this.borrarTodoButton.Text = "Borrar Todo";
             this.borrarTodoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -588,9 +594,9 @@
             this.borrarLineaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.borrarLineaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarLineaButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarLineaButton.Image")));
-            this.borrarLineaButton.Location = new System.Drawing.Point(637, 233);
+            this.borrarLineaButton.Location = new System.Drawing.Point(637, 231);
             this.borrarLineaButton.Name = "borrarLineaButton";
-            this.borrarLineaButton.Size = new System.Drawing.Size(94, 78);
+            this.borrarLineaButton.Size = new System.Drawing.Size(94, 69);
             this.borrarLineaButton.TabIndex = 3;
             this.borrarLineaButton.Text = "Borrar Línea";
             this.borrarLineaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -607,9 +613,9 @@
             this.salirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.salirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salirButton.Image = ((System.Drawing.Image)(resources.GetObject("salirButton.Image")));
-            this.salirButton.Location = new System.Drawing.Point(834, 233);
+            this.salirButton.Location = new System.Drawing.Point(834, 231);
             this.salirButton.Name = "salirButton";
-            this.salirButton.Size = new System.Drawing.Size(86, 78);
+            this.salirButton.Size = new System.Drawing.Size(86, 69);
             this.salirButton.TabIndex = 5;
             this.salirButton.Text = "Salir";
             this.salirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -619,6 +625,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(notasLabel);
+            this.groupBox1.Controls.Add(this.notasTextBox);
             this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(this.terminosGarantiaTextBox);
             this.groupBox1.Controls.Add(this.BusquedaProductoButton);
@@ -639,7 +647,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(6, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(625, 226);
+            this.groupBox1.Size = new System.Drawing.Size(914, 213);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
@@ -761,12 +769,26 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.precioTextBox);
             this.groupBox2.Controls.Add(this.productoLabel);
-            this.groupBox2.Location = new System.Drawing.Point(6, 244);
+            this.groupBox2.Location = new System.Drawing.Point(6, 231);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(625, 143);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detalle";
+            // 
+            // editarPrecioButton
+            // 
+            this.editarPrecioButton.BackColor = System.Drawing.Color.Tomato;
+            this.editarPrecioButton.Enabled = false;
+            this.editarPrecioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.editarPrecioButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.editarPrecioButton.Location = new System.Drawing.Point(537, 76);
+            this.editarPrecioButton.Name = "editarPrecioButton";
+            this.editarPrecioButton.Size = new System.Drawing.Size(76, 23);
+            this.editarPrecioButton.TabIndex = 15;
+            this.editarPrecioButton.Text = "Editar";
+            this.editarPrecioButton.UseVisualStyleBackColor = false;
+            this.editarPrecioButton.Click += new System.EventHandler(this.editarPrecioButton_Click);
             // 
             // productoButton
             // 
@@ -829,7 +851,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(964, 340);
+            this.label13.Location = new System.Drawing.Point(964, 329);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(66, 15);
             this.label13.TabIndex = 12;
@@ -841,26 +863,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalDescuentoTextBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.totalDescuentoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalDescuentoTextBox.Location = new System.Drawing.Point(1037, 337);
+            this.totalDescuentoTextBox.Location = new System.Drawing.Point(1037, 326);
             this.totalDescuentoTextBox.Name = "totalDescuentoTextBox";
             this.totalDescuentoTextBox.ReadOnly = true;
             this.totalDescuentoTextBox.Size = new System.Drawing.Size(125, 21);
             this.totalDescuentoTextBox.TabIndex = 13;
             this.totalDescuentoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // editarPrecioButton
+            // notasLabel
             // 
-            this.editarPrecioButton.BackColor = System.Drawing.Color.Tomato;
-            this.editarPrecioButton.Enabled = false;
-            this.editarPrecioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.editarPrecioButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.editarPrecioButton.Location = new System.Drawing.Point(537, 76);
-            this.editarPrecioButton.Name = "editarPrecioButton";
-            this.editarPrecioButton.Size = new System.Drawing.Size(76, 23);
-            this.editarPrecioButton.TabIndex = 15;
-            this.editarPrecioButton.Text = "Editar";
-            this.editarPrecioButton.UseVisualStyleBackColor = false;
-            this.editarPrecioButton.Click += new System.EventHandler(this.editarPrecioButton_Click);
+            notasLabel.AutoSize = true;
+            notasLabel.Location = new System.Drawing.Point(587, 30);
+            notasLabel.Name = "notasLabel";
+            notasLabel.Size = new System.Drawing.Size(38, 13);
+            notasLabel.TabIndex = 18;
+            notasLabel.Text = "Notas:";
+            // 
+            // notasTextBox
+            // 
+            this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "Notas", true));
+            this.notasTextBox.Location = new System.Drawing.Point(631, 27);
+            this.notasTextBox.Multiline = true;
+            this.notasTextBox.Name = "notasTextBox";
+            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.notasTextBox.Size = new System.Drawing.Size(273, 177);
+            this.notasTextBox.TabIndex = 19;
             // 
             // frmOrdenCompras
             // 
@@ -971,5 +998,6 @@
         private System.Windows.Forms.Button editarDescuentoButton;
         private System.Windows.Forms.Button productoButton;
         private System.Windows.Forms.Button editarPrecioButton;
+        private System.Windows.Forms.TextBox notasTextBox;
     }
 }

@@ -22,14 +22,11 @@ namespace COCOA.Maestras
             this.Validate();
             this.versionamientoBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dSCOCOA);
-
         }
 
         private void frmControlCambios_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dSCOCOA.Versionamiento' table. You can move, or remove it, as needed.
             this.versionamientoTableAdapter.Fill(this.dSCOCOA.Versionamiento);
-
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)

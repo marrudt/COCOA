@@ -11,10 +11,9 @@ namespace DAL
     {
         private static OrdenCompraTableAdapter adaptador = new OrdenCompraTableAdapter();
 
-        public static int InsertOrdenCompra(DateTime Fecha, int IdProveedor, string PlazoEntrega, string FormaPago, string TerminosGarantia, int IdCliente, string NumeroCosteo, string Contrato,
-            int IdProducto)
+        public static int InsertOrdenCompra(DateTime Fecha, int IdProveedor, string PlazoEntrega, string FormaPago, string TerminosGarantia, int IdCliente, string NumeroCosteo, string Contrato,int IdProducto, string Notas)
         {
-            return (int)adaptador.InsertOrdenCompra(Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto);
+            return (int)adaptador.InsertOrdenCompra(Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGarantia, IdCliente, NumeroCosteo, Contrato, IdProducto, Notas);
         } 
         
         public static bool ProveedorTieneOrdenCompra(int IdProveedor)

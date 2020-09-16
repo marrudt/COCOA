@@ -50,7 +50,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ciudadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -60,16 +59,14 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.fillBy1ToolStrip = new System.Windows.Forms.ToolStrip();
-            this.nitToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.fillBy1ToolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.nitToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.nitToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.nombreClienteToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.nombreClienteToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.nombreClienteToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.nombreContactoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
-            this.nombreContactoToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.emailToolStripLabel = new System.Windows.Forms.ToolStripLabel();
+            this.emailToolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.emailToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
-            this.fillBy1ToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.fillBy1ToolStripButton1 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -77,7 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.busquedaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource1)).BeginInit();
-            this.fillBy1ToolStrip.SuspendLayout();
+            this.fillBy1ToolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // clientesBindingSource
@@ -225,6 +222,7 @@
             this.tableAdapterManager.CiudadesTableAdapter = this.ciudadesTableAdapter;
             this.tableAdapterManager.ClaseTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = this.clientesTableAdapter;
+            this.tableAdapterManager.ContactosClienteTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
             this.tableAdapterManager.DepartamentosTableAdapter = this.departamentosTableAdapter;
@@ -234,6 +232,7 @@
             this.tableAdapterManager.IVATableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.LogTableAdapter = null;
+            this.tableAdapterManager.NumeroContactoTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -266,7 +265,6 @@
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7,
@@ -279,7 +277,7 @@
             this.busquedaDataGridView.Location = new System.Drawing.Point(0, 84);
             this.busquedaDataGridView.Name = "busquedaDataGridView";
             this.busquedaDataGridView.ReadOnly = true;
-            this.busquedaDataGridView.Size = new System.Drawing.Size(1080, 444);
+            this.busquedaDataGridView.Size = new System.Drawing.Size(1100, 464);
             this.busquedaDataGridView.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn1
@@ -306,14 +304,6 @@
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 69;
             // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "NombreContacto";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Contacto";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 75;
-            // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Direccion";
@@ -321,6 +311,7 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Visible = false;
+            this.dataGridViewTextBoxColumn5.Width = 77;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -356,6 +347,7 @@
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             this.dataGridViewTextBoxColumn8.Visible = false;
+            this.dataGridViewTextBoxColumn8.Width = 80;
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -380,6 +372,7 @@
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
             this.dataGridViewTextBoxColumn11.Visible = false;
+            this.dataGridViewTextBoxColumn11.Width = 60;
             // 
             // dataGridViewCheckBoxColumn1
             // 
@@ -389,42 +382,40 @@
             this.dataGridViewCheckBoxColumn1.ReadOnly = true;
             this.dataGridViewCheckBoxColumn1.Width = 43;
             // 
-            // fillBy1ToolStrip
+            // fillBy1ToolStrip1
             // 
-            this.fillBy1ToolStrip.BackColor = System.Drawing.Color.Transparent;
-            this.fillBy1ToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nitToolStripLabel,
+            this.fillBy1ToolStrip1.BackColor = System.Drawing.Color.Transparent;
+            this.fillBy1ToolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nitToolStripLabel1,
             this.nitToolStripTextBox,
-            this.nombreClienteToolStripLabel,
+            this.nombreClienteToolStripLabel1,
             this.nombreClienteToolStripTextBox,
-            this.nombreContactoToolStripLabel,
-            this.nombreContactoToolStripTextBox,
-            this.emailToolStripLabel,
+            this.emailToolStripLabel1,
             this.emailToolStripTextBox,
-            this.fillBy1ToolStripButton});
-            this.fillBy1ToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillBy1ToolStrip.Name = "fillBy1ToolStrip";
-            this.fillBy1ToolStrip.Size = new System.Drawing.Size(1080, 25);
-            this.fillBy1ToolStrip.TabIndex = 18;
-            this.fillBy1ToolStrip.Text = "fillBy1ToolStrip";
+            this.fillBy1ToolStripButton1});
+            this.fillBy1ToolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.fillBy1ToolStrip1.Name = "fillBy1ToolStrip1";
+            this.fillBy1ToolStrip1.Size = new System.Drawing.Size(1100, 25);
+            this.fillBy1ToolStrip1.TabIndex = 19;
+            this.fillBy1ToolStrip1.Text = "fillBy1ToolStrip1";
             // 
-            // nitToolStripLabel
+            // nitToolStripLabel1
             // 
-            this.nitToolStripLabel.Name = "nitToolStripLabel";
-            this.nitToolStripLabel.Size = new System.Drawing.Size(26, 22);
-            this.nitToolStripLabel.Text = "Nit:";
+            this.nitToolStripLabel1.Name = "nitToolStripLabel1";
+            this.nitToolStripLabel1.Size = new System.Drawing.Size(26, 22);
+            this.nitToolStripLabel1.Text = "Nit:";
             // 
             // nitToolStripTextBox
             // 
             this.nitToolStripTextBox.Name = "nitToolStripTextBox";
             this.nitToolStripTextBox.Size = new System.Drawing.Size(100, 25);
-            this.nitToolStripTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitToolStripTextBox_KeyPress_1);
+            this.nitToolStripTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nitToolStripTextBox_KeyPress_2);
             // 
-            // nombreClienteToolStripLabel
+            // nombreClienteToolStripLabel1
             // 
-            this.nombreClienteToolStripLabel.Name = "nombreClienteToolStripLabel";
-            this.nombreClienteToolStripLabel.Size = new System.Drawing.Size(54, 22);
-            this.nombreClienteToolStripLabel.Text = "Nombre:";
+            this.nombreClienteToolStripLabel1.Name = "nombreClienteToolStripLabel1";
+            this.nombreClienteToolStripLabel1.Size = new System.Drawing.Size(54, 22);
+            this.nombreClienteToolStripLabel1.Text = "Nombre:";
             // 
             // nombreClienteToolStripTextBox
             // 
@@ -432,49 +423,37 @@
             this.nombreClienteToolStripTextBox.Name = "nombreClienteToolStripTextBox";
             this.nombreClienteToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 
-            // nombreContactoToolStripLabel
+            // emailToolStripLabel1
             // 
-            this.nombreContactoToolStripLabel.Name = "nombreContactoToolStripLabel";
-            this.nombreContactoToolStripLabel.Size = new System.Drawing.Size(59, 22);
-            this.nombreContactoToolStripLabel.Text = "Contacto:";
-            // 
-            // nombreContactoToolStripTextBox
-            // 
-            this.nombreContactoToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.nombreContactoToolStripTextBox.Name = "nombreContactoToolStripTextBox";
-            this.nombreContactoToolStripTextBox.Size = new System.Drawing.Size(200, 25);
-            // 
-            // emailToolStripLabel
-            // 
-            this.emailToolStripLabel.Name = "emailToolStripLabel";
-            this.emailToolStripLabel.Size = new System.Drawing.Size(39, 22);
-            this.emailToolStripLabel.Text = "Email:";
+            this.emailToolStripLabel1.Name = "emailToolStripLabel1";
+            this.emailToolStripLabel1.Size = new System.Drawing.Size(39, 22);
+            this.emailToolStripLabel1.Text = "Email:";
             // 
             // emailToolStripTextBox
             // 
             this.emailToolStripTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.emailToolStripTextBox.Name = "emailToolStripTextBox";
-            this.emailToolStripTextBox.Size = new System.Drawing.Size(100, 25);
+            this.emailToolStripTextBox.Size = new System.Drawing.Size(200, 25);
             // 
-            // fillBy1ToolStripButton
+            // fillBy1ToolStripButton1
             // 
-            this.fillBy1ToolStripButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.fillBy1ToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillBy1ToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.fillBy1ToolStripButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.fillBy1ToolStripButton.Name = "fillBy1ToolStripButton";
-            this.fillBy1ToolStripButton.Size = new System.Drawing.Size(48, 22);
-            this.fillBy1ToolStripButton.Text = "Buscar";
-            this.fillBy1ToolStripButton.Click += new System.EventHandler(this.fillBy1ToolStripButton_Click_1);
+            this.fillBy1ToolStripButton1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.fillBy1ToolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillBy1ToolStripButton1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.fillBy1ToolStripButton1.ForeColor = System.Drawing.SystemColors.Window;
+            this.fillBy1ToolStripButton1.Name = "fillBy1ToolStripButton1";
+            this.fillBy1ToolStripButton1.Size = new System.Drawing.Size(48, 22);
+            this.fillBy1ToolStripButton1.Text = "Buscar";
+            this.fillBy1ToolStripButton1.Click += new System.EventHandler(this.fillBy1ToolStripButton1_Click);
             // 
             // frmBusquedaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1080, 528);
+            this.ClientSize = new System.Drawing.Size(1100, 548);
             this.ControlBox = false;
-            this.Controls.Add(this.fillBy1ToolStrip);
+            this.Controls.Add(this.fillBy1ToolStrip1);
             this.Controls.Add(this.busquedaDataGridView);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.volverButton);
@@ -492,8 +471,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.busquedaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ciudadesBindingSource1)).EndInit();
-            this.fillBy1ToolStrip.ResumeLayout(false);
-            this.fillBy1ToolStrip.PerformLayout();
+            this.fillBy1ToolStrip1.ResumeLayout(false);
+            this.fillBy1ToolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -517,28 +496,25 @@
         private DSCOCOATableAdapters.CiudadesTableAdapter ciudadesTableAdapter;
         private DSCOCOATableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView busquedaDataGridView;
+        private System.Windows.Forms.BindingSource ciudadesBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.BindingSource ciudadesBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.ToolStrip fillBy1ToolStrip;
-        private System.Windows.Forms.ToolStripLabel nitToolStripLabel;
+        private System.Windows.Forms.ToolStrip fillBy1ToolStrip1;
+        private System.Windows.Forms.ToolStripLabel nitToolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox nitToolStripTextBox;
-        private System.Windows.Forms.ToolStripLabel nombreClienteToolStripLabel;
+        private System.Windows.Forms.ToolStripLabel nombreClienteToolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox nombreClienteToolStripTextBox;
-        private System.Windows.Forms.ToolStripLabel nombreContactoToolStripLabel;
-        private System.Windows.Forms.ToolStripTextBox nombreContactoToolStripTextBox;
-        private System.Windows.Forms.ToolStripLabel emailToolStripLabel;
+        private System.Windows.Forms.ToolStripLabel emailToolStripLabel1;
         private System.Windows.Forms.ToolStripTextBox emailToolStripTextBox;
-        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton;
+        private System.Windows.Forms.ToolStripButton fillBy1ToolStripButton1;
     }
 }

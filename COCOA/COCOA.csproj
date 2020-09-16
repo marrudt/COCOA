@@ -60,6 +60,7 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web" />
@@ -92,6 +93,12 @@
     </Compile>
     <Compile Include="Busqueda\frmBusquedaProducto.Designer.cs">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busqueda\frmUltimoCodigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busqueda\frmUltimoCodigo.Designer.cs">
+      <DependentUpon>frmUltimoCodigo.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\DetalleOrdenCompra.cs" />
     <Compile Include="Clases\DetalleCotizacion.cs" />
@@ -333,16 +340,52 @@
     <Compile Include="Reportes\frmReporteCotizacion.Designer.cs">
       <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReporteCotizacionEdgarSierra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteCotizacionEdgarSierra.Designer.cs">
+      <DependentUpon>frmReporteCotizacionEdgarSierra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmReporteCotizacionNoClasificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteCotizacionNoClasificacion.Designer.cs">
+      <DependentUpon>frmReporteCotizacionNoClasificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmReporteOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\frmReporteOrdenCompra.Designer.cs">
       <DependentUpon>frmReporteOrdenCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReporteOrdenCompraEdgarSierra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteOrdenCompraEdgarSierra.Designer.cs">
+      <DependentUpon>frmReporteOrdenCompraEdgarSierra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\rptReporteCotizacion1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptReporteCotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCotizacionEdgarSierra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteCotizacionEdgarSierra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCotizacionNoClasificacionCCE.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteCotizacionNoClasificacionCCE.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteOrdenCompraEdgarSierra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteOrdenCompraEdgarSierra.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rptReporteOrdenCompra.cs">
@@ -427,6 +470,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busqueda\frmBusquedaProducto.resx">
       <DependentUpon>frmBusquedaProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busqueda\frmUltimoCodigo.resx">
+      <DependentUpon>frmUltimoCodigo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaCotizacion.resx">
       <DependentUpon>frmConsultaCotizacion.cs</DependentUpon>
@@ -546,12 +592,33 @@
     <EmbeddedResource Include="Reportes\frmReporteCotizacion.resx">
       <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteCotizacionEdgarSierra.resx">
+      <DependentUpon>frmReporteCotizacionEdgarSierra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteCotizacionNoClasificacion.resx">
+      <DependentUpon>frmReporteCotizacionNoClasificacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporteOrdenCompra.resx">
       <DependentUpon>frmReporteOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteOrdenCompraEdgarSierra.resx">
+      <DependentUpon>frmReporteOrdenCompraEdgarSierra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReporteCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptReporteCotizacion1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteCotizacionEdgarSierra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteCotizacionEdgarSierra.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteCotizacionNoClasificacionCCE.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteCotizacionNoClasificacionCCE.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteOrdenCompraEdgarSierra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteOrdenCompraEdgarSierra.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReporteOrdenCompra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

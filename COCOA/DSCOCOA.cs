@@ -32,9 +32,12 @@ namespace COCOA {
     }
 }
 
-namespace COCOA.DSCOCOATableAdapters {
-    
-    
+namespace COCOA.DSCOCOATableAdapters
+{
+    partial class ReporteOrdenCompraTableAdapter
+    {
+    }
+
     public partial class ReporteCotizacionTableAdapter {
     }
 }
