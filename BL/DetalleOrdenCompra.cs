@@ -1,6 +1,6 @@
 ﻿using DAL;
 
-namespace COCOA.Clases
+namespace BL
 {
     public class DetalleOrdenCompra
     {

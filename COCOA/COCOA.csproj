@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>COCOA</RootNamespace>
     <AssemblyName>COCOA</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PublishUrl>publicar\</PublishUrl>
@@ -27,6 +27,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -100,8 +101,6 @@
     <Compile Include="Busqueda\frmUltimoCodigo.Designer.cs">
       <DependentUpon>frmUltimoCodigo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases\DetalleOrdenCompra.cs" />
-    <Compile Include="Clases\DetalleCotizacion.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="Clases\ValidarTextBox.cs" />
     <Compile Include="Consultas\frmConsultaCotizacion.cs">
@@ -644,6 +643,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Seguridad\frmPermisoRol.resx">
       <DependentUpon>frmPermisoRol.cs</DependentUpon>
@@ -694,6 +694,10 @@
     <Content Include="favicon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj">
+      <Project>{46785cf3-47cb-4a5e-9bc1-43235b6e1340}</Project>
+      <Name>BL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{a4a3553b-7355-46b8-96b3-81f60fde040d}</Project>
       <Name>DAL</Name>

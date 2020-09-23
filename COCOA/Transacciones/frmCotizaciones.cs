@@ -1,4 +1,5 @@
-﻿using COCOA.Busqueda;
+﻿using BL;
+using COCOA.Busqueda;
 using COCOA.Clases;
 using COCOA.Maestras;
 using COCOA.Reportes;
@@ -515,17 +516,7 @@ namespace COCOA.Transacciones
             string sitioEntrega = sitioEntregaTextBox.Text;
             string remplazaCotizacion = remplazaCotiacionComboBox.Text;
 
-            //Guarda encabezado            
-            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, remplazaCotizacion, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega);
-
-            //Guarda detalle           
-            foreach (DetalleCotizacion miDetalle in misDetalles)
-            {
-                DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.IdProducto,
-                    miDetalle.DescripcionProducto, miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo,
-                    miDetalle.PorcentajeEstampillas, miDetalle.ValorEstampillas, miDetalle.Descuento);
-
-            }
+            int IdCotizacion = Movimientos.GrabarCotizacion(fecha, remplazaCotizacion, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega, misDetalles);            
 
             MessageBox.Show(string.Format("Cotización {0} guardada exitosamente", IdCotizacion), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

@@ -1,4 +1,5 @@
-﻿using COCOA.Busqueda;
+﻿using BL;
+using COCOA.Busqueda;
 using COCOA.Clases;
 using COCOA.Maestras;
 using COCOA.Reportes;
@@ -422,15 +423,8 @@ namespace COCOA.Transacciones
             int IdProducto = (int)vehiculoComboBox.SelectedValue;
             string Notas = notasTextBox.Text;
 
-            //Guarda encabezado            
-            int IdOrdenCompra = DALOrdenCompra.InsertOrdenCompra(fecha, IdProveedor, plazoEntrega, formaPago, terminosGarantia, IdCliente, numeroCosteo, contrato, IdProducto, Notas);
-
-            //Guarda detalle           
-            foreach (DetalleOrdenCompra miDetalle in misDetalles)
-            {
-                DALOrdenCompraDetalle.InsertOrdenCompraDetalle(IdOrdenCompra, miDetalle.IdProducto, miDetalle.DescripcionProducto, miDetalle.Precio,
-                    miDetalle.Cantidad, miDetalle.Descuento, miDetalle.IVA, miDetalle.Impoconsumo);
-            }
+            int IdOrdenCompra = Movimientos.GrabarOrdenCompra(fecha, IdProveedor, plazoEntrega, formaPago, terminosGarantia, IdCliente, numeroCosteo, contrato, IdProducto, 
+                Notas, misDetalles);            
 
             MessageBox.Show(string.Format("Orden de Compra {0} guardada exitosamente", IdOrdenCompra), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -458,7 +452,7 @@ namespace COCOA.Transacciones
             RefrescaGrid();
             plazoEntregaTextBox.Focus();
             notasTextBox.Text = string.Empty;
-        }
+        }        
 
         private void borrarTodoButton_Click(object sender, EventArgs e)
         {

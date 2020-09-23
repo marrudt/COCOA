@@ -14,11 +14,11 @@ namespace COCOA.Maestras
 {
     public partial class frmContactoCliente : Form
     {
-        private int IdCliente;        
+        private int IdCliente;
 
         public int IDCliente
-        {            
-            set => IdCliente = value;
+        {
+            set { IdCliente = value; }
         }
 
         public frmContactoCliente()
@@ -79,20 +79,20 @@ namespace COCOA.Maestras
             DALContactosCliente.UpdateContactoCliente(
                 (int)numeroContactoComboBox.SelectedValue,
                 IdCliente,
-                nombreTextBox.Text, 
-                CargoTextBox.Text, 
-                correoTextBox.Text, 
-                celularTextBox.Text, 
-                telefono1textBox.Text, 
-                ext1TextBox.Text, 
-                telefono2TextBox.Text, 
-                ext2TextBox.Text, 
-                notasTextBox.Text, 
+                nombreTextBox.Text,
+                CargoTextBox.Text,
+                correoTextBox.Text,
+                celularTextBox.Text,
+                telefono1textBox.Text,
+                ext1TextBox.Text,
+                telefono2TextBox.Text,
+                ext2TextBox.Text,
+                notasTextBox.Text,
                 activocheckBox.Checked);
             this.Close();
 
             MessageBox.Show(string.Format("Contacto Guardado"), "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        } 
+        }
 
 
         private void telefono1textBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -127,7 +127,7 @@ namespace COCOA.Maestras
             DALContactosCliente miContactoCliente = DALContactosCliente.GetContactoClienteByIdNumeroContactoAndIdCliente((int)numeroContactoComboBox.SelectedValue, IdCliente);
 
             if (miContactoCliente == null)
-            {                
+            {
                 nombreTextBox.Text = string.Empty;
                 CargoTextBox.Text = string.Empty;
                 correoTextBox.Text = string.Empty;
