@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nitLabel;
             System.Windows.Forms.Label nombreClienteLabel;
-            System.Windows.Forms.Label nombreContactoLabel;
             System.Windows.Forms.Label direccionLabel;
             System.Windows.Forms.Label telefono1Label;
             System.Windows.Forms.Label telefono2Label;
@@ -113,7 +112,6 @@
             this.contactosClienteTableAdapter = new COCOA.DSCOCOATableAdapters.ContactosClienteTableAdapter();
             nitLabel = new System.Windows.Forms.Label();
             nombreClienteLabel = new System.Windows.Forms.Label();
-            nombreContactoLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             telefono1Label = new System.Windows.Forms.Label();
             telefono2Label = new System.Windows.Forms.Label();
@@ -148,21 +146,11 @@
             // nombreClienteLabel
             // 
             nombreClienteLabel.AutoSize = true;
-            nombreClienteLabel.Location = new System.Drawing.Point(36, 73);
+            nombreClienteLabel.Location = new System.Drawing.Point(68, 73);
             nombreClienteLabel.Name = "nombreClienteLabel";
-            nombreClienteLabel.Size = new System.Drawing.Size(82, 13);
+            nombreClienteLabel.Size = new System.Drawing.Size(47, 13);
             nombreClienteLabel.TabIndex = 2;
-            nombreClienteLabel.Text = "Nombre Cliente:";
-            // 
-            // nombreContactoLabel
-            // 
-            nombreContactoLabel.AutoSize = true;
-            nombreContactoLabel.Location = new System.Drawing.Point(25, 99);
-            nombreContactoLabel.Name = "nombreContactoLabel";
-            nombreContactoLabel.Size = new System.Drawing.Size(93, 13);
-            nombreContactoLabel.TabIndex = 4;
-            nombreContactoLabel.Text = "Nombre Contacto:";
-            nombreContactoLabel.Visible = false;
+            nombreClienteLabel.Text = "Nombre:";
             // 
             // direccionLabel
             // 
@@ -985,7 +973,6 @@
             this.Controls.Add(this.telefono1TextBox);
             this.Controls.Add(direccionLabel);
             this.Controls.Add(this.direccionTextBox);
-            this.Controls.Add(nombreContactoLabel);
             this.Controls.Add(this.nombreContactoTextBox);
             this.Controls.Add(nombreClienteLabel);
             this.Controls.Add(this.nombreClienteTextBox);

@@ -218,7 +218,6 @@ namespace COCOA.Transacciones
             }
             errorProvider1.Clear();
 
-
             DALIVA miIVA = DALIVA.GetIVA(ultimoProducto.IdIVA);
             DALImpoconsumo miImpoconsumo = DALImpoconsumo.GetImpoconsumo(ultimoProducto.IdImpoconsumo);
 
@@ -514,9 +513,10 @@ namespace COCOA.Transacciones
             string formaPago = formaPagoTextBox.Text;
             string sitioEntrega = sitioEntregaTextBox.Text;
             string remplazaCotizacion = remplazaCotiacionComboBox.Text;
+            string notas = notasTextBox.Text;
 
             //Guarda encabezado            
-            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, remplazaCotizacion, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega);
+            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, remplazaCotizacion, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega, notas);
 
             //Guarda detalle           
             foreach (DetalleCotizacion miDetalle in misDetalles)

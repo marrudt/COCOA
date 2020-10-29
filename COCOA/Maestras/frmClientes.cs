@@ -28,15 +28,13 @@ namespace COCOA.Maestras
             this.Validate();
             this.clientesBindingSource.EndEdit();
             this.contactosBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.dSCOCOA);
-
             try
             {
                 this.tableAdapterManager.UpdateAll(this.dSCOCOA);
             }
             catch (Exception)
             {
-                errorProvider1.SetError(nitTextBox, "El Nit ya existe");
+                MessageBox.Show("El Nit ya existe","No es posible guardar");              
                 nitTextBox.Focus();
                 return;
             }

@@ -38,17 +38,17 @@
             this.versionamientoTableAdapter = new COCOA.DSCOCOATableAdapters.VersionamientoTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.versionamientoDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.versionToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.versionToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.cambioToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.cambioToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.versionamientoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.versionamientoDataGridView)).BeginInit();
@@ -76,6 +76,7 @@
             this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = null;
             this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.ContactosClienteTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
             this.tableAdapterManager.DepartamentosTableAdapter = null;
@@ -85,6 +86,7 @@
             this.tableAdapterManager.IVATableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.LogTableAdapter = null;
+            this.tableAdapterManager.NumeroContactoTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;
@@ -135,54 +137,6 @@
             this.versionamientoDataGridView.Size = new System.Drawing.Size(983, 513);
             this.versionamientoDataGridView.TabIndex = 1;
             // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.BackColor = System.Drawing.Color.Transparent;
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.versionToolStripLabel,
-            this.versionToolStripTextBox,
-            this.cambioToolStripLabel,
-            this.cambioToolStripTextBox,
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(983, 25);
-            this.fillByToolStrip.TabIndex = 2;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // versionToolStripLabel
-            // 
-            this.versionToolStripLabel.Name = "versionToolStripLabel";
-            this.versionToolStripLabel.Size = new System.Drawing.Size(48, 22);
-            this.versionToolStripLabel.Text = "Versión:";
-            // 
-            // versionToolStripTextBox
-            // 
-            this.versionToolStripTextBox.Name = "versionToolStripTextBox";
-            this.versionToolStripTextBox.Size = new System.Drawing.Size(50, 25);
-            // 
-            // cambioToolStripLabel
-            // 
-            this.cambioToolStripLabel.Name = "cambioToolStripLabel";
-            this.cambioToolStripLabel.Size = new System.Drawing.Size(52, 22);
-            this.cambioToolStripLabel.Text = "Cambio:";
-            // 
-            // cambioToolStripTextBox
-            // 
-            this.cambioToolStripTextBox.Name = "cambioToolStripTextBox";
-            this.cambioToolStripTextBox.Size = new System.Drawing.Size(200, 25);
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.fillByToolStripButton.ForeColor = System.Drawing.SystemColors.Window;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 22);
-            this.fillByToolStripButton.Text = "Buscar";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "IdVersion";
@@ -230,6 +184,54 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             this.dataGridViewTextBoxColumn5.Width = 300;
+            // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.BackColor = System.Drawing.Color.Transparent;
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.versionToolStripLabel,
+            this.versionToolStripTextBox,
+            this.cambioToolStripLabel,
+            this.cambioToolStripTextBox,
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(983, 25);
+            this.fillByToolStrip.TabIndex = 2;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // versionToolStripLabel
+            // 
+            this.versionToolStripLabel.Name = "versionToolStripLabel";
+            this.versionToolStripLabel.Size = new System.Drawing.Size(48, 22);
+            this.versionToolStripLabel.Text = "Versión:";
+            // 
+            // versionToolStripTextBox
+            // 
+            this.versionToolStripTextBox.Name = "versionToolStripTextBox";
+            this.versionToolStripTextBox.Size = new System.Drawing.Size(50, 25);
+            // 
+            // cambioToolStripLabel
+            // 
+            this.cambioToolStripLabel.Name = "cambioToolStripLabel";
+            this.cambioToolStripLabel.Size = new System.Drawing.Size(52, 22);
+            this.cambioToolStripLabel.Text = "Cambio:";
+            // 
+            // cambioToolStripTextBox
+            // 
+            this.cambioToolStripTextBox.Name = "cambioToolStripTextBox";
+            this.cambioToolStripTextBox.Size = new System.Drawing.Size(200, 25);
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.fillByToolStripButton.ForeColor = System.Drawing.SystemColors.Window;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(48, 22);
+            this.fillByToolStripButton.Text = "Buscar";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
             // 
             // frmControlCambios
             // 

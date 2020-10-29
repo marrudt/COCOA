@@ -352,6 +352,12 @@
     <Compile Include="Reportes\frmReporteCotizacionNoClasificacion.Designer.cs">
       <DependentUpon>frmReporteCotizacionNoClasificacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReporteMarisolIbagonNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteMarisolIbagonNotas.Designer.cs">
+      <DependentUpon>frmReporteMarisolIbagonNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmReporteOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptReporteCotizacionEdgarSierra.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCotizacionMarisolIbagonNotas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteCotizacionMarisolIbagonNotas.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rptReporteCotizacionNoClasificacionCCE.cs">
@@ -598,6 +610,9 @@
     <EmbeddedResource Include="Reportes\frmReporteCotizacionNoClasificacion.resx">
       <DependentUpon>frmReporteCotizacionNoClasificacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteMarisolIbagonNotas.resx">
+      <DependentUpon>frmReporteMarisolIbagonNotas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporteOrdenCompra.resx">
       <DependentUpon>frmReporteOrdenCompra.cs</DependentUpon>
     </EmbeddedResource>
@@ -611,6 +626,10 @@
     <EmbeddedResource Include="Reportes\rptReporteCotizacionEdgarSierra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptReporteCotizacionEdgarSierra.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteCotizacionMarisolIbagonNotas.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteCotizacionMarisolIbagonNotas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReporteCotizacionNoClasificacionCCE.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

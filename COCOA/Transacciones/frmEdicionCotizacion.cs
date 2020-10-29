@@ -60,6 +60,7 @@ namespace COCOA.Transacciones
             idClienteComboBox.Enabled = true;
             contactoTextBox.ReadOnly = false;
             remplazaCotizacionTextBox.Enabled = true;
+            notasTextBox.ReadOnly = false;
 
             busquedaClienteButton.Enabled = true;
             bindingNavigatorMoveFirstItem.Enabled = false;
@@ -139,6 +140,7 @@ namespace COCOA.Transacciones
             idClienteComboBox.Enabled = false;
             contactoTextBox.Enabled = false;
             remplazaCotizacionTextBox.Enabled = false;
+            notasTextBox.ReadOnly = true;
 
             busquedaClienteButton.Enabled = false;
             bindingNavigatorMoveFirstItem.Enabled = true;

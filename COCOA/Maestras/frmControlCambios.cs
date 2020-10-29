@@ -27,6 +27,13 @@ namespace COCOA.Maestras
         private void frmControlCambios_Load(object sender, EventArgs e)
         {
             this.versionamientoTableAdapter.Fill(this.dSCOCOA.Versionamiento);
+            AlternarColorFilas();
+        }
+
+        private void AlternarColorFilas()
+        {
+            versionamientoDataGridView.RowsDefaultCellStyle.BackColor = Color.WhiteSmoke;
+            versionamientoDataGridView.AlternatingRowsDefaultCellStyle.BackColor = Color.LightBlue;
         }
 
         private void fillByToolStripButton_Click(object sender, EventArgs e)

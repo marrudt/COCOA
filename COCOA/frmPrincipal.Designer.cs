@@ -69,6 +69,7 @@
             this.consultaOrdenesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizaciónEdgarSierraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cotizacionesSinClasificacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteOrdenesDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenDeCompraEdgarSierraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -84,7 +85,7 @@
             this.controlDeCambiosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.nombreUsuarioStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.cotizaciónEdgarSierraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizaciónMarisolIbagónConNotasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -397,6 +398,7 @@
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.reporteCotizacionesToolStripMenuItem,
+            this.cotizaciónMarisolIbagónConNotasToolStripMenuItem,
             this.cotizaciónEdgarSierraToolStripMenuItem,
             this.cotizacionesSinClasificacionToolStripMenuItem,
             this.reporteOrdenesDeCompraToolStripMenuItem,
@@ -408,28 +410,35 @@
             // reporteCotizacionesToolStripMenuItem
             // 
             this.reporteCotizacionesToolStripMenuItem.Name = "reporteCotizacionesToolStripMenuItem";
-            this.reporteCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.reporteCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.reporteCotizacionesToolStripMenuItem.Text = "&Cotización Marisol Ibagón";
             this.reporteCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.reporteCotizacionesToolStripMenuItem_Click);
+            // 
+            // cotizaciónEdgarSierraToolStripMenuItem
+            // 
+            this.cotizaciónEdgarSierraToolStripMenuItem.Name = "cotizaciónEdgarSierraToolStripMenuItem";
+            this.cotizaciónEdgarSierraToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.cotizaciónEdgarSierraToolStripMenuItem.Text = "Cotización Edgar &Sierra";
+            this.cotizaciónEdgarSierraToolStripMenuItem.Click += new System.EventHandler(this.cotizaciónEdgarSierraToolStripMenuItem_Click);
             // 
             // cotizacionesSinClasificacionToolStripMenuItem
             // 
             this.cotizacionesSinClasificacionToolStripMenuItem.Name = "cotizacionesSinClasificacionToolStripMenuItem";
-            this.cotizacionesSinClasificacionToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.cotizacionesSinClasificacionToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.cotizacionesSinClasificacionToolStripMenuItem.Text = "Cotizaciones &Sin Clasificación";
             this.cotizacionesSinClasificacionToolStripMenuItem.Click += new System.EventHandler(this.cotizacionesSinClasificacionToolStripMenuItem_Click);
             // 
             // reporteOrdenesDeCompraToolStripMenuItem
             // 
             this.reporteOrdenesDeCompraToolStripMenuItem.Name = "reporteOrdenesDeCompraToolStripMenuItem";
-            this.reporteOrdenesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.reporteOrdenesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.reporteOrdenesDeCompraToolStripMenuItem.Text = "Orden de Compra &Marisol Ibagón";
             this.reporteOrdenesDeCompraToolStripMenuItem.Click += new System.EventHandler(this.reporteOrdenesDeCompraToolStripMenuItem_Click);
             // 
             // ordenDeCompraEdgarSierraToolStripMenuItem
             // 
             this.ordenDeCompraEdgarSierraToolStripMenuItem.Name = "ordenDeCompraEdgarSierraToolStripMenuItem";
-            this.ordenDeCompraEdgarSierraToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
+            this.ordenDeCompraEdgarSierraToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
             this.ordenDeCompraEdgarSierraToolStripMenuItem.Text = "Orden de Compra &Edgar Sierra";
             this.ordenDeCompraEdgarSierraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraEdgarSierraToolStripMenuItem_Click);
             // 
@@ -448,35 +457,35 @@
             // listadoClientesToolStripMenuItem
             // 
             this.listadoClientesToolStripMenuItem.Name = "listadoClientesToolStripMenuItem";
-            this.listadoClientesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoClientesToolStripMenuItem.Text = "Clie&ntes";
             this.listadoClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoClientesToolStripMenuItem_Click);
             // 
             // listadoCotizacionesToolStripMenuItem
             // 
             this.listadoCotizacionesToolStripMenuItem.Name = "listadoCotizacionesToolStripMenuItem";
-            this.listadoCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoCotizacionesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoCotizacionesToolStripMenuItem.Text = "&Cotizaciones";
             this.listadoCotizacionesToolStripMenuItem.Click += new System.EventHandler(this.listadoCotizacionesToolStripMenuItem_Click);
             // 
             // listadoOrdenDeCompraToolStripMenuItem
             // 
             this.listadoOrdenDeCompraToolStripMenuItem.Name = "listadoOrdenDeCompraToolStripMenuItem";
-            this.listadoOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoOrdenDeCompraToolStripMenuItem.Text = "&Orden de Compra";
             this.listadoOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.listadoOrdenDeCompraToolStripMenuItem_Click);
             // 
             // listadoProductosToolStripMenuItem
             // 
             this.listadoProductosToolStripMenuItem.Name = "listadoProductosToolStripMenuItem";
-            this.listadoProductosToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoProductosToolStripMenuItem.Text = "&Productos";
             this.listadoProductosToolStripMenuItem.Click += new System.EventHandler(this.listadoProductosToolStripMenuItem_Click);
             // 
             // listadoProveedoresToolStripMenuItem
             // 
             this.listadoProveedoresToolStripMenuItem.Name = "listadoProveedoresToolStripMenuItem";
-            this.listadoProveedoresToolStripMenuItem.Size = new System.Drawing.Size(169, 22);
+            this.listadoProveedoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.listadoProveedoresToolStripMenuItem.Text = "Pro&veedores";
             this.listadoProveedoresToolStripMenuItem.Click += new System.EventHandler(this.listadoProveedoresToolStripMenuItem_Click);
             // 
@@ -528,12 +537,12 @@
             this.nombreUsuarioStripStatusLabel.Name = "nombreUsuarioStripStatusLabel";
             this.nombreUsuarioStripStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
-            // cotizaciónEdgarSierraToolStripMenuItem
+            // cotizaciónMarisolIbagónConNotasToolStripMenuItem
             // 
-            this.cotizaciónEdgarSierraToolStripMenuItem.Name = "cotizaciónEdgarSierraToolStripMenuItem";
-            this.cotizaciónEdgarSierraToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
-            this.cotizaciónEdgarSierraToolStripMenuItem.Text = "Cotización Edgar &Sierra";
-            this.cotizaciónEdgarSierraToolStripMenuItem.Click += new System.EventHandler(this.cotizaciónEdgarSierraToolStripMenuItem_Click);
+            this.cotizaciónMarisolIbagónConNotasToolStripMenuItem.Name = "cotizaciónMarisolIbagónConNotasToolStripMenuItem";
+            this.cotizaciónMarisolIbagónConNotasToolStripMenuItem.Size = new System.Drawing.Size(269, 22);
+            this.cotizaciónMarisolIbagónConNotasToolStripMenuItem.Text = "Cotización Marisol Ibagón con &Notas";
+            this.cotizaciónMarisolIbagónConNotasToolStripMenuItem.Click += new System.EventHandler(this.cotizaciónMarisolIbagónConNotasToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -627,5 +636,6 @@
         private System.Windows.Forms.ToolStripMenuItem cotizacionesSinClasificacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordenDeCompraEdgarSierraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cotizaciónEdgarSierraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cotizaciónMarisolIbagónConNotasToolStripMenuItem;
     }
 }

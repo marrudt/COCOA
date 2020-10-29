@@ -198,6 +198,13 @@ namespace COCOA
             miForm.Show();
         }
 
+        private void cotizaciónMarisolIbagónConNotasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteMarisolIbagonNotas miForm = new frmReporteMarisolIbagonNotas();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
         private void cotizacionesSinClasificacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmReporteCotizacionNoClasificacion miForm = new frmReporteCotizacionNoClasificacion();
@@ -748,6 +755,15 @@ namespace COCOA
             else
             {
                 cotizaciónEdgarSierraToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 39))
+            {
+                cotizaciónMarisolIbagónConNotasToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                cotizaciónMarisolIbagónConNotasToolStripMenuItem.Visible = false;
             }
         }        
     }
