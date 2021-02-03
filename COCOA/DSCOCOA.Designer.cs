@@ -5182,23 +5182,11 @@ namespace COCOA {
             
             private global::System.Data.DataColumn columnCantidad;
             
-            private global::System.Data.DataColumn columnBaseIVA;
-            
-            private global::System.Data.DataColumn columnBaseImpoconsumo;
-            
             private global::System.Data.DataColumn columnPorcentajeEstampillas;
             
             private global::System.Data.DataColumn columnPrecioVh;
             
             private global::System.Data.DataColumn columnSubtotal;
-            
-            private global::System.Data.DataColumn columnBaseIVATotal;
-            
-            private global::System.Data.DataColumn columnBaseImpoconsumoTotal;
-            
-            private global::System.Data.DataColumn columnIVATotal;
-            
-            private global::System.Data.DataColumn columnImpoconsumoTotal;
             
             private global::System.Data.DataColumn columnTotalVhEA;
             
@@ -5216,7 +5204,7 @@ namespace COCOA {
             
             private global::System.Data.DataColumn columnNotasProducto;
             
-            private global::System.Data.DataColumn columnValorVhEAEstampilas;
+            private global::System.Data.DataColumn columnBaseImpuestos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -5501,22 +5489,6 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BaseIVAColumn {
-                get {
-                    return this.columnBaseIVA;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BaseImpoconsumoColumn {
-                get {
-                    return this.columnBaseImpoconsumo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn PorcentajeEstampillasColumn {
                 get {
                     return this.columnPorcentajeEstampillas;
@@ -5536,38 +5508,6 @@ namespace COCOA {
             public global::System.Data.DataColumn SubtotalColumn {
                 get {
                     return this.columnSubtotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BaseIVATotalColumn {
-                get {
-                    return this.columnBaseIVATotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn BaseImpoconsumoTotalColumn {
-                get {
-                    return this.columnBaseImpoconsumoTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn IVATotalColumn {
-                get {
-                    return this.columnIVATotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ImpoconsumoTotalColumn {
-                get {
-                    return this.columnImpoconsumoTotal;
                 }
             }
             
@@ -5637,9 +5577,9 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ValorVhEAEstampilasColumn {
+            public global::System.Data.DataColumn BaseImpuestosColumn {
                 get {
-                    return this.columnValorVhEAEstampilas;
+                    return this.columnBaseImpuestos;
                 }
             }
             
@@ -5707,20 +5647,14 @@ namespace COCOA {
                         string CodigoTipoProducto, 
                         decimal Descuento, 
                         double Cantidad, 
-                        double BaseIVA, 
-                        double BaseImpoconsumo, 
                         double PorcentajeEstampillas, 
                         decimal PrecioVh, 
                         double Subtotal, 
-                        double BaseIVATotal, 
-                        double BaseImpoconsumoTotal, 
-                        double IVATotal, 
-                        double ImpoconsumoTotal, 
                         double TotalVhEA, 
                         decimal ValorVhEA, 
                         string Notas, 
                         string NotasProducto, 
-                        decimal ValorVhEAEstampilas) {
+                        double BaseImpuestos) {
                 ReporteCotizacionRow rowReporteCotizacionRow = ((ReporteCotizacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5754,15 +5688,9 @@ namespace COCOA {
                         CodigoTipoProducto,
                         Descuento,
                         Cantidad,
-                        BaseIVA,
-                        BaseImpoconsumo,
                         PorcentajeEstampillas,
                         PrecioVh,
                         Subtotal,
-                        BaseIVATotal,
-                        BaseImpoconsumoTotal,
-                        IVATotal,
-                        ImpoconsumoTotal,
                         TotalVhEA,
                         ValorVhEA,
                         Notas,
@@ -5771,7 +5699,7 @@ namespace COCOA {
                         null,
                         null,
                         NotasProducto,
-                        ValorVhEAEstampilas};
+                        BaseImpuestos};
                 rowReporteCotizacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReporteCotizacionRow);
                 return rowReporteCotizacionRow;
@@ -5838,15 +5766,9 @@ namespace COCOA {
                 this.columnCodigoTipoProducto = base.Columns["CodigoTipoProducto"];
                 this.columnDescuento = base.Columns["Descuento"];
                 this.columnCantidad = base.Columns["Cantidad"];
-                this.columnBaseIVA = base.Columns["BaseIVA"];
-                this.columnBaseImpoconsumo = base.Columns["BaseImpoconsumo"];
                 this.columnPorcentajeEstampillas = base.Columns["PorcentajeEstampillas"];
                 this.columnPrecioVh = base.Columns["PrecioVh"];
                 this.columnSubtotal = base.Columns["Subtotal"];
-                this.columnBaseIVATotal = base.Columns["BaseIVATotal"];
-                this.columnBaseImpoconsumoTotal = base.Columns["BaseImpoconsumoTotal"];
-                this.columnIVATotal = base.Columns["IVATotal"];
-                this.columnImpoconsumoTotal = base.Columns["ImpoconsumoTotal"];
                 this.columnTotalVhEA = base.Columns["TotalVhEA"];
                 this.columnValorVhEA = base.Columns["ValorVhEA"];
                 this.columnNotas = base.Columns["Notas"];
@@ -5855,7 +5777,7 @@ namespace COCOA {
                 this.columnIdPesoBrutoVh = base.Columns["IdPesoBrutoVh"];
                 this.columnIdNumeroPasajeros = base.Columns["IdNumeroPasajeros"];
                 this.columnNotasProducto = base.Columns["NotasProducto"];
-                this.columnValorVhEAEstampilas = base.Columns["ValorVhEAEstampilas"];
+                this.columnBaseImpuestos = base.Columns["BaseImpuestos"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5923,24 +5845,12 @@ namespace COCOA {
                 base.Columns.Add(this.columnDescuento);
                 this.columnCantidad = new global::System.Data.DataColumn("Cantidad", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCantidad);
-                this.columnBaseIVA = new global::System.Data.DataColumn("BaseIVA", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBaseIVA);
-                this.columnBaseImpoconsumo = new global::System.Data.DataColumn("BaseImpoconsumo", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBaseImpoconsumo);
                 this.columnPorcentajeEstampillas = new global::System.Data.DataColumn("PorcentajeEstampillas", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPorcentajeEstampillas);
                 this.columnPrecioVh = new global::System.Data.DataColumn("PrecioVh", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrecioVh);
                 this.columnSubtotal = new global::System.Data.DataColumn("Subtotal", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubtotal);
-                this.columnBaseIVATotal = new global::System.Data.DataColumn("BaseIVATotal", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBaseIVATotal);
-                this.columnBaseImpoconsumoTotal = new global::System.Data.DataColumn("BaseImpoconsumoTotal", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBaseImpoconsumoTotal);
-                this.columnIVATotal = new global::System.Data.DataColumn("IVATotal", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIVATotal);
-                this.columnImpoconsumoTotal = new global::System.Data.DataColumn("ImpoconsumoTotal", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnImpoconsumoTotal);
                 this.columnTotalVhEA = new global::System.Data.DataColumn("TotalVhEA", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalVhEA);
                 this.columnValorVhEA = new global::System.Data.DataColumn("ValorVhEA", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -5957,8 +5867,8 @@ namespace COCOA {
                 base.Columns.Add(this.columnIdNumeroPasajeros);
                 this.columnNotasProducto = new global::System.Data.DataColumn("NotasProducto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNotasProducto);
-                this.columnValorVhEAEstampilas = new global::System.Data.DataColumn("ValorVhEAEstampilas", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnValorVhEAEstampilas);
+                this.columnBaseImpuestos = new global::System.Data.DataColumn("BaseImpuestos", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBaseImpuestos);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdCotizacion,
                                 this.columnPrecio,
@@ -6018,14 +5928,8 @@ namespace COCOA {
                 this.columnIdSegmento.AllowDBNull = false;
                 this.columnCodigoTipoProducto.AllowDBNull = false;
                 this.columnCodigoTipoProducto.MaxLength = 10;
-                this.columnBaseIVA.ReadOnly = true;
-                this.columnBaseImpoconsumo.ReadOnly = true;
                 this.columnPrecioVh.ReadOnly = true;
                 this.columnSubtotal.ReadOnly = true;
-                this.columnBaseIVATotal.ReadOnly = true;
-                this.columnBaseImpoconsumoTotal.ReadOnly = true;
-                this.columnIVATotal.ReadOnly = true;
-                this.columnImpoconsumoTotal.ReadOnly = true;
                 this.columnTotalVhEA.ReadOnly = true;
                 this.columnValorVhEA.ReadOnly = true;
                 this.columnNotas.MaxLength = 2147483647;
@@ -6051,7 +5955,7 @@ namespace COCOA {
                 this.columnIdNumeroPasajeros.ReadOnly = true;
                 this.columnNotasProducto.ReadOnly = true;
                 this.columnNotasProducto.MaxLength = 2147483647;
-                this.columnValorVhEAEstampilas.ReadOnly = true;
+                this.columnBaseImpuestos.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16516,38 +16420,6 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double BaseIVA {
-                get {
-                    try {
-                        return ((double)(this[this.tableReporteCotizacion.BaseIVAColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BaseIVA\' in table \'ReporteCotizacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReporteCotizacion.BaseIVAColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double BaseImpoconsumo {
-                get {
-                    try {
-                        return ((double)(this[this.tableReporteCotizacion.BaseImpoconsumoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BaseImpoconsumo\' in table \'ReporteCotizacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReporteCotizacion.BaseImpoconsumoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public double PorcentajeEstampillas {
                 get {
                     try {
@@ -16592,71 +16464,6 @@ namespace COCOA {
                 }
                 set {
                     this[this.tableReporteCotizacion.SubtotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double BaseIVATotal {
-                get {
-                    try {
-                        return ((double)(this[this.tableReporteCotizacion.BaseIVATotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BaseIVATotal\' in table \'ReporteCotizacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReporteCotizacion.BaseIVATotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double BaseImpoconsumoTotal {
-                get {
-                    try {
-                        return ((double)(this[this.tableReporteCotizacion.BaseImpoconsumoTotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'BaseImpoconsumoTotal\' in table \'ReporteCotizacion\' is DBNul" +
-                                "l.", e);
-                    }
-                }
-                set {
-                    this[this.tableReporteCotizacion.BaseImpoconsumoTotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double IVATotal {
-                get {
-                    try {
-                        return ((double)(this[this.tableReporteCotizacion.IVATotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'IVATotal\' in table \'ReporteCotizacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReporteCotizacion.IVATotalColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public double ImpoconsumoTotal {
-                get {
-                    try {
-                        return ((double)(this[this.tableReporteCotizacion.ImpoconsumoTotalColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ImpoconsumoTotal\' in table \'ReporteCotizacion\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableReporteCotizacion.ImpoconsumoTotalColumn] = value;
                 }
             }
             
@@ -16770,18 +16577,17 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal ValorVhEAEstampilas {
+            public double BaseImpuestos {
                 get {
                     try {
-                        return ((decimal)(this[this.tableReporteCotizacion.ValorVhEAEstampilasColumn]));
+                        return ((double)(this[this.tableReporteCotizacion.BaseImpuestosColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ValorVhEAEstampilas\' in table \'ReporteCotizacion\' is DBNull" +
-                                ".", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'BaseImpuestos\' in table \'ReporteCotizacion\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableReporteCotizacion.ValorVhEAEstampilasColumn] = value;
+                    this[this.tableReporteCotizacion.BaseImpuestosColumn] = value;
                 }
             }
             
@@ -16991,30 +16797,6 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBaseIVANull() {
-                return this.IsNull(this.tableReporteCotizacion.BaseIVAColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBaseIVANull() {
-                this[this.tableReporteCotizacion.BaseIVAColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBaseImpoconsumoNull() {
-                return this.IsNull(this.tableReporteCotizacion.BaseImpoconsumoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBaseImpoconsumoNull() {
-                this[this.tableReporteCotizacion.BaseImpoconsumoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsPorcentajeEstampillasNull() {
                 return this.IsNull(this.tableReporteCotizacion.PorcentajeEstampillasColumn);
             }
@@ -17047,54 +16829,6 @@ namespace COCOA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetSubtotalNull() {
                 this[this.tableReporteCotizacion.SubtotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBaseIVATotalNull() {
-                return this.IsNull(this.tableReporteCotizacion.BaseIVATotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBaseIVATotalNull() {
-                this[this.tableReporteCotizacion.BaseIVATotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsBaseImpoconsumoTotalNull() {
-                return this.IsNull(this.tableReporteCotizacion.BaseImpoconsumoTotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetBaseImpoconsumoTotalNull() {
-                this[this.tableReporteCotizacion.BaseImpoconsumoTotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsIVATotalNull() {
-                return this.IsNull(this.tableReporteCotizacion.IVATotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetIVATotalNull() {
-                this[this.tableReporteCotizacion.IVATotalColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsImpoconsumoTotalNull() {
-                return this.IsNull(this.tableReporteCotizacion.ImpoconsumoTotalColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetImpoconsumoTotalNull() {
-                this[this.tableReporteCotizacion.ImpoconsumoTotalColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17147,14 +16881,14 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsValorVhEAEstampilasNull() {
-                return this.IsNull(this.tableReporteCotizacion.ValorVhEAEstampilasColumn);
+            public bool IsBaseImpuestosNull() {
+                return this.IsNull(this.tableReporteCotizacion.BaseImpuestosColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetValorVhEAEstampilasNull() {
-                this[this.tableReporteCotizacion.ValorVhEAEstampilasColumn] = global::System.Convert.DBNull;
+            public void SetBaseImpuestosNull() {
+                this[this.tableReporteCotizacion.BaseImpuestosColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -28515,15 +28249,9 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
             tableMapping.ColumnMappings.Add("CodigoTipoProducto", "CodigoTipoProducto");
             tableMapping.ColumnMappings.Add("Descuento", "Descuento");
             tableMapping.ColumnMappings.Add("Cantidad", "Cantidad");
-            tableMapping.ColumnMappings.Add("BaseIVA", "BaseIVA");
-            tableMapping.ColumnMappings.Add("BaseImpoconsumo", "BaseImpoconsumo");
             tableMapping.ColumnMappings.Add("PorcentajeEstampillas", "PorcentajeEstampillas");
             tableMapping.ColumnMappings.Add("PrecioVh", "PrecioVh");
             tableMapping.ColumnMappings.Add("Subtotal", "Subtotal");
-            tableMapping.ColumnMappings.Add("BaseIVATotal", "BaseIVATotal");
-            tableMapping.ColumnMappings.Add("BaseImpoconsumoTotal", "BaseImpoconsumoTotal");
-            tableMapping.ColumnMappings.Add("IVATotal", "IVATotal");
-            tableMapping.ColumnMappings.Add("ImpoconsumoTotal", "ImpoconsumoTotal");
             tableMapping.ColumnMappings.Add("TotalVhEA", "TotalVhEA");
             tableMapping.ColumnMappings.Add("ValorVhEA", "ValorVhEA");
             tableMapping.ColumnMappings.Add("Notas", "Notas");
@@ -28532,7 +28260,7 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
             tableMapping.ColumnMappings.Add("IdPesoBrutoVh", "IdPesoBrutoVh");
             tableMapping.ColumnMappings.Add("IdNumeroPasajeros", "IdNumeroPasajeros");
             tableMapping.ColumnMappings.Add("NotasProducto", "NotasProducto");
-            tableMapping.ColumnMappings.Add("ValorVhEAEstampilas", "ValorVhEAEstampilas");
+            tableMapping.ColumnMappings.Add("BaseImpuestos", "BaseImpuestos");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -28549,59 +28277,20 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select *,Subtotal-BaseIVATotal as IVATotal, BaseIVATotal-BaseImpoconsumoTotal AS " +
-                "ImpoconsumoTotal,Precio-BaseIVA as IVA,BaseIVA-BaseImpoconsumo as Impoconsumo,\nc" +
-                "ase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,\ncase when IdTi" +
-                "poProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoProducto = 1" +
-                " then Precio-Descuento end as PrecioVh,\ncase when IdTipoProducto = 1 then ValorE" +
-                "stampillas+(Precio-Descuento) end as ValorVhEAEstampilas\nfrom\n(\nselect *,BaseIVA" +
-                "Total/(1+PorcentajeImpoconsumo/100) as BaseImpoconsumoTotal,BaseIVA/(1+Porcentaj" +
-                "eImpoconsumo/100) as BaseImpoconsumo\nfrom \n(\nselect *,Subtotal/(1+PorcentajeIVA/" +
-                "100) as BaseIVATotal,Precio/(1+PorcentajeIVA/100) as BaseIVA\nfrom\n(\nselect c.Fec" +
-                "ha,c.IdCotizacion,cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDeta" +
-                "lle,cd.NumeroItem,cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoT" +
-                "ipoProducto,p.DescripcionProducto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Es" +
-                "tampillas,cd.Descuento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil." +
-                "DescripcionCilindraje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdP" +
-                "esoBrutoVh, pbv.DescripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c" +
-                ".FormaPago,c.PlazoEntrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd." +
-                "PorcentajeEstampillas,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Can" +
-                "tidad) as Subtotal,\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end " +
-                "as NotasProducto,c.Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on c" +
-                "d.IdCotizacion = c.IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdC" +
-                "liente\ninner join Productos p on p.IdProducto = cd.IdProducto\ninner join TipoPro" +
-                "ducto tp on tp.IdTipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdS" +
-                "egmento = p.IdSegmento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCili" +
-                "ndraje \ninner join IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrec" +
-                "io\ninner join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join " +
-                "NumeroPasajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\ngroup " +
-                "by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacionDetalle,Numer" +
-                "oItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProducto,Descripcion" +
-                "Producto,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuento,IdSegmento,Descr" +
-                "ipcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio,DescripcionPesoB" +
-                "rutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstampillas,Porc" +
-                "entajeIVA,\nPorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,PorcentajeEsta" +
-                "mpillas,BaseIVATotal,BaseImpoconsumoTotal,NotasProducto,IdCilindraje,IdIntervalo" +
-                "Precio,IdPesoBrutoVh,IdNumeroPasajeros,Notas";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "select *,Subtotal-BaseIVATotal as IVATotal, BaseIVATotal-BaseImpoconsumoTotal AS " +
-                "ImpoconsumoTotal,Precio-BaseIVA as IVA,BaseIVA-BaseImpoconsumo as Impoconsumo,\nc" +
-                "ase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,case when IdTip" +
-                "oProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoProducto = 1 " +
-                "then Precio-Descuento end as PrecioVh \nfrom\n(\nselect *,BaseIVATotal/(1+Porcentaj" +
-                "eImpoconsumo/100) as BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) " +
-                "as BaseImpoconsumo\nfrom \n(\nselect *,Subtotal/(1+PorcentajeIVA/100) as BaseIVATot" +
-                "al,Precio/(1+PorcentajeIVA/100) as BaseIVA\nfrom\n(\nselect c.Fecha,c.IdCotizacion," +
-                "cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem," +
-                "cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.Desc" +
-                "ripcionProducto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descu" +
-                "ento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindr" +
-                "aje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.De" +
-                "scripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.Plazo" +
-                "Entrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampil" +
-                "las,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) as Subtotal" +
+            this._commandCollection[0].CommandText = "select *,\ncase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,case " +
+                "when IdTipoProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoPro" +
+                "ducto = 1 then Precio-Descuento end as PrecioVh \nfrom\n(\nselect *,BaseImpuestos*P" +
+                "orcentajeIVA/100 as IVA,BaseImpuestos*PorcentajeImpoconsumo/100 as Impoconsumo\nf" +
+                "rom \n(\nselect *,(Subtotal/cantidad)/(1 + (PorcentajeIVA / 100 + PorcentajeImpoco" +
+                "nsumo / 100)) as BaseImpuestos\nfrom\n(\nselect c.Fecha,c.IdCotizacion,cli.IdClient" +
+                "e,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNu" +
+                "meroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProdu" +
+                "cto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSeg" +
+                "mento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdInte" +
+                "rvaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPes" +
+                "oBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.Si" +
+                "tioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.Porce" +
+                "ntajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) as Subtotal" +
                 ",\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as NotasProducto,c" +
                 ".Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCotizacion = c" +
                 ".IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\ninner join " +
@@ -28610,35 +28299,31 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
                 "ento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje \ninner join" +
                 " IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninner join Peso" +
                 "BrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroPasajeros np" +
-                " on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\nwhere IdCliente = @IdCli" +
-                "ente\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacionDe" +
-                "talle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProducto," +
-                "DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuento,IdSeg" +
-                "mento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio,Descr" +
-                "ipcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstam" +
-                "pillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsumo,Por" +
-                "centajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal,NotasProducto,IdCilindraje," +
-                "IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros,Notas";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "select *,Subtotal-BaseIVATotal as IVATotal, BaseIVATotal-BaseImpoconsumoTotal AS " +
-                "ImpoconsumoTotal,Precio-BaseIVA as IVA,BaseIVA-BaseImpoconsumo as Impoconsumo,\nc" +
-                "ase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,case when IdTip" +
-                "oProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoProducto = 1 " +
-                "then Precio-Descuento end as PrecioVh \nfrom\n(\nselect *,BaseIVATotal/(1+Porcentaj" +
-                "eImpoconsumo/100) as BaseImpoconsumoTotal,BaseIVA/(1+PorcentajeImpoconsumo/100) " +
-                "as BaseImpoconsumo\nfrom \n(\nselect *,Subtotal/(1+PorcentajeIVA/100) as BaseIVATot" +
-                "al,Precio/(1+PorcentajeIVA/100) as BaseIVA\nfrom\n(\nselect c.Fecha,c.IdCotizacion," +
-                "cli.IdCliente,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem," +
-                "cd.DetalleNumeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.Desc" +
-                "ripcionProducto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descu" +
-                "ento,P.IdSegmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindr" +
-                "aje,i.IdIntervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.De" +
-                "scripcionPesoBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.Plazo" +
-                "Entrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampil" +
-                "las,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,(cd.Precio * Cantidad) as Subtotal" +
+                " on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\ngroup by Fecha,IdCotizac" +
+                "ion,IdCliente,NombreCliente,Contacto,IdCotizacionDetalle,NumeroItem,DetalleNumer" +
+                "oItem,IdProducto,IdTipoProducto,CodigoTipoProducto,DescripcionProducto,DetallePr" +
+                "oducto,Precio,Cantidad,\nEstampillas,Descuento,IdSegmento,DescripcionSegmento,Des" +
+                "cripcionCilindraje,DescripcionIntervaloPrecio,DescripcionPesoBrutoVh,NumeroPasaj" +
+                "eros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstampillas,PorcentajeIVA,\nPorcent" +
+                "ajeImpoconsumo,Subtotal,PorcentajeEstampillas,NotasProducto,IdCilindraje,IdInter" +
+                "valoPrecio,IdPesoBrutoVh,IdNumeroPasajeros,Notas,BaseImpuestos,IVA,Impoconsumo";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "select *,\ncase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,case " +
+                "when IdTipoProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoPro" +
+                "ducto = 1 then Precio-Descuento end as PrecioVh \nfrom\n(\nselect *,BaseImpuestos*P" +
+                "orcentajeIVA/100 as IVA,BaseImpuestos*PorcentajeImpoconsumo/100 as Impoconsumo\nf" +
+                "rom \n(\nselect *,(Subtotal/cantidad)/(1 + (PorcentajeIVA / 100 + PorcentajeImpoco" +
+                "nsumo / 100)) as BaseImpuestos\nfrom\n(\nselect c.Fecha,c.IdCotizacion,cli.IdClient" +
+                "e,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNu" +
+                "meroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProdu" +
+                "cto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSeg" +
+                "mento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdInte" +
+                "rvaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPes" +
+                "oBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.Si" +
+                "tioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.Porce" +
+                "ntajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) as Subtotal" +
                 ",\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as NotasProducto,c" +
                 ".Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCotizacion = c" +
                 ".IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\ninner join " +
@@ -28648,14 +28333,49 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
                 " IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninner join Peso" +
                 "BrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroPasajeros np" +
                 " on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\nwhere IdCotizacion = @Id" +
-                "Cotizacion\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotiza" +
-                "cionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoPro" +
-                "ducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuento" +
-                ",IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio" +
-                ",DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,Valo" +
-                "rEstampillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,BaseIVA,BaseImpoconsu" +
-                "mo,PorcentajeEstampillas,BaseIVATotal,BaseImpoconsumoTotal,NotasProducto,IdCilin" +
-                "draje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros,Notas";
+                "Cliente\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacio" +
+                "nDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProduc" +
+                "to,DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuento,Id" +
+                "Segmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio,De" +
+                "scripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEs" +
+                "tampillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,PorcentajeEstampillas,No" +
+                "tasProducto,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros,Notas" +
+                ",BaseImpuestos,IVA,Impoconsumo";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "select *,\ncase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,case " +
+                "when IdTipoProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoPro" +
+                "ducto = 1 then Precio-Descuento end as PrecioVh \nfrom\n(\nselect *,BaseImpuestos*P" +
+                "orcentajeIVA/100 as IVA,BaseImpuestos*PorcentajeImpoconsumo/100 as Impoconsumo\nf" +
+                "rom \n(\nselect *,(Subtotal/cantidad)/ (1 + (PorcentajeIVA / 100 + PorcentajeImpoc" +
+                "onsumo / 100)) as BaseImpuestos\nfrom\n(\nselect c.Fecha,c.IdCotizacion,cli.IdClien" +
+                "te,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleN" +
+                "umeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProd" +
+                "ucto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSe" +
+                "gmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdInt" +
+                "ervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPe" +
+                "soBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.S" +
+                "itioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.Porc" +
+                "entajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) as Subtota" +
+                "l,\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as NotasProducto," +
+                "c.Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCotizacion = " +
+                "c.IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\ninner join" +
+                " Productos p on p.IdProducto = cd.IdProducto\ninner join TipoProducto tp on tp.Id" +
+                "TipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdSegmento = p.IdSeg" +
+                "mento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje \ninner joi" +
+                "n IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninner join Pes" +
+                "oBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroPasajeros n" +
+                "p on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\nwhere IdCotizacion = @I" +
+                "dCotizacion\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotiz" +
+                "acionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoPr" +
+                "oducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuent" +
+                "o,IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPreci" +
+                "o,DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,Val" +
+                "orEstampillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,PorcentajeEstampilla" +
+                "s,NotasProducto,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros,N" +
+                "otas,BaseImpuestos,IVA,Impoconsumo";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCotizacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }

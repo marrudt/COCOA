@@ -340,6 +340,12 @@
     <Compile Include="Reportes\frmReporteCotizacion.Designer.cs">
       <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frmReporteCotizacionAccesorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteCotizacionAccesorios.Designer.cs">
+      <DependentUpon>frmReporteCotizacionAccesorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmReporteCotizacionEdgarSierra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rptReporteCotizacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rptReporteCotizacionAccesorios.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteCotizacionAccesorios.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reportes\rptReporteCotizacionEdgarSierra.cs">
@@ -604,6 +616,9 @@
     <EmbeddedResource Include="Reportes\frmReporteCotizacion.resx">
       <DependentUpon>frmReporteCotizacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmReporteCotizacionAccesorios.resx">
+      <DependentUpon>frmReporteCotizacionAccesorios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmReporteCotizacionEdgarSierra.resx">
       <DependentUpon>frmReporteCotizacionEdgarSierra.cs</DependentUpon>
     </EmbeddedResource>
@@ -622,6 +637,10 @@
     <EmbeddedResource Include="Reportes\rptReporteCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptReporteCotizacion1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteCotizacionAccesorios.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteCotizacionAccesorios.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rptReporteCotizacionEdgarSierra.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

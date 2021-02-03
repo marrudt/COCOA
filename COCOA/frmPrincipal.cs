@@ -175,6 +175,13 @@ namespace COCOA
             miForm.Show();
         }
 
+        private void cotizaciónAccesoriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteCotizacionAccesorios miForm = new frmReporteCotizacionAccesorios();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
         private void cotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmCotizaciones miForm = new frmCotizaciones();
@@ -764,6 +771,15 @@ namespace COCOA
             else
             {
                 cotizaciónMarisolIbagónConNotasToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 40))
+            {
+                cotizaciónAccesoriosToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                cotizaciónAccesoriosToolStripMenuItem.Visible = false;
             }
         }        
     }
