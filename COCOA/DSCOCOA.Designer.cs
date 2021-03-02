@@ -30102,7 +30102,7 @@ SELECT IdPais, CodigoPais, DescripcionPais FROM Paises WHERE (IdPais = @IdPais)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::COCOA.Properties.Settings.Default.COCOAConnectionString;
+            this._connection.ConnectionString = global::COCOA.Properties.Settings.Default.COCOAConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30127,7 +30127,7 @@ left join Ciudades c on c.IdCiudad = p.IdCiudad
 )a";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(global::COCOA.Properties.Settings.Default.COCOAConnectionString);
             this._commandCollection[1].CommandText = @"select *,Precio*Cantidad-Descuento as Total 
 from 
 (
@@ -30147,7 +30147,7 @@ WHERE IdProveedor = @IdProveedor";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdProveedor", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdProveedor", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].Connection = new global::System.Data.SqlClient.SqlConnection(global::COCOA.Properties.Settings.Default.COCOAConnectionString);
             this._commandCollection[2].CommandText = @"select *,Precio*Cantidad-Descuento as Total 
 from 
 (
