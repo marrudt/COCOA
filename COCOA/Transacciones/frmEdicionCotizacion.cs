@@ -61,6 +61,7 @@ namespace COCOA.Transacciones
             contactoTextBox.ReadOnly = false;
             remplazaCotizacionTextBox.Enabled = true;
             notasTextBox.ReadOnly = false;
+            vigenciaTextBox.Enabled = true;
 
             busquedaClienteButton.Enabled = true;
             bindingNavigatorMoveFirstItem.Enabled = false;
@@ -141,6 +142,7 @@ namespace COCOA.Transacciones
             contactoTextBox.Enabled = false;
             remplazaCotizacionTextBox.Enabled = false;
             notasTextBox.ReadOnly = true;
+            vigenciaTextBox.Enabled = false;
 
             busquedaClienteButton.Enabled = false;
             bindingNavigatorMoveFirstItem.Enabled = true;
@@ -208,6 +210,11 @@ namespace COCOA.Transacciones
             ValidarTextBox.SoloNumeros(e);
         }
 
+        private void vigenciaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
         private void activarStripButton_Click(object sender, EventArgs e)
         {
             bindingNavigatorEdit.Enabled = true;
@@ -237,6 +244,6 @@ namespace COCOA.Transacciones
         {
             errorProvider1.Clear();
             bindingNavigatorEditDetalles.Enabled = true;
-        }
+        }        
     }
 }

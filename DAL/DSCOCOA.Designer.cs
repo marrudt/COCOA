@@ -9189,6 +9189,8 @@ namespace DAL {
             
             private global::System.Data.DataColumn columnFecha;
             
+            private global::System.Data.DataColumn columnVigencia;
+            
             private global::System.Data.DataColumn columnRemplazaCotizacion;
             
             private global::System.Data.DataColumn columnIdCliente;
@@ -9249,6 +9251,14 @@ namespace DAL {
             public global::System.Data.DataColumn FechaColumn {
                 get {
                     return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VigenciaColumn {
+                get {
+                    return this.columnVigencia;
                 }
             }
             
@@ -9345,11 +9355,12 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CotizacionRow AddCotizacionRow(System.DateTime Fecha, string RemplazaCotizacion, ClientesRow parentClientesRowByFK_Cotizacion_IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
+            public CotizacionRow AddCotizacionRow(System.DateTime Fecha, string Vigencia, string RemplazaCotizacion, ClientesRow parentClientesRowByFK_Cotizacion_IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
                 CotizacionRow rowCotizacionRow = ((CotizacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
+                        Vigencia,
                         RemplazaCotizacion,
                         null,
                         Contacto,
@@ -9358,7 +9369,7 @@ namespace DAL {
                         SitioEntrega,
                         Notas};
                 if ((parentClientesRowByFK_Cotizacion_IdCliente != null)) {
-                    columnValuesArray[3] = parentClientesRowByFK_Cotizacion_IdCliente[0];
+                    columnValuesArray[4] = parentClientesRowByFK_Cotizacion_IdCliente[0];
                 }
                 rowCotizacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCotizacionRow);
@@ -9391,6 +9402,7 @@ namespace DAL {
             internal void InitVars() {
                 this.columnIdCotizacion = base.Columns["IdCotizacion"];
                 this.columnFecha = base.Columns["Fecha"];
+                this.columnVigencia = base.Columns["Vigencia"];
                 this.columnRemplazaCotizacion = base.Columns["RemplazaCotizacion"];
                 this.columnIdCliente = base.Columns["IdCliente"];
                 this.columnContacto = base.Columns["Contacto"];
@@ -9407,6 +9419,8 @@ namespace DAL {
                 base.Columns.Add(this.columnIdCotizacion);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
+                this.columnVigencia = new global::System.Data.DataColumn("Vigencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVigencia);
                 this.columnRemplazaCotizacion = new global::System.Data.DataColumn("RemplazaCotizacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRemplazaCotizacion);
                 this.columnIdCliente = new global::System.Data.DataColumn("IdCliente", typeof(int), null, global::System.Data.MappingType.Element);
@@ -9429,6 +9443,7 @@ namespace DAL {
                 this.columnIdCotizacion.AllowDBNull = false;
                 this.columnIdCotizacion.ReadOnly = true;
                 this.columnIdCotizacion.Unique = true;
+                this.columnVigencia.MaxLength = 5;
                 this.columnRemplazaCotizacion.MaxLength = 5;
                 this.columnContacto.MaxLength = 2147483647;
                 this.columnFormaPago.MaxLength = 2147483647;
@@ -13375,6 +13390,22 @@ namespace DAL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Vigencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableCotizacion.VigenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vigencia\' in table \'Cotizacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCotizacion.VigenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string RemplazaCotizacion {
                 get {
                     try {
@@ -13506,6 +13537,18 @@ namespace DAL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetFechaNull() {
                 this[this.tableCotizacion.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVigenciaNull() {
+                return this.IsNull(this.tableCotizacion.VigenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVigenciaNull() {
+                this[this.tableCotizacion.VigenciaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -25791,6 +25834,7 @@ SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGaran
             tableMapping.DataSetTable = "Cotizacion";
             tableMapping.ColumnMappings.Add("IdCotizacion", "IdCotizacion");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("Vigencia", "Vigencia");
             tableMapping.ColumnMappings.Add("RemplazaCotizacion", "RemplazaCotizacion");
             tableMapping.ColumnMappings.Add("IdCliente", "IdCliente");
             tableMapping.ColumnMappings.Add("Contacto", "Contacto");
@@ -25801,21 +25845,24 @@ SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGaran
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Cotizacion] WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Cotizacion] WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Vigencia = 1 AND [Vigencia] IS NULL) OR ([Vigencia] = @Original_Vigencia)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vigencia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RemplazaCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Cotizacion] ([Fecha], [RemplazaCotizacion], [IdCliente], [Contacto], [FormaPago], [PlazoEntrega], [SitioEntrega], [Notas]) VALUES (@Fecha, @RemplazaCotizacion, @IdCliente, @Contacto, @FormaPago, @PlazoEntrega, @SitioEntrega, @Notas);
-SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Cotizacion] ([Fecha], [Vigencia], [RemplazaCotizacion], [IdCliente], [Contacto], [FormaPago], [PlazoEntrega], [SitioEntrega], [Notas]) VALUES (@Fecha, @Vigencia, @RemplazaCotizacion, @IdCliente, @Contacto, @FormaPago, @PlazoEntrega, @SitioEntrega, @Notas);
+SELECT IdCotizacion, Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25825,10 +25872,11 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Notas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Notas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cotizacion] SET [Fecha] = @Fecha, [RemplazaCotizacion] = @RemplazaCotizacion, [IdCliente] = @IdCliente, [Contacto] = @Contacto, [FormaPago] = @FormaPago, [PlazoEntrega] = @PlazoEntrega, [SitioEntrega] = @SitioEntrega, [Notas] = @Notas WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)));
-SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = @IdCotizacion)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cotizacion] SET [Fecha] = @Fecha, [Vigencia] = @Vigencia, [RemplazaCotizacion] = @RemplazaCotizacion, [IdCliente] = @IdCliente, [Contacto] = @Contacto, [FormaPago] = @FormaPago, [PlazoEntrega] = @PlazoEntrega, [SitioEntrega] = @SitioEntrega, [Notas] = @Notas WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Vigencia = 1 AND [Vigencia] IS NULL) OR ([Vigencia] = @Original_Vigencia)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)));
+SELECT IdCotizacion, Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = @IdCotizacion)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25839,6 +25887,8 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vigencia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RemplazaCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -25859,8 +25909,8 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, P" +
-                "lazoEntrega, SitioEntrega, Notas FROM dbo.Cotizacion";
+            this._commandCollection[0].CommandText = "SELECT IdCotizacion, Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, Fo" +
+                "rmaPago, PlazoEntrega, SitioEntrega, Notas FROM dbo.Cotizacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
@@ -25880,6 +25930,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vigencia", global::System.Data.SqlDbType.NVarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 5, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.NVarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -25946,7 +25997,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
+        public virtual int Delete(int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_Vigencia, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdCotizacion));
             if ((Original_Fecha.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -25956,21 +26007,29 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_RemplazaCotizacion == null)) {
+            if ((Original_Vigencia == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_RemplazaCotizacion));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Vigencia));
             }
-            if ((Original_IdCliente.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_IdCliente.Value));
-            }
-            else {
+            if ((Original_RemplazaCotizacion == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_RemplazaCotizacion));
+            }
+            if ((Original_IdCliente.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_IdCliente.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -25992,54 +26051,60 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> Fecha, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> Fecha, string Vigencia, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
             if ((Fecha.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Fecha.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((RemplazaCotizacion == null)) {
+            if ((Vigencia == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(RemplazaCotizacion));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Vigencia));
             }
-            if ((IdCliente.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(IdCliente.Value));
-            }
-            else {
+            if ((RemplazaCotizacion == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Contacto == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(RemplazaCotizacion));
+            }
+            if ((IdCliente.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(IdCliente.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Contacto));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((FormaPago == null)) {
+            if ((Contacto == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FormaPago));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Contacto));
             }
-            if ((PlazoEntrega == null)) {
+            if ((FormaPago == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PlazoEntrega));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(FormaPago));
             }
-            if ((SitioEntrega == null)) {
+            if ((PlazoEntrega == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(SitioEntrega));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PlazoEntrega));
             }
-            if ((Notas == null)) {
+            if ((SitioEntrega == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Notas));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(SitioEntrega));
+            }
+            if ((Notas == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Notas));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -26061,81 +26126,95 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente, int IdCotizacion) {
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string Vigencia, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_Vigencia, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente, int IdCotizacion) {
             if ((Fecha.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Fecha.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((RemplazaCotizacion == null)) {
+            if ((Vigencia == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(RemplazaCotizacion));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Vigencia));
             }
-            if ((IdCliente.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(IdCliente.Value));
-            }
-            else {
+            if ((RemplazaCotizacion == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Contacto == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(RemplazaCotizacion));
+            }
+            if ((IdCliente.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(IdCliente.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Contacto));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((FormaPago == null)) {
+            if ((Contacto == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FormaPago));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Contacto));
             }
-            if ((PlazoEntrega == null)) {
+            if ((FormaPago == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PlazoEntrega));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(FormaPago));
             }
-            if ((SitioEntrega == null)) {
+            if ((PlazoEntrega == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(SitioEntrega));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PlazoEntrega));
             }
-            if ((Notas == null)) {
+            if ((SitioEntrega == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Notas));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(SitioEntrega));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_IdCotizacion));
-            if ((Original_Fecha.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Fecha.Value));
+            if ((Notas == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Notas));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_IdCotizacion));
+            if ((Original_Fecha.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Fecha.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Vigencia == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Vigencia));
             }
             if ((Original_RemplazaCotizacion == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_RemplazaCotizacion));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_RemplazaCotizacion));
             }
             if ((Original_IdCliente.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_IdCliente.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_IdCliente.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(IdCotizacion));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(IdCotizacion));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -26156,8 +26235,8 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
-            return this.Update(Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas, Original_IdCotizacion, Original_Fecha, Original_RemplazaCotizacion, Original_IdCliente, Original_IdCotizacion);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string Vigencia, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_Vigencia, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
+            return this.Update(Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas, Original_IdCotizacion, Original_Fecha, Original_Vigencia, Original_RemplazaCotizacion, Original_IdCliente, Original_IdCotizacion);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -26231,7 +26310,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object InsertCotizacion(global::System.Nullable<global::System.DateTime> Fecha, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
+        public virtual object InsertCotizacion(global::System.Nullable<global::System.DateTime> Fecha, string Vigencia, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((Fecha.HasValue == true)) {
                 command.Parameters[1].Value = ((System.DateTime)(Fecha.Value));
@@ -26239,47 +26318,53 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             else {
                 command.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((RemplazaCotizacion == null)) {
+            if ((Vigencia == null)) {
                 command.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[2].Value = ((string)(RemplazaCotizacion));
+                command.Parameters[2].Value = ((string)(Vigencia));
             }
-            if ((IdCliente.HasValue == true)) {
-                command.Parameters[3].Value = ((int)(IdCliente.Value));
-            }
-            else {
+            if ((RemplazaCotizacion == null)) {
                 command.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Contacto == null)) {
-                command.Parameters[4].Value = global::System.DBNull.Value;
+            else {
+                command.Parameters[3].Value = ((string)(RemplazaCotizacion));
+            }
+            if ((IdCliente.HasValue == true)) {
+                command.Parameters[4].Value = ((int)(IdCliente.Value));
             }
             else {
-                command.Parameters[4].Value = ((string)(Contacto));
+                command.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((FormaPago == null)) {
+            if ((Contacto == null)) {
                 command.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[5].Value = ((string)(FormaPago));
+                command.Parameters[5].Value = ((string)(Contacto));
             }
-            if ((PlazoEntrega == null)) {
+            if ((FormaPago == null)) {
                 command.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[6].Value = ((string)(PlazoEntrega));
+                command.Parameters[6].Value = ((string)(FormaPago));
             }
-            if ((SitioEntrega == null)) {
+            if ((PlazoEntrega == null)) {
                 command.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[7].Value = ((string)(SitioEntrega));
+                command.Parameters[7].Value = ((string)(PlazoEntrega));
             }
-            if ((Notas == null)) {
+            if ((SitioEntrega == null)) {
                 command.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                command.Parameters[8].Value = ((string)(Notas));
+                command.Parameters[8].Value = ((string)(SitioEntrega));
+            }
+            if ((Notas == null)) {
+                command.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[9].Value = ((string)(Notas));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

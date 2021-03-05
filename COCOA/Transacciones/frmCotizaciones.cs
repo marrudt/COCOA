@@ -438,6 +438,11 @@ namespace COCOA.Transacciones
             ValidarTextBox.SoloNumeros(e);
         }
 
+        private void vigenciaTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidarTextBox.SoloNumeros(e);
+        }
+
         private void productoTextBox_KeyPress_1(object sender, KeyPressEventArgs e)
         {
             ValidarTextBox.SoloNumeros(e);
@@ -455,6 +460,14 @@ namespace COCOA.Transacciones
 
         private void guardarButton_Click(object sender, EventArgs e)
         {
+            if (vigenciaTextBox.Text == string.Empty)
+            {
+                errorProvider1.SetError(vigenciaTextBox, "El campo Vigencia es obligatorio");
+                vigenciaTextBox.Focus();
+                return;
+            }
+            errorProvider1.Clear();
+
             if (clienteComboBox.SelectedIndex == -1) 
             {
                 errorProvider1.SetError(clienteComboBox, "El campo Cliente es obligatorio");
@@ -514,9 +527,10 @@ namespace COCOA.Transacciones
             string sitioEntrega = sitioEntregaTextBox.Text;
             string remplazaCotizacion = remplazaCotiacionComboBox.Text;
             string notas = notasTextBox.Text;
+            string vigencia = vigenciaTextBox.Text;
 
             //Guarda encabezado            
-            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, remplazaCotizacion, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega, notas);
+            int IdCotizacion = DALCotizacion.InsertCotizacion(fecha, vigencia, remplazaCotizacion, IdCliente, contacto, formaPago, plazoEntrega, sitioEntrega, notas);
 
             //Guarda detalle           
             foreach (DetalleCotizacion miDetalle in misDetalles)
@@ -649,7 +663,7 @@ namespace COCOA.Transacciones
         {
             descuentoTextBox.ReadOnly = false;
             descuentoTextBox.Enabled = true;
-        }
+        }        
     }
 
 }

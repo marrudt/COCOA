@@ -37,15 +37,16 @@
             System.Windows.Forms.Label sitioEntregaLabel;
             System.Windows.Forms.Label idClienteLabel;
             System.Windows.Forms.Label remplazaCotizacionLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdicionCotizacion));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label notasLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEdicionCotizacion));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label vigenciaLabel;
             this.dSCOCOA = new COCOA.DSCOCOA();
             this.cotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cotizacionTableAdapter = new COCOA.DSCOCOATableAdapters.CotizacionTableAdapter();
@@ -102,6 +103,7 @@
             this.remplazaCotizacionTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.notasTextBox = new System.Windows.Forms.TextBox();
+            this.vigenciaTextBox = new System.Windows.Forms.TextBox();
             idCotizacionLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             contactoLabel = new System.Windows.Forms.Label();
@@ -111,6 +113,7 @@
             idClienteLabel = new System.Windows.Forms.Label();
             remplazaCotizacionLabel = new System.Windows.Forms.Label();
             notasLabel = new System.Windows.Forms.Label();
+            vigenciaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cotizacionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cotizacionBindingNavigator)).BeginInit();
@@ -195,6 +198,15 @@
             remplazaCotizacionLabel.TabIndex = 18;
             remplazaCotizacionLabel.Text = "Remplaza Cotización:";
             // 
+            // notasLabel
+            // 
+            notasLabel.AutoSize = true;
+            notasLabel.Location = new System.Drawing.Point(83, 155);
+            notasLabel.Name = "notasLabel";
+            notasLabel.Size = new System.Drawing.Size(38, 13);
+            notasLabel.TabIndex = 20;
+            notasLabel.Text = "Notas:";
+            // 
             // dSCOCOA
             // 
             this.dSCOCOA.DataSetName = "DSCOCOA";
@@ -276,7 +288,7 @@
             this.cotizacionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.cotizacionBindingNavigator.Name = "cotizacionBindingNavigator";
             this.cotizacionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.cotizacionBindingNavigator.Size = new System.Drawing.Size(1245, 31);
+            this.cotizacionBindingNavigator.Size = new System.Drawing.Size(1265, 31);
             this.cotizacionBindingNavigator.TabIndex = 0;
             this.cotizacionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -496,7 +508,7 @@
             this.cotizacionDetalleDataGridView.Enabled = false;
             this.cotizacionDetalleDataGridView.Location = new System.Drawing.Point(0, 240);
             this.cotizacionDetalleDataGridView.Name = "cotizacionDetalleDataGridView";
-            this.cotizacionDetalleDataGridView.Size = new System.Drawing.Size(1245, 401);
+            this.cotizacionDetalleDataGridView.Size = new System.Drawing.Size(1265, 421);
             this.cotizacionDetalleDataGridView.TabIndex = 16;
             // 
             // dataGridViewTextBoxColumn1
@@ -553,10 +565,10 @@
             // 
             this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Precio";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn7.HeaderText = "Precio";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Width = 62;
@@ -565,10 +577,10 @@
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Cantidad";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Format = "N0";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Format = "N0";
+            dataGridViewCellStyle16.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewTextBoxColumn8.HeaderText = "Cantidad";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.Width = 74;
@@ -577,10 +589,10 @@
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn9.DataPropertyName = "PorcentajeIVA";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Format = "N0";
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.Format = "N0";
+            dataGridViewCellStyle17.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewTextBoxColumn9.HeaderText = "IVA";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.Width = 49;
@@ -589,10 +601,10 @@
             // 
             this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn10.DataPropertyName = "PorcentajeImpoconsumo";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Format = "N0";
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.Format = "N0";
+            dataGridViewCellStyle18.NullValue = null;
+            this.dataGridViewTextBoxColumn10.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewTextBoxColumn10.HeaderText = "Impoc.";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             this.dataGridViewTextBoxColumn10.Width = 64;
@@ -601,10 +613,10 @@
             // 
             this.PorcentajeEstampillas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.PorcentajeEstampillas.DataPropertyName = "PorcentajeEstampillas";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "N1";
-            dataGridViewCellStyle12.NullValue = null;
-            this.PorcentajeEstampillas.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.Format = "N1";
+            dataGridViewCellStyle19.NullValue = null;
+            this.PorcentajeEstampillas.DefaultCellStyle = dataGridViewCellStyle19;
             this.PorcentajeEstampillas.HeaderText = "% Estampi";
             this.PorcentajeEstampillas.Name = "PorcentajeEstampillas";
             this.PorcentajeEstampillas.Width = 74;
@@ -613,10 +625,10 @@
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn11.DataPropertyName = "Estampillas";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Format = "N1";
-            dataGridViewCellStyle13.NullValue = null;
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.Format = "N1";
+            dataGridViewCellStyle20.NullValue = null;
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn11.HeaderText = "Vr. Estampillas";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.Width = 92;
@@ -624,10 +636,10 @@
             // Descuento
             // 
             this.Descuento.DataPropertyName = "Descuento";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.Descuento.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "C2";
+            dataGridViewCellStyle21.NullValue = null;
+            this.Descuento.DefaultCellStyle = dataGridViewCellStyle21;
             this.Descuento.HeaderText = "Descuento";
             this.Descuento.Name = "Descuento";
             this.Descuento.Width = 84;
@@ -770,15 +782,6 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
-            // notasLabel
-            // 
-            notasLabel.AutoSize = true;
-            notasLabel.Location = new System.Drawing.Point(83, 155);
-            notasLabel.Name = "notasLabel";
-            notasLabel.Size = new System.Drawing.Size(38, 13);
-            notasLabel.TabIndex = 20;
-            notasLabel.Text = "Notas:";
-            // 
             // notasTextBox
             // 
             this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionBindingSource, "Notas", true));
@@ -790,13 +793,34 @@
             this.notasTextBox.Size = new System.Drawing.Size(783, 51);
             this.notasTextBox.TabIndex = 21;
             // 
+            // vigenciaLabel
+            // 
+            vigenciaLabel.AutoSize = true;
+            vigenciaLabel.Location = new System.Drawing.Point(360, 51);
+            vigenciaLabel.Name = "vigenciaLabel";
+            vigenciaLabel.Size = new System.Drawing.Size(51, 13);
+            vigenciaLabel.TabIndex = 22;
+            vigenciaLabel.Text = "Vigencia:";
+            // 
+            // vigenciaTextBox
+            // 
+            this.vigenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionBindingSource, "Vigencia", true));
+            this.vigenciaTextBox.Enabled = false;
+            this.vigenciaTextBox.Location = new System.Drawing.Point(415, 48);
+            this.vigenciaTextBox.Name = "vigenciaTextBox";
+            this.vigenciaTextBox.Size = new System.Drawing.Size(41, 20);
+            this.vigenciaTextBox.TabIndex = 23;
+            this.vigenciaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vigenciaTextBox_KeyPress);
+            // 
             // frmEdicionCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1245, 641);
+            this.ClientSize = new System.Drawing.Size(1265, 661);
             this.ControlBox = false;
+            this.Controls.Add(vigenciaLabel);
+            this.Controls.Add(this.vigenciaTextBox);
             this.Controls.Add(notasLabel);
             this.Controls.Add(this.notasTextBox);
             this.Controls.Add(remplazaCotizacionLabel);
@@ -898,5 +922,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descuento;
         private System.Windows.Forms.TextBox notasTextBox;
+        private System.Windows.Forms.TextBox vigenciaTextBox;
     }
 }

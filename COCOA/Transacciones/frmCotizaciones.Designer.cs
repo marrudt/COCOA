@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizaciones));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label notasLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizaciones));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label vigenciaLabel;
             this.salirButton = new System.Windows.Forms.Button();
             this.borrarTodoButton = new System.Windows.Forms.Button();
             this.borrarLineaButton = new System.Windows.Forms.Button();
@@ -54,9 +55,10 @@
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.notasTextBox = new System.Windows.Forms.TextBox();
+            this.cotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label21 = new System.Windows.Forms.Label();
             this.remplazaCotiacionComboBox = new System.Windows.Forms.ComboBox();
-            this.cotizacionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contactoTextBox = new System.Windows.Forms.TextBox();
             this.sitioEntregaTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -110,8 +112,9 @@
             this.cotizacionDetalleTableAdapter = new COCOA.DSCOCOATableAdapters.CotizacionDetalleTableAdapter();
             this.tableAdapterManager = new COCOA.DSCOCOATableAdapters.TableAdapterManager();
             this.cotizacionTableAdapter = new COCOA.DSCOCOATableAdapters.CotizacionTableAdapter();
-            this.notasTextBox = new System.Windows.Forms.TextBox();
+            this.vigenciaTextBox = new System.Windows.Forms.TextBox();
             notasLabel = new System.Windows.Forms.Label();
+            vigenciaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCotizacionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
@@ -127,6 +130,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.segmentosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // notasLabel
+            // 
+            notasLabel.AutoSize = true;
+            notasLabel.Location = new System.Drawing.Point(586, 19);
+            notasLabel.Name = "notasLabel";
+            notasLabel.Size = new System.Drawing.Size(38, 13);
+            notasLabel.TabIndex = 15;
+            notasLabel.Text = "Notas:";
+            // 
             // salirButton
             // 
             this.salirButton.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -138,9 +150,9 @@
             this.salirButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.salirButton.Image = ((System.Drawing.Image)(resources.GetObject("salirButton.Image")));
             this.salirButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.salirButton.Location = new System.Drawing.Point(826, 269);
+            this.salirButton.Location = new System.Drawing.Point(826, 267);
             this.salirButton.Name = "salirButton";
-            this.salirButton.Size = new System.Drawing.Size(82, 59);
+            this.salirButton.Size = new System.Drawing.Size(82, 61);
             this.salirButton.TabIndex = 8;
             this.salirButton.Text = "Salir";
             this.salirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -158,9 +170,9 @@
             this.borrarTodoButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarTodoButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarTodoButton.Image")));
             this.borrarTodoButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.borrarTodoButton.Location = new System.Drawing.Point(738, 269);
+            this.borrarTodoButton.Location = new System.Drawing.Point(738, 267);
             this.borrarTodoButton.Name = "borrarTodoButton";
-            this.borrarTodoButton.Size = new System.Drawing.Size(82, 59);
+            this.borrarTodoButton.Size = new System.Drawing.Size(82, 61);
             this.borrarTodoButton.TabIndex = 7;
             this.borrarTodoButton.Text = "Borra Todo";
             this.borrarTodoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -179,9 +191,9 @@
             this.borrarLineaButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.borrarLineaButton.Image = ((System.Drawing.Image)(resources.GetObject("borrarLineaButton.Image")));
             this.borrarLineaButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.borrarLineaButton.Location = new System.Drawing.Point(641, 269);
+            this.borrarLineaButton.Location = new System.Drawing.Point(641, 267);
             this.borrarLineaButton.Name = "borrarLineaButton";
-            this.borrarLineaButton.Size = new System.Drawing.Size(91, 60);
+            this.borrarLineaButton.Size = new System.Drawing.Size(91, 62);
             this.borrarLineaButton.TabIndex = 6;
             this.borrarLineaButton.Text = "Borra Línea";
             this.borrarLineaButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -199,9 +211,9 @@
             this.cancelarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("cancelarButton.Image")));
             this.cancelarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.cancelarButton.Location = new System.Drawing.Point(826, 206);
+            this.cancelarButton.Location = new System.Drawing.Point(826, 201);
             this.cancelarButton.Name = "cancelarButton";
-            this.cancelarButton.Size = new System.Drawing.Size(82, 62);
+            this.cancelarButton.Size = new System.Drawing.Size(82, 63);
             this.cancelarButton.TabIndex = 5;
             this.cancelarButton.Text = "Cancelar";
             this.cancelarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -219,9 +231,9 @@
             this.guardarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guardarButton.Image = ((System.Drawing.Image)(resources.GetObject("guardarButton.Image")));
             this.guardarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.guardarButton.Location = new System.Drawing.Point(738, 206);
+            this.guardarButton.Location = new System.Drawing.Point(738, 201);
             this.guardarButton.Name = "guardarButton";
-            this.guardarButton.Size = new System.Drawing.Size(82, 62);
+            this.guardarButton.Size = new System.Drawing.Size(82, 63);
             this.guardarButton.TabIndex = 4;
             this.guardarButton.Text = "Guardar";
             this.guardarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -338,34 +350,34 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleCotizacionDataGridView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.detalleCotizacionDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.detalleCotizacionDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detalleCotizacionDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
             this.detalleCotizacionDataGridView.Location = new System.Drawing.Point(0, 335);
             this.detalleCotizacionDataGridView.Name = "detalleCotizacionDataGridView";
             this.detalleCotizacionDataGridView.ReadOnly = true;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleCotizacionDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.detalleCotizacionDataGridView.Size = new System.Drawing.Size(1166, 341);
             this.detalleCotizacionDataGridView.TabIndex = 17;
             // 
@@ -380,9 +392,9 @@
             this.agregarButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.agregarButton.Image = ((System.Drawing.Image)(resources.GetObject("agregarButton.Image")));
             this.agregarButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.agregarButton.Location = new System.Drawing.Point(641, 206);
+            this.agregarButton.Location = new System.Drawing.Point(641, 201);
             this.agregarButton.Name = "agregarButton";
-            this.agregarButton.Size = new System.Drawing.Size(91, 62);
+            this.agregarButton.Size = new System.Drawing.Size(91, 63);
             this.agregarButton.TabIndex = 3;
             this.agregarButton.Text = "Agregar";
             this.agregarButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -411,6 +423,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.groupBox1.Controls.Add(vigenciaLabel);
+            this.groupBox1.Controls.Add(this.vigenciaTextBox);
             this.groupBox1.Controls.Add(notasLabel);
             this.groupBox1.Controls.Add(this.notasTextBox);
             this.groupBox1.Controls.Add(this.label21);
@@ -431,10 +445,25 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(896, 188);
+            this.groupBox1.Size = new System.Drawing.Size(896, 185);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
+            // 
+            // notasTextBox
+            // 
+            this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionBindingSource, "Notas", true));
+            this.notasTextBox.Location = new System.Drawing.Point(629, 16);
+            this.notasTextBox.Multiline = true;
+            this.notasTextBox.Name = "notasTextBox";
+            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.notasTextBox.Size = new System.Drawing.Size(261, 166);
+            this.notasTextBox.TabIndex = 16;
+            // 
+            // cotizacionBindingSource
+            // 
+            this.cotizacionBindingSource.DataMember = "Cotizacion";
+            this.cotizacionBindingSource.DataSource = this.dSCOCOA;
             // 
             // label21
             // 
@@ -456,11 +485,6 @@
             this.remplazaCotiacionComboBox.Size = new System.Drawing.Size(61, 21);
             this.remplazaCotiacionComboBox.TabIndex = 13;
             this.remplazaCotiacionComboBox.ValueMember = "IdCotizacion";
-            // 
-            // cotizacionBindingSource
-            // 
-            this.cotizacionBindingSource.DataMember = "Cotizacion";
-            this.cotizacionBindingSource.DataSource = this.dSCOCOA;
             // 
             // contactoTextBox
             // 
@@ -571,7 +595,7 @@
             this.fechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.fechaDateTimePicker.Location = new System.Drawing.Point(97, 17);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(125, 20);
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(104, 20);
             this.fechaDateTimePicker.TabIndex = 1;
             // 
             // label2
@@ -971,24 +995,23 @@
             // 
             this.cotizacionTableAdapter.ClearBeforeFill = true;
             // 
-            // notasLabel
+            // vigenciaLabel
             // 
-            notasLabel.AutoSize = true;
-            notasLabel.Location = new System.Drawing.Point(586, 19);
-            notasLabel.Name = "notasLabel";
-            notasLabel.Size = new System.Drawing.Size(38, 13);
-            notasLabel.TabIndex = 15;
-            notasLabel.Text = "Notas:";
+            vigenciaLabel.AutoSize = true;
+            vigenciaLabel.Location = new System.Drawing.Point(229, 20);
+            vigenciaLabel.Name = "vigenciaLabel";
+            vigenciaLabel.Size = new System.Drawing.Size(51, 13);
+            vigenciaLabel.TabIndex = 17;
+            vigenciaLabel.Text = "Vigencia:";
             // 
-            // notasTextBox
+            // vigenciaTextBox
             // 
-            this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionBindingSource, "Notas", true));
-            this.notasTextBox.Location = new System.Drawing.Point(629, 16);
-            this.notasTextBox.Multiline = true;
-            this.notasTextBox.Name = "notasTextBox";
-            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.notasTextBox.Size = new System.Drawing.Size(261, 166);
-            this.notasTextBox.TabIndex = 16;
+            this.vigenciaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cotizacionBindingSource, "Vigencia", true));
+            this.vigenciaTextBox.Location = new System.Drawing.Point(283, 17);
+            this.vigenciaTextBox.Name = "vigenciaTextBox";
+            this.vigenciaTextBox.Size = new System.Drawing.Size(34, 20);
+            this.vigenciaTextBox.TabIndex = 18;
+            this.vigenciaTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.vigenciaTextBox_KeyPress);
             // 
             // frmCotizaciones
             // 
@@ -1121,5 +1144,6 @@
         private DSCOCOATableAdapters.CotizacionTableAdapter cotizacionTableAdapter;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox notasTextBox;
+        private System.Windows.Forms.TextBox vigenciaTextBox;
     }
 }

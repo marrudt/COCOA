@@ -5206,6 +5206,8 @@ namespace COCOA {
             
             private global::System.Data.DataColumn columnBaseImpuestos;
             
+            private global::System.Data.DataColumn columnVigencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public ReporteCotizacionDataTable() {
@@ -5585,6 +5587,14 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VigenciaColumn {
+                get {
+                    return this.columnVigencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5654,7 +5664,8 @@ namespace COCOA {
                         decimal ValorVhEA, 
                         string Notas, 
                         string NotasProducto, 
-                        double BaseImpuestos) {
+                        double BaseImpuestos, 
+                        string Vigencia) {
                 ReporteCotizacionRow rowReporteCotizacionRow = ((ReporteCotizacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -5699,7 +5710,8 @@ namespace COCOA {
                         null,
                         null,
                         NotasProducto,
-                        BaseImpuestos};
+                        BaseImpuestos,
+                        Vigencia};
                 rowReporteCotizacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowReporteCotizacionRow);
                 return rowReporteCotizacionRow;
@@ -5778,6 +5790,7 @@ namespace COCOA {
                 this.columnIdNumeroPasajeros = base.Columns["IdNumeroPasajeros"];
                 this.columnNotasProducto = base.Columns["NotasProducto"];
                 this.columnBaseImpuestos = base.Columns["BaseImpuestos"];
+                this.columnVigencia = base.Columns["Vigencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5869,6 +5882,8 @@ namespace COCOA {
                 base.Columns.Add(this.columnNotasProducto);
                 this.columnBaseImpuestos = new global::System.Data.DataColumn("BaseImpuestos", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnBaseImpuestos);
+                this.columnVigencia = new global::System.Data.DataColumn("Vigencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVigencia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdCotizacion,
                                 this.columnPrecio,
@@ -5956,6 +5971,7 @@ namespace COCOA {
                 this.columnNotasProducto.ReadOnly = true;
                 this.columnNotasProducto.MaxLength = 2147483647;
                 this.columnBaseImpuestos.ReadOnly = true;
+                this.columnVigencia.MaxLength = 5;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14654,6 +14670,8 @@ namespace COCOA {
             
             private global::System.Data.DataColumn columnFecha;
             
+            private global::System.Data.DataColumn columnVigencia;
+            
             private global::System.Data.DataColumn columnRemplazaCotizacion;
             
             private global::System.Data.DataColumn columnIdCliente;
@@ -14714,6 +14732,14 @@ namespace COCOA {
             public global::System.Data.DataColumn FechaColumn {
                 get {
                     return this.columnFecha;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn VigenciaColumn {
+                get {
+                    return this.columnVigencia;
                 }
             }
             
@@ -14810,11 +14836,12 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public CotizacionRow AddCotizacionRow(System.DateTime Fecha, string RemplazaCotizacion, ClientesRow parentClientesRowByFK_Cotizacion_IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
+            public CotizacionRow AddCotizacionRow(System.DateTime Fecha, string Vigencia, string RemplazaCotizacion, ClientesRow parentClientesRowByFK_Cotizacion_IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
                 CotizacionRow rowCotizacionRow = ((CotizacionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Fecha,
+                        Vigencia,
                         RemplazaCotizacion,
                         null,
                         Contacto,
@@ -14823,7 +14850,7 @@ namespace COCOA {
                         SitioEntrega,
                         Notas};
                 if ((parentClientesRowByFK_Cotizacion_IdCliente != null)) {
-                    columnValuesArray[3] = parentClientesRowByFK_Cotizacion_IdCliente[0];
+                    columnValuesArray[4] = parentClientesRowByFK_Cotizacion_IdCliente[0];
                 }
                 rowCotizacionRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCotizacionRow);
@@ -14856,6 +14883,7 @@ namespace COCOA {
             internal void InitVars() {
                 this.columnIdCotizacion = base.Columns["IdCotizacion"];
                 this.columnFecha = base.Columns["Fecha"];
+                this.columnVigencia = base.Columns["Vigencia"];
                 this.columnRemplazaCotizacion = base.Columns["RemplazaCotizacion"];
                 this.columnIdCliente = base.Columns["IdCliente"];
                 this.columnContacto = base.Columns["Contacto"];
@@ -14872,6 +14900,8 @@ namespace COCOA {
                 base.Columns.Add(this.columnIdCotizacion);
                 this.columnFecha = new global::System.Data.DataColumn("Fecha", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFecha);
+                this.columnVigencia = new global::System.Data.DataColumn("Vigencia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVigencia);
                 this.columnRemplazaCotizacion = new global::System.Data.DataColumn("RemplazaCotizacion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnRemplazaCotizacion);
                 this.columnIdCliente = new global::System.Data.DataColumn("IdCliente", typeof(int), null, global::System.Data.MappingType.Element);
@@ -14894,6 +14924,7 @@ namespace COCOA {
                 this.columnIdCotizacion.AllowDBNull = false;
                 this.columnIdCotizacion.ReadOnly = true;
                 this.columnIdCotizacion.Unique = true;
+                this.columnVigencia.MaxLength = 5;
                 this.columnRemplazaCotizacion.MaxLength = 5;
                 this.columnContacto.MaxLength = 2147483647;
                 this.columnFormaPago.MaxLength = 2147483647;
@@ -16593,6 +16624,22 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Vigencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableReporteCotizacion.VigenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vigencia\' in table \'ReporteCotizacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableReporteCotizacion.VigenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsContactoNull() {
                 return this.IsNull(this.tableReporteCotizacion.ContactoColumn);
             }
@@ -16889,6 +16936,18 @@ namespace COCOA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetBaseImpuestosNull() {
                 this[this.tableReporteCotizacion.BaseImpuestosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVigenciaNull() {
+                return this.IsNull(this.tableReporteCotizacion.VigenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVigenciaNull() {
+                this[this.tableReporteCotizacion.VigenciaColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -22800,6 +22859,22 @@ namespace COCOA {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Vigencia {
+                get {
+                    try {
+                        return ((string)(this[this.tableCotizacion.VigenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vigencia\' in table \'Cotizacion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCotizacion.VigenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string RemplazaCotizacion {
                 get {
                     try {
@@ -22931,6 +23006,18 @@ namespace COCOA {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetFechaNull() {
                 this[this.tableCotizacion.FechaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsVigenciaNull() {
+                return this.IsNull(this.tableCotizacion.VigenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetVigenciaNull() {
+                this[this.tableCotizacion.VigenciaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28261,6 +28348,7 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
             tableMapping.ColumnMappings.Add("IdNumeroPasajeros", "IdNumeroPasajeros");
             tableMapping.ColumnMappings.Add("NotasProducto", "NotasProducto");
             tableMapping.ColumnMappings.Add("BaseImpuestos", "BaseImpuestos");
+            tableMapping.ColumnMappings.Add("Vigencia", "Vigencia");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -28268,7 +28356,7 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::COCOA.Properties.Settings.Default.COCOAConnectionString;
+            this._connection.ConnectionString = global::COCOA.Properties.Settings.Default.COCOAConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28288,28 +28376,29 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
                 "cto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSeg" +
                 "mento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdInte" +
                 "rvaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPes" +
-                "oBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.Si" +
-                "tioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.Porce" +
-                "ntajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) as Subtotal" +
-                ",\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as NotasProducto,c" +
-                ".Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCotizacion = c" +
-                ".IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\ninner join " +
-                "Productos p on p.IdProducto = cd.IdProducto\ninner join TipoProducto tp on tp.IdT" +
-                "ipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdSegmento = p.IdSegm" +
-                "ento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje \ninner join" +
-                " IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninner join Peso" +
-                "BrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroPasajeros np" +
-                " on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\ngroup by Fecha,IdCotizac" +
-                "ion,IdCliente,NombreCliente,Contacto,IdCotizacionDetalle,NumeroItem,DetalleNumer" +
-                "oItem,IdProducto,IdTipoProducto,CodigoTipoProducto,DescripcionProducto,DetallePr" +
-                "oducto,Precio,Cantidad,\nEstampillas,Descuento,IdSegmento,DescripcionSegmento,Des" +
-                "cripcionCilindraje,DescripcionIntervaloPrecio,DescripcionPesoBrutoVh,NumeroPasaj" +
-                "eros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstampillas,PorcentajeIVA,\nPorcent" +
-                "ajeImpoconsumo,Subtotal,PorcentajeEstampillas,NotasProducto,IdCilindraje,IdInter" +
-                "valoPrecio,IdPesoBrutoVh,IdNumeroPasajeros,Notas,BaseImpuestos,IVA,Impoconsumo";
+                "oBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.Vigencia,c.FormaPago,c.PlazoE" +
+                "ntrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampill" +
+                "as,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) " +
+                "as Subtotal,\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as Nota" +
+                "sProducto,c.Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCot" +
+                "izacion = c.IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\n" +
+                "inner join Productos p on p.IdProducto = cd.IdProducto\ninner join TipoProducto t" +
+                "p on tp.IdTipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdSegmento" +
+                " = p.IdSegmento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje " +
+                "\ninner join IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninne" +
+                "r join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroP" +
+                "asajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\ngroup by Fech" +
+                "a,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacionDetalle,NumeroItem,D" +
+                "etalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProducto,DescripcionProduct" +
+                "o,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuento,IdSegmento,DescripcionS" +
+                "egmento,DescripcionCilindraje,DescripcionIntervaloPrecio,DescripcionPesoBrutoVh," +
+                "NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEstampillas,PorcentajeI" +
+                "VA,\nPorcentajeImpoconsumo,Subtotal,PorcentajeEstampillas,NotasProducto,IdCilindr" +
+                "aje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros,Notas,BaseImpuestos,IVA,Im" +
+                "poconsumo,Vigencia";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(global::COCOA.Properties.Settings.Default.COCOAConnectionString);
             this._commandCollection[1].CommandText = "select *,\ncase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,case " +
                 "when IdTipoProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoPro" +
                 "ducto = 1 then Precio-Descuento end as PrecioVh \nfrom\n(\nselect *,BaseImpuestos*P" +
@@ -28321,61 +28410,61 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
                 "cto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSeg" +
                 "mento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdInte" +
                 "rvaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPes" +
-                "oBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.Si" +
-                "tioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.Porce" +
-                "ntajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) as Subtotal" +
-                ",\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as NotasProducto,c" +
-                ".Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCotizacion = c" +
-                ".IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\ninner join " +
-                "Productos p on p.IdProducto = cd.IdProducto\ninner join TipoProducto tp on tp.IdT" +
-                "ipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdSegmento = p.IdSegm" +
-                "ento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje \ninner join" +
-                " IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninner join Peso" +
-                "BrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroPasajeros np" +
-                " on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\nwhere IdCotizacion = @Id" +
-                "Cliente\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotizacio" +
-                "nDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoProduc" +
-                "to,DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuento,Id" +
-                "Segmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPrecio,De" +
-                "scripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,ValorEs" +
-                "tampillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,PorcentajeEstampillas,No" +
-                "tasProducto,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros,Notas" +
-                ",BaseImpuestos,IVA,Impoconsumo";
+                "oBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.Vigencia,c.FormaPago,c.PlazoE" +
+                "ntrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampill" +
+                "as,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) " +
+                "as Subtotal,\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as Nota" +
+                "sProducto,c.Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCot" +
+                "izacion = c.IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\n" +
+                "inner join Productos p on p.IdProducto = cd.IdProducto\ninner join TipoProducto t" +
+                "p on tp.IdTipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdSegmento" +
+                " = p.IdSegmento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje " +
+                "\ninner join IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninne" +
+                "r join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroP" +
+                "asajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\nwhere IdCotiz" +
+                "acion = @IdCliente\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto," +
+                "IdCotizacionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,Codig" +
+                "oTipoProducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampillas,D" +
+                "escuento,IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionInterva" +
+                "loPrecio,DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntr" +
+                "ega,ValorEstampillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,PorcentajeEst" +
+                "ampillas,NotasProducto,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasa" +
+                "jeros,Notas,BaseImpuestos,IVA,Impoconsumo,Vigencia";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].Connection = new global::System.Data.SqlClient.SqlConnection(global::COCOA.Properties.Settings.Default.COCOAConnectionString);
             this._commandCollection[2].CommandText = "select *,\ncase when IdTipoProducto <> 1 then sum(Subtotal) end as TotalVhEA,case " +
                 "when IdTipoProducto <> 1 then sum(Precio) end as ValorVhEA, \ncase when IdTipoPro" +
                 "ducto = 1 then Precio-Descuento end as PrecioVh \nfrom\n(\nselect *,BaseImpuestos*P" +
                 "orcentajeIVA/100 as IVA,BaseImpuestos*PorcentajeImpoconsumo/100 as Impoconsumo\nf" +
-                "rom \n(\nselect *,(Subtotal/cantidad)/ (1 + (PorcentajeIVA / 100 + PorcentajeImpoc" +
-                "onsumo / 100)) as BaseImpuestos\nfrom\n(\nselect c.Fecha,c.IdCotizacion,cli.IdClien" +
-                "te,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleN" +
-                "umeroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProd" +
-                "ucto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSe" +
-                "gmento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdInt" +
-                "ervaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPe" +
-                "soBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.FormaPago,c.PlazoEntrega,c.S" +
-                "itioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampillas,cd.Porc" +
-                "entajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) as Subtota" +
-                "l,\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as NotasProducto," +
-                "c.Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCotizacion = " +
-                "c.IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\ninner join" +
-                " Productos p on p.IdProducto = cd.IdProducto\ninner join TipoProducto tp on tp.Id" +
-                "TipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdSegmento = p.IdSeg" +
-                "mento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje \ninner joi" +
-                "n IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninner join Pes" +
-                "oBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroPasajeros n" +
-                "p on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\nwhere IdCotizacion = @I" +
-                "dCotizacion\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contacto,IdCotiz" +
-                "acionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,CodigoTipoPr" +
-                "oducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampillas,Descuent" +
-                "o,IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionIntervaloPreci" +
-                "o,DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioEntrega,Val" +
-                "orEstampillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,PorcentajeEstampilla" +
-                "s,NotasProducto,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroPasajeros,N" +
-                "otas,BaseImpuestos,IVA,Impoconsumo";
+                "rom \n(\nselect *,(Subtotal/cantidad)/(1 + (PorcentajeIVA / 100 + PorcentajeImpoco" +
+                "nsumo / 100)) as BaseImpuestos\nfrom\n(\nselect c.Fecha,c.IdCotizacion,cli.IdClient" +
+                "e,cli.NombreCliente,c.Contacto,cd.IdCotizacionDetalle,cd.NumeroItem,cd.DetalleNu" +
+                "meroItem,p.IdProducto,tp.IdTipoProducto,tp.CodigoTipoProducto,p.DescripcionProdu" +
+                "cto,\np.DetalleProducto,cd.Precio,cd.Cantidad,cd.Estampillas,cd.Descuento,P.IdSeg" +
+                "mento,s.DescripcionSegmento,cil.IdCilindraje, cil.DescripcionCilindraje,i.IdInte" +
+                "rvaloPrecio, i.DescripcionIntervaloPrecio, pbv.IdPesoBrutoVh, pbv.DescripcionPes" +
+                "oBrutoVh,np.IdNumeroPasajeros,np.NumeroPasajeros,c.Vigencia,c.FormaPago,c.PlazoE" +
+                "ntrega,c.SitioEntrega, cd.Estampillas as ValorEstampillas,cd.PorcentajeEstampill" +
+                "as,cd.PorcentajeIVA,cd.PorcentajeImpoconsumo,((cd.Precio-Descuento) * Cantidad) " +
+                "as Subtotal,\ncase when CodigoTipoProducto = \'V\' then p.Notas else \'\' end as Nota" +
+                "sProducto,c.Notas\nfrom \nCotizacion c\ninner join CotizacionDetalle cd on cd.IdCot" +
+                "izacion = c.IdCotizacion\ninner join Clientes cli on cli.IdCliente = c.IdCliente\n" +
+                "inner join Productos p on p.IdProducto = cd.IdProducto\ninner join TipoProducto t" +
+                "p on tp.IdTipoProducto = p.IdTipoProducto\ninner join Segmentos s on s.IdSegmento" +
+                " = p.IdSegmento\ninner join Cilindrajes cil on cil.IdCilindraje = p.IdCilindraje " +
+                "\ninner join IntervaloPrecios i on i.IdIntervaloPrecio = p.IdIntervaloPrecio\ninne" +
+                "r join PesoBrutoVh pbv on pbv.IdPesoBrutoVh = p.IdPesoBrutoVh\ninner join NumeroP" +
+                "asajeros np on np.IdNumeroPasajeros = p.IdNumeroPasajeros\n)a\n)b\n)c\nwhere IdCotiz" +
+                "acion = @IdCotizacion\ngroup by Fecha,IdCotizacion,IdCliente,NombreCliente,Contac" +
+                "to,IdCotizacionDetalle,NumeroItem,DetalleNumeroItem,IdProducto,IdTipoProducto,Co" +
+                "digoTipoProducto,DescripcionProducto,DetalleProducto,Precio,Cantidad,\nEstampilla" +
+                "s,Descuento,IdSegmento,DescripcionSegmento,DescripcionCilindraje,DescripcionInte" +
+                "rvaloPrecio,DescripcionPesoBrutoVh,NumeroPasajeros,FormaPago,PlazoEntrega,SitioE" +
+                "ntrega,ValorEstampillas,PorcentajeIVA,\nPorcentajeImpoconsumo,Subtotal,Porcentaje" +
+                "Estampillas,NotasProducto,IdCilindraje,IdIntervaloPrecio,IdPesoBrutoVh,IdNumeroP" +
+                "asajeros,Notas,BaseImpuestos,IVA,Impoconsumo,Vigencia";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCotizacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -28604,7 +28693,7 @@ WHERE tp.DescripcionTipoProducto = @DescripcionTipoProducto";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::COCOA.Properties.Settings.Default.COCOAConnectionString;
+            this._connection.ConnectionString = global::COCOA.Properties.Settings.Default.COCOAConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28621,10 +28710,11 @@ cotizacion c
 left join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
 left join Clientes cli on cli.IdCliente = c.IdCliente
 left join Productos p on p.IdProducto = cd.IdProducto
-)a";
+)a
+where IdCotizacionDetalle is not null";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(global::COCOA.Properties.Settings.Default.COCOAConnectionString);
             this._commandCollection[1].CommandText = @"select *,precio*Cantidad+ValorEstapillas as TotalCotizacion from 
 (
 select Fecha,c.remplazacotizacion,c.IdCotizacion as Numero,cd.NumeroItem,c.IdCliente,cli.Nit as NitCliente,cli.NombreCliente,Contacto,FormaPago,PlazoEntrega,SitioEntrega,IdCotizacionDetalle, cd.IdProducto,p.CodigoProducto, cd.DescripcionProducto, cd.Precio,Cantidad,Estampillas as ValorEstapillas
@@ -28633,7 +28723,7 @@ cotizacion c
 left join CotizacionDetalle cd on cd.IdCotizacion = c.IdCotizacion
 left join Clientes cli on cli.IdCliente = c.IdCliente
 left join Productos p on p.IdProducto = cd.IdProducto
-WHERE c.IdCliente = @IdCliente
+WHERE c.IdCliente = @IdCliente and cd.IdCotizacion is not null
 )a
 ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
@@ -38337,6 +38427,7 @@ SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGaran
             tableMapping.DataSetTable = "Cotizacion";
             tableMapping.ColumnMappings.Add("IdCotizacion", "IdCotizacion");
             tableMapping.ColumnMappings.Add("Fecha", "Fecha");
+            tableMapping.ColumnMappings.Add("Vigencia", "Vigencia");
             tableMapping.ColumnMappings.Add("RemplazaCotizacion", "RemplazaCotizacion");
             tableMapping.ColumnMappings.Add("IdCliente", "IdCliente");
             tableMapping.ColumnMappings.Add("Contacto", "Contacto");
@@ -38347,21 +38438,24 @@ SELECT IdOrdenCompra, Fecha, IdProveedor, PlazoEntrega, FormaPago, TerminosGaran
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Cotizacion] WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Cotizacion] WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Vigencia = 1 AND [Vigencia] IS NULL) OR ([Vigencia] = @Original_Vigencia)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vigencia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RemplazaCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Cotizacion] ([Fecha], [RemplazaCotizacion], [IdCliente], [Contacto], [FormaPago], [PlazoEntrega], [SitioEntrega], [Notas]) VALUES (@Fecha, @RemplazaCotizacion, @IdCliente, @Contacto, @FormaPago, @PlazoEntrega, @SitioEntrega, @Notas);
-SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Cotizacion] ([Fecha], [Vigencia], [RemplazaCotizacion], [IdCliente], [Contacto], [FormaPago], [PlazoEntrega], [SitioEntrega], [Notas]) VALUES (@Fecha, @Vigencia, @RemplazaCotizacion, @IdCliente, @Contacto, @FormaPago, @PlazoEntrega, @SitioEntrega, @Notas);
+SELECT IdCotizacion, Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -38371,10 +38465,11 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Notas", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Notas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cotizacion] SET [Fecha] = @Fecha, [RemplazaCotizacion] = @RemplazaCotizacion, [IdCliente] = @IdCliente, [Contacto] = @Contacto, [FormaPago] = @FormaPago, [PlazoEntrega] = @PlazoEntrega, [SitioEntrega] = @SitioEntrega, [Notas] = @Notas WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)));
-SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = @IdCotizacion)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Cotizacion] SET [Fecha] = @Fecha, [Vigencia] = @Vigencia, [RemplazaCotizacion] = @RemplazaCotizacion, [IdCliente] = @IdCliente, [Contacto] = @Contacto, [FormaPago] = @FormaPago, [PlazoEntrega] = @PlazoEntrega, [SitioEntrega] = @SitioEntrega, [Notas] = @Notas WHERE (([IdCotizacion] = @Original_IdCotizacion) AND ((@IsNull_Fecha = 1 AND [Fecha] IS NULL) OR ([Fecha] = @Original_Fecha)) AND ((@IsNull_Vigencia = 1 AND [Vigencia] IS NULL) OR ([Vigencia] = @Original_Vigencia)) AND ((@IsNull_RemplazaCotizacion = 1 AND [RemplazaCotizacion] IS NULL) OR ([RemplazaCotizacion] = @Original_RemplazaCotizacion)) AND ((@IsNull_IdCliente = 1 AND [IdCliente] IS NULL) OR ([IdCliente] = @Original_IdCliente)));
+SELECT IdCotizacion, Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas FROM Cotizacion WHERE (IdCotizacion = @IdCotizacion)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contacto", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Contacto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -38385,6 +38480,8 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_IdCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Fecha", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Fecha", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Fecha", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vigencia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vigencia", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vigencia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_RemplazaCotizacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RemplazaCotizacion", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RemplazaCotizacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_IdCliente", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "IdCliente", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -38405,8 +38502,8 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, P" +
-                "lazoEntrega, SitioEntrega, Notas FROM dbo.Cotizacion";
+            this._commandCollection[0].CommandText = "SELECT IdCotizacion, Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, Fo" +
+                "rmaPago, PlazoEntrega, SitioEntrega, Notas FROM dbo.Cotizacion";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -38467,7 +38564,7 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
+        public virtual int Delete(int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_Vigencia, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_IdCotizacion));
             if ((Original_Fecha.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -38477,21 +38574,29 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_RemplazaCotizacion == null)) {
+            if ((Original_Vigencia == null)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_RemplazaCotizacion));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_Vigencia));
             }
-            if ((Original_IdCliente.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_IdCliente.Value));
-            }
-            else {
+            if ((Original_RemplazaCotizacion == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_RemplazaCotizacion));
+            }
+            if ((Original_IdCliente.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_IdCliente.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -38513,54 +38618,60 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<global::System.DateTime> Fecha, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
+        public virtual int Insert(global::System.Nullable<global::System.DateTime> Fecha, string Vigencia, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas) {
             if ((Fecha.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Fecha.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((RemplazaCotizacion == null)) {
+            if ((Vigencia == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(RemplazaCotizacion));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Vigencia));
             }
-            if ((IdCliente.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(IdCliente.Value));
-            }
-            else {
+            if ((RemplazaCotizacion == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Contacto == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(RemplazaCotizacion));
+            }
+            if ((IdCliente.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(IdCliente.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Contacto));
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((FormaPago == null)) {
+            if ((Contacto == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(FormaPago));
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Contacto));
             }
-            if ((PlazoEntrega == null)) {
+            if ((FormaPago == null)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(PlazoEntrega));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(FormaPago));
             }
-            if ((SitioEntrega == null)) {
+            if ((PlazoEntrega == null)) {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(SitioEntrega));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(PlazoEntrega));
             }
-            if ((Notas == null)) {
+            if ((SitioEntrega == null)) {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Notas));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(SitioEntrega));
+            }
+            if ((Notas == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(Notas));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -38582,81 +38693,95 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente, int IdCotizacion) {
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string Vigencia, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_Vigencia, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente, int IdCotizacion) {
             if ((Fecha.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Fecha.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((RemplazaCotizacion == null)) {
+            if ((Vigencia == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(RemplazaCotizacion));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Vigencia));
             }
-            if ((IdCliente.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(IdCliente.Value));
-            }
-            else {
+            if ((RemplazaCotizacion == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Contacto == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(RemplazaCotizacion));
+            }
+            if ((IdCliente.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(IdCliente.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Contacto));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((FormaPago == null)) {
+            if ((Contacto == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(FormaPago));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Contacto));
             }
-            if ((PlazoEntrega == null)) {
+            if ((FormaPago == null)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(PlazoEntrega));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(FormaPago));
             }
-            if ((SitioEntrega == null)) {
+            if ((PlazoEntrega == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(SitioEntrega));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(PlazoEntrega));
             }
-            if ((Notas == null)) {
+            if ((SitioEntrega == null)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Notas));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(SitioEntrega));
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_IdCotizacion));
-            if ((Original_Fecha.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_Fecha.Value));
+            if ((Notas == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Notas));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_IdCotizacion));
+            if ((Original_Fecha.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Fecha.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Vigencia == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Vigencia));
             }
             if ((Original_RemplazaCotizacion == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_RemplazaCotizacion));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_RemplazaCotizacion));
             }
             if ((Original_IdCliente.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_IdCliente.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_IdCliente.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(IdCotizacion));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(IdCotizacion));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -38677,8 +38802,8 @@ SELECT IdCotizacion, Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
-            return this.Update(Fecha, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas, Original_IdCotizacion, Original_Fecha, Original_RemplazaCotizacion, Original_IdCliente, Original_IdCotizacion);
+        public virtual int Update(global::System.Nullable<global::System.DateTime> Fecha, string Vigencia, string RemplazaCotizacion, global::System.Nullable<int> IdCliente, string Contacto, string FormaPago, string PlazoEntrega, string SitioEntrega, string Notas, int Original_IdCotizacion, global::System.Nullable<global::System.DateTime> Original_Fecha, string Original_Vigencia, string Original_RemplazaCotizacion, global::System.Nullable<int> Original_IdCliente) {
+            return this.Update(Fecha, Vigencia, RemplazaCotizacion, IdCliente, Contacto, FormaPago, PlazoEntrega, SitioEntrega, Notas, Original_IdCotizacion, Original_Fecha, Original_Vigencia, Original_RemplazaCotizacion, Original_IdCliente, Original_IdCotizacion);
         }
     }
     
