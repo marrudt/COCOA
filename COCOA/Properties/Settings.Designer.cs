@@ -26,20 +26,22 @@ namespace COCOA.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=COCOA;Integrated Security=True")]
-        public string COCOAConnectionString {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARRUDT;Initial Catalog=COCOA;Persist Security Info=True;User ID=sa;P" +
+            "assword=Md364800")]
+        public string COCOAConnectionString1 {
             get {
-                return ((string)(this["COCOAConnectionString"]));
+                return ((string)(this["COCOAConnectionString1"]));
             }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARRUDT\\MARRUDT;Initial Catalog=COCOA;Integrated Security=True")]
-        public string COCOAConnectionString1 {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARRUDT;Initial Catalog=COCOA;Persist Security Info=True;User ID=sa;P" +
+            "assword=Md364800")]
+        public string COCOAConnectionString {
             get {
-                return ((string)(this["COCOAConnectionString1"]));
+                return ((string)(this["COCOAConnectionString"]));
             }
         }
     }
