@@ -29,118 +29,43 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListadoCotizaciones));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.verReporteButton = new System.Windows.Forms.Button();
-            this.todosCheckBox = new System.Windows.Forms.CheckBox();
-            this.clienteComboBox = new System.Windows.Forms.ComboBox();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dSCOCOA = new COCOA.DSCOCOA();
-            this.label1 = new System.Windows.Forms.Label();
-            this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
-            this.busquedaClienteButton = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).BeginInit();
+            this.sp_listado_resumen_cotizacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DSListados = new COCOA.Listados.DSListados();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.sp_listado_resumen_cotizacionesTableAdapter = new COCOA.Listados.DSListadosTableAdapters.sp_listado_resumen_cotizacionesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_listado_resumen_cotizacionesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSListados)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // sp_listado_resumen_cotizacionesBindingSource
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.crystalReportViewer1);
-            this.panel1.Location = new System.Drawing.Point(0, 41);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1357, 557);
-            this.panel1.TabIndex = 0;
+            this.sp_listado_resumen_cotizacionesBindingSource.DataMember = "sp_listado_resumen_cotizaciones";
+            this.sp_listado_resumen_cotizacionesBindingSource.DataSource = this.DSListados;
             // 
-            // crystalReportViewer1
+            // DSListados
             // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(1353, 550);
-            this.crystalReportViewer1.TabIndex = 0;
+            this.DSListados.DataSetName = "DSListados";
+            this.DSListados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // verReporteButton
+            // reportViewer1
             // 
-            this.verReporteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.verReporteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.verReporteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.verReporteButton.Location = new System.Drawing.Point(529, 5);
-            this.verReporteButton.Name = "verReporteButton";
-            this.verReporteButton.Size = new System.Drawing.Size(93, 30);
-            this.verReporteButton.TabIndex = 2;
-            this.verReporteButton.Text = "Ver Listado";
-            this.verReporteButton.UseVisualStyleBackColor = false;
-            this.verReporteButton.Click += new System.EventHandler(this.verReporteButton_Click);
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DSListados";
+            reportDataSource1.Value = this.sp_listado_resumen_cotizacionesBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "COCOA.Listados.ListadoCotizacionesResumen.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1357, 598);
+            this.reportViewer1.TabIndex = 0;
+            this.reportViewer1.Load += new System.EventHandler(this.reportViewer1_Load);
             // 
-            // todosCheckBox
+            // sp_listado_resumen_cotizacionesTableAdapter
             // 
-            this.todosCheckBox.AutoSize = true;
-            this.todosCheckBox.Checked = true;
-            this.todosCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.todosCheckBox.Location = new System.Drawing.Point(13, 13);
-            this.todosCheckBox.Name = "todosCheckBox";
-            this.todosCheckBox.Size = new System.Drawing.Size(56, 17);
-            this.todosCheckBox.TabIndex = 3;
-            this.todosCheckBox.Text = "Todos";
-            this.todosCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // clienteComboBox
-            // 
-            this.clienteComboBox.DataSource = this.clientesBindingSource;
-            this.clienteComboBox.DisplayMember = "NombreCliente";
-            this.clienteComboBox.FormattingEnabled = true;
-            this.clienteComboBox.Location = new System.Drawing.Point(139, 11);
-            this.clienteComboBox.Name = "clienteComboBox";
-            this.clienteComboBox.Size = new System.Drawing.Size(308, 21);
-            this.clienteComboBox.TabIndex = 4;
-            this.clienteComboBox.ValueMember = "IdCliente";
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.dSCOCOA;
-            // 
-            // dSCOCOA
-            // 
-            this.dSCOCOA.DataSetName = "DSCOCOA";
-            this.dSCOCOA.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(91, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Cliente:";
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
-            // 
-            // busquedaClienteButton
-            // 
-            this.busquedaClienteButton.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.busquedaClienteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.busquedaClienteButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.busquedaClienteButton.Location = new System.Drawing.Point(460, 9);
-            this.busquedaClienteButton.Name = "busquedaClienteButton";
-            this.busquedaClienteButton.Size = new System.Drawing.Size(63, 23);
-            this.busquedaClienteButton.TabIndex = 6;
-            this.busquedaClienteButton.Text = "Buscar";
-            this.busquedaClienteButton.UseVisualStyleBackColor = false;
-            this.busquedaClienteButton.Click += new System.EventHandler(this.busquedaClienteButton_Click);
+            this.sp_listado_resumen_cotizacionesTableAdapter.ClearBeforeFill = true;
             // 
             // frmListadoCotizaciones
             // 
@@ -148,35 +73,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(1357, 598);
-            this.Controls.Add(this.busquedaClienteButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.clienteComboBox);
-            this.Controls.Add(this.todosCheckBox);
-            this.Controls.Add(this.verReporteButton);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.reportViewer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmListadoCotizaciones";
-            this.Text = "Listado Cotizaciones";
+            this.Text = "Listado Resumen Cotizaciones";
             this.Load += new System.EventHandler(this.frmListadoCotizaciones_Load);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dSCOCOA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sp_listado_resumen_cotizacionesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSListados)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private System.Windows.Forms.Button verReporteButton;
-        private System.Windows.Forms.CheckBox todosCheckBox;
-        private System.Windows.Forms.ComboBox clienteComboBox;
-        private System.Windows.Forms.Label label1;
-        private DSCOCOA dSCOCOA;
-        private System.Windows.Forms.BindingSource clientesBindingSource;
-        private DSCOCOATableAdapters.ClientesTableAdapter clientesTableAdapter;
-        private System.Windows.Forms.Button busquedaClienteButton;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource sp_listado_resumen_cotizacionesBindingSource;
+        private DSListados DSListados;
+        private DSListadosTableAdapters.sp_listado_resumen_cotizacionesTableAdapter sp_listado_resumen_cotizacionesTableAdapter;
     }
 }

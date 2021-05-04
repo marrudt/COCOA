@@ -228,8 +228,8 @@ namespace COCOA
 
         private void listadoCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListadoCotizaciones miForm = new frmListadoCotizaciones();
-            miForm.MdiParent = this;
+            frmListadoResumenCotizaciones miForm = new frmListadoResumenCotizaciones();
+            //miForm.MdiParent = this;
             miForm.Show();
         }
 

@@ -218,6 +218,8 @@ namespace COCOA.Transacciones
             }
             errorProvider1.Clear();
 
+            string notasDetalleItem = notasTextBox1.Text; 
+
             DALIVA miIVA = DALIVA.GetIVA(ultimoProducto.IdIVA);
             DALImpoconsumo miImpoconsumo = DALImpoconsumo.GetImpoconsumo(ultimoProducto.IdImpoconsumo);
 
@@ -233,6 +235,7 @@ namespace COCOA.Transacciones
             miDetalle.PorcentajeEstampillas = porcentajeEstampillas;
             miDetalle.ValorEstampillas = estampillas;
             miDetalle.Descuento = descuento;
+            miDetalle.Notas = notasDetalleItem;
 
             misDetalles.Add(miDetalle);
             RefrescaGrid();
@@ -249,7 +252,7 @@ namespace COCOA.Transacciones
             precioTextBox.ReadOnly = true;
             precioTextBox.Enabled = false;
             productoTextBox.Focus();
-
+            notasTextBox1.Text = string.Empty;
         }
 
         private void RefrescaGrid()
@@ -365,6 +368,10 @@ namespace COCOA.Transacciones
             detalleCotizacionDataGridView.Columns["ValorNeto"].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
             detalleCotizacionDataGridView.Columns["ValorNeto"].DefaultCellStyle.Format = "C2";
             detalleCotizacionDataGridView.Columns["ValorNeto"].Width = 105;
+
+            detalleCotizacionDataGridView.Columns["Notas"].HeaderText = "Notas";
+            detalleCotizacionDataGridView.Columns["Notas"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            detalleCotizacionDataGridView.Columns["Notas"].Width = 420;
         }
 
         private void productoTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -537,7 +544,7 @@ namespace COCOA.Transacciones
             {
                 DALCotizacionDetalle.InsertCotizacionDetalle(IdCotizacion, miDetalle.NumeroItem, miDetalle.DetalleNumeroItem, miDetalle.IdProducto,
                     miDetalle.DescripcionProducto, miDetalle.Precio, miDetalle.Cantidad, miDetalle.PorcentajeIVA, miDetalle.PorcentajeImpoconsumo,
-                    miDetalle.PorcentajeEstampillas, miDetalle.ValorEstampillas, miDetalle.Descuento);
+                    miDetalle.PorcentajeEstampillas, miDetalle.ValorEstampillas, miDetalle.Descuento, miDetalle.Notas);
 
             }
 
@@ -570,10 +577,10 @@ namespace COCOA.Transacciones
             descuentoTextBox.Text = "0.00";
             clienteComboBox.Focus();
             remplazaCotiacionComboBox.SelectedIndex = -1;
+            notasTextBox1.Text = string.Empty;
 
             misDetalles.Clear();
-            RefrescaGrid();
-            
+            RefrescaGrid();            
         }
 
         private void cancelarButton_Click(object sender, EventArgs e)

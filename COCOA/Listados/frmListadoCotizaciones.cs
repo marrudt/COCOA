@@ -15,47 +15,25 @@ namespace COCOA.Listados
             get { return usuarioLogueado; }
             set { usuarioLogueado = value; }
         }
-
-        //public DALUsuario UsuarioLogueado
-        //{
-        //    get => usuarioLogueado;
-        //    set => usuarioLogueado = value;
-        //}
-
+        
         public frmListadoCotizaciones()
         {
             InitializeComponent();
         }
-
-        private void verReporteButton_Click(object sender, EventArgs e)
-        {
-            rptListadoCotizaciones miListado = new rptListadoCotizaciones();
-            DSCOCOA miDS = new DSCOCOA();
-            ListadoCotizacionesTableAdapter adapter = new ListadoCotizacionesTableAdapter();
-            if (todosCheckBox.Checked)
-            {
-                adapter.Fill(miDS.ListadoCotizaciones);
-            }
-            else
-            {
-                adapter.FillBy(miDS.ListadoCotizaciones, (int)clienteComboBox.SelectedValue);
-            }
-            miListado.SetDataSource(miDS);
-            crystalReportViewer1.ReportSource = miListado;
-        }
+        
+        public DateTime FechaInicial { get; set; }
+        public DateTime FechaFinal { get; set; }
 
         private void frmListadoCotizaciones_Load(object sender, EventArgs e)
         {
-            this.clientesTableAdapter.FillBy(this.dSCOCOA.Clientes);
-            clienteComboBox.SelectedValue = -1;
+            this.sp_listado_resumen_cotizacionesTableAdapter.Fill(this.DSListados.sp_listado_resumen_cotizaciones,FechaInicial,FechaFinal);
+
+            this.reportViewer1.RefreshReport();
         }
 
-        private void busquedaClienteButton_Click(object sender, EventArgs e)
+        private void reportViewer1_Load(object sender, EventArgs e)
         {
-            frmBusquedaCliente miBusqueda = new frmBusquedaCliente();
-            miBusqueda.ShowDialog();
-            if (miBusqueda.IDCliente == 0) return;
-            clienteComboBox.SelectedValue = miBusqueda.IDCliente;
+
         }
     }
 }

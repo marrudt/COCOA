@@ -23,5 +23,6 @@ namespace COCOA.Clases
         public decimal ValorIVA { get { return Subtotal * (decimal)PorcentajeIVA / 100; } }
         public decimal ValorImpoconsumo { get { return Subtotal * (decimal)PorcentajeImpoconsumo / 100; } }
         public decimal ValorNeto { get { return Subtotal + ValorEstampillas + ValorIVA + ValorImpoconsumo - Descuento; } }
+        public string Notas { get; set; }
     }
 }
