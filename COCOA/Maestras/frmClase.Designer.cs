@@ -120,6 +120,7 @@
             this.tableAdapterManager.CiudadesTableAdapter = null;
             this.tableAdapterManager.ClaseTableAdapter = this.claseTableAdapter;
             this.tableAdapterManager.ClientesTableAdapter = null;
+            this.tableAdapterManager.ContactosClienteTableAdapter = null;
             this.tableAdapterManager.CotizacionDetalleTableAdapter = null;
             this.tableAdapterManager.CotizacionTableAdapter = null;
             this.tableAdapterManager.DepartamentosTableAdapter = null;
@@ -129,6 +130,7 @@
             this.tableAdapterManager.IVATableAdapter = null;
             this.tableAdapterManager.ListadoProveedoresTableAdapter = null;
             this.tableAdapterManager.LogTableAdapter = null;
+            this.tableAdapterManager.NumeroContactoTableAdapter = null;
             this.tableAdapterManager.NumeroPasajerosTableAdapter = null;
             this.tableAdapterManager.OrdenCompraDetalleTableAdapter = null;
             this.tableAdapterManager.OrdenCompraTableAdapter = null;

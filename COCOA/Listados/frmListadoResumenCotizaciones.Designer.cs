@@ -62,7 +62,7 @@
             this.generarListadoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
             this.generarListadoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSeaGreen;
             this.generarListadoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.generarListadoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generarListadoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generarListadoButton.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.generarListadoButton.Location = new System.Drawing.Point(75, 117);
             this.generarListadoButton.Name = "generarListadoButton";
@@ -109,7 +109,7 @@
             this.MinimizeBox = false;
             this.Name = "frmListadoResumenCotizaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Listado Resumen de Cotizaciones";
+            this.Text = "Listado de Cotizaciones";
             this.ResumeLayout(false);
             this.PerformLayout();
 

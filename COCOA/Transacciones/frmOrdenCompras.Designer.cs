@@ -35,8 +35,8 @@
             System.Windows.Forms.Label contratoLabel;
             System.Windows.Forms.Label idProductoLabel;
             System.Windows.Forms.Label label1;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenCompras));
             System.Windows.Forms.Label notasLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOrdenCompras));
             this.label2 = new System.Windows.Forms.Label();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -77,8 +77,9 @@
             this.borrarLineaButton = new System.Windows.Forms.Button();
             this.salirButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.terminosGarantiaTextBox = new System.Windows.Forms.TextBox();
+            this.notasTextBox = new System.Windows.Forms.TextBox();
             this.ordenCompraBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.terminosGarantiaTextBox = new System.Windows.Forms.TextBox();
             this.BusquedaProductoButton = new System.Windows.Forms.Button();
             this.vehiculoComboBox = new System.Windows.Forms.ComboBox();
             this.contratoTextBox = new System.Windows.Forms.TextBox();
@@ -97,7 +98,6 @@
             this.clientesTableAdapter = new COCOA.DSCOCOATableAdapters.ClientesTableAdapter();
             this.label13 = new System.Windows.Forms.Label();
             this.totalDescuentoTextBox = new System.Windows.Forms.TextBox();
-            this.notasTextBox = new System.Windows.Forms.TextBox();
             formaPagoLabel = new System.Windows.Forms.Label();
             idClienteLabel = new System.Windows.Forms.Label();
             numeroCosteoLabel = new System.Windows.Forms.Label();
@@ -170,6 +170,15 @@
             label1.Size = new System.Drawing.Size(98, 13);
             label1.TabIndex = 6;
             label1.Text = "Términos Garantía:";
+            // 
+            // notasLabel
+            // 
+            notasLabel.AutoSize = true;
+            notasLabel.Location = new System.Drawing.Point(587, 30);
+            notasLabel.Name = "notasLabel";
+            notasLabel.Size = new System.Drawing.Size(38, 13);
+            notasLabel.TabIndex = 18;
+            notasLabel.Text = "Notas:";
             // 
             // label2
             // 
@@ -652,6 +661,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Encabezado";
             // 
+            // notasTextBox
+            // 
+            this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "Notas", true));
+            this.notasTextBox.Location = new System.Drawing.Point(631, 27);
+            this.notasTextBox.Multiline = true;
+            this.notasTextBox.Name = "notasTextBox";
+            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.notasTextBox.Size = new System.Drawing.Size(273, 177);
+            this.notasTextBox.TabIndex = 19;
+            // 
+            // ordenCompraBindingSource
+            // 
+            this.ordenCompraBindingSource.DataMember = "OrdenCompra";
+            this.ordenCompraBindingSource.DataSource = this.dSCOCOA;
+            // 
             // terminosGarantiaTextBox
             // 
             this.terminosGarantiaTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -660,11 +684,6 @@
             this.terminosGarantiaTextBox.Name = "terminosGarantiaTextBox";
             this.terminosGarantiaTextBox.Size = new System.Drawing.Size(408, 20);
             this.terminosGarantiaTextBox.TabIndex = 7;
-            // 
-            // ordenCompraBindingSource
-            // 
-            this.ordenCompraBindingSource.DataMember = "OrdenCompra";
-            this.ordenCompraBindingSource.DataSource = this.dSCOCOA;
             // 
             // BusquedaProductoButton
             // 
@@ -869,25 +888,6 @@
             this.totalDescuentoTextBox.Size = new System.Drawing.Size(125, 21);
             this.totalDescuentoTextBox.TabIndex = 13;
             this.totalDescuentoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // notasLabel
-            // 
-            notasLabel.AutoSize = true;
-            notasLabel.Location = new System.Drawing.Point(587, 30);
-            notasLabel.Name = "notasLabel";
-            notasLabel.Size = new System.Drawing.Size(38, 13);
-            notasLabel.TabIndex = 18;
-            notasLabel.Text = "Notas:";
-            // 
-            // notasTextBox
-            // 
-            this.notasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ordenCompraBindingSource, "Notas", true));
-            this.notasTextBox.Location = new System.Drawing.Point(631, 27);
-            this.notasTextBox.Multiline = true;
-            this.notasTextBox.Name = "notasTextBox";
-            this.notasTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.notasTextBox.Size = new System.Drawing.Size(273, 177);
-            this.notasTextBox.TabIndex = 19;
             // 
             // frmOrdenCompras
             // 

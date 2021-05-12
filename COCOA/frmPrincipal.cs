@@ -229,7 +229,7 @@ namespace COCOA
         private void listadoCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmListadoResumenCotizaciones miForm = new frmListadoResumenCotizaciones();
-            //miForm.MdiParent = this;
+            miForm.MdiParent = this;
             miForm.Show();
         }
 
@@ -256,7 +256,7 @@ namespace COCOA
 
         private void listadoOrdenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmListadoOrdenCompras miForm = new frmListadoOrdenCompras();
+            frmListadoOrdenesCompra miForm = new frmListadoOrdenesCompra();
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -285,6 +285,20 @@ namespace COCOA
         private void consultaCotizacionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConsultaCotizacion miForm = new frmConsultaCotizacion();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void consultaProductosPorProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaItemByProveedor miForm = new frmConsultaItemByProveedor();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void ordenesDeCompraXClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaOrdenesCompraCliente miForm = new frmConsultaOrdenesCompraCliente();
             miForm.MdiParent = this;
             miForm.Show();
         }
@@ -781,6 +795,26 @@ namespace COCOA
             {
                 cotizaciónAccesoriosToolStripMenuItem.Visible = false;
             }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 41))
+            {
+                consultaProductosPorProveedorToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                consultaProductosPorProveedorToolStripMenuItem.Visible = false;
+            }
+
+            if (DALPermisoRol.PuedeVer(usuarioLogueado.IdRol, 42))
+            {
+                ordenesDeCompraXClienteToolStripMenuItem.Visible = true;
+            }
+            else
+            {
+                ordenesDeCompraXClienteToolStripMenuItem.Visible = false;
+            }
+
+
         }        
     }
 }

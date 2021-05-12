@@ -125,17 +125,46 @@
     <Compile Include="Clases\DetalleCotizacion.cs" />
     <Compile Include="Clases\RegexUtilities.cs" />
     <Compile Include="Clases\ValidarTextBox.cs" />
+    <Compile Include="Consultas\frmConsultaOrdenesCompraCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaOrdenesCompraCliente.Designer.cs">
+      <DependentUpon>frmConsultaOrdenesCompraCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\dsConsultas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsConsultas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmConsultaCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consultas\frmConsultaCotizacion.Designer.cs">
       <DependentUpon>frmConsultaCotizacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\frmConsultaItemByProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmConsultaItemByProveedor.Designer.cs">
+      <DependentUpon>frmConsultaItemByProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\frmConsultaOrdenCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Consultas\frmConsultaOrdenCompra.Designer.cs">
       <DependentUpon>frmConsultaOrdenCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmMostrarConsultaItemByProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmMostrarConsultaItemByProveedor.Designer.cs">
+      <DependentUpon>frmMostrarConsultaItemByProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\frmMostrarConsultaOrdenesCompraCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\frmMostrarConsultaOrdenesCompraCliente.Designer.cs">
+      <DependentUpon>frmMostrarConsultaOrdenesCompraCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\rptConsultaCotizacion.cs">
       <AutoGen>True</AutoGen>
@@ -186,11 +215,11 @@
     <Compile Include="Listados\frmListadoCotizaciones.Designer.cs">
       <DependentUpon>frmListadoCotizaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\frmListadoOrdenCompras.cs">
+    <Compile Include="Listados\frmListadoOrdenesCompra.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Listados\frmListadoOrdenCompras.Designer.cs">
-      <DependentUpon>frmListadoOrdenCompras.cs</DependentUpon>
+    <Compile Include="Listados\frmListadoOrdenesCompra.Designer.cs">
+      <DependentUpon>frmListadoOrdenesCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Listados\frmListadoProductos.cs">
       <SubType>Form</SubType>
@@ -209,6 +238,30 @@
     </Compile>
     <Compile Include="Listados\frmListadoResumenCotizaciones.Designer.cs">
       <DependentUpon>frmListadoResumenCotizaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoClientes.Designer.cs">
+      <DependentUpon>frmMostrarListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoOrdenesCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoOrdenesCompra.Designer.cs">
+      <DependentUpon>frmMostrarListadoOrdenesCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoProductos.Designer.cs">
+      <DependentUpon>frmMostrarListadoProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Listados\frmMostrarListadoProveedores.Designer.cs">
+      <DependentUpon>frmMostrarListadoProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="Listados\rptListadoClientes.cs">
       <AutoGen>True</AutoGen>
@@ -531,11 +584,25 @@
     <EmbeddedResource Include="Busqueda\frmUltimoCodigo.resx">
       <DependentUpon>frmUltimoCodigo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ConsultaItemByProveedor.rdlc" />
+    <EmbeddedResource Include="Consultas\ConsultaOrdenesCompraCliente.rdlc" />
+    <EmbeddedResource Include="Consultas\frmConsultaOrdenesCompraCliente.resx">
+      <DependentUpon>frmConsultaOrdenesCompraCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaCotizacion.resx">
       <DependentUpon>frmConsultaCotizacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmConsultaItemByProveedor.resx">
+      <DependentUpon>frmConsultaItemByProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\frmConsultaOrdenCompra.resx">
       <DependentUpon>frmConsultaOrdenCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmMostrarConsultaItemByProveedor.resx">
+      <DependentUpon>frmMostrarConsultaItemByProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\frmMostrarConsultaOrdenesCompraCliente.resx">
+      <DependentUpon>frmMostrarConsultaOrdenesCompraCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\rptConsultaCotizacion.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -557,8 +624,8 @@
     <EmbeddedResource Include="Listados\frmListadoCotizaciones.resx">
       <DependentUpon>frmListadoCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\frmListadoOrdenCompras.resx">
-      <DependentUpon>frmListadoOrdenCompras.cs</DependentUpon>
+    <EmbeddedResource Include="Listados\frmListadoOrdenesCompra.resx">
+      <DependentUpon>frmListadoOrdenesCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\frmListadoProductos.resx">
       <DependentUpon>frmListadoProductos.cs</DependentUpon>
@@ -569,7 +636,23 @@
     <EmbeddedResource Include="Listados\frmListadoResumenCotizaciones.resx">
       <DependentUpon>frmListadoResumenCotizaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmMostrarListadoClientes.resx">
+      <DependentUpon>frmMostrarListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmMostrarListadoOrdenesCompra.resx">
+      <DependentUpon>frmMostrarListadoOrdenesCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmMostrarListadoProductos.resx">
+      <DependentUpon>frmMostrarListadoProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\frmMostrarListadoProveedores.resx">
+      <DependentUpon>frmMostrarListadoProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ListadoClientes.rdlc" />
     <EmbeddedResource Include="Listados\ListadoCotizacionesResumen.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoOrdenesCompra.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoProductos.rdlc" />
+    <EmbeddedResource Include="Listados\ListadoProveedores.rdlc" />
     <EmbeddedResource Include="Listados\rptListadoClientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rptListadoClientes.cs</LastGenOutput>
@@ -742,6 +825,17 @@
     <EmbeddedResource Include="Transacciones\frmOrdenCompras.resx">
       <DependentUpon>frmOrdenCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Consultas\dsConsultas.xsc">
+      <DependentUpon>dsConsultas.xsd</DependentUpon>
+    </None>
+    <None Include="Consultas\dsConsultas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsConsultas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Consultas\dsConsultas.xss">
+      <DependentUpon>dsConsultas.xsd</DependentUpon>
+    </None>
     <None Include="DSCOCOA.xsc">
       <DependentUpon>DSCOCOA.xsd</DependentUpon>
     </None>
